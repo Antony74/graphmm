@@ -82,6 +82,9 @@ struct Scope
 
 std::vector<Scope> scopes;
 
+int nProofCount = 0;
+int nProofLimit = INT_MAX;
+
 // Determine if a string is used as a label
 inline bool labelused(std::string const label)
 {
@@ -1086,6 +1089,7 @@ bool parselabel(std::string label)
     if (type == "$p")
     {
         okay = parsep(label);
+		++nProofCount;
     }
     else if (type == "$e")
     {
@@ -1275,9 +1279,22 @@ bool parsev()
 
 int main(int argc, char ** argv)
 {
-    if (argc != 2)
+	if (argc == 3)
+	{
+		try
+		{
+			nProofLimit = std::stoi(argv[2]);
+			argc = 2;
+		}
+		catch (const std::exception& e)
+		{
+			std::cerr << "proof-limit: " << e.what() << '\n';
+		}
+	}
+
+	if (argc != 2)
     {
-        std::cerr << "Syntax: checkmm <filename>" << std::endl;
+        std::cerr << "Syntax: checkmm <filename> [<proof-limit>]" << std::endl;
         return EXIT_FAILURE;
     }
 
@@ -1331,6 +1348,13 @@ int main(int argc, char ** argv)
         }
         if (!okay)
             return EXIT_FAILURE;
+
+		if (nProofCount >= nProofLimit)
+		{
+			printf("Proof limit reached\n");
+			printf("Successfully verified %d proofs\n", nProofCount);
+			return 0;
+		}
     }
 
     if (scopes.size() > 1)
@@ -1339,5 +1363,6 @@ int main(int argc, char ** argv)
         return EXIT_FAILURE;
     }
 
+	printf("Successfully verified %d proofs\n", nProofCount);
     return 0;
 }
