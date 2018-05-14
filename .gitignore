@@ -9,3 +9,5 @@
 *.mm
 *.tlog
 *.lastbuildstate
+*.vcxproj.user
+*.idb
