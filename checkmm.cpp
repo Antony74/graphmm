@@ -43,6 +43,8 @@
 #include <string>
 #include <vector>
 #include <utility>
+#include <sstream>
+#include <memory>
 
 std::queue<std::string> tokens;
 
@@ -84,6 +86,86 @@ std::vector<Scope> scopes;
 
 int nProofCount = 0;
 int nProofLimit = INT_MAX;
+
+class TreeItem
+{
+public:
+	TreeItem(const std::string& label)
+	{
+		m_id = m_nextId;
+		++m_nextId;
+		m_label = label;
+		m_pParent = nullptr;
+	}
+
+	std::string getId() { return "n" + std::to_string(m_id); }
+	std::string getLabel() { return m_label; }
+	TreeItem* getParent() { return m_pParent; }
+	void setParent(TreeItem* pParent) { m_pParent = pParent; }
+
+private:
+	int m_id;
+	std::string m_label;
+	TreeItem* m_pParent;
+
+	// Keeping id globally unique makes it easier to splice trees together
+	static int m_nextId;
+};
+
+int TreeItem::m_nextId = 1;
+
+class Tree
+{
+public:
+
+	Tree(const std::string& proofLabel)
+		: m_proofLabel(proofLabel)
+	{}
+
+	void addLeaf(const std::string& label)
+	{
+		std::shared_ptr<TreeItem> item = std::make_shared<TreeItem>(label);
+		m_items.push_back(item);
+		m_stack.push_back(item);
+	}
+
+	void addParent(const std::string& label, int nChildren)
+	{
+		std::shared_ptr<TreeItem> parent = std::make_shared<TreeItem>(label);
+		m_items.push_back(parent);
+		for (int n = 0; n < nChildren; ++n)
+		{
+			std::shared_ptr<TreeItem> child = m_stack.back();
+			m_stack.pop_back();
+			child->setParent(parent.get());
+		}
+		m_stack.push_back(parent);
+	}
+
+	std::string asString()
+	{
+		std::stringstream ss;
+		ss << "digraph " << m_proofLabel << " {\n";
+
+		for (int n = 0; n < m_items.size(); ++n)
+		{
+			std::shared_ptr<TreeItem> item = m_items[n];
+			ss << "  " << item->getId() << " [label=\"" << item->getLabel() << "\"];\n";
+			if (item->getParent())
+			{
+				ss << "  " << item->getId() << "->" << item->getParent()->getId() << ";\n";
+			}
+		}
+
+		ss << "}\n";
+		return ss.str();
+	}
+
+private:
+	std::string m_proofLabel;
+	std::vector<std::shared_ptr<TreeItem> > m_items;
+	std::vector<std::shared_ptr<TreeItem> > m_stack;
+};
 
 // Determine if a string is used as a label
 inline bool labelused(std::string const label)
@@ -558,8 +640,11 @@ bool getproofnumbers(std::string label, std::string proof,
 
 // Subroutine for proof verification. Verify a proof step referencing an
 // assertion (i.e., not a hypothesis).
-bool verifyassertionref(std::string thlabel, std::string reflabel,
-    std::vector<Expression> * stack)
+bool verifyassertionref(
+	std::string thlabel,
+	std::string reflabel,
+    std::vector<Expression>* stack,
+	Tree* pTree)
 {
     Assertion const & assertion(assertions.find(reflabel)->second);
     if (stack->size() < assertion.hypotheses.size())
@@ -568,6 +653,8 @@ bool verifyassertionref(std::string thlabel, std::string reflabel,
                   << " not enough items found on stack" << std::endl;
         return false;
     }
+
+	pTree->addParent(reflabel, assertion.hypotheses.size());
 
     std::vector<Expression>::size_type const base
         (stack->size() - assertion.hypotheses.size());
@@ -669,7 +756,9 @@ bool verifyregularproof
      )
 {
     std::vector<Expression> stack;
-    for (std::vector<std::string>::const_iterator proofstep(proof.begin());
+	Tree tree(label);
+
+	for (std::vector<std::string>::const_iterator proofstep(proof.begin());
          proofstep != proof.end(); ++proofstep)
     {
         // If step is a hypothesis, just push it onto the stack.
@@ -682,7 +771,7 @@ bool verifyregularproof
         }
 
         // It must be an axiom or theorem
-        bool const okay(verifyassertionref(label, *proofstep, &stack));
+        bool const okay(verifyassertionref(label, *proofstep, &stack, &tree));
         if (!okay)
             return false;
     }
@@ -705,12 +794,14 @@ bool verifyregularproof
 }
 
 // Verify a compressed proof
-bool verifycompressedproof
-    (std::string label, Assertion const & theorem,
-     std::vector<std::string> const & labels,
-     std::vector<std::size_t> const & proofnumbers)
+bool verifycompressedproof(
+	std::string label,
+	Assertion const & theorem,
+    std::vector<std::string> const & labels,
+    std::vector<std::size_t> const & proofnumbers)
 {
-    std::vector<Expression> stack;
+	std::vector<Expression> stack;
+	Tree tree(label);
 
     std::size_t const mandhypt(theorem.hypotheses.size());
     std::size_t const labelt(mandhypt + labels.size());
@@ -729,8 +820,10 @@ bool verifycompressedproof
         // If step is a mandatory hypothesis, just push it onto the stack.
         if (*iter <= mandhypt)
         {
-            stack.push_back
-                (hypotheses.find(theorem.hypotheses[*iter - 1])->second.first);
+			std::string label = theorem.hypotheses[*iter - 1];
+
+            stack.push_back(hypotheses.find(label)->second.first);
+			tree.addLeaf(label);
         }
         else if (*iter <= labelt)
         {
@@ -743,11 +836,12 @@ bool verifycompressedproof
             if (hyp != hypotheses.end())
             {
                 stack.push_back(hyp->second.first);
+				tree.addLeaf(proofstep);
                 continue;
             }
 
-            // It must be an axiom or theorem
-            bool const okay(verifyassertionref(label, proofstep, &stack));
+			// It must be an axiom or theorem
+            bool const okay(verifyassertionref(label, proofstep, &stack, &tree));
             if (!okay)
                 return false;
         }
@@ -761,6 +855,7 @@ bool verifycompressedproof
             }
 
             stack.push_back(savedsteps[*iter - labelt - 1]);
+			printf("Save steps encountered.  Not supported\n");
         }
     }
 
@@ -777,6 +872,8 @@ bool verifycompressedproof
         std::cerr << "Proof of theorem " << label << " proves wrong statement"
                   << std::endl; 
     }
+
+	printf("%s\n", tree.asString().c_str());
 
     return true;
 }
@@ -812,7 +909,7 @@ bool parsep(std::string label)
         std::string token;
         while (!tokens.empty() && (token = tokens.front()) != ")")
         {
-            tokens.pop();
+			tokens.pop();
             labels.push_back(token);
             if (token == label)
             {
@@ -852,7 +949,7 @@ bool parsep(std::string label)
         std::string proof;
         while (!tokens.empty() && (token = tokens.front()) != "$.")
         {
-            tokens.pop();
+			tokens.pop();
 
             proof += token;
             if (!containsonlyupperorq(token))
