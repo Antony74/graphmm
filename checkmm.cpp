@@ -167,6 +167,29 @@ public:
 			{
 				ss << "  " << item->getId() << "->" << item->getParent()->getId() << ";\n";
 			}
+
+			if (item->children().size())
+			{
+				// Invisibly join children together
+				ss << "  ";
+				for (unsigned n = 0; n < item->children().size(); ++n)
+				{
+					if (n)
+					{
+						ss << "->";
+					}
+					ss << item->children()[n]->getId();
+				}
+				ss << "[arrowhead=\"none\" style=\"invisible\"];\n";
+
+				// Ensure children share same rank
+				ss << "  {rank=same;";
+				for (unsigned n = 0; n < item->children().size(); ++n)
+				{
+					ss << item->children()[n]->getId() << ";";
+				}
+				ss << "}\n";
+			}
 		}
 
 		ss << "}\n";
