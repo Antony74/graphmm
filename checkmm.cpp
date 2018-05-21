@@ -146,6 +146,7 @@ public:
 	{
 		std::stringstream ss;
 		ss << "digraph " << m_proofLabel << " {\n";
+		ss << "  rankdir = LR;\n";
 
 		for (int n = 0; n < m_items.size(); ++n)
 		{
