@@ -794,6 +794,12 @@ bool verifyregularproof
     return true;
 }
 
+bool fileExists(const std::string& filename)
+{
+	struct stat buf;
+	return stat(filename.c_str(), &buf) != -1;
+}
+
 // Verify a compressed proof
 bool verifycompressedproof(
 	std::string label,
@@ -874,7 +880,24 @@ bool verifycompressedproof(
                   << std::endl; 
     }
 
-	printf("%s\n", tree.asString().c_str());
+	std::string dotfilename = label + ".dotfile";
+
+	if (fileExists(dotfilename))
+	{
+		printf("Skipping %s: already exists\n", dotfilename.c_str());
+	}
+	else
+	{
+		try
+		{
+			std::ofstream dotfile(dotfilename, std::ios::ate);
+			dotfile << tree.asString().c_str();
+		}
+		catch (std::exception e)
+		{
+			printf("Problem writing %s: %s\n", dotfilename.c_str(), e.what());
+		}
+	}
 
     return true;
 }
