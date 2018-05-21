@@ -101,12 +101,23 @@ public:
 	std::string getId() { return "n" + std::to_string(m_id); }
 	std::string getLabel() { return m_label; }
 	TreeItem* getParent() { return m_pParent; }
-	void setParent(TreeItem* pParent) { m_pParent = pParent; }
+
+	void setParent(TreeItem* pParent)
+	{
+		m_pParent = pParent;
+		pParent->m_children.push_back(this);
+	}
+
+	const std::vector<TreeItem*> children()
+	{
+		return m_children;
+	}
 
 private:
 	int m_id;
 	std::string m_label;
 	TreeItem* m_pParent;
+	std::vector<TreeItem*> m_children;
 
 	// Keeping id globally unique makes it easier to splice trees together
 	static int m_nextId;
@@ -162,10 +173,39 @@ public:
 		return ss.str();
 	}
 
+	void saveStep()
+	{
+		m_savedSteps.push_back(m_stack.back());
+	}
+
+	void cloneSavedStep(int nStep)
+	{
+		std::shared_ptr<TreeItem> item = m_savedSteps[nStep];
+		clone(item.get());
+	}
+
+	void clone(TreeItem* pItem)
+	{
+		const std::vector<TreeItem*> children = pItem->children();
+		if (children.size())
+		{
+			for (unsigned n = 0; n < children.size(); ++n)
+			{
+				clone(children[n]);
+			}
+			addParent(pItem->getLabel(), children.size());
+		}
+		else
+		{
+			addLeaf(pItem->getLabel());
+		}
+	}
+
 private:
 	std::string m_proofLabel;
 	std::vector<std::shared_ptr<TreeItem> > m_items;
 	std::vector<std::shared_ptr<TreeItem> > m_stack;
+	std::vector<std::shared_ptr<TreeItem>> m_savedSteps;
 };
 
 // Determine if a string is used as a label
@@ -821,6 +861,7 @@ bool verifycompressedproof(
         if (*iter == 0)
         {
             savedsteps.push_back(stack.back());
+			tree.saveStep();
             continue;
         }
 
@@ -862,7 +903,7 @@ bool verifycompressedproof(
             }
 
             stack.push_back(savedsteps[*iter - labelt - 1]);
-			printf("Save steps encountered.  Not supported\n");
+			tree.cloneSavedStep(*iter - labelt - 1);
         }
     }
 
