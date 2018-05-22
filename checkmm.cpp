@@ -84,22 +84,34 @@ struct Scope
 
 std::vector<Scope> scopes;
 
+std::map<std::string, std::string> mapLabelType;
+
 int nProofCount = 0;
 int nProofLimit = INT_MAX;
 
 class TreeItem
 {
 public:
-	TreeItem(const std::string& label)
+
+	enum EType
+	{
+		typeNonEssential,
+		typeAxiom,
+		typeProof
+	};
+
+	TreeItem(const std::string& label, EType eType)
 	{
 		m_id = m_nextId;
 		++m_nextId;
 		m_label = label;
 		m_pParent = nullptr;
+		m_eType = eType;
 	}
 
 	std::string getId() { return "n" + std::to_string(m_id); }
 	std::string getLabel() { return m_label; }
+	EType getType() { return m_eType; }
 	TreeItem* getParent() { return m_pParent; }
 
 	void setParent(TreeItem* pParent)
@@ -116,6 +128,7 @@ public:
 private:
 	int m_id;
 	std::string m_label;
+	EType m_eType;
 	TreeItem* m_pParent;
 	std::vector<TreeItem*> m_children;
 
@@ -135,14 +148,38 @@ public:
 
 	void addLeaf(const std::string& label)
 	{
-		std::shared_ptr<TreeItem> item = std::make_shared<TreeItem>(label);
+		std::shared_ptr<TreeItem> item = std::make_shared<TreeItem>(label, TreeItem::typeNonEssential);
 		m_items.push_back(item);
 		m_stack.push_back(item);
 	}
 
 	void addParent(const std::string& label, int nChildren)
 	{
-		std::shared_ptr<TreeItem> parent = std::make_shared<TreeItem>(label);
+		TreeItem::EType type = TreeItem::typeProof;
+
+		auto itr = mapLabelType.find(label);
+
+		if (itr == mapLabelType.end())
+		{
+			printf("mapLabelType lookup failed\n");
+		}
+		else
+		{
+			std::string type = itr->second;
+			if (type == "$a")
+			{
+				if (label.substr(0, 3) == "ax-")
+				{
+					type = TreeItem::typeAxiom;
+				}
+				else
+				{
+					type = TreeItem::typeNonEssential;
+				}
+			}
+		}
+
+		std::shared_ptr<TreeItem> parent = std::make_shared<TreeItem>(label, type);
 		m_items.push_back(parent);
 		for (int n = 0; n < nChildren; ++n)
 		{
@@ -170,7 +207,7 @@ public:
 
 			const std::vector<TreeItem *>& children = item->children();
 
-			if (children.size())
+			if (children.size() > 1)
 			{
 				// Invisibly join children together
 				ss << "  ";
@@ -1283,6 +1320,14 @@ bool parselabel(std::string label)
                   << std::endl;
         return false;
     }
+
+	auto retval = mapLabelType.insert(std::make_pair(label, type));
+
+	if (!retval.second)
+	{
+		printf("mapLabelType insert failed\n");
+		return false;
+	}
 
     return okay;
 }
