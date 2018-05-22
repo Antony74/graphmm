@@ -165,8 +165,8 @@ public:
 		}
 		else
 		{
-			std::string type = itr->second;
-			if (type == "$a")
+			std::string strType = itr->second;
+			if (strType == "$a")
 			{
 				if (label.substr(0, 3) == "ax-")
 				{
@@ -199,10 +199,28 @@ public:
 		for (int n = 0; n < m_items.size(); ++n)
 		{
 			std::shared_ptr<TreeItem> item = m_items[n];
-			ss << "  " << item->getId() << " [label=\"" << item->getLabel() << "\"];\n";
+			ss << "  " << item->getId() << " [";
+			ss << "label = \"" << item->getLabel() << "\"";
+
+			if (item->getType() == TreeItem::typeAxiom)
+			{
+				ss << "style=\"filled\" fillcolor = \"lime\"";
+			}
+			else if (item->getType() == TreeItem::typeProof)
+			{
+				ss << "style=\"filled\" fillcolor = \"cyan\"";
+			}
+			else if (item->getType() == TreeItem::typeNonEssential)
+			{
+				ss << "color=\"lightgray\" fontcolor=\"lightgray\"";
+			}
+
+			ss << "];\n";
 			if (item->getParent())
 			{
-				ss << "  " << item->getId() << "->" << item->getParent()->getId() << ";\n";
+				ss << "  " << item->getId() << "->" << item->getParent()->getId() << "[";
+				ss << "color=\"lightgray\"";
+				ss << "];\n";
 			}
 
 			const std::vector<TreeItem *>& children = item->children();
@@ -1570,7 +1588,7 @@ int main(int argc, char ** argv)
 
 		if (nProofCount >= nProofLimit)
 		{
-			printf("Proof limit reached\n");
+			printf("Requested proof limit reached\n");
 			printf("Successfully verified %d proofs\n", nProofCount);
 			return 0;
 		}
