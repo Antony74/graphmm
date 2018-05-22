@@ -168,17 +168,19 @@ public:
 				ss << "  " << item->getId() << "->" << item->getParent()->getId() << ";\n";
 			}
 
-			if (item->children().size())
+			const std::vector<TreeItem *>& children = item->children();
+
+			if (children.size())
 			{
 				// Invisibly join children together
 				ss << "  ";
-				for (unsigned n = 0; n < item->children().size(); ++n)
+				for (auto itr = children.rbegin(); itr != children.rend(); ++itr)
 				{
-					if (n)
+					if (itr != children.rbegin())
 					{
 						ss << "->";
 					}
-					ss << item->children()[n]->getId();
+					ss << (*itr)->getId();
 				}
 				ss << "[arrowhead=\"none\" style=\"invisible\"];\n";
 
@@ -186,7 +188,7 @@ public:
 				ss << "  {rank=same;";
 				for (unsigned n = 0; n < item->children().size(); ++n)
 				{
-					ss << item->children()[n]->getId() << ";";
+					ss << children[n]->getId() << ";";
 				}
 				ss << "}\n";
 			}
@@ -857,12 +859,6 @@ bool verifyregularproof
     return true;
 }
 
-bool fileExists(const std::string& filename)
-{
-	struct stat buf;
-	return stat(filename.c_str(), &buf) != -1;
-}
-
 // Verify a compressed proof
 bool verifycompressedproof(
 	std::string label,
@@ -946,21 +942,14 @@ bool verifycompressedproof(
 
 	std::string dotfilename = label + ".dotfile";
 
-	if (fileExists(dotfilename))
+	try
 	{
-		printf("Skipping %s: already exists\n", dotfilename.c_str());
+		std::ofstream dotfile(dotfilename, std::ios::ate);
+		dotfile << tree.asString().c_str();
 	}
-	else
+	catch (std::exception e)
 	{
-		try
-		{
-			std::ofstream dotfile(dotfilename, std::ios::ate);
-			dotfile << tree.asString().c_str();
-		}
-		catch (std::exception e)
-		{
-			printf("Problem writing %s: %s\n", dotfilename.c_str(), e.what());
-		}
+		printf("Problem writing %s: %s\n", dotfilename.c_str(), e.what());
 	}
 
     return true;
