@@ -97,6 +97,7 @@ public:
 	{
 		typeNonEssential,
 		typeAxiom,
+		typePremise,
 		typeProof
 	};
 
@@ -148,7 +149,24 @@ public:
 
 	void addLeaf(const std::string& label)
 	{
-		std::shared_ptr<TreeItem> item = std::make_shared<TreeItem>(label, TreeItem::typeNonEssential);
+		TreeItem::EType eType = TreeItem::typeNonEssential;
+
+		auto itr = mapLabelType.find(label);
+
+		if (itr == mapLabelType.end())
+		{
+			printf("mapLabelType lookup failed\n");
+		}
+		else
+		{
+			std::string strType = itr->second;
+			if (strType == "$e")
+			{
+				eType = TreeItem::typePremise;
+			}
+		}
+
+		std::shared_ptr<TreeItem> item = std::make_shared<TreeItem>(label, eType);
 		m_items.push_back(item);
 		m_stack.push_back(item);
 	}
@@ -209,6 +227,10 @@ public:
 			else if (item->getType() == TreeItem::typeProof)
 			{
 				ss << "style=\"filled\" fillcolor = \"cyan\"";
+			}
+			else if (item->getType() == TreeItem::typePremise)
+			{
+				ss << "style=\"filled\" fillcolor = \"orange\"";
 			}
 			else if (item->getType() == TreeItem::typeNonEssential)
 			{
