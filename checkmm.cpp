@@ -89,6 +89,8 @@ std::map<std::string, std::string> mapLabelType;
 int nProofCount = 0;
 int nProofLimit = INT_MAX;
 
+std::ofstream ofsBatchFile;
+
 class TreeItem
 {
 public:
@@ -1021,12 +1023,26 @@ bool verifycompressedproof(
 
 	try
 	{
-		std::ofstream dotfile(dotfilename, std::ios::ate);
+		std::ofstream dotfile(dotfilename);
 		dotfile << tree.asString().c_str();
 	}
 	catch (std::exception e)
 	{
 		printf("Problem writing %s: %s\n", dotfilename.c_str(), e.what());
+	}
+
+	try
+	{
+		if (!ofsBatchFile.is_open())
+		{
+			ofsBatchFile.open("toSvg.bat");
+		}
+
+		ofsBatchFile << "dot " << label << ".dotfile -Tsvg -o " << label << ".svg\n";
+	}
+	catch (std::exception e)
+	{
+		printf("Problem writing batch file\n");
 	}
 
     return true;
