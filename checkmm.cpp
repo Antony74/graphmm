@@ -212,8 +212,12 @@ public:
 
 	std::string asString()
 	{
+		std::string proofLabel = m_proofLabel;
+		std::replace(proofLabel.begin(), proofLabel.end(), '.', '_');
+		std::replace(proofLabel.begin(), proofLabel.end(), '-', '_');
+
 		std::stringstream ss;
-		ss << "digraph " << m_proofLabel << " {\n";
+		ss << "digraph proof_" << proofLabel << " {\n";
 		ss << "  rankdir = LR;\n";
 
 		for (int n = 0; n < m_items.size(); ++n)
@@ -1039,6 +1043,12 @@ bool verifycompressedproof(
 		}
 
 		ofsBatchFile << "dot " << label << ".dotfile -Tsvg -o " << label << ".svg\n";
+		ofsBatchFile << "IF ERRORLEVEL 1 GOTO EXIT\n";
+
+		if (nProofCount == 999)
+		{
+			ofsBatchFile << ":EXIT\n";
+		}
 	}
 	catch (std::exception e)
 	{
@@ -1639,5 +1649,5 @@ int main(int argc, char ** argv)
     }
 
 	printf("Successfully verified %d proofs\n", nProofCount);
-    return 0;
+	return 0;
 }
