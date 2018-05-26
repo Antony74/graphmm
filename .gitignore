@@ -11,3 +11,5 @@
 *.lastbuildstate
 *.vcxproj.user
 *.idb
+*.dotfile
+*.svg
