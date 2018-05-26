@@ -23,7 +23,7 @@ fs.readdir(inDir, (err, files) => {
           console.log(error);
           process.exit(1);
         } else if (stats.size > nMaxDotFileSize) {
-          console.log(['Skipping ', dotfile, 'max size exceeded'].join(''));
+          console.log(['Skipping ', dotfile, ' max size exceeded'].join(''));
           convert();
         } else {
           var arr = dotfile.split('.');
