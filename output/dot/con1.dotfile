@@ -1,0 +1,34 @@
+digraph proof_con1 {
+  rankdir = LR;
+  n1440 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n1440->n1441[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n1441 [label = "wn"color="lightgray" fontcolor="lightgray"];
+  n1441->n1443[color="lightgray" fontcolor="lightgray" label="wff -. ph"];
+  n1442 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n1442->n1443[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n1443 [label = "wi"color="lightgray" fontcolor="lightgray"];
+  n1443->n1451[color="lightgray" fontcolor="lightgray" label="wff ( -. ph -> ps )"];
+  n1441->n1442[arrowhead="none" style="invisible"];
+  {rank=same;n1442;n1441;}
+  n1444 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n1444->n1451[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n1445 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n1445->n1451[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n1446 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n1446->n1449[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n1447 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n1447->n1448[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n1448 [label = "wn"color="lightgray" fontcolor="lightgray"];
+  n1448->n1449[color="lightgray" fontcolor="lightgray" label="wff -. ph"];
+  n1449 [label = "wi"color="lightgray" fontcolor="lightgray"];
+  n1449->n1450[color="lightgray" fontcolor="lightgray" label="wff ( -. ph -> ps )"];
+  n1446->n1448[arrowhead="none" style="invisible"];
+  {rank=same;n1448;n1446;}
+  n1450 [label = "id"style="filled" fillcolor = "cyan"];
+  n1450->n1451[label="|- ( ( -. ph -> ps ) -> ( -. ph -> ps ) )"];
+  n1451 [label = "con1d"style="filled" fillcolor = "cyan"];
+QED[style="invisible"]
+  n1451->QED[label="|- ( ( -. ph -> ps ) -> ( -. ps -> ph ) )"];
+  n1443->n1444->n1445->n1450[arrowhead="none" style="invisible"];
+  {rank=same;n1450;n1445;n1444;n1443;}
+}

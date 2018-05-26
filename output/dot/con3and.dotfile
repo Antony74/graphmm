@@ -1,0 +1,30 @@
+digraph proof_con3and {
+  rankdir = LR;
+  n7907 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n7907->n7917[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n7908 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n7908->n7909[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n7909 [label = "wn"color="lightgray" fontcolor="lightgray"];
+  n7909->n7917[color="lightgray" fontcolor="lightgray" label="wff -. ch"];
+  n7910 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n7910->n7911[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n7911 [label = "wn"color="lightgray" fontcolor="lightgray"];
+  n7911->n7917[color="lightgray" fontcolor="lightgray" label="wff -. ps"];
+  n7912 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n7912->n7916[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n7913 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n7913->n7916[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n7914 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n7914->n7916[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n7915 [label = "con3and.1"style="filled" fillcolor = "orange"];
+  n7915->n7916[label="|- ( ph -> ( ps -> ch ) )"];
+  n7916 [label = "con3d"style="filled" fillcolor = "cyan"];
+  n7916->n7917[label="|- ( ph -> ( -. ch -> -. ps ) )"];
+  n7912->n7913->n7914->n7915[arrowhead="none" style="invisible"];
+  {rank=same;n7915;n7914;n7913;n7912;}
+  n7917 [label = "imp"style="filled" fillcolor = "cyan"];
+QED[style="invisible"]
+  n7917->QED[label="|- ( ( ph /\ -. ch ) -> -. ps )"];
+  n7907->n7909->n7911->n7916[arrowhead="none" style="invisible"];
+  {rank=same;n7916;n7911;n7909;n7907;}
+}

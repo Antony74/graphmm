@@ -1,0 +1,22 @@
+digraph proof_nbn3 {
+  rankdir = LR;
+  n6605 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n6605->n6606[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n6606 [label = "wn"color="lightgray" fontcolor="lightgray"];
+  n6606->n6611[color="lightgray" fontcolor="lightgray" label="wff -. ph"];
+  n6607 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n6607->n6611[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n6608 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n6608->n6610[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n6609 [label = "nbn3.1"style="filled" fillcolor = "orange"];
+  n6609->n6610[label="|- ph"];
+  n6610 [label = "notnoti"style="filled" fillcolor = "cyan"];
+  n6610->n6611[label="|- -. -. ph"];
+  n6608->n6609[arrowhead="none" style="invisible"];
+  {rank=same;n6609;n6608;}
+  n6611 [label = "nbn"style="filled" fillcolor = "cyan"];
+QED[style="invisible"]
+  n6611->QED[label="|- ( -. ps <-> ( ps <-> -. ph ) )"];
+  n6606->n6607->n6610[arrowhead="none" style="invisible"];
+  {rank=same;n6610;n6607;n6606;}
+}

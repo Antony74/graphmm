@@ -1,0 +1,28 @@
+digraph proof_mth8 {
+  rankdir = LR;
+  n1623 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n1623->n1631[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n1624 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n1624->n1626[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n1625 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n1625->n1626[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n1626 [label = "wi"color="lightgray" fontcolor="lightgray"];
+  n1626->n1631[color="lightgray" fontcolor="lightgray" label="wff ( ph -> ps )"];
+  n1624->n1625[arrowhead="none" style="invisible"];
+  {rank=same;n1625;n1624;}
+  n1627 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n1627->n1631[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n1628 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n1628->n1630[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n1629 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n1629->n1630[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n1630 [label = "pm2.27"style="filled" fillcolor = "cyan"];
+  n1630->n1631[label="|- ( ph -> ( ( ph -> ps ) -> ps ) )"];
+  n1628->n1629[arrowhead="none" style="invisible"];
+  {rank=same;n1629;n1628;}
+  n1631 [label = "con3d"style="filled" fillcolor = "cyan"];
+QED[style="invisible"]
+  n1631->QED[label="|- ( ph -> ( -. ps -> -. ( ph -> ps ) ) )"];
+  n1623->n1626->n1627->n1630[arrowhead="none" style="invisible"];
+  {rank=same;n1630;n1627;n1626;n1623;}
+}

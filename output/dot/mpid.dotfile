@@ -1,0 +1,30 @@
+digraph proof_mpid {
+  rankdir = LR;
+  n369 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n369->n379[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n370 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n370->n379[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n371 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n371->n379[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n372 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n372->n379[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n373 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n373->n377[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n374 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n374->n377[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n375 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n375->n377[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n376 [label = "mpid.1"style="filled" fillcolor = "orange"];
+  n376->n377[label="|- ( ph -> ch )"];
+  n377 [label = "a1d"style="filled" fillcolor = "cyan"];
+  n377->n379[label="|- ( ph -> ( ps -> ch ) )"];
+  n373->n374->n375->n376[arrowhead="none" style="invisible"];
+  {rank=same;n376;n375;n374;n373;}
+  n378 [label = "mpid.2"style="filled" fillcolor = "orange"];
+  n378->n379[label="|- ( ph -> ( ps -> ( ch -> th ) ) )"];
+  n379 [label = "mpdd"style="filled" fillcolor = "cyan"];
+QED[style="invisible"]
+  n379->QED[label="|- ( ph -> ( ps -> th ) )"];
+  n369->n370->n371->n372->n377->n378[arrowhead="none" style="invisible"];
+  {rank=same;n378;n377;n372;n371;n370;n369;}
+}

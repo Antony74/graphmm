@@ -1,0 +1,6 @@
+digraph proof_dummylink {
+  rankdir = LR;
+  n1 [label = "dummylink.1"style="filled" fillcolor = "orange"];
+QED[style="invisible"]
+  n1->QED[label="|- ph"];
+}

@@ -1,0 +1,44 @@
+digraph proof_pm2_04 {
+  rankdir = LR;
+  n841 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n841->n845[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n842 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n842->n844[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n843 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n843->n844[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n844 [label = "wi"color="lightgray" fontcolor="lightgray"];
+  n844->n845[color="lightgray" fontcolor="lightgray" label="wff ( ps -> ch )"];
+  n842->n843[arrowhead="none" style="invisible"];
+  {rank=same;n843;n842;}
+  n845 [label = "wi"color="lightgray" fontcolor="lightgray"];
+  n845->n855[color="lightgray" fontcolor="lightgray" label="wff ( ph -> ( ps -> ch ) )"];
+  n841->n844[arrowhead="none" style="invisible"];
+  {rank=same;n844;n841;}
+  n846 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n846->n855[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n847 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n847->n855[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n848 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n848->n855[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n849 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n849->n851[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n850 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n850->n851[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n851 [label = "wi"color="lightgray" fontcolor="lightgray"];
+  n851->n853[color="lightgray" fontcolor="lightgray" label="wff ( ps -> ch )"];
+  n849->n850[arrowhead="none" style="invisible"];
+  {rank=same;n850;n849;}
+  n852 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n852->n853[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n853 [label = "wi"color="lightgray" fontcolor="lightgray"];
+  n853->n854[color="lightgray" fontcolor="lightgray" label="wff ( ph -> ( ps -> ch ) )"];
+  n851->n852[arrowhead="none" style="invisible"];
+  {rank=same;n852;n851;}
+  n854 [label = "id"style="filled" fillcolor = "cyan"];
+  n854->n855[label="|- ( ( ph -> ( ps -> ch ) ) -> ( ph -> ( ps -> ch ) ) )"];
+  n855 [label = "com23"style="filled" fillcolor = "cyan"];
+QED[style="invisible"]
+  n855->QED[label="|- ( ( ph -> ( ps -> ch ) ) -> ( ps -> ( ph -> ch ) ) )"];
+  n845->n846->n847->n848->n854[arrowhead="none" style="invisible"];
+  {rank=same;n854;n848;n847;n846;n845;}
+}

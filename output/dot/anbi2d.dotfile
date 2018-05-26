@@ -1,0 +1,34 @@
+digraph proof_anbi2d {
+  rankdir = LR;
+  n11975 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n11975->n11986[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n11976 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n11976->n11986[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n11977 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n11977->n11986[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n11978 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n11978->n11986[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n11979 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n11979->n11985[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n11980 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n11980->n11982[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n11981 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n11981->n11982[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n11982 [label = "wb"color="lightgray" fontcolor="lightgray"];
+  n11982->n11985[color="lightgray" fontcolor="lightgray" label="wff ( ps <-> ch )"];
+  n11980->n11981[arrowhead="none" style="invisible"];
+  {rank=same;n11981;n11980;}
+  n11983 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n11983->n11985[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n11984 [label = "bid.1"style="filled" fillcolor = "orange"];
+  n11984->n11985[label="|- ( ph -> ( ps <-> ch ) )"];
+  n11985 [label = "a1d"style="filled" fillcolor = "cyan"];
+  n11985->n11986[label="|- ( ph -> ( th -> ( ps <-> ch ) ) )"];
+  n11979->n11982->n11983->n11984[arrowhead="none" style="invisible"];
+  {rank=same;n11984;n11983;n11982;n11979;}
+  n11986 [label = "pm5.32d"style="filled" fillcolor = "cyan"];
+QED[style="invisible"]
+  n11986->QED[label="|- ( ph -> ( ( th /\ ps ) <-> ( th /\ ch ) ) )"];
+  n11975->n11976->n11977->n11978->n11985[arrowhead="none" style="invisible"];
+  {rank=same;n11985;n11978;n11977;n11976;n11975;}
+}

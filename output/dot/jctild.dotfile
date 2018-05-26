@@ -1,0 +1,30 @@
+digraph proof_jctild {
+  rankdir = LR;
+  n9347 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n9347->n9357[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n9348 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n9348->n9357[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n9349 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n9349->n9357[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n9350 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n9350->n9357[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n9351 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n9351->n9355[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n9352 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n9352->n9355[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n9353 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n9353->n9355[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n9354 [label = "jctild.2"style="filled" fillcolor = "orange"];
+  n9354->n9355[label="|- ( ph -> th )"];
+  n9355 [label = "a1d"style="filled" fillcolor = "cyan"];
+  n9355->n9357[label="|- ( ph -> ( ps -> th ) )"];
+  n9351->n9352->n9353->n9354[arrowhead="none" style="invisible"];
+  {rank=same;n9354;n9353;n9352;n9351;}
+  n9356 [label = "jctild.1"style="filled" fillcolor = "orange"];
+  n9356->n9357[label="|- ( ph -> ( ps -> ch ) )"];
+  n9357 [label = "jcad"style="filled" fillcolor = "cyan"];
+QED[style="invisible"]
+  n9357->QED[label="|- ( ph -> ( ps -> ( th /\ ch ) ) )"];
+  n9347->n9348->n9349->n9350->n9355->n9356[arrowhead="none" style="invisible"];
+  {rank=same;n9356;n9355;n9350;n9349;n9348;n9347;}
+}

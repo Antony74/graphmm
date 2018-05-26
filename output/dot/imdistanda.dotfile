@@ -1,0 +1,34 @@
+digraph proof_imdistanda {
+  rankdir = LR;
+  n11795 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n11795->n11806[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n11796 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n11796->n11806[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n11797 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n11797->n11806[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n11798 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n11798->n11806[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n11799 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n11799->n11805[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n11800 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n11800->n11805[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n11801 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n11801->n11803[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n11802 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n11802->n11803[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n11803 [label = "wi"color="lightgray" fontcolor="lightgray"];
+  n11803->n11805[color="lightgray" fontcolor="lightgray" label="wff ( ch -> th )"];
+  n11801->n11802[arrowhead="none" style="invisible"];
+  {rank=same;n11802;n11801;}
+  n11804 [label = "imdistanda.1"style="filled" fillcolor = "orange"];
+  n11804->n11805[label="|- ( ( ph /\ ps ) -> ( ch -> th ) )"];
+  n11805 [label = "ex"style="filled" fillcolor = "cyan"];
+  n11805->n11806[label="|- ( ph -> ( ps -> ( ch -> th ) ) )"];
+  n11799->n11800->n11803->n11804[arrowhead="none" style="invisible"];
+  {rank=same;n11804;n11803;n11800;n11799;}
+  n11806 [label = "imdistand"style="filled" fillcolor = "cyan"];
+QED[style="invisible"]
+  n11806->QED[label="|- ( ph -> ( ( ps /\ ch ) -> ( ps /\ th ) ) )"];
+  n11795->n11796->n11797->n11798->n11805[arrowhead="none" style="invisible"];
+  {rank=same;n11805;n11798;n11797;n11796;n11795;}
+}

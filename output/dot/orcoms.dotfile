@@ -1,0 +1,36 @@
+digraph proof_orcoms {
+  rankdir = LR;
+  n7336 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n7336->n7338[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n7337 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n7337->n7338[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n7338 [label = "wo"color="lightgray" fontcolor="lightgray"];
+  n7338->n7347[color="lightgray" fontcolor="lightgray" label="wff ( ps \/ ph )"];
+  n7336->n7337[arrowhead="none" style="invisible"];
+  {rank=same;n7337;n7336;}
+  n7339 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n7339->n7341[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n7340 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n7340->n7341[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n7341 [label = "wo"color="lightgray" fontcolor="lightgray"];
+  n7341->n7347[color="lightgray" fontcolor="lightgray" label="wff ( ph \/ ps )"];
+  n7339->n7340[arrowhead="none" style="invisible"];
+  {rank=same;n7340;n7339;}
+  n7342 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n7342->n7347[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n7343 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n7343->n7345[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n7344 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n7344->n7345[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n7345 [label = "pm1.4"style="filled" fillcolor = "cyan"];
+  n7345->n7347[label="|- ( ( ps \/ ph ) -> ( ph \/ ps ) )"];
+  n7343->n7344[arrowhead="none" style="invisible"];
+  {rank=same;n7344;n7343;}
+  n7346 [label = "orcoms.1"style="filled" fillcolor = "orange"];
+  n7346->n7347[label="|- ( ( ph \/ ps ) -> ch )"];
+  n7347 [label = "syl"style="filled" fillcolor = "cyan"];
+QED[style="invisible"]
+  n7347->QED[label="|- ( ( ps \/ ph ) -> ch )"];
+  n7338->n7341->n7342->n7345->n7346[arrowhead="none" style="invisible"];
+  {rank=same;n7346;n7345;n7342;n7341;n7338;}
+}

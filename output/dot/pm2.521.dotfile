@@ -1,0 +1,30 @@
+digraph proof_pm2_521 {
+  rankdir = LR;
+  n1711 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n1711->n1713[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n1712 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n1712->n1713[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n1713 [label = "wi"color="lightgray" fontcolor="lightgray"];
+  n1713->n1714[color="lightgray" fontcolor="lightgray" label="wff ( ph -> ps )"];
+  n1711->n1712[arrowhead="none" style="invisible"];
+  {rank=same;n1712;n1711;}
+  n1714 [label = "wn"color="lightgray" fontcolor="lightgray"];
+  n1714->n1720[color="lightgray" fontcolor="lightgray" label="wff -. ( ph -> ps )"];
+  n1715 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n1715->n1720[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n1716 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n1716->n1720[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n1717 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n1717->n1719[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n1718 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n1718->n1719[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n1719 [label = "simplim"style="filled" fillcolor = "cyan"];
+  n1719->n1720[label="|- ( -. ( ph -> ps ) -> ph )"];
+  n1717->n1718[arrowhead="none" style="invisible"];
+  {rank=same;n1718;n1717;}
+  n1720 [label = "a1d"style="filled" fillcolor = "cyan"];
+QED[style="invisible"]
+  n1720->QED[label="|- ( -. ( ph -> ps ) -> ( ps -> ph ) )"];
+  n1714->n1715->n1716->n1719[arrowhead="none" style="invisible"];
+  {rank=same;n1719;n1716;n1715;n1714;}
+}

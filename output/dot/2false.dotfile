@@ -1,0 +1,28 @@
+digraph proof_2false {
+  rankdir = LR;
+  n6623 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n6623->n6632[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n6624 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n6624->n6632[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n6625 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n6625->n6626[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n6626 [label = "wn"color="lightgray" fontcolor="lightgray"];
+  n6626->n6631[color="lightgray" fontcolor="lightgray" label="wff -. ph"];
+  n6627 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n6627->n6628[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n6628 [label = "wn"color="lightgray" fontcolor="lightgray"];
+  n6628->n6631[color="lightgray" fontcolor="lightgray" label="wff -. ps"];
+  n6629 [label = "2false.1"style="filled" fillcolor = "orange"];
+  n6629->n6631[label="|- -. ph"];
+  n6630 [label = "2false.2"style="filled" fillcolor = "orange"];
+  n6630->n6631[label="|- -. ps"];
+  n6631 [label = "2th"style="filled" fillcolor = "cyan"];
+  n6631->n6632[label="|- ( -. ph <-> -. ps )"];
+  n6626->n6628->n6629->n6630[arrowhead="none" style="invisible"];
+  {rank=same;n6630;n6629;n6628;n6626;}
+  n6632 [label = "con4bii"style="filled" fillcolor = "cyan"];
+QED[style="invisible"]
+  n6632->QED[label="|- ( ph <-> ps )"];
+  n6623->n6624->n6631[arrowhead="none" style="invisible"];
+  {rank=same;n6631;n6624;n6623;}
+}

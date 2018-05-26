@@ -1,0 +1,38 @@
+digraph proof_notbii {
+  rankdir = LR;
+  n5808 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n5808->n5810[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n5809 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n5809->n5810[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n5810 [label = "wb"color="lightgray" fontcolor="lightgray"];
+  n5810->n5820[color="lightgray" fontcolor="lightgray" label="wff ( ph <-> ps )"];
+  n5808->n5809[arrowhead="none" style="invisible"];
+  {rank=same;n5809;n5808;}
+  n5811 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n5811->n5812[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n5812 [label = "wn"color="lightgray" fontcolor="lightgray"];
+  n5812->n5815[color="lightgray" fontcolor="lightgray" label="wff -. ph"];
+  n5813 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n5813->n5814[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n5814 [label = "wn"color="lightgray" fontcolor="lightgray"];
+  n5814->n5815[color="lightgray" fontcolor="lightgray" label="wff -. ps"];
+  n5815 [label = "wb"color="lightgray" fontcolor="lightgray"];
+  n5815->n5820[color="lightgray" fontcolor="lightgray" label="wff ( -. ph <-> -. ps )"];
+  n5812->n5814[arrowhead="none" style="invisible"];
+  {rank=same;n5814;n5812;}
+  n5816 [label = "notbii.1"style="filled" fillcolor = "orange"];
+  n5816->n5820[label="|- ( ph <-> ps )"];
+  n5817 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n5817->n5819[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n5818 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n5818->n5819[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n5819 [label = "notbi"style="filled" fillcolor = "cyan"];
+  n5819->n5820[label="|- ( ( ph <-> ps ) <-> ( -. ph <-> -. ps ) )"];
+  n5817->n5818[arrowhead="none" style="invisible"];
+  {rank=same;n5818;n5817;}
+  n5820 [label = "mpbi"style="filled" fillcolor = "cyan"];
+QED[style="invisible"]
+  n5820->QED[label="|- ( -. ph <-> -. ps )"];
+  n5810->n5815->n5816->n5819[arrowhead="none" style="invisible"];
+  {rank=same;n5819;n5816;n5815;n5810;}
+}

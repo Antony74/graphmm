@@ -1,0 +1,30 @@
+digraph proof_ecase {
+  rankdir = LR;
+  n17086 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n17086->n17096[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n17087 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n17087->n17096[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n17088 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n17088->n17096[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n17089 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n17089->n17093[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n17090 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n17090->n17093[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n17091 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n17091->n17093[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n17092 [label = "ecase.3"style="filled" fillcolor = "orange"];
+  n17092->n17093[label="|- ( ( ph /\ ps ) -> ch )"];
+  n17093 [label = "ex"style="filled" fillcolor = "cyan"];
+  n17093->n17096[label="|- ( ph -> ( ps -> ch ) )"];
+  n17089->n17090->n17091->n17092[arrowhead="none" style="invisible"];
+  {rank=same;n17092;n17091;n17090;n17089;}
+  n17094 [label = "ecase.1"style="filled" fillcolor = "orange"];
+  n17094->n17096[label="|- ( -. ph -> ch )"];
+  n17095 [label = "ecase.2"style="filled" fillcolor = "orange"];
+  n17095->n17096[label="|- ( -. ps -> ch )"];
+  n17096 [label = "pm2.61nii"style="filled" fillcolor = "cyan"];
+QED[style="invisible"]
+  n17096->QED[label="|- ch"];
+  n17086->n17087->n17088->n17093->n17094->n17095[arrowhead="none" style="invisible"];
+  {rank=same;n17095;n17094;n17093;n17088;n17087;n17086;}
+}

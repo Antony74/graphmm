@@ -1,0 +1,22 @@
+digraph proof_anc2ri {
+  rankdir = LR;
+  n9502 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n9502->n9509[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n9503 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n9503->n9509[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n9504 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n9504->n9509[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n9505 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n9505->n9509[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n9506 [label = "anc2ri.1"style="filled" fillcolor = "orange"];
+  n9506->n9509[label="|- ( ph -> ( ps -> ch ) )"];
+  n9507 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n9507->n9508[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n9508 [label = "id"style="filled" fillcolor = "cyan"];
+  n9508->n9509[label="|- ( ph -> ph )"];
+  n9509 [label = "jctird"style="filled" fillcolor = "cyan"];
+QED[style="invisible"]
+  n9509->QED[label="|- ( ph -> ( ps -> ( ch /\ ph ) ) )"];
+  n9502->n9503->n9504->n9505->n9506->n9508[arrowhead="none" style="invisible"];
+  {rank=same;n9508;n9506;n9505;n9504;n9503;n9502;}
+}

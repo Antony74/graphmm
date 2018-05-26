@@ -1,0 +1,30 @@
+digraph proof_mt2d {
+  rankdir = LR;
+  n1328 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n1328->n1338[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n1329 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n1329->n1338[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n1330 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n1330->n1331[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n1331 [label = "wn"color="lightgray" fontcolor="lightgray"];
+  n1331->n1338[color="lightgray" fontcolor="lightgray" label="wff -. ps"];
+  n1332 [label = "mt2d.1"style="filled" fillcolor = "orange"];
+  n1332->n1338[label="|- ( ph -> ch )"];
+  n1333 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n1333->n1337[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n1334 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n1334->n1337[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n1335 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n1335->n1337[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n1336 [label = "mt2d.2"style="filled" fillcolor = "orange"];
+  n1336->n1337[label="|- ( ph -> ( ps -> -. ch ) )"];
+  n1337 [label = "con2d"style="filled" fillcolor = "cyan"];
+  n1337->n1338[label="|- ( ph -> ( ch -> -. ps ) )"];
+  n1333->n1334->n1335->n1336[arrowhead="none" style="invisible"];
+  {rank=same;n1336;n1335;n1334;n1333;}
+  n1338 [label = "mpd"style="filled" fillcolor = "cyan"];
+QED[style="invisible"]
+  n1338->QED[label="|- ( ph -> -. ps )"];
+  n1328->n1329->n1331->n1332->n1337[arrowhead="none" style="invisible"];
+  {rank=same;n1337;n1332;n1331;n1329;n1328;}
+}

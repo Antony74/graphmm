@@ -1,0 +1,30 @@
+digraph proof_sylan {
+  rankdir = LR;
+  n8220 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n8220->n8230[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n8221 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n8221->n8230[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n8222 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n8222->n8230[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n8223 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n8223->n8230[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n8224 [label = "sylan.1"style="filled" fillcolor = "orange"];
+  n8224->n8230[label="|- ( ph -> ps )"];
+  n8225 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n8225->n8229[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n8226 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n8226->n8229[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n8227 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n8227->n8229[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n8228 [label = "sylan.2"style="filled" fillcolor = "orange"];
+  n8228->n8229[label="|- ( ( ps /\ ch ) -> th )"];
+  n8229 [label = "expcom"style="filled" fillcolor = "cyan"];
+  n8229->n8230[label="|- ( ch -> ( ps -> th ) )"];
+  n8225->n8226->n8227->n8228[arrowhead="none" style="invisible"];
+  {rank=same;n8228;n8227;n8226;n8225;}
+  n8230 [label = "mpan9"style="filled" fillcolor = "cyan"];
+QED[style="invisible"]
+  n8230->QED[label="|- ( ( ph /\ ch ) -> th )"];
+  n8220->n8221->n8222->n8223->n8224->n8229[arrowhead="none" style="invisible"];
+  {rank=same;n8229;n8224;n8223;n8222;n8221;n8220;}
+}

@@ -1,0 +1,30 @@
+digraph proof_syli {
+  rankdir = LR;
+  n319 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n319->n329[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n320 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n320->n329[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n321 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n321->n329[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n322 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n322->n329[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n323 [label = "syli.1"style="filled" fillcolor = "orange"];
+  n323->n329[label="|- ( ps -> ( ph -> ch ) )"];
+  n324 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n324->n328[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n325 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n325->n328[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n326 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n326->n328[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n327 [label = "syli.2"style="filled" fillcolor = "orange"];
+  n327->n328[label="|- ( ch -> ( ph -> th ) )"];
+  n328 [label = "com12"style="filled" fillcolor = "cyan"];
+  n328->n329[label="|- ( ph -> ( ch -> th ) )"];
+  n324->n325->n326->n327[arrowhead="none" style="invisible"];
+  {rank=same;n327;n326;n325;n324;}
+  n329 [label = "sylcom"style="filled" fillcolor = "cyan"];
+QED[style="invisible"]
+  n329->QED[label="|- ( ps -> ( ph -> th ) )"];
+  n319->n320->n321->n322->n323->n328[arrowhead="none" style="invisible"];
+  {rank=same;n328;n323;n322;n321;n320;n319;}
+}

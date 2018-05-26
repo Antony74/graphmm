@@ -1,0 +1,26 @@
+digraph proof_pm2_46 {
+  rankdir = LR;
+  n7412 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n7412->n7419[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n7413 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n7413->n7415[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n7414 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n7414->n7415[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n7415 [label = "wo"color="lightgray" fontcolor="lightgray"];
+  n7415->n7419[color="lightgray" fontcolor="lightgray" label="wff ( ph \/ ps )"];
+  n7413->n7414[arrowhead="none" style="invisible"];
+  {rank=same;n7414;n7413;}
+  n7416 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n7416->n7418[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n7417 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n7417->n7418[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n7418 [label = "olc"style="filled" fillcolor = "cyan"];
+  n7418->n7419[label="|- ( ps -> ( ph \/ ps ) )"];
+  n7416->n7417[arrowhead="none" style="invisible"];
+  {rank=same;n7417;n7416;}
+  n7419 [label = "con3i"style="filled" fillcolor = "cyan"];
+QED[style="invisible"]
+  n7419->QED[label="|- ( -. ( ph \/ ps ) -> -. ps )"];
+  n7412->n7415->n7418[arrowhead="none" style="invisible"];
+  {rank=same;n7418;n7415;n7412;}
+}

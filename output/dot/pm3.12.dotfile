@@ -1,0 +1,36 @@
+digraph proof_pm3_12 {
+  rankdir = LR;
+  n8630 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n8630->n8631[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n8631 [label = "wn"color="lightgray" fontcolor="lightgray"];
+  n8631->n8634[color="lightgray" fontcolor="lightgray" label="wff -. ph"];
+  n8632 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n8632->n8633[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n8633 [label = "wn"color="lightgray" fontcolor="lightgray"];
+  n8633->n8634[color="lightgray" fontcolor="lightgray" label="wff -. ps"];
+  n8634 [label = "wo"color="lightgray" fontcolor="lightgray"];
+  n8634->n8641[color="lightgray" fontcolor="lightgray" label="wff ( -. ph \/ -. ps )"];
+  n8631->n8633[arrowhead="none" style="invisible"];
+  {rank=same;n8633;n8631;}
+  n8635 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n8635->n8637[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n8636 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n8636->n8637[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n8637 [label = "wa"color="lightgray" fontcolor="lightgray"];
+  n8637->n8641[color="lightgray" fontcolor="lightgray" label="wff ( ph /\ ps )"];
+  n8635->n8636[arrowhead="none" style="invisible"];
+  {rank=same;n8636;n8635;}
+  n8638 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n8638->n8640[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n8639 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n8639->n8640[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n8640 [label = "pm3.11"style="filled" fillcolor = "cyan"];
+  n8640->n8641[label="|- ( -. ( -. ph \/ -. ps ) -> ( ph /\ ps ) )"];
+  n8638->n8639[arrowhead="none" style="invisible"];
+  {rank=same;n8639;n8638;}
+  n8641 [label = "orri"style="filled" fillcolor = "cyan"];
+QED[style="invisible"]
+  n8641->QED[label="|- ( ( -. ph \/ -. ps ) \/ ( ph /\ ps ) )"];
+  n8634->n8637->n8640[arrowhead="none" style="invisible"];
+  {rank=same;n8640;n8637;n8634;}
+}

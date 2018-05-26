@@ -1,0 +1,44 @@
+digraph proof_pm2_83 {
+  rankdir = LR;
+  n780 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n780->n782[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n781 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n781->n782[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n782 [label = "wi"color="lightgray" fontcolor="lightgray"];
+  n782->n794[color="lightgray" fontcolor="lightgray" label="wff ( ps -> ch )"];
+  n780->n781[arrowhead="none" style="invisible"];
+  {rank=same;n781;n780;}
+  n783 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n783->n785[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n784 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n784->n785[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n785 [label = "wi"color="lightgray" fontcolor="lightgray"];
+  n785->n794[color="lightgray" fontcolor="lightgray" label="wff ( ch -> th )"];
+  n783->n784[arrowhead="none" style="invisible"];
+  {rank=same;n784;n783;}
+  n786 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n786->n788[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n787 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n787->n788[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n788 [label = "wi"color="lightgray" fontcolor="lightgray"];
+  n788->n794[color="lightgray" fontcolor="lightgray" label="wff ( ps -> th )"];
+  n786->n787[arrowhead="none" style="invisible"];
+  {rank=same;n787;n786;}
+  n789 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n789->n794[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n790 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n790->n793[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n791 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n791->n793[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n792 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n792->n793[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n793 [label = "imim1"style="filled" fillcolor = "cyan"];
+  n793->n794[label="|- ( ( ps -> ch ) -> ( ( ch -> th ) -> ( ps -> th ) ) )"];
+  n790->n791->n792[arrowhead="none" style="invisible"];
+  {rank=same;n792;n791;n790;}
+  n794 [label = "imim3i"style="filled" fillcolor = "cyan"];
+QED[style="invisible"]
+  n794->QED[label="|- ( ( ph -> ( ps -> ch ) ) -> ( ( ph -> ( ch -> th ) ) -> ( ph -> ( ps -> th ) ) ) )"];
+  n782->n785->n788->n789->n793[arrowhead="none" style="invisible"];
+  {rank=same;n793;n789;n788;n785;n782;}
+}

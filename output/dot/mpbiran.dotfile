@@ -1,0 +1,32 @@
+digraph proof_mpbiran {
+  rankdir = LR;
+  n16274 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n16274->n16284[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n16275 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n16275->n16277[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n16276 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n16276->n16277[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n16277 [label = "wa"color="lightgray" fontcolor="lightgray"];
+  n16277->n16284[color="lightgray" fontcolor="lightgray" label="wff ( ps /\ ch )"];
+  n16275->n16276[arrowhead="none" style="invisible"];
+  {rank=same;n16276;n16275;}
+  n16278 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n16278->n16284[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n16279 [label = "mpbiran.2"style="filled" fillcolor = "orange"];
+  n16279->n16284[label="|- ( ph <-> ( ps /\ ch ) )"];
+  n16280 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n16280->n16283[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n16281 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n16281->n16283[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n16282 [label = "mpbiran.1"style="filled" fillcolor = "orange"];
+  n16282->n16283[label="|- ps"];
+  n16283 [label = "biantrur"style="filled" fillcolor = "cyan"];
+  n16283->n16284[label="|- ( ch <-> ( ps /\ ch ) )"];
+  n16280->n16281->n16282[arrowhead="none" style="invisible"];
+  {rank=same;n16282;n16281;n16280;}
+  n16284 [label = "bitr4i"style="filled" fillcolor = "cyan"];
+QED[style="invisible"]
+  n16284->QED[label="|- ( ph <-> ch )"];
+  n16274->n16277->n16278->n16279->n16283[arrowhead="none" style="invisible"];
+  {rank=same;n16283;n16279;n16278;n16277;n16274;}
+}

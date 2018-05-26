@@ -1,0 +1,34 @@
+digraph proof_biimpi {
+  rankdir = LR;
+  n4481 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n4481->n4483[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n4482 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n4482->n4483[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n4483 [label = "wb"color="lightgray" fontcolor="lightgray"];
+  n4483->n4491[color="lightgray" fontcolor="lightgray" label="wff ( ph <-> ps )"];
+  n4481->n4482[arrowhead="none" style="invisible"];
+  {rank=same;n4482;n4481;}
+  n4484 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n4484->n4486[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n4485 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n4485->n4486[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n4486 [label = "wi"color="lightgray" fontcolor="lightgray"];
+  n4486->n4491[color="lightgray" fontcolor="lightgray" label="wff ( ph -> ps )"];
+  n4484->n4485[arrowhead="none" style="invisible"];
+  {rank=same;n4485;n4484;}
+  n4487 [label = "biimpi.1"style="filled" fillcolor = "orange"];
+  n4487->n4491[label="|- ( ph <-> ps )"];
+  n4488 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n4488->n4490[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n4489 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n4489->n4490[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n4490 [label = "bi1"style="filled" fillcolor = "cyan"];
+  n4490->n4491[label="|- ( ( ph <-> ps ) -> ( ph -> ps ) )"];
+  n4488->n4489[arrowhead="none" style="invisible"];
+  {rank=same;n4489;n4488;}
+  n4491 [label = "ax-mp"style="filled" fillcolor = "lime"];
+QED[style="invisible"]
+  n4491->QED[label="|- ( ph -> ps )"];
+  n4483->n4486->n4487->n4490[arrowhead="none" style="invisible"];
+  {rank=same;n4490;n4487;n4486;n4483;}
+}

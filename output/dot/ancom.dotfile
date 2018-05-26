@@ -1,0 +1,40 @@
+digraph proof_ancom {
+  rankdir = LR;
+  n8013 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n8013->n8015[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n8014 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n8014->n8015[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n8015 [label = "wa"color="lightgray" fontcolor="lightgray"];
+  n8015->n8025[color="lightgray" fontcolor="lightgray" label="wff ( ph /\ ps )"];
+  n8013->n8014[arrowhead="none" style="invisible"];
+  {rank=same;n8014;n8013;}
+  n8016 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n8016->n8018[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n8017 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n8017->n8018[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n8018 [label = "wa"color="lightgray" fontcolor="lightgray"];
+  n8018->n8025[color="lightgray" fontcolor="lightgray" label="wff ( ps /\ ph )"];
+  n8016->n8017[arrowhead="none" style="invisible"];
+  {rank=same;n8017;n8016;}
+  n8019 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n8019->n8021[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n8020 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n8020->n8021[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n8021 [label = "pm3.22"style="filled" fillcolor = "cyan"];
+  n8021->n8025[label="|- ( ( ph /\ ps ) -> ( ps /\ ph ) )"];
+  n8019->n8020[arrowhead="none" style="invisible"];
+  {rank=same;n8020;n8019;}
+  n8022 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n8022->n8024[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n8023 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n8023->n8024[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n8024 [label = "pm3.22"style="filled" fillcolor = "cyan"];
+  n8024->n8025[label="|- ( ( ps /\ ph ) -> ( ph /\ ps ) )"];
+  n8022->n8023[arrowhead="none" style="invisible"];
+  {rank=same;n8023;n8022;}
+  n8025 [label = "impbii"style="filled" fillcolor = "cyan"];
+QED[style="invisible"]
+  n8025->QED[label="|- ( ( ph /\ ps ) <-> ( ps /\ ph ) )"];
+  n8015->n8018->n8021->n8024[arrowhead="none" style="invisible"];
+  {rank=same;n8024;n8021;n8018;n8015;}
+}

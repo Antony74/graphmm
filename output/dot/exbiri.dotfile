@@ -1,0 +1,34 @@
+digraph proof_exbiri {
+  rankdir = LR;
+  n10667 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n10667->n10678[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n10668 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n10668->n10678[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n10669 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n10669->n10678[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n10670 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n10670->n10678[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n10671 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n10671->n10673[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n10672 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n10672->n10673[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n10673 [label = "wa"color="lightgray" fontcolor="lightgray"];
+  n10673->n10677[color="lightgray" fontcolor="lightgray" label="wff ( ph /\ ps )"];
+  n10671->n10672[arrowhead="none" style="invisible"];
+  {rank=same;n10672;n10671;}
+  n10674 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n10674->n10677[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n10675 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n10675->n10677[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n10676 [label = "exbiri.1"style="filled" fillcolor = "orange"];
+  n10676->n10677[label="|- ( ( ph /\ ps ) -> ( ch <-> th ) )"];
+  n10677 [label = "biimpar"style="filled" fillcolor = "cyan"];
+  n10677->n10678[label="|- ( ( ( ph /\ ps ) /\ th ) -> ch )"];
+  n10673->n10674->n10675->n10676[arrowhead="none" style="invisible"];
+  {rank=same;n10676;n10675;n10674;n10673;}
+  n10678 [label = "exp31"style="filled" fillcolor = "cyan"];
+QED[style="invisible"]
+  n10678->QED[label="|- ( ph -> ( ps -> ( th -> ch ) ) )"];
+  n10667->n10668->n10669->n10670->n10677[arrowhead="none" style="invisible"];
+  {rank=same;n10677;n10670;n10669;n10668;n10667;}
+}

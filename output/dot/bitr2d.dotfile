@@ -1,0 +1,30 @@
+digraph proof_bitr2d {
+  rankdir = LR;
+  n5226 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n5226->n5236[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n5227 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n5227->n5236[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n5228 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n5228->n5236[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n5229 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n5229->n5235[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n5230 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n5230->n5235[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n5231 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n5231->n5235[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n5232 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n5232->n5235[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n5233 [label = "bitr2d.1"style="filled" fillcolor = "orange"];
+  n5233->n5235[label="|- ( ph -> ( ps <-> ch ) )"];
+  n5234 [label = "bitr2d.2"style="filled" fillcolor = "orange"];
+  n5234->n5235[label="|- ( ph -> ( ch <-> th ) )"];
+  n5235 [label = "bitrd"style="filled" fillcolor = "cyan"];
+  n5235->n5236[label="|- ( ph -> ( ps <-> th ) )"];
+  n5229->n5230->n5231->n5232->n5233->n5234[arrowhead="none" style="invisible"];
+  {rank=same;n5234;n5233;n5232;n5231;n5230;n5229;}
+  n5236 [label = "bicomd"style="filled" fillcolor = "cyan"];
+QED[style="invisible"]
+  n5236->QED[label="|- ( ph -> ( th <-> ps ) )"];
+  n5226->n5227->n5228->n5235[arrowhead="none" style="invisible"];
+  {rank=same;n5235;n5228;n5227;n5226;}
+}

@@ -1,0 +1,24 @@
+digraph proof_pm2_24ii {
+  rankdir = LR;
+  n1478 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n1478->n1485[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n1479 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n1479->n1485[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n1480 [label = "pm2.24ii.1"style="filled" fillcolor = "orange"];
+  n1480->n1485[label="|- ph"];
+  n1481 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n1481->n1484[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n1482 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n1482->n1484[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n1483 [label = "pm2.24ii.2"style="filled" fillcolor = "orange"];
+  n1483->n1484[label="|- -. ph"];
+  n1484 [label = "pm2.21i"style="filled" fillcolor = "cyan"];
+  n1484->n1485[label="|- ( ph -> ps )"];
+  n1481->n1482->n1483[arrowhead="none" style="invisible"];
+  {rank=same;n1483;n1482;n1481;}
+  n1485 [label = "ax-mp"style="filled" fillcolor = "lime"];
+QED[style="invisible"]
+  n1485->QED[label="|- ps"];
+  n1478->n1479->n1480->n1484[arrowhead="none" style="invisible"];
+  {rank=same;n1484;n1480;n1479;n1478;}
+}

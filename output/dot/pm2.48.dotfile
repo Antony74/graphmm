@@ -1,0 +1,32 @@
+digraph proof_pm2_48 {
+  rankdir = LR;
+  n7431 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n7431->n7433[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n7432 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n7432->n7433[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n7433 [label = "wo"color="lightgray" fontcolor="lightgray"];
+  n7433->n7434[color="lightgray" fontcolor="lightgray" label="wff ( ph \/ ps )"];
+  n7431->n7432[arrowhead="none" style="invisible"];
+  {rank=same;n7432;n7431;}
+  n7434 [label = "wn"color="lightgray" fontcolor="lightgray"];
+  n7434->n7441[color="lightgray" fontcolor="lightgray" label="wff -. ( ph \/ ps )"];
+  n7435 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n7435->n7436[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n7436 [label = "wn"color="lightgray" fontcolor="lightgray"];
+  n7436->n7441[color="lightgray" fontcolor="lightgray" label="wff -. ps"];
+  n7437 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n7437->n7441[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n7438 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n7438->n7440[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n7439 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n7439->n7440[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n7440 [label = "pm2.46"style="filled" fillcolor = "cyan"];
+  n7440->n7441[label="|- ( -. ( ph \/ ps ) -> -. ps )"];
+  n7438->n7439[arrowhead="none" style="invisible"];
+  {rank=same;n7439;n7438;}
+  n7441 [label = "olcd"style="filled" fillcolor = "cyan"];
+QED[style="invisible"]
+  n7441->QED[label="|- ( -. ( ph \/ ps ) -> ( ph \/ -. ps ) )"];
+  n7434->n7436->n7437->n7440[arrowhead="none" style="invisible"];
+  {rank=same;n7440;n7437;n7436;n7434;}
+}

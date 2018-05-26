@@ -1,0 +1,56 @@
+digraph proof_bibi12i {
+  rankdir = LR;
+  n6035 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n6035->n6037[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n6036 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n6036->n6037[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n6037 [label = "wb"color="lightgray" fontcolor="lightgray"];
+  n6037->n6054[color="lightgray" fontcolor="lightgray" label="wff ( ph <-> ch )"];
+  n6035->n6036[arrowhead="none" style="invisible"];
+  {rank=same;n6036;n6035;}
+  n6038 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n6038->n6040[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n6039 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n6039->n6040[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n6040 [label = "wb"color="lightgray" fontcolor="lightgray"];
+  n6040->n6054[color="lightgray" fontcolor="lightgray" label="wff ( ph <-> th )"];
+  n6038->n6039[arrowhead="none" style="invisible"];
+  {rank=same;n6039;n6038;}
+  n6041 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n6041->n6043[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n6042 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n6042->n6043[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n6043 [label = "wb"color="lightgray" fontcolor="lightgray"];
+  n6043->n6054[color="lightgray" fontcolor="lightgray" label="wff ( ps <-> th )"];
+  n6041->n6042[arrowhead="none" style="invisible"];
+  {rank=same;n6042;n6041;}
+  n6044 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n6044->n6048[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n6045 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n6045->n6048[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n6046 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n6046->n6048[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n6047 [label = "bibi12.2"style="filled" fillcolor = "orange"];
+  n6047->n6048[label="|- ( ch <-> th )"];
+  n6048 [label = "bibi2i"style="filled" fillcolor = "cyan"];
+  n6048->n6054[label="|- ( ( ph <-> ch ) <-> ( ph <-> th ) )"];
+  n6044->n6045->n6046->n6047[arrowhead="none" style="invisible"];
+  {rank=same;n6047;n6046;n6045;n6044;}
+  n6049 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n6049->n6053[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n6050 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n6050->n6053[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n6051 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n6051->n6053[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n6052 [label = "bibi.a"style="filled" fillcolor = "orange"];
+  n6052->n6053[label="|- ( ph <-> ps )"];
+  n6053 [label = "bibi1i"style="filled" fillcolor = "cyan"];
+  n6053->n6054[label="|- ( ( ph <-> th ) <-> ( ps <-> th ) )"];
+  n6049->n6050->n6051->n6052[arrowhead="none" style="invisible"];
+  {rank=same;n6052;n6051;n6050;n6049;}
+  n6054 [label = "bitri"style="filled" fillcolor = "cyan"];
+QED[style="invisible"]
+  n6054->QED[label="|- ( ( ph <-> ch ) <-> ( ps <-> th ) )"];
+  n6037->n6040->n6043->n6048->n6053[arrowhead="none" style="invisible"];
+  {rank=same;n6053;n6048;n6043;n6040;n6037;}
+}

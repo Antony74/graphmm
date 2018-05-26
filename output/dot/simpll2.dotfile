@@ -1,0 +1,40 @@
+digraph proof_simpll2 {
+  rankdir = LR;
+  n19716 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n19716->n19719[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n19717 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n19717->n19719[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n19718 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n19718->n19719[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n19719 [label = "w3a"color="lightgray" fontcolor="lightgray"];
+  n19719->n19721[color="lightgray" fontcolor="lightgray" label="wff ( ph /\ ps /\ ch )"];
+  n19716->n19717->n19718[arrowhead="none" style="invisible"];
+  {rank=same;n19718;n19717;n19716;}
+  n19720 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n19720->n19721[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n19721 [label = "wa"color="lightgray" fontcolor="lightgray"];
+  n19721->n19729[color="lightgray" fontcolor="lightgray" label="wff ( ( ph /\ ps /\ ch ) /\ th )"];
+  n19719->n19720[arrowhead="none" style="invisible"];
+  {rank=same;n19720;n19719;}
+  n19722 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n19722->n19729[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n19723 [label = "wta"color="lightgray" fontcolor="lightgray"];
+  n19723->n19729[color="lightgray" fontcolor="lightgray" label="wff ta"];
+  n19724 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n19724->n19728[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n19725 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n19725->n19728[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n19726 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n19726->n19728[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n19727 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n19727->n19728[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n19728 [label = "simpl2"style="filled" fillcolor = "cyan"];
+  n19728->n19729[label="|- ( ( ( ph /\ ps /\ ch ) /\ th ) -> ps )"];
+  n19724->n19725->n19726->n19727[arrowhead="none" style="invisible"];
+  {rank=same;n19727;n19726;n19725;n19724;}
+  n19729 [label = "adantr"style="filled" fillcolor = "cyan"];
+QED[style="invisible"]
+  n19729->QED[label="|- ( ( ( ( ph /\ ps /\ ch ) /\ th ) /\ ta ) -> ps )"];
+  n19721->n19722->n19723->n19728[arrowhead="none" style="invisible"];
+  {rank=same;n19728;n19723;n19722;n19721;}
+}

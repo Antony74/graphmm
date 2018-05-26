@@ -1,0 +1,40 @@
+digraph proof_niabn {
+  rankdir = LR;
+  n17307 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n17307->n17309[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n17308 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n17308->n17309[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n17309 [label = "wa"color="lightgray" fontcolor="lightgray"];
+  n17309->n17320[color="lightgray" fontcolor="lightgray" label="wff ( ch /\ ps )"];
+  n17307->n17308[arrowhead="none" style="invisible"];
+  {rank=same;n17308;n17307;}
+  n17310 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n17310->n17320[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n17311 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n17311->n17312[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n17312 [label = "wn"color="lightgray" fontcolor="lightgray"];
+  n17312->n17320[color="lightgray" fontcolor="lightgray" label="wff -. ph"];
+  n17313 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n17313->n17315[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n17314 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n17314->n17315[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n17315 [label = "simpr"style="filled" fillcolor = "cyan"];
+  n17315->n17320[label="|- ( ( ch /\ ps ) -> ps )"];
+  n17313->n17314[arrowhead="none" style="invisible"];
+  {rank=same;n17314;n17313;}
+  n17316 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n17316->n17319[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n17317 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n17317->n17319[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n17318 [label = "niabn.1"style="filled" fillcolor = "orange"];
+  n17318->n17319[label="|- ph"];
+  n17319 [label = "pm2.24i"style="filled" fillcolor = "cyan"];
+  n17319->n17320[label="|- ( -. ph -> ps )"];
+  n17316->n17317->n17318[arrowhead="none" style="invisible"];
+  {rank=same;n17318;n17317;n17316;}
+  n17320 [label = "pm5.21ni"style="filled" fillcolor = "cyan"];
+QED[style="invisible"]
+  n17320->QED[label="|- ( -. ps -> ( ( ch /\ ps ) <-> -. ph ) )"];
+  n17309->n17310->n17312->n17315->n17319[arrowhead="none" style="invisible"];
+  {rank=same;n17319;n17315;n17312;n17310;n17309;}
+}

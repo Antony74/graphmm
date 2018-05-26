@@ -1,0 +1,26 @@
+digraph proof_xchbinxr {
+  rankdir = LR;
+  n5961 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n5961->n5969[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n5962 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n5962->n5969[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n5963 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n5963->n5969[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n5964 [label = "xchbinxr.1"style="filled" fillcolor = "orange"];
+  n5964->n5969[label="|- ( ph <-> -. ps )"];
+  n5965 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n5965->n5968[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n5966 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n5966->n5968[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n5967 [label = "xchbinxr.2"style="filled" fillcolor = "orange"];
+  n5967->n5968[label="|- ( ch <-> ps )"];
+  n5968 [label = "bicomi"style="filled" fillcolor = "cyan"];
+  n5968->n5969[label="|- ( ps <-> ch )"];
+  n5965->n5966->n5967[arrowhead="none" style="invisible"];
+  {rank=same;n5967;n5966;n5965;}
+  n5969 [label = "xchbinx"style="filled" fillcolor = "cyan"];
+QED[style="invisible"]
+  n5969->QED[label="|- ( ph <-> -. ch )"];
+  n5961->n5962->n5963->n5964->n5968[arrowhead="none" style="invisible"];
+  {rank=same;n5968;n5964;n5963;n5962;n5961;}
+}

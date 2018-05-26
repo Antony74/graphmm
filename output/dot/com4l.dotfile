@@ -1,0 +1,38 @@
+digraph proof_com4l {
+  rankdir = LR;
+  n874 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n874->n887[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n875 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n875->n887[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n876 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n876->n887[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n877 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n877->n887[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n878 [label = "wta"color="lightgray" fontcolor="lightgray"];
+  n878->n887[color="lightgray" fontcolor="lightgray" label="wff ta"];
+  n879 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n879->n886[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n880 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n880->n886[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n881 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n881->n886[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n882 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n882->n884[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n883 [label = "wta"color="lightgray" fontcolor="lightgray"];
+  n883->n884[color="lightgray" fontcolor="lightgray" label="wff ta"];
+  n884 [label = "wi"color="lightgray" fontcolor="lightgray"];
+  n884->n886[color="lightgray" fontcolor="lightgray" label="wff ( th -> ta )"];
+  n882->n883[arrowhead="none" style="invisible"];
+  {rank=same;n883;n882;}
+  n885 [label = "com4.1"style="filled" fillcolor = "orange"];
+  n885->n886[label="|- ( ph -> ( ps -> ( ch -> ( th -> ta ) ) ) )"];
+  n886 [label = "com3l"style="filled" fillcolor = "cyan"];
+  n886->n887[label="|- ( ps -> ( ch -> ( ph -> ( th -> ta ) ) ) )"];
+  n879->n880->n881->n884->n885[arrowhead="none" style="invisible"];
+  {rank=same;n885;n884;n881;n880;n879;}
+  n887 [label = "com34"style="filled" fillcolor = "cyan"];
+QED[style="invisible"]
+  n887->QED[label="|- ( ps -> ( ch -> ( th -> ( ph -> ta ) ) ) )"];
+  n874->n875->n876->n877->n878->n886[arrowhead="none" style="invisible"];
+  {rank=same;n886;n878;n877;n876;n875;n874;}
+}

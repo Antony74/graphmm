@@ -1,0 +1,36 @@
+digraph proof_sylanbrc {
+  rankdir = LR;
+  n11439 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n11439->n11451[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n11440 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n11440->n11442[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n11441 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n11441->n11442[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n11442 [label = "wa"color="lightgray" fontcolor="lightgray"];
+  n11442->n11451[color="lightgray" fontcolor="lightgray" label="wff ( ps /\ ch )"];
+  n11440->n11441[arrowhead="none" style="invisible"];
+  {rank=same;n11441;n11440;}
+  n11443 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n11443->n11451[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n11444 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n11444->n11449[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n11445 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n11445->n11449[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n11446 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n11446->n11449[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n11447 [label = "sylanbrc.1"style="filled" fillcolor = "orange"];
+  n11447->n11449[label="|- ( ph -> ps )"];
+  n11448 [label = "sylanbrc.2"style="filled" fillcolor = "orange"];
+  n11448->n11449[label="|- ( ph -> ch )"];
+  n11449 [label = "jca"style="filled" fillcolor = "cyan"];
+  n11449->n11451[label="|- ( ph -> ( ps /\ ch ) )"];
+  n11444->n11445->n11446->n11447->n11448[arrowhead="none" style="invisible"];
+  {rank=same;n11448;n11447;n11446;n11445;n11444;}
+  n11450 [label = "sylanbrc.3"style="filled" fillcolor = "orange"];
+  n11450->n11451[label="|- ( th <-> ( ps /\ ch ) )"];
+  n11451 [label = "sylibr"style="filled" fillcolor = "cyan"];
+QED[style="invisible"]
+  n11451->QED[label="|- ( ph -> th )"];
+  n11439->n11442->n11443->n11449->n11450[arrowhead="none" style="invisible"];
+  {rank=same;n11450;n11449;n11443;n11442;n11439;}
+}

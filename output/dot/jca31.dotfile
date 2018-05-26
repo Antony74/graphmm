@@ -1,0 +1,36 @@
+digraph proof_jca31 {
+  rankdir = LR;
+  n9278 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n9278->n9290[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n9279 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n9279->n9281[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n9280 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n9280->n9281[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n9281 [label = "wa"color="lightgray" fontcolor="lightgray"];
+  n9281->n9290[color="lightgray" fontcolor="lightgray" label="wff ( ps /\ ch )"];
+  n9279->n9280[arrowhead="none" style="invisible"];
+  {rank=same;n9280;n9279;}
+  n9282 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n9282->n9290[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n9283 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n9283->n9288[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n9284 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n9284->n9288[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n9285 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n9285->n9288[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n9286 [label = "jca31.1"style="filled" fillcolor = "orange"];
+  n9286->n9288[label="|- ( ph -> ps )"];
+  n9287 [label = "jca31.2"style="filled" fillcolor = "orange"];
+  n9287->n9288[label="|- ( ph -> ch )"];
+  n9288 [label = "jca"style="filled" fillcolor = "cyan"];
+  n9288->n9290[label="|- ( ph -> ( ps /\ ch ) )"];
+  n9283->n9284->n9285->n9286->n9287[arrowhead="none" style="invisible"];
+  {rank=same;n9287;n9286;n9285;n9284;n9283;}
+  n9289 [label = "jca31.3"style="filled" fillcolor = "orange"];
+  n9289->n9290[label="|- ( ph -> th )"];
+  n9290 [label = "jca"style="filled" fillcolor = "cyan"];
+QED[style="invisible"]
+  n9290->QED[label="|- ( ph -> ( ( ps /\ ch ) /\ th ) )"];
+  n9278->n9281->n9282->n9288->n9289[arrowhead="none" style="invisible"];
+  {rank=same;n9289;n9288;n9282;n9281;n9278;}
+}

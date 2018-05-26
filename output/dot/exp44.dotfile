@@ -1,0 +1,42 @@
+digraph proof_exp44 {
+  rankdir = LR;
+  n10544 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n10544->n10558[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n10545 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n10545->n10558[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n10546 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n10546->n10558[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n10547 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n10547->n10549[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n10548 [label = "wta"color="lightgray" fontcolor="lightgray"];
+  n10548->n10549[color="lightgray" fontcolor="lightgray" label="wff ta"];
+  n10549 [label = "wi"color="lightgray" fontcolor="lightgray"];
+  n10549->n10558[color="lightgray" fontcolor="lightgray" label="wff ( th -> ta )"];
+  n10547->n10548[arrowhead="none" style="invisible"];
+  {rank=same;n10548;n10547;}
+  n10550 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n10550->n10557[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n10551 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n10551->n10553[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n10552 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n10552->n10553[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n10553 [label = "wa"color="lightgray" fontcolor="lightgray"];
+  n10553->n10557[color="lightgray" fontcolor="lightgray" label="wff ( ps /\ ch )"];
+  n10551->n10552[arrowhead="none" style="invisible"];
+  {rank=same;n10552;n10551;}
+  n10554 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n10554->n10557[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n10555 [label = "wta"color="lightgray" fontcolor="lightgray"];
+  n10555->n10557[color="lightgray" fontcolor="lightgray" label="wff ta"];
+  n10556 [label = "exp44.1"style="filled" fillcolor = "orange"];
+  n10556->n10557[label="|- ( ( ph /\ ( ( ps /\ ch ) /\ th ) ) -> ta )"];
+  n10557 [label = "exp32"style="filled" fillcolor = "cyan"];
+  n10557->n10558[label="|- ( ph -> ( ( ps /\ ch ) -> ( th -> ta ) ) )"];
+  n10550->n10553->n10554->n10555->n10556[arrowhead="none" style="invisible"];
+  {rank=same;n10556;n10555;n10554;n10553;n10550;}
+  n10558 [label = "exp3a"style="filled" fillcolor = "cyan"];
+QED[style="invisible"]
+  n10558->QED[label="|- ( ph -> ( ps -> ( ch -> ( th -> ta ) ) ) )"];
+  n10544->n10545->n10546->n10549->n10557[arrowhead="none" style="invisible"];
+  {rank=same;n10557;n10549;n10546;n10545;n10544;}
+}

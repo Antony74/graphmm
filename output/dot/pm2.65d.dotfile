@@ -1,0 +1,28 @@
+digraph proof_pm2_65d {
+  rankdir = LR;
+  n2008 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n2008->n2017[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n2009 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n2009->n2017[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n2010 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n2010->n2016[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n2011 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n2011->n2016[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n2012 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n2012->n2016[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n2013 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n2013->n2016[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n2014 [label = "pm2.65d.2"style="filled" fillcolor = "orange"];
+  n2014->n2016[label="|- ( ph -> ( ps -> -. ch ) )"];
+  n2015 [label = "pm2.65d.1"style="filled" fillcolor = "orange"];
+  n2015->n2016[label="|- ( ph -> ( ps -> ch ) )"];
+  n2016 [label = "nsyld"style="filled" fillcolor = "cyan"];
+  n2016->n2017[label="|- ( ph -> ( ps -> -. ps ) )"];
+  n2010->n2011->n2012->n2013->n2014->n2015[arrowhead="none" style="invisible"];
+  {rank=same;n2015;n2014;n2013;n2012;n2011;n2010;}
+  n2017 [label = "pm2.01d"style="filled" fillcolor = "cyan"];
+QED[style="invisible"]
+  n2017->QED[label="|- ( ph -> -. ps )"];
+  n2008->n2009->n2016[arrowhead="none" style="invisible"];
+  {rank=same;n2016;n2009;n2008;}
+}

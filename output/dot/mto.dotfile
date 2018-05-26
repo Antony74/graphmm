@@ -1,0 +1,26 @@
+digraph proof_mto {
+  rankdir = LR;
+  n2018 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n2018->n2026[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n2019 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n2019->n2026[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n2020 [label = "mto.2"style="filled" fillcolor = "orange"];
+  n2020->n2026[label="|- ( ph -> ps )"];
+  n2021 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n2021->n2022[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n2022 [label = "wn"color="lightgray" fontcolor="lightgray"];
+  n2022->n2025[color="lightgray" fontcolor="lightgray" label="wff -. ps"];
+  n2023 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n2023->n2025[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n2024 [label = "mto.1"style="filled" fillcolor = "orange"];
+  n2024->n2025[label="|- -. ps"];
+  n2025 [label = "a1i"style="filled" fillcolor = "cyan"];
+  n2025->n2026[label="|- ( ph -> -. ps )"];
+  n2022->n2023->n2024[arrowhead="none" style="invisible"];
+  {rank=same;n2024;n2023;n2022;}
+  n2026 [label = "pm2.65i"style="filled" fillcolor = "cyan"];
+QED[style="invisible"]
+  n2026->QED[label="|- -. ph"];
+  n2018->n2019->n2020->n2025[arrowhead="none" style="invisible"];
+  {rank=same;n2025;n2020;n2019;n2018;}
+}

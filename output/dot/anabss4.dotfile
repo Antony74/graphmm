@@ -1,0 +1,26 @@
+digraph proof_anabss4 {
+  rankdir = LR;
+  n13907 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n13907->n13915[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n13908 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n13908->n13915[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n13909 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n13909->n13915[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n13910 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n13910->n13914[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n13911 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n13911->n13914[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n13912 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n13912->n13914[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n13913 [label = "anabss4.1"style="filled" fillcolor = "orange"];
+  n13913->n13914[label="|- ( ( ( ps /\ ph ) /\ ps ) -> ch )"];
+  n13914 [label = "anabss1"style="filled" fillcolor = "cyan"];
+  n13914->n13915[label="|- ( ( ps /\ ph ) -> ch )"];
+  n13910->n13911->n13912->n13913[arrowhead="none" style="invisible"];
+  {rank=same;n13913;n13912;n13911;n13910;}
+  n13915 [label = "ancoms"style="filled" fillcolor = "cyan"];
+QED[style="invisible"]
+  n13915->QED[label="|- ( ( ph /\ ps ) -> ch )"];
+  n13907->n13908->n13909->n13914[arrowhead="none" style="invisible"];
+  {rank=same;n13914;n13909;n13908;n13907;}
+}

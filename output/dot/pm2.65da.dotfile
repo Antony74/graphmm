@@ -1,0 +1,40 @@
+digraph proof_pm2_65da {
+  rankdir = LR;
+  n9740 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n9740->n9754[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n9741 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n9741->n9754[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n9742 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n9742->n9754[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n9743 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n9743->n9747[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n9744 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n9744->n9747[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n9745 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n9745->n9747[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n9746 [label = "pm2.65da.1"style="filled" fillcolor = "orange"];
+  n9746->n9747[label="|- ( ( ph /\ ps ) -> ch )"];
+  n9747 [label = "ex"style="filled" fillcolor = "cyan"];
+  n9747->n9754[label="|- ( ph -> ( ps -> ch ) )"];
+  n9743->n9744->n9745->n9746[arrowhead="none" style="invisible"];
+  {rank=same;n9746;n9745;n9744;n9743;}
+  n9748 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n9748->n9753[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n9749 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n9749->n9753[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n9750 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n9750->n9751[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n9751 [label = "wn"color="lightgray" fontcolor="lightgray"];
+  n9751->n9753[color="lightgray" fontcolor="lightgray" label="wff -. ch"];
+  n9752 [label = "pm2.65da.2"style="filled" fillcolor = "orange"];
+  n9752->n9753[label="|- ( ( ph /\ ps ) -> -. ch )"];
+  n9753 [label = "ex"style="filled" fillcolor = "cyan"];
+  n9753->n9754[label="|- ( ph -> ( ps -> -. ch ) )"];
+  n9748->n9749->n9751->n9752[arrowhead="none" style="invisible"];
+  {rank=same;n9752;n9751;n9749;n9748;}
+  n9754 [label = "pm2.65d"style="filled" fillcolor = "cyan"];
+QED[style="invisible"]
+  n9754->QED[label="|- ( ph -> -. ps )"];
+  n9740->n9741->n9742->n9747->n9753[arrowhead="none" style="invisible"];
+  {rank=same;n9753;n9747;n9742;n9741;n9740;}
+}

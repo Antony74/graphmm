@@ -1,0 +1,34 @@
+digraph proof_3syld {
+  rankdir = LR;
+  n516 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n516->n528[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n517 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n517->n528[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n518 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n518->n528[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n519 [label = "wta"color="lightgray" fontcolor="lightgray"];
+  n519->n528[color="lightgray" fontcolor="lightgray" label="wff ta"];
+  n520 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n520->n526[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n521 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n521->n526[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n522 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n522->n526[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n523 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n523->n526[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n524 [label = "3syld.1"style="filled" fillcolor = "orange"];
+  n524->n526[label="|- ( ph -> ( ps -> ch ) )"];
+  n525 [label = "3syld.2"style="filled" fillcolor = "orange"];
+  n525->n526[label="|- ( ph -> ( ch -> th ) )"];
+  n526 [label = "syld"style="filled" fillcolor = "cyan"];
+  n526->n528[label="|- ( ph -> ( ps -> th ) )"];
+  n520->n521->n522->n523->n524->n525[arrowhead="none" style="invisible"];
+  {rank=same;n525;n524;n523;n522;n521;n520;}
+  n527 [label = "3syld.3"style="filled" fillcolor = "orange"];
+  n527->n528[label="|- ( ph -> ( th -> ta ) )"];
+  n528 [label = "syld"style="filled" fillcolor = "cyan"];
+QED[style="invisible"]
+  n528->QED[label="|- ( ph -> ( ps -> ta ) )"];
+  n516->n517->n518->n519->n526->n527[arrowhead="none" style="invisible"];
+  {rank=same;n527;n526;n519;n518;n517;n516;}
+}

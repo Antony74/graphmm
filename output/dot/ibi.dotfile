@@ -1,0 +1,24 @@
+digraph proof_ibi {
+  rankdir = LR;
+  n4961 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n4961->n4968[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n4962 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n4962->n4968[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n4963 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n4963->n4967[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n4964 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n4964->n4967[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n4965 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n4965->n4967[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n4966 [label = "ibi.1"style="filled" fillcolor = "orange"];
+  n4966->n4967[label="|- ( ph -> ( ph <-> ps ) )"];
+  n4967 [label = "biimpd"style="filled" fillcolor = "cyan"];
+  n4967->n4968[label="|- ( ph -> ( ph -> ps ) )"];
+  n4963->n4964->n4965->n4966[arrowhead="none" style="invisible"];
+  {rank=same;n4966;n4965;n4964;n4963;}
+  n4968 [label = "pm2.43i"style="filled" fillcolor = "cyan"];
+QED[style="invisible"]
+  n4968->QED[label="|- ( ph -> ps )"];
+  n4961->n4962->n4967[arrowhead="none" style="invisible"];
+  {rank=same;n4967;n4962;n4961;}
+}

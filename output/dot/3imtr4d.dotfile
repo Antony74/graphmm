@@ -1,0 +1,34 @@
+digraph proof_3imtr4d {
+  rankdir = LR;
+  n5380 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n5380->n5392[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n5381 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n5381->n5392[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n5382 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n5382->n5392[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n5383 [label = "wta"color="lightgray" fontcolor="lightgray"];
+  n5383->n5392[color="lightgray" fontcolor="lightgray" label="wff ta"];
+  n5384 [label = "3imtr4d.2"style="filled" fillcolor = "orange"];
+  n5384->n5392[label="|- ( ph -> ( th <-> ps ) )"];
+  n5385 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n5385->n5391[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n5386 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n5386->n5391[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n5387 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n5387->n5391[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n5388 [label = "wta"color="lightgray" fontcolor="lightgray"];
+  n5388->n5391[color="lightgray" fontcolor="lightgray" label="wff ta"];
+  n5389 [label = "3imtr4d.1"style="filled" fillcolor = "orange"];
+  n5389->n5391[label="|- ( ph -> ( ps -> ch ) )"];
+  n5390 [label = "3imtr4d.3"style="filled" fillcolor = "orange"];
+  n5390->n5391[label="|- ( ph -> ( ta <-> ch ) )"];
+  n5391 [label = "sylibrd"style="filled" fillcolor = "cyan"];
+  n5391->n5392[label="|- ( ph -> ( ps -> ta ) )"];
+  n5385->n5386->n5387->n5388->n5389->n5390[arrowhead="none" style="invisible"];
+  {rank=same;n5390;n5389;n5388;n5387;n5386;n5385;}
+  n5392 [label = "sylbid"style="filled" fillcolor = "cyan"];
+QED[style="invisible"]
+  n5392->QED[label="|- ( ph -> ( th -> ta ) )"];
+  n5380->n5381->n5382->n5383->n5384->n5391[arrowhead="none" style="invisible"];
+  {rank=same;n5391;n5384;n5383;n5382;n5381;n5380;}
+}

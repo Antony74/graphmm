@@ -1,0 +1,30 @@
+digraph proof_bianfi {
+  rankdir = LR;
+  n16385 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n16385->n16394[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n16386 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n16386->n16388[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n16387 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n16387->n16388[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n16388 [label = "wa"color="lightgray" fontcolor="lightgray"];
+  n16388->n16394[color="lightgray" fontcolor="lightgray" label="wff ( ps /\ ph )"];
+  n16386->n16387[arrowhead="none" style="invisible"];
+  {rank=same;n16387;n16386;}
+  n16389 [label = "bianfi.1"style="filled" fillcolor = "orange"];
+  n16389->n16394[label="|- -. ph"];
+  n16390 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n16390->n16393[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n16391 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n16391->n16393[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n16392 [label = "bianfi.1"style="filled" fillcolor = "orange"];
+  n16392->n16393[label="|- -. ph"];
+  n16393 [label = "intnan"style="filled" fillcolor = "cyan"];
+  n16393->n16394[label="|- -. ( ps /\ ph )"];
+  n16390->n16391->n16392[arrowhead="none" style="invisible"];
+  {rank=same;n16392;n16391;n16390;}
+  n16394 [label = "2false"style="filled" fillcolor = "cyan"];
+QED[style="invisible"]
+  n16394->QED[label="|- ( ph <-> ( ps /\ ph ) )"];
+  n16385->n16388->n16389->n16393[arrowhead="none" style="invisible"];
+  {rank=same;n16393;n16389;n16388;n16385;}
+}

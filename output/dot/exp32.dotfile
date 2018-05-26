@@ -1,0 +1,34 @@
+digraph proof_exp32 {
+  rankdir = LR;
+  n10424 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n10424->n10435[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n10425 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n10425->n10435[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n10426 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n10426->n10435[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n10427 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n10427->n10435[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n10428 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n10428->n10434[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n10429 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n10429->n10431[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n10430 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n10430->n10431[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n10431 [label = "wa"color="lightgray" fontcolor="lightgray"];
+  n10431->n10434[color="lightgray" fontcolor="lightgray" label="wff ( ps /\ ch )"];
+  n10429->n10430[arrowhead="none" style="invisible"];
+  {rank=same;n10430;n10429;}
+  n10432 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n10432->n10434[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n10433 [label = "exp32.1"style="filled" fillcolor = "orange"];
+  n10433->n10434[label="|- ( ( ph /\ ( ps /\ ch ) ) -> th )"];
+  n10434 [label = "ex"style="filled" fillcolor = "cyan"];
+  n10434->n10435[label="|- ( ph -> ( ( ps /\ ch ) -> th ) )"];
+  n10428->n10431->n10432->n10433[arrowhead="none" style="invisible"];
+  {rank=same;n10433;n10432;n10431;n10428;}
+  n10435 [label = "exp3a"style="filled" fillcolor = "cyan"];
+QED[style="invisible"]
+  n10435->QED[label="|- ( ph -> ( ps -> ( ch -> th ) ) )"];
+  n10424->n10425->n10426->n10427->n10434[arrowhead="none" style="invisible"];
+  {rank=same;n10434;n10427;n10426;n10425;n10424;}
+}

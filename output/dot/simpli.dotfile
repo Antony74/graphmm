@@ -1,0 +1,28 @@
+digraph proof_simpli {
+  rankdir = LR;
+  n8088 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n8088->n8090[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n8089 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n8089->n8090[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n8090 [label = "wa"color="lightgray" fontcolor="lightgray"];
+  n8090->n8096[color="lightgray" fontcolor="lightgray" label="wff ( ph /\ ps )"];
+  n8088->n8089[arrowhead="none" style="invisible"];
+  {rank=same;n8089;n8088;}
+  n8091 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n8091->n8096[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n8092 [label = "simpli.1"style="filled" fillcolor = "orange"];
+  n8092->n8096[label="|- ( ph /\ ps )"];
+  n8093 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n8093->n8095[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n8094 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n8094->n8095[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n8095 [label = "simpl"style="filled" fillcolor = "cyan"];
+  n8095->n8096[label="|- ( ( ph /\ ps ) -> ph )"];
+  n8093->n8094[arrowhead="none" style="invisible"];
+  {rank=same;n8094;n8093;}
+  n8096 [label = "ax-mp"style="filled" fillcolor = "lime"];
+QED[style="invisible"]
+  n8096->QED[label="|- ph"];
+  n8090->n8091->n8092->n8095[arrowhead="none" style="invisible"];
+  {rank=same;n8095;n8092;n8091;n8090;}
+}

@@ -1,0 +1,20 @@
+digraph proof_jctr {
+  rankdir = LR;
+  n9340 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n9340->n9346[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n9341 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n9341->n9346[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n9342 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n9342->n9346[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n9343 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n9343->n9344[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n9344 [label = "id"style="filled" fillcolor = "cyan"];
+  n9344->n9346[label="|- ( ph -> ph )"];
+  n9345 [label = "jctl.1"style="filled" fillcolor = "orange"];
+  n9345->n9346[label="|- ps"];
+  n9346 [label = "jctir"style="filled" fillcolor = "cyan"];
+QED[style="invisible"]
+  n9346->QED[label="|- ( ph -> ( ph /\ ps ) )"];
+  n9340->n9341->n9342->n9344->n9345[arrowhead="none" style="invisible"];
+  {rank=same;n9345;n9344;n9342;n9341;n9340;}
+}

@@ -1,0 +1,28 @@
+digraph proof_anabsi6 {
+  rankdir = LR;
+  n13937 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n13937->n13946[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n13938 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n13938->n13946[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n13939 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n13939->n13946[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n13940 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n13940->n13945[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n13941 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n13941->n13945[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n13942 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n13942->n13945[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n13943 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n13943->n13945[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n13944 [label = "anabsi6.1"style="filled" fillcolor = "orange"];
+  n13944->n13945[label="|- ( ph -> ( ( ps /\ ph ) -> ch ) )"];
+  n13945 [label = "ancomsd"style="filled" fillcolor = "cyan"];
+  n13945->n13946[label="|- ( ph -> ( ( ph /\ ps ) -> ch ) )"];
+  n13940->n13941->n13942->n13943->n13944[arrowhead="none" style="invisible"];
+  {rank=same;n13944;n13943;n13942;n13941;n13940;}
+  n13946 [label = "anabsi5"style="filled" fillcolor = "cyan"];
+QED[style="invisible"]
+  n13946->QED[label="|- ( ( ph /\ ps ) -> ch )"];
+  n13937->n13938->n13939->n13945[arrowhead="none" style="invisible"];
+  {rank=same;n13945;n13939;n13938;n13937;}
+}

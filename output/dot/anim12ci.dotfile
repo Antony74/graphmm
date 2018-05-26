@@ -1,0 +1,36 @@
+digraph proof_anim12ci {
+  rankdir = LR;
+  n9607 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n9607->n9619[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n9608 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n9608->n9619[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n9609 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n9609->n9611[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n9610 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n9610->n9611[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n9611 [label = "wa"color="lightgray" fontcolor="lightgray"];
+  n9611->n9619[color="lightgray" fontcolor="lightgray" label="wff ( th /\ ps )"];
+  n9609->n9610[arrowhead="none" style="invisible"];
+  {rank=same;n9610;n9609;}
+  n9612 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n9612->n9618[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n9613 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n9613->n9618[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n9614 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n9614->n9618[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n9615 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n9615->n9618[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n9616 [label = "anim12i.2"style="filled" fillcolor = "orange"];
+  n9616->n9618[label="|- ( ch -> th )"];
+  n9617 [label = "anim12i.1"style="filled" fillcolor = "orange"];
+  n9617->n9618[label="|- ( ph -> ps )"];
+  n9618 [label = "anim12i"style="filled" fillcolor = "cyan"];
+  n9618->n9619[label="|- ( ( ch /\ ph ) -> ( th /\ ps ) )"];
+  n9612->n9613->n9614->n9615->n9616->n9617[arrowhead="none" style="invisible"];
+  {rank=same;n9617;n9616;n9615;n9614;n9613;n9612;}
+  n9619 [label = "ancoms"style="filled" fillcolor = "cyan"];
+QED[style="invisible"]
+  n9619->QED[label="|- ( ( ph /\ ch ) -> ( th /\ ps ) )"];
+  n9607->n9608->n9611->n9618[arrowhead="none" style="invisible"];
+  {rank=same;n9618;n9611;n9608;n9607;}
+}

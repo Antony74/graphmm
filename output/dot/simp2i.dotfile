@@ -1,0 +1,32 @@
+digraph proof_simp2i {
+  rankdir = LR;
+  n19368 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n19368->n19371[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n19369 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n19369->n19371[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n19370 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n19370->n19371[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n19371 [label = "w3a"color="lightgray" fontcolor="lightgray"];
+  n19371->n19378[color="lightgray" fontcolor="lightgray" label="wff ( ph /\ ps /\ ch )"];
+  n19368->n19369->n19370[arrowhead="none" style="invisible"];
+  {rank=same;n19370;n19369;n19368;}
+  n19372 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n19372->n19378[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n19373 [label = "3simp1i.1"style="filled" fillcolor = "orange"];
+  n19373->n19378[label="|- ( ph /\ ps /\ ch )"];
+  n19374 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n19374->n19377[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n19375 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n19375->n19377[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n19376 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n19376->n19377[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n19377 [label = "simp2"style="filled" fillcolor = "cyan"];
+  n19377->n19378[label="|- ( ( ph /\ ps /\ ch ) -> ps )"];
+  n19374->n19375->n19376[arrowhead="none" style="invisible"];
+  {rank=same;n19376;n19375;n19374;}
+  n19378 [label = "ax-mp"style="filled" fillcolor = "lime"];
+QED[style="invisible"]
+  n19378->QED[label="|- ps"];
+  n19371->n19372->n19373->n19377[arrowhead="none" style="invisible"];
+  {rank=same;n19377;n19373;n19372;n19371;}
+}

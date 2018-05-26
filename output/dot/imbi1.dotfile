@@ -1,0 +1,32 @@
+digraph proof_imbi1 {
+  rankdir = LR;
+  n6223 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n6223->n6225[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n6224 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n6224->n6225[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n6225 [label = "wb"color="lightgray" fontcolor="lightgray"];
+  n6225->n6233[color="lightgray" fontcolor="lightgray" label="wff ( ph <-> ps )"];
+  n6223->n6224[arrowhead="none" style="invisible"];
+  {rank=same;n6224;n6223;}
+  n6226 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n6226->n6233[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n6227 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n6227->n6233[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n6228 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n6228->n6233[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n6229 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n6229->n6231[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n6230 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n6230->n6231[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n6231 [label = "wb"color="lightgray" fontcolor="lightgray"];
+  n6231->n6232[color="lightgray" fontcolor="lightgray" label="wff ( ph <-> ps )"];
+  n6229->n6230[arrowhead="none" style="invisible"];
+  {rank=same;n6230;n6229;}
+  n6232 [label = "id"style="filled" fillcolor = "cyan"];
+  n6232->n6233[label="|- ( ( ph <-> ps ) -> ( ph <-> ps ) )"];
+  n6233 [label = "imbi1d"style="filled" fillcolor = "cyan"];
+QED[style="invisible"]
+  n6233->QED[label="|- ( ( ph <-> ps ) -> ( ( ph -> ch ) <-> ( ps -> ch ) ) )"];
+  n6225->n6226->n6227->n6228->n6232[arrowhead="none" style="invisible"];
+  {rank=same;n6232;n6228;n6227;n6226;n6225;}
+}

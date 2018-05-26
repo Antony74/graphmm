@@ -1,0 +1,28 @@
+digraph proof_intnan {
+  rankdir = LR;
+  n16236 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n16236->n16238[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n16237 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n16237->n16238[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n16238 [label = "wa"color="lightgray" fontcolor="lightgray"];
+  n16238->n16244[color="lightgray" fontcolor="lightgray" label="wff ( ps /\ ph )"];
+  n16236->n16237[arrowhead="none" style="invisible"];
+  {rank=same;n16237;n16236;}
+  n16239 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n16239->n16244[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n16240 [label = "intnan.1"style="filled" fillcolor = "orange"];
+  n16240->n16244[label="|- -. ph"];
+  n16241 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n16241->n16243[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n16242 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n16242->n16243[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n16243 [label = "simpr"style="filled" fillcolor = "cyan"];
+  n16243->n16244[label="|- ( ( ps /\ ph ) -> ph )"];
+  n16241->n16242[arrowhead="none" style="invisible"];
+  {rank=same;n16242;n16241;}
+  n16244 [label = "mto"style="filled" fillcolor = "cyan"];
+QED[style="invisible"]
+  n16244->QED[label="|- -. ( ps /\ ph )"];
+  n16238->n16239->n16240->n16243[arrowhead="none" style="invisible"];
+  {rank=same;n16243;n16240;n16239;n16238;}
+}

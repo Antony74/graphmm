@@ -1,0 +1,30 @@
+digraph proof_sylibd {
+  rankdir = LR;
+  n4687 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n4687->n4697[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n4688 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n4688->n4697[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n4689 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n4689->n4697[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n4690 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n4690->n4697[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n4691 [label = "sylibd.1"style="filled" fillcolor = "orange"];
+  n4691->n4697[label="|- ( ph -> ( ps -> ch ) )"];
+  n4692 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n4692->n4696[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n4693 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n4693->n4696[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n4694 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n4694->n4696[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n4695 [label = "sylibd.2"style="filled" fillcolor = "orange"];
+  n4695->n4696[label="|- ( ph -> ( ch <-> th ) )"];
+  n4696 [label = "biimpd"style="filled" fillcolor = "cyan"];
+  n4696->n4697[label="|- ( ph -> ( ch -> th ) )"];
+  n4692->n4693->n4694->n4695[arrowhead="none" style="invisible"];
+  {rank=same;n4695;n4694;n4693;n4692;}
+  n4697 [label = "syld"style="filled" fillcolor = "cyan"];
+QED[style="invisible"]
+  n4697->QED[label="|- ( ph -> ( ps -> th ) )"];
+  n4687->n4688->n4689->n4690->n4691->n4696[arrowhead="none" style="invisible"];
+  {rank=same;n4696;n4691;n4690;n4689;n4688;n4687;}
+}

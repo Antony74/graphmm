@@ -1,0 +1,32 @@
+digraph proof_orim2 {
+  rankdir = LR;
+  n14386 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n14386->n14388[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n14387 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n14387->n14388[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n14388 [label = "wi"color="lightgray" fontcolor="lightgray"];
+  n14388->n14396[color="lightgray" fontcolor="lightgray" label="wff ( ps -> ch )"];
+  n14386->n14387[arrowhead="none" style="invisible"];
+  {rank=same;n14387;n14386;}
+  n14389 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n14389->n14396[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n14390 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n14390->n14396[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n14391 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n14391->n14396[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n14392 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n14392->n14394[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n14393 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n14393->n14394[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n14394 [label = "wi"color="lightgray" fontcolor="lightgray"];
+  n14394->n14395[color="lightgray" fontcolor="lightgray" label="wff ( ps -> ch )"];
+  n14392->n14393[arrowhead="none" style="invisible"];
+  {rank=same;n14393;n14392;}
+  n14395 [label = "id"style="filled" fillcolor = "cyan"];
+  n14395->n14396[label="|- ( ( ps -> ch ) -> ( ps -> ch ) )"];
+  n14396 [label = "orim2d"style="filled" fillcolor = "cyan"];
+QED[style="invisible"]
+  n14396->QED[label="|- ( ( ps -> ch ) -> ( ( ph \/ ps ) -> ( ph \/ ch ) ) )"];
+  n14388->n14389->n14390->n14391->n14395[arrowhead="none" style="invisible"];
+  {rank=same;n14395;n14391;n14390;n14389;n14388;}
+}

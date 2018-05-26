@@ -1,0 +1,44 @@
+digraph proof_bisym {
+  rankdir = LR;
+  n5693 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n5693->n5695[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n5694 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n5694->n5695[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n5695 [label = "wi"color="lightgray" fontcolor="lightgray"];
+  n5695->n5707[color="lightgray" fontcolor="lightgray" label="wff ( ch -> th )"];
+  n5693->n5694[arrowhead="none" style="invisible"];
+  {rank=same;n5694;n5693;}
+  n5696 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n5696->n5698[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n5697 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n5697->n5698[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n5698 [label = "wi"color="lightgray" fontcolor="lightgray"];
+  n5698->n5707[color="lightgray" fontcolor="lightgray" label="wff ( th -> ch )"];
+  n5696->n5697[arrowhead="none" style="invisible"];
+  {rank=same;n5697;n5696;}
+  n5699 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n5699->n5701[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n5700 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n5700->n5701[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n5701 [label = "wb"color="lightgray" fontcolor="lightgray"];
+  n5701->n5707[color="lightgray" fontcolor="lightgray" label="wff ( ch <-> th )"];
+  n5699->n5700[arrowhead="none" style="invisible"];
+  {rank=same;n5700;n5699;}
+  n5702 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n5702->n5707[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n5703 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n5703->n5707[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n5704 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n5704->n5706[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n5705 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n5705->n5706[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n5706 [label = "bi3"style="filled" fillcolor = "cyan"];
+  n5706->n5707[label="|- ( ( ch -> th ) -> ( ( th -> ch ) -> ( ch <-> th ) ) )"];
+  n5704->n5705[arrowhead="none" style="invisible"];
+  {rank=same;n5705;n5704;}
+  n5707 [label = "bi3ant"style="filled" fillcolor = "cyan"];
+QED[style="invisible"]
+  n5707->QED[label="|- ( ( ( ph -> ps ) -> ( ch -> th ) ) -> ( ( ( ps -> ph ) -> ( th -> ch ) ) -> ( ( ph <-> ps ) -> ( ch <-> th ) ) ) )"];
+  n5695->n5698->n5701->n5702->n5703->n5706[arrowhead="none" style="invisible"];
+  {rank=same;n5706;n5703;n5702;n5701;n5698;n5695;}
+}

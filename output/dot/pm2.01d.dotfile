@@ -1,0 +1,24 @@
+digraph proof_pm2_01d {
+  rankdir = LR;
+  n1938 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n1938->n1946[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n1939 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n1939->n1946[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n1940 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n1940->n1941[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n1941 [label = "wn"color="lightgray" fontcolor="lightgray"];
+  n1941->n1946[color="lightgray" fontcolor="lightgray" label="wff -. ps"];
+  n1942 [label = "pm2.01d.1"style="filled" fillcolor = "orange"];
+  n1942->n1946[label="|- ( ph -> ( ps -> -. ps ) )"];
+  n1943 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n1943->n1944[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n1944 [label = "wn"color="lightgray" fontcolor="lightgray"];
+  n1944->n1945[color="lightgray" fontcolor="lightgray" label="wff -. ps"];
+  n1945 [label = "id"style="filled" fillcolor = "cyan"];
+  n1945->n1946[label="|- ( -. ps -> -. ps )"];
+  n1946 [label = "pm2.61d1"style="filled" fillcolor = "cyan"];
+QED[style="invisible"]
+  n1946->QED[label="|- ( ph -> -. ps )"];
+  n1938->n1939->n1941->n1942->n1945[arrowhead="none" style="invisible"];
+  {rank=same;n1945;n1942;n1941;n1939;n1938;}
+}

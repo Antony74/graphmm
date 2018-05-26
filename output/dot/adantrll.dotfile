@@ -1,0 +1,34 @@
+digraph proof_adantrll {
+  rankdir = LR;
+  n12233 [label = "wta"color="lightgray" fontcolor="lightgray"];
+  n12233->n12235[color="lightgray" fontcolor="lightgray" label="wff ta"];
+  n12234 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n12234->n12235[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n12235 [label = "wa"color="lightgray" fontcolor="lightgray"];
+  n12235->n12244[color="lightgray" fontcolor="lightgray" label="wff ( ta /\ ps )"];
+  n12233->n12234[arrowhead="none" style="invisible"];
+  {rank=same;n12234;n12233;}
+  n12236 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n12236->n12244[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n12237 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n12237->n12244[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n12238 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n12238->n12244[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n12239 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n12239->n12244[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n12240 [label = "wta"color="lightgray" fontcolor="lightgray"];
+  n12240->n12242[color="lightgray" fontcolor="lightgray" label="wff ta"];
+  n12241 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n12241->n12242[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n12242 [label = "simpr"style="filled" fillcolor = "cyan"];
+  n12242->n12244[label="|- ( ( ta /\ ps ) -> ps )"];
+  n12240->n12241[arrowhead="none" style="invisible"];
+  {rank=same;n12241;n12240;}
+  n12243 [label = "adantr2.1"style="filled" fillcolor = "orange"];
+  n12243->n12244[label="|- ( ( ph /\ ( ps /\ ch ) ) -> th )"];
+  n12244 [label = "sylanr1"style="filled" fillcolor = "cyan"];
+QED[style="invisible"]
+  n12244->QED[label="|- ( ( ph /\ ( ( ta /\ ps ) /\ ch ) ) -> th )"];
+  n12235->n12236->n12237->n12238->n12239->n12242->n12243[arrowhead="none" style="invisible"];
+  {rank=same;n12243;n12242;n12239;n12238;n12237;n12236;n12235;}
+}

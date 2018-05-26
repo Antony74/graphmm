@@ -1,0 +1,32 @@
+digraph proof_anbi1 {
+  rankdir = LR;
+  n12010 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n12010->n12012[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n12011 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n12011->n12012[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n12012 [label = "wb"color="lightgray" fontcolor="lightgray"];
+  n12012->n12020[color="lightgray" fontcolor="lightgray" label="wff ( ph <-> ps )"];
+  n12010->n12011[arrowhead="none" style="invisible"];
+  {rank=same;n12011;n12010;}
+  n12013 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n12013->n12020[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n12014 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n12014->n12020[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n12015 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n12015->n12020[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n12016 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n12016->n12018[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n12017 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n12017->n12018[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n12018 [label = "wb"color="lightgray" fontcolor="lightgray"];
+  n12018->n12019[color="lightgray" fontcolor="lightgray" label="wff ( ph <-> ps )"];
+  n12016->n12017[arrowhead="none" style="invisible"];
+  {rank=same;n12017;n12016;}
+  n12019 [label = "id"style="filled" fillcolor = "cyan"];
+  n12019->n12020[label="|- ( ( ph <-> ps ) -> ( ph <-> ps ) )"];
+  n12020 [label = "anbi1d"style="filled" fillcolor = "cyan"];
+QED[style="invisible"]
+  n12020->QED[label="|- ( ( ph <-> ps ) -> ( ( ph /\ ch ) <-> ( ps /\ ch ) ) )"];
+  n12012->n12013->n12014->n12015->n12019[arrowhead="none" style="invisible"];
+  {rank=same;n12019;n12015;n12014;n12013;n12012;}
+}

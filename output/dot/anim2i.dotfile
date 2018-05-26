@@ -1,0 +1,22 @@
+digraph proof_anim2i {
+  rankdir = LR;
+  n9628 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n9628->n9635[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n9629 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n9629->n9635[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n9630 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n9630->n9635[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n9631 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n9631->n9635[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n9632 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n9632->n9633[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n9633 [label = "id"style="filled" fillcolor = "cyan"];
+  n9633->n9635[label="|- ( ch -> ch )"];
+  n9634 [label = "anim1i.1"style="filled" fillcolor = "orange"];
+  n9634->n9635[label="|- ( ph -> ps )"];
+  n9635 [label = "anim12i"style="filled" fillcolor = "cyan"];
+QED[style="invisible"]
+  n9635->QED[label="|- ( ( ch /\ ph ) -> ( ch /\ ps ) )"];
+  n9628->n9629->n9630->n9631->n9633->n9634[arrowhead="none" style="invisible"];
+  {rank=same;n9634;n9633;n9631;n9630;n9629;n9628;}
+}

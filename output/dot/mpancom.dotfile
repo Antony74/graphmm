@@ -1,0 +1,24 @@
+digraph proof_mpancom {
+  rankdir = LR;
+  n11497 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n11497->n11505[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n11498 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n11498->n11505[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n11499 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n11499->n11505[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n11500 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n11500->n11505[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n11501 [label = "mpancom.1"style="filled" fillcolor = "orange"];
+  n11501->n11505[label="|- ( ps -> ph )"];
+  n11502 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n11502->n11503[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n11503 [label = "id"style="filled" fillcolor = "cyan"];
+  n11503->n11505[label="|- ( ps -> ps )"];
+  n11504 [label = "mpancom.2"style="filled" fillcolor = "orange"];
+  n11504->n11505[label="|- ( ( ph /\ ps ) -> ch )"];
+  n11505 [label = "syl2anc"style="filled" fillcolor = "cyan"];
+QED[style="invisible"]
+  n11505->QED[label="|- ( ps -> ch )"];
+  n11497->n11498->n11499->n11500->n11501->n11503->n11504[arrowhead="none" style="invisible"];
+  {rank=same;n11504;n11503;n11501;n11500;n11499;n11498;n11497;}
+}

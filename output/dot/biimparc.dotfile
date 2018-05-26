@@ -1,0 +1,26 @@
+digraph proof_biimparc {
+  rankdir = LR;
+  n8413 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n8413->n8421[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n8414 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n8414->n8421[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n8415 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n8415->n8421[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n8416 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n8416->n8420[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n8417 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n8417->n8420[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n8418 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n8418->n8420[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n8419 [label = "biimpa.1"style="filled" fillcolor = "orange"];
+  n8419->n8420[label="|- ( ph -> ( ps <-> ch ) )"];
+  n8420 [label = "biimprcd"style="filled" fillcolor = "cyan"];
+  n8420->n8421[label="|- ( ch -> ( ph -> ps ) )"];
+  n8416->n8417->n8418->n8419[arrowhead="none" style="invisible"];
+  {rank=same;n8419;n8418;n8417;n8416;}
+  n8421 [label = "imp"style="filled" fillcolor = "cyan"];
+QED[style="invisible"]
+  n8421->QED[label="|- ( ( ch /\ ph ) -> ps )"];
+  n8413->n8414->n8415->n8420[arrowhead="none" style="invisible"];
+  {rank=same;n8420;n8415;n8414;n8413;}
+}

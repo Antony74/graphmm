@@ -1,0 +1,28 @@
+digraph proof_condan {
+  rankdir = LR;
+  n13521 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n13521->n13530[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n13522 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n13522->n13530[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n13523 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n13523->n13529[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n13524 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n13524->n13525[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n13525 [label = "wn"color="lightgray" fontcolor="lightgray"];
+  n13525->n13529[color="lightgray" fontcolor="lightgray" label="wff -. ps"];
+  n13526 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n13526->n13529[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n13527 [label = "condan.1"style="filled" fillcolor = "orange"];
+  n13527->n13529[label="|- ( ( ph /\ -. ps ) -> ch )"];
+  n13528 [label = "condan.2"style="filled" fillcolor = "orange"];
+  n13528->n13529[label="|- ( ( ph /\ -. ps ) -> -. ch )"];
+  n13529 [label = "pm2.65da"style="filled" fillcolor = "cyan"];
+  n13529->n13530[label="|- ( ph -> -. -. ps )"];
+  n13523->n13525->n13526->n13527->n13528[arrowhead="none" style="invisible"];
+  {rank=same;n13528;n13527;n13526;n13525;n13523;}
+  n13530 [label = "notnotrd"style="filled" fillcolor = "cyan"];
+QED[style="invisible"]
+  n13530->QED[label="|- ( ph -> ps )"];
+  n13521->n13522->n13529[arrowhead="none" style="invisible"];
+  {rank=same;n13529;n13522;n13521;}
+}

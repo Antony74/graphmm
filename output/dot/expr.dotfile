@@ -1,0 +1,34 @@
+digraph proof_expr {
+  rankdir = LR;
+  n10573 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n10573->n10584[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n10574 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n10574->n10584[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n10575 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n10575->n10577[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n10576 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n10576->n10577[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n10577 [label = "wi"color="lightgray" fontcolor="lightgray"];
+  n10577->n10584[color="lightgray" fontcolor="lightgray" label="wff ( ch -> th )"];
+  n10575->n10576[arrowhead="none" style="invisible"];
+  {rank=same;n10576;n10575;}
+  n10578 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n10578->n10583[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n10579 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n10579->n10583[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n10580 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n10580->n10583[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n10581 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n10581->n10583[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n10582 [label = "expr.1"style="filled" fillcolor = "orange"];
+  n10582->n10583[label="|- ( ( ph /\ ( ps /\ ch ) ) -> th )"];
+  n10583 [label = "exp32"style="filled" fillcolor = "cyan"];
+  n10583->n10584[label="|- ( ph -> ( ps -> ( ch -> th ) ) )"];
+  n10578->n10579->n10580->n10581->n10582[arrowhead="none" style="invisible"];
+  {rank=same;n10582;n10581;n10580;n10579;n10578;}
+  n10584 [label = "imp"style="filled" fillcolor = "cyan"];
+QED[style="invisible"]
+  n10584->QED[label="|- ( ( ph /\ ps ) -> ( ch -> th ) )"];
+  n10573->n10574->n10577->n10583[arrowhead="none" style="invisible"];
+  {rank=same;n10583;n10577;n10574;n10573;}
+}

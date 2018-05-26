@@ -1,0 +1,42 @@
+digraph proof_imp4b {
+  rankdir = LR;
+  n10187 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n10187->n10201[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n10188 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n10188->n10201[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n10189 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n10189->n10191[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n10190 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n10190->n10191[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n10191 [label = "wa"color="lightgray" fontcolor="lightgray"];
+  n10191->n10193[color="lightgray" fontcolor="lightgray" label="wff ( ch /\ th )"];
+  n10189->n10190[arrowhead="none" style="invisible"];
+  {rank=same;n10190;n10189;}
+  n10192 [label = "wta"color="lightgray" fontcolor="lightgray"];
+  n10192->n10193[color="lightgray" fontcolor="lightgray" label="wff ta"];
+  n10193 [label = "wi"color="lightgray" fontcolor="lightgray"];
+  n10193->n10201[color="lightgray" fontcolor="lightgray" label="wff ( ( ch /\ th ) -> ta )"];
+  n10191->n10192[arrowhead="none" style="invisible"];
+  {rank=same;n10192;n10191;}
+  n10194 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n10194->n10200[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n10195 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n10195->n10200[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n10196 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n10196->n10200[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n10197 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n10197->n10200[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n10198 [label = "wta"color="lightgray" fontcolor="lightgray"];
+  n10198->n10200[color="lightgray" fontcolor="lightgray" label="wff ta"];
+  n10199 [label = "imp4.1"style="filled" fillcolor = "orange"];
+  n10199->n10200[label="|- ( ph -> ( ps -> ( ch -> ( th -> ta ) ) ) )"];
+  n10200 [label = "imp4a"style="filled" fillcolor = "cyan"];
+  n10200->n10201[label="|- ( ph -> ( ps -> ( ( ch /\ th ) -> ta ) ) )"];
+  n10194->n10195->n10196->n10197->n10198->n10199[arrowhead="none" style="invisible"];
+  {rank=same;n10199;n10198;n10197;n10196;n10195;n10194;}
+  n10201 [label = "imp"style="filled" fillcolor = "cyan"];
+QED[style="invisible"]
+  n10201->QED[label="|- ( ( ph /\ ps ) -> ( ( ch /\ th ) -> ta ) )"];
+  n10187->n10188->n10193->n10200[arrowhead="none" style="invisible"];
+  {rank=same;n10200;n10193;n10188;n10187;}
+}

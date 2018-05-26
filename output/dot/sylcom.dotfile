@@ -1,0 +1,40 @@
+digraph proof_sylcom {
+  rankdir = LR;
+  n229 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n229->n242[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n230 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n230->n232[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n231 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n231->n232[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n232 [label = "wi"color="lightgray" fontcolor="lightgray"];
+  n232->n242[color="lightgray" fontcolor="lightgray" label="wff ( ps -> ch )"];
+  n230->n231[arrowhead="none" style="invisible"];
+  {rank=same;n231;n230;}
+  n233 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n233->n235[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n234 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n234->n235[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n235 [label = "wi"color="lightgray" fontcolor="lightgray"];
+  n235->n242[color="lightgray" fontcolor="lightgray" label="wff ( ps -> th )"];
+  n233->n234[arrowhead="none" style="invisible"];
+  {rank=same;n234;n233;}
+  n236 [label = "sylcom.1"style="filled" fillcolor = "orange"];
+  n236->n242[label="|- ( ph -> ( ps -> ch ) )"];
+  n237 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n237->n241[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n238 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n238->n241[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n239 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n239->n241[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n240 [label = "sylcom.2"style="filled" fillcolor = "orange"];
+  n240->n241[label="|- ( ps -> ( ch -> th ) )"];
+  n241 [label = "a2i"style="filled" fillcolor = "cyan"];
+  n241->n242[label="|- ( ( ps -> ch ) -> ( ps -> th ) )"];
+  n237->n238->n239->n240[arrowhead="none" style="invisible"];
+  {rank=same;n240;n239;n238;n237;}
+  n242 [label = "syl"style="filled" fillcolor = "cyan"];
+QED[style="invisible"]
+  n242->QED[label="|- ( ph -> ( ps -> th ) )"];
+  n229->n232->n235->n236->n241[arrowhead="none" style="invisible"];
+  {rank=same;n241;n236;n235;n232;n229;}
+}

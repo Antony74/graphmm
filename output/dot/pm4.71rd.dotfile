@@ -1,0 +1,42 @@
+digraph proof_pm4_71rd {
+  rankdir = LR;
+  n10911 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n10911->n10924[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n10912 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n10912->n10914[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n10913 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n10913->n10914[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n10914 [label = "wi"color="lightgray" fontcolor="lightgray"];
+  n10914->n10924[color="lightgray" fontcolor="lightgray" label="wff ( ps -> ch )"];
+  n10912->n10913[arrowhead="none" style="invisible"];
+  {rank=same;n10913;n10912;}
+  n10915 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n10915->n10919[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n10916 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n10916->n10918[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n10917 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n10917->n10918[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n10918 [label = "wa"color="lightgray" fontcolor="lightgray"];
+  n10918->n10919[color="lightgray" fontcolor="lightgray" label="wff ( ch /\ ps )"];
+  n10916->n10917[arrowhead="none" style="invisible"];
+  {rank=same;n10917;n10916;}
+  n10919 [label = "wb"color="lightgray" fontcolor="lightgray"];
+  n10919->n10924[color="lightgray" fontcolor="lightgray" label="wff ( ps <-> ( ch /\ ps ) )"];
+  n10915->n10918[arrowhead="none" style="invisible"];
+  {rank=same;n10918;n10915;}
+  n10920 [label = "pm4.71rd.1"style="filled" fillcolor = "orange"];
+  n10920->n10924[label="|- ( ph -> ( ps -> ch ) )"];
+  n10921 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n10921->n10923[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n10922 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n10922->n10923[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n10923 [label = "pm4.71r"style="filled" fillcolor = "cyan"];
+  n10923->n10924[label="|- ( ( ps -> ch ) <-> ( ps <-> ( ch /\ ps ) ) )"];
+  n10921->n10922[arrowhead="none" style="invisible"];
+  {rank=same;n10922;n10921;}
+  n10924 [label = "sylib"style="filled" fillcolor = "cyan"];
+QED[style="invisible"]
+  n10924->QED[label="|- ( ph -> ( ps <-> ( ch /\ ps ) ) )"];
+  n10911->n10914->n10919->n10920->n10923[arrowhead="none" style="invisible"];
+  {rank=same;n10923;n10920;n10919;n10914;n10911;}
+}

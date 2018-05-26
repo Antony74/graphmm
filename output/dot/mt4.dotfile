@@ -1,0 +1,24 @@
+digraph proof_mt4 {
+  rankdir = LR;
+  n1531 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n1531->n1538[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n1532 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n1532->n1538[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n1533 [label = "mt4.1"style="filled" fillcolor = "orange"];
+  n1533->n1538[label="|- ph"];
+  n1534 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n1534->n1537[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n1535 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n1535->n1537[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n1536 [label = "mt4.2"style="filled" fillcolor = "orange"];
+  n1536->n1537[label="|- ( -. ps -> -. ph )"];
+  n1537 [label = "con4i"style="filled" fillcolor = "cyan"];
+  n1537->n1538[label="|- ( ph -> ps )"];
+  n1534->n1535->n1536[arrowhead="none" style="invisible"];
+  {rank=same;n1536;n1535;n1534;}
+  n1538 [label = "ax-mp"style="filled" fillcolor = "lime"];
+QED[style="invisible"]
+  n1538->QED[label="|- ps"];
+  n1531->n1532->n1533->n1537[arrowhead="none" style="invisible"];
+  {rank=same;n1537;n1533;n1532;n1531;}
+}

@@ -1,0 +1,28 @@
+digraph proof_jarr {
+  rankdir = LR;
+  n1086 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n1086->n1094[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n1087 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n1087->n1089[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n1088 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n1088->n1089[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n1089 [label = "wi"color="lightgray" fontcolor="lightgray"];
+  n1089->n1094[color="lightgray" fontcolor="lightgray" label="wff ( ph -> ps )"];
+  n1087->n1088[arrowhead="none" style="invisible"];
+  {rank=same;n1088;n1087;}
+  n1090 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n1090->n1094[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n1091 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n1091->n1093[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n1092 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n1092->n1093[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n1093 [label = "ax-1"style="filled" fillcolor = "lime"];
+  n1093->n1094[label="|- ( ps -> ( ph -> ps ) )"];
+  n1091->n1092[arrowhead="none" style="invisible"];
+  {rank=same;n1092;n1091;}
+  n1094 [label = "imim1i"style="filled" fillcolor = "cyan"];
+QED[style="invisible"]
+  n1094->QED[label="|- ( ( ( ph -> ps ) -> ch ) -> ( ps -> ch ) )"];
+  n1086->n1089->n1090->n1093[arrowhead="none" style="invisible"];
+  {rank=same;n1093;n1090;n1089;n1086;}
+}

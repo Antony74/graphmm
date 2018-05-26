@@ -1,0 +1,26 @@
+digraph proof_olcd {
+  rankdir = LR;
+  n7373 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n7373->n7381[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n7374 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n7374->n7381[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n7375 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n7375->n7381[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n7376 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n7376->n7380[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n7377 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n7377->n7380[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n7378 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n7378->n7380[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n7379 [label = "orcd.1"style="filled" fillcolor = "orange"];
+  n7379->n7380[label="|- ( ph -> ps )"];
+  n7380 [label = "orcd"style="filled" fillcolor = "cyan"];
+  n7380->n7381[label="|- ( ph -> ( ps \/ ch ) )"];
+  n7376->n7377->n7378->n7379[arrowhead="none" style="invisible"];
+  {rank=same;n7379;n7378;n7377;n7376;}
+  n7381 [label = "orcomd"style="filled" fillcolor = "cyan"];
+QED[style="invisible"]
+  n7381->QED[label="|- ( ph -> ( ch \/ ps ) )"];
+  n7373->n7374->n7375->n7380[arrowhead="none" style="invisible"];
+  {rank=same;n7380;n7375;n7374;n7373;}
+}

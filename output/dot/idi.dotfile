@@ -1,0 +1,6 @@
+digraph proof_idi {
+  rankdir = LR;
+  n2 [label = "idi.1"style="filled" fillcolor = "orange"];
+QED[style="invisible"]
+  n2->QED[label="|- ph"];
+}

@@ -1,0 +1,32 @@
+digraph proof_mp2ani {
+  rankdir = LR;
+  n11597 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n11597->n11608[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n11598 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n11598->n11608[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n11599 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n11599->n11608[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n11600 [label = "mp2ani.2"style="filled" fillcolor = "orange"];
+  n11600->n11608[label="|- ch"];
+  n11601 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n11601->n11607[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n11602 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n11602->n11607[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n11603 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n11603->n11607[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n11604 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n11604->n11607[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n11605 [label = "mp2ani.1"style="filled" fillcolor = "orange"];
+  n11605->n11607[label="|- ps"];
+  n11606 [label = "mp2ani.3"style="filled" fillcolor = "orange"];
+  n11606->n11607[label="|- ( ph -> ( ( ps /\ ch ) -> th ) )"];
+  n11607 [label = "mpani"style="filled" fillcolor = "cyan"];
+  n11607->n11608[label="|- ( ph -> ( ch -> th ) )"];
+  n11601->n11602->n11603->n11604->n11605->n11606[arrowhead="none" style="invisible"];
+  {rank=same;n11606;n11605;n11604;n11603;n11602;n11601;}
+  n11608 [label = "mpi"style="filled" fillcolor = "cyan"];
+QED[style="invisible"]
+  n11608->QED[label="|- ( ph -> th )"];
+  n11597->n11598->n11599->n11600->n11607[arrowhead="none" style="invisible"];
+  {rank=same;n11607;n11600;n11599;n11598;n11597;}
+}

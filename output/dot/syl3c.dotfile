@@ -1,0 +1,40 @@
+digraph proof_syl3c {
+  rankdir = LR;
+  n590 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n590->n604[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n591 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n591->n604[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n592 [label = "wta"color="lightgray" fontcolor="lightgray"];
+  n592->n604[color="lightgray" fontcolor="lightgray" label="wff ta"];
+  n593 [label = "syl3c.3"style="filled" fillcolor = "orange"];
+  n593->n604[label="|- ( ph -> th )"];
+  n594 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n594->n603[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n595 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n595->n603[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n596 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n596->n603[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n597 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n597->n599[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n598 [label = "wta"color="lightgray" fontcolor="lightgray"];
+  n598->n599[color="lightgray" fontcolor="lightgray" label="wff ta"];
+  n599 [label = "wi"color="lightgray" fontcolor="lightgray"];
+  n599->n603[color="lightgray" fontcolor="lightgray" label="wff ( th -> ta )"];
+  n597->n598[arrowhead="none" style="invisible"];
+  {rank=same;n598;n597;}
+  n600 [label = "syl3c.1"style="filled" fillcolor = "orange"];
+  n600->n603[label="|- ( ph -> ps )"];
+  n601 [label = "syl3c.2"style="filled" fillcolor = "orange"];
+  n601->n603[label="|- ( ph -> ch )"];
+  n602 [label = "syl3c.4"style="filled" fillcolor = "orange"];
+  n602->n603[label="|- ( ps -> ( ch -> ( th -> ta ) ) )"];
+  n603 [label = "sylc"style="filled" fillcolor = "cyan"];
+  n603->n604[label="|- ( ph -> ( th -> ta ) )"];
+  n594->n595->n596->n599->n600->n601->n602[arrowhead="none" style="invisible"];
+  {rank=same;n602;n601;n600;n599;n596;n595;n594;}
+  n604 [label = "mpd"style="filled" fillcolor = "cyan"];
+QED[style="invisible"]
+  n604->QED[label="|- ( ph -> ta )"];
+  n590->n591->n592->n593->n603[arrowhead="none" style="invisible"];
+  {rank=same;n603;n593;n592;n591;n590;}
+}

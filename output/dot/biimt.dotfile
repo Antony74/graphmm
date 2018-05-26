@@ -1,0 +1,36 @@
+digraph proof_biimt {
+  rankdir = LR;
+  n6411 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n6411->n6422[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n6412 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n6412->n6422[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n6413 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n6413->n6415[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n6414 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n6414->n6415[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n6415 [label = "wi"color="lightgray" fontcolor="lightgray"];
+  n6415->n6422[color="lightgray" fontcolor="lightgray" label="wff ( ph -> ps )"];
+  n6413->n6414[arrowhead="none" style="invisible"];
+  {rank=same;n6414;n6413;}
+  n6416 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n6416->n6418[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n6417 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n6417->n6418[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n6418 [label = "ax-1"style="filled" fillcolor = "lime"];
+  n6418->n6422[label="|- ( ps -> ( ph -> ps ) )"];
+  n6416->n6417[arrowhead="none" style="invisible"];
+  {rank=same;n6417;n6416;}
+  n6419 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n6419->n6421[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n6420 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n6420->n6421[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n6421 [label = "pm2.27"style="filled" fillcolor = "cyan"];
+  n6421->n6422[label="|- ( ph -> ( ( ph -> ps ) -> ps ) )"];
+  n6419->n6420[arrowhead="none" style="invisible"];
+  {rank=same;n6420;n6419;}
+  n6422 [label = "impbid2"style="filled" fillcolor = "cyan"];
+QED[style="invisible"]
+  n6422->QED[label="|- ( ph -> ( ps <-> ( ph -> ps ) ) )"];
+  n6411->n6412->n6415->n6418->n6421[arrowhead="none" style="invisible"];
+  {rank=same;n6421;n6418;n6415;n6412;n6411;}
+}

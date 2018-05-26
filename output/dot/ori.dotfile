@@ -1,0 +1,36 @@
+digraph proof_ori {
+  rankdir = LR;
+  n7156 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n7156->n7158[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n7157 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n7157->n7158[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n7158 [label = "wo"color="lightgray" fontcolor="lightgray"];
+  n7158->n7167[color="lightgray" fontcolor="lightgray" label="wff ( ph \/ ps )"];
+  n7156->n7157[arrowhead="none" style="invisible"];
+  {rank=same;n7157;n7156;}
+  n7159 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n7159->n7160[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n7160 [label = "wn"color="lightgray" fontcolor="lightgray"];
+  n7160->n7162[color="lightgray" fontcolor="lightgray" label="wff -. ph"];
+  n7161 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n7161->n7162[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n7162 [label = "wi"color="lightgray" fontcolor="lightgray"];
+  n7162->n7167[color="lightgray" fontcolor="lightgray" label="wff ( -. ph -> ps )"];
+  n7160->n7161[arrowhead="none" style="invisible"];
+  {rank=same;n7161;n7160;}
+  n7163 [label = "ori.1"style="filled" fillcolor = "orange"];
+  n7163->n7167[label="|- ( ph \/ ps )"];
+  n7164 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n7164->n7166[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n7165 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n7165->n7166[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n7166 [label = "df-or"color="lightgray" fontcolor="lightgray"];
+  n7166->n7167[color="lightgray" fontcolor="lightgray" label="|- ( ( ph \/ ps ) <-> ( -. ph -> ps ) )"];
+  n7164->n7165[arrowhead="none" style="invisible"];
+  {rank=same;n7165;n7164;}
+  n7167 [label = "mpbi"style="filled" fillcolor = "cyan"];
+QED[style="invisible"]
+  n7167->QED[label="|- ( -. ph -> ps )"];
+  n7158->n7162->n7163->n7166[arrowhead="none" style="invisible"];
+  {rank=same;n7166;n7163;n7162;n7158;}
+}

@@ -1,0 +1,30 @@
+digraph proof_pm2_52 {
+  rankdir = LR;
+  n1721 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n1721->n1723[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n1722 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n1722->n1723[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n1723 [label = "wi"color="lightgray" fontcolor="lightgray"];
+  n1723->n1724[color="lightgray" fontcolor="lightgray" label="wff ( ph -> ps )"];
+  n1721->n1722[arrowhead="none" style="invisible"];
+  {rank=same;n1722;n1721;}
+  n1724 [label = "wn"color="lightgray" fontcolor="lightgray"];
+  n1724->n1730[color="lightgray" fontcolor="lightgray" label="wff -. ( ph -> ps )"];
+  n1725 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n1725->n1730[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n1726 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n1726->n1730[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n1727 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n1727->n1729[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n1728 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n1728->n1729[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n1729 [label = "pm2.521"style="filled" fillcolor = "cyan"];
+  n1729->n1730[label="|- ( -. ( ph -> ps ) -> ( ps -> ph ) )"];
+  n1727->n1728[arrowhead="none" style="invisible"];
+  {rank=same;n1728;n1727;}
+  n1730 [label = "con3d"style="filled" fillcolor = "cyan"];
+QED[style="invisible"]
+  n1730->QED[label="|- ( -. ( ph -> ps ) -> ( -. ph -> -. ps ) )"];
+  n1724->n1725->n1726->n1729[arrowhead="none" style="invisible"];
+  {rank=same;n1729;n1726;n1725;n1724;}
+}

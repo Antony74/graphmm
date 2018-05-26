@@ -1,0 +1,30 @@
+digraph proof_simp1r {
+  rankdir = LR;
+  n19544 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n19544->n19546[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n19545 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n19545->n19546[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n19546 [label = "wa"color="lightgray" fontcolor="lightgray"];
+  n19546->n19553[color="lightgray" fontcolor="lightgray" label="wff ( ph /\ ps )"];
+  n19544->n19545[arrowhead="none" style="invisible"];
+  {rank=same;n19545;n19544;}
+  n19547 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n19547->n19553[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n19548 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n19548->n19553[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n19549 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n19549->n19553[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n19550 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n19550->n19552[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n19551 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n19551->n19552[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n19552 [label = "simpr"style="filled" fillcolor = "cyan"];
+  n19552->n19553[label="|- ( ( ph /\ ps ) -> ps )"];
+  n19550->n19551[arrowhead="none" style="invisible"];
+  {rank=same;n19551;n19550;}
+  n19553 [label = "3ad2ant1"style="filled" fillcolor = "cyan"];
+QED[style="invisible"]
+  n19553->QED[label="|- ( ( ( ph /\ ps ) /\ ch /\ th ) -> ps )"];
+  n19546->n19547->n19548->n19549->n19552[arrowhead="none" style="invisible"];
+  {rank=same;n19552;n19549;n19548;n19547;n19546;}
+}

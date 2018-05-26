@@ -1,0 +1,30 @@
+digraph proof_imim2i {
+  rankdir = LR;
+  n58 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n58->n67[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n59 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n59->n67[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n60 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n60->n67[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n61 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n61->n63[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n62 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n62->n63[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n63 [label = "wi"color="lightgray" fontcolor="lightgray"];
+  n63->n66[color="lightgray" fontcolor="lightgray" label="wff ( ph -> ps )"];
+  n61->n62[arrowhead="none" style="invisible"];
+  {rank=same;n62;n61;}
+  n64 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n64->n66[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n65 [label = "imim2i.1"style="filled" fillcolor = "orange"];
+  n65->n66[label="|- ( ph -> ps )"];
+  n66 [label = "a1i"style="filled" fillcolor = "cyan"];
+  n66->n67[label="|- ( ch -> ( ph -> ps ) )"];
+  n63->n64->n65[arrowhead="none" style="invisible"];
+  {rank=same;n65;n64;n63;}
+  n67 [label = "a2i"style="filled" fillcolor = "cyan"];
+QED[style="invisible"]
+  n67->QED[label="|- ( ( ch -> ph ) -> ( ch -> ps ) )"];
+  n58->n59->n60->n66[arrowhead="none" style="invisible"];
+  {rank=same;n66;n60;n59;n58;}
+}

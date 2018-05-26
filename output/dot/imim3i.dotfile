@@ -1,0 +1,40 @@
+digraph proof_imim3i {
+  rankdir = LR;
+  n564 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n564->n566[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n565 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n565->n566[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n566 [label = "wi"color="lightgray" fontcolor="lightgray"];
+  n566->n577[color="lightgray" fontcolor="lightgray" label="wff ( th -> ph )"];
+  n564->n565[arrowhead="none" style="invisible"];
+  {rank=same;n565;n564;}
+  n567 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n567->n577[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n568 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n568->n577[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n569 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n569->n577[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n570 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n570->n576[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n571 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n571->n573[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n572 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n572->n573[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n573 [label = "wi"color="lightgray" fontcolor="lightgray"];
+  n573->n576[color="lightgray" fontcolor="lightgray" label="wff ( ps -> ch )"];
+  n571->n572[arrowhead="none" style="invisible"];
+  {rank=same;n572;n571;}
+  n574 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n574->n576[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n575 [label = "imim3i.1"style="filled" fillcolor = "orange"];
+  n575->n576[label="|- ( ph -> ( ps -> ch ) )"];
+  n576 [label = "imim2i"style="filled" fillcolor = "cyan"];
+  n576->n577[label="|- ( ( th -> ph ) -> ( th -> ( ps -> ch ) ) )"];
+  n570->n573->n574->n575[arrowhead="none" style="invisible"];
+  {rank=same;n575;n574;n573;n570;}
+  n577 [label = "a2d"style="filled" fillcolor = "cyan"];
+QED[style="invisible"]
+  n577->QED[label="|- ( ( th -> ph ) -> ( ( th -> ps ) -> ( th -> ch ) ) )"];
+  n566->n567->n568->n569->n576[arrowhead="none" style="invisible"];
+  {rank=same;n576;n569;n568;n567;n566;}
+}

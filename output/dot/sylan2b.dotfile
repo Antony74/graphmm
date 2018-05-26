@@ -1,0 +1,28 @@
+digraph proof_sylan2b {
+  rankdir = LR;
+  n8262 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n8262->n8271[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n8263 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n8263->n8271[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n8264 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n8264->n8271[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n8265 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n8265->n8271[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n8266 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n8266->n8269[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n8267 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n8267->n8269[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n8268 [label = "sylan2b.1"style="filled" fillcolor = "orange"];
+  n8268->n8269[label="|- ( ph <-> ch )"];
+  n8269 [label = "biimpi"style="filled" fillcolor = "cyan"];
+  n8269->n8271[label="|- ( ph -> ch )"];
+  n8266->n8267->n8268[arrowhead="none" style="invisible"];
+  {rank=same;n8268;n8267;n8266;}
+  n8270 [label = "sylan2b.2"style="filled" fillcolor = "orange"];
+  n8270->n8271[label="|- ( ( ps /\ ch ) -> th )"];
+  n8271 [label = "sylan2"style="filled" fillcolor = "cyan"];
+QED[style="invisible"]
+  n8271->QED[label="|- ( ( ps /\ ph ) -> th )"];
+  n8262->n8263->n8264->n8265->n8269->n8270[arrowhead="none" style="invisible"];
+  {rank=same;n8270;n8269;n8265;n8264;n8263;n8262;}
+}

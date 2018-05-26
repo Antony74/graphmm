@@ -1,0 +1,30 @@
+digraph proof_imbi2i {
+  rankdir = LR;
+  n5970 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n5970->n5979[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n5971 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n5971->n5979[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n5972 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n5972->n5979[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n5973 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n5973->n5975[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n5974 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n5974->n5975[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n5975 [label = "wb"color="lightgray" fontcolor="lightgray"];
+  n5975->n5978[color="lightgray" fontcolor="lightgray" label="wff ( ph <-> ps )"];
+  n5973->n5974[arrowhead="none" style="invisible"];
+  {rank=same;n5974;n5973;}
+  n5976 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n5976->n5978[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n5977 [label = "bi.a"style="filled" fillcolor = "orange"];
+  n5977->n5978[label="|- ( ph <-> ps )"];
+  n5978 [label = "a1i"style="filled" fillcolor = "cyan"];
+  n5978->n5979[label="|- ( ch -> ( ph <-> ps ) )"];
+  n5975->n5976->n5977[arrowhead="none" style="invisible"];
+  {rank=same;n5977;n5976;n5975;}
+  n5979 [label = "pm5.74i"style="filled" fillcolor = "cyan"];
+QED[style="invisible"]
+  n5979->QED[label="|- ( ( ch -> ph ) <-> ( ch -> ps ) )"];
+  n5970->n5971->n5972->n5978[arrowhead="none" style="invisible"];
+  {rank=same;n5978;n5972;n5971;n5970;}
+}

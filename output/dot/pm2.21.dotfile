@@ -1,0 +1,22 @@
+digraph proof_pm2_21 {
+  rankdir = LR;
+  n1216 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n1216->n1217[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n1217 [label = "wn"color="lightgray" fontcolor="lightgray"];
+  n1217->n1223[color="lightgray" fontcolor="lightgray" label="wff -. ph"];
+  n1218 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n1218->n1223[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n1219 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n1219->n1223[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n1220 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n1220->n1221[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n1221 [label = "wn"color="lightgray" fontcolor="lightgray"];
+  n1221->n1222[color="lightgray" fontcolor="lightgray" label="wff -. ph"];
+  n1222 [label = "id"style="filled" fillcolor = "cyan"];
+  n1222->n1223[label="|- ( -. ph -> -. ph )"];
+  n1223 [label = "pm2.21d"style="filled" fillcolor = "cyan"];
+QED[style="invisible"]
+  n1223->QED[label="|- ( -. ph -> ( ph -> ps ) )"];
+  n1217->n1218->n1219->n1222[arrowhead="none" style="invisible"];
+  {rank=same;n1222;n1219;n1218;n1217;}
+}

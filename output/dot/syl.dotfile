@@ -1,0 +1,32 @@
+digraph proof_syl {
+  rankdir = LR;
+  n81 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n81->n91[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n82 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n82->n91[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n83 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n83->n91[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n84 [label = "syl.1"style="filled" fillcolor = "orange"];
+  n84->n91[label="|- ( ph -> ps )"];
+  n85 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n85->n87[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n86 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n86->n87[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n87 [label = "wi"color="lightgray" fontcolor="lightgray"];
+  n87->n90[color="lightgray" fontcolor="lightgray" label="wff ( ps -> ch )"];
+  n85->n86[arrowhead="none" style="invisible"];
+  {rank=same;n86;n85;}
+  n88 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n88->n90[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n89 [label = "syl.2"style="filled" fillcolor = "orange"];
+  n89->n90[label="|- ( ps -> ch )"];
+  n90 [label = "a1i"style="filled" fillcolor = "cyan"];
+  n90->n91[label="|- ( ph -> ( ps -> ch ) )"];
+  n87->n88->n89[arrowhead="none" style="invisible"];
+  {rank=same;n89;n88;n87;}
+  n91 [label = "mpd"style="filled" fillcolor = "cyan"];
+QED[style="invisible"]
+  n91->QED[label="|- ( ph -> ch )"];
+  n81->n82->n83->n84->n90[arrowhead="none" style="invisible"];
+  {rank=same;n90;n84;n83;n82;n81;}
+}

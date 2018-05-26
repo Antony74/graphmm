@@ -1,0 +1,56 @@
+digraph proof_jaodan {
+  rankdir = LR;
+  n13345 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n13345->n13365[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n13346 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n13346->n13348[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n13347 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n13347->n13348[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n13348 [label = "wo"color="lightgray" fontcolor="lightgray"];
+  n13348->n13365[color="lightgray" fontcolor="lightgray" label="wff ( ps \/ th )"];
+  n13346->n13347[arrowhead="none" style="invisible"];
+  {rank=same;n13347;n13346;}
+  n13349 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n13349->n13365[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n13350 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n13350->n13364[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n13351 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n13351->n13364[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n13352 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n13352->n13364[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n13353 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n13353->n13364[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n13354 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n13354->n13358[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n13355 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n13355->n13358[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n13356 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n13356->n13358[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n13357 [label = "jaodan.1"style="filled" fillcolor = "orange"];
+  n13357->n13358[label="|- ( ( ph /\ ps ) -> ch )"];
+  n13358 [label = "ex"style="filled" fillcolor = "cyan"];
+  n13358->n13364[label="|- ( ph -> ( ps -> ch ) )"];
+  n13354->n13355->n13356->n13357[arrowhead="none" style="invisible"];
+  {rank=same;n13357;n13356;n13355;n13354;}
+  n13359 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n13359->n13363[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n13360 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n13360->n13363[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n13361 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n13361->n13363[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n13362 [label = "jaodan.2"style="filled" fillcolor = "orange"];
+  n13362->n13363[label="|- ( ( ph /\ th ) -> ch )"];
+  n13363 [label = "ex"style="filled" fillcolor = "cyan"];
+  n13363->n13364[label="|- ( ph -> ( th -> ch ) )"];
+  n13359->n13360->n13361->n13362[arrowhead="none" style="invisible"];
+  {rank=same;n13362;n13361;n13360;n13359;}
+  n13364 [label = "jaod"style="filled" fillcolor = "cyan"];
+  n13364->n13365[label="|- ( ph -> ( ( ps \/ th ) -> ch ) )"];
+  n13350->n13351->n13352->n13353->n13358->n13363[arrowhead="none" style="invisible"];
+  {rank=same;n13363;n13358;n13353;n13352;n13351;n13350;}
+  n13365 [label = "imp"style="filled" fillcolor = "cyan"];
+QED[style="invisible"]
+  n13365->QED[label="|- ( ( ph /\ ( ps \/ th ) ) -> ch )"];
+  n13345->n13348->n13349->n13364[arrowhead="none" style="invisible"];
+  {rank=same;n13364;n13349;n13348;n13345;}
+}

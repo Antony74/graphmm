@@ -1,0 +1,44 @@
+digraph proof_con34b {
+  rankdir = LR;
+  n5717 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n5717->n5719[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n5718 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n5718->n5719[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n5719 [label = "wi"color="lightgray" fontcolor="lightgray"];
+  n5719->n5731[color="lightgray" fontcolor="lightgray" label="wff ( ph -> ps )"];
+  n5717->n5718[arrowhead="none" style="invisible"];
+  {rank=same;n5718;n5717;}
+  n5720 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n5720->n5721[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n5721 [label = "wn"color="lightgray" fontcolor="lightgray"];
+  n5721->n5724[color="lightgray" fontcolor="lightgray" label="wff -. ps"];
+  n5722 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n5722->n5723[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n5723 [label = "wn"color="lightgray" fontcolor="lightgray"];
+  n5723->n5724[color="lightgray" fontcolor="lightgray" label="wff -. ph"];
+  n5724 [label = "wi"color="lightgray" fontcolor="lightgray"];
+  n5724->n5731[color="lightgray" fontcolor="lightgray" label="wff ( -. ps -> -. ph )"];
+  n5721->n5723[arrowhead="none" style="invisible"];
+  {rank=same;n5723;n5721;}
+  n5725 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n5725->n5727[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n5726 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n5726->n5727[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n5727 [label = "con3"style="filled" fillcolor = "cyan"];
+  n5727->n5731[label="|- ( ( ph -> ps ) -> ( -. ps -> -. ph ) )"];
+  n5725->n5726[arrowhead="none" style="invisible"];
+  {rank=same;n5726;n5725;}
+  n5728 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n5728->n5730[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n5729 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n5729->n5730[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n5730 [label = "ax-3"style="filled" fillcolor = "lime"];
+  n5730->n5731[label="|- ( ( -. ps -> -. ph ) -> ( ph -> ps ) )"];
+  n5728->n5729[arrowhead="none" style="invisible"];
+  {rank=same;n5729;n5728;}
+  n5731 [label = "impbii"style="filled" fillcolor = "cyan"];
+QED[style="invisible"]
+  n5731->QED[label="|- ( ( ph -> ps ) <-> ( -. ps -> -. ph ) )"];
+  n5719->n5724->n5727->n5730[arrowhead="none" style="invisible"];
+  {rank=same;n5730;n5727;n5724;n5719;}
+}

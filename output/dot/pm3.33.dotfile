@@ -1,0 +1,42 @@
+digraph proof_pm3_33 {
+  rankdir = LR;
+  n10112 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n10112->n10114[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n10113 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n10113->n10114[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n10114 [label = "wi"color="lightgray" fontcolor="lightgray"];
+  n10114->n10125[color="lightgray" fontcolor="lightgray" label="wff ( ph -> ps )"];
+  n10112->n10113[arrowhead="none" style="invisible"];
+  {rank=same;n10113;n10112;}
+  n10115 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n10115->n10117[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n10116 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n10116->n10117[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n10117 [label = "wi"color="lightgray" fontcolor="lightgray"];
+  n10117->n10125[color="lightgray" fontcolor="lightgray" label="wff ( ps -> ch )"];
+  n10115->n10116[arrowhead="none" style="invisible"];
+  {rank=same;n10116;n10115;}
+  n10118 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n10118->n10120[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n10119 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n10119->n10120[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n10120 [label = "wi"color="lightgray" fontcolor="lightgray"];
+  n10120->n10125[color="lightgray" fontcolor="lightgray" label="wff ( ph -> ch )"];
+  n10118->n10119[arrowhead="none" style="invisible"];
+  {rank=same;n10119;n10118;}
+  n10121 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n10121->n10124[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n10122 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n10122->n10124[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n10123 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n10123->n10124[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n10124 [label = "imim1"style="filled" fillcolor = "cyan"];
+  n10124->n10125[label="|- ( ( ph -> ps ) -> ( ( ps -> ch ) -> ( ph -> ch ) ) )"];
+  n10121->n10122->n10123[arrowhead="none" style="invisible"];
+  {rank=same;n10123;n10122;n10121;}
+  n10125 [label = "imp"style="filled" fillcolor = "cyan"];
+QED[style="invisible"]
+  n10125->QED[label="|- ( ( ( ph -> ps ) /\ ( ps -> ch ) ) -> ( ph -> ch ) )"];
+  n10114->n10117->n10120->n10124[arrowhead="none" style="invisible"];
+  {rank=same;n10124;n10120;n10117;n10114;}
+}

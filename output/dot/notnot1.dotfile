@@ -1,0 +1,20 @@
+digraph proof_notnot1 {
+  rankdir = LR;
+  n1376 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n1376->n1377[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n1377 [label = "wn"color="lightgray" fontcolor="lightgray"];
+  n1377->n1382[color="lightgray" fontcolor="lightgray" label="wff -. ph"];
+  n1378 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n1378->n1382[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n1379 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n1379->n1380[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n1380 [label = "wn"color="lightgray" fontcolor="lightgray"];
+  n1380->n1381[color="lightgray" fontcolor="lightgray" label="wff -. ph"];
+  n1381 [label = "id"style="filled" fillcolor = "cyan"];
+  n1381->n1382[label="|- ( -. ph -> -. ph )"];
+  n1382 [label = "con2i"style="filled" fillcolor = "cyan"];
+QED[style="invisible"]
+  n1382->QED[label="|- ( ph -> -. -. ph )"];
+  n1377->n1378->n1381[arrowhead="none" style="invisible"];
+  {rank=same;n1381;n1378;n1377;}
+}

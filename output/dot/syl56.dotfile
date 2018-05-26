@@ -1,0 +1,34 @@
+digraph proof_syl56 {
+  rankdir = LR;
+  n285 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n285->n297[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n286 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n286->n297[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n287 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n287->n297[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n288 [label = "wta"color="lightgray" fontcolor="lightgray"];
+  n288->n297[color="lightgray" fontcolor="lightgray" label="wff ta"];
+  n289 [label = "syl56.1"style="filled" fillcolor = "orange"];
+  n289->n297[label="|- ( ph -> ps )"];
+  n290 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n290->n296[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n291 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n291->n296[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n292 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n292->n296[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n293 [label = "wta"color="lightgray" fontcolor="lightgray"];
+  n293->n296[color="lightgray" fontcolor="lightgray" label="wff ta"];
+  n294 [label = "syl56.2"style="filled" fillcolor = "orange"];
+  n294->n296[label="|- ( ch -> ( ps -> th ) )"];
+  n295 [label = "syl56.3"style="filled" fillcolor = "orange"];
+  n295->n296[label="|- ( th -> ta )"];
+  n296 [label = "syl6"style="filled" fillcolor = "cyan"];
+  n296->n297[label="|- ( ch -> ( ps -> ta ) )"];
+  n290->n291->n292->n293->n294->n295[arrowhead="none" style="invisible"];
+  {rank=same;n295;n294;n293;n292;n291;n290;}
+  n297 [label = "syl5"style="filled" fillcolor = "cyan"];
+QED[style="invisible"]
+  n297->QED[label="|- ( ch -> ( ph -> ta ) )"];
+  n285->n286->n287->n288->n289->n296[arrowhead="none" style="invisible"];
+  {rank=same;n296;n289;n288;n287;n286;n285;}
+}

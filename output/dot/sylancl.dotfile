@@ -1,0 +1,30 @@
+digraph proof_sylancl {
+  rankdir = LR;
+  n11417 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n11417->n11427[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n11418 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n11418->n11427[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n11419 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n11419->n11427[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n11420 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n11420->n11427[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n11421 [label = "sylancl.1"style="filled" fillcolor = "orange"];
+  n11421->n11427[label="|- ( ph -> ps )"];
+  n11422 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n11422->n11425[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n11423 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n11423->n11425[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n11424 [label = "sylancl.2"style="filled" fillcolor = "orange"];
+  n11424->n11425[label="|- ch"];
+  n11425 [label = "a1i"style="filled" fillcolor = "cyan"];
+  n11425->n11427[label="|- ( ph -> ch )"];
+  n11422->n11423->n11424[arrowhead="none" style="invisible"];
+  {rank=same;n11424;n11423;n11422;}
+  n11426 [label = "sylancl.3"style="filled" fillcolor = "orange"];
+  n11426->n11427[label="|- ( ( ps /\ ch ) -> th )"];
+  n11427 [label = "syl2anc"style="filled" fillcolor = "cyan"];
+QED[style="invisible"]
+  n11427->QED[label="|- ( ph -> th )"];
+  n11417->n11418->n11419->n11420->n11421->n11425->n11426[arrowhead="none" style="invisible"];
+  {rank=same;n11426;n11425;n11421;n11420;n11419;n11418;n11417;}
+}

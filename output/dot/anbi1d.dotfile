@@ -1,0 +1,34 @@
+digraph proof_anbi1d {
+  rankdir = LR;
+  n11987 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n11987->n11998[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n11988 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n11988->n11998[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n11989 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n11989->n11998[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n11990 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n11990->n11998[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n11991 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n11991->n11997[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n11992 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n11992->n11994[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n11993 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n11993->n11994[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n11994 [label = "wb"color="lightgray" fontcolor="lightgray"];
+  n11994->n11997[color="lightgray" fontcolor="lightgray" label="wff ( ps <-> ch )"];
+  n11992->n11993[arrowhead="none" style="invisible"];
+  {rank=same;n11993;n11992;}
+  n11995 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n11995->n11997[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n11996 [label = "bid.1"style="filled" fillcolor = "orange"];
+  n11996->n11997[label="|- ( ph -> ( ps <-> ch ) )"];
+  n11997 [label = "a1d"style="filled" fillcolor = "cyan"];
+  n11997->n11998[label="|- ( ph -> ( th -> ( ps <-> ch ) ) )"];
+  n11991->n11994->n11995->n11996[arrowhead="none" style="invisible"];
+  {rank=same;n11996;n11995;n11994;n11991;}
+  n11998 [label = "pm5.32rd"style="filled" fillcolor = "cyan"];
+QED[style="invisible"]
+  n11998->QED[label="|- ( ph -> ( ( ps /\ th ) <-> ( ch /\ th ) ) )"];
+  n11987->n11988->n11989->n11990->n11997[arrowhead="none" style="invisible"];
+  {rank=same;n11997;n11990;n11989;n11988;n11987;}
+}

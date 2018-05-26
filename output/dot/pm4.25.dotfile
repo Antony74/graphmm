@@ -1,0 +1,22 @@
+digraph proof_pm4_25 {
+  rankdir = LR;
+  n8828 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n8828->n8830[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n8829 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n8829->n8830[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n8830 [label = "wo"color="lightgray" fontcolor="lightgray"];
+  n8830->n8834[color="lightgray" fontcolor="lightgray" label="wff ( ph \/ ph )"];
+  n8828->n8829[arrowhead="none" style="invisible"];
+  {rank=same;n8829;n8828;}
+  n8831 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n8831->n8834[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n8832 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n8832->n8833[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n8833 [label = "oridm"style="filled" fillcolor = "cyan"];
+  n8833->n8834[label="|- ( ( ph \/ ph ) <-> ph )"];
+  n8834 [label = "bicomi"style="filled" fillcolor = "cyan"];
+QED[style="invisible"]
+  n8834->QED[label="|- ( ph <-> ( ph \/ ph ) )"];
+  n8830->n8831->n8833[arrowhead="none" style="invisible"];
+  {rank=same;n8833;n8831;n8830;}
+}

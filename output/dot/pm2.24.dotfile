@@ -1,0 +1,24 @@
+digraph proof_pm2_24 {
+  rankdir = LR;
+  n1224 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n1224->n1225[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n1225 [label = "wn"color="lightgray" fontcolor="lightgray"];
+  n1225->n1231[color="lightgray" fontcolor="lightgray" label="wff -. ph"];
+  n1226 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n1226->n1231[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n1227 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n1227->n1231[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n1228 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n1228->n1230[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n1229 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n1229->n1230[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n1230 [label = "pm2.21"style="filled" fillcolor = "cyan"];
+  n1230->n1231[label="|- ( -. ph -> ( ph -> ps ) )"];
+  n1228->n1229[arrowhead="none" style="invisible"];
+  {rank=same;n1229;n1228;}
+  n1231 [label = "com12"style="filled" fillcolor = "cyan"];
+QED[style="invisible"]
+  n1231->QED[label="|- ( ph -> ( -. ph -> ps ) )"];
+  n1225->n1226->n1227->n1230[arrowhead="none" style="invisible"];
+  {rank=same;n1230;n1227;n1226;n1225;}
+}

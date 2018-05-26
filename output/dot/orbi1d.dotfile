@@ -1,0 +1,72 @@
+digraph proof_orbi1d {
+  rankdir = LR;
+  n11949 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n11949->n11974[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n11950 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n11950->n11952[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n11951 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n11951->n11952[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n11952 [label = "wo"color="lightgray" fontcolor="lightgray"];
+  n11952->n11974[color="lightgray" fontcolor="lightgray" label="wff ( th \/ ps )"];
+  n11950->n11951[arrowhead="none" style="invisible"];
+  {rank=same;n11951;n11950;}
+  n11953 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n11953->n11955[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n11954 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n11954->n11955[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n11955 [label = "wo"color="lightgray" fontcolor="lightgray"];
+  n11955->n11974[color="lightgray" fontcolor="lightgray" label="wff ( th \/ ch )"];
+  n11953->n11954[arrowhead="none" style="invisible"];
+  {rank=same;n11954;n11953;}
+  n11956 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n11956->n11958[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n11957 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n11957->n11958[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n11958 [label = "wo"color="lightgray" fontcolor="lightgray"];
+  n11958->n11974[color="lightgray" fontcolor="lightgray" label="wff ( ps \/ th )"];
+  n11956->n11957[arrowhead="none" style="invisible"];
+  {rank=same;n11957;n11956;}
+  n11959 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n11959->n11961[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n11960 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n11960->n11961[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n11961 [label = "wo"color="lightgray" fontcolor="lightgray"];
+  n11961->n11974[color="lightgray" fontcolor="lightgray" label="wff ( ch \/ th )"];
+  n11959->n11960[arrowhead="none" style="invisible"];
+  {rank=same;n11960;n11959;}
+  n11962 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n11962->n11967[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n11963 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n11963->n11967[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n11964 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n11964->n11967[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n11965 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n11965->n11967[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n11966 [label = "bid.1"style="filled" fillcolor = "orange"];
+  n11966->n11967[label="|- ( ph -> ( ps <-> ch ) )"];
+  n11967 [label = "orbi2d"style="filled" fillcolor = "cyan"];
+  n11967->n11974[label="|- ( ph -> ( ( th \/ ps ) <-> ( th \/ ch ) ) )"];
+  n11962->n11963->n11964->n11965->n11966[arrowhead="none" style="invisible"];
+  {rank=same;n11966;n11965;n11964;n11963;n11962;}
+  n11968 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n11968->n11970[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n11969 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n11969->n11970[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n11970 [label = "orcom"style="filled" fillcolor = "cyan"];
+  n11970->n11974[label="|- ( ( ps \/ th ) <-> ( th \/ ps ) )"];
+  n11968->n11969[arrowhead="none" style="invisible"];
+  {rank=same;n11969;n11968;}
+  n11971 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n11971->n11973[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n11972 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n11972->n11973[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n11973 [label = "orcom"style="filled" fillcolor = "cyan"];
+  n11973->n11974[label="|- ( ( ch \/ th ) <-> ( th \/ ch ) )"];
+  n11971->n11972[arrowhead="none" style="invisible"];
+  {rank=same;n11972;n11971;}
+  n11974 [label = "3bitr4g"style="filled" fillcolor = "cyan"];
+QED[style="invisible"]
+  n11974->QED[label="|- ( ph -> ( ( ps \/ th ) <-> ( ch \/ th ) ) )"];
+  n11949->n11952->n11955->n11958->n11961->n11967->n11970->n11973[arrowhead="none" style="invisible"];
+  {rank=same;n11973;n11970;n11967;n11961;n11958;n11955;n11952;n11949;}
+}

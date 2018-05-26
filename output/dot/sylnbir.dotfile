@@ -1,0 +1,26 @@
+digraph proof_sylnbir {
+  rankdir = LR;
+  n5921 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n5921->n5929[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n5922 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n5922->n5929[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n5923 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n5923->n5929[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n5924 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n5924->n5927[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n5925 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n5925->n5927[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n5926 [label = "sylnbir.1"style="filled" fillcolor = "orange"];
+  n5926->n5927[label="|- ( ps <-> ph )"];
+  n5927 [label = "bicomi"style="filled" fillcolor = "cyan"];
+  n5927->n5929[label="|- ( ph <-> ps )"];
+  n5924->n5925->n5926[arrowhead="none" style="invisible"];
+  {rank=same;n5926;n5925;n5924;}
+  n5928 [label = "sylnbir.2"style="filled" fillcolor = "orange"];
+  n5928->n5929[label="|- ( -. ps -> ch )"];
+  n5929 [label = "sylnbi"style="filled" fillcolor = "cyan"];
+QED[style="invisible"]
+  n5929->QED[label="|- ( -. ph -> ch )"];
+  n5921->n5922->n5923->n5927->n5928[arrowhead="none" style="invisible"];
+  {rank=same;n5928;n5927;n5923;n5922;n5921;}
+}

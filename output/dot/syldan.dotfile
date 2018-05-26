@@ -1,0 +1,46 @@
+digraph proof_syldan {
+  rankdir = LR;
+  n8203 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n8203->n8219[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n8204 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n8204->n8206[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n8205 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n8205->n8206[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n8206 [label = "wa"color="lightgray" fontcolor="lightgray"];
+  n8206->n8219[color="lightgray" fontcolor="lightgray" label="wff ( ph /\ ps )"];
+  n8204->n8205[arrowhead="none" style="invisible"];
+  {rank=same;n8205;n8204;}
+  n8207 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n8207->n8219[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n8208 [label = "syldan.1"style="filled" fillcolor = "orange"];
+  n8208->n8219[label="|- ( ( ph /\ ps ) -> ch )"];
+  n8209 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n8209->n8218[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n8210 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n8210->n8218[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n8211 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n8211->n8218[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n8212 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n8212->n8218[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n8213 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n8213->n8217[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n8214 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n8214->n8217[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n8215 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n8215->n8217[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n8216 [label = "syldan.2"style="filled" fillcolor = "orange"];
+  n8216->n8217[label="|- ( ( ph /\ ch ) -> th )"];
+  n8217 [label = "expcom"style="filled" fillcolor = "cyan"];
+  n8217->n8218[label="|- ( ch -> ( ph -> th ) )"];
+  n8213->n8214->n8215->n8216[arrowhead="none" style="invisible"];
+  {rank=same;n8216;n8215;n8214;n8213;}
+  n8218 [label = "adantrd"style="filled" fillcolor = "cyan"];
+  n8218->n8219[label="|- ( ch -> ( ( ph /\ ps ) -> th ) )"];
+  n8209->n8210->n8211->n8212->n8217[arrowhead="none" style="invisible"];
+  {rank=same;n8217;n8212;n8211;n8210;n8209;}
+  n8219 [label = "mpcom"style="filled" fillcolor = "cyan"];
+QED[style="invisible"]
+  n8219->QED[label="|- ( ( ph /\ ps ) -> th )"];
+  n8203->n8206->n8207->n8208->n8218[arrowhead="none" style="invisible"];
+  {rank=same;n8218;n8208;n8207;n8206;n8203;}
+}

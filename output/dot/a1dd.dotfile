@@ -1,0 +1,32 @@
+digraph proof_a1dd {
+  rankdir = LR;
+  n427 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n427->n437[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n428 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n428->n437[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n429 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n429->n437[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n430 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n430->n432[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n431 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n431->n432[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n432 [label = "wi"color="lightgray" fontcolor="lightgray"];
+  n432->n437[color="lightgray" fontcolor="lightgray" label="wff ( th -> ch )"];
+  n430->n431[arrowhead="none" style="invisible"];
+  {rank=same;n431;n430;}
+  n433 [label = "a1dd.1"style="filled" fillcolor = "orange"];
+  n433->n437[label="|- ( ph -> ( ps -> ch ) )"];
+  n434 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n434->n436[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n435 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n435->n436[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n436 [label = "ax-1"style="filled" fillcolor = "lime"];
+  n436->n437[label="|- ( ch -> ( th -> ch ) )"];
+  n434->n435[arrowhead="none" style="invisible"];
+  {rank=same;n435;n434;}
+  n437 [label = "syl6"style="filled" fillcolor = "cyan"];
+QED[style="invisible"]
+  n437->QED[label="|- ( ph -> ( ps -> ( th -> ch ) ) )"];
+  n427->n428->n429->n432->n433->n436[arrowhead="none" style="invisible"];
+  {rank=same;n436;n433;n432;n429;n428;n427;}
+}

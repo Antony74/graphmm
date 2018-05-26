@@ -1,0 +1,32 @@
+digraph proof_mp2d {
+  rankdir = LR;
+  n415 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n415->n426[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n416 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n416->n426[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n417 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n417->n426[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n418 [label = "mp2d.1"style="filled" fillcolor = "orange"];
+  n418->n426[label="|- ( ph -> ps )"];
+  n419 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n419->n425[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n420 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n420->n425[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n421 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n421->n425[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n422 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n422->n425[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n423 [label = "mp2d.2"style="filled" fillcolor = "orange"];
+  n423->n425[label="|- ( ph -> ch )"];
+  n424 [label = "mp2d.3"style="filled" fillcolor = "orange"];
+  n424->n425[label="|- ( ph -> ( ps -> ( ch -> th ) ) )"];
+  n425 [label = "mpid"style="filled" fillcolor = "cyan"];
+  n425->n426[label="|- ( ph -> ( ps -> th ) )"];
+  n419->n420->n421->n422->n423->n424[arrowhead="none" style="invisible"];
+  {rank=same;n424;n423;n422;n421;n420;n419;}
+  n426 [label = "mpd"style="filled" fillcolor = "cyan"];
+QED[style="invisible"]
+  n426->QED[label="|- ( ph -> th )"];
+  n415->n416->n417->n418->n425[arrowhead="none" style="invisible"];
+  {rank=same;n425;n418;n417;n416;n415;}
+}

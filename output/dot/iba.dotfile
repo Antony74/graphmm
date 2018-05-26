@@ -1,0 +1,36 @@
+digraph proof_iba {
+  rankdir = LR;
+  n8666 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n8666->n8677[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n8667 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n8667->n8677[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n8668 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n8668->n8670[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n8669 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n8669->n8670[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n8670 [label = "wa"color="lightgray" fontcolor="lightgray"];
+  n8670->n8677[color="lightgray" fontcolor="lightgray" label="wff ( ps /\ ph )"];
+  n8668->n8669[arrowhead="none" style="invisible"];
+  {rank=same;n8669;n8668;}
+  n8671 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n8671->n8673[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n8672 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n8672->n8673[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n8673 [label = "pm3.21"style="filled" fillcolor = "cyan"];
+  n8673->n8677[label="|- ( ph -> ( ps -> ( ps /\ ph ) ) )"];
+  n8671->n8672[arrowhead="none" style="invisible"];
+  {rank=same;n8672;n8671;}
+  n8674 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n8674->n8676[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n8675 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n8675->n8676[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n8676 [label = "simpl"style="filled" fillcolor = "cyan"];
+  n8676->n8677[label="|- ( ( ps /\ ph ) -> ps )"];
+  n8674->n8675[arrowhead="none" style="invisible"];
+  {rank=same;n8675;n8674;}
+  n8677 [label = "impbid1"style="filled" fillcolor = "cyan"];
+QED[style="invisible"]
+  n8677->QED[label="|- ( ph -> ( ps <-> ( ps /\ ph ) ) )"];
+  n8666->n8667->n8670->n8673->n8676[arrowhead="none" style="invisible"];
+  {rank=same;n8676;n8673;n8670;n8667;n8666;}
+}

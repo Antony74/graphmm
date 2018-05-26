@@ -1,0 +1,62 @@
+digraph proof_anbi12d {
+  rankdir = LR;
+  n12069 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n12069->n12091[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n12070 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n12070->n12072[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n12071 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n12071->n12072[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n12072 [label = "wa"color="lightgray" fontcolor="lightgray"];
+  n12072->n12091[color="lightgray" fontcolor="lightgray" label="wff ( ps /\ th )"];
+  n12070->n12071[arrowhead="none" style="invisible"];
+  {rank=same;n12071;n12070;}
+  n12073 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n12073->n12075[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n12074 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n12074->n12075[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n12075 [label = "wa"color="lightgray" fontcolor="lightgray"];
+  n12075->n12091[color="lightgray" fontcolor="lightgray" label="wff ( ch /\ th )"];
+  n12073->n12074[arrowhead="none" style="invisible"];
+  {rank=same;n12074;n12073;}
+  n12076 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n12076->n12078[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n12077 [label = "wta"color="lightgray" fontcolor="lightgray"];
+  n12077->n12078[color="lightgray" fontcolor="lightgray" label="wff ta"];
+  n12078 [label = "wa"color="lightgray" fontcolor="lightgray"];
+  n12078->n12091[color="lightgray" fontcolor="lightgray" label="wff ( ch /\ ta )"];
+  n12076->n12077[arrowhead="none" style="invisible"];
+  {rank=same;n12077;n12076;}
+  n12079 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n12079->n12084[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n12080 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n12080->n12084[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n12081 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n12081->n12084[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n12082 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n12082->n12084[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n12083 [label = "bi12d.1"style="filled" fillcolor = "orange"];
+  n12083->n12084[label="|- ( ph -> ( ps <-> ch ) )"];
+  n12084 [label = "anbi1d"style="filled" fillcolor = "cyan"];
+  n12084->n12091[label="|- ( ph -> ( ( ps /\ th ) <-> ( ch /\ th ) ) )"];
+  n12079->n12080->n12081->n12082->n12083[arrowhead="none" style="invisible"];
+  {rank=same;n12083;n12082;n12081;n12080;n12079;}
+  n12085 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n12085->n12090[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n12086 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n12086->n12090[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n12087 [label = "wta"color="lightgray" fontcolor="lightgray"];
+  n12087->n12090[color="lightgray" fontcolor="lightgray" label="wff ta"];
+  n12088 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n12088->n12090[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n12089 [label = "bi12d.2"style="filled" fillcolor = "orange"];
+  n12089->n12090[label="|- ( ph -> ( th <-> ta ) )"];
+  n12090 [label = "anbi2d"style="filled" fillcolor = "cyan"];
+  n12090->n12091[label="|- ( ph -> ( ( ch /\ th ) <-> ( ch /\ ta ) ) )"];
+  n12085->n12086->n12087->n12088->n12089[arrowhead="none" style="invisible"];
+  {rank=same;n12089;n12088;n12087;n12086;n12085;}
+  n12091 [label = "bitrd"style="filled" fillcolor = "cyan"];
+QED[style="invisible"]
+  n12091->QED[label="|- ( ph -> ( ( ps /\ th ) <-> ( ch /\ ta ) ) )"];
+  n12069->n12072->n12075->n12078->n12084->n12090[arrowhead="none" style="invisible"];
+  {rank=same;n12090;n12084;n12078;n12075;n12072;n12069;}
+}

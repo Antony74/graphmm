@@ -1,0 +1,28 @@
+digraph proof_nsyl4 {
+  rankdir = LR;
+  n1584 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n1584->n1585[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n1585 [label = "wn"color="lightgray" fontcolor="lightgray"];
+  n1585->n1593[color="lightgray" fontcolor="lightgray" label="wff -. ch"];
+  n1586 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n1586->n1593[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n1587 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n1587->n1593[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n1588 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n1588->n1591[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n1589 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n1589->n1591[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n1590 [label = "nsyl4.2"style="filled" fillcolor = "orange"];
+  n1590->n1591[label="|- ( -. ph -> ch )"];
+  n1591 [label = "con1i"style="filled" fillcolor = "cyan"];
+  n1591->n1593[label="|- ( -. ch -> ph )"];
+  n1588->n1589->n1590[arrowhead="none" style="invisible"];
+  {rank=same;n1590;n1589;n1588;}
+  n1592 [label = "nsyl4.1"style="filled" fillcolor = "orange"];
+  n1592->n1593[label="|- ( ph -> ps )"];
+  n1593 [label = "syl"style="filled" fillcolor = "cyan"];
+QED[style="invisible"]
+  n1593->QED[label="|- ( -. ch -> ps )"];
+  n1585->n1586->n1587->n1591->n1592[arrowhead="none" style="invisible"];
+  {rank=same;n1592;n1591;n1587;n1586;n1585;}
+}

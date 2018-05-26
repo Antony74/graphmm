@@ -1,0 +1,38 @@
+digraph proof_mpjaodan {
+  rankdir = LR;
+  n13366 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n13366->n13379[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n13367 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n13367->n13369[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n13368 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n13368->n13369[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n13369 [label = "wo"color="lightgray" fontcolor="lightgray"];
+  n13369->n13379[color="lightgray" fontcolor="lightgray" label="wff ( ps \/ th )"];
+  n13367->n13368[arrowhead="none" style="invisible"];
+  {rank=same;n13368;n13367;}
+  n13370 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n13370->n13379[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n13371 [label = "jaodan.3"style="filled" fillcolor = "orange"];
+  n13371->n13379[label="|- ( ph -> ( ps \/ th ) )"];
+  n13372 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n13372->n13378[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n13373 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n13373->n13378[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n13374 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n13374->n13378[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n13375 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n13375->n13378[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n13376 [label = "jaodan.1"style="filled" fillcolor = "orange"];
+  n13376->n13378[label="|- ( ( ph /\ ps ) -> ch )"];
+  n13377 [label = "jaodan.2"style="filled" fillcolor = "orange"];
+  n13377->n13378[label="|- ( ( ph /\ th ) -> ch )"];
+  n13378 [label = "jaodan"style="filled" fillcolor = "cyan"];
+  n13378->n13379[label="|- ( ( ph /\ ( ps \/ th ) ) -> ch )"];
+  n13372->n13373->n13374->n13375->n13376->n13377[arrowhead="none" style="invisible"];
+  {rank=same;n13377;n13376;n13375;n13374;n13373;n13372;}
+  n13379 [label = "mpdan"style="filled" fillcolor = "cyan"];
+QED[style="invisible"]
+  n13379->QED[label="|- ( ph -> ch )"];
+  n13366->n13369->n13370->n13371->n13378[arrowhead="none" style="invisible"];
+  {rank=same;n13378;n13371;n13370;n13369;n13366;}
+}

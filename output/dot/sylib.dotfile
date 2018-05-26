@@ -1,0 +1,26 @@
+digraph proof_sylib {
+  rankdir = LR;
+  n4501 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n4501->n4509[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n4502 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n4502->n4509[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n4503 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n4503->n4509[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n4504 [label = "sylib.1"style="filled" fillcolor = "orange"];
+  n4504->n4509[label="|- ( ph -> ps )"];
+  n4505 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n4505->n4508[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n4506 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n4506->n4508[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n4507 [label = "sylib.2"style="filled" fillcolor = "orange"];
+  n4507->n4508[label="|- ( ps <-> ch )"];
+  n4508 [label = "biimpi"style="filled" fillcolor = "cyan"];
+  n4508->n4509[label="|- ( ps -> ch )"];
+  n4505->n4506->n4507[arrowhead="none" style="invisible"];
+  {rank=same;n4507;n4506;n4505;}
+  n4509 [label = "syl"style="filled" fillcolor = "cyan"];
+QED[style="invisible"]
+  n4509->QED[label="|- ( ph -> ch )"];
+  n4501->n4502->n4503->n4504->n4508[arrowhead="none" style="invisible"];
+  {rank=same;n4508;n4504;n4503;n4502;n4501;}
+}

@@ -1,0 +1,22 @@
+digraph proof_anidm {
+  rankdir = LR;
+  n11154 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n11154->n11160[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n11155 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n11155->n11157[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n11156 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n11156->n11157[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n11157 [label = "wa"color="lightgray" fontcolor="lightgray"];
+  n11157->n11160[color="lightgray" fontcolor="lightgray" label="wff ( ph /\ ph )"];
+  n11155->n11156[arrowhead="none" style="invisible"];
+  {rank=same;n11156;n11155;}
+  n11158 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n11158->n11159[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n11159 [label = "pm4.24"style="filled" fillcolor = "cyan"];
+  n11159->n11160[label="|- ( ph <-> ( ph /\ ph ) )"];
+  n11160 [label = "bicomi"style="filled" fillcolor = "cyan"];
+QED[style="invisible"]
+  n11160->QED[label="|- ( ( ph /\ ph ) <-> ph )"];
+  n11154->n11157->n11159[arrowhead="none" style="invisible"];
+  {rank=same;n11159;n11157;n11154;}
+}

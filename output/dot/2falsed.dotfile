@@ -1,0 +1,38 @@
+digraph proof_2falsed {
+  rankdir = LR;
+  n6633 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n6633->n6646[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n6634 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n6634->n6646[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n6635 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n6635->n6646[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n6636 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n6636->n6640[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n6637 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n6637->n6640[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n6638 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n6638->n6640[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n6639 [label = "2falsed.1"style="filled" fillcolor = "orange"];
+  n6639->n6640[label="|- ( ph -> -. ps )"];
+  n6640 [label = "pm2.21d"style="filled" fillcolor = "cyan"];
+  n6640->n6646[label="|- ( ph -> ( ps -> ch ) )"];
+  n6636->n6637->n6638->n6639[arrowhead="none" style="invisible"];
+  {rank=same;n6639;n6638;n6637;n6636;}
+  n6641 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n6641->n6645[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n6642 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n6642->n6645[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n6643 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n6643->n6645[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n6644 [label = "2falsed.2"style="filled" fillcolor = "orange"];
+  n6644->n6645[label="|- ( ph -> -. ch )"];
+  n6645 [label = "pm2.21d"style="filled" fillcolor = "cyan"];
+  n6645->n6646[label="|- ( ph -> ( ch -> ps ) )"];
+  n6641->n6642->n6643->n6644[arrowhead="none" style="invisible"];
+  {rank=same;n6644;n6643;n6642;n6641;}
+  n6646 [label = "impbid"style="filled" fillcolor = "cyan"];
+QED[style="invisible"]
+  n6646->QED[label="|- ( ph -> ( ps <-> ch ) )"];
+  n6633->n6634->n6635->n6640->n6645[arrowhead="none" style="invisible"];
+  {rank=same;n6645;n6640;n6635;n6634;n6633;}
+}

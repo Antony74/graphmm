@@ -1,0 +1,68 @@
+digraph proof_mtord {
+  rankdir = LR;
+  n11379 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n11379->n11404[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n11380 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n11380->n11404[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n11381 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n11381->n11404[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n11382 [label = "mtord.2"style="filled" fillcolor = "orange"];
+  n11382->n11404[label="|- ( ph -> -. th )"];
+  n11383 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n11383->n11403[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n11384 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n11384->n11403[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n11385 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n11385->n11386[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n11386 [label = "wn"color="lightgray" fontcolor="lightgray"];
+  n11386->n11403[color="lightgray" fontcolor="lightgray" label="wff -. ch"];
+  n11387 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n11387->n11403[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n11388 [label = "mtord.1"style="filled" fillcolor = "orange"];
+  n11388->n11403[label="|- ( ph -> -. ch )"];
+  n11389 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n11389->n11402[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n11390 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n11390->n11402[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n11391 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n11391->n11393[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n11392 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n11392->n11393[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n11393 [label = "wo"color="lightgray" fontcolor="lightgray"];
+  n11393->n11402[color="lightgray" fontcolor="lightgray" label="wff ( ch \/ th )"];
+  n11391->n11392[arrowhead="none" style="invisible"];
+  {rank=same;n11392;n11391;}
+  n11394 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n11394->n11395[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n11395 [label = "wn"color="lightgray" fontcolor="lightgray"];
+  n11395->n11397[color="lightgray" fontcolor="lightgray" label="wff -. ch"];
+  n11396 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n11396->n11397[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n11397 [label = "wi"color="lightgray" fontcolor="lightgray"];
+  n11397->n11402[color="lightgray" fontcolor="lightgray" label="wff ( -. ch -> th )"];
+  n11395->n11396[arrowhead="none" style="invisible"];
+  {rank=same;n11396;n11395;}
+  n11398 [label = "mtord.3"style="filled" fillcolor = "orange"];
+  n11398->n11402[label="|- ( ph -> ( ps -> ( ch \/ th ) ) )"];
+  n11399 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n11399->n11401[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n11400 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n11400->n11401[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n11401 [label = "df-or"color="lightgray" fontcolor="lightgray"];
+  n11401->n11402[color="lightgray" fontcolor="lightgray" label="|- ( ( ch \/ th ) <-> ( -. ch -> th ) )"];
+  n11399->n11400[arrowhead="none" style="invisible"];
+  {rank=same;n11400;n11399;}
+  n11402 [label = "syl6ib"style="filled" fillcolor = "cyan"];
+  n11402->n11403[label="|- ( ph -> ( ps -> ( -. ch -> th ) ) )"];
+  n11389->n11390->n11393->n11397->n11398->n11401[arrowhead="none" style="invisible"];
+  {rank=same;n11401;n11398;n11397;n11393;n11390;n11389;}
+  n11403 [label = "mpid"style="filled" fillcolor = "cyan"];
+  n11403->n11404[label="|- ( ph -> ( ps -> th ) )"];
+  n11383->n11384->n11386->n11387->n11388->n11402[arrowhead="none" style="invisible"];
+  {rank=same;n11402;n11388;n11387;n11386;n11384;n11383;}
+  n11404 [label = "mtod"style="filled" fillcolor = "cyan"];
+QED[style="invisible"]
+  n11404->QED[label="|- ( ph -> -. ps )"];
+  n11379->n11380->n11381->n11382->n11403[arrowhead="none" style="invisible"];
+  {rank=same;n11403;n11382;n11381;n11380;n11379;}
+}

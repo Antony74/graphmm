@@ -1,0 +1,26 @@
+digraph proof_mpi {
+  rankdir = LR;
+  n92 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n92->n100[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n93 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n93->n100[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n94 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n94->n100[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n95 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n95->n98[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n96 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n96->n98[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n97 [label = "mpi.1"style="filled" fillcolor = "orange"];
+  n97->n98[label="|- ps"];
+  n98 [label = "a1i"style="filled" fillcolor = "cyan"];
+  n98->n100[label="|- ( ph -> ps )"];
+  n95->n96->n97[arrowhead="none" style="invisible"];
+  {rank=same;n97;n96;n95;}
+  n99 [label = "mpi.2"style="filled" fillcolor = "orange"];
+  n99->n100[label="|- ( ph -> ( ps -> ch ) )"];
+  n100 [label = "mpd"style="filled" fillcolor = "cyan"];
+QED[style="invisible"]
+  n100->QED[label="|- ( ph -> ch )"];
+  n92->n93->n94->n98->n99[arrowhead="none" style="invisible"];
+  {rank=same;n99;n98;n94;n93;n92;}
+}

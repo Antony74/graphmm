@@ -1,0 +1,120 @@
+digraph proof_oplem1 {
+  rankdir = LR;
+  n18089 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n18089->n18136[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n18090 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n18090->n18136[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n18091 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n18091->n18136[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n18092 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n18092->n18134[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n18093 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n18093->n18134[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n18094 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n18094->n18133[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n18095 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n18095->n18096[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n18096 [label = "wn"color="lightgray" fontcolor="lightgray"];
+  n18096->n18133[color="lightgray" fontcolor="lightgray" label="wff -. th"];
+  n18097 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n18097->n18099[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n18098 [label = "wta"color="lightgray" fontcolor="lightgray"];
+  n18098->n18099[color="lightgray" fontcolor="lightgray" label="wff ta"];
+  n18099 [label = "wa"color="lightgray" fontcolor="lightgray"];
+  n18099->n18133[color="lightgray" fontcolor="lightgray" label="wff ( ch /\ ta )"];
+  n18097->n18098[arrowhead="none" style="invisible"];
+  {rank=same;n18098;n18097;}
+  n18100 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n18100->n18133[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n18101 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n18101->n18127[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n18102 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n18102->n18103[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n18103 [label = "wn"color="lightgray" fontcolor="lightgray"];
+  n18103->n18127[color="lightgray" fontcolor="lightgray" label="wff -. th"];
+  n18104 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n18104->n18127[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n18105 [label = "wta"color="lightgray" fontcolor="lightgray"];
+  n18105->n18127[color="lightgray" fontcolor="lightgray" label="wff ta"];
+  n18106 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n18106->n18107[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n18107 [label = "wn"color="lightgray" fontcolor="lightgray"];
+  n18107->n18121[color="lightgray" fontcolor="lightgray" label="wff -. th"];
+  n18108 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n18108->n18109[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n18109 [label = "wn"color="lightgray" fontcolor="lightgray"];
+  n18109->n18121[color="lightgray" fontcolor="lightgray" label="wff -. ps"];
+  n18110 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n18110->n18121[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n18111 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n18111->n18121[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n18112 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n18112->n18115[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n18113 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n18113->n18115[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n18114 [label = "oplem1.3"style="filled" fillcolor = "orange"];
+  n18114->n18115[label="|- ( ps <-> th )"];
+  n18115 [label = "notbii"style="filled" fillcolor = "cyan"];
+  n18115->n18121[label="|- ( -. ps <-> -. th )"];
+  n18112->n18113->n18114[arrowhead="none" style="invisible"];
+  {rank=same;n18114;n18113;n18112;}
+  n18116 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n18116->n18120[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n18117 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n18117->n18120[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n18118 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n18118->n18120[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n18119 [label = "oplem1.1"style="filled" fillcolor = "orange"];
+  n18119->n18120[label="|- ( ph -> ( ps \/ ch ) )"];
+  n18120 [label = "ord"style="filled" fillcolor = "cyan"];
+  n18120->n18121[label="|- ( ph -> ( -. ps -> ch ) )"];
+  n18116->n18117->n18118->n18119[arrowhead="none" style="invisible"];
+  {rank=same;n18119;n18118;n18117;n18116;}
+  n18121 [label = "syl5bir"style="filled" fillcolor = "cyan"];
+  n18121->n18127[label="|- ( ph -> ( -. th -> ch ) )"];
+  n18107->n18109->n18110->n18111->n18115->n18120[arrowhead="none" style="invisible"];
+  {rank=same;n18120;n18115;n18111;n18110;n18109;n18107;}
+  n18122 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n18122->n18126[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n18123 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n18123->n18126[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n18124 [label = "wta"color="lightgray" fontcolor="lightgray"];
+  n18124->n18126[color="lightgray" fontcolor="lightgray" label="wff ta"];
+  n18125 [label = "oplem1.2"style="filled" fillcolor = "orange"];
+  n18125->n18126[label="|- ( ph -> ( th \/ ta ) )"];
+  n18126 [label = "ord"style="filled" fillcolor = "cyan"];
+  n18126->n18127[label="|- ( ph -> ( -. th -> ta ) )"];
+  n18122->n18123->n18124->n18125[arrowhead="none" style="invisible"];
+  {rank=same;n18125;n18124;n18123;n18122;}
+  n18127 [label = "jcad"style="filled" fillcolor = "cyan"];
+  n18127->n18133[label="|- ( ph -> ( -. th -> ( ch /\ ta ) ) )"];
+  n18101->n18103->n18104->n18105->n18121->n18126[arrowhead="none" style="invisible"];
+  {rank=same;n18126;n18121;n18105;n18104;n18103;n18101;}
+  n18128 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n18128->n18132[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n18129 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n18129->n18132[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n18130 [label = "wta"color="lightgray" fontcolor="lightgray"];
+  n18130->n18132[color="lightgray" fontcolor="lightgray" label="wff ta"];
+  n18131 [label = "oplem1.4"style="filled" fillcolor = "orange"];
+  n18131->n18132[label="|- ( ch -> ( th <-> ta ) )"];
+  n18132 [label = "biimpar"style="filled" fillcolor = "cyan"];
+  n18132->n18133[label="|- ( ( ch /\ ta ) -> th )"];
+  n18128->n18129->n18130->n18131[arrowhead="none" style="invisible"];
+  {rank=same;n18131;n18130;n18129;n18128;}
+  n18133 [label = "syl6"style="filled" fillcolor = "cyan"];
+  n18133->n18134[label="|- ( ph -> ( -. th -> th ) )"];
+  n18094->n18096->n18099->n18100->n18127->n18132[arrowhead="none" style="invisible"];
+  {rank=same;n18132;n18127;n18100;n18099;n18096;n18094;}
+  n18134 [label = "pm2.18d"style="filled" fillcolor = "cyan"];
+  n18134->n18136[label="|- ( ph -> th )"];
+  n18092->n18093->n18133[arrowhead="none" style="invisible"];
+  {rank=same;n18133;n18093;n18092;}
+  n18135 [label = "oplem1.3"style="filled" fillcolor = "orange"];
+  n18135->n18136[label="|- ( ps <-> th )"];
+  n18136 [label = "sylibr"style="filled" fillcolor = "cyan"];
+QED[style="invisible"]
+  n18136->QED[label="|- ( ph -> ps )"];
+  n18089->n18090->n18091->n18134->n18135[arrowhead="none" style="invisible"];
+  {rank=same;n18135;n18134;n18091;n18090;n18089;}
+}

@@ -1,0 +1,38 @@
+digraph proof_imp4d {
+  rankdir = LR;
+  n10217 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n10217->n10230[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n10218 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n10218->n10230[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n10219 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n10219->n10221[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n10220 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n10220->n10221[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n10221 [label = "wa"color="lightgray" fontcolor="lightgray"];
+  n10221->n10230[color="lightgray" fontcolor="lightgray" label="wff ( ch /\ th )"];
+  n10219->n10220[arrowhead="none" style="invisible"];
+  {rank=same;n10220;n10219;}
+  n10222 [label = "wta"color="lightgray" fontcolor="lightgray"];
+  n10222->n10230[color="lightgray" fontcolor="lightgray" label="wff ta"];
+  n10223 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n10223->n10229[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n10224 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n10224->n10229[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n10225 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n10225->n10229[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n10226 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n10226->n10229[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n10227 [label = "wta"color="lightgray" fontcolor="lightgray"];
+  n10227->n10229[color="lightgray" fontcolor="lightgray" label="wff ta"];
+  n10228 [label = "imp4.1"style="filled" fillcolor = "orange"];
+  n10228->n10229[label="|- ( ph -> ( ps -> ( ch -> ( th -> ta ) ) ) )"];
+  n10229 [label = "imp4a"style="filled" fillcolor = "cyan"];
+  n10229->n10230[label="|- ( ph -> ( ps -> ( ( ch /\ th ) -> ta ) ) )"];
+  n10223->n10224->n10225->n10226->n10227->n10228[arrowhead="none" style="invisible"];
+  {rank=same;n10228;n10227;n10226;n10225;n10224;n10223;}
+  n10230 [label = "imp3a"style="filled" fillcolor = "cyan"];
+QED[style="invisible"]
+  n10230->QED[label="|- ( ph -> ( ( ps /\ ( ch /\ th ) ) -> ta ) )"];
+  n10217->n10218->n10221->n10222->n10229[arrowhead="none" style="invisible"];
+  {rank=same;n10229;n10222;n10221;n10218;n10217;}
+}

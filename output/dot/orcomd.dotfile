@@ -1,0 +1,36 @@
+digraph proof_orcomd {
+  rankdir = LR;
+  n7324 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n7324->n7335[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n7325 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n7325->n7327[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n7326 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n7326->n7327[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n7327 [label = "wo"color="lightgray" fontcolor="lightgray"];
+  n7327->n7335[color="lightgray" fontcolor="lightgray" label="wff ( ps \/ ch )"];
+  n7325->n7326[arrowhead="none" style="invisible"];
+  {rank=same;n7326;n7325;}
+  n7328 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n7328->n7330[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n7329 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n7329->n7330[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n7330 [label = "wo"color="lightgray" fontcolor="lightgray"];
+  n7330->n7335[color="lightgray" fontcolor="lightgray" label="wff ( ch \/ ps )"];
+  n7328->n7329[arrowhead="none" style="invisible"];
+  {rank=same;n7329;n7328;}
+  n7331 [label = "orcomd.1"style="filled" fillcolor = "orange"];
+  n7331->n7335[label="|- ( ph -> ( ps \/ ch ) )"];
+  n7332 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n7332->n7334[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n7333 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n7333->n7334[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n7334 [label = "orcom"style="filled" fillcolor = "cyan"];
+  n7334->n7335[label="|- ( ( ps \/ ch ) <-> ( ch \/ ps ) )"];
+  n7332->n7333[arrowhead="none" style="invisible"];
+  {rank=same;n7333;n7332;}
+  n7335 [label = "sylib"style="filled" fillcolor = "cyan"];
+QED[style="invisible"]
+  n7335->QED[label="|- ( ph -> ( ch \/ ps ) )"];
+  n7324->n7327->n7330->n7331->n7334[arrowhead="none" style="invisible"];
+  {rank=same;n7334;n7331;n7330;n7327;n7324;}
+}

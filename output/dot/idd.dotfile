@@ -1,0 +1,22 @@
+digraph proof_idd {
+  rankdir = LR;
+  n176 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n176->n178[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n177 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n177->n178[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n178 [label = "wi"color="lightgray" fontcolor="lightgray"];
+  n178->n182[color="lightgray" fontcolor="lightgray" label="wff ( ps -> ps )"];
+  n176->n177[arrowhead="none" style="invisible"];
+  {rank=same;n177;n176;}
+  n179 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n179->n182[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n180 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n180->n181[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n181 [label = "id"style="filled" fillcolor = "cyan"];
+  n181->n182[label="|- ( ps -> ps )"];
+  n182 [label = "a1i"style="filled" fillcolor = "cyan"];
+QED[style="invisible"]
+  n182->QED[label="|- ( ph -> ( ps -> ps ) )"];
+  n178->n179->n181[arrowhead="none" style="invisible"];
+  {rank=same;n181;n179;n178;}
+}

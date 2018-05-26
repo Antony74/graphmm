@@ -1,0 +1,36 @@
+digraph proof_orel2 {
+  rankdir = LR;
+  n7271 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n7271->n7272[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n7272 [label = "wn"color="lightgray" fontcolor="lightgray"];
+  n7272->n7283[color="lightgray" fontcolor="lightgray" label="wff -. ph"];
+  n7273 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n7273->n7283[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n7274 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n7274->n7283[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n7275 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n7275->n7283[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n7276 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n7276->n7277[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n7277 [label = "wn"color="lightgray" fontcolor="lightgray"];
+  n7277->n7279[color="lightgray" fontcolor="lightgray" label="wff -. ph"];
+  n7278 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n7278->n7279[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n7279 [label = "idd"style="filled" fillcolor = "cyan"];
+  n7279->n7283[label="|- ( -. ph -> ( ps -> ps ) )"];
+  n7277->n7278[arrowhead="none" style="invisible"];
+  {rank=same;n7278;n7277;}
+  n7280 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n7280->n7282[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n7281 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n7281->n7282[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n7282 [label = "pm2.21"style="filled" fillcolor = "cyan"];
+  n7282->n7283[label="|- ( -. ph -> ( ph -> ps ) )"];
+  n7280->n7281[arrowhead="none" style="invisible"];
+  {rank=same;n7281;n7280;}
+  n7283 [label = "jaod"style="filled" fillcolor = "cyan"];
+QED[style="invisible"]
+  n7283->QED[label="|- ( -. ph -> ( ( ps \/ ph ) -> ps ) )"];
+  n7272->n7273->n7274->n7275->n7279->n7282[arrowhead="none" style="invisible"];
+  {rank=same;n7282;n7279;n7275;n7274;n7273;n7272;}
+}

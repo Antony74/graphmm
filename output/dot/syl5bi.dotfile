@@ -1,0 +1,28 @@
+digraph proof_syl5bi {
+  rankdir = LR;
+  n4720 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n4720->n4729[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n4721 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n4721->n4729[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n4722 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n4722->n4729[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n4723 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n4723->n4729[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n4724 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n4724->n4727[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n4725 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n4725->n4727[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n4726 [label = "syl5bi.1"style="filled" fillcolor = "orange"];
+  n4726->n4727[label="|- ( ph <-> ps )"];
+  n4727 [label = "biimpi"style="filled" fillcolor = "cyan"];
+  n4727->n4729[label="|- ( ph -> ps )"];
+  n4724->n4725->n4726[arrowhead="none" style="invisible"];
+  {rank=same;n4726;n4725;n4724;}
+  n4728 [label = "syl5bi.2"style="filled" fillcolor = "orange"];
+  n4728->n4729[label="|- ( ch -> ( ps -> th ) )"];
+  n4729 [label = "syl5"style="filled" fillcolor = "cyan"];
+QED[style="invisible"]
+  n4729->QED[label="|- ( ch -> ( ph -> th ) )"];
+  n4720->n4721->n4722->n4723->n4727->n4728[arrowhead="none" style="invisible"];
+  {rank=same;n4728;n4727;n4723;n4722;n4721;n4720;}
+}

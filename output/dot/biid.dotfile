@@ -1,0 +1,20 @@
+digraph proof_biid {
+  rankdir = LR;
+  n4913 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n4913->n4919[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n4914 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n4914->n4919[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n4915 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n4915->n4916[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n4916 [label = "id"style="filled" fillcolor = "cyan"];
+  n4916->n4919[label="|- ( ph -> ph )"];
+  n4917 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n4917->n4918[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n4918 [label = "id"style="filled" fillcolor = "cyan"];
+  n4918->n4919[label="|- ( ph -> ph )"];
+  n4919 [label = "impbii"style="filled" fillcolor = "cyan"];
+QED[style="invisible"]
+  n4919->QED[label="|- ( ph <-> ph )"];
+  n4913->n4914->n4916->n4918[arrowhead="none" style="invisible"];
+  {rank=same;n4918;n4916;n4914;n4913;}
+}

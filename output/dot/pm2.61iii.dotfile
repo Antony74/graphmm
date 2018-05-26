@@ -1,0 +1,62 @@
+digraph proof_pm2_61iii {
+  rankdir = LR;
+  n1902 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n1902->n1925[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n1903 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n1903->n1925[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n1904 [label = "pm2.61iii.4"style="filled" fillcolor = "orange"];
+  n1904->n1925[label="|- ( ch -> th )"];
+  n1905 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n1905->n1924[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n1906 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n1906->n1924[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n1907 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n1907->n1908[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n1908 [label = "wn"color="lightgray" fontcolor="lightgray"];
+  n1908->n1910[color="lightgray" fontcolor="lightgray" label="wff -. ch"];
+  n1909 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n1909->n1910[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n1910 [label = "wi"color="lightgray" fontcolor="lightgray"];
+  n1910->n1924[color="lightgray" fontcolor="lightgray" label="wff ( -. ch -> th )"];
+  n1908->n1909[arrowhead="none" style="invisible"];
+  {rank=same;n1909;n1908;}
+  n1911 [label = "pm2.61iii.1"style="filled" fillcolor = "orange"];
+  n1911->n1924[label="|- ( -. ph -> ( -. ps -> ( -. ch -> th ) ) )"];
+  n1912 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n1912->n1917[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n1913 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n1913->n1917[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n1914 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n1914->n1915[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n1915 [label = "wn"color="lightgray" fontcolor="lightgray"];
+  n1915->n1917[color="lightgray" fontcolor="lightgray" label="wff -. ch"];
+  n1916 [label = "pm2.61iii.2"style="filled" fillcolor = "orange"];
+  n1916->n1917[label="|- ( ph -> th )"];
+  n1917 [label = "a1d"style="filled" fillcolor = "cyan"];
+  n1917->n1924[label="|- ( ph -> ( -. ch -> th ) )"];
+  n1912->n1913->n1915->n1916[arrowhead="none" style="invisible"];
+  {rank=same;n1916;n1915;n1913;n1912;}
+  n1918 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n1918->n1923[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n1919 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n1919->n1923[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n1920 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n1920->n1921[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n1921 [label = "wn"color="lightgray" fontcolor="lightgray"];
+  n1921->n1923[color="lightgray" fontcolor="lightgray" label="wff -. ch"];
+  n1922 [label = "pm2.61iii.3"style="filled" fillcolor = "orange"];
+  n1922->n1923[label="|- ( ps -> th )"];
+  n1923 [label = "a1d"style="filled" fillcolor = "cyan"];
+  n1923->n1924[label="|- ( ps -> ( -. ch -> th ) )"];
+  n1918->n1919->n1921->n1922[arrowhead="none" style="invisible"];
+  {rank=same;n1922;n1921;n1919;n1918;}
+  n1924 [label = "pm2.61ii"style="filled" fillcolor = "cyan"];
+  n1924->n1925[label="|- ( -. ch -> th )"];
+  n1905->n1906->n1910->n1911->n1917->n1923[arrowhead="none" style="invisible"];
+  {rank=same;n1923;n1917;n1911;n1910;n1906;n1905;}
+  n1925 [label = "pm2.61i"style="filled" fillcolor = "cyan"];
+QED[style="invisible"]
+  n1925->QED[label="|- th"];
+  n1902->n1903->n1904->n1924[arrowhead="none" style="invisible"];
+  {rank=same;n1924;n1904;n1903;n1902;}
+}

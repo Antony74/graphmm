@@ -1,0 +1,30 @@
+digraph proof_mpsyl {
+  rankdir = LR;
+  n617 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n617->n627[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n618 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n618->n627[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n619 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n619->n627[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n620 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n620->n627[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n621 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n621->n624[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n622 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n622->n624[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n623 [label = "mpsyl.1"style="filled" fillcolor = "orange"];
+  n623->n624[label="|- ph"];
+  n624 [label = "a1i"style="filled" fillcolor = "cyan"];
+  n624->n627[label="|- ( ps -> ph )"];
+  n621->n622->n623[arrowhead="none" style="invisible"];
+  {rank=same;n623;n622;n621;}
+  n625 [label = "mpsyl.2"style="filled" fillcolor = "orange"];
+  n625->n627[label="|- ( ps -> ch )"];
+  n626 [label = "mpsyl.3"style="filled" fillcolor = "orange"];
+  n626->n627[label="|- ( ph -> ( ch -> th ) )"];
+  n627 [label = "sylc"style="filled" fillcolor = "cyan"];
+QED[style="invisible"]
+  n627->QED[label="|- ( ps -> th )"];
+  n617->n618->n619->n620->n624->n625->n626[arrowhead="none" style="invisible"];
+  {rank=same;n626;n625;n624;n620;n619;n618;n617;}
+}

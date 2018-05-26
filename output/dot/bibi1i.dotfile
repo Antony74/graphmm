@@ -1,0 +1,68 @@
+digraph proof_bibi1i {
+  rankdir = LR;
+  n6011 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n6011->n6013[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n6012 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n6012->n6013[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n6013 [label = "wb"color="lightgray" fontcolor="lightgray"];
+  n6013->n6034[color="lightgray" fontcolor="lightgray" label="wff ( ph <-> ch )"];
+  n6011->n6012[arrowhead="none" style="invisible"];
+  {rank=same;n6012;n6011;}
+  n6014 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n6014->n6016[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n6015 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n6015->n6016[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n6016 [label = "wb"color="lightgray" fontcolor="lightgray"];
+  n6016->n6034[color="lightgray" fontcolor="lightgray" label="wff ( ch <-> ph )"];
+  n6014->n6015[arrowhead="none" style="invisible"];
+  {rank=same;n6015;n6014;}
+  n6017 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n6017->n6019[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n6018 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n6018->n6019[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n6019 [label = "wb"color="lightgray" fontcolor="lightgray"];
+  n6019->n6034[color="lightgray" fontcolor="lightgray" label="wff ( ch <-> ps )"];
+  n6017->n6018[arrowhead="none" style="invisible"];
+  {rank=same;n6018;n6017;}
+  n6020 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n6020->n6022[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n6021 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n6021->n6022[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n6022 [label = "wb"color="lightgray" fontcolor="lightgray"];
+  n6022->n6034[color="lightgray" fontcolor="lightgray" label="wff ( ps <-> ch )"];
+  n6020->n6021[arrowhead="none" style="invisible"];
+  {rank=same;n6021;n6020;}
+  n6023 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n6023->n6025[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n6024 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n6024->n6025[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n6025 [label = "bicom"style="filled" fillcolor = "cyan"];
+  n6025->n6034[label="|- ( ( ph <-> ch ) <-> ( ch <-> ph ) )"];
+  n6023->n6024[arrowhead="none" style="invisible"];
+  {rank=same;n6024;n6023;}
+  n6026 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n6026->n6030[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n6027 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n6027->n6030[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n6028 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n6028->n6030[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n6029 [label = "bibi.a"style="filled" fillcolor = "orange"];
+  n6029->n6030[label="|- ( ph <-> ps )"];
+  n6030 [label = "bibi2i"style="filled" fillcolor = "cyan"];
+  n6030->n6034[label="|- ( ( ch <-> ph ) <-> ( ch <-> ps ) )"];
+  n6026->n6027->n6028->n6029[arrowhead="none" style="invisible"];
+  {rank=same;n6029;n6028;n6027;n6026;}
+  n6031 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n6031->n6033[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n6032 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n6032->n6033[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n6033 [label = "bicom"style="filled" fillcolor = "cyan"];
+  n6033->n6034[label="|- ( ( ch <-> ps ) <-> ( ps <-> ch ) )"];
+  n6031->n6032[arrowhead="none" style="invisible"];
+  {rank=same;n6032;n6031;}
+  n6034 [label = "3bitri"style="filled" fillcolor = "cyan"];
+QED[style="invisible"]
+  n6034->QED[label="|- ( ( ph <-> ch ) <-> ( ps <-> ch ) )"];
+  n6013->n6016->n6019->n6022->n6025->n6030->n6033[arrowhead="none" style="invisible"];
+  {rank=same;n6033;n6030;n6025;n6022;n6019;n6016;n6013;}
+}

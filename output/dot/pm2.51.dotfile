@@ -1,0 +1,46 @@
+digraph proof_pm2_51 {
+  rankdir = LR;
+  n1695 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n1695->n1697[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n1696 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n1696->n1697[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n1697 [label = "wi"color="lightgray" fontcolor="lightgray"];
+  n1697->n1698[color="lightgray" fontcolor="lightgray" label="wff ( ph -> ps )"];
+  n1695->n1696[arrowhead="none" style="invisible"];
+  {rank=same;n1696;n1695;}
+  n1698 [label = "wn"color="lightgray" fontcolor="lightgray"];
+  n1698->n1710[color="lightgray" fontcolor="lightgray" label="wff -. ( ph -> ps )"];
+  n1699 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n1699->n1700[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n1700 [label = "wn"color="lightgray" fontcolor="lightgray"];
+  n1700->n1710[color="lightgray" fontcolor="lightgray" label="wff -. ps"];
+  n1701 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n1701->n1710[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n1702 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n1702->n1709[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n1703 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n1703->n1705[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n1704 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n1704->n1705[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n1705 [label = "wi"color="lightgray" fontcolor="lightgray"];
+  n1705->n1709[color="lightgray" fontcolor="lightgray" label="wff ( ph -> ps )"];
+  n1703->n1704[arrowhead="none" style="invisible"];
+  {rank=same;n1704;n1703;}
+  n1706 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n1706->n1708[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n1707 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n1707->n1708[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n1708 [label = "ax-1"style="filled" fillcolor = "lime"];
+  n1708->n1709[label="|- ( ps -> ( ph -> ps ) )"];
+  n1706->n1707[arrowhead="none" style="invisible"];
+  {rank=same;n1707;n1706;}
+  n1709 [label = "con3i"style="filled" fillcolor = "cyan"];
+  n1709->n1710[label="|- ( -. ( ph -> ps ) -> -. ps )"];
+  n1702->n1705->n1708[arrowhead="none" style="invisible"];
+  {rank=same;n1708;n1705;n1702;}
+  n1710 [label = "a1d"style="filled" fillcolor = "cyan"];
+QED[style="invisible"]
+  n1710->QED[label="|- ( -. ( ph -> ps ) -> ( ph -> -. ps ) )"];
+  n1698->n1700->n1701->n1709[arrowhead="none" style="invisible"];
+  {rank=same;n1709;n1701;n1700;n1698;}
+}

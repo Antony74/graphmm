@@ -1,0 +1,34 @@
+digraph proof_simp3d {
+  rankdir = LR;
+  n19414 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n19414->n19425[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n19415 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n19415->n19418[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n19416 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n19416->n19418[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n19417 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n19417->n19418[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n19418 [label = "w3a"color="lightgray" fontcolor="lightgray"];
+  n19418->n19425[color="lightgray" fontcolor="lightgray" label="wff ( ps /\ ch /\ th )"];
+  n19415->n19416->n19417[arrowhead="none" style="invisible"];
+  {rank=same;n19417;n19416;n19415;}
+  n19419 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n19419->n19425[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n19420 [label = "3simp1d.1"style="filled" fillcolor = "orange"];
+  n19420->n19425[label="|- ( ph -> ( ps /\ ch /\ th ) )"];
+  n19421 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n19421->n19424[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n19422 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n19422->n19424[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n19423 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n19423->n19424[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n19424 [label = "simp3"style="filled" fillcolor = "cyan"];
+  n19424->n19425[label="|- ( ( ps /\ ch /\ th ) -> th )"];
+  n19421->n19422->n19423[arrowhead="none" style="invisible"];
+  {rank=same;n19423;n19422;n19421;}
+  n19425 [label = "syl"style="filled" fillcolor = "cyan"];
+QED[style="invisible"]
+  n19425->QED[label="|- ( ph -> th )"];
+  n19414->n19418->n19419->n19420->n19424[arrowhead="none" style="invisible"];
+  {rank=same;n19424;n19420;n19419;n19418;n19414;}
+}

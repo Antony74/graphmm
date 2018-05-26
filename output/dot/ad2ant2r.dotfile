@@ -1,0 +1,36 @@
+digraph proof_ad2ant2r {
+  rankdir = LR;
+  n12726 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n12726->n12738[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n12727 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n12727->n12729[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n12728 [label = "wta"color="lightgray" fontcolor="lightgray"];
+  n12728->n12729[color="lightgray" fontcolor="lightgray" label="wff ta"];
+  n12729 [label = "wa"color="lightgray" fontcolor="lightgray"];
+  n12729->n12738[color="lightgray" fontcolor="lightgray" label="wff ( ps /\ ta )"];
+  n12727->n12728[arrowhead="none" style="invisible"];
+  {rank=same;n12728;n12727;}
+  n12730 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n12730->n12738[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n12731 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n12731->n12738[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n12732 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n12732->n12737[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n12733 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n12733->n12737[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n12734 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n12734->n12737[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n12735 [label = "wta"color="lightgray" fontcolor="lightgray"];
+  n12735->n12737[color="lightgray" fontcolor="lightgray" label="wff ta"];
+  n12736 [label = "ad2ant2.1"style="filled" fillcolor = "orange"];
+  n12736->n12737[label="|- ( ( ph /\ ps ) -> ch )"];
+  n12737 [label = "adantrr"style="filled" fillcolor = "cyan"];
+  n12737->n12738[label="|- ( ( ph /\ ( ps /\ ta ) ) -> ch )"];
+  n12732->n12733->n12734->n12735->n12736[arrowhead="none" style="invisible"];
+  {rank=same;n12736;n12735;n12734;n12733;n12732;}
+  n12738 [label = "adantlr"style="filled" fillcolor = "cyan"];
+QED[style="invisible"]
+  n12738->QED[label="|- ( ( ( ph /\ th ) /\ ( ps /\ ta ) ) -> ch )"];
+  n12726->n12729->n12730->n12731->n12737[arrowhead="none" style="invisible"];
+  {rank=same;n12737;n12731;n12730;n12729;n12726;}
+}

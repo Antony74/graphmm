@@ -1,0 +1,26 @@
+digraph proof_bitr2i {
+  rankdir = LR;
+  n5175 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n5175->n5183[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n5176 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n5176->n5183[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n5177 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n5177->n5182[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n5178 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n5178->n5182[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n5179 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n5179->n5182[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n5180 [label = "bitr2i.1"style="filled" fillcolor = "orange"];
+  n5180->n5182[label="|- ( ph <-> ps )"];
+  n5181 [label = "bitr2i.2"style="filled" fillcolor = "orange"];
+  n5181->n5182[label="|- ( ps <-> ch )"];
+  n5182 [label = "bitri"style="filled" fillcolor = "cyan"];
+  n5182->n5183[label="|- ( ph <-> ch )"];
+  n5177->n5178->n5179->n5180->n5181[arrowhead="none" style="invisible"];
+  {rank=same;n5181;n5180;n5179;n5178;n5177;}
+  n5183 [label = "bicomi"style="filled" fillcolor = "cyan"];
+QED[style="invisible"]
+  n5183->QED[label="|- ( ch <-> ph )"];
+  n5175->n5176->n5182[arrowhead="none" style="invisible"];
+  {rank=same;n5182;n5176;n5175;}
+}

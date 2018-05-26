@@ -1,0 +1,32 @@
+digraph proof_imdistani {
+  rankdir = LR;
+  n11756 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n11756->n11766[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n11757 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n11757->n11766[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n11758 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n11758->n11760[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n11759 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n11759->n11760[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n11760 [label = "wa"color="lightgray" fontcolor="lightgray"];
+  n11760->n11766[color="lightgray" fontcolor="lightgray" label="wff ( ph /\ ch )"];
+  n11758->n11759[arrowhead="none" style="invisible"];
+  {rank=same;n11759;n11758;}
+  n11761 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n11761->n11765[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n11762 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n11762->n11765[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n11763 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n11763->n11765[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n11764 [label = "imdistani.1"style="filled" fillcolor = "orange"];
+  n11764->n11765[label="|- ( ph -> ( ps -> ch ) )"];
+  n11765 [label = "anc2li"style="filled" fillcolor = "cyan"];
+  n11765->n11766[label="|- ( ph -> ( ps -> ( ph /\ ch ) ) )"];
+  n11761->n11762->n11763->n11764[arrowhead="none" style="invisible"];
+  {rank=same;n11764;n11763;n11762;n11761;}
+  n11766 [label = "imp"style="filled" fillcolor = "cyan"];
+QED[style="invisible"]
+  n11766->QED[label="|- ( ( ph /\ ps ) -> ( ph /\ ch ) )"];
+  n11756->n11757->n11760->n11765[arrowhead="none" style="invisible"];
+  {rank=same;n11765;n11760;n11757;n11756;}
+}

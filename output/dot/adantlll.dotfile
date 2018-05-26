@@ -1,0 +1,34 @@
+digraph proof_adantlll {
+  rankdir = LR;
+  n12185 [label = "wta"color="lightgray" fontcolor="lightgray"];
+  n12185->n12187[color="lightgray" fontcolor="lightgray" label="wff ta"];
+  n12186 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n12186->n12187[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n12187 [label = "wa"color="lightgray" fontcolor="lightgray"];
+  n12187->n12196[color="lightgray" fontcolor="lightgray" label="wff ( ta /\ ph )"];
+  n12185->n12186[arrowhead="none" style="invisible"];
+  {rank=same;n12186;n12185;}
+  n12188 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n12188->n12196[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n12189 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n12189->n12196[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n12190 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n12190->n12196[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n12191 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n12191->n12196[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n12192 [label = "wta"color="lightgray" fontcolor="lightgray"];
+  n12192->n12194[color="lightgray" fontcolor="lightgray" label="wff ta"];
+  n12193 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n12193->n12194[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n12194 [label = "simpr"style="filled" fillcolor = "cyan"];
+  n12194->n12196[label="|- ( ( ta /\ ph ) -> ph )"];
+  n12192->n12193[arrowhead="none" style="invisible"];
+  {rank=same;n12193;n12192;}
+  n12195 [label = "adantl2.1"style="filled" fillcolor = "orange"];
+  n12195->n12196[label="|- ( ( ( ph /\ ps ) /\ ch ) -> th )"];
+  n12196 [label = "sylanl1"style="filled" fillcolor = "cyan"];
+QED[style="invisible"]
+  n12196->QED[label="|- ( ( ( ( ta /\ ph ) /\ ps ) /\ ch ) -> th )"];
+  n12187->n12188->n12189->n12190->n12191->n12194->n12195[arrowhead="none" style="invisible"];
+  {rank=same;n12195;n12194;n12191;n12190;n12189;n12188;n12187;}
+}

@@ -1,0 +1,36 @@
+digraph proof_pm5_21ni {
+  rankdir = LR;
+  n6647 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n6647->n6648[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n6648 [label = "wn"color="lightgray" fontcolor="lightgray"];
+  n6648->n6659[color="lightgray" fontcolor="lightgray" label="wff -. ps"];
+  n6649 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n6649->n6659[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n6650 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n6650->n6659[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n6651 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n6651->n6654[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n6652 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n6652->n6654[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n6653 [label = "pm5.21ni.1"style="filled" fillcolor = "orange"];
+  n6653->n6654[label="|- ( ph -> ps )"];
+  n6654 [label = "con3i"style="filled" fillcolor = "cyan"];
+  n6654->n6659[label="|- ( -. ps -> -. ph )"];
+  n6651->n6652->n6653[arrowhead="none" style="invisible"];
+  {rank=same;n6653;n6652;n6651;}
+  n6655 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n6655->n6658[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n6656 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n6656->n6658[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n6657 [label = "pm5.21ni.2"style="filled" fillcolor = "orange"];
+  n6657->n6658[label="|- ( ch -> ps )"];
+  n6658 [label = "con3i"style="filled" fillcolor = "cyan"];
+  n6658->n6659[label="|- ( -. ps -> -. ch )"];
+  n6655->n6656->n6657[arrowhead="none" style="invisible"];
+  {rank=same;n6657;n6656;n6655;}
+  n6659 [label = "2falsed"style="filled" fillcolor = "cyan"];
+QED[style="invisible"]
+  n6659->QED[label="|- ( -. ps -> ( ph <-> ch ) )"];
+  n6648->n6649->n6650->n6654->n6658[arrowhead="none" style="invisible"];
+  {rank=same;n6658;n6654;n6650;n6649;n6648;}
+}

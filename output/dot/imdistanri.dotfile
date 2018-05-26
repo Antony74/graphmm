@@ -1,0 +1,26 @@
+digraph proof_imdistanri {
+  rankdir = LR;
+  n11767 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n11767->n11775[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n11768 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n11768->n11775[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n11769 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n11769->n11775[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n11770 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n11770->n11774[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n11771 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n11771->n11774[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n11772 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n11772->n11774[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n11773 [label = "imdistanri.1"style="filled" fillcolor = "orange"];
+  n11773->n11774[label="|- ( ph -> ( ps -> ch ) )"];
+  n11774 [label = "com12"style="filled" fillcolor = "cyan"];
+  n11774->n11775[label="|- ( ps -> ( ph -> ch ) )"];
+  n11770->n11771->n11772->n11773[arrowhead="none" style="invisible"];
+  {rank=same;n11773;n11772;n11771;n11770;}
+  n11775 [label = "impac"style="filled" fillcolor = "cyan"];
+QED[style="invisible"]
+  n11775->QED[label="|- ( ( ps /\ ph ) -> ( ch /\ ph ) )"];
+  n11767->n11768->n11769->n11774[arrowhead="none" style="invisible"];
+  {rank=same;n11774;n11769;n11768;n11767;}
+}

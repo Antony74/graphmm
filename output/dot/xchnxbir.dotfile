@@ -1,0 +1,26 @@
+digraph proof_xchnxbir {
+  rankdir = LR;
+  n5941 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n5941->n5949[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n5942 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n5942->n5949[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n5943 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n5943->n5949[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n5944 [label = "xchnxbir.1"style="filled" fillcolor = "orange"];
+  n5944->n5949[label="|- ( -. ph <-> ps )"];
+  n5945 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n5945->n5948[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n5946 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n5946->n5948[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n5947 [label = "xchnxbir.2"style="filled" fillcolor = "orange"];
+  n5947->n5948[label="|- ( ch <-> ph )"];
+  n5948 [label = "bicomi"style="filled" fillcolor = "cyan"];
+  n5948->n5949[label="|- ( ph <-> ch )"];
+  n5945->n5946->n5947[arrowhead="none" style="invisible"];
+  {rank=same;n5947;n5946;n5945;}
+  n5949 [label = "xchnxbi"style="filled" fillcolor = "cyan"];
+QED[style="invisible"]
+  n5949->QED[label="|- ( -. ch <-> ps )"];
+  n5941->n5942->n5943->n5944->n5948[arrowhead="none" style="invisible"];
+  {rank=same;n5948;n5944;n5943;n5942;n5941;}
+}

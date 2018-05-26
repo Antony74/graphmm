@@ -1,0 +1,36 @@
+digraph proof_orri {
+  rankdir = LR;
+  n7168 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n7168->n7170[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n7169 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n7169->n7170[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n7170 [label = "wo"color="lightgray" fontcolor="lightgray"];
+  n7170->n7179[color="lightgray" fontcolor="lightgray" label="wff ( ph \/ ps )"];
+  n7168->n7169[arrowhead="none" style="invisible"];
+  {rank=same;n7169;n7168;}
+  n7171 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n7171->n7172[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n7172 [label = "wn"color="lightgray" fontcolor="lightgray"];
+  n7172->n7174[color="lightgray" fontcolor="lightgray" label="wff -. ph"];
+  n7173 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n7173->n7174[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n7174 [label = "wi"color="lightgray" fontcolor="lightgray"];
+  n7174->n7179[color="lightgray" fontcolor="lightgray" label="wff ( -. ph -> ps )"];
+  n7172->n7173[arrowhead="none" style="invisible"];
+  {rank=same;n7173;n7172;}
+  n7175 [label = "orri.1"style="filled" fillcolor = "orange"];
+  n7175->n7179[label="|- ( -. ph -> ps )"];
+  n7176 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n7176->n7178[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n7177 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n7177->n7178[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n7178 [label = "df-or"color="lightgray" fontcolor="lightgray"];
+  n7178->n7179[color="lightgray" fontcolor="lightgray" label="|- ( ( ph \/ ps ) <-> ( -. ph -> ps ) )"];
+  n7176->n7177[arrowhead="none" style="invisible"];
+  {rank=same;n7177;n7176;}
+  n7179 [label = "mpbir"style="filled" fillcolor = "cyan"];
+QED[style="invisible"]
+  n7179->QED[label="|- ( ph \/ ps )"];
+  n7170->n7174->n7175->n7178[arrowhead="none" style="invisible"];
+  {rank=same;n7178;n7175;n7174;n7170;}
+}

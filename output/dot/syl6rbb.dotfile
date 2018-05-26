@@ -1,0 +1,30 @@
+digraph proof_syl6rbb {
+  rankdir = LR;
+  n5314 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n5314->n5324[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n5315 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n5315->n5324[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n5316 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n5316->n5324[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n5317 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n5317->n5323[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n5318 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n5318->n5323[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n5319 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n5319->n5323[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n5320 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n5320->n5323[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n5321 [label = "syl6rbb.1"style="filled" fillcolor = "orange"];
+  n5321->n5323[label="|- ( ph -> ( ps <-> ch ) )"];
+  n5322 [label = "syl6rbb.2"style="filled" fillcolor = "orange"];
+  n5322->n5323[label="|- ( ch <-> th )"];
+  n5323 [label = "syl6bb"style="filled" fillcolor = "cyan"];
+  n5323->n5324[label="|- ( ph -> ( ps <-> th ) )"];
+  n5317->n5318->n5319->n5320->n5321->n5322[arrowhead="none" style="invisible"];
+  {rank=same;n5322;n5321;n5320;n5319;n5318;n5317;}
+  n5324 [label = "bicomd"style="filled" fillcolor = "cyan"];
+QED[style="invisible"]
+  n5324->QED[label="|- ( ph -> ( th <-> ps ) )"];
+  n5314->n5315->n5316->n5323[arrowhead="none" style="invisible"];
+  {rank=same;n5323;n5316;n5315;n5314;}
+}

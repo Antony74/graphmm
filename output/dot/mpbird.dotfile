@@ -1,0 +1,28 @@
+digraph proof_mpbird {
+  rankdir = LR;
+  n4872 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n4872->n4881[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n4873 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n4873->n4881[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n4874 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n4874->n4881[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n4875 [label = "mpbird.min"style="filled" fillcolor = "orange"];
+  n4875->n4881[label="|- ( ph -> ch )"];
+  n4876 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n4876->n4880[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n4877 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n4877->n4880[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n4878 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n4878->n4880[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n4879 [label = "mpbird.maj"style="filled" fillcolor = "orange"];
+  n4879->n4880[label="|- ( ph -> ( ps <-> ch ) )"];
+  n4880 [label = "biimprd"style="filled" fillcolor = "cyan"];
+  n4880->n4881[label="|- ( ph -> ( ch -> ps ) )"];
+  n4876->n4877->n4878->n4879[arrowhead="none" style="invisible"];
+  {rank=same;n4879;n4878;n4877;n4876;}
+  n4881 [label = "mpd"style="filled" fillcolor = "cyan"];
+QED[style="invisible"]
+  n4881->QED[label="|- ( ph -> ps )"];
+  n4872->n4873->n4874->n4875->n4880[arrowhead="none" style="invisible"];
+  {rank=same;n4880;n4875;n4874;n4873;n4872;}
+}

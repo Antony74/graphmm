@@ -1,0 +1,38 @@
+digraph proof_syl5d {
+  rankdir = LR;
+  n661 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n661->n674[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n662 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n662->n674[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n663 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n663->n674[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n664 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n664->n674[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n665 [label = "wta"color="lightgray" fontcolor="lightgray"];
+  n665->n674[color="lightgray" fontcolor="lightgray" label="wff ta"];
+  n666 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n666->n672[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n667 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n667->n669[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n668 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n668->n669[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n669 [label = "wi"color="lightgray" fontcolor="lightgray"];
+  n669->n672[color="lightgray" fontcolor="lightgray" label="wff ( ps -> ch )"];
+  n667->n668[arrowhead="none" style="invisible"];
+  {rank=same;n668;n667;}
+  n670 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n670->n672[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n671 [label = "syl5d.1"style="filled" fillcolor = "orange"];
+  n671->n672[label="|- ( ph -> ( ps -> ch ) )"];
+  n672 [label = "a1d"style="filled" fillcolor = "cyan"];
+  n672->n674[label="|- ( ph -> ( th -> ( ps -> ch ) ) )"];
+  n666->n669->n670->n671[arrowhead="none" style="invisible"];
+  {rank=same;n671;n670;n669;n666;}
+  n673 [label = "syl5d.2"style="filled" fillcolor = "orange"];
+  n673->n674[label="|- ( ph -> ( th -> ( ch -> ta ) ) )"];
+  n674 [label = "syldd"style="filled" fillcolor = "cyan"];
+QED[style="invisible"]
+  n674->QED[label="|- ( ph -> ( th -> ( ps -> ta ) ) )"];
+  n661->n662->n663->n664->n665->n672->n673[arrowhead="none" style="invisible"];
+  {rank=same;n673;n672;n665;n664;n663;n662;n661;}
+}

@@ -1,0 +1,50 @@
+digraph proof_impancom {
+  rankdir = LR;
+  n7889 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n7889->n7906[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n7890 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n7890->n7906[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n7891 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n7891->n7893[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n7892 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n7892->n7893[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n7893 [label = "wi"color="lightgray" fontcolor="lightgray"];
+  n7893->n7906[color="lightgray" fontcolor="lightgray" label="wff ( ps -> th )"];
+  n7891->n7892[arrowhead="none" style="invisible"];
+  {rank=same;n7892;n7891;}
+  n7894 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n7894->n7905[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n7895 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n7895->n7905[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n7896 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n7896->n7905[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n7897 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n7897->n7905[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n7898 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n7898->n7904[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n7899 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n7899->n7904[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n7900 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n7900->n7902[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n7901 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n7901->n7902[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n7902 [label = "wi"color="lightgray" fontcolor="lightgray"];
+  n7902->n7904[color="lightgray" fontcolor="lightgray" label="wff ( ch -> th )"];
+  n7900->n7901[arrowhead="none" style="invisible"];
+  {rank=same;n7901;n7900;}
+  n7903 [label = "impancom.1"style="filled" fillcolor = "orange"];
+  n7903->n7904[label="|- ( ( ph /\ ps ) -> ( ch -> th ) )"];
+  n7904 [label = "ex"style="filled" fillcolor = "cyan"];
+  n7904->n7905[label="|- ( ph -> ( ps -> ( ch -> th ) ) )"];
+  n7898->n7899->n7902->n7903[arrowhead="none" style="invisible"];
+  {rank=same;n7903;n7902;n7899;n7898;}
+  n7905 [label = "com23"style="filled" fillcolor = "cyan"];
+  n7905->n7906[label="|- ( ph -> ( ch -> ( ps -> th ) ) )"];
+  n7894->n7895->n7896->n7897->n7904[arrowhead="none" style="invisible"];
+  {rank=same;n7904;n7897;n7896;n7895;n7894;}
+  n7906 [label = "imp"style="filled" fillcolor = "cyan"];
+QED[style="invisible"]
+  n7906->QED[label="|- ( ( ph /\ ch ) -> ( ps -> th ) )"];
+  n7889->n7890->n7893->n7905[arrowhead="none" style="invisible"];
+  {rank=same;n7905;n7893;n7890;n7889;}
+}

@@ -1,0 +1,38 @@
+digraph proof_con3d {
+  rankdir = LR;
+  n1486 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n1486->n1500[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n1487 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n1487->n1488[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n1488 [label = "wn"color="lightgray" fontcolor="lightgray"];
+  n1488->n1500[color="lightgray" fontcolor="lightgray" label="wff -. ps"];
+  n1489 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n1489->n1500[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n1490 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n1490->n1491[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n1491 [label = "wn"color="lightgray" fontcolor="lightgray"];
+  n1491->n1492[color="lightgray" fontcolor="lightgray" label="wff -. ps"];
+  n1492 [label = "wn"color="lightgray" fontcolor="lightgray"];
+  n1492->n1499[color="lightgray" fontcolor="lightgray" label="wff -. -. ps"];
+  n1493 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n1493->n1499[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n1494 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n1494->n1499[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n1495 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n1495->n1499[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n1496 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n1496->n1497[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n1497 [label = "notnot2"style="filled" fillcolor = "cyan"];
+  n1497->n1499[label="|- ( -. -. ps -> ps )"];
+  n1498 [label = "con3d.1"style="filled" fillcolor = "orange"];
+  n1498->n1499[label="|- ( ph -> ( ps -> ch ) )"];
+  n1499 [label = "syl5"style="filled" fillcolor = "cyan"];
+  n1499->n1500[label="|- ( ph -> ( -. -. ps -> ch ) )"];
+  n1492->n1493->n1494->n1495->n1497->n1498[arrowhead="none" style="invisible"];
+  {rank=same;n1498;n1497;n1495;n1494;n1493;n1492;}
+  n1500 [label = "con1d"style="filled" fillcolor = "cyan"];
+QED[style="invisible"]
+  n1500->QED[label="|- ( ph -> ( -. ch -> -. ps ) )"];
+  n1486->n1488->n1489->n1499[arrowhead="none" style="invisible"];
+  {rank=same;n1499;n1489;n1488;n1486;}
+}

@@ -1,0 +1,24 @@
+digraph proof_olc {
+  rankdir = LR;
+  n7284 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n7284->n7291[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n7285 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n7285->n7291[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n7286 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n7286->n7291[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n7287 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n7287->n7290[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n7288 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n7288->n7289[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n7289 [label = "wn"color="lightgray" fontcolor="lightgray"];
+  n7289->n7290[color="lightgray" fontcolor="lightgray" label="wff -. ps"];
+  n7290 [label = "ax-1"style="filled" fillcolor = "lime"];
+  n7290->n7291[label="|- ( ph -> ( -. ps -> ph ) )"];
+  n7287->n7289[arrowhead="none" style="invisible"];
+  {rank=same;n7289;n7287;}
+  n7291 [label = "orrd"style="filled" fillcolor = "cyan"];
+QED[style="invisible"]
+  n7291->QED[label="|- ( ph -> ( ps \/ ph ) )"];
+  n7284->n7285->n7286->n7290[arrowhead="none" style="invisible"];
+  {rank=same;n7290;n7286;n7285;n7284;}
+}

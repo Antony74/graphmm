@@ -1,0 +1,34 @@
+digraph proof_simp2bi {
+  rankdir = LR;
+  n19438 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n19438->n19449[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n19439 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n19439->n19449[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n19440 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n19440->n19449[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n19441 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n19441->n19449[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n19442 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n19442->n19448[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n19443 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n19443->n19446[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n19444 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n19444->n19446[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n19445 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n19445->n19446[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n19446 [label = "w3a"color="lightgray" fontcolor="lightgray"];
+  n19446->n19448[color="lightgray" fontcolor="lightgray" label="wff ( ps /\ ch /\ th )"];
+  n19443->n19444->n19445[arrowhead="none" style="invisible"];
+  {rank=same;n19445;n19444;n19443;}
+  n19447 [label = "3simp1bi.1"style="filled" fillcolor = "orange"];
+  n19447->n19448[label="|- ( ph <-> ( ps /\ ch /\ th ) )"];
+  n19448 [label = "biimpi"style="filled" fillcolor = "cyan"];
+  n19448->n19449[label="|- ( ph -> ( ps /\ ch /\ th ) )"];
+  n19442->n19446->n19447[arrowhead="none" style="invisible"];
+  {rank=same;n19447;n19446;n19442;}
+  n19449 [label = "simp2d"style="filled" fillcolor = "cyan"];
+QED[style="invisible"]
+  n19449->QED[label="|- ( ph -> ch )"];
+  n19438->n19439->n19440->n19441->n19448[arrowhead="none" style="invisible"];
+  {rank=same;n19448;n19441;n19440;n19439;n19438;}
+}

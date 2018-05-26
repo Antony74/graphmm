@@ -1,0 +1,64 @@
+digraph proof_orbi2i {
+  rankdir = LR;
+  n8867 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n8867->n8869[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n8868 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n8868->n8869[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n8869 [label = "wo"color="lightgray" fontcolor="lightgray"];
+  n8869->n8889[color="lightgray" fontcolor="lightgray" label="wff ( ch \/ ph )"];
+  n8867->n8868[arrowhead="none" style="invisible"];
+  {rank=same;n8868;n8867;}
+  n8870 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n8870->n8872[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n8871 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n8871->n8872[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n8872 [label = "wo"color="lightgray" fontcolor="lightgray"];
+  n8872->n8889[color="lightgray" fontcolor="lightgray" label="wff ( ch \/ ps )"];
+  n8870->n8871[arrowhead="none" style="invisible"];
+  {rank=same;n8871;n8870;}
+  n8873 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n8873->n8880[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n8874 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n8874->n8880[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n8875 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n8875->n8880[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n8876 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n8876->n8879[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n8877 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n8877->n8879[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n8878 [label = "orbi2i.1"style="filled" fillcolor = "orange"];
+  n8878->n8879[label="|- ( ph <-> ps )"];
+  n8879 [label = "biimpi"style="filled" fillcolor = "cyan"];
+  n8879->n8880[label="|- ( ph -> ps )"];
+  n8876->n8877->n8878[arrowhead="none" style="invisible"];
+  {rank=same;n8878;n8877;n8876;}
+  n8880 [label = "orim2i"style="filled" fillcolor = "cyan"];
+  n8880->n8889[label="|- ( ( ch \/ ph ) -> ( ch \/ ps ) )"];
+  n8873->n8874->n8875->n8879[arrowhead="none" style="invisible"];
+  {rank=same;n8879;n8875;n8874;n8873;}
+  n8881 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n8881->n8888[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n8882 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n8882->n8888[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n8883 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n8883->n8888[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n8884 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n8884->n8887[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n8885 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n8885->n8887[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n8886 [label = "orbi2i.1"style="filled" fillcolor = "orange"];
+  n8886->n8887[label="|- ( ph <-> ps )"];
+  n8887 [label = "biimpri"style="filled" fillcolor = "cyan"];
+  n8887->n8888[label="|- ( ps -> ph )"];
+  n8884->n8885->n8886[arrowhead="none" style="invisible"];
+  {rank=same;n8886;n8885;n8884;}
+  n8888 [label = "orim2i"style="filled" fillcolor = "cyan"];
+  n8888->n8889[label="|- ( ( ch \/ ps ) -> ( ch \/ ph ) )"];
+  n8881->n8882->n8883->n8887[arrowhead="none" style="invisible"];
+  {rank=same;n8887;n8883;n8882;n8881;}
+  n8889 [label = "impbii"style="filled" fillcolor = "cyan"];
+QED[style="invisible"]
+  n8889->QED[label="|- ( ( ch \/ ph ) <-> ( ch \/ ps ) )"];
+  n8869->n8872->n8880->n8888[arrowhead="none" style="invisible"];
+  {rank=same;n8888;n8880;n8872;n8869;}
+}

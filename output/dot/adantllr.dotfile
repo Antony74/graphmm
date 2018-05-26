@@ -1,0 +1,34 @@
+digraph proof_adantllr {
+  rankdir = LR;
+  n12197 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n12197->n12199[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n12198 [label = "wta"color="lightgray" fontcolor="lightgray"];
+  n12198->n12199[color="lightgray" fontcolor="lightgray" label="wff ta"];
+  n12199 [label = "wa"color="lightgray" fontcolor="lightgray"];
+  n12199->n12208[color="lightgray" fontcolor="lightgray" label="wff ( ph /\ ta )"];
+  n12197->n12198[arrowhead="none" style="invisible"];
+  {rank=same;n12198;n12197;}
+  n12200 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n12200->n12208[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n12201 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n12201->n12208[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n12202 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n12202->n12208[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n12203 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n12203->n12208[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n12204 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n12204->n12206[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n12205 [label = "wta"color="lightgray" fontcolor="lightgray"];
+  n12205->n12206[color="lightgray" fontcolor="lightgray" label="wff ta"];
+  n12206 [label = "simpl"style="filled" fillcolor = "cyan"];
+  n12206->n12208[label="|- ( ( ph /\ ta ) -> ph )"];
+  n12204->n12205[arrowhead="none" style="invisible"];
+  {rank=same;n12205;n12204;}
+  n12207 [label = "adantl2.1"style="filled" fillcolor = "orange"];
+  n12207->n12208[label="|- ( ( ( ph /\ ps ) /\ ch ) -> th )"];
+  n12208 [label = "sylanl1"style="filled" fillcolor = "cyan"];
+QED[style="invisible"]
+  n12208->QED[label="|- ( ( ( ( ph /\ ta ) /\ ps ) /\ ch ) -> th )"];
+  n12199->n12200->n12201->n12202->n12203->n12206->n12207[arrowhead="none" style="invisible"];
+  {rank=same;n12207;n12206;n12203;n12202;n12201;n12200;n12199;}
+}

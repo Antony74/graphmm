@@ -1,0 +1,28 @@
+digraph proof_impbid2 {
+  rankdir = LR;
+  n4595 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n4595->n4604[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n4596 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n4596->n4604[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n4597 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n4597->n4604[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n4598 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n4598->n4603[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n4599 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n4599->n4603[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n4600 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n4600->n4603[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n4601 [label = "impbid2.2"style="filled" fillcolor = "orange"];
+  n4601->n4603[label="|- ( ph -> ( ch -> ps ) )"];
+  n4602 [label = "impbid2.1"style="filled" fillcolor = "orange"];
+  n4602->n4603[label="|- ( ps -> ch )"];
+  n4603 [label = "impbid1"style="filled" fillcolor = "cyan"];
+  n4603->n4604[label="|- ( ph -> ( ch <-> ps ) )"];
+  n4598->n4599->n4600->n4601->n4602[arrowhead="none" style="invisible"];
+  {rank=same;n4602;n4601;n4600;n4599;n4598;}
+  n4604 [label = "bicomd"style="filled" fillcolor = "cyan"];
+QED[style="invisible"]
+  n4604->QED[label="|- ( ph -> ( ps <-> ch ) )"];
+  n4595->n4596->n4597->n4603[arrowhead="none" style="invisible"];
+  {rank=same;n4603;n4597;n4596;n4595;}
+}

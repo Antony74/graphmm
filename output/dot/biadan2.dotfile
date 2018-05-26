@@ -1,0 +1,48 @@
+digraph proof_biadan2 {
+  rankdir = LR;
+  n11132 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n11132->n11148[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n11133 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n11133->n11135[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n11134 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n11134->n11135[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n11135 [label = "wa"color="lightgray" fontcolor="lightgray"];
+  n11135->n11148[color="lightgray" fontcolor="lightgray" label="wff ( ps /\ ph )"];
+  n11133->n11134[arrowhead="none" style="invisible"];
+  {rank=same;n11134;n11133;}
+  n11136 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n11136->n11138[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n11137 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n11137->n11138[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n11138 [label = "wa"color="lightgray" fontcolor="lightgray"];
+  n11138->n11148[color="lightgray" fontcolor="lightgray" label="wff ( ps /\ ch )"];
+  n11136->n11137[arrowhead="none" style="invisible"];
+  {rank=same;n11137;n11136;}
+  n11139 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n11139->n11142[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n11140 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n11140->n11142[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n11141 [label = "biadan2.1"style="filled" fillcolor = "orange"];
+  n11141->n11142[label="|- ( ph -> ps )"];
+  n11142 [label = "pm4.71ri"style="filled" fillcolor = "cyan"];
+  n11142->n11148[label="|- ( ph <-> ( ps /\ ph ) )"];
+  n11139->n11140->n11141[arrowhead="none" style="invisible"];
+  {rank=same;n11141;n11140;n11139;}
+  n11143 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n11143->n11147[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n11144 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n11144->n11147[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n11145 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n11145->n11147[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n11146 [label = "biadan2.2"style="filled" fillcolor = "orange"];
+  n11146->n11147[label="|- ( ps -> ( ph <-> ch ) )"];
+  n11147 [label = "pm5.32i"style="filled" fillcolor = "cyan"];
+  n11147->n11148[label="|- ( ( ps /\ ph ) <-> ( ps /\ ch ) )"];
+  n11143->n11144->n11145->n11146[arrowhead="none" style="invisible"];
+  {rank=same;n11146;n11145;n11144;n11143;}
+  n11148 [label = "bitri"style="filled" fillcolor = "cyan"];
+QED[style="invisible"]
+  n11148->QED[label="|- ( ph <-> ( ps /\ ch ) )"];
+  n11132->n11135->n11138->n11142->n11147[arrowhead="none" style="invisible"];
+  {rank=same;n11147;n11142;n11138;n11135;n11132;}
+}

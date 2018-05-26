@@ -1,0 +1,38 @@
+digraph proof_an42s {
+  rankdir = LR;
+  n14114 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n14114->n14116[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n14115 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n14115->n14116[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n14116 [label = "wa"color="lightgray" fontcolor="lightgray"];
+  n14116->n14127[color="lightgray" fontcolor="lightgray" label="wff ( ph /\ ch )"];
+  n14114->n14115[arrowhead="none" style="invisible"];
+  {rank=same;n14115;n14114;}
+  n14117 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n14117->n14127[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n14118 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n14118->n14127[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n14119 [label = "wta"color="lightgray" fontcolor="lightgray"];
+  n14119->n14127[color="lightgray" fontcolor="lightgray" label="wff ta"];
+  n14120 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n14120->n14126[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n14121 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n14121->n14126[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n14122 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n14122->n14126[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n14123 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n14123->n14126[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n14124 [label = "wta"color="lightgray" fontcolor="lightgray"];
+  n14124->n14126[color="lightgray" fontcolor="lightgray" label="wff ta"];
+  n14125 [label = "an41r3s.1"style="filled" fillcolor = "orange"];
+  n14125->n14126[label="|- ( ( ( ph /\ ps ) /\ ( ch /\ th ) ) -> ta )"];
+  n14126 [label = "an4s"style="filled" fillcolor = "cyan"];
+  n14126->n14127[label="|- ( ( ( ph /\ ch ) /\ ( ps /\ th ) ) -> ta )"];
+  n14120->n14121->n14122->n14123->n14124->n14125[arrowhead="none" style="invisible"];
+  {rank=same;n14125;n14124;n14123;n14122;n14121;n14120;}
+  n14127 [label = "ancom2s"style="filled" fillcolor = "cyan"];
+QED[style="invisible"]
+  n14127->QED[label="|- ( ( ( ph /\ ch ) /\ ( th /\ ps ) ) -> ta )"];
+  n14116->n14117->n14118->n14119->n14126[arrowhead="none" style="invisible"];
+  {rank=same;n14126;n14119;n14118;n14117;n14116;}
+}

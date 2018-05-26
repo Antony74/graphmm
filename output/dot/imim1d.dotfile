@@ -1,0 +1,28 @@
+digraph proof_imim1d {
+  rankdir = LR;
+  n759 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n759->n768[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n760 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n760->n768[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n761 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n761->n768[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n762 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n762->n768[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n763 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n763->n768[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n764 [label = "imim1d.1"style="filled" fillcolor = "orange"];
+  n764->n768[label="|- ( ph -> ( ps -> ch ) )"];
+  n765 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n765->n767[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n766 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n766->n767[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n767 [label = "idd"style="filled" fillcolor = "cyan"];
+  n767->n768[label="|- ( ph -> ( th -> th ) )"];
+  n765->n766[arrowhead="none" style="invisible"];
+  {rank=same;n766;n765;}
+  n768 [label = "imim12d"style="filled" fillcolor = "cyan"];
+QED[style="invisible"]
+  n768->QED[label="|- ( ph -> ( ( ch -> th ) -> ( ps -> th ) ) )"];
+  n759->n760->n761->n762->n763->n764->n767[arrowhead="none" style="invisible"];
+  {rank=same;n767;n764;n763;n762;n761;n760;n759;}
+}

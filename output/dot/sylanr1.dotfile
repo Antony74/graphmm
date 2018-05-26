@@ -1,0 +1,42 @@
+digraph proof_sylanr1 {
+  rankdir = LR;
+  n11270 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n11270->n11272[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n11271 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n11271->n11272[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n11272 [label = "wa"color="lightgray" fontcolor="lightgray"];
+  n11272->n11284[color="lightgray" fontcolor="lightgray" label="wff ( ph /\ th )"];
+  n11270->n11271[arrowhead="none" style="invisible"];
+  {rank=same;n11271;n11270;}
+  n11273 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n11273->n11284[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n11274 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n11274->n11276[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n11275 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n11275->n11276[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n11276 [label = "wa"color="lightgray" fontcolor="lightgray"];
+  n11276->n11284[color="lightgray" fontcolor="lightgray" label="wff ( ch /\ th )"];
+  n11274->n11275[arrowhead="none" style="invisible"];
+  {rank=same;n11275;n11274;}
+  n11277 [label = "wta"color="lightgray" fontcolor="lightgray"];
+  n11277->n11284[color="lightgray" fontcolor="lightgray" label="wff ta"];
+  n11278 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n11278->n11282[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n11279 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n11279->n11282[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n11280 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n11280->n11282[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n11281 [label = "sylanr1.1"style="filled" fillcolor = "orange"];
+  n11281->n11282[label="|- ( ph -> ch )"];
+  n11282 [label = "anim1i"style="filled" fillcolor = "cyan"];
+  n11282->n11284[label="|- ( ( ph /\ th ) -> ( ch /\ th ) )"];
+  n11278->n11279->n11280->n11281[arrowhead="none" style="invisible"];
+  {rank=same;n11281;n11280;n11279;n11278;}
+  n11283 [label = "sylanr1.2"style="filled" fillcolor = "orange"];
+  n11283->n11284[label="|- ( ( ps /\ ( ch /\ th ) ) -> ta )"];
+  n11284 [label = "sylan2"style="filled" fillcolor = "cyan"];
+QED[style="invisible"]
+  n11284->QED[label="|- ( ( ps /\ ( ph /\ th ) ) -> ta )"];
+  n11272->n11273->n11276->n11277->n11282->n11283[arrowhead="none" style="invisible"];
+  {rank=same;n11283;n11282;n11277;n11276;n11273;n11272;}
+}

@@ -1,0 +1,32 @@
+digraph proof_sylancb {
+  rankdir = LR;
+  n11452 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n11452->n11463[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n11453 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n11453->n11463[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n11454 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n11454->n11462[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n11455 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n11455->n11462[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n11456 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n11456->n11462[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n11457 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n11457->n11462[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n11458 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n11458->n11462[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n11459 [label = "sylancb.1"style="filled" fillcolor = "orange"];
+  n11459->n11462[label="|- ( ph <-> ps )"];
+  n11460 [label = "sylancb.2"style="filled" fillcolor = "orange"];
+  n11460->n11462[label="|- ( ph <-> ch )"];
+  n11461 [label = "sylancb.3"style="filled" fillcolor = "orange"];
+  n11461->n11462[label="|- ( ( ps /\ ch ) -> th )"];
+  n11462 [label = "syl2anb"style="filled" fillcolor = "cyan"];
+  n11462->n11463[label="|- ( ( ph /\ ph ) -> th )"];
+  n11454->n11455->n11456->n11457->n11458->n11459->n11460->n11461[arrowhead="none" style="invisible"];
+  {rank=same;n11461;n11460;n11459;n11458;n11457;n11456;n11455;n11454;}
+  n11463 [label = "anidms"style="filled" fillcolor = "cyan"];
+QED[style="invisible"]
+  n11463->QED[label="|- ( ph -> th )"];
+  n11452->n11453->n11462[arrowhead="none" style="invisible"];
+  {rank=same;n11462;n11453;n11452;}
+}

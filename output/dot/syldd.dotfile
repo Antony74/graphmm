@@ -1,0 +1,50 @@
+digraph proof_syldd {
+  rankdir = LR;
+  n643 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n643->n660[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n644 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n644->n660[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n645 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n645->n647[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n646 [label = "wta"color="lightgray" fontcolor="lightgray"];
+  n646->n647[color="lightgray" fontcolor="lightgray" label="wff ta"];
+  n647 [label = "wi"color="lightgray" fontcolor="lightgray"];
+  n647->n660[color="lightgray" fontcolor="lightgray" label="wff ( th -> ta )"];
+  n645->n646[arrowhead="none" style="invisible"];
+  {rank=same;n646;n645;}
+  n648 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n648->n650[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n649 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n649->n650[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n650 [label = "wi"color="lightgray" fontcolor="lightgray"];
+  n650->n660[color="lightgray" fontcolor="lightgray" label="wff ( ch -> th )"];
+  n648->n649[arrowhead="none" style="invisible"];
+  {rank=same;n649;n648;}
+  n651 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n651->n653[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n652 [label = "wta"color="lightgray" fontcolor="lightgray"];
+  n652->n653[color="lightgray" fontcolor="lightgray" label="wff ta"];
+  n653 [label = "wi"color="lightgray" fontcolor="lightgray"];
+  n653->n660[color="lightgray" fontcolor="lightgray" label="wff ( ch -> ta )"];
+  n651->n652[arrowhead="none" style="invisible"];
+  {rank=same;n652;n651;}
+  n654 [label = "syldd.2"style="filled" fillcolor = "orange"];
+  n654->n660[label="|- ( ph -> ( ps -> ( th -> ta ) ) )"];
+  n655 [label = "syldd.1"style="filled" fillcolor = "orange"];
+  n655->n660[label="|- ( ph -> ( ps -> ( ch -> th ) ) )"];
+  n656 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n656->n659[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n657 [label = "wta"color="lightgray" fontcolor="lightgray"];
+  n657->n659[color="lightgray" fontcolor="lightgray" label="wff ta"];
+  n658 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n658->n659[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n659 [label = "imim2"style="filled" fillcolor = "cyan"];
+  n659->n660[label="|- ( ( th -> ta ) -> ( ( ch -> th ) -> ( ch -> ta ) ) )"];
+  n656->n657->n658[arrowhead="none" style="invisible"];
+  {rank=same;n658;n657;n656;}
+  n660 [label = "syl6c"style="filled" fillcolor = "cyan"];
+QED[style="invisible"]
+  n660->QED[label="|- ( ph -> ( ps -> ( ch -> ta ) ) )"];
+  n643->n644->n647->n650->n653->n654->n655->n659[arrowhead="none" style="invisible"];
+  {rank=same;n659;n655;n654;n653;n650;n647;n644;n643;}
+}

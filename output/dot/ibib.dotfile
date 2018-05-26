@@ -1,0 +1,28 @@
+digraph proof_ibib {
+  rankdir = LR;
+  n6501 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n6501->n6509[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n6502 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n6502->n6509[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n6503 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n6503->n6505[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n6504 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n6504->n6505[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n6505 [label = "wb"color="lightgray" fontcolor="lightgray"];
+  n6505->n6509[color="lightgray" fontcolor="lightgray" label="wff ( ph <-> ps )"];
+  n6503->n6504[arrowhead="none" style="invisible"];
+  {rank=same;n6504;n6503;}
+  n6506 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n6506->n6508[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n6507 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n6507->n6508[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n6508 [label = "pm5.501"style="filled" fillcolor = "cyan"];
+  n6508->n6509[label="|- ( ph -> ( ps <-> ( ph <-> ps ) ) )"];
+  n6506->n6507[arrowhead="none" style="invisible"];
+  {rank=same;n6507;n6506;}
+  n6509 [label = "pm5.74i"style="filled" fillcolor = "cyan"];
+QED[style="invisible"]
+  n6509->QED[label="|- ( ( ph -> ps ) <-> ( ph -> ( ph <-> ps ) ) )"];
+  n6501->n6502->n6505->n6508[arrowhead="none" style="invisible"];
+  {rank=same;n6508;n6505;n6502;n6501;}
+}

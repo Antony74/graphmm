@@ -1,0 +1,38 @@
+digraph proof_simprbda {
+  rankdir = LR;
+  n10679 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n10679->n10681[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n10680 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n10680->n10681[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n10681 [label = "wa"color="lightgray" fontcolor="lightgray"];
+  n10681->n10691[color="lightgray" fontcolor="lightgray" label="wff ( ph /\ ps )"];
+  n10679->n10680[arrowhead="none" style="invisible"];
+  {rank=same;n10680;n10679;}
+  n10682 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n10682->n10691[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n10683 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n10683->n10691[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n10684 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n10684->n10690[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n10685 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n10685->n10690[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n10686 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n10686->n10688[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n10687 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n10687->n10688[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n10688 [label = "wa"color="lightgray" fontcolor="lightgray"];
+  n10688->n10690[color="lightgray" fontcolor="lightgray" label="wff ( ch /\ th )"];
+  n10686->n10687[arrowhead="none" style="invisible"];
+  {rank=same;n10687;n10686;}
+  n10689 [label = "pm3.26bda.1"style="filled" fillcolor = "orange"];
+  n10689->n10690[label="|- ( ph -> ( ps <-> ( ch /\ th ) ) )"];
+  n10690 [label = "biimpa"style="filled" fillcolor = "cyan"];
+  n10690->n10691[label="|- ( ( ph /\ ps ) -> ( ch /\ th ) )"];
+  n10684->n10685->n10688->n10689[arrowhead="none" style="invisible"];
+  {rank=same;n10689;n10688;n10685;n10684;}
+  n10691 [label = "simpld"style="filled" fillcolor = "cyan"];
+QED[style="invisible"]
+  n10691->QED[label="|- ( ( ph /\ ps ) -> ch )"];
+  n10681->n10682->n10683->n10690[arrowhead="none" style="invisible"];
+  {rank=same;n10690;n10683;n10682;n10681;}
+}

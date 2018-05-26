@@ -1,0 +1,38 @@
+digraph proof_exp45 {
+  rankdir = LR;
+  n10559 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n10559->n10572[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n10560 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n10560->n10572[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n10561 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n10561->n10572[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n10562 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n10562->n10572[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n10563 [label = "wta"color="lightgray" fontcolor="lightgray"];
+  n10563->n10572[color="lightgray" fontcolor="lightgray" label="wff ta"];
+  n10564 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n10564->n10571[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n10565 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n10565->n10571[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n10566 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n10566->n10568[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n10567 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n10567->n10568[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n10568 [label = "wa"color="lightgray" fontcolor="lightgray"];
+  n10568->n10571[color="lightgray" fontcolor="lightgray" label="wff ( ch /\ th )"];
+  n10566->n10567[arrowhead="none" style="invisible"];
+  {rank=same;n10567;n10566;}
+  n10569 [label = "wta"color="lightgray" fontcolor="lightgray"];
+  n10569->n10571[color="lightgray" fontcolor="lightgray" label="wff ta"];
+  n10570 [label = "exp45.1"style="filled" fillcolor = "orange"];
+  n10570->n10571[label="|- ( ( ph /\ ( ps /\ ( ch /\ th ) ) ) -> ta )"];
+  n10571 [label = "exp32"style="filled" fillcolor = "cyan"];
+  n10571->n10572[label="|- ( ph -> ( ps -> ( ( ch /\ th ) -> ta ) ) )"];
+  n10564->n10565->n10568->n10569->n10570[arrowhead="none" style="invisible"];
+  {rank=same;n10570;n10569;n10568;n10565;n10564;}
+  n10572 [label = "exp4a"style="filled" fillcolor = "cyan"];
+QED[style="invisible"]
+  n10572->QED[label="|- ( ph -> ( ps -> ( ch -> ( th -> ta ) ) ) )"];
+  n10559->n10560->n10561->n10562->n10563->n10571[arrowhead="none" style="invisible"];
+  {rank=same;n10571;n10563;n10562;n10561;n10560;n10559;}
+}

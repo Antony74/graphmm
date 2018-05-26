@@ -1,0 +1,28 @@
+digraph proof_pm3_41 {
+  rankdir = LR;
+  n9510 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n9510->n9512[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n9511 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n9511->n9512[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n9512 [label = "wa"color="lightgray" fontcolor="lightgray"];
+  n9512->n9518[color="lightgray" fontcolor="lightgray" label="wff ( ph /\ ps )"];
+  n9510->n9511[arrowhead="none" style="invisible"];
+  {rank=same;n9511;n9510;}
+  n9513 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n9513->n9518[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n9514 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n9514->n9518[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n9515 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n9515->n9517[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n9516 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n9516->n9517[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n9517 [label = "simpl"style="filled" fillcolor = "cyan"];
+  n9517->n9518[label="|- ( ( ph /\ ps ) -> ph )"];
+  n9515->n9516[arrowhead="none" style="invisible"];
+  {rank=same;n9516;n9515;}
+  n9518 [label = "imim1i"style="filled" fillcolor = "cyan"];
+QED[style="invisible"]
+  n9518->QED[label="|- ( ( ph -> ch ) -> ( ( ph /\ ps ) -> ch ) )"];
+  n9512->n9513->n9514->n9517[arrowhead="none" style="invisible"];
+  {rank=same;n9517;n9514;n9513;n9512;}
+}

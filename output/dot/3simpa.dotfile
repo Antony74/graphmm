@@ -1,0 +1,38 @@
+digraph proof_3simpa {
+  rankdir = LR;
+  n19205 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n19205->n19208[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n19206 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n19206->n19208[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n19207 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n19207->n19208[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n19208 [label = "w3a"color="lightgray" fontcolor="lightgray"];
+  n19208->n19217[color="lightgray" fontcolor="lightgray" label="wff ( ph /\ ps /\ ch )"];
+  n19205->n19206->n19207[arrowhead="none" style="invisible"];
+  {rank=same;n19207;n19206;n19205;}
+  n19209 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n19209->n19211[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n19210 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n19210->n19211[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n19211 [label = "wa"color="lightgray" fontcolor="lightgray"];
+  n19211->n19217[color="lightgray" fontcolor="lightgray" label="wff ( ph /\ ps )"];
+  n19209->n19210[arrowhead="none" style="invisible"];
+  {rank=same;n19210;n19209;}
+  n19212 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n19212->n19217[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n19213 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n19213->n19216[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n19214 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n19214->n19216[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n19215 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n19215->n19216[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n19216 [label = "df-3an"color="lightgray" fontcolor="lightgray"];
+  n19216->n19217[color="lightgray" fontcolor="lightgray" label="|- ( ( ph /\ ps /\ ch ) <-> ( ( ph /\ ps ) /\ ch ) )"];
+  n19213->n19214->n19215[arrowhead="none" style="invisible"];
+  {rank=same;n19215;n19214;n19213;}
+  n19217 [label = "simplbi"style="filled" fillcolor = "cyan"];
+QED[style="invisible"]
+  n19217->QED[label="|- ( ( ph /\ ps /\ ch ) -> ( ph /\ ps ) )"];
+  n19208->n19211->n19212->n19216[arrowhead="none" style="invisible"];
+  {rank=same;n19216;n19212;n19211;n19208;}
+}

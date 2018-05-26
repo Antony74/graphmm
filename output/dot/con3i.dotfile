@@ -1,0 +1,24 @@
+digraph proof_con3i {
+  rankdir = LR;
+  n1511 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n1511->n1512[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n1512 [label = "wn"color="lightgray" fontcolor="lightgray"];
+  n1512->n1519[color="lightgray" fontcolor="lightgray" label="wff -. ps"];
+  n1513 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n1513->n1519[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n1514 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n1514->n1519[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n1515 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n1515->n1516[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n1516 [label = "wn"color="lightgray" fontcolor="lightgray"];
+  n1516->n1517[color="lightgray" fontcolor="lightgray" label="wff -. ps"];
+  n1517 [label = "id"style="filled" fillcolor = "cyan"];
+  n1517->n1519[label="|- ( -. ps -> -. ps )"];
+  n1518 [label = "con3i.a"style="filled" fillcolor = "orange"];
+  n1518->n1519[label="|- ( ph -> ps )"];
+  n1519 [label = "nsyl"style="filled" fillcolor = "cyan"];
+QED[style="invisible"]
+  n1519->QED[label="|- ( -. ps -> -. ph )"];
+  n1512->n1513->n1514->n1517->n1518[arrowhead="none" style="invisible"];
+  {rank=same;n1518;n1517;n1514;n1513;n1512;}
+}

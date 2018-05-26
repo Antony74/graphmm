@@ -1,0 +1,24 @@
+digraph proof_a1iiALT {
+  rankdir = LR;
+  n221 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n221->n228[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n222 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n222->n228[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n223 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n223->n228[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n224 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n224->n227[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n225 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n225->n227[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n226 [label = "a1iiALT.1"style="filled" fillcolor = "orange"];
+  n226->n227[label="|- ch"];
+  n227 [label = "a1i"style="filled" fillcolor = "cyan"];
+  n227->n228[label="|- ( ph -> ch )"];
+  n224->n225->n226[arrowhead="none" style="invisible"];
+  {rank=same;n226;n225;n224;}
+  n228 [label = "a1d"style="filled" fillcolor = "cyan"];
+QED[style="invisible"]
+  n228->QED[label="|- ( ph -> ( ps -> ch ) )"];
+  n221->n222->n223->n227[arrowhead="none" style="invisible"];
+  {rank=same;n227;n223;n222;n221;}
+}

@@ -1,0 +1,30 @@
+digraph proof_jarl {
+  rankdir = LR;
+  n1858 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n1858->n1859[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n1859 [label = "wn"color="lightgray" fontcolor="lightgray"];
+  n1859->n1867[color="lightgray" fontcolor="lightgray" label="wff -. ph"];
+  n1860 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n1860->n1862[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n1861 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n1861->n1862[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n1862 [label = "wi"color="lightgray" fontcolor="lightgray"];
+  n1862->n1867[color="lightgray" fontcolor="lightgray" label="wff ( ph -> ps )"];
+  n1860->n1861[arrowhead="none" style="invisible"];
+  {rank=same;n1861;n1860;}
+  n1863 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n1863->n1867[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n1864 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n1864->n1866[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n1865 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n1865->n1866[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n1866 [label = "pm2.21"style="filled" fillcolor = "cyan"];
+  n1866->n1867[label="|- ( -. ph -> ( ph -> ps ) )"];
+  n1864->n1865[arrowhead="none" style="invisible"];
+  {rank=same;n1865;n1864;}
+  n1867 [label = "imim1i"style="filled" fillcolor = "cyan"];
+QED[style="invisible"]
+  n1867->QED[label="|- ( ( ( ph -> ps ) -> ch ) -> ( -. ph -> ch ) )"];
+  n1859->n1862->n1863->n1866[arrowhead="none" style="invisible"];
+  {rank=same;n1866;n1863;n1862;n1859;}
+}

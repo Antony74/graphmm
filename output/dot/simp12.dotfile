@@ -1,0 +1,34 @@
+digraph proof_simp12 {
+  rankdir = LR;
+  n19606 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n19606->n19609[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n19607 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n19607->n19609[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n19608 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n19608->n19609[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n19609 [label = "w3a"color="lightgray" fontcolor="lightgray"];
+  n19609->n19617[color="lightgray" fontcolor="lightgray" label="wff ( ph /\ ps /\ ch )"];
+  n19606->n19607->n19608[arrowhead="none" style="invisible"];
+  {rank=same;n19608;n19607;n19606;}
+  n19610 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n19610->n19617[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n19611 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n19611->n19617[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n19612 [label = "wta"color="lightgray" fontcolor="lightgray"];
+  n19612->n19617[color="lightgray" fontcolor="lightgray" label="wff ta"];
+  n19613 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n19613->n19616[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n19614 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n19614->n19616[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n19615 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n19615->n19616[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n19616 [label = "simp2"style="filled" fillcolor = "cyan"];
+  n19616->n19617[label="|- ( ( ph /\ ps /\ ch ) -> ps )"];
+  n19613->n19614->n19615[arrowhead="none" style="invisible"];
+  {rank=same;n19615;n19614;n19613;}
+  n19617 [label = "3ad2ant1"style="filled" fillcolor = "cyan"];
+QED[style="invisible"]
+  n19617->QED[label="|- ( ( ( ph /\ ps /\ ch ) /\ th /\ ta ) -> ps )"];
+  n19609->n19610->n19611->n19612->n19616[arrowhead="none" style="invisible"];
+  {rank=same;n19616;n19612;n19611;n19610;n19609;}
+}

@@ -1,0 +1,22 @@
+digraph proof_notnoti {
+  rankdir = LR;
+  n1383 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n1383->n1390[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n1384 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n1384->n1385[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n1385 [label = "wn"color="lightgray" fontcolor="lightgray"];
+  n1385->n1386[color="lightgray" fontcolor="lightgray" label="wff -. ph"];
+  n1386 [label = "wn"color="lightgray" fontcolor="lightgray"];
+  n1386->n1390[color="lightgray" fontcolor="lightgray" label="wff -. -. ph"];
+  n1387 [label = "negbi.1"style="filled" fillcolor = "orange"];
+  n1387->n1390[label="|- ph"];
+  n1388 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n1388->n1389[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n1389 [label = "notnot1"style="filled" fillcolor = "cyan"];
+  n1389->n1390[label="|- ( ph -> -. -. ph )"];
+  n1390 [label = "ax-mp"style="filled" fillcolor = "lime"];
+QED[style="invisible"]
+  n1390->QED[label="|- -. -. ph"];
+  n1383->n1386->n1387->n1389[arrowhead="none" style="invisible"];
+  {rank=same;n1389;n1387;n1386;n1383;}
+}

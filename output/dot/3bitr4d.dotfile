@@ -1,0 +1,34 @@
+digraph proof_3bitr4d {
+  rankdir = LR;
+  n5585 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n5585->n5597[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n5586 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n5586->n5597[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n5587 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n5587->n5597[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n5588 [label = "wta"color="lightgray" fontcolor="lightgray"];
+  n5588->n5597[color="lightgray" fontcolor="lightgray" label="wff ta"];
+  n5589 [label = "3bitr4d.2"style="filled" fillcolor = "orange"];
+  n5589->n5597[label="|- ( ph -> ( th <-> ps ) )"];
+  n5590 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n5590->n5596[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n5591 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n5591->n5596[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n5592 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n5592->n5596[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n5593 [label = "wta"color="lightgray" fontcolor="lightgray"];
+  n5593->n5596[color="lightgray" fontcolor="lightgray" label="wff ta"];
+  n5594 [label = "3bitr4d.1"style="filled" fillcolor = "orange"];
+  n5594->n5596[label="|- ( ph -> ( ps <-> ch ) )"];
+  n5595 [label = "3bitr4d.3"style="filled" fillcolor = "orange"];
+  n5595->n5596[label="|- ( ph -> ( ta <-> ch ) )"];
+  n5596 [label = "bitr4d"style="filled" fillcolor = "cyan"];
+  n5596->n5597[label="|- ( ph -> ( ps <-> ta ) )"];
+  n5590->n5591->n5592->n5593->n5594->n5595[arrowhead="none" style="invisible"];
+  {rank=same;n5595;n5594;n5593;n5592;n5591;n5590;}
+  n5597 [label = "bitrd"style="filled" fillcolor = "cyan"];
+QED[style="invisible"]
+  n5597->QED[label="|- ( ph -> ( th <-> ta ) )"];
+  n5585->n5586->n5587->n5588->n5589->n5596[arrowhead="none" style="invisible"];
+  {rank=same;n5596;n5589;n5588;n5587;n5586;n5585;}
+}

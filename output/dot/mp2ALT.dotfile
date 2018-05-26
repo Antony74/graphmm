@@ -1,0 +1,28 @@
+digraph proof_mp2ALT {
+  rankdir = LR;
+  n101 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n101->n110[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n102 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n102->n110[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n103 [label = "mp2ALT.1"style="filled" fillcolor = "orange"];
+  n103->n110[label="|- ph"];
+  n104 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n104->n109[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n105 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n105->n109[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n106 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n106->n109[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n107 [label = "mp2ALT.2"style="filled" fillcolor = "orange"];
+  n107->n109[label="|- ps"];
+  n108 [label = "mp2ALT.3"style="filled" fillcolor = "orange"];
+  n108->n109[label="|- ( ph -> ( ps -> ch ) )"];
+  n109 [label = "mpi"style="filled" fillcolor = "cyan"];
+  n109->n110[label="|- ( ph -> ch )"];
+  n104->n105->n106->n107->n108[arrowhead="none" style="invisible"];
+  {rank=same;n108;n107;n106;n105;n104;}
+  n110 [label = "ax-mp"style="filled" fillcolor = "lime"];
+QED[style="invisible"]
+  n110->QED[label="|- ch"];
+  n101->n102->n103->n109[arrowhead="none" style="invisible"];
+  {rank=same;n109;n103;n102;n101;}
+}

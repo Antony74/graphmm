@@ -1,0 +1,38 @@
+digraph proof_pm3_11 {
+  rankdir = LR;
+  n8617 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n8617->n8619[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n8618 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n8618->n8619[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n8619 [label = "wa"color="lightgray" fontcolor="lightgray"];
+  n8619->n8629[color="lightgray" fontcolor="lightgray" label="wff ( ph /\ ps )"];
+  n8617->n8618[arrowhead="none" style="invisible"];
+  {rank=same;n8618;n8617;}
+  n8620 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n8620->n8621[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n8621 [label = "wn"color="lightgray" fontcolor="lightgray"];
+  n8621->n8624[color="lightgray" fontcolor="lightgray" label="wff -. ph"];
+  n8622 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n8622->n8623[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n8623 [label = "wn"color="lightgray" fontcolor="lightgray"];
+  n8623->n8624[color="lightgray" fontcolor="lightgray" label="wff -. ps"];
+  n8624 [label = "wo"color="lightgray" fontcolor="lightgray"];
+  n8624->n8625[color="lightgray" fontcolor="lightgray" label="wff ( -. ph \/ -. ps )"];
+  n8621->n8623[arrowhead="none" style="invisible"];
+  {rank=same;n8623;n8621;}
+  n8625 [label = "wn"color="lightgray" fontcolor="lightgray"];
+  n8625->n8629[color="lightgray" fontcolor="lightgray" label="wff -. ( -. ph \/ -. ps )"];
+  n8626 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n8626->n8628[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n8627 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n8627->n8628[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n8628 [label = "anor"style="filled" fillcolor = "cyan"];
+  n8628->n8629[label="|- ( ( ph /\ ps ) <-> -. ( -. ph \/ -. ps ) )"];
+  n8626->n8627[arrowhead="none" style="invisible"];
+  {rank=same;n8627;n8626;}
+  n8629 [label = "biimpri"style="filled" fillcolor = "cyan"];
+QED[style="invisible"]
+  n8629->QED[label="|- ( -. ( -. ph \/ -. ps ) -> ( ph /\ ps ) )"];
+  n8619->n8625->n8628[arrowhead="none" style="invisible"];
+  {rank=same;n8628;n8625;n8619;}
+}

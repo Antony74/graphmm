@@ -1,0 +1,36 @@
+digraph proof_pm4_61 {
+  rankdir = LR;
+  n7742 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n7742->n7745[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n7743 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n7743->n7744[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n7744 [label = "wn"color="lightgray" fontcolor="lightgray"];
+  n7744->n7745[color="lightgray" fontcolor="lightgray" label="wff -. ps"];
+  n7745 [label = "wa"color="lightgray" fontcolor="lightgray"];
+  n7745->n7753[color="lightgray" fontcolor="lightgray" label="wff ( ph /\ -. ps )"];
+  n7742->n7744[arrowhead="none" style="invisible"];
+  {rank=same;n7744;n7742;}
+  n7746 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n7746->n7748[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n7747 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n7747->n7748[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n7748 [label = "wi"color="lightgray" fontcolor="lightgray"];
+  n7748->n7749[color="lightgray" fontcolor="lightgray" label="wff ( ph -> ps )"];
+  n7746->n7747[arrowhead="none" style="invisible"];
+  {rank=same;n7747;n7746;}
+  n7749 [label = "wn"color="lightgray" fontcolor="lightgray"];
+  n7749->n7753[color="lightgray" fontcolor="lightgray" label="wff -. ( ph -> ps )"];
+  n7750 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n7750->n7752[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n7751 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n7751->n7752[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n7752 [label = "annim"style="filled" fillcolor = "cyan"];
+  n7752->n7753[label="|- ( ( ph /\ -. ps ) <-> -. ( ph -> ps ) )"];
+  n7750->n7751[arrowhead="none" style="invisible"];
+  {rank=same;n7751;n7750;}
+  n7753 [label = "bicomi"style="filled" fillcolor = "cyan"];
+QED[style="invisible"]
+  n7753->QED[label="|- ( -. ( ph -> ps ) <-> ( ph /\ -. ps ) )"];
+  n7745->n7749->n7752[arrowhead="none" style="invisible"];
+  {rank=same;n7752;n7749;n7745;}
+}

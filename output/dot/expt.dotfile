@@ -1,0 +1,66 @@
+digraph proof_expt {
+  rankdir = LR;
+  n1731 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n1731->n1754[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n1732 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n1732->n1735[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n1733 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n1733->n1734[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n1734 [label = "wn"color="lightgray" fontcolor="lightgray"];
+  n1734->n1735[color="lightgray" fontcolor="lightgray" label="wff -. ps"];
+  n1735 [label = "wi"color="lightgray" fontcolor="lightgray"];
+  n1735->n1736[color="lightgray" fontcolor="lightgray" label="wff ( ph -> -. ps )"];
+  n1732->n1734[arrowhead="none" style="invisible"];
+  {rank=same;n1734;n1732;}
+  n1736 [label = "wn"color="lightgray" fontcolor="lightgray"];
+  n1736->n1738[color="lightgray" fontcolor="lightgray" label="wff -. ( ph -> -. ps )"];
+  n1737 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n1737->n1738[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n1738 [label = "wi"color="lightgray" fontcolor="lightgray"];
+  n1738->n1754[color="lightgray" fontcolor="lightgray" label="wff ( -. ( ph -> -. ps ) -> ch )"];
+  n1736->n1737[arrowhead="none" style="invisible"];
+  {rank=same;n1737;n1736;}
+  n1739 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n1739->n1741[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n1740 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n1740->n1741[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n1741 [label = "wi"color="lightgray" fontcolor="lightgray"];
+  n1741->n1754[color="lightgray" fontcolor="lightgray" label="wff ( ps -> ch )"];
+  n1739->n1740[arrowhead="none" style="invisible"];
+  {rank=same;n1740;n1739;}
+  n1742 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n1742->n1753[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n1743 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n1743->n1753[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n1744 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n1744->n1745[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n1745 [label = "wn"color="lightgray" fontcolor="lightgray"];
+  n1745->n1747[color="lightgray" fontcolor="lightgray" label="wff -. ps"];
+  n1746 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n1746->n1747[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n1747 [label = "wi"color="lightgray" fontcolor="lightgray"];
+  n1747->n1748[color="lightgray" fontcolor="lightgray" label="wff ( ph -> -. ps )"];
+  n1745->n1746[arrowhead="none" style="invisible"];
+  {rank=same;n1746;n1745;}
+  n1748 [label = "wn"color="lightgray" fontcolor="lightgray"];
+  n1748->n1753[color="lightgray" fontcolor="lightgray" label="wff -. ( ph -> -. ps )"];
+  n1749 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n1749->n1753[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n1750 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n1750->n1752[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n1751 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n1751->n1752[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n1752 [label = "pm3.2im"style="filled" fillcolor = "cyan"];
+  n1752->n1753[label="|- ( ph -> ( ps -> -. ( ph -> -. ps ) ) )"];
+  n1750->n1751[arrowhead="none" style="invisible"];
+  {rank=same;n1751;n1750;}
+  n1753 [label = "imim1d"style="filled" fillcolor = "cyan"];
+  n1753->n1754[label="|- ( ph -> ( ( -. ( ph -> -. ps ) -> ch ) -> ( ps -> ch ) ) )"];
+  n1742->n1743->n1748->n1749->n1752[arrowhead="none" style="invisible"];
+  {rank=same;n1752;n1749;n1748;n1743;n1742;}
+  n1754 [label = "com12"style="filled" fillcolor = "cyan"];
+QED[style="invisible"]
+  n1754->QED[label="|- ( ( -. ( ph -> -. ps ) -> ch ) -> ( ph -> ( ps -> ch ) ) )"];
+  n1731->n1738->n1741->n1753[arrowhead="none" style="invisible"];
+  {rank=same;n1753;n1741;n1738;n1731;}
+}

@@ -1,0 +1,38 @@
+digraph proof_sylsyld {
+  rankdir = LR;
+  n529 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n529->n542[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n530 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n530->n542[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n531 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n531->n542[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n532 [label = "wta"color="lightgray" fontcolor="lightgray"];
+  n532->n542[color="lightgray" fontcolor="lightgray" label="wff ta"];
+  n533 [label = "sylsyld.2"style="filled" fillcolor = "orange"];
+  n533->n542[label="|- ( ph -> ( ch -> th ) )"];
+  n534 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n534->n541[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n535 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n535->n541[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n536 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n536->n538[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n537 [label = "wta"color="lightgray" fontcolor="lightgray"];
+  n537->n538[color="lightgray" fontcolor="lightgray" label="wff ta"];
+  n538 [label = "wi"color="lightgray" fontcolor="lightgray"];
+  n538->n541[color="lightgray" fontcolor="lightgray" label="wff ( th -> ta )"];
+  n536->n537[arrowhead="none" style="invisible"];
+  {rank=same;n537;n536;}
+  n539 [label = "sylsyld.1"style="filled" fillcolor = "orange"];
+  n539->n541[label="|- ( ph -> ps )"];
+  n540 [label = "sylsyld.3"style="filled" fillcolor = "orange"];
+  n540->n541[label="|- ( ps -> ( th -> ta ) )"];
+  n541 [label = "syl"style="filled" fillcolor = "cyan"];
+  n541->n542[label="|- ( ph -> ( th -> ta ) )"];
+  n534->n535->n538->n539->n540[arrowhead="none" style="invisible"];
+  {rank=same;n540;n539;n538;n535;n534;}
+  n542 [label = "syld"style="filled" fillcolor = "cyan"];
+QED[style="invisible"]
+  n542->QED[label="|- ( ph -> ( ch -> ta ) )"];
+  n529->n530->n531->n532->n533->n541[arrowhead="none" style="invisible"];
+  {rank=same;n541;n533;n532;n531;n530;n529;}
+}

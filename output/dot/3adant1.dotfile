@@ -1,0 +1,40 @@
+digraph proof_3adant1 {
+  rankdir = LR;
+  n19462 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n19462->n19465[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n19463 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n19463->n19465[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n19464 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n19464->n19465[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n19465 [label = "w3a"color="lightgray" fontcolor="lightgray"];
+  n19465->n19475[color="lightgray" fontcolor="lightgray" label="wff ( th /\ ph /\ ps )"];
+  n19462->n19463->n19464[arrowhead="none" style="invisible"];
+  {rank=same;n19464;n19463;n19462;}
+  n19466 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n19466->n19468[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n19467 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n19467->n19468[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n19468 [label = "wa"color="lightgray" fontcolor="lightgray"];
+  n19468->n19475[color="lightgray" fontcolor="lightgray" label="wff ( ph /\ ps )"];
+  n19466->n19467[arrowhead="none" style="invisible"];
+  {rank=same;n19467;n19466;}
+  n19469 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n19469->n19475[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n19470 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n19470->n19473[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n19471 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n19471->n19473[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n19472 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n19472->n19473[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n19473 [label = "3simpc"style="filled" fillcolor = "cyan"];
+  n19473->n19475[label="|- ( ( th /\ ph /\ ps ) -> ( ph /\ ps ) )"];
+  n19470->n19471->n19472[arrowhead="none" style="invisible"];
+  {rank=same;n19472;n19471;n19470;}
+  n19474 [label = "3adant.1"style="filled" fillcolor = "orange"];
+  n19474->n19475[label="|- ( ( ph /\ ps ) -> ch )"];
+  n19475 [label = "syl"style="filled" fillcolor = "cyan"];
+QED[style="invisible"]
+  n19475->QED[label="|- ( ( th /\ ph /\ ps ) -> ch )"];
+  n19465->n19468->n19469->n19473->n19474[arrowhead="none" style="invisible"];
+  {rank=same;n19474;n19473;n19469;n19468;n19465;}
+}

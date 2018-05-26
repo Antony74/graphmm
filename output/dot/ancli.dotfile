@@ -1,0 +1,20 @@
+digraph proof_ancli {
+  rankdir = LR;
+  n9425 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n9425->n9431[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n9426 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n9426->n9431[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n9427 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n9427->n9431[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n9428 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n9428->n9429[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n9429 [label = "id"style="filled" fillcolor = "cyan"];
+  n9429->n9431[label="|- ( ph -> ph )"];
+  n9430 [label = "ancli.1"style="filled" fillcolor = "orange"];
+  n9430->n9431[label="|- ( ph -> ps )"];
+  n9431 [label = "jca"style="filled" fillcolor = "cyan"];
+QED[style="invisible"]
+  n9431->QED[label="|- ( ph -> ( ph /\ ps ) )"];
+  n9425->n9426->n9427->n9429->n9430[arrowhead="none" style="invisible"];
+  {rank=same;n9430;n9429;n9427;n9426;n9425;}
+}

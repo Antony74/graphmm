@@ -1,0 +1,32 @@
+digraph proof_mp2and {
+  rankdir = LR;
+  n11609 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n11609->n11620[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n11610 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n11610->n11620[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n11611 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n11611->n11620[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n11612 [label = "mp2and.2"style="filled" fillcolor = "orange"];
+  n11612->n11620[label="|- ( ph -> ch )"];
+  n11613 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n11613->n11619[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n11614 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n11614->n11619[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n11615 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n11615->n11619[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n11616 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n11616->n11619[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n11617 [label = "mp2and.1"style="filled" fillcolor = "orange"];
+  n11617->n11619[label="|- ( ph -> ps )"];
+  n11618 [label = "mp2and.3"style="filled" fillcolor = "orange"];
+  n11618->n11619[label="|- ( ph -> ( ( ps /\ ch ) -> th ) )"];
+  n11619 [label = "mpand"style="filled" fillcolor = "cyan"];
+  n11619->n11620[label="|- ( ph -> ( ch -> th ) )"];
+  n11613->n11614->n11615->n11616->n11617->n11618[arrowhead="none" style="invisible"];
+  {rank=same;n11618;n11617;n11616;n11615;n11614;n11613;}
+  n11620 [label = "mpd"style="filled" fillcolor = "cyan"];
+QED[style="invisible"]
+  n11620->QED[label="|- ( ph -> th )"];
+  n11609->n11610->n11611->n11612->n11619[arrowhead="none" style="invisible"];
+  {rank=same;n11619;n11612;n11611;n11610;n11609;}
+}

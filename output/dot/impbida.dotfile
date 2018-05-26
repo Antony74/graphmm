@@ -1,0 +1,38 @@
+digraph proof_impbida {
+  rankdir = LR;
+  n14224 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n14224->n14237[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n14225 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n14225->n14237[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n14226 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n14226->n14237[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n14227 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n14227->n14231[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n14228 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n14228->n14231[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n14229 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n14229->n14231[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n14230 [label = "impbida.1"style="filled" fillcolor = "orange"];
+  n14230->n14231[label="|- ( ( ph /\ ps ) -> ch )"];
+  n14231 [label = "ex"style="filled" fillcolor = "cyan"];
+  n14231->n14237[label="|- ( ph -> ( ps -> ch ) )"];
+  n14227->n14228->n14229->n14230[arrowhead="none" style="invisible"];
+  {rank=same;n14230;n14229;n14228;n14227;}
+  n14232 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n14232->n14236[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n14233 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n14233->n14236[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n14234 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n14234->n14236[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n14235 [label = "impbida.2"style="filled" fillcolor = "orange"];
+  n14235->n14236[label="|- ( ( ph /\ ch ) -> ps )"];
+  n14236 [label = "ex"style="filled" fillcolor = "cyan"];
+  n14236->n14237[label="|- ( ph -> ( ch -> ps ) )"];
+  n14232->n14233->n14234->n14235[arrowhead="none" style="invisible"];
+  {rank=same;n14235;n14234;n14233;n14232;}
+  n14237 [label = "impbid"style="filled" fillcolor = "cyan"];
+QED[style="invisible"]
+  n14237->QED[label="|- ( ph -> ( ps <-> ch ) )"];
+  n14224->n14225->n14226->n14231->n14236[arrowhead="none" style="invisible"];
+  {rank=same;n14236;n14231;n14226;n14225;n14224;}
+}
