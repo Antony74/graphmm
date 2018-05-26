@@ -101,13 +101,14 @@ public:
 		typeProof
 	};
 
-	TreeItem(const std::string& label, EType eType)
+	TreeItem(const std::string& label, EType eType, const Expression& expression)
 	{
 		m_id = m_nextId;
 		++m_nextId;
 		m_label = label;
 		m_pParent = nullptr;
 		m_eType = eType;
+		m_expression = expression;
 	}
 
 	std::string getId() { return "n" + std::to_string(m_id); }
@@ -126,12 +127,34 @@ public:
 		return m_children;
 	}
 
+	const Expression getExpression()
+	{
+		return m_expression;
+	}
+
+	std::string getExpressionAsString()
+	{
+		std::stringstream ss;
+		for (int n = 0; n < m_expression.size(); ++n)
+		{
+			if (n != 0)
+			{
+				ss << " ";
+			}
+
+			ss << m_expression[n];
+		}
+
+		return ss.str();
+	}
+
 private:
 	int m_id;
 	std::string m_label;
 	EType m_eType;
 	TreeItem* m_pParent;
 	std::vector<TreeItem*> m_children;
+	Expression m_expression;
 
 	// Keeping id globally unique makes it easier to splice trees together
 	static int m_nextId;
@@ -147,7 +170,7 @@ public:
 		: m_proofLabel(proofLabel)
 	{}
 
-	void addLeaf(const std::string& label)
+	void addLeaf(const std::string& label, const Expression& expression)
 	{
 		TreeItem::EType eType = TreeItem::typeNonEssential;
 
@@ -166,12 +189,12 @@ public:
 			}
 		}
 
-		std::shared_ptr<TreeItem> item = std::make_shared<TreeItem>(label, eType);
+		std::shared_ptr<TreeItem> item = std::make_shared<TreeItem>(label, eType, expression);
 		m_items.push_back(item);
 		m_stack.push_back(item);
 	}
 
-	void addParent(const std::string& label, int nChildren)
+	void addParent(const std::string& label, int nChildren, const Expression& expression)
 	{
 		TreeItem::EType type = TreeItem::typeProof;
 
@@ -197,7 +220,7 @@ public:
 			}
 		}
 
-		std::shared_ptr<TreeItem> parent = std::make_shared<TreeItem>(label, type);
+		std::shared_ptr<TreeItem> parent = std::make_shared<TreeItem>(label, type, expression);
 		m_items.push_back(parent);
 		for (int n = 0; n < nChildren; ++n)
 		{
@@ -242,12 +265,27 @@ public:
 			}
 
 			ss << "];\n";
+
+			std::string parentId = "QED";
+
 			if (item->getParent())
 			{
-				ss << "  " << item->getId() << "->" << item->getParent()->getId() << "[";
-				ss << "color=\"lightgray\"";
-				ss << "];\n";
+				parentId = item->getParent()->getId();
 			}
+			else
+			{
+				ss << "QED[style=\"invisible\"]\n";
+			}
+
+			ss << "  " << item->getId() << "->" << parentId << "[";
+
+			if (item->getType() == TreeItem::typeNonEssential)
+			{
+				ss << "color=\"lightgray\" fontcolor=\"lightgray\" ";
+			}
+
+			ss << "label=\"" << item->getExpressionAsString() << "\"";
+			ss << "];\n";
 
 			const std::vector<TreeItem *>& children = item->children();
 
@@ -299,11 +337,11 @@ public:
 			{
 				clone(children[n]);
 			}
-			addParent(pItem->getLabel(), children.size());
+			addParent(pItem->getLabel(), children.size(), pItem->getExpression());
 		}
 		else
 		{
-			addLeaf(pItem->getLabel());
+			addLeaf(pItem->getLabel(), pItem->getExpression());
 		}
 	}
 
@@ -801,8 +839,6 @@ bool verifyassertionref(
         return false;
     }
 
-	pTree->addParent(reflabel, assertion.hypotheses.size());
-
     std::vector<Expression>::size_type const base
         (stack->size() - assertion.hypotheses.size());
 
@@ -892,6 +928,8 @@ bool verifyassertionref(
     makesubstitution(assertion.expression, substitutions, &dest);
     stack->push_back(dest);
 
+	pTree->addParent(reflabel, assertion.hypotheses.size(), dest);
+
     return true;
 }
 
@@ -969,9 +1007,10 @@ bool verifycompressedproof(
         if (*iter <= mandhypt)
         {
 			std::string label = theorem.hypotheses[*iter - 1];
+			const Expression& expression = hypotheses.find(label)->second.first;
 
-            stack.push_back(hypotheses.find(label)->second.first);
-			tree.addLeaf(label);
+            stack.push_back(expression);
+			tree.addLeaf(label, expression);
         }
         else if (*iter <= labelt)
         {
@@ -984,7 +1023,7 @@ bool verifycompressedproof(
             if (hyp != hypotheses.end())
             {
                 stack.push_back(hyp->second.first);
-				tree.addLeaf(proofstep);
+				tree.addLeaf(proofstep, hyp->second.first);
                 continue;
             }
 
