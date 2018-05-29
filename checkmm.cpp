@@ -178,7 +178,7 @@ public:
 
 		if (itr == mapLabelType.end())
 		{
-			printf("mapLabelType lookup failed\n");
+			printf("mapLabelType lookup failed to find %s\n", label.c_str());
 		}
 		else
 		{
@@ -951,8 +951,10 @@ bool verifyregularproof
             (hypotheses.find(*proofstep));
         if (hyp != hypotheses.end())
         {
-            stack.push_back(hyp->second.first);
-            continue;
+			const Expression& expression = hyp->second.first;
+            stack.push_back(expression);
+			tree.addLeaf(*proofstep, expression);
+			continue;
         }
 
         // It must be an axiom or theorem
@@ -975,7 +977,19 @@ bool verifyregularproof
                   << std::endl; 
     }
 
-    return true;
+	std::string dotfilename = label + ".dotfile";
+
+	try
+	{
+		std::ofstream dotfile(dotfilename);
+		dotfile << tree.asString().c_str();
+	}
+	catch (std::exception e)
+	{
+		printf("Problem writing %s: %s\n", dotfilename.c_str(), e.what());
+	}
+
+	return true;
 }
 
 // Verify a compressed proof
@@ -1376,8 +1390,8 @@ bool parselabel(std::string label)
         return false;
     }
 
-    std::string const type(tokens.front());
-    tokens.pop();
+	std::string const type(tokens.front());
+	tokens.pop();
 
     bool okay(true);
     if (type == "$p")
