@@ -89,6 +89,25 @@ std::map<std::string, std::string> mapLabelType;
 int nProofCount = 0;
 int nProofLimit = INT_MAX;
 
+std::string escapeBackslashes(const std::string& orig)
+{
+	std::stringstream ss;
+	for (int n = 0; n < orig.length(); ++n)
+	{
+		char c = orig[n];
+		if (c == '\\')
+		{
+			ss << "\\\\";
+		}
+		else
+		{
+			ss << c;
+		}
+	}
+
+	return ss.str();
+}
+
 class TreeItem
 {
 public:
@@ -284,7 +303,7 @@ public:
 				ss << "color=\"lightgray\" fontcolor=\"lightgray\" ";
 			}
 
-			ss << "label=\"" << item->getExpressionAsString() << "\"";
+			ss << "label=\"" << escapeBackslashes(item->getExpressionAsString()) << "\"";
 			ss << "];\n";
 
 			const std::vector<TreeItem *>& children = item->children();
