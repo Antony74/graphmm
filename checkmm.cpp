@@ -268,7 +268,7 @@ public:
 
 			if (item->getType() == TreeItem::typeAxiom)
 			{
-				ss << "style=\"filled\" fillcolor = \"lime\"";
+				ss << "style=\"filled\" fillcolor = \"lawngreen\"";
 			}
 			else if (item->getType() == TreeItem::typeProof)
 			{

@@ -3,9 +3,13 @@
 // Configuration
 
 var inDir = __dirname + '/output/dot/';
-var outDir = __dirname + '/output/svg/';
+var outDir = __dirname + '/output/png/';
 var nConcurrent = 8;
-var nMaxDotFileSize = 1024 * 1024; // https://gitlab.com/graphviz/graphviz/issues/1127
+var outType = 'png';
+
+// Graph viz doesn't like big files https://gitlab.com/graphviz/graphviz/issues/1127
+//var nMaxDotFileSize = 1024 * 1024; // Safe for svg 
+var nMaxDotFileSize = 300 * 1024; // Safe for png 
 
 // End of configuration
 
@@ -27,9 +31,9 @@ fs.readdir(inDir, (err, files) => {
           convert();
         } else {
           var arr = dotfile.split('.');
-          arr[arr.length - 1] = 'svg';
+          arr[arr.length - 1] = outType;
           var svgfile = arr.join('.');
-          var cmd = ['dot ', inDir, dotfile, ' -Tsvg -o ', outDir, svgfile].join('');
+          var cmd = ['dot ', inDir, dotfile, ' -T', outType, ' -o ', outDir, svgfile].join('');
     
           exec(cmd, (error, stdout, stderr) => {
             if (error) {
