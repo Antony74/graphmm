@@ -1,0 +1,26 @@
+digraph proof_exp31 {
+  rankdir = LR;
+  n10411[label="wph" style="invisible"];
+  n10411->n10423[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n10412[label="wps" style="invisible"];
+  n10412->n10423[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n10415[label="wi" style="invisible"];
+  n10415->n10423[color="lightgray" fontcolor="lightgray" label="wff ( ch -> th )"];
+  n10418[label="wa" style="invisible"];
+  n10418->n10422[color="lightgray" fontcolor="lightgray" label="wff ( ph /\\ ps )"];
+  n10419[label="wch" style="invisible"];
+  n10419->n10422[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n10420[label="wth" style="invisible"];
+  n10420->n10422[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n10421[label="exp31.1" style="filled" fillcolor = "orange"];
+  n10421->n10422[label="|- ( ( ( ph /\\ ps ) /\\ ch ) -> th )"];
+  n10422[label="ex" style="filled" fillcolor = "cyan"];
+  n10422->n10423[label="|- ( ( ph /\\ ps ) -> ( ch -> th ) )"];
+  n10418->n10419->n10420->n10421[arrowhead="none" style="invisible"];
+  {rank=same;n10421;n10420;n10419;n10418;}
+  n10423[label="ex" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n10423->QED[label="|- ( ph -> ( ps -> ( ch -> th ) ) )"];
+  n10411->n10412->n10415->n10422[arrowhead="none" style="invisible"];
+  {rank=same;n10422;n10415;n10412;n10411;}
+}

@@ -1,0 +1,26 @@
+digraph proof_mt3i {
+  rankdir = LR;
+  n1418[label="wph" style="invisible"];
+  n1418->n1427[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n1419[label="wps" style="invisible"];
+  n1419->n1427[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n1420[label="wch" style="invisible"];
+  n1420->n1427[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n1422[label="wn" style="invisible"];
+  n1422->n1425[color="lightgray" fontcolor="lightgray" label="wff -. ch"];
+  n1423[label="wph" style="invisible"];
+  n1423->n1425[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n1424[label="mt3i.1" style="filled" fillcolor = "orange"];
+  n1424->n1425[label="|- -. ch"];
+  n1425[label="a1i" style="filled" fillcolor = "cyan"];
+  n1425->n1427[label="|- ( ph -> -. ch )"];
+  n1422->n1423->n1424[arrowhead="none" style="invisible"];
+  {rank=same;n1424;n1423;n1422;}
+  n1426[label="mt3i.2" style="filled" fillcolor = "orange"];
+  n1426->n1427[label="|- ( ph -> ( -. ps -> ch ) )"];
+  n1427[label="mt3d" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n1427->QED[label="|- ( ph -> ps )"];
+  n1418->n1419->n1420->n1425->n1426[arrowhead="none" style="invisible"];
+  {rank=same;n1426;n1425;n1420;n1419;n1418;}
+}

@@ -1,0 +1,28 @@
+digraph proof_impcon4bid {
+  rankdir = LR;
+  n4605[label="wph" style="invisible"];
+  n4605->n4614[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n4606[label="wps" style="invisible"];
+  n4606->n4614[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n4607[label="wch" style="invisible"];
+  n4607->n4614[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n4608[label="impcon4bid.1" style="filled" fillcolor = "orange"];
+  n4608->n4614[label="|- ( ph -> ( ps -> ch ) )"];
+  n4609[label="wph" style="invisible"];
+  n4609->n4613[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n4610[label="wps" style="invisible"];
+  n4610->n4613[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n4611[label="wch" style="invisible"];
+  n4611->n4613[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n4612[label="impcon4bid.2" style="filled" fillcolor = "orange"];
+  n4612->n4613[label="|- ( ph -> ( -. ps -> -. ch ) )"];
+  n4613[label="con4d" style="filled" fillcolor = "cyan"];
+  n4613->n4614[label="|- ( ph -> ( ch -> ps ) )"];
+  n4609->n4610->n4611->n4612[arrowhead="none" style="invisible"];
+  {rank=same;n4612;n4611;n4610;n4609;}
+  n4614[label="impbid" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n4614->QED[label="|- ( ph -> ( ps <-> ch ) )"];
+  n4605->n4606->n4607->n4608->n4613[arrowhead="none" style="invisible"];
+  {rank=same;n4613;n4608;n4607;n4606;n4605;}
+}

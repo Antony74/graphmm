@@ -1,0 +1,40 @@
+digraph proof_notbi {
+  rankdir = LR;
+  n5777[label="wb" style="invisible"];
+  n5777->n5807[color="lightgray" fontcolor="lightgray" label="wff ( ph <-> ps )"];
+  n5782[label="wb" style="invisible"];
+  n5782->n5807[color="lightgray" fontcolor="lightgray" label="wff ( -. ph <-> -. ps )"];
+  n5785[label="wb" style="invisible"];
+  n5785->n5792[color="lightgray" fontcolor="lightgray" label="wff ( ph <-> ps )"];
+  n5786[label="wph" style="invisible"];
+  n5786->n5792[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n5787[label="wps" style="invisible"];
+  n5787->n5792[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n5790[label="wb" style="invisible"];
+  n5790->n5791[color="lightgray" fontcolor="lightgray" label="wff ( ph <-> ps )"];
+  n5791[label="id" style="filled" fillcolor = "cyan"];
+  n5791->n5792[label="|- ( ( ph <-> ps ) -> ( ph <-> ps ) )"];
+  n5792[label="notbid" style="filled" fillcolor = "cyan"];
+  n5792->n5807[label="|- ( ( ph <-> ps ) -> ( -. ph <-> -. ps ) )"];
+  n5785->n5786->n5787->n5791[arrowhead="none" style="invisible"];
+  {rank=same;n5791;n5787;n5786;n5785;}
+  n5797[label="wb" style="invisible"];
+  n5797->n5806[color="lightgray" fontcolor="lightgray" label="wff ( -. ph <-> -. ps )"];
+  n5798[label="wph" style="invisible"];
+  n5798->n5806[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n5799[label="wps" style="invisible"];
+  n5799->n5806[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n5804[label="wb" style="invisible"];
+  n5804->n5805[color="lightgray" fontcolor="lightgray" label="wff ( -. ph <-> -. ps )"];
+  n5805[label="id" style="filled" fillcolor = "cyan"];
+  n5805->n5806[label="|- ( ( -. ph <-> -. ps ) -> ( -. ph <-> -. ps ) )"];
+  n5806[label="con4bid" style="filled" fillcolor = "cyan"];
+  n5806->n5807[label="|- ( ( -. ph <-> -. ps ) -> ( ph <-> ps ) )"];
+  n5797->n5798->n5799->n5805[arrowhead="none" style="invisible"];
+  {rank=same;n5805;n5799;n5798;n5797;}
+  n5807[label="impbii" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n5807->QED[label="|- ( ( ph <-> ps ) <-> ( -. ph <-> -. ps ) )"];
+  n5777->n5782->n5792->n5806[arrowhead="none" style="invisible"];
+  {rank=same;n5806;n5792;n5782;n5777;}
+}

@@ -1,44 +1,44 @@
 digraph proof_orim12i {
   rankdir = LR;
-  n8835 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n8835[label="wph" color="lightgray" fontcolor="lightgray"];
   n8835->n8850[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n8836 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n8836[label="wps" color="lightgray" fontcolor="lightgray"];
   n8836->n8838[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n8837 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n8837[label="wth" color="lightgray" fontcolor="lightgray"];
   n8837->n8838[color="lightgray" fontcolor="lightgray" label="wff th"];
-  n8838 [label = "wo"color="lightgray" fontcolor="lightgray"];
-  n8838->n8850[color="lightgray" fontcolor="lightgray" label="wff ( ps \/ th )"];
+  n8838[label="wo" color="lightgray" fontcolor="lightgray"];
+  n8838->n8850[color="lightgray" fontcolor="lightgray" label="wff ( ps \\/ th )"];
   n8836->n8837[arrowhead="none" style="invisible"];
   {rank=same;n8837;n8836;}
-  n8839 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n8839[label="wch" color="lightgray" fontcolor="lightgray"];
   n8839->n8850[color="lightgray" fontcolor="lightgray" label="wff ch"];
-  n8840 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n8840[label="wph" color="lightgray" fontcolor="lightgray"];
   n8840->n8844[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n8841 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n8841[label="wps" color="lightgray" fontcolor="lightgray"];
   n8841->n8844[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n8842 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n8842[label="wth" color="lightgray" fontcolor="lightgray"];
   n8842->n8844[color="lightgray" fontcolor="lightgray" label="wff th"];
-  n8843 [label = "orim12i.1"style="filled" fillcolor = "orange"];
+  n8843[label="orim12i.1" style="filled" fillcolor = "orange"];
   n8843->n8844[label="|- ( ph -> ps )"];
-  n8844 [label = "orcd"style="filled" fillcolor = "cyan"];
-  n8844->n8850[label="|- ( ph -> ( ps \/ th ) )"];
+  n8844[label="orcd" style="filled" fillcolor = "cyan"];
+  n8844->n8850[label="|- ( ph -> ( ps \\/ th ) )"];
   n8840->n8841->n8842->n8843[arrowhead="none" style="invisible"];
   {rank=same;n8843;n8842;n8841;n8840;}
-  n8845 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n8845[label="wch" color="lightgray" fontcolor="lightgray"];
   n8845->n8849[color="lightgray" fontcolor="lightgray" label="wff ch"];
-  n8846 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n8846[label="wth" color="lightgray" fontcolor="lightgray"];
   n8846->n8849[color="lightgray" fontcolor="lightgray" label="wff th"];
-  n8847 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n8847[label="wps" color="lightgray" fontcolor="lightgray"];
   n8847->n8849[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n8848 [label = "orim12i.2"style="filled" fillcolor = "orange"];
+  n8848[label="orim12i.2" style="filled" fillcolor = "orange"];
   n8848->n8849[label="|- ( ch -> th )"];
-  n8849 [label = "olcd"style="filled" fillcolor = "cyan"];
-  n8849->n8850[label="|- ( ch -> ( ps \/ th ) )"];
+  n8849[label="olcd" style="filled" fillcolor = "cyan"];
+  n8849->n8850[label="|- ( ch -> ( ps \\/ th ) )"];
   n8845->n8846->n8847->n8848[arrowhead="none" style="invisible"];
   {rank=same;n8848;n8847;n8846;n8845;}
-  n8850 [label = "jaoi"style="filled" fillcolor = "cyan"];
-QED[style="invisible"]
-  n8850->QED[label="|- ( ( ph \/ ch ) -> ( ps \/ th ) )"];
+  n8850[label="jaoi" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n8850->QED[label="|- ( ( ph \\/ ch ) -> ( ps \\/ th ) )"];
   n8835->n8838->n8839->n8844->n8849[arrowhead="none" style="invisible"];
   {rank=same;n8849;n8844;n8839;n8838;n8835;}
 }

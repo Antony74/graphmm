@@ -1,29 +1,29 @@
 digraph proof_a1d {
   rankdir = LR;
-  n183 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n183[label="wph" color="lightgray" fontcolor="lightgray"];
   n183->n192[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n184 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n184[label="wps" color="lightgray" fontcolor="lightgray"];
   n184->n192[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n185 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n185[label="wch" color="lightgray" fontcolor="lightgray"];
   n185->n187[color="lightgray" fontcolor="lightgray" label="wff ch"];
-  n186 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n186[label="wps" color="lightgray" fontcolor="lightgray"];
   n186->n187[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n187 [label = "wi"color="lightgray" fontcolor="lightgray"];
+  n187[label="wi" color="lightgray" fontcolor="lightgray"];
   n187->n192[color="lightgray" fontcolor="lightgray" label="wff ( ch -> ps )"];
   n185->n186[arrowhead="none" style="invisible"];
   {rank=same;n186;n185;}
-  n188 [label = "a1d.1"style="filled" fillcolor = "orange"];
+  n188[label="a1d.1" style="filled" fillcolor = "orange"];
   n188->n192[label="|- ( ph -> ps )"];
-  n189 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n189[label="wps" color="lightgray" fontcolor="lightgray"];
   n189->n191[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n190 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n190[label="wch" color="lightgray" fontcolor="lightgray"];
   n190->n191[color="lightgray" fontcolor="lightgray" label="wff ch"];
-  n191 [label = "ax-1"style="filled" fillcolor = "lime"];
+  n191[label="ax-1" style="filled" fillcolor = "lawngreen"];
   n191->n192[label="|- ( ps -> ( ch -> ps ) )"];
   n189->n190[arrowhead="none" style="invisible"];
   {rank=same;n190;n189;}
-  n192 [label = "syl"style="filled" fillcolor = "cyan"];
-QED[style="invisible"]
+  n192[label="syl" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
   n192->QED[label="|- ( ph -> ( ch -> ps ) )"];
   n183->n184->n187->n188->n191[arrowhead="none" style="invisible"];
   {rank=same;n191;n188;n187;n184;n183;}

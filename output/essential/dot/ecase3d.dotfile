@@ -1,0 +1,32 @@
+digraph proof_ecase3d {
+  rankdir = LR;
+  n17097[label="wph" style="invisible"];
+  n17097->n17110[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n17100[label="wo" style="invisible"];
+  n17100->n17110[color="lightgray" fontcolor="lightgray" label="wff ( ps \\/ ch )"];
+  n17101[label="wth" style="invisible"];
+  n17101->n17110[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n17102[label="wph" style="invisible"];
+  n17102->n17108[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n17103[label="wps" style="invisible"];
+  n17103->n17108[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n17104[label="wth" style="invisible"];
+  n17104->n17108[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n17105[label="wch" style="invisible"];
+  n17105->n17108[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n17106[label="ecase3d.1" style="filled" fillcolor = "orange"];
+  n17106->n17108[label="|- ( ph -> ( ps -> th ) )"];
+  n17107[label="ecase3d.2" style="filled" fillcolor = "orange"];
+  n17107->n17108[label="|- ( ph -> ( ch -> th ) )"];
+  n17108[label="jaod" style="filled" fillcolor = "cyan"];
+  n17108->n17110[label="|- ( ph -> ( ( ps \\/ ch ) -> th ) )"];
+  n17102->n17103->n17104->n17105->n17106->n17107[arrowhead="none" style="invisible"];
+  {rank=same;n17107;n17106;n17105;n17104;n17103;n17102;}
+  n17109[label="ecase3d.3" style="filled" fillcolor = "orange"];
+  n17109->n17110[label="|- ( ph -> ( -. ( ps \\/ ch ) -> th ) )"];
+  n17110[label="pm2.61d" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n17110->QED[label="|- ( ph -> th )"];
+  n17097->n17100->n17101->n17108->n17109[arrowhead="none" style="invisible"];
+  {rank=same;n17109;n17108;n17101;n17100;n17097;}
+}

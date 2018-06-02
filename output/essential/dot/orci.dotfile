@@ -1,0 +1,22 @@
+digraph proof_orci {
+  rankdir = LR;
+  n7348[label="wph" style="invisible"];
+  n7348->n7354[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n7349[label="wps" style="invisible"];
+  n7349->n7354[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n7350[label="wph" style="invisible"];
+  n7350->n7353[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n7351[label="wps" style="invisible"];
+  n7351->n7353[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n7352[label="orci.1" style="filled" fillcolor = "orange"];
+  n7352->n7353[label="|- ph"];
+  n7353[label="pm2.24i" style="filled" fillcolor = "cyan"];
+  n7353->n7354[label="|- ( -. ph -> ps )"];
+  n7350->n7351->n7352[arrowhead="none" style="invisible"];
+  {rank=same;n7352;n7351;n7350;}
+  n7354[label="orri" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n7354->QED[label="|- ( ph \\/ ps )"];
+  n7348->n7349->n7353[arrowhead="none" style="invisible"];
+  {rank=same;n7353;n7349;n7348;}
+}

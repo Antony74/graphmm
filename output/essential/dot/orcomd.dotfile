@@ -1,0 +1,24 @@
+digraph proof_orcomd {
+  rankdir = LR;
+  n7324[label="wph" style="invisible"];
+  n7324->n7335[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n7327[label="wo" style="invisible"];
+  n7327->n7335[color="lightgray" fontcolor="lightgray" label="wff ( ps \\/ ch )"];
+  n7330[label="wo" style="invisible"];
+  n7330->n7335[color="lightgray" fontcolor="lightgray" label="wff ( ch \\/ ps )"];
+  n7331[label="orcomd.1" style="filled" fillcolor = "orange"];
+  n7331->n7335[label="|- ( ph -> ( ps \\/ ch ) )"];
+  n7332[label="wps" style="invisible"];
+  n7332->n7334[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n7333[label="wch" style="invisible"];
+  n7333->n7334[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n7334[label="orcom" style="filled" fillcolor = "cyan"];
+  n7334->n7335[label="|- ( ( ps \\/ ch ) <-> ( ch \\/ ps ) )"];
+  n7332->n7333[arrowhead="none" style="invisible"];
+  {rank=same;n7333;n7332;}
+  n7335[label="sylib" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n7335->QED[label="|- ( ph -> ( ch \\/ ps ) )"];
+  n7324->n7327->n7330->n7331->n7334[arrowhead="none" style="invisible"];
+  {rank=same;n7334;n7331;n7330;n7327;n7324;}
+}

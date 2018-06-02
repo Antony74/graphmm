@@ -1,0 +1,22 @@
+digraph proof_simpr {
+  rankdir = LR;
+  n8117[label="wph" style="invisible"];
+  n8117->n8123[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n8118[label="wps" style="invisible"];
+  n8118->n8123[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n8119[label="wps" style="invisible"];
+  n8119->n8123[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n8120[label="wph" style="invisible"];
+  n8120->n8122[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n8121[label="wps" style="invisible"];
+  n8121->n8122[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n8122[label="idd" style="filled" fillcolor = "cyan"];
+  n8122->n8123[label="|- ( ph -> ( ps -> ps ) )"];
+  n8120->n8121[arrowhead="none" style="invisible"];
+  {rank=same;n8121;n8120;}
+  n8123[label="imp" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n8123->QED[label="|- ( ( ph /\\ ps ) -> ps )"];
+  n8117->n8118->n8119->n8122[arrowhead="none" style="invisible"];
+  {rank=same;n8122;n8119;n8118;n8117;}
+}

@@ -1,0 +1,22 @@
+digraph proof_notbii {
+  rankdir = LR;
+  n5810[label="wb" style="invisible"];
+  n5810->n5820[color="lightgray" fontcolor="lightgray" label="wff ( ph <-> ps )"];
+  n5815[label="wb" style="invisible"];
+  n5815->n5820[color="lightgray" fontcolor="lightgray" label="wff ( -. ph <-> -. ps )"];
+  n5816[label="notbii.1" style="filled" fillcolor = "orange"];
+  n5816->n5820[label="|- ( ph <-> ps )"];
+  n5817[label="wph" style="invisible"];
+  n5817->n5819[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n5818[label="wps" style="invisible"];
+  n5818->n5819[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n5819[label="notbi" style="filled" fillcolor = "cyan"];
+  n5819->n5820[label="|- ( ( ph <-> ps ) <-> ( -. ph <-> -. ps ) )"];
+  n5817->n5818[arrowhead="none" style="invisible"];
+  {rank=same;n5818;n5817;}
+  n5820[label="mpbi" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n5820->QED[label="|- ( -. ph <-> -. ps )"];
+  n5810->n5815->n5816->n5819[arrowhead="none" style="invisible"];
+  {rank=same;n5819;n5816;n5815;n5810;}
+}

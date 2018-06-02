@@ -1,28 +1,28 @@
 digraph proof_ancrb {
   rankdir = LR;
-  n9416 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n9416[label="wph" color="lightgray" fontcolor="lightgray"];
   n9416->n9424[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n9417 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n9417[label="wps" color="lightgray" fontcolor="lightgray"];
   n9417->n9424[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n9418 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n9418[label="wps" color="lightgray" fontcolor="lightgray"];
   n9418->n9420[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n9419 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n9419[label="wph" color="lightgray" fontcolor="lightgray"];
   n9419->n9420[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n9420 [label = "wa"color="lightgray" fontcolor="lightgray"];
-  n9420->n9424[color="lightgray" fontcolor="lightgray" label="wff ( ps /\ ph )"];
+  n9420[label="wa" color="lightgray" fontcolor="lightgray"];
+  n9420->n9424[color="lightgray" fontcolor="lightgray" label="wff ( ps /\\ ph )"];
   n9418->n9419[arrowhead="none" style="invisible"];
   {rank=same;n9419;n9418;}
-  n9421 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n9421[label="wph" color="lightgray" fontcolor="lightgray"];
   n9421->n9423[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n9422 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n9422[label="wps" color="lightgray" fontcolor="lightgray"];
   n9422->n9423[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n9423 [label = "iba"style="filled" fillcolor = "cyan"];
-  n9423->n9424[label="|- ( ph -> ( ps <-> ( ps /\ ph ) ) )"];
+  n9423[label="iba" style="filled" fillcolor = "cyan"];
+  n9423->n9424[label="|- ( ph -> ( ps <-> ( ps /\\ ph ) ) )"];
   n9421->n9422[arrowhead="none" style="invisible"];
   {rank=same;n9422;n9421;}
-  n9424 [label = "pm5.74i"style="filled" fillcolor = "cyan"];
-QED[style="invisible"]
-  n9424->QED[label="|- ( ( ph -> ps ) <-> ( ph -> ( ps /\ ph ) ) )"];
+  n9424[label="pm5.74i" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n9424->QED[label="|- ( ( ph -> ps ) <-> ( ph -> ( ps /\\ ph ) ) )"];
   n9416->n9417->n9420->n9423[arrowhead="none" style="invisible"];
   {rank=same;n9423;n9420;n9417;n9416;}
 }

@@ -1,0 +1,22 @@
+digraph proof_bicomi {
+  rankdir = LR;
+  n4575[label="wb" style="invisible"];
+  n4575->n4583[color="lightgray" fontcolor="lightgray" label="wff ( ph <-> ps )"];
+  n4578[label="wb" style="invisible"];
+  n4578->n4583[color="lightgray" fontcolor="lightgray" label="wff ( ps <-> ph )"];
+  n4579[label="bicomi.1" style="filled" fillcolor = "orange"];
+  n4579->n4583[label="|- ( ph <-> ps )"];
+  n4580[label="wph" style="invisible"];
+  n4580->n4582[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n4581[label="wps" style="invisible"];
+  n4581->n4582[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n4582[label="bicom1" style="filled" fillcolor = "cyan"];
+  n4582->n4583[label="|- ( ( ph <-> ps ) -> ( ps <-> ph ) )"];
+  n4580->n4581[arrowhead="none" style="invisible"];
+  {rank=same;n4581;n4580;}
+  n4583[label="ax-mp" style="filled" fillcolor = "lawngreen"];
+  QED[style="invisible"]
+  n4583->QED[label="|- ( ps <-> ph )"];
+  n4575->n4578->n4579->n4582[arrowhead="none" style="invisible"];
+  {rank=same;n4582;n4579;n4578;n4575;}
+}

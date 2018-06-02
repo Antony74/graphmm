@@ -1,0 +1,28 @@
+digraph proof_pm2_6 {
+  rankdir = LR;
+  n1950[label="wi" style="invisible"];
+  n1950->n1965[color="lightgray" fontcolor="lightgray" label="wff ( -. ph -> ps )"];
+  n1951[label="wph" style="invisible"];
+  n1951->n1965[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n1952[label="wps" style="invisible"];
+  n1952->n1965[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n1953[label="wps" style="invisible"];
+  n1953->n1965[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n1957[label="wi" style="invisible"];
+  n1957->n1958[color="lightgray" fontcolor="lightgray" label="wff ( -. ph -> ps )"];
+  n1958[label="id" style="filled" fillcolor = "cyan"];
+  n1958->n1965[label="|- ( ( -. ph -> ps ) -> ( -. ph -> ps ) )"];
+  n1962[label="wi" style="invisible"];
+  n1962->n1964[color="lightgray" fontcolor="lightgray" label="wff ( -. ph -> ps )"];
+  n1963[label="wps" style="invisible"];
+  n1963->n1964[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n1964[label="idd" style="filled" fillcolor = "cyan"];
+  n1964->n1965[label="|- ( ( -. ph -> ps ) -> ( ps -> ps ) )"];
+  n1962->n1963[arrowhead="none" style="invisible"];
+  {rank=same;n1963;n1962;}
+  n1965[label="jad" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n1965->QED[label="|- ( ( -. ph -> ps ) -> ( ( ph -> ps ) -> ps ) )"];
+  n1950->n1951->n1952->n1953->n1958->n1964[arrowhead="none" style="invisible"];
+  {rank=same;n1964;n1958;n1953;n1952;n1951;n1950;}
+}

@@ -1,0 +1,22 @@
+digraph proof_orel1 {
+  rankdir = LR;
+  n7263[label="wo" style="invisible"];
+  n7263->n7270[color="lightgray" fontcolor="lightgray" label="wff ( ph \\/ ps )"];
+  n7265[label="wn" style="invisible"];
+  n7265->n7270[color="lightgray" fontcolor="lightgray" label="wff -. ph"];
+  n7266[label="wps" style="invisible"];
+  n7266->n7270[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n7267[label="wph" style="invisible"];
+  n7267->n7269[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n7268[label="wps" style="invisible"];
+  n7268->n7269[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n7269[label="pm2.53" style="filled" fillcolor = "cyan"];
+  n7269->n7270[label="|- ( ( ph \\/ ps ) -> ( -. ph -> ps ) )"];
+  n7267->n7268[arrowhead="none" style="invisible"];
+  {rank=same;n7268;n7267;}
+  n7270[label="com12" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n7270->QED[label="|- ( -. ph -> ( ( ph \\/ ps ) -> ps ) )"];
+  n7263->n7265->n7266->n7269[arrowhead="none" style="invisible"];
+  {rank=same;n7269;n7266;n7265;n7263;}
+}

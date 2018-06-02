@@ -1,0 +1,22 @@
+digraph proof_com12 {
+  rankdir = LR;
+  n254[label="wps" style="invisible"];
+  n254->n261[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n255[label="wps" style="invisible"];
+  n255->n261[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n256[label="wph" style="invisible"];
+  n256->n261[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n257[label="wch" style="invisible"];
+  n257->n261[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n258[label="wps" style="invisible"];
+  n258->n259[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n259[label="id" style="filled" fillcolor = "cyan"];
+  n259->n261[label="|- ( ps -> ps )"];
+  n260[label="com12.1" style="filled" fillcolor = "orange"];
+  n260->n261[label="|- ( ph -> ( ps -> ch ) )"];
+  n261[label="syl5com" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n261->QED[label="|- ( ps -> ( ph -> ch ) )"];
+  n254->n255->n256->n257->n259->n260[arrowhead="none" style="invisible"];
+  {rank=same;n260;n259;n257;n256;n255;n254;}
+}

@@ -1,0 +1,22 @@
+digraph proof_a1i {
+  rankdir = LR;
+  n23[label="wph" style="invisible"];
+  n23->n31[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n26[label="wi" style="invisible"];
+  n26->n31[color="lightgray" fontcolor="lightgray" label="wff ( ps -> ph )"];
+  n27[label="a1i.1" style="filled" fillcolor = "orange"];
+  n27->n31[label="|- ph"];
+  n28[label="wph" style="invisible"];
+  n28->n30[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n29[label="wps" style="invisible"];
+  n29->n30[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n30[label="ax-1" style="filled" fillcolor = "lawngreen"];
+  n30->n31[label="|- ( ph -> ( ps -> ph ) )"];
+  n28->n29[arrowhead="none" style="invisible"];
+  {rank=same;n29;n28;}
+  n31[label="ax-mp" style="filled" fillcolor = "lawngreen"];
+  QED[style="invisible"]
+  n31->QED[label="|- ( ps -> ph )"];
+  n23->n26->n27->n30[arrowhead="none" style="invisible"];
+  {rank=same;n30;n27;n26;n23;}
+}

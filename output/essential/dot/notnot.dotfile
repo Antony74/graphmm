@@ -1,0 +1,20 @@
+digraph proof_notnot {
+  rankdir = LR;
+  n5708[label="wph" style="invisible"];
+  n5708->n5716[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n5711[label="wn" style="invisible"];
+  n5711->n5716[color="lightgray" fontcolor="lightgray" label="wff -. -. ph"];
+  n5712[label="wph" style="invisible"];
+  n5712->n5713[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n5713[label="notnot1" style="filled" fillcolor = "cyan"];
+  n5713->n5716[label="|- ( ph -> -. -. ph )"];
+  n5714[label="wph" style="invisible"];
+  n5714->n5715[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n5715[label="notnot2" style="filled" fillcolor = "cyan"];
+  n5715->n5716[label="|- ( -. -. ph -> ph )"];
+  n5716[label="impbii" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n5716->QED[label="|- ( ph <-> -. -. ph )"];
+  n5708->n5711->n5713->n5715[arrowhead="none" style="invisible"];
+  {rank=same;n5715;n5713;n5711;n5708;}
+}

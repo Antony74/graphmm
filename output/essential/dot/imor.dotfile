@@ -1,0 +1,30 @@
+digraph proof_imor {
+  rankdir = LR;
+  n7585[label="wi" style="invisible"];
+  n7585->n7607[color="lightgray" fontcolor="lightgray" label="wff ( ph -> ps )"];
+  n7590[label="wi" style="invisible"];
+  n7590->n7607[color="lightgray" fontcolor="lightgray" label="wff ( -. -. ph -> ps )"];
+  n7594[label="wo" style="invisible"];
+  n7594->n7607[color="lightgray" fontcolor="lightgray" label="wff ( -. ph \\/ ps )"];
+  n7595[label="wph" style="invisible"];
+  n7595->n7602[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n7598[label="wn" style="invisible"];
+  n7598->n7602[color="lightgray" fontcolor="lightgray" label="wff -. -. ph"];
+  n7599[label="wps" style="invisible"];
+  n7599->n7602[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n7600[label="wph" style="invisible"];
+  n7600->n7601[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n7601[label="notnot" style="filled" fillcolor = "cyan"];
+  n7601->n7602[label="|- ( ph <-> -. -. ph )"];
+  n7602[label="imbi1i" style="filled" fillcolor = "cyan"];
+  n7602->n7607[label="|- ( ( ph -> ps ) <-> ( -. -. ph -> ps ) )"];
+  n7595->n7598->n7599->n7601[arrowhead="none" style="invisible"];
+  {rank=same;n7601;n7599;n7598;n7595;}
+  n7606[label="df-or" style="invisible"];
+  n7606->n7607[color="lightgray" fontcolor="lightgray" label="|- ( ( -. ph \\/ ps ) <-> ( -. -. ph -> ps ) )"];
+  n7607[label="bitr4i" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n7607->QED[label="|- ( ( ph -> ps ) <-> ( -. ph \\/ ps ) )"];
+  n7585->n7590->n7594->n7602->n7606[arrowhead="none" style="invisible"];
+  {rank=same;n7606;n7602;n7594;n7590;n7585;}
+}

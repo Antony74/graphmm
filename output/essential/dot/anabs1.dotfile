@@ -1,0 +1,28 @@
+digraph proof_anabs1 {
+  rankdir = LR;
+  n13840[label="wa" style="invisible"];
+  n13840->n13854[color="lightgray" fontcolor="lightgray" label="wff ( ph /\\ ps )"];
+  n13845[label="wa" style="invisible"];
+  n13845->n13854[color="lightgray" fontcolor="lightgray" label="wff ( ( ph /\\ ps ) /\\ ph )"];
+  n13848[label="wa" style="invisible"];
+  n13848->n13853[color="lightgray" fontcolor="lightgray" label="wff ( ph /\\ ps )"];
+  n13849[label="wph" style="invisible"];
+  n13849->n13853[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n13850[label="wph" style="invisible"];
+  n13850->n13852[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n13851[label="wps" style="invisible"];
+  n13851->n13852[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n13852[label="simpl" style="filled" fillcolor = "cyan"];
+  n13852->n13853[label="|- ( ( ph /\\ ps ) -> ph )"];
+  n13850->n13851[arrowhead="none" style="invisible"];
+  {rank=same;n13851;n13850;}
+  n13853[label="pm4.71i" style="filled" fillcolor = "cyan"];
+  n13853->n13854[label="|- ( ( ph /\\ ps ) <-> ( ( ph /\\ ps ) /\\ ph ) )"];
+  n13848->n13849->n13852[arrowhead="none" style="invisible"];
+  {rank=same;n13852;n13849;n13848;}
+  n13854[label="bicomi" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n13854->QED[label="|- ( ( ( ph /\\ ps ) /\\ ph ) <-> ( ph /\\ ps ) )"];
+  n13840->n13845->n13853[arrowhead="none" style="invisible"];
+  {rank=same;n13853;n13845;n13840;}
+}

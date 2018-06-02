@@ -1,0 +1,28 @@
+digraph proof_mpdi {
+  rankdir = LR;
+  n380[label="wph" style="invisible"];
+  n380->n391[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n381[label="wps" style="invisible"];
+  n381->n391[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n382[label="wch" style="invisible"];
+  n382->n391[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n383[label="wth" style="invisible"];
+  n383->n391[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n386[label="wi" style="invisible"];
+  n386->n389[color="lightgray" fontcolor="lightgray" label="wff ( ps -> ch )"];
+  n387[label="wph" style="invisible"];
+  n387->n389[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n388[label="mpdi.1" style="filled" fillcolor = "orange"];
+  n388->n389[label="|- ( ps -> ch )"];
+  n389[label="a1i" style="filled" fillcolor = "cyan"];
+  n389->n391[label="|- ( ph -> ( ps -> ch ) )"];
+  n386->n387->n388[arrowhead="none" style="invisible"];
+  {rank=same;n388;n387;n386;}
+  n390[label="mpdi.2" style="filled" fillcolor = "orange"];
+  n390->n391[label="|- ( ph -> ( ps -> ( ch -> th ) ) )"];
+  n391[label="mpdd" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n391->QED[label="|- ( ph -> ( ps -> th ) )"];
+  n380->n381->n382->n383->n389->n390[arrowhead="none" style="invisible"];
+  {rank=same;n390;n389;n383;n382;n381;n380;}
+}

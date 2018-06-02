@@ -1,0 +1,24 @@
+digraph proof_pm5_74ri {
+  rankdir = LR;
+  n5102[label="wi" style="invisible"];
+  n5102->n5115[color="lightgray" fontcolor="lightgray" label="wff ( ph -> ( ps <-> ch ) )"];
+  n5109[label="wb" style="invisible"];
+  n5109->n5115[color="lightgray" fontcolor="lightgray" label="wff ( ( ph -> ps ) <-> ( ph -> ch ) )"];
+  n5110[label="pm5.74ri.1" style="filled" fillcolor = "orange"];
+  n5110->n5115[label="|- ( ( ph -> ps ) <-> ( ph -> ch ) )"];
+  n5111[label="wph" style="invisible"];
+  n5111->n5114[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n5112[label="wps" style="invisible"];
+  n5112->n5114[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n5113[label="wch" style="invisible"];
+  n5113->n5114[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n5114[label="pm5.74" style="filled" fillcolor = "cyan"];
+  n5114->n5115[label="|- ( ( ph -> ( ps <-> ch ) ) <-> ( ( ph -> ps ) <-> ( ph -> ch ) ) )"];
+  n5111->n5112->n5113[arrowhead="none" style="invisible"];
+  {rank=same;n5113;n5112;n5111;}
+  n5115[label="mpbir" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n5115->QED[label="|- ( ph -> ( ps <-> ch ) )"];
+  n5102->n5109->n5110->n5114[arrowhead="none" style="invisible"];
+  {rank=same;n5114;n5110;n5109;n5102;}
+}

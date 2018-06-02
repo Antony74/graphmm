@@ -1,27 +1,27 @@
 digraph proof_mpcom {
   rankdir = LR;
-  n309 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n309[label="wps" color="lightgray" fontcolor="lightgray"];
   n309->n318[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n310 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n310[label="wph" color="lightgray" fontcolor="lightgray"];
   n310->n318[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n311 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n311[label="wch" color="lightgray" fontcolor="lightgray"];
   n311->n318[color="lightgray" fontcolor="lightgray" label="wff ch"];
-  n312 [label = "mpcom.1"style="filled" fillcolor = "orange"];
+  n312[label="mpcom.1" style="filled" fillcolor = "orange"];
   n312->n318[label="|- ( ps -> ph )"];
-  n313 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n313[label="wph" color="lightgray" fontcolor="lightgray"];
   n313->n317[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n314 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n314[label="wps" color="lightgray" fontcolor="lightgray"];
   n314->n317[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n315 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n315[label="wch" color="lightgray" fontcolor="lightgray"];
   n315->n317[color="lightgray" fontcolor="lightgray" label="wff ch"];
-  n316 [label = "mpcom.2"style="filled" fillcolor = "orange"];
+  n316[label="mpcom.2" style="filled" fillcolor = "orange"];
   n316->n317[label="|- ( ph -> ( ps -> ch ) )"];
-  n317 [label = "com12"style="filled" fillcolor = "cyan"];
+  n317[label="com12" style="filled" fillcolor = "cyan"];
   n317->n318[label="|- ( ps -> ( ph -> ch ) )"];
   n313->n314->n315->n316[arrowhead="none" style="invisible"];
   {rank=same;n316;n315;n314;n313;}
-  n318 [label = "mpd"style="filled" fillcolor = "cyan"];
-QED[style="invisible"]
+  n318[label="mpd" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
   n318->QED[label="|- ( ps -> ch )"];
   n309->n310->n311->n312->n317[arrowhead="none" style="invisible"];
   {rank=same;n317;n312;n311;n310;n309;}

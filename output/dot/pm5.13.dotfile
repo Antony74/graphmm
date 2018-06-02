@@ -1,14 +1,14 @@
 digraph proof_pm5_13 {
   rankdir = LR;
-  n15572 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n15572[label="wph" color="lightgray" fontcolor="lightgray"];
   n15572->n15575[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n15573 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n15573[label="wps" color="lightgray" fontcolor="lightgray"];
   n15573->n15575[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n15574 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n15574[label="wph" color="lightgray" fontcolor="lightgray"];
   n15574->n15575[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n15575 [label = "pm5.14"style="filled" fillcolor = "cyan"];
-QED[style="invisible"]
-  n15575->QED[label="|- ( ( ph -> ps ) \/ ( ps -> ph ) )"];
+  n15575[label="pm5.14" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n15575->QED[label="|- ( ( ph -> ps ) \\/ ( ps -> ph ) )"];
   n15572->n15573->n15574[arrowhead="none" style="invisible"];
   {rank=same;n15574;n15573;n15572;}
 }

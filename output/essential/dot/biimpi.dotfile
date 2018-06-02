@@ -1,0 +1,22 @@
+digraph proof_biimpi {
+  rankdir = LR;
+  n4483[label="wb" style="invisible"];
+  n4483->n4491[color="lightgray" fontcolor="lightgray" label="wff ( ph <-> ps )"];
+  n4486[label="wi" style="invisible"];
+  n4486->n4491[color="lightgray" fontcolor="lightgray" label="wff ( ph -> ps )"];
+  n4487[label="biimpi.1" style="filled" fillcolor = "orange"];
+  n4487->n4491[label="|- ( ph <-> ps )"];
+  n4488[label="wph" style="invisible"];
+  n4488->n4490[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n4489[label="wps" style="invisible"];
+  n4489->n4490[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n4490[label="bi1" style="filled" fillcolor = "cyan"];
+  n4490->n4491[label="|- ( ( ph <-> ps ) -> ( ph -> ps ) )"];
+  n4488->n4489[arrowhead="none" style="invisible"];
+  {rank=same;n4489;n4488;}
+  n4491[label="ax-mp" style="filled" fillcolor = "lawngreen"];
+  QED[style="invisible"]
+  n4491->QED[label="|- ( ph -> ps )"];
+  n4483->n4486->n4487->n4490[arrowhead="none" style="invisible"];
+  {rank=same;n4490;n4487;n4486;n4483;}
+}

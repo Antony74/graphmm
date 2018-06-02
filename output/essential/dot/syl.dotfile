@@ -1,0 +1,26 @@
+digraph proof_syl {
+  rankdir = LR;
+  n81[label="wph" style="invisible"];
+  n81->n91[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n82[label="wps" style="invisible"];
+  n82->n91[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n83[label="wch" style="invisible"];
+  n83->n91[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n84[label="syl.1" style="filled" fillcolor = "orange"];
+  n84->n91[label="|- ( ph -> ps )"];
+  n87[label="wi" style="invisible"];
+  n87->n90[color="lightgray" fontcolor="lightgray" label="wff ( ps -> ch )"];
+  n88[label="wph" style="invisible"];
+  n88->n90[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n89[label="syl.2" style="filled" fillcolor = "orange"];
+  n89->n90[label="|- ( ps -> ch )"];
+  n90[label="a1i" style="filled" fillcolor = "cyan"];
+  n90->n91[label="|- ( ph -> ( ps -> ch ) )"];
+  n87->n88->n89[arrowhead="none" style="invisible"];
+  {rank=same;n89;n88;n87;}
+  n91[label="mpd" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n91->QED[label="|- ( ph -> ch )"];
+  n81->n82->n83->n84->n90[arrowhead="none" style="invisible"];
+  {rank=same;n90;n84;n83;n82;n81;}
+}

@@ -1,64 +1,64 @@
 digraph proof_bi2anan9 {
   rankdir = LR;
-  n15266 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n15266[label="wph" color="lightgray" fontcolor="lightgray"];
   n15266->n15289[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n15267 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n15267[label="wps" color="lightgray" fontcolor="lightgray"];
   n15267->n15269[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n15268 [label = "wta"color="lightgray" fontcolor="lightgray"];
+  n15268[label="wta" color="lightgray" fontcolor="lightgray"];
   n15268->n15269[color="lightgray" fontcolor="lightgray" label="wff ta"];
-  n15269 [label = "wa"color="lightgray" fontcolor="lightgray"];
-  n15269->n15289[color="lightgray" fontcolor="lightgray" label="wff ( ps /\ ta )"];
+  n15269[label="wa" color="lightgray" fontcolor="lightgray"];
+  n15269->n15289[color="lightgray" fontcolor="lightgray" label="wff ( ps /\\ ta )"];
   n15267->n15268[arrowhead="none" style="invisible"];
   {rank=same;n15268;n15267;}
-  n15270 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n15270[label="wch" color="lightgray" fontcolor="lightgray"];
   n15270->n15272[color="lightgray" fontcolor="lightgray" label="wff ch"];
-  n15271 [label = "wta"color="lightgray" fontcolor="lightgray"];
+  n15271[label="wta" color="lightgray" fontcolor="lightgray"];
   n15271->n15272[color="lightgray" fontcolor="lightgray" label="wff ta"];
-  n15272 [label = "wa"color="lightgray" fontcolor="lightgray"];
-  n15272->n15289[color="lightgray" fontcolor="lightgray" label="wff ( ch /\ ta )"];
+  n15272[label="wa" color="lightgray" fontcolor="lightgray"];
+  n15272->n15289[color="lightgray" fontcolor="lightgray" label="wff ( ch /\\ ta )"];
   n15270->n15271[arrowhead="none" style="invisible"];
   {rank=same;n15271;n15270;}
-  n15273 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n15273[label="wth" color="lightgray" fontcolor="lightgray"];
   n15273->n15289[color="lightgray" fontcolor="lightgray" label="wff th"];
-  n15274 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n15274[label="wch" color="lightgray" fontcolor="lightgray"];
   n15274->n15276[color="lightgray" fontcolor="lightgray" label="wff ch"];
-  n15275 [label = "wet"color="lightgray" fontcolor="lightgray"];
+  n15275[label="wet" color="lightgray" fontcolor="lightgray"];
   n15275->n15276[color="lightgray" fontcolor="lightgray" label="wff et"];
-  n15276 [label = "wa"color="lightgray" fontcolor="lightgray"];
-  n15276->n15289[color="lightgray" fontcolor="lightgray" label="wff ( ch /\ et )"];
+  n15276[label="wa" color="lightgray" fontcolor="lightgray"];
+  n15276->n15289[color="lightgray" fontcolor="lightgray" label="wff ( ch /\\ et )"];
   n15274->n15275[arrowhead="none" style="invisible"];
   {rank=same;n15275;n15274;}
-  n15277 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n15277[label="wph" color="lightgray" fontcolor="lightgray"];
   n15277->n15282[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n15278 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n15278[label="wps" color="lightgray" fontcolor="lightgray"];
   n15278->n15282[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n15279 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n15279[label="wch" color="lightgray" fontcolor="lightgray"];
   n15279->n15282[color="lightgray" fontcolor="lightgray" label="wff ch"];
-  n15280 [label = "wta"color="lightgray" fontcolor="lightgray"];
+  n15280[label="wta" color="lightgray" fontcolor="lightgray"];
   n15280->n15282[color="lightgray" fontcolor="lightgray" label="wff ta"];
-  n15281 [label = "bi2an9.1"style="filled" fillcolor = "orange"];
+  n15281[label="bi2an9.1" style="filled" fillcolor = "orange"];
   n15281->n15282[label="|- ( ph -> ( ps <-> ch ) )"];
-  n15282 [label = "anbi1d"style="filled" fillcolor = "cyan"];
-  n15282->n15289[label="|- ( ph -> ( ( ps /\ ta ) <-> ( ch /\ ta ) ) )"];
+  n15282[label="anbi1d" style="filled" fillcolor = "cyan"];
+  n15282->n15289[label="|- ( ph -> ( ( ps /\\ ta ) <-> ( ch /\\ ta ) ) )"];
   n15277->n15278->n15279->n15280->n15281[arrowhead="none" style="invisible"];
   {rank=same;n15281;n15280;n15279;n15278;n15277;}
-  n15283 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n15283[label="wth" color="lightgray" fontcolor="lightgray"];
   n15283->n15288[color="lightgray" fontcolor="lightgray" label="wff th"];
-  n15284 [label = "wta"color="lightgray" fontcolor="lightgray"];
+  n15284[label="wta" color="lightgray" fontcolor="lightgray"];
   n15284->n15288[color="lightgray" fontcolor="lightgray" label="wff ta"];
-  n15285 [label = "wet"color="lightgray" fontcolor="lightgray"];
+  n15285[label="wet" color="lightgray" fontcolor="lightgray"];
   n15285->n15288[color="lightgray" fontcolor="lightgray" label="wff et"];
-  n15286 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n15286[label="wch" color="lightgray" fontcolor="lightgray"];
   n15286->n15288[color="lightgray" fontcolor="lightgray" label="wff ch"];
-  n15287 [label = "bi2an9.2"style="filled" fillcolor = "orange"];
+  n15287[label="bi2an9.2" style="filled" fillcolor = "orange"];
   n15287->n15288[label="|- ( th -> ( ta <-> et ) )"];
-  n15288 [label = "anbi2d"style="filled" fillcolor = "cyan"];
-  n15288->n15289[label="|- ( th -> ( ( ch /\ ta ) <-> ( ch /\ et ) ) )"];
+  n15288[label="anbi2d" style="filled" fillcolor = "cyan"];
+  n15288->n15289[label="|- ( th -> ( ( ch /\\ ta ) <-> ( ch /\\ et ) ) )"];
   n15283->n15284->n15285->n15286->n15287[arrowhead="none" style="invisible"];
   {rank=same;n15287;n15286;n15285;n15284;n15283;}
-  n15289 [label = "sylan9bb"style="filled" fillcolor = "cyan"];
-QED[style="invisible"]
-  n15289->QED[label="|- ( ( ph /\ th ) -> ( ( ps /\ ta ) <-> ( ch /\ et ) ) )"];
+  n15289[label="sylan9bb" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n15289->QED[label="|- ( ( ph /\\ th ) -> ( ( ps /\\ ta ) <-> ( ch /\\ et ) ) )"];
   n15266->n15269->n15272->n15273->n15276->n15282->n15288[arrowhead="none" style="invisible"];
   {rank=same;n15288;n15282;n15276;n15273;n15272;n15269;n15266;}
 }

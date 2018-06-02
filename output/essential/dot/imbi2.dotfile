@@ -1,0 +1,20 @@
+digraph proof_imbi2 {
+  rankdir = LR;
+  n6236[label="wb" style="invisible"];
+  n6236->n6244[color="lightgray" fontcolor="lightgray" label="wff ( ph <-> ps )"];
+  n6237[label="wph" style="invisible"];
+  n6237->n6244[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n6238[label="wps" style="invisible"];
+  n6238->n6244[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n6239[label="wch" style="invisible"];
+  n6239->n6244[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n6242[label="wb" style="invisible"];
+  n6242->n6243[color="lightgray" fontcolor="lightgray" label="wff ( ph <-> ps )"];
+  n6243[label="id" style="filled" fillcolor = "cyan"];
+  n6243->n6244[label="|- ( ( ph <-> ps ) -> ( ph <-> ps ) )"];
+  n6244[label="imbi2d" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n6244->QED[label="|- ( ( ph <-> ps ) -> ( ( ch -> ph ) <-> ( ch -> ps ) ) )"];
+  n6236->n6237->n6238->n6239->n6243[arrowhead="none" style="invisible"];
+  {rank=same;n6243;n6239;n6238;n6237;n6236;}
+}

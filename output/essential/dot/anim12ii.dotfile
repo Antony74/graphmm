@@ -1,0 +1,40 @@
+digraph proof_anim12ii {
+  rankdir = LR;
+  n9638[label="wa" style="invisible"];
+  n9638->n9656[color="lightgray" fontcolor="lightgray" label="wff ( ph /\\ th )"];
+  n9639[label="wps" style="invisible"];
+  n9639->n9656[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n9640[label="wch" style="invisible"];
+  n9640->n9656[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n9641[label="wta" style="invisible"];
+  n9641->n9656[color="lightgray" fontcolor="lightgray" label="wff ta"];
+  n9642[label="wph" style="invisible"];
+  n9642->n9648[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n9645[label="wi" style="invisible"];
+  n9645->n9648[color="lightgray" fontcolor="lightgray" label="wff ( ps -> ch )"];
+  n9646[label="wth" style="invisible"];
+  n9646->n9648[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n9647[label="anim12ii.1" style="filled" fillcolor = "orange"];
+  n9647->n9648[label="|- ( ph -> ( ps -> ch ) )"];
+  n9648[label="adantr" style="filled" fillcolor = "cyan"];
+  n9648->n9656[label="|- ( ( ph /\\ th ) -> ( ps -> ch ) )"];
+  n9642->n9645->n9646->n9647[arrowhead="none" style="invisible"];
+  {rank=same;n9647;n9646;n9645;n9642;}
+  n9649[label="wth" style="invisible"];
+  n9649->n9655[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n9652[label="wi" style="invisible"];
+  n9652->n9655[color="lightgray" fontcolor="lightgray" label="wff ( ps -> ta )"];
+  n9653[label="wph" style="invisible"];
+  n9653->n9655[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n9654[label="anim12ii.2" style="filled" fillcolor = "orange"];
+  n9654->n9655[label="|- ( th -> ( ps -> ta ) )"];
+  n9655[label="adantl" style="filled" fillcolor = "cyan"];
+  n9655->n9656[label="|- ( ( ph /\\ th ) -> ( ps -> ta ) )"];
+  n9649->n9652->n9653->n9654[arrowhead="none" style="invisible"];
+  {rank=same;n9654;n9653;n9652;n9649;}
+  n9656[label="jcad" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n9656->QED[label="|- ( ( ph /\\ th ) -> ( ps -> ( ch /\\ ta ) ) )"];
+  n9638->n9639->n9640->n9641->n9648->n9655[arrowhead="none" style="invisible"];
+  {rank=same;n9655;n9648;n9641;n9640;n9639;n9638;}
+}

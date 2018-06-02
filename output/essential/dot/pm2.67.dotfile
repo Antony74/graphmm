@@ -1,0 +1,14 @@
+digraph proof_pm2_67 {
+  rankdir = LR;
+  n7463[label="wph" style="invisible"];
+  n7463->n7466[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n7464[label="wps" style="invisible"];
+  n7464->n7466[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n7465[label="wps" style="invisible"];
+  n7465->n7466[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n7466[label="pm2.67-2" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n7466->QED[label="|- ( ( ( ph \\/ ps ) -> ps ) -> ( ph -> ps ) )"];
+  n7463->n7464->n7465[arrowhead="none" style="invisible"];
+  {rank=same;n7465;n7464;n7463;}
+}

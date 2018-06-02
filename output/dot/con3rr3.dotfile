@@ -1,29 +1,29 @@
 digraph proof_con3rr3 {
   rankdir = LR;
-  n1520 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n1520[label="wph" color="lightgray" fontcolor="lightgray"];
   n1520->n1530[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n1521 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n1521[label="wch" color="lightgray" fontcolor="lightgray"];
   n1521->n1522[color="lightgray" fontcolor="lightgray" label="wff ch"];
-  n1522 [label = "wn"color="lightgray" fontcolor="lightgray"];
+  n1522[label="wn" color="lightgray" fontcolor="lightgray"];
   n1522->n1530[color="lightgray" fontcolor="lightgray" label="wff -. ch"];
-  n1523 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n1523[label="wps" color="lightgray" fontcolor="lightgray"];
   n1523->n1524[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n1524 [label = "wn"color="lightgray" fontcolor="lightgray"];
+  n1524[label="wn" color="lightgray" fontcolor="lightgray"];
   n1524->n1530[color="lightgray" fontcolor="lightgray" label="wff -. ps"];
-  n1525 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n1525[label="wph" color="lightgray" fontcolor="lightgray"];
   n1525->n1529[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n1526 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n1526[label="wps" color="lightgray" fontcolor="lightgray"];
   n1526->n1529[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n1527 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n1527[label="wch" color="lightgray" fontcolor="lightgray"];
   n1527->n1529[color="lightgray" fontcolor="lightgray" label="wff ch"];
-  n1528 [label = "con3rr3.1"style="filled" fillcolor = "orange"];
+  n1528[label="con3rr3.1" style="filled" fillcolor = "orange"];
   n1528->n1529[label="|- ( ph -> ( ps -> ch ) )"];
-  n1529 [label = "con3d"style="filled" fillcolor = "cyan"];
+  n1529[label="con3d" style="filled" fillcolor = "cyan"];
   n1529->n1530[label="|- ( ph -> ( -. ch -> -. ps ) )"];
   n1525->n1526->n1527->n1528[arrowhead="none" style="invisible"];
   {rank=same;n1528;n1527;n1526;n1525;}
-  n1530 [label = "com12"style="filled" fillcolor = "cyan"];
-QED[style="invisible"]
+  n1530[label="com12" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
   n1530->QED[label="|- ( -. ch -> ( ph -> -. ps ) )"];
   n1520->n1522->n1524->n1529[arrowhead="none" style="invisible"];
   {rank=same;n1529;n1524;n1522;n1520;}

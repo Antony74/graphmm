@@ -1,0 +1,42 @@
+digraph proof_pm5_61 {
+  rankdir = LR;
+  n12119[label="wn" style="invisible"];
+  n12119->n12140[color="lightgray" fontcolor="lightgray" label="wff -. ps"];
+  n12122[label="wo" style="invisible"];
+  n12122->n12140[color="lightgray" fontcolor="lightgray" label="wff ( ph \\/ ps )"];
+  n12123[label="wph" style="invisible"];
+  n12123->n12140[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n12125[label="wn" style="invisible"];
+  n12125->n12139[color="lightgray" fontcolor="lightgray" label="wff -. ps"];
+  n12126[label="wph" style="invisible"];
+  n12126->n12139[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n12129[label="wo" style="invisible"];
+  n12129->n12139[color="lightgray" fontcolor="lightgray" label="wff ( ps \\/ ph )"];
+  n12132[label="wo" style="invisible"];
+  n12132->n12139[color="lightgray" fontcolor="lightgray" label="wff ( ph \\/ ps )"];
+  n12133[label="wps" style="invisible"];
+  n12133->n12135[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n12134[label="wph" style="invisible"];
+  n12134->n12135[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n12135[label="biorf" style="filled" fillcolor = "cyan"];
+  n12135->n12139[label="|- ( -. ps -> ( ph <-> ( ps \\/ ph ) ) )"];
+  n12133->n12134[arrowhead="none" style="invisible"];
+  {rank=same;n12134;n12133;}
+  n12136[label="wps" style="invisible"];
+  n12136->n12138[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n12137[label="wph" style="invisible"];
+  n12137->n12138[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n12138[label="orcom" style="filled" fillcolor = "cyan"];
+  n12138->n12139[label="|- ( ( ps \\/ ph ) <-> ( ph \\/ ps ) )"];
+  n12136->n12137[arrowhead="none" style="invisible"];
+  {rank=same;n12137;n12136;}
+  n12139[label="syl6rbb" style="filled" fillcolor = "cyan"];
+  n12139->n12140[label="|- ( -. ps -> ( ( ph \\/ ps ) <-> ph ) )"];
+  n12125->n12126->n12129->n12132->n12135->n12138[arrowhead="none" style="invisible"];
+  {rank=same;n12138;n12135;n12132;n12129;n12126;n12125;}
+  n12140[label="pm5.32ri" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n12140->QED[label="|- ( ( ( ph \\/ ps ) /\\ -. ps ) <-> ( ph /\\ -. ps ) )"];
+  n12119->n12122->n12123->n12139[arrowhead="none" style="invisible"];
+  {rank=same;n12139;n12123;n12122;n12119;}
+}

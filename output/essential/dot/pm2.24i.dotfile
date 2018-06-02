@@ -1,0 +1,22 @@
+digraph proof_pm2_24i {
+  rankdir = LR;
+  n1604[label="wps" style="invisible"];
+  n1604->n1611[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n1605[label="wph" style="invisible"];
+  n1605->n1611[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n1606[label="wph" style="invisible"];
+  n1606->n1610[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n1608[label="wn" style="invisible"];
+  n1608->n1610[color="lightgray" fontcolor="lightgray" label="wff -. ps"];
+  n1609[label="pm2.24i.1" style="filled" fillcolor = "orange"];
+  n1609->n1610[label="|- ph"];
+  n1610[label="a1i" style="filled" fillcolor = "cyan"];
+  n1610->n1611[label="|- ( -. ps -> ph )"];
+  n1606->n1608->n1609[arrowhead="none" style="invisible"];
+  {rank=same;n1609;n1608;n1606;}
+  n1611[label="con1i" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n1611->QED[label="|- ( -. ph -> ps )"];
+  n1604->n1605->n1610[arrowhead="none" style="invisible"];
+  {rank=same;n1610;n1605;n1604;}
+}

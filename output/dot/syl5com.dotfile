@@ -1,29 +1,29 @@
 digraph proof_syl5com {
   rankdir = LR;
-  n243 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n243[label="wph" color="lightgray" fontcolor="lightgray"];
   n243->n253[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n244 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n244[label="wch" color="lightgray" fontcolor="lightgray"];
   n244->n253[color="lightgray" fontcolor="lightgray" label="wff ch"];
-  n245 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n245[label="wps" color="lightgray" fontcolor="lightgray"];
   n245->n253[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n246 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n246[label="wth" color="lightgray" fontcolor="lightgray"];
   n246->n253[color="lightgray" fontcolor="lightgray" label="wff th"];
-  n247 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n247[label="wph" color="lightgray" fontcolor="lightgray"];
   n247->n251[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n248 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n248[label="wps" color="lightgray" fontcolor="lightgray"];
   n248->n251[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n249 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n249[label="wch" color="lightgray" fontcolor="lightgray"];
   n249->n251[color="lightgray" fontcolor="lightgray" label="wff ch"];
-  n250 [label = "syl5com.1"style="filled" fillcolor = "orange"];
+  n250[label="syl5com.1" style="filled" fillcolor = "orange"];
   n250->n251[label="|- ( ph -> ps )"];
-  n251 [label = "a1d"style="filled" fillcolor = "cyan"];
+  n251[label="a1d" style="filled" fillcolor = "cyan"];
   n251->n253[label="|- ( ph -> ( ch -> ps ) )"];
   n247->n248->n249->n250[arrowhead="none" style="invisible"];
   {rank=same;n250;n249;n248;n247;}
-  n252 [label = "syl5com.2"style="filled" fillcolor = "orange"];
+  n252[label="syl5com.2" style="filled" fillcolor = "orange"];
   n252->n253[label="|- ( ch -> ( ps -> th ) )"];
-  n253 [label = "sylcom"style="filled" fillcolor = "cyan"];
-QED[style="invisible"]
+  n253[label="sylcom" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
   n253->QED[label="|- ( ph -> ( ch -> th ) )"];
   n243->n244->n245->n246->n251->n252[arrowhead="none" style="invisible"];
   {rank=same;n252;n251;n246;n245;n244;n243;}

@@ -1,26 +1,26 @@
 digraph proof_jctir {
   rankdir = LR;
-  n9324 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n9324[label="wph" color="lightgray" fontcolor="lightgray"];
   n9324->n9332[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n9325 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n9325[label="wps" color="lightgray" fontcolor="lightgray"];
   n9325->n9332[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n9326 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n9326[label="wch" color="lightgray" fontcolor="lightgray"];
   n9326->n9332[color="lightgray" fontcolor="lightgray" label="wff ch"];
-  n9327 [label = "jctil.1"style="filled" fillcolor = "orange"];
+  n9327[label="jctil.1" style="filled" fillcolor = "orange"];
   n9327->n9332[label="|- ( ph -> ps )"];
-  n9328 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n9328[label="wch" color="lightgray" fontcolor="lightgray"];
   n9328->n9331[color="lightgray" fontcolor="lightgray" label="wff ch"];
-  n9329 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n9329[label="wph" color="lightgray" fontcolor="lightgray"];
   n9329->n9331[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n9330 [label = "jctil.2"style="filled" fillcolor = "orange"];
+  n9330[label="jctil.2" style="filled" fillcolor = "orange"];
   n9330->n9331[label="|- ch"];
-  n9331 [label = "a1i"style="filled" fillcolor = "cyan"];
+  n9331[label="a1i" style="filled" fillcolor = "cyan"];
   n9331->n9332[label="|- ( ph -> ch )"];
   n9328->n9329->n9330[arrowhead="none" style="invisible"];
   {rank=same;n9330;n9329;n9328;}
-  n9332 [label = "jca"style="filled" fillcolor = "cyan"];
-QED[style="invisible"]
-  n9332->QED[label="|- ( ph -> ( ps /\ ch ) )"];
+  n9332[label="jca" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n9332->QED[label="|- ( ph -> ( ps /\\ ch ) )"];
   n9324->n9325->n9326->n9327->n9331[arrowhead="none" style="invisible"];
   {rank=same;n9331;n9327;n9326;n9325;n9324;}
 }

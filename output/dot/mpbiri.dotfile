@@ -1,25 +1,25 @@
 digraph proof_mpbiri {
   rankdir = LR;
-  n4882 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n4882[label="wph" color="lightgray" fontcolor="lightgray"];
   n4882->n4890[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n4883 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n4883[label="wps" color="lightgray" fontcolor="lightgray"];
   n4883->n4890[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n4884 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n4884[label="wch" color="lightgray" fontcolor="lightgray"];
   n4884->n4890[color="lightgray" fontcolor="lightgray" label="wff ch"];
-  n4885 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n4885[label="wch" color="lightgray" fontcolor="lightgray"];
   n4885->n4888[color="lightgray" fontcolor="lightgray" label="wff ch"];
-  n4886 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n4886[label="wph" color="lightgray" fontcolor="lightgray"];
   n4886->n4888[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n4887 [label = "mpbiri.min"style="filled" fillcolor = "orange"];
+  n4887[label="mpbiri.min" style="filled" fillcolor = "orange"];
   n4887->n4888[label="|- ch"];
-  n4888 [label = "a1i"style="filled" fillcolor = "cyan"];
+  n4888[label="a1i" style="filled" fillcolor = "cyan"];
   n4888->n4890[label="|- ( ph -> ch )"];
   n4885->n4886->n4887[arrowhead="none" style="invisible"];
   {rank=same;n4887;n4886;n4885;}
-  n4889 [label = "mpbiri.maj"style="filled" fillcolor = "orange"];
+  n4889[label="mpbiri.maj" style="filled" fillcolor = "orange"];
   n4889->n4890[label="|- ( ph -> ( ps <-> ch ) )"];
-  n4890 [label = "mpbird"style="filled" fillcolor = "cyan"];
-QED[style="invisible"]
+  n4890[label="mpbird" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
   n4890->QED[label="|- ( ph -> ps )"];
   n4882->n4883->n4884->n4888->n4889[arrowhead="none" style="invisible"];
   {rank=same;n4889;n4888;n4884;n4883;n4882;}

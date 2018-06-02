@@ -1,31 +1,31 @@
 digraph proof_sylancbr {
   rankdir = LR;
-  n11464 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n11464[label="wph" color="lightgray" fontcolor="lightgray"];
   n11464->n11475[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n11465 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n11465[label="wth" color="lightgray" fontcolor="lightgray"];
   n11465->n11475[color="lightgray" fontcolor="lightgray" label="wff th"];
-  n11466 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n11466[label="wph" color="lightgray" fontcolor="lightgray"];
   n11466->n11474[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n11467 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n11467[label="wps" color="lightgray" fontcolor="lightgray"];
   n11467->n11474[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n11468 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n11468[label="wch" color="lightgray" fontcolor="lightgray"];
   n11468->n11474[color="lightgray" fontcolor="lightgray" label="wff ch"];
-  n11469 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n11469[label="wth" color="lightgray" fontcolor="lightgray"];
   n11469->n11474[color="lightgray" fontcolor="lightgray" label="wff th"];
-  n11470 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n11470[label="wph" color="lightgray" fontcolor="lightgray"];
   n11470->n11474[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n11471 [label = "sylancbr.1"style="filled" fillcolor = "orange"];
+  n11471[label="sylancbr.1" style="filled" fillcolor = "orange"];
   n11471->n11474[label="|- ( ps <-> ph )"];
-  n11472 [label = "sylancbr.2"style="filled" fillcolor = "orange"];
+  n11472[label="sylancbr.2" style="filled" fillcolor = "orange"];
   n11472->n11474[label="|- ( ch <-> ph )"];
-  n11473 [label = "sylancbr.3"style="filled" fillcolor = "orange"];
-  n11473->n11474[label="|- ( ( ps /\ ch ) -> th )"];
-  n11474 [label = "syl2anbr"style="filled" fillcolor = "cyan"];
-  n11474->n11475[label="|- ( ( ph /\ ph ) -> th )"];
+  n11473[label="sylancbr.3" style="filled" fillcolor = "orange"];
+  n11473->n11474[label="|- ( ( ps /\\ ch ) -> th )"];
+  n11474[label="syl2anbr" style="filled" fillcolor = "cyan"];
+  n11474->n11475[label="|- ( ( ph /\\ ph ) -> th )"];
   n11466->n11467->n11468->n11469->n11470->n11471->n11472->n11473[arrowhead="none" style="invisible"];
   {rank=same;n11473;n11472;n11471;n11470;n11469;n11468;n11467;n11466;}
-  n11475 [label = "anidms"style="filled" fillcolor = "cyan"];
-QED[style="invisible"]
+  n11475[label="anidms" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
   n11475->QED[label="|- ( ph -> th )"];
   n11464->n11465->n11474[arrowhead="none" style="invisible"];
   {rank=same;n11474;n11465;n11464;}

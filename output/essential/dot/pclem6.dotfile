@@ -1,0 +1,38 @@
+digraph proof_pclem6 {
+  rankdir = LR;
+  n16506[label="wps" style="invisible"];
+  n16506->n16539[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n16512[label="wb" style="invisible"];
+  n16512->n16539[color="lightgray" fontcolor="lightgray" label="wff ( ph <-> ( ps /\\ -. ph ) )"];
+  n16513[label="wps" style="invisible"];
+  n16513->n16538[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n16520[label="wb" style="invisible"];
+  n16520->n16538[color="lightgray" fontcolor="lightgray" label="wff ( -. ph <-> ( ps /\\ -. ph ) )"];
+  n16527[label="wn" style="invisible"];
+  n16527->n16538[color="lightgray" fontcolor="lightgray" label="wff -. ( ph <-> ( ps /\\ -. ph ) )"];
+  n16528[label="wps" style="invisible"];
+  n16528->n16531[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n16530[label="wn" style="invisible"];
+  n16530->n16531[color="lightgray" fontcolor="lightgray" label="wff -. ph"];
+  n16531[label="ibar" style="filled" fillcolor = "cyan"];
+  n16531->n16538[label="|- ( ps -> ( -. ph <-> ( ps /\\ -. ph ) ) )"];
+  n16528->n16530[arrowhead="none" style="invisible"];
+  {rank=same;n16530;n16528;}
+  n16532[label="wph" style="invisible"];
+  n16532->n16537[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n16536[label="wa" style="invisible"];
+  n16536->n16537[color="lightgray" fontcolor="lightgray" label="wff ( ps /\\ -. ph )"];
+  n16537[label="nbbn" style="filled" fillcolor = "cyan"];
+  n16537->n16538[label="|- ( ( -. ph <-> ( ps /\\ -. ph ) ) <-> -. ( ph <-> ( ps /\\ -. ph ) ) )"];
+  n16532->n16536[arrowhead="none" style="invisible"];
+  {rank=same;n16536;n16532;}
+  n16538[label="sylib" style="filled" fillcolor = "cyan"];
+  n16538->n16539[label="|- ( ps -> -. ( ph <-> ( ps /\\ -. ph ) ) )"];
+  n16513->n16520->n16527->n16531->n16537[arrowhead="none" style="invisible"];
+  {rank=same;n16537;n16531;n16527;n16520;n16513;}
+  n16539[label="con2i" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n16539->QED[label="|- ( ( ph <-> ( ps /\\ -. ph ) ) -> -. ps )"];
+  n16506->n16512->n16538[arrowhead="none" style="invisible"];
+  {rank=same;n16538;n16512;n16506;}
+}

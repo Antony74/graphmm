@@ -1,0 +1,20 @@
+digraph proof_bibi1 {
+  rankdir = LR;
+  n6283[label="wb" style="invisible"];
+  n6283->n6291[color="lightgray" fontcolor="lightgray" label="wff ( ph <-> ps )"];
+  n6284[label="wph" style="invisible"];
+  n6284->n6291[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n6285[label="wps" style="invisible"];
+  n6285->n6291[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n6286[label="wch" style="invisible"];
+  n6286->n6291[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n6289[label="wb" style="invisible"];
+  n6289->n6290[color="lightgray" fontcolor="lightgray" label="wff ( ph <-> ps )"];
+  n6290[label="id" style="filled" fillcolor = "cyan"];
+  n6290->n6291[label="|- ( ( ph <-> ps ) -> ( ph <-> ps ) )"];
+  n6291[label="bibi1d" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n6291->QED[label="|- ( ( ph <-> ps ) -> ( ( ph <-> ch ) <-> ( ps <-> ch ) ) )"];
+  n6283->n6284->n6285->n6286->n6290[arrowhead="none" style="invisible"];
+  {rank=same;n6290;n6286;n6285;n6284;n6283;}
+}

@@ -1,27 +1,27 @@
 digraph proof_syl6ib {
   rankdir = LR;
-  n4808 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n4808[label="wph" color="lightgray" fontcolor="lightgray"];
   n4808->n4817[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n4809 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n4809[label="wps" color="lightgray" fontcolor="lightgray"];
   n4809->n4817[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n4810 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n4810[label="wch" color="lightgray" fontcolor="lightgray"];
   n4810->n4817[color="lightgray" fontcolor="lightgray" label="wff ch"];
-  n4811 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n4811[label="wth" color="lightgray" fontcolor="lightgray"];
   n4811->n4817[color="lightgray" fontcolor="lightgray" label="wff th"];
-  n4812 [label = "syl6ib.1"style="filled" fillcolor = "orange"];
+  n4812[label="syl6ib.1" style="filled" fillcolor = "orange"];
   n4812->n4817[label="|- ( ph -> ( ps -> ch ) )"];
-  n4813 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n4813[label="wch" color="lightgray" fontcolor="lightgray"];
   n4813->n4816[color="lightgray" fontcolor="lightgray" label="wff ch"];
-  n4814 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n4814[label="wth" color="lightgray" fontcolor="lightgray"];
   n4814->n4816[color="lightgray" fontcolor="lightgray" label="wff th"];
-  n4815 [label = "syl6ib.2"style="filled" fillcolor = "orange"];
+  n4815[label="syl6ib.2" style="filled" fillcolor = "orange"];
   n4815->n4816[label="|- ( ch <-> th )"];
-  n4816 [label = "biimpi"style="filled" fillcolor = "cyan"];
+  n4816[label="biimpi" style="filled" fillcolor = "cyan"];
   n4816->n4817[label="|- ( ch -> th )"];
   n4813->n4814->n4815[arrowhead="none" style="invisible"];
   {rank=same;n4815;n4814;n4813;}
-  n4817 [label = "syl6"style="filled" fillcolor = "cyan"];
-QED[style="invisible"]
+  n4817[label="syl6" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
   n4817->QED[label="|- ( ph -> ( ps -> th ) )"];
   n4808->n4809->n4810->n4811->n4812->n4816[arrowhead="none" style="invisible"];
   {rank=same;n4816;n4812;n4811;n4810;n4809;n4808;}

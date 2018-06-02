@@ -1,53 +1,53 @@
 digraph proof_a2i {
   rankdir = LR;
-  n40 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n40[label="wph" color="lightgray" fontcolor="lightgray"];
   n40->n44[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n41 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n41[label="wps" color="lightgray" fontcolor="lightgray"];
   n41->n43[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n42 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n42[label="wch" color="lightgray" fontcolor="lightgray"];
   n42->n43[color="lightgray" fontcolor="lightgray" label="wff ch"];
-  n43 [label = "wi"color="lightgray" fontcolor="lightgray"];
+  n43[label="wi" color="lightgray" fontcolor="lightgray"];
   n43->n44[color="lightgray" fontcolor="lightgray" label="wff ( ps -> ch )"];
   n41->n42[arrowhead="none" style="invisible"];
   {rank=same;n42;n41;}
-  n44 [label = "wi"color="lightgray" fontcolor="lightgray"];
+  n44[label="wi" color="lightgray" fontcolor="lightgray"];
   n44->n57[color="lightgray" fontcolor="lightgray" label="wff ( ph -> ( ps -> ch ) )"];
   n40->n43[arrowhead="none" style="invisible"];
   {rank=same;n43;n40;}
-  n45 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n45[label="wph" color="lightgray" fontcolor="lightgray"];
   n45->n47[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n46 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n46[label="wps" color="lightgray" fontcolor="lightgray"];
   n46->n47[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n47 [label = "wi"color="lightgray" fontcolor="lightgray"];
+  n47[label="wi" color="lightgray" fontcolor="lightgray"];
   n47->n51[color="lightgray" fontcolor="lightgray" label="wff ( ph -> ps )"];
   n45->n46[arrowhead="none" style="invisible"];
   {rank=same;n46;n45;}
-  n48 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n48[label="wph" color="lightgray" fontcolor="lightgray"];
   n48->n50[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n49 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n49[label="wch" color="lightgray" fontcolor="lightgray"];
   n49->n50[color="lightgray" fontcolor="lightgray" label="wff ch"];
-  n50 [label = "wi"color="lightgray" fontcolor="lightgray"];
+  n50[label="wi" color="lightgray" fontcolor="lightgray"];
   n50->n51[color="lightgray" fontcolor="lightgray" label="wff ( ph -> ch )"];
   n48->n49[arrowhead="none" style="invisible"];
   {rank=same;n49;n48;}
-  n51 [label = "wi"color="lightgray" fontcolor="lightgray"];
+  n51[label="wi" color="lightgray" fontcolor="lightgray"];
   n51->n57[color="lightgray" fontcolor="lightgray" label="wff ( ( ph -> ps ) -> ( ph -> ch ) )"];
   n47->n50[arrowhead="none" style="invisible"];
   {rank=same;n50;n47;}
-  n52 [label = "a2i.1"style="filled" fillcolor = "orange"];
+  n52[label="a2i.1" style="filled" fillcolor = "orange"];
   n52->n57[label="|- ( ph -> ( ps -> ch ) )"];
-  n53 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n53[label="wph" color="lightgray" fontcolor="lightgray"];
   n53->n56[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n54 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n54[label="wps" color="lightgray" fontcolor="lightgray"];
   n54->n56[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n55 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n55[label="wch" color="lightgray" fontcolor="lightgray"];
   n55->n56[color="lightgray" fontcolor="lightgray" label="wff ch"];
-  n56 [label = "ax-2"style="filled" fillcolor = "lime"];
+  n56[label="ax-2" style="filled" fillcolor = "lawngreen"];
   n56->n57[label="|- ( ( ph -> ( ps -> ch ) ) -> ( ( ph -> ps ) -> ( ph -> ch ) ) )"];
   n53->n54->n55[arrowhead="none" style="invisible"];
   {rank=same;n55;n54;n53;}
-  n57 [label = "ax-mp"style="filled" fillcolor = "lime"];
-QED[style="invisible"]
+  n57[label="ax-mp" style="filled" fillcolor = "lawngreen"];
+  QED[style="invisible"]
   n57->QED[label="|- ( ( ph -> ps ) -> ( ph -> ch ) )"];
   n44->n51->n52->n56[arrowhead="none" style="invisible"];
   {rank=same;n56;n52;n51;n44;}

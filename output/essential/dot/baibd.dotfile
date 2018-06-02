@@ -1,0 +1,38 @@
+digraph proof_baibd {
+  rankdir = LR;
+  n16139[label="wph" style="invisible"];
+  n16139->n16156[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n16140[label="wps" style="invisible"];
+  n16140->n16156[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n16143[label="wa" style="invisible"];
+  n16143->n16156[color="lightgray" fontcolor="lightgray" label="wff ( ch /\\ th )"];
+  n16144[label="wch" style="invisible"];
+  n16144->n16156[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n16145[label="wth" style="invisible"];
+  n16145->n16156[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n16146[label="baibd.1" style="filled" fillcolor = "orange"];
+  n16146->n16156[label="|- ( ph -> ( ps <-> ( ch /\\ th ) ) )"];
+  n16147[label="wch" style="invisible"];
+  n16147->n16155[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n16148[label="wth" style="invisible"];
+  n16148->n16155[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n16151[label="wa" style="invisible"];
+  n16151->n16155[color="lightgray" fontcolor="lightgray" label="wff ( ch /\\ th )"];
+  n16152[label="wch" style="invisible"];
+  n16152->n16154[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n16153[label="wth" style="invisible"];
+  n16153->n16154[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n16154[label="ibar" style="filled" fillcolor = "cyan"];
+  n16154->n16155[label="|- ( ch -> ( th <-> ( ch /\\ th ) ) )"];
+  n16152->n16153[arrowhead="none" style="invisible"];
+  {rank=same;n16153;n16152;}
+  n16155[label="bicomd" style="filled" fillcolor = "cyan"];
+  n16155->n16156[label="|- ( ch -> ( ( ch /\\ th ) <-> th ) )"];
+  n16147->n16148->n16151->n16154[arrowhead="none" style="invisible"];
+  {rank=same;n16154;n16151;n16148;n16147;}
+  n16156[label="sylan9bb" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n16156->QED[label="|- ( ( ph /\\ ch ) -> ( ps <-> th ) )"];
+  n16139->n16140->n16143->n16144->n16145->n16146->n16155[arrowhead="none" style="invisible"];
+  {rank=same;n16155;n16146;n16145;n16144;n16143;n16140;n16139;}
+}

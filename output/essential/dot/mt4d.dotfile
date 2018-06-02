@@ -1,0 +1,28 @@
+digraph proof_mt4d {
+  rankdir = LR;
+  n1539[label="wph" style="invisible"];
+  n1539->n1548[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n1540[label="wps" style="invisible"];
+  n1540->n1548[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n1541[label="wch" style="invisible"];
+  n1541->n1548[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n1542[label="mt4d.1" style="filled" fillcolor = "orange"];
+  n1542->n1548[label="|- ( ph -> ps )"];
+  n1543[label="wph" style="invisible"];
+  n1543->n1547[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n1544[label="wch" style="invisible"];
+  n1544->n1547[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n1545[label="wps" style="invisible"];
+  n1545->n1547[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n1546[label="mt4d.2" style="filled" fillcolor = "orange"];
+  n1546->n1547[label="|- ( ph -> ( -. ch -> -. ps ) )"];
+  n1547[label="con4d" style="filled" fillcolor = "cyan"];
+  n1547->n1548[label="|- ( ph -> ( ps -> ch ) )"];
+  n1543->n1544->n1545->n1546[arrowhead="none" style="invisible"];
+  {rank=same;n1546;n1545;n1544;n1543;}
+  n1548[label="mpd" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n1548->QED[label="|- ( ph -> ch )"];
+  n1539->n1540->n1541->n1542->n1547[arrowhead="none" style="invisible"];
+  {rank=same;n1547;n1542;n1541;n1540;n1539;}
+}

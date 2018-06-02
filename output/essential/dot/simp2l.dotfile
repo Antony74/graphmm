@@ -1,0 +1,24 @@
+digraph proof_simp2l {
+  rankdir = LR;
+  n19556[label="wa" style="invisible"];
+  n19556->n19563[color="lightgray" fontcolor="lightgray" label="wff ( ps /\\ ch )"];
+  n19557[label="wph" style="invisible"];
+  n19557->n19563[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n19558[label="wps" style="invisible"];
+  n19558->n19563[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n19559[label="wth" style="invisible"];
+  n19559->n19563[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n19560[label="wps" style="invisible"];
+  n19560->n19562[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n19561[label="wch" style="invisible"];
+  n19561->n19562[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n19562[label="simpl" style="filled" fillcolor = "cyan"];
+  n19562->n19563[label="|- ( ( ps /\\ ch ) -> ps )"];
+  n19560->n19561[arrowhead="none" style="invisible"];
+  {rank=same;n19561;n19560;}
+  n19563[label="3ad2ant2" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n19563->QED[label="|- ( ( ph /\\ ( ps /\\ ch ) /\\ th ) -> ps )"];
+  n19556->n19557->n19558->n19559->n19562[arrowhead="none" style="invisible"];
+  {rank=same;n19562;n19559;n19558;n19557;n19556;}
+}

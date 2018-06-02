@@ -1,26 +1,26 @@
 digraph proof_biimpa {
   rankdir = LR;
-  n8386 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n8386[label="wph" color="lightgray" fontcolor="lightgray"];
   n8386->n8394[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n8387 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n8387[label="wps" color="lightgray" fontcolor="lightgray"];
   n8387->n8394[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n8388 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n8388[label="wch" color="lightgray" fontcolor="lightgray"];
   n8388->n8394[color="lightgray" fontcolor="lightgray" label="wff ch"];
-  n8389 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n8389[label="wph" color="lightgray" fontcolor="lightgray"];
   n8389->n8393[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n8390 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n8390[label="wps" color="lightgray" fontcolor="lightgray"];
   n8390->n8393[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n8391 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n8391[label="wch" color="lightgray" fontcolor="lightgray"];
   n8391->n8393[color="lightgray" fontcolor="lightgray" label="wff ch"];
-  n8392 [label = "biimpa.1"style="filled" fillcolor = "orange"];
+  n8392[label="biimpa.1" style="filled" fillcolor = "orange"];
   n8392->n8393[label="|- ( ph -> ( ps <-> ch ) )"];
-  n8393 [label = "biimpd"style="filled" fillcolor = "cyan"];
+  n8393[label="biimpd" style="filled" fillcolor = "cyan"];
   n8393->n8394[label="|- ( ph -> ( ps -> ch ) )"];
   n8389->n8390->n8391->n8392[arrowhead="none" style="invisible"];
   {rank=same;n8392;n8391;n8390;n8389;}
-  n8394 [label = "imp"style="filled" fillcolor = "cyan"];
-QED[style="invisible"]
-  n8394->QED[label="|- ( ( ph /\ ps ) -> ch )"];
+  n8394[label="imp" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n8394->QED[label="|- ( ( ph /\\ ps ) -> ch )"];
   n8386->n8387->n8388->n8393[arrowhead="none" style="invisible"];
   {rank=same;n8393;n8388;n8387;n8386;}
 }

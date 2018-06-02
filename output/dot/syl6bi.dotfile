@@ -1,29 +1,29 @@
 digraph proof_syl6bi {
   rankdir = LR;
-  n4828 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n4828[label="wph" color="lightgray" fontcolor="lightgray"];
   n4828->n4838[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n4829 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n4829[label="wps" color="lightgray" fontcolor="lightgray"];
   n4829->n4838[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n4830 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n4830[label="wch" color="lightgray" fontcolor="lightgray"];
   n4830->n4838[color="lightgray" fontcolor="lightgray" label="wff ch"];
-  n4831 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n4831[label="wth" color="lightgray" fontcolor="lightgray"];
   n4831->n4838[color="lightgray" fontcolor="lightgray" label="wff th"];
-  n4832 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n4832[label="wph" color="lightgray" fontcolor="lightgray"];
   n4832->n4836[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n4833 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n4833[label="wps" color="lightgray" fontcolor="lightgray"];
   n4833->n4836[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n4834 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n4834[label="wch" color="lightgray" fontcolor="lightgray"];
   n4834->n4836[color="lightgray" fontcolor="lightgray" label="wff ch"];
-  n4835 [label = "syl6bi.1"style="filled" fillcolor = "orange"];
+  n4835[label="syl6bi.1" style="filled" fillcolor = "orange"];
   n4835->n4836[label="|- ( ph -> ( ps <-> ch ) )"];
-  n4836 [label = "biimpd"style="filled" fillcolor = "cyan"];
+  n4836[label="biimpd" style="filled" fillcolor = "cyan"];
   n4836->n4838[label="|- ( ph -> ( ps -> ch ) )"];
   n4832->n4833->n4834->n4835[arrowhead="none" style="invisible"];
   {rank=same;n4835;n4834;n4833;n4832;}
-  n4837 [label = "syl6bi.2"style="filled" fillcolor = "orange"];
+  n4837[label="syl6bi.2" style="filled" fillcolor = "orange"];
   n4837->n4838[label="|- ( ch -> th )"];
-  n4838 [label = "syl6"style="filled" fillcolor = "cyan"];
-QED[style="invisible"]
+  n4838[label="syl6" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
   n4838->QED[label="|- ( ph -> ( ps -> th ) )"];
   n4828->n4829->n4830->n4831->n4836->n4837[arrowhead="none" style="invisible"];
   {rank=same;n4837;n4836;n4831;n4830;n4829;n4828;}

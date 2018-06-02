@@ -1,21 +1,21 @@
 digraph proof_biimpcd {
   rankdir = LR;
-  n4792 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n4792[label="wps" color="lightgray" fontcolor="lightgray"];
   n4792->n4799[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n4793 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n4793[label="wps" color="lightgray" fontcolor="lightgray"];
   n4793->n4799[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n4794 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n4794[label="wph" color="lightgray" fontcolor="lightgray"];
   n4794->n4799[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n4795 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n4795[label="wch" color="lightgray" fontcolor="lightgray"];
   n4795->n4799[color="lightgray" fontcolor="lightgray" label="wff ch"];
-  n4796 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n4796[label="wps" color="lightgray" fontcolor="lightgray"];
   n4796->n4797[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n4797 [label = "id"style="filled" fillcolor = "cyan"];
+  n4797[label="id" style="filled" fillcolor = "cyan"];
   n4797->n4799[label="|- ( ps -> ps )"];
-  n4798 [label = "biimpcd.1"style="filled" fillcolor = "orange"];
+  n4798[label="biimpcd.1" style="filled" fillcolor = "orange"];
   n4798->n4799[label="|- ( ph -> ( ps <-> ch ) )"];
-  n4799 [label = "syl5ibcom"style="filled" fillcolor = "cyan"];
-QED[style="invisible"]
+  n4799[label="syl5ibcom" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
   n4799->QED[label="|- ( ps -> ( ph -> ch ) )"];
   n4792->n4793->n4794->n4795->n4797->n4798[arrowhead="none" style="invisible"];
   {rank=same;n4798;n4797;n4795;n4794;n4793;n4792;}

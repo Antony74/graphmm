@@ -1,0 +1,24 @@
+digraph proof_jao {
+  rankdir = LR;
+  n8797[label="wi" style="invisible"];
+  n8797->n8810[color="lightgray" fontcolor="lightgray" label="wff ( ph -> ps )"];
+  n8800[label="wi" style="invisible"];
+  n8800->n8810[color="lightgray" fontcolor="lightgray" label="wff ( ch -> ps )"];
+  n8805[label="wi" style="invisible"];
+  n8805->n8810[color="lightgray" fontcolor="lightgray" label="wff ( ( ph \\/ ch ) -> ps )"];
+  n8806[label="wps" style="invisible"];
+  n8806->n8809[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n8807[label="wph" style="invisible"];
+  n8807->n8809[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n8808[label="wch" style="invisible"];
+  n8808->n8809[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n8809[label="pm3.44" style="filled" fillcolor = "cyan"];
+  n8809->n8810[label="|- ( ( ( ph -> ps ) /\\ ( ch -> ps ) ) -> ( ( ph \\/ ch ) -> ps ) )"];
+  n8806->n8807->n8808[arrowhead="none" style="invisible"];
+  {rank=same;n8808;n8807;n8806;}
+  n8810[label="ex" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n8810->QED[label="|- ( ( ph -> ps ) -> ( ( ch -> ps ) -> ( ( ph \\/ ch ) -> ps ) ) )"];
+  n8797->n8800->n8805->n8809[arrowhead="none" style="invisible"];
+  {rank=same;n8809;n8805;n8800;n8797;}
+}

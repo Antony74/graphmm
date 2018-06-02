@@ -1,0 +1,22 @@
+digraph proof_pm3_21 {
+  rankdir = LR;
+  n7995[label="wps" style="invisible"];
+  n7995->n8003[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n7996[label="wph" style="invisible"];
+  n7996->n8003[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n7999[label="wa" style="invisible"];
+  n7999->n8003[color="lightgray" fontcolor="lightgray" label="wff ( ps /\\ ph )"];
+  n8000[label="wps" style="invisible"];
+  n8000->n8002[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n8001[label="wph" style="invisible"];
+  n8001->n8002[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n8002[label="pm3.2" style="filled" fillcolor = "cyan"];
+  n8002->n8003[label="|- ( ps -> ( ph -> ( ps /\\ ph ) ) )"];
+  n8000->n8001[arrowhead="none" style="invisible"];
+  {rank=same;n8001;n8000;}
+  n8003[label="com12" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n8003->QED[label="|- ( ph -> ( ps -> ( ps /\\ ph ) ) )"];
+  n7995->n7996->n7999->n8002[arrowhead="none" style="invisible"];
+  {rank=same;n8002;n7999;n7996;n7995;}
+}

@@ -1,0 +1,28 @@
+digraph proof_anor {
+  rankdir = LR;
+  n8446[label="wo" style="invisible"];
+  n8446->n8463[color="lightgray" fontcolor="lightgray" label="wff ( -. ph \\/ -. ps )"];
+  n8449[label="wa" style="invisible"];
+  n8449->n8463[color="lightgray" fontcolor="lightgray" label="wff ( ph /\\ ps )"];
+  n8453[label="wn" style="invisible"];
+  n8453->n8462[color="lightgray" fontcolor="lightgray" label="wff -. ( ph /\\ ps )"];
+  n8458[label="wo" style="invisible"];
+  n8458->n8462[color="lightgray" fontcolor="lightgray" label="wff ( -. ph \\/ -. ps )"];
+  n8459[label="wph" style="invisible"];
+  n8459->n8461[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n8460[label="wps" style="invisible"];
+  n8460->n8461[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n8461[label="ianor" style="filled" fillcolor = "cyan"];
+  n8461->n8462[label="|- ( -. ( ph /\\ ps ) <-> ( -. ph \\/ -. ps ) )"];
+  n8459->n8460[arrowhead="none" style="invisible"];
+  {rank=same;n8460;n8459;}
+  n8462[label="bicomi" style="filled" fillcolor = "cyan"];
+  n8462->n8463[label="|- ( ( -. ph \\/ -. ps ) <-> -. ( ph /\\ ps ) )"];
+  n8453->n8458->n8461[arrowhead="none" style="invisible"];
+  {rank=same;n8461;n8458;n8453;}
+  n8463[label="con2bii" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n8463->QED[label="|- ( ( ph /\\ ps ) <-> -. ( -. ph \\/ -. ps ) )"];
+  n8446->n8449->n8462[arrowhead="none" style="invisible"];
+  {rank=same;n8462;n8449;n8446;}
+}

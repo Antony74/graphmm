@@ -1,23 +1,23 @@
 digraph proof_mtbi {
   rankdir = LR;
-  n5834 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n5834[label="wps" color="lightgray" fontcolor="lightgray"];
   n5834->n5841[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n5835 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n5835[label="wph" color="lightgray" fontcolor="lightgray"];
   n5835->n5841[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n5836 [label = "mtbi.1"style="filled" fillcolor = "orange"];
+  n5836[label="mtbi.1" style="filled" fillcolor = "orange"];
   n5836->n5841[label="|- -. ph"];
-  n5837 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n5837[label="wph" color="lightgray" fontcolor="lightgray"];
   n5837->n5840[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n5838 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n5838[label="wps" color="lightgray" fontcolor="lightgray"];
   n5838->n5840[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n5839 [label = "mtbi.2"style="filled" fillcolor = "orange"];
+  n5839[label="mtbi.2" style="filled" fillcolor = "orange"];
   n5839->n5840[label="|- ( ph <-> ps )"];
-  n5840 [label = "biimpri"style="filled" fillcolor = "cyan"];
+  n5840[label="biimpri" style="filled" fillcolor = "cyan"];
   n5840->n5841[label="|- ( ps -> ph )"];
   n5837->n5838->n5839[arrowhead="none" style="invisible"];
   {rank=same;n5839;n5838;n5837;}
-  n5841 [label = "mto"style="filled" fillcolor = "cyan"];
-QED[style="invisible"]
+  n5841[label="mto" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
   n5841->QED[label="|- -. ps"];
   n5834->n5835->n5836->n5840[arrowhead="none" style="invisible"];
   {rank=same;n5840;n5836;n5835;n5834;}

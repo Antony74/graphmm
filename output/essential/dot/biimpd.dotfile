@@ -1,0 +1,24 @@
+digraph proof_biimpd {
+  rankdir = LR;
+  n4622[label="wph" style="invisible"];
+  n4622->n4633[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n4625[label="wb" style="invisible"];
+  n4625->n4633[color="lightgray" fontcolor="lightgray" label="wff ( ps <-> ch )"];
+  n4628[label="wi" style="invisible"];
+  n4628->n4633[color="lightgray" fontcolor="lightgray" label="wff ( ps -> ch )"];
+  n4629[label="biimpd.1" style="filled" fillcolor = "orange"];
+  n4629->n4633[label="|- ( ph -> ( ps <-> ch ) )"];
+  n4630[label="wps" style="invisible"];
+  n4630->n4632[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n4631[label="wch" style="invisible"];
+  n4631->n4632[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n4632[label="bi1" style="filled" fillcolor = "cyan"];
+  n4632->n4633[label="|- ( ( ps <-> ch ) -> ( ps -> ch ) )"];
+  n4630->n4631[arrowhead="none" style="invisible"];
+  {rank=same;n4631;n4630;}
+  n4633[label="syl" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n4633->QED[label="|- ( ph -> ( ps -> ch ) )"];
+  n4622->n4625->n4628->n4629->n4632[arrowhead="none" style="invisible"];
+  {rank=same;n4632;n4629;n4628;n4625;n4622;}
+}

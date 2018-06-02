@@ -1,0 +1,30 @@
+digraph proof_ioran {
+  rankdir = LR;
+  n8467[label="wi" style="invisible"];
+  n8467->n8482[color="lightgray" fontcolor="lightgray" label="wff ( -. ph -> ps )"];
+  n8472[label="wa" style="invisible"];
+  n8472->n8482[color="lightgray" fontcolor="lightgray" label="wff ( -. ph /\\ -. ps )"];
+  n8475[label="wo" style="invisible"];
+  n8475->n8482[color="lightgray" fontcolor="lightgray" label="wff ( ph \\/ ps )"];
+  n8476[label="wph" style="invisible"];
+  n8476->n8478[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n8477[label="wps" style="invisible"];
+  n8477->n8478[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n8478[label="pm4.65" style="filled" fillcolor = "cyan"];
+  n8478->n8482[label="|- ( -. ( -. ph -> ps ) <-> ( -. ph /\\ -. ps ) )"];
+  n8476->n8477[arrowhead="none" style="invisible"];
+  {rank=same;n8477;n8476;}
+  n8479[label="wph" style="invisible"];
+  n8479->n8481[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n8480[label="wps" style="invisible"];
+  n8480->n8481[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n8481[label="pm4.64" style="filled" fillcolor = "cyan"];
+  n8481->n8482[label="|- ( ( -. ph -> ps ) <-> ( ph \\/ ps ) )"];
+  n8479->n8480[arrowhead="none" style="invisible"];
+  {rank=same;n8480;n8479;}
+  n8482[label="xchnxbi" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n8482->QED[label="|- ( -. ( ph \\/ ps ) <-> ( -. ph /\\ -. ps ) )"];
+  n8467->n8472->n8475->n8478->n8481[arrowhead="none" style="invisible"];
+  {rank=same;n8481;n8478;n8475;n8472;n8467;}
+}

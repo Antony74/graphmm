@@ -1,29 +1,29 @@
 digraph proof_simpld {
   rankdir = LR;
-  n8097 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n8097[label="wph" color="lightgray" fontcolor="lightgray"];
   n8097->n8106[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n8098 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n8098[label="wps" color="lightgray" fontcolor="lightgray"];
   n8098->n8100[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n8099 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n8099[label="wch" color="lightgray" fontcolor="lightgray"];
   n8099->n8100[color="lightgray" fontcolor="lightgray" label="wff ch"];
-  n8100 [label = "wa"color="lightgray" fontcolor="lightgray"];
-  n8100->n8106[color="lightgray" fontcolor="lightgray" label="wff ( ps /\ ch )"];
+  n8100[label="wa" color="lightgray" fontcolor="lightgray"];
+  n8100->n8106[color="lightgray" fontcolor="lightgray" label="wff ( ps /\\ ch )"];
   n8098->n8099[arrowhead="none" style="invisible"];
   {rank=same;n8099;n8098;}
-  n8101 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n8101[label="wps" color="lightgray" fontcolor="lightgray"];
   n8101->n8106[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n8102 [label = "simpld.1"style="filled" fillcolor = "orange"];
-  n8102->n8106[label="|- ( ph -> ( ps /\ ch ) )"];
-  n8103 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n8102[label="simpld.1" style="filled" fillcolor = "orange"];
+  n8102->n8106[label="|- ( ph -> ( ps /\\ ch ) )"];
+  n8103[label="wps" color="lightgray" fontcolor="lightgray"];
   n8103->n8105[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n8104 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n8104[label="wch" color="lightgray" fontcolor="lightgray"];
   n8104->n8105[color="lightgray" fontcolor="lightgray" label="wff ch"];
-  n8105 [label = "simpl"style="filled" fillcolor = "cyan"];
-  n8105->n8106[label="|- ( ( ps /\ ch ) -> ps )"];
+  n8105[label="simpl" style="filled" fillcolor = "cyan"];
+  n8105->n8106[label="|- ( ( ps /\\ ch ) -> ps )"];
   n8103->n8104[arrowhead="none" style="invisible"];
   {rank=same;n8104;n8103;}
-  n8106 [label = "syl"style="filled" fillcolor = "cyan"];
-QED[style="invisible"]
+  n8106[label="syl" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
   n8106->QED[label="|- ( ph -> ps )"];
   n8097->n8100->n8101->n8102->n8105[arrowhead="none" style="invisible"];
   {rank=same;n8105;n8102;n8101;n8100;n8097;}

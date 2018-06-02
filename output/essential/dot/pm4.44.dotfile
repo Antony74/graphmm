@@ -1,0 +1,42 @@
+digraph proof_pm4_44 {
+  rankdir = LR;
+  n9755[label="wph" style="invisible"];
+  n9755->n9777[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n9760[label="wo" style="invisible"];
+  n9760->n9777[color="lightgray" fontcolor="lightgray" label="wff ( ph \\/ ( ph /\\ ps ) )"];
+  n9761[label="wph" style="invisible"];
+  n9761->n9765[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n9764[label="wa" style="invisible"];
+  n9764->n9765[color="lightgray" fontcolor="lightgray" label="wff ( ph /\\ ps )"];
+  n9765[label="orc" style="filled" fillcolor = "cyan"];
+  n9765->n9777[label="|- ( ph -> ( ph \\/ ( ph /\\ ps ) ) )"];
+  n9761->n9764[arrowhead="none" style="invisible"];
+  {rank=same;n9764;n9761;}
+  n9766[label="wph" style="invisible"];
+  n9766->n9776[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n9767[label="wph" style="invisible"];
+  n9767->n9776[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n9770[label="wa" style="invisible"];
+  n9770->n9776[color="lightgray" fontcolor="lightgray" label="wff ( ph /\\ ps )"];
+  n9771[label="wph" style="invisible"];
+  n9771->n9772[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n9772[label="id" style="filled" fillcolor = "cyan"];
+  n9772->n9776[label="|- ( ph -> ph )"];
+  n9773[label="wph" style="invisible"];
+  n9773->n9775[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n9774[label="wps" style="invisible"];
+  n9774->n9775[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n9775[label="simpl" style="filled" fillcolor = "cyan"];
+  n9775->n9776[label="|- ( ( ph /\\ ps ) -> ph )"];
+  n9773->n9774[arrowhead="none" style="invisible"];
+  {rank=same;n9774;n9773;}
+  n9776[label="jaoi" style="filled" fillcolor = "cyan"];
+  n9776->n9777[label="|- ( ( ph \\/ ( ph /\\ ps ) ) -> ph )"];
+  n9766->n9767->n9770->n9772->n9775[arrowhead="none" style="invisible"];
+  {rank=same;n9775;n9772;n9770;n9767;n9766;}
+  n9777[label="impbii" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n9777->QED[label="|- ( ph <-> ( ph \\/ ( ph /\\ ps ) ) )"];
+  n9755->n9760->n9765->n9776[arrowhead="none" style="invisible"];
+  {rank=same;n9776;n9765;n9760;n9755;}
+}

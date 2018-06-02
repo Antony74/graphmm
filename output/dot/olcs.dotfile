@@ -1,25 +1,25 @@
 digraph proof_olcs {
   rankdir = LR;
-  n7392 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n7392[label="wps" color="lightgray" fontcolor="lightgray"];
   n7392->n7400[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n7393 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n7393[label="wph" color="lightgray" fontcolor="lightgray"];
   n7393->n7400[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n7394 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n7394[label="wch" color="lightgray" fontcolor="lightgray"];
   n7394->n7400[color="lightgray" fontcolor="lightgray" label="wff ch"];
-  n7395 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n7395[label="wph" color="lightgray" fontcolor="lightgray"];
   n7395->n7399[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n7396 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n7396[label="wps" color="lightgray" fontcolor="lightgray"];
   n7396->n7399[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n7397 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n7397[label="wch" color="lightgray" fontcolor="lightgray"];
   n7397->n7399[color="lightgray" fontcolor="lightgray" label="wff ch"];
-  n7398 [label = "olcs.1"style="filled" fillcolor = "orange"];
-  n7398->n7399[label="|- ( ( ph \/ ps ) -> ch )"];
-  n7399 [label = "orcoms"style="filled" fillcolor = "cyan"];
-  n7399->n7400[label="|- ( ( ps \/ ph ) -> ch )"];
+  n7398[label="olcs.1" style="filled" fillcolor = "orange"];
+  n7398->n7399[label="|- ( ( ph \\/ ps ) -> ch )"];
+  n7399[label="orcoms" style="filled" fillcolor = "cyan"];
+  n7399->n7400[label="|- ( ( ps \\/ ph ) -> ch )"];
   n7395->n7396->n7397->n7398[arrowhead="none" style="invisible"];
   {rank=same;n7398;n7397;n7396;n7395;}
-  n7400 [label = "orcs"style="filled" fillcolor = "cyan"];
-QED[style="invisible"]
+  n7400[label="orcs" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
   n7400->QED[label="|- ( ps -> ch )"];
   n7392->n7393->n7394->n7399[arrowhead="none" style="invisible"];
   {rank=same;n7399;n7394;n7393;n7392;}

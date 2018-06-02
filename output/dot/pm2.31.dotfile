@@ -1,46 +1,46 @@
 digraph proof_pm2_31 {
   rankdir = LR;
-  n9022 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n9022[label="wph" color="lightgray" fontcolor="lightgray"];
   n9022->n9024[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n9023 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n9023[label="wps" color="lightgray" fontcolor="lightgray"];
   n9023->n9024[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n9024 [label = "wo"color="lightgray" fontcolor="lightgray"];
-  n9024->n9026[color="lightgray" fontcolor="lightgray" label="wff ( ph \/ ps )"];
+  n9024[label="wo" color="lightgray" fontcolor="lightgray"];
+  n9024->n9026[color="lightgray" fontcolor="lightgray" label="wff ( ph \\/ ps )"];
   n9022->n9023[arrowhead="none" style="invisible"];
   {rank=same;n9023;n9022;}
-  n9025 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n9025[label="wch" color="lightgray" fontcolor="lightgray"];
   n9025->n9026[color="lightgray" fontcolor="lightgray" label="wff ch"];
-  n9026 [label = "wo"color="lightgray" fontcolor="lightgray"];
-  n9026->n9036[color="lightgray" fontcolor="lightgray" label="wff ( ( ph \/ ps ) \/ ch )"];
+  n9026[label="wo" color="lightgray" fontcolor="lightgray"];
+  n9026->n9036[color="lightgray" fontcolor="lightgray" label="wff ( ( ph \\/ ps ) \\/ ch )"];
   n9024->n9025[arrowhead="none" style="invisible"];
   {rank=same;n9025;n9024;}
-  n9027 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n9027[label="wph" color="lightgray" fontcolor="lightgray"];
   n9027->n9031[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n9028 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n9028[label="wps" color="lightgray" fontcolor="lightgray"];
   n9028->n9030[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n9029 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n9029[label="wch" color="lightgray" fontcolor="lightgray"];
   n9029->n9030[color="lightgray" fontcolor="lightgray" label="wff ch"];
-  n9030 [label = "wo"color="lightgray" fontcolor="lightgray"];
-  n9030->n9031[color="lightgray" fontcolor="lightgray" label="wff ( ps \/ ch )"];
+  n9030[label="wo" color="lightgray" fontcolor="lightgray"];
+  n9030->n9031[color="lightgray" fontcolor="lightgray" label="wff ( ps \\/ ch )"];
   n9028->n9029[arrowhead="none" style="invisible"];
   {rank=same;n9029;n9028;}
-  n9031 [label = "wo"color="lightgray" fontcolor="lightgray"];
-  n9031->n9036[color="lightgray" fontcolor="lightgray" label="wff ( ph \/ ( ps \/ ch ) )"];
+  n9031[label="wo" color="lightgray" fontcolor="lightgray"];
+  n9031->n9036[color="lightgray" fontcolor="lightgray" label="wff ( ph \\/ ( ps \\/ ch ) )"];
   n9027->n9030[arrowhead="none" style="invisible"];
   {rank=same;n9030;n9027;}
-  n9032 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n9032[label="wph" color="lightgray" fontcolor="lightgray"];
   n9032->n9035[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n9033 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n9033[label="wps" color="lightgray" fontcolor="lightgray"];
   n9033->n9035[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n9034 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n9034[label="wch" color="lightgray" fontcolor="lightgray"];
   n9034->n9035[color="lightgray" fontcolor="lightgray" label="wff ch"];
-  n9035 [label = "orass"style="filled" fillcolor = "cyan"];
-  n9035->n9036[label="|- ( ( ( ph \/ ps ) \/ ch ) <-> ( ph \/ ( ps \/ ch ) ) )"];
+  n9035[label="orass" style="filled" fillcolor = "cyan"];
+  n9035->n9036[label="|- ( ( ( ph \\/ ps ) \\/ ch ) <-> ( ph \\/ ( ps \\/ ch ) ) )"];
   n9032->n9033->n9034[arrowhead="none" style="invisible"];
   {rank=same;n9034;n9033;n9032;}
-  n9036 [label = "biimpri"style="filled" fillcolor = "cyan"];
-QED[style="invisible"]
-  n9036->QED[label="|- ( ( ph \/ ( ps \/ ch ) ) -> ( ( ph \/ ps ) \/ ch ) )"];
+  n9036[label="biimpri" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n9036->QED[label="|- ( ( ph \\/ ( ps \\/ ch ) ) -> ( ( ph \\/ ps ) \\/ ch ) )"];
   n9026->n9031->n9035[arrowhead="none" style="invisible"];
   {rank=same;n9035;n9031;n9026;}
 }

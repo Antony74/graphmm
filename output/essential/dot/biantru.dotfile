@@ -1,0 +1,22 @@
+digraph proof_biantru {
+  rankdir = LR;
+  n8690[label="wph" style="invisible"];
+  n8690->n8700[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n8695[label="wb" style="invisible"];
+  n8695->n8700[color="lightgray" fontcolor="lightgray" label="wff ( ps <-> ( ps /\\ ph ) )"];
+  n8696[label="biantru.1" style="filled" fillcolor = "orange"];
+  n8696->n8700[label="|- ph"];
+  n8697[label="wph" style="invisible"];
+  n8697->n8699[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n8698[label="wps" style="invisible"];
+  n8698->n8699[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n8699[label="iba" style="filled" fillcolor = "cyan"];
+  n8699->n8700[label="|- ( ph -> ( ps <-> ( ps /\\ ph ) ) )"];
+  n8697->n8698[arrowhead="none" style="invisible"];
+  {rank=same;n8698;n8697;}
+  n8700[label="ax-mp" style="filled" fillcolor = "lawngreen"];
+  QED[style="invisible"]
+  n8700->QED[label="|- ( ps <-> ( ps /\\ ph ) )"];
+  n8690->n8695->n8696->n8699[arrowhead="none" style="invisible"];
+  {rank=same;n8699;n8696;n8695;n8690;}
+}

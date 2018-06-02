@@ -1,20 +1,20 @@
 digraph proof_simprr {
   rankdir = LR;
-  n12786 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n12786[label="wch" color="lightgray" fontcolor="lightgray"];
   n12786->n12792[color="lightgray" fontcolor="lightgray" label="wff ch"];
-  n12787 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n12787[label="wch" color="lightgray" fontcolor="lightgray"];
   n12787->n12792[color="lightgray" fontcolor="lightgray" label="wff ch"];
-  n12788 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n12788[label="wph" color="lightgray" fontcolor="lightgray"];
   n12788->n12792[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n12789 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n12789[label="wps" color="lightgray" fontcolor="lightgray"];
   n12789->n12792[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n12790 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n12790[label="wch" color="lightgray" fontcolor="lightgray"];
   n12790->n12791[color="lightgray" fontcolor="lightgray" label="wff ch"];
-  n12791 [label = "id"style="filled" fillcolor = "cyan"];
+  n12791[label="id" style="filled" fillcolor = "cyan"];
   n12791->n12792[label="|- ( ch -> ch )"];
-  n12792 [label = "ad2antll"style="filled" fillcolor = "cyan"];
-QED[style="invisible"]
-  n12792->QED[label="|- ( ( ph /\ ( ps /\ ch ) ) -> ch )"];
+  n12792[label="ad2antll" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n12792->QED[label="|- ( ( ph /\\ ( ps /\\ ch ) ) -> ch )"];
   n12786->n12787->n12788->n12789->n12791[arrowhead="none" style="invisible"];
   {rank=same;n12791;n12789;n12788;n12787;n12786;}
 }

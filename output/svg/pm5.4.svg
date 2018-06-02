@@ -158,7 +158,7 @@
 </g>
 <!-- n6995 -->
 <g id="node16" class="node"><title>n6995</title>
-<ellipse fill="lime" stroke="black" cx="343.347" cy="-116" rx="27" ry="18"/>
+<ellipse fill="lawngreen" stroke="black" cx="343.347" cy="-116" rx="27" ry="18"/>
 <text text-anchor="middle" x="343.347" y="-112.3" font-family="Times New Roman,serif" font-size="14.00">ax&#45;1</text>
 </g>
 <!-- n6990&#45;&gt;n6995 -->

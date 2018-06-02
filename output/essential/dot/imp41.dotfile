@@ -1,0 +1,28 @@
+digraph proof_imp41 {
+  rankdir = LR;
+  n10233[label="wa" style="invisible"];
+  n10233->n10246[color="lightgray" fontcolor="lightgray" label="wff ( ph /\\ ps )"];
+  n10234[label="wch" style="invisible"];
+  n10234->n10246[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n10235[label="wth" style="invisible"];
+  n10235->n10246[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n10236[label="wta" style="invisible"];
+  n10236->n10246[color="lightgray" fontcolor="lightgray" label="wff ta"];
+  n10237[label="wph" style="invisible"];
+  n10237->n10245[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n10238[label="wps" style="invisible"];
+  n10238->n10245[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n10243[label="wi" style="invisible"];
+  n10243->n10245[color="lightgray" fontcolor="lightgray" label="wff ( ch -> ( th -> ta ) )"];
+  n10244[label="imp4.1" style="filled" fillcolor = "orange"];
+  n10244->n10245[label="|- ( ph -> ( ps -> ( ch -> ( th -> ta ) ) ) )"];
+  n10245[label="imp" style="filled" fillcolor = "cyan"];
+  n10245->n10246[label="|- ( ( ph /\\ ps ) -> ( ch -> ( th -> ta ) ) )"];
+  n10237->n10238->n10243->n10244[arrowhead="none" style="invisible"];
+  {rank=same;n10244;n10243;n10238;n10237;}
+  n10246[label="imp31" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n10246->QED[label="|- ( ( ( ( ph /\\ ps ) /\\ ch ) /\\ th ) -> ta )"];
+  n10233->n10234->n10235->n10236->n10245[arrowhead="none" style="invisible"];
+  {rank=same;n10245;n10236;n10235;n10234;n10233;}
+}

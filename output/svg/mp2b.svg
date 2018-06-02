@@ -16,7 +16,7 @@
 </g>
 <!-- n22 -->
 <g id="node2" class="node"><title>n22</title>
-<ellipse fill="lime" stroke="black" cx="410.183" cy="-152" rx="33.5952" ry="18"/>
+<ellipse fill="lawngreen" stroke="black" cx="410.183" cy="-152" rx="33.5952" ry="18"/>
 <text text-anchor="middle" x="410.183" y="-148.3" font-family="Times New Roman,serif" font-size="14.00">ax&#45;mp</text>
 </g>
 <!-- n14&#45;&gt;n22 -->
@@ -50,7 +50,7 @@
 </g>
 <!-- n20 -->
 <g id="node5" class="node"><title>n20</title>
-<ellipse fill="lime" stroke="black" cx="227.04" cy="-117" rx="33.5952" ry="18"/>
+<ellipse fill="lawngreen" stroke="black" cx="227.04" cy="-117" rx="33.5952" ry="18"/>
 <text text-anchor="middle" x="227.04" y="-113.3" font-family="Times New Roman,serif" font-size="14.00">ax&#45;mp</text>
 </g>
 <!-- n15&#45;&gt;n20 -->

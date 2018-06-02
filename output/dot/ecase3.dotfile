@@ -1,33 +1,33 @@
 digraph proof_ecase3 {
   rankdir = LR;
-  n17074 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n17074[label="wph" color="lightgray" fontcolor="lightgray"];
   n17074->n17076[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n17075 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n17075[label="wps" color="lightgray" fontcolor="lightgray"];
   n17075->n17076[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n17076 [label = "wo"color="lightgray" fontcolor="lightgray"];
-  n17076->n17085[color="lightgray" fontcolor="lightgray" label="wff ( ph \/ ps )"];
+  n17076[label="wo" color="lightgray" fontcolor="lightgray"];
+  n17076->n17085[color="lightgray" fontcolor="lightgray" label="wff ( ph \\/ ps )"];
   n17074->n17075[arrowhead="none" style="invisible"];
   {rank=same;n17075;n17074;}
-  n17077 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n17077[label="wch" color="lightgray" fontcolor="lightgray"];
   n17077->n17085[color="lightgray" fontcolor="lightgray" label="wff ch"];
-  n17078 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n17078[label="wph" color="lightgray" fontcolor="lightgray"];
   n17078->n17083[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n17079 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n17079[label="wch" color="lightgray" fontcolor="lightgray"];
   n17079->n17083[color="lightgray" fontcolor="lightgray" label="wff ch"];
-  n17080 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n17080[label="wps" color="lightgray" fontcolor="lightgray"];
   n17080->n17083[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n17081 [label = "ecase3.1"style="filled" fillcolor = "orange"];
+  n17081[label="ecase3.1" style="filled" fillcolor = "orange"];
   n17081->n17083[label="|- ( ph -> ch )"];
-  n17082 [label = "ecase3.2"style="filled" fillcolor = "orange"];
+  n17082[label="ecase3.2" style="filled" fillcolor = "orange"];
   n17082->n17083[label="|- ( ps -> ch )"];
-  n17083 [label = "jaoi"style="filled" fillcolor = "cyan"];
-  n17083->n17085[label="|- ( ( ph \/ ps ) -> ch )"];
+  n17083[label="jaoi" style="filled" fillcolor = "cyan"];
+  n17083->n17085[label="|- ( ( ph \\/ ps ) -> ch )"];
   n17078->n17079->n17080->n17081->n17082[arrowhead="none" style="invisible"];
   {rank=same;n17082;n17081;n17080;n17079;n17078;}
-  n17084 [label = "ecase3.3"style="filled" fillcolor = "orange"];
-  n17084->n17085[label="|- ( -. ( ph \/ ps ) -> ch )"];
-  n17085 [label = "pm2.61i"style="filled" fillcolor = "cyan"];
-QED[style="invisible"]
+  n17084[label="ecase3.3" style="filled" fillcolor = "orange"];
+  n17084->n17085[label="|- ( -. ( ph \\/ ps ) -> ch )"];
+  n17085[label="pm2.61i" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
   n17085->QED[label="|- ch"];
   n17076->n17077->n17083->n17084[arrowhead="none" style="invisible"];
   {rank=same;n17084;n17083;n17077;n17076;}

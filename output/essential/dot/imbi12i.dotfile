@@ -1,0 +1,38 @@
+digraph proof_imbi12i {
+  rankdir = LR;
+  n6263[label="wi" style="invisible"];
+  n6263->n6280[color="lightgray" fontcolor="lightgray" label="wff ( ph -> ch )"];
+  n6266[label="wi" style="invisible"];
+  n6266->n6280[color="lightgray" fontcolor="lightgray" label="wff ( ph -> th )"];
+  n6269[label="wi" style="invisible"];
+  n6269->n6280[color="lightgray" fontcolor="lightgray" label="wff ( ps -> th )"];
+  n6270[label="wch" style="invisible"];
+  n6270->n6274[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n6271[label="wth" style="invisible"];
+  n6271->n6274[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n6272[label="wph" style="invisible"];
+  n6272->n6274[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n6273[label="imbi12i.2" style="filled" fillcolor = "orange"];
+  n6273->n6274[label="|- ( ch <-> th )"];
+  n6274[label="imbi2i" style="filled" fillcolor = "cyan"];
+  n6274->n6280[label="|- ( ( ph -> ch ) <-> ( ph -> th ) )"];
+  n6270->n6271->n6272->n6273[arrowhead="none" style="invisible"];
+  {rank=same;n6273;n6272;n6271;n6270;}
+  n6275[label="wph" style="invisible"];
+  n6275->n6279[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n6276[label="wps" style="invisible"];
+  n6276->n6279[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n6277[label="wth" style="invisible"];
+  n6277->n6279[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n6278[label="imbi12i.1" style="filled" fillcolor = "orange"];
+  n6278->n6279[label="|- ( ph <-> ps )"];
+  n6279[label="imbi1i" style="filled" fillcolor = "cyan"];
+  n6279->n6280[label="|- ( ( ph -> th ) <-> ( ps -> th ) )"];
+  n6275->n6276->n6277->n6278[arrowhead="none" style="invisible"];
+  {rank=same;n6278;n6277;n6276;n6275;}
+  n6280[label="bitri" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n6280->QED[label="|- ( ( ph -> ch ) <-> ( ps -> th ) )"];
+  n6263->n6266->n6269->n6274->n6279[arrowhead="none" style="invisible"];
+  {rank=same;n6279;n6274;n6269;n6266;n6263;}
+}

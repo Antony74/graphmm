@@ -1,0 +1,22 @@
+digraph proof_imorri {
+  rankdir = LR;
+  n7622[label="wi" style="invisible"];
+  n7622->n7631[color="lightgray" fontcolor="lightgray" label="wff ( ph -> ps )"];
+  n7626[label="wo" style="invisible"];
+  n7626->n7631[color="lightgray" fontcolor="lightgray" label="wff ( -. ph \\/ ps )"];
+  n7627[label="imorri.1" style="filled" fillcolor = "orange"];
+  n7627->n7631[label="|- ( -. ph \\/ ps )"];
+  n7628[label="wph" style="invisible"];
+  n7628->n7630[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n7629[label="wps" style="invisible"];
+  n7629->n7630[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n7630[label="imor" style="filled" fillcolor = "cyan"];
+  n7630->n7631[label="|- ( ( ph -> ps ) <-> ( -. ph \\/ ps ) )"];
+  n7628->n7629[arrowhead="none" style="invisible"];
+  {rank=same;n7629;n7628;}
+  n7631[label="mpbir" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n7631->QED[label="|- ( ph -> ps )"];
+  n7622->n7626->n7627->n7630[arrowhead="none" style="invisible"];
+  {rank=same;n7630;n7627;n7626;n7622;}
+}

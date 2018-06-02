@@ -1,0 +1,22 @@
+digraph proof_con4bii {
+  rankdir = LR;
+  n5823[label="wb" style="invisible"];
+  n5823->n5833[color="lightgray" fontcolor="lightgray" label="wff ( ph <-> ps )"];
+  n5828[label="wb" style="invisible"];
+  n5828->n5833[color="lightgray" fontcolor="lightgray" label="wff ( -. ph <-> -. ps )"];
+  n5829[label="con4bii.1" style="filled" fillcolor = "orange"];
+  n5829->n5833[label="|- ( -. ph <-> -. ps )"];
+  n5830[label="wph" style="invisible"];
+  n5830->n5832[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n5831[label="wps" style="invisible"];
+  n5831->n5832[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n5832[label="notbi" style="filled" fillcolor = "cyan"];
+  n5832->n5833[label="|- ( ( ph <-> ps ) <-> ( -. ph <-> -. ps ) )"];
+  n5830->n5831[arrowhead="none" style="invisible"];
+  {rank=same;n5831;n5830;}
+  n5833[label="mpbir" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n5833->QED[label="|- ( ph <-> ps )"];
+  n5823->n5828->n5829->n5832[arrowhead="none" style="invisible"];
+  {rank=same;n5832;n5829;n5828;n5823;}
+}

@@ -1,0 +1,24 @@
+digraph proof_simplbi {
+  rankdir = LR;
+  n8107[label="wph" style="invisible"];
+  n8107->n8116[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n8108[label="wps" style="invisible"];
+  n8108->n8116[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n8109[label="wch" style="invisible"];
+  n8109->n8116[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n8110[label="wph" style="invisible"];
+  n8110->n8115[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n8113[label="wa" style="invisible"];
+  n8113->n8115[color="lightgray" fontcolor="lightgray" label="wff ( ps /\\ ch )"];
+  n8114[label="simplbi.1" style="filled" fillcolor = "orange"];
+  n8114->n8115[label="|- ( ph <-> ( ps /\\ ch ) )"];
+  n8115[label="biimpi" style="filled" fillcolor = "cyan"];
+  n8115->n8116[label="|- ( ph -> ( ps /\\ ch ) )"];
+  n8110->n8113->n8114[arrowhead="none" style="invisible"];
+  {rank=same;n8114;n8113;n8110;}
+  n8116[label="simpld" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n8116->QED[label="|- ( ph -> ps )"];
+  n8107->n8108->n8109->n8115[arrowhead="none" style="invisible"];
+  {rank=same;n8115;n8109;n8108;n8107;}
+}

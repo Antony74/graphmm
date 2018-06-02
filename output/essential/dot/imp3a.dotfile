@@ -1,0 +1,38 @@
+digraph proof_imp3a {
+  rankdir = LR;
+  n7791[label="wa" style="invisible"];
+  n7791->n7806[color="lightgray" fontcolor="lightgray" label="wff ( ps /\\ ch )"];
+  n7792[label="wph" style="invisible"];
+  n7792->n7806[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n7793[label="wth" style="invisible"];
+  n7793->n7806[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n7794[label="wps" style="invisible"];
+  n7794->n7805[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n7795[label="wch" style="invisible"];
+  n7795->n7805[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n7798[label="wi" style="invisible"];
+  n7798->n7805[color="lightgray" fontcolor="lightgray" label="wff ( ph -> th )"];
+  n7799[label="wph" style="invisible"];
+  n7799->n7804[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n7800[label="wps" style="invisible"];
+  n7800->n7804[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n7801[label="wch" style="invisible"];
+  n7801->n7804[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n7802[label="wth" style="invisible"];
+  n7802->n7804[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n7803[label="imp3.1" style="filled" fillcolor = "orange"];
+  n7803->n7804[label="|- ( ph -> ( ps -> ( ch -> th ) ) )"];
+  n7804[label="com3l" style="filled" fillcolor = "cyan"];
+  n7804->n7805[label="|- ( ps -> ( ch -> ( ph -> th ) ) )"];
+  n7799->n7800->n7801->n7802->n7803[arrowhead="none" style="invisible"];
+  {rank=same;n7803;n7802;n7801;n7800;n7799;}
+  n7805[label="imp" style="filled" fillcolor = "cyan"];
+  n7805->n7806[label="|- ( ( ps /\\ ch ) -> ( ph -> th ) )"];
+  n7794->n7795->n7798->n7804[arrowhead="none" style="invisible"];
+  {rank=same;n7804;n7798;n7795;n7794;}
+  n7806[label="com12" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n7806->QED[label="|- ( ph -> ( ( ps /\\ ch ) -> th ) )"];
+  n7791->n7792->n7793->n7805[arrowhead="none" style="invisible"];
+  {rank=same;n7805;n7793;n7792;n7791;}
+}

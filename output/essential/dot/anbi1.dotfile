@@ -1,0 +1,20 @@
+digraph proof_anbi1 {
+  rankdir = LR;
+  n12012[label="wb" style="invisible"];
+  n12012->n12020[color="lightgray" fontcolor="lightgray" label="wff ( ph <-> ps )"];
+  n12013[label="wph" style="invisible"];
+  n12013->n12020[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n12014[label="wps" style="invisible"];
+  n12014->n12020[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n12015[label="wch" style="invisible"];
+  n12015->n12020[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n12018[label="wb" style="invisible"];
+  n12018->n12019[color="lightgray" fontcolor="lightgray" label="wff ( ph <-> ps )"];
+  n12019[label="id" style="filled" fillcolor = "cyan"];
+  n12019->n12020[label="|- ( ( ph <-> ps ) -> ( ph <-> ps ) )"];
+  n12020[label="anbi1d" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n12020->QED[label="|- ( ( ph <-> ps ) -> ( ( ph /\\ ch ) <-> ( ps /\\ ch ) ) )"];
+  n12012->n12013->n12014->n12015->n12019[arrowhead="none" style="invisible"];
+  {rank=same;n12019;n12015;n12014;n12013;n12012;}
+}

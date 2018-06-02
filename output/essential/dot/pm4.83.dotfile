@@ -1,0 +1,36 @@
+digraph proof_pm4_83 {
+  rankdir = LR;
+  n16477[label="wps" style="invisible"];
+  n16477->n16505[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n16483[label="wi" style="invisible"];
+  n16483->n16505[color="lightgray" fontcolor="lightgray" label="wff ( ( ph \\/ -. ph ) -> ps )"];
+  n16491[label="wa" style="invisible"];
+  n16491->n16505[color="lightgray" fontcolor="lightgray" label="wff ( ( ph -> ps ) /\\ ( -. ph -> ps ) )"];
+  n16495[label="wo" style="invisible"];
+  n16495->n16499[color="lightgray" fontcolor="lightgray" label="wff ( ph \\/ -. ph )"];
+  n16496[label="wps" style="invisible"];
+  n16496->n16499[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n16497[label="wph" style="invisible"];
+  n16497->n16498[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n16498[label="exmid" style="filled" fillcolor = "cyan"];
+  n16498->n16499[label="|- ( ph \\/ -. ph )"];
+  n16499[label="a1bi" style="filled" fillcolor = "cyan"];
+  n16499->n16505[label="|- ( ps <-> ( ( ph \\/ -. ph ) -> ps ) )"];
+  n16495->n16496->n16498[arrowhead="none" style="invisible"];
+  {rank=same;n16498;n16496;n16495;}
+  n16500[label="wph" style="invisible"];
+  n16500->n16504[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n16501[label="wps" style="invisible"];
+  n16501->n16504[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n16503[label="wn" style="invisible"];
+  n16503->n16504[color="lightgray" fontcolor="lightgray" label="wff -. ph"];
+  n16504[label="jaob" style="filled" fillcolor = "cyan"];
+  n16504->n16505[label="|- ( ( ( ph \\/ -. ph ) -> ps ) <-> ( ( ph -> ps ) /\\ ( -. ph -> ps ) ) )"];
+  n16500->n16501->n16503[arrowhead="none" style="invisible"];
+  {rank=same;n16503;n16501;n16500;}
+  n16505[label="bitr2i" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n16505->QED[label="|- ( ( ( ph -> ps ) /\\ ( -. ph -> ps ) ) <-> ps )"];
+  n16477->n16483->n16491->n16499->n16504[arrowhead="none" style="invisible"];
+  {rank=same;n16504;n16499;n16491;n16483;n16477;}
+}

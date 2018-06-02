@@ -1,26 +1,26 @@
 digraph proof_orabs {
   rankdir = LR;
-  n14702 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n14702[label="wph" color="lightgray" fontcolor="lightgray"];
   n14702->n14709[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n14703 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n14703[label="wph" color="lightgray" fontcolor="lightgray"];
   n14703->n14705[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n14704 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n14704[label="wps" color="lightgray" fontcolor="lightgray"];
   n14704->n14705[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n14705 [label = "wo"color="lightgray" fontcolor="lightgray"];
-  n14705->n14709[color="lightgray" fontcolor="lightgray" label="wff ( ph \/ ps )"];
+  n14705[label="wo" color="lightgray" fontcolor="lightgray"];
+  n14705->n14709[color="lightgray" fontcolor="lightgray" label="wff ( ph \\/ ps )"];
   n14703->n14704[arrowhead="none" style="invisible"];
   {rank=same;n14704;n14703;}
-  n14706 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n14706[label="wph" color="lightgray" fontcolor="lightgray"];
   n14706->n14708[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n14707 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n14707[label="wps" color="lightgray" fontcolor="lightgray"];
   n14707->n14708[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n14708 [label = "orc"style="filled" fillcolor = "cyan"];
-  n14708->n14709[label="|- ( ph -> ( ph \/ ps ) )"];
+  n14708[label="orc" style="filled" fillcolor = "cyan"];
+  n14708->n14709[label="|- ( ph -> ( ph \\/ ps ) )"];
   n14706->n14707[arrowhead="none" style="invisible"];
   {rank=same;n14707;n14706;}
-  n14709 [label = "pm4.71ri"style="filled" fillcolor = "cyan"];
-QED[style="invisible"]
-  n14709->QED[label="|- ( ph <-> ( ( ph \/ ps ) /\ ph ) )"];
+  n14709[label="pm4.71ri" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n14709->QED[label="|- ( ph <-> ( ( ph \\/ ps ) /\\ ph ) )"];
   n14702->n14705->n14708[arrowhead="none" style="invisible"];
   {rank=same;n14708;n14705;n14702;}
 }

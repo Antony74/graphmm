@@ -1,28 +1,28 @@
 digraph proof_sylanb {
   rankdir = LR;
-  n8231 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n8231[label="wph" color="lightgray" fontcolor="lightgray"];
   n8231->n8240[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n8232 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n8232[label="wps" color="lightgray" fontcolor="lightgray"];
   n8232->n8240[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n8233 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n8233[label="wch" color="lightgray" fontcolor="lightgray"];
   n8233->n8240[color="lightgray" fontcolor="lightgray" label="wff ch"];
-  n8234 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n8234[label="wth" color="lightgray" fontcolor="lightgray"];
   n8234->n8240[color="lightgray" fontcolor="lightgray" label="wff th"];
-  n8235 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n8235[label="wph" color="lightgray" fontcolor="lightgray"];
   n8235->n8238[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n8236 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n8236[label="wps" color="lightgray" fontcolor="lightgray"];
   n8236->n8238[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n8237 [label = "sylanb.1"style="filled" fillcolor = "orange"];
+  n8237[label="sylanb.1" style="filled" fillcolor = "orange"];
   n8237->n8238[label="|- ( ph <-> ps )"];
-  n8238 [label = "biimpi"style="filled" fillcolor = "cyan"];
+  n8238[label="biimpi" style="filled" fillcolor = "cyan"];
   n8238->n8240[label="|- ( ph -> ps )"];
   n8235->n8236->n8237[arrowhead="none" style="invisible"];
   {rank=same;n8237;n8236;n8235;}
-  n8239 [label = "sylanb.2"style="filled" fillcolor = "orange"];
-  n8239->n8240[label="|- ( ( ps /\ ch ) -> th )"];
-  n8240 [label = "sylan"style="filled" fillcolor = "cyan"];
-QED[style="invisible"]
-  n8240->QED[label="|- ( ( ph /\ ch ) -> th )"];
+  n8239[label="sylanb.2" style="filled" fillcolor = "orange"];
+  n8239->n8240[label="|- ( ( ps /\\ ch ) -> th )"];
+  n8240[label="sylan" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n8240->QED[label="|- ( ( ph /\\ ch ) -> th )"];
   n8231->n8232->n8233->n8234->n8238->n8239[arrowhead="none" style="invisible"];
   {rank=same;n8239;n8238;n8234;n8233;n8232;n8231;}
 }

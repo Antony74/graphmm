@@ -1,0 +1,26 @@
+digraph proof_ancld {
+  rankdir = LR;
+  n9439[label="wph" style="invisible"];
+  n9439->n9447[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n9440[label="wps" style="invisible"];
+  n9440->n9447[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n9441[label="wps" style="invisible"];
+  n9441->n9447[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n9442[label="wch" style="invisible"];
+  n9442->n9447[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n9443[label="wph" style="invisible"];
+  n9443->n9445[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n9444[label="wps" style="invisible"];
+  n9444->n9445[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n9445[label="idd" style="filled" fillcolor = "cyan"];
+  n9445->n9447[label="|- ( ph -> ( ps -> ps ) )"];
+  n9443->n9444[arrowhead="none" style="invisible"];
+  {rank=same;n9444;n9443;}
+  n9446[label="ancld.1" style="filled" fillcolor = "orange"];
+  n9446->n9447[label="|- ( ph -> ( ps -> ch ) )"];
+  n9447[label="jcad" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n9447->QED[label="|- ( ph -> ( ps -> ( ps /\\ ch ) ) )"];
+  n9439->n9440->n9441->n9442->n9445->n9446[arrowhead="none" style="invisible"];
+  {rank=same;n9446;n9445;n9442;n9441;n9440;n9439;}
+}

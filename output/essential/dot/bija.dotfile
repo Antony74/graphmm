@@ -1,0 +1,68 @@
+digraph proof_bija {
+  rankdir = LR;
+  n6705[label="wb" style="invisible"];
+  n6705->n6738[color="lightgray" fontcolor="lightgray" label="wff ( ph <-> ps )"];
+  n6706[label="wps" style="invisible"];
+  n6706->n6738[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n6707[label="wch" style="invisible"];
+  n6707->n6738[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n6708[label="wps" style="invisible"];
+  n6708->n6718[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n6711[label="wb" style="invisible"];
+  n6711->n6718[color="lightgray" fontcolor="lightgray" label="wff ( ph <-> ps )"];
+  n6712[label="wph" style="invisible"];
+  n6712->n6718[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n6713[label="wch" style="invisible"];
+  n6713->n6718[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n6714[label="wph" style="invisible"];
+  n6714->n6716[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n6715[label="wps" style="invisible"];
+  n6715->n6716[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n6716[label="bi2" style="filled" fillcolor = "cyan"];
+  n6716->n6718[label="|- ( ( ph <-> ps ) -> ( ps -> ph ) )"];
+  n6714->n6715[arrowhead="none" style="invisible"];
+  {rank=same;n6715;n6714;}
+  n6717[label="bija.1" style="filled" fillcolor = "orange"];
+  n6717->n6718[label="|- ( ph -> ( ps -> ch ) )"];
+  n6718[label="syli" style="filled" fillcolor = "cyan"];
+  n6718->n6738[label="|- ( ( ph <-> ps ) -> ( ps -> ch ) )"];
+  n6708->n6711->n6712->n6713->n6716->n6717[arrowhead="none" style="invisible"];
+  {rank=same;n6717;n6716;n6713;n6712;n6711;n6708;}
+  n6720[label="wn" style="invisible"];
+  n6720->n6737[color="lightgray" fontcolor="lightgray" label="wff -. ps"];
+  n6723[label="wb" style="invisible"];
+  n6723->n6737[color="lightgray" fontcolor="lightgray" label="wff ( ph <-> ps )"];
+  n6725[label="wn" style="invisible"];
+  n6725->n6737[color="lightgray" fontcolor="lightgray" label="wff -. ph"];
+  n6726[label="wch" style="invisible"];
+  n6726->n6737[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n6729[label="wb" style="invisible"];
+  n6729->n6735[color="lightgray" fontcolor="lightgray" label="wff ( ph <-> ps )"];
+  n6730[label="wph" style="invisible"];
+  n6730->n6735[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n6731[label="wps" style="invisible"];
+  n6731->n6735[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n6732[label="wph" style="invisible"];
+  n6732->n6734[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n6733[label="wps" style="invisible"];
+  n6733->n6734[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n6734[label="bi1" style="filled" fillcolor = "cyan"];
+  n6734->n6735[label="|- ( ( ph <-> ps ) -> ( ph -> ps ) )"];
+  n6732->n6733[arrowhead="none" style="invisible"];
+  {rank=same;n6733;n6732;}
+  n6735[label="con3d" style="filled" fillcolor = "cyan"];
+  n6735->n6737[label="|- ( ( ph <-> ps ) -> ( -. ps -> -. ph ) )"];
+  n6729->n6730->n6731->n6734[arrowhead="none" style="invisible"];
+  {rank=same;n6734;n6731;n6730;n6729;}
+  n6736[label="bija.2" style="filled" fillcolor = "orange"];
+  n6736->n6737[label="|- ( -. ph -> ( -. ps -> ch ) )"];
+  n6737[label="syli" style="filled" fillcolor = "cyan"];
+  n6737->n6738[label="|- ( ( ph <-> ps ) -> ( -. ps -> ch ) )"];
+  n6720->n6723->n6725->n6726->n6735->n6736[arrowhead="none" style="invisible"];
+  {rank=same;n6736;n6735;n6726;n6725;n6723;n6720;}
+  n6738[label="pm2.61d" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n6738->QED[label="|- ( ( ph <-> ps ) -> ch )"];
+  n6705->n6706->n6707->n6718->n6737[arrowhead="none" style="invisible"];
+  {rank=same;n6737;n6718;n6707;n6706;n6705;}
+}

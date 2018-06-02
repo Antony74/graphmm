@@ -1,32 +1,32 @@
 digraph proof_pm2_25 {
   rankdir = LR;
-  n7467 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n7467[label="wph" color="lightgray" fontcolor="lightgray"];
   n7467->n7476[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n7468 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n7468[label="wph" color="lightgray" fontcolor="lightgray"];
   n7468->n7470[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n7469 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n7469[label="wps" color="lightgray" fontcolor="lightgray"];
   n7469->n7470[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n7470 [label = "wo"color="lightgray" fontcolor="lightgray"];
-  n7470->n7472[color="lightgray" fontcolor="lightgray" label="wff ( ph \/ ps )"];
+  n7470[label="wo" color="lightgray" fontcolor="lightgray"];
+  n7470->n7472[color="lightgray" fontcolor="lightgray" label="wff ( ph \\/ ps )"];
   n7468->n7469[arrowhead="none" style="invisible"];
   {rank=same;n7469;n7468;}
-  n7471 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n7471[label="wps" color="lightgray" fontcolor="lightgray"];
   n7471->n7472[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n7472 [label = "wi"color="lightgray" fontcolor="lightgray"];
-  n7472->n7476[color="lightgray" fontcolor="lightgray" label="wff ( ( ph \/ ps ) -> ps )"];
+  n7472[label="wi" color="lightgray" fontcolor="lightgray"];
+  n7472->n7476[color="lightgray" fontcolor="lightgray" label="wff ( ( ph \\/ ps ) -> ps )"];
   n7470->n7471[arrowhead="none" style="invisible"];
   {rank=same;n7471;n7470;}
-  n7473 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n7473[label="wph" color="lightgray" fontcolor="lightgray"];
   n7473->n7475[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n7474 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n7474[label="wps" color="lightgray" fontcolor="lightgray"];
   n7474->n7475[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n7475 [label = "orel1"style="filled" fillcolor = "cyan"];
-  n7475->n7476[label="|- ( -. ph -> ( ( ph \/ ps ) -> ps ) )"];
+  n7475[label="orel1" style="filled" fillcolor = "cyan"];
+  n7475->n7476[label="|- ( -. ph -> ( ( ph \\/ ps ) -> ps ) )"];
   n7473->n7474[arrowhead="none" style="invisible"];
   {rank=same;n7474;n7473;}
-  n7476 [label = "orri"style="filled" fillcolor = "cyan"];
-QED[style="invisible"]
-  n7476->QED[label="|- ( ph \/ ( ( ph \/ ps ) -> ps ) )"];
+  n7476[label="orri" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n7476->QED[label="|- ( ph \\/ ( ( ph \\/ ps ) -> ps ) )"];
   n7467->n7472->n7475[arrowhead="none" style="invisible"];
   {rank=same;n7475;n7472;n7467;}
 }

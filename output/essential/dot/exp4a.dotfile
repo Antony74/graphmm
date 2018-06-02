@@ -1,0 +1,28 @@
+digraph proof_exp4a {
+  rankdir = LR;
+  n10436[label="wph" style="invisible"];
+  n10436->n10453[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n10437[label="wps" style="invisible"];
+  n10437->n10453[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n10442[label="wi" style="invisible"];
+  n10442->n10453[color="lightgray" fontcolor="lightgray" label="wff ( ( ch /\\ th ) -> ta )"];
+  n10447[label="wi" style="invisible"];
+  n10447->n10453[color="lightgray" fontcolor="lightgray" label="wff ( ch -> ( th -> ta ) )"];
+  n10448[label="exp4a.1" style="filled" fillcolor = "orange"];
+  n10448->n10453[label="|- ( ph -> ( ps -> ( ( ch /\\ th ) -> ta ) ) )"];
+  n10449[label="wch" style="invisible"];
+  n10449->n10452[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n10450[label="wth" style="invisible"];
+  n10450->n10452[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n10451[label="wta" style="invisible"];
+  n10451->n10452[color="lightgray" fontcolor="lightgray" label="wff ta"];
+  n10452[label="impexp" style="filled" fillcolor = "cyan"];
+  n10452->n10453[label="|- ( ( ( ch /\\ th ) -> ta ) <-> ( ch -> ( th -> ta ) ) )"];
+  n10449->n10450->n10451[arrowhead="none" style="invisible"];
+  {rank=same;n10451;n10450;n10449;}
+  n10453[label="syl6ib" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n10453->QED[label="|- ( ph -> ( ps -> ( ch -> ( th -> ta ) ) ) )"];
+  n10436->n10437->n10442->n10447->n10448->n10452[arrowhead="none" style="invisible"];
+  {rank=same;n10452;n10448;n10447;n10442;n10437;n10436;}
+}

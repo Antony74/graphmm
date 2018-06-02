@@ -1,0 +1,26 @@
+digraph proof_mtoi {
+  rankdir = LR;
+  n2038[label="wph" style="invisible"];
+  n2038->n2047[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n2039[label="wps" style="invisible"];
+  n2039->n2047[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n2040[label="wch" style="invisible"];
+  n2040->n2047[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n2042[label="wn" style="invisible"];
+  n2042->n2045[color="lightgray" fontcolor="lightgray" label="wff -. ch"];
+  n2043[label="wph" style="invisible"];
+  n2043->n2045[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n2044[label="mtoi.1" style="filled" fillcolor = "orange"];
+  n2044->n2045[label="|- -. ch"];
+  n2045[label="a1i" style="filled" fillcolor = "cyan"];
+  n2045->n2047[label="|- ( ph -> -. ch )"];
+  n2042->n2043->n2044[arrowhead="none" style="invisible"];
+  {rank=same;n2044;n2043;n2042;}
+  n2046[label="mtoi.2" style="filled" fillcolor = "orange"];
+  n2046->n2047[label="|- ( ph -> ( ps -> ch ) )"];
+  n2047[label="mtod" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n2047->QED[label="|- ( ph -> -. ps )"];
+  n2038->n2039->n2040->n2045->n2046[arrowhead="none" style="invisible"];
+  {rank=same;n2046;n2045;n2040;n2039;n2038;}
+}

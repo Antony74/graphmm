@@ -1,0 +1,22 @@
+digraph proof_pm2_76 {
+  rankdir = LR;
+  n14548[label="wo" style="invisible"];
+  n14548->n14560[color="lightgray" fontcolor="lightgray" label="wff ( ph \\/ ( ps -> ch ) )"];
+  n14555[label="wi" style="invisible"];
+  n14555->n14560[color="lightgray" fontcolor="lightgray" label="wff ( ( ph \\/ ps ) -> ( ph \\/ ch ) )"];
+  n14556[label="wph" style="invisible"];
+  n14556->n14559[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n14557[label="wps" style="invisible"];
+  n14557->n14559[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n14558[label="wch" style="invisible"];
+  n14558->n14559[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n14559[label="orimdi" style="filled" fillcolor = "cyan"];
+  n14559->n14560[label="|- ( ( ph \\/ ( ps -> ch ) ) <-> ( ( ph \\/ ps ) -> ( ph \\/ ch ) ) )"];
+  n14556->n14557->n14558[arrowhead="none" style="invisible"];
+  {rank=same;n14558;n14557;n14556;}
+  n14560[label="biimpi" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n14560->QED[label="|- ( ( ph \\/ ( ps -> ch ) ) -> ( ( ph \\/ ps ) -> ( ph \\/ ch ) ) )"];
+  n14548->n14555->n14559[arrowhead="none" style="invisible"];
+  {rank=same;n14559;n14555;n14548;}
+}

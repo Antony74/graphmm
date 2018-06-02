@@ -1,0 +1,28 @@
+digraph proof_imp32 {
+  rankdir = LR;
+  n7820[label="wph" style="invisible"];
+  n7820->n7831[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n7823[label="wa" style="invisible"];
+  n7823->n7831[color="lightgray" fontcolor="lightgray" label="wff ( ps /\\ ch )"];
+  n7824[label="wth" style="invisible"];
+  n7824->n7831[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n7825[label="wph" style="invisible"];
+  n7825->n7830[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n7826[label="wps" style="invisible"];
+  n7826->n7830[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n7827[label="wch" style="invisible"];
+  n7827->n7830[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n7828[label="wth" style="invisible"];
+  n7828->n7830[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n7829[label="imp3.1" style="filled" fillcolor = "orange"];
+  n7829->n7830[label="|- ( ph -> ( ps -> ( ch -> th ) ) )"];
+  n7830[label="imp3a" style="filled" fillcolor = "cyan"];
+  n7830->n7831[label="|- ( ph -> ( ( ps /\\ ch ) -> th ) )"];
+  n7825->n7826->n7827->n7828->n7829[arrowhead="none" style="invisible"];
+  {rank=same;n7829;n7828;n7827;n7826;n7825;}
+  n7831[label="imp" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n7831->QED[label="|- ( ( ph /\\ ( ps /\\ ch ) ) -> th )"];
+  n7820->n7823->n7824->n7830[arrowhead="none" style="invisible"];
+  {rank=same;n7830;n7824;n7823;n7820;}
+}

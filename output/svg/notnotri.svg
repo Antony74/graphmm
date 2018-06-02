@@ -38,7 +38,7 @@
 </g>
 <!-- n1299 -->
 <g id="node4" class="node"><title>n1299</title>
-<ellipse fill="lime" stroke="black" cx="528.089" cy="-125" rx="33.5952" ry="18"/>
+<ellipse fill="lawngreen" stroke="black" cx="528.089" cy="-125" rx="33.5952" ry="18"/>
 <text text-anchor="middle" x="528.089" y="-121.3" font-family="Times New Roman,serif" font-size="14.00">ax&#45;mp</text>
 </g>
 <!-- n1294&#45;&gt;n1299 -->

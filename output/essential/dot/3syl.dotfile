@@ -1,0 +1,30 @@
+digraph proof_3syl {
+  rankdir = LR;
+  n111[label="wph" style="invisible"];
+  n111->n121[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n112[label="wch" style="invisible"];
+  n112->n121[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n113[label="wth" style="invisible"];
+  n113->n121[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n114[label="wph" style="invisible"];
+  n114->n119[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n115[label="wps" style="invisible"];
+  n115->n119[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n116[label="wch" style="invisible"];
+  n116->n119[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n117[label="3syl.1" style="filled" fillcolor = "orange"];
+  n117->n119[label="|- ( ph -> ps )"];
+  n118[label="3syl.2" style="filled" fillcolor = "orange"];
+  n118->n119[label="|- ( ps -> ch )"];
+  n119[label="syl" style="filled" fillcolor = "cyan"];
+  n119->n121[label="|- ( ph -> ch )"];
+  n114->n115->n116->n117->n118[arrowhead="none" style="invisible"];
+  {rank=same;n118;n117;n116;n115;n114;}
+  n120[label="3syl.3" style="filled" fillcolor = "orange"];
+  n120->n121[label="|- ( ch -> th )"];
+  n121[label="syl" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n121->QED[label="|- ( ph -> th )"];
+  n111->n112->n113->n119->n120[arrowhead="none" style="invisible"];
+  {rank=same;n120;n119;n113;n112;n111;}
+}

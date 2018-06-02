@@ -1,0 +1,24 @@
+digraph proof_pm2_18da {
+  rankdir = LR;
+  n7927[label="wph" style="invisible"];
+  n7927->n7935[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n7928[label="wps" style="invisible"];
+  n7928->n7935[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n7929[label="wph" style="invisible"];
+  n7929->n7934[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n7931[label="wn" style="invisible"];
+  n7931->n7934[color="lightgray" fontcolor="lightgray" label="wff -. ps"];
+  n7932[label="wps" style="invisible"];
+  n7932->n7934[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n7933[label="pm2.18da.1" style="filled" fillcolor = "orange"];
+  n7933->n7934[label="|- ( ( ph /\\ -. ps ) -> ps )"];
+  n7934[label="ex" style="filled" fillcolor = "cyan"];
+  n7934->n7935[label="|- ( ph -> ( -. ps -> ps ) )"];
+  n7929->n7931->n7932->n7933[arrowhead="none" style="invisible"];
+  {rank=same;n7933;n7932;n7931;n7929;}
+  n7935[label="pm2.18d" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n7935->QED[label="|- ( ph -> ps )"];
+  n7927->n7928->n7934[arrowhead="none" style="invisible"];
+  {rank=same;n7934;n7928;n7927;}
+}

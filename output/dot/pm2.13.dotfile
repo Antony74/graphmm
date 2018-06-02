@@ -1,24 +1,24 @@
 digraph proof_pm2_13 {
   rankdir = LR;
-  n7652 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n7652[label="wph" color="lightgray" fontcolor="lightgray"];
   n7652->n7660[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n7653 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n7653[label="wph" color="lightgray" fontcolor="lightgray"];
   n7653->n7654[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n7654 [label = "wn"color="lightgray" fontcolor="lightgray"];
+  n7654[label="wn" color="lightgray" fontcolor="lightgray"];
   n7654->n7655[color="lightgray" fontcolor="lightgray" label="wff -. ph"];
-  n7655 [label = "wn"color="lightgray" fontcolor="lightgray"];
+  n7655[label="wn" color="lightgray" fontcolor="lightgray"];
   n7655->n7656[color="lightgray" fontcolor="lightgray" label="wff -. -. ph"];
-  n7656 [label = "wn"color="lightgray" fontcolor="lightgray"];
+  n7656[label="wn" color="lightgray" fontcolor="lightgray"];
   n7656->n7660[color="lightgray" fontcolor="lightgray" label="wff -. -. -. ph"];
-  n7657 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n7657[label="wph" color="lightgray" fontcolor="lightgray"];
   n7657->n7658[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n7658 [label = "wn"color="lightgray" fontcolor="lightgray"];
+  n7658[label="wn" color="lightgray" fontcolor="lightgray"];
   n7658->n7659[color="lightgray" fontcolor="lightgray" label="wff -. ph"];
-  n7659 [label = "notnot1"style="filled" fillcolor = "cyan"];
+  n7659[label="notnot1" style="filled" fillcolor = "cyan"];
   n7659->n7660[label="|- ( -. ph -> -. -. -. ph )"];
-  n7660 [label = "orri"style="filled" fillcolor = "cyan"];
-QED[style="invisible"]
-  n7660->QED[label="|- ( ph \/ -. -. -. ph )"];
+  n7660[label="orri" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n7660->QED[label="|- ( ph \\/ -. -. -. ph )"];
   n7652->n7656->n7659[arrowhead="none" style="invisible"];
   {rank=same;n7659;n7656;n7652;}
 }

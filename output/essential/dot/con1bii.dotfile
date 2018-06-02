@@ -1,0 +1,28 @@
+digraph proof_con1bii {
+  rankdir = LR;
+  n6357[label="wph" style="invisible"];
+  n6357->n6368[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n6359[label="wn" style="invisible"];
+  n6359->n6368[color="lightgray" fontcolor="lightgray" label="wff -. ps"];
+  n6360[label="wph" style="invisible"];
+  n6360->n6367[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n6362[label="wn" style="invisible"];
+  n6362->n6367[color="lightgray" fontcolor="lightgray" label="wff -. ph"];
+  n6363[label="wps" style="invisible"];
+  n6363->n6367[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n6364[label="wph" style="invisible"];
+  n6364->n6365[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n6365[label="notnot" style="filled" fillcolor = "cyan"];
+  n6365->n6367[label="|- ( ph <-> -. -. ph )"];
+  n6366[label="con1bii.1" style="filled" fillcolor = "orange"];
+  n6366->n6367[label="|- ( -. ph <-> ps )"];
+  n6367[label="xchbinx" style="filled" fillcolor = "cyan"];
+  n6367->n6368[label="|- ( ph <-> -. ps )"];
+  n6360->n6362->n6363->n6365->n6366[arrowhead="none" style="invisible"];
+  {rank=same;n6366;n6365;n6363;n6362;n6360;}
+  n6368[label="bicomi" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n6368->QED[label="|- ( -. ps <-> ph )"];
+  n6357->n6359->n6367[arrowhead="none" style="invisible"];
+  {rank=same;n6367;n6359;n6357;}
+}

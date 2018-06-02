@@ -1,0 +1,22 @@
+digraph proof_pm2_47 {
+  rankdir = LR;
+  n7423[label="wn" style="invisible"];
+  n7423->n7430[color="lightgray" fontcolor="lightgray" label="wff -. ( ph \\/ ps )"];
+  n7425[label="wn" style="invisible"];
+  n7425->n7430[color="lightgray" fontcolor="lightgray" label="wff -. ph"];
+  n7426[label="wps" style="invisible"];
+  n7426->n7430[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n7427[label="wph" style="invisible"];
+  n7427->n7429[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n7428[label="wps" style="invisible"];
+  n7428->n7429[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n7429[label="pm2.45" style="filled" fillcolor = "cyan"];
+  n7429->n7430[label="|- ( -. ( ph \\/ ps ) -> -. ph )"];
+  n7427->n7428[arrowhead="none" style="invisible"];
+  {rank=same;n7428;n7427;}
+  n7430[label="orcd" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n7430->QED[label="|- ( -. ( ph \\/ ps ) -> ( -. ph \\/ ps ) )"];
+  n7423->n7425->n7426->n7429[arrowhead="none" style="invisible"];
+  {rank=same;n7429;n7426;n7425;n7423;}
+}

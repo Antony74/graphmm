@@ -1,0 +1,22 @@
+digraph proof_ancr {
+  rankdir = LR;
+  n9407[label="wph" style="invisible"];
+  n9407->n9415[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n9408[label="wps" style="invisible"];
+  n9408->n9415[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n9411[label="wa" style="invisible"];
+  n9411->n9415[color="lightgray" fontcolor="lightgray" label="wff ( ps /\\ ph )"];
+  n9412[label="wph" style="invisible"];
+  n9412->n9414[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n9413[label="wps" style="invisible"];
+  n9413->n9414[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n9414[label="pm3.21" style="filled" fillcolor = "cyan"];
+  n9414->n9415[label="|- ( ph -> ( ps -> ( ps /\\ ph ) ) )"];
+  n9412->n9413[arrowhead="none" style="invisible"];
+  {rank=same;n9413;n9412;}
+  n9415[label="a2i" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n9415->QED[label="|- ( ( ph -> ps ) -> ( ph -> ( ps /\\ ph ) ) )"];
+  n9407->n9408->n9411->n9414[arrowhead="none" style="invisible"];
+  {rank=same;n9414;n9411;n9408;n9407;}
+}

@@ -1,21 +1,21 @@
 digraph proof_pm2_43a {
   rankdir = LR;
-  n453 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n453[label="wps" color="lightgray" fontcolor="lightgray"];
   n453->n460[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n454 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n454[label="wph" color="lightgray" fontcolor="lightgray"];
   n454->n460[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n455 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n455[label="wps" color="lightgray" fontcolor="lightgray"];
   n455->n460[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n456 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n456[label="wch" color="lightgray" fontcolor="lightgray"];
   n456->n460[color="lightgray" fontcolor="lightgray" label="wff ch"];
-  n457 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n457[label="wps" color="lightgray" fontcolor="lightgray"];
   n457->n458[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n458 [label = "id"style="filled" fillcolor = "cyan"];
+  n458[label="id" style="filled" fillcolor = "cyan"];
   n458->n460[label="|- ( ps -> ps )"];
-  n459 [label = "pm2.43a.1"style="filled" fillcolor = "orange"];
+  n459[label="pm2.43a.1" style="filled" fillcolor = "orange"];
   n459->n460[label="|- ( ps -> ( ph -> ( ps -> ch ) ) )"];
-  n460 [label = "mpid"style="filled" fillcolor = "cyan"];
-QED[style="invisible"]
+  n460[label="mpid" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
   n460->QED[label="|- ( ps -> ( ph -> ch ) )"];
   n453->n454->n455->n456->n458->n459[arrowhead="none" style="invisible"];
   {rank=same;n459;n458;n456;n455;n454;n453;}

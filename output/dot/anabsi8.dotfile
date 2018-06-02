@@ -1,26 +1,26 @@
 digraph proof_anabsi8 {
   rankdir = LR;
-  n13956 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n13956[label="wps" color="lightgray" fontcolor="lightgray"];
   n13956->n13964[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n13957 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n13957[label="wph" color="lightgray" fontcolor="lightgray"];
   n13957->n13964[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n13958 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n13958[label="wch" color="lightgray" fontcolor="lightgray"];
   n13958->n13964[color="lightgray" fontcolor="lightgray" label="wff ch"];
-  n13959 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n13959[label="wps" color="lightgray" fontcolor="lightgray"];
   n13959->n13963[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n13960 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n13960[label="wph" color="lightgray" fontcolor="lightgray"];
   n13960->n13963[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n13961 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n13961[label="wch" color="lightgray" fontcolor="lightgray"];
   n13961->n13963[color="lightgray" fontcolor="lightgray" label="wff ch"];
-  n13962 [label = "anabsi8.1"style="filled" fillcolor = "orange"];
-  n13962->n13963[label="|- ( ps -> ( ( ps /\ ph ) -> ch ) )"];
-  n13963 [label = "anabsi5"style="filled" fillcolor = "cyan"];
-  n13963->n13964[label="|- ( ( ps /\ ph ) -> ch )"];
+  n13962[label="anabsi8.1" style="filled" fillcolor = "orange"];
+  n13962->n13963[label="|- ( ps -> ( ( ps /\\ ph ) -> ch ) )"];
+  n13963[label="anabsi5" style="filled" fillcolor = "cyan"];
+  n13963->n13964[label="|- ( ( ps /\\ ph ) -> ch )"];
   n13959->n13960->n13961->n13962[arrowhead="none" style="invisible"];
   {rank=same;n13962;n13961;n13960;n13959;}
-  n13964 [label = "ancoms"style="filled" fillcolor = "cyan"];
-QED[style="invisible"]
-  n13964->QED[label="|- ( ( ph /\ ps ) -> ch )"];
+  n13964[label="ancoms" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n13964->QED[label="|- ( ( ph /\\ ps ) -> ch )"];
   n13956->n13957->n13958->n13963[arrowhead="none" style="invisible"];
   {rank=same;n13963;n13958;n13957;n13956;}
 }

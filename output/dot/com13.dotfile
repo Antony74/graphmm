@@ -1,29 +1,29 @@
 digraph proof_com13 {
   rankdir = LR;
-  n819 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n819[label="wch" color="lightgray" fontcolor="lightgray"];
   n819->n829[color="lightgray" fontcolor="lightgray" label="wff ch"];
-  n820 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n820[label="wph" color="lightgray" fontcolor="lightgray"];
   n820->n829[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n821 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n821[label="wps" color="lightgray" fontcolor="lightgray"];
   n821->n829[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n822 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n822[label="wth" color="lightgray" fontcolor="lightgray"];
   n822->n829[color="lightgray" fontcolor="lightgray" label="wff th"];
-  n823 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n823[label="wph" color="lightgray" fontcolor="lightgray"];
   n823->n828[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n824 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n824[label="wps" color="lightgray" fontcolor="lightgray"];
   n824->n828[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n825 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n825[label="wch" color="lightgray" fontcolor="lightgray"];
   n825->n828[color="lightgray" fontcolor="lightgray" label="wff ch"];
-  n826 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n826[label="wth" color="lightgray" fontcolor="lightgray"];
   n826->n828[color="lightgray" fontcolor="lightgray" label="wff th"];
-  n827 [label = "com3.1"style="filled" fillcolor = "orange"];
+  n827[label="com3.1" style="filled" fillcolor = "orange"];
   n827->n828[label="|- ( ph -> ( ps -> ( ch -> th ) ) )"];
-  n828 [label = "com3r"style="filled" fillcolor = "cyan"];
+  n828[label="com3r" style="filled" fillcolor = "cyan"];
   n828->n829[label="|- ( ch -> ( ph -> ( ps -> th ) ) )"];
   n823->n824->n825->n826->n827[arrowhead="none" style="invisible"];
   {rank=same;n827;n826;n825;n824;n823;}
-  n829 [label = "com23"style="filled" fillcolor = "cyan"];
-QED[style="invisible"]
+  n829[label="com23" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
   n829->QED[label="|- ( ch -> ( ps -> ( ph -> th ) ) )"];
   n819->n820->n821->n822->n828[arrowhead="none" style="invisible"];
   {rank=same;n828;n822;n821;n820;n819;}

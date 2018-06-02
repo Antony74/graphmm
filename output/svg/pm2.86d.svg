@@ -189,7 +189,7 @@
 </g>
 <!-- n1125 -->
 <g id="node16" class="node"><title>n1125</title>
-<ellipse fill="lime" stroke="black" cx="177.046" cy="-90" rx="27" ry="18"/>
+<ellipse fill="lawngreen" stroke="black" cx="177.046" cy="-90" rx="27" ry="18"/>
 <text text-anchor="middle" x="177.046" y="-86.3" font-family="Times New Roman,serif" font-size="14.00">ax&#45;1</text>
 </g>
 <!-- n1122&#45;&gt;n1125 -->

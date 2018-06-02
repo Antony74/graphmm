@@ -1,0 +1,42 @@
+digraph proof_im2anan9 {
+  rankdir = LR;
+  n14281[label="wa" style="invisible"];
+  n14281->n14300[color="lightgray" fontcolor="lightgray" label="wff ( ph /\\ th )"];
+  n14282[label="wps" style="invisible"];
+  n14282->n14300[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n14283[label="wch" style="invisible"];
+  n14283->n14300[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n14284[label="wta" style="invisible"];
+  n14284->n14300[color="lightgray" fontcolor="lightgray" label="wff ta"];
+  n14285[label="wet" style="invisible"];
+  n14285->n14300[color="lightgray" fontcolor="lightgray" label="wff et"];
+  n14286[label="wph" style="invisible"];
+  n14286->n14292[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n14289[label="wi" style="invisible"];
+  n14289->n14292[color="lightgray" fontcolor="lightgray" label="wff ( ps -> ch )"];
+  n14290[label="wth" style="invisible"];
+  n14290->n14292[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n14291[label="im2an9.1" style="filled" fillcolor = "orange"];
+  n14291->n14292[label="|- ( ph -> ( ps -> ch ) )"];
+  n14292[label="adantr" style="filled" fillcolor = "cyan"];
+  n14292->n14300[label="|- ( ( ph /\\ th ) -> ( ps -> ch ) )"];
+  n14286->n14289->n14290->n14291[arrowhead="none" style="invisible"];
+  {rank=same;n14291;n14290;n14289;n14286;}
+  n14293[label="wth" style="invisible"];
+  n14293->n14299[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n14296[label="wi" style="invisible"];
+  n14296->n14299[color="lightgray" fontcolor="lightgray" label="wff ( ta -> et )"];
+  n14297[label="wph" style="invisible"];
+  n14297->n14299[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n14298[label="im2an9.2" style="filled" fillcolor = "orange"];
+  n14298->n14299[label="|- ( th -> ( ta -> et ) )"];
+  n14299[label="adantl" style="filled" fillcolor = "cyan"];
+  n14299->n14300[label="|- ( ( ph /\\ th ) -> ( ta -> et ) )"];
+  n14293->n14296->n14297->n14298[arrowhead="none" style="invisible"];
+  {rank=same;n14298;n14297;n14296;n14293;}
+  n14300[label="anim12d" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n14300->QED[label="|- ( ( ph /\\ th ) -> ( ( ps /\\ ta ) -> ( ch /\\ et ) ) )"];
+  n14281->n14282->n14283->n14284->n14285->n14292->n14299[arrowhead="none" style="invisible"];
+  {rank=same;n14299;n14292;n14285;n14284;n14283;n14282;n14281;}
+}

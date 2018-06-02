@@ -1,0 +1,30 @@
+digraph proof_mpdd {
+  rankdir = LR;
+  n354[label="wph" style="invisible"];
+  n354->n368[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n357[label="wi" style="invisible"];
+  n357->n368[color="lightgray" fontcolor="lightgray" label="wff ( ps -> ch )"];
+  n360[label="wi" style="invisible"];
+  n360->n368[color="lightgray" fontcolor="lightgray" label="wff ( ps -> th )"];
+  n361[label="mpdd.1" style="filled" fillcolor = "orange"];
+  n361->n368[label="|- ( ph -> ( ps -> ch ) )"];
+  n362[label="wph" style="invisible"];
+  n362->n367[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n363[label="wps" style="invisible"];
+  n363->n367[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n364[label="wch" style="invisible"];
+  n364->n367[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n365[label="wth" style="invisible"];
+  n365->n367[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n366[label="mpdd.2" style="filled" fillcolor = "orange"];
+  n366->n367[label="|- ( ph -> ( ps -> ( ch -> th ) ) )"];
+  n367[label="a2d" style="filled" fillcolor = "cyan"];
+  n367->n368[label="|- ( ph -> ( ( ps -> ch ) -> ( ps -> th ) ) )"];
+  n362->n363->n364->n365->n366[arrowhead="none" style="invisible"];
+  {rank=same;n366;n365;n364;n363;n362;}
+  n368[label="mpd" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n368->QED[label="|- ( ph -> ( ps -> th ) )"];
+  n354->n357->n360->n361->n367[arrowhead="none" style="invisible"];
+  {rank=same;n367;n361;n360;n357;n354;}
+}

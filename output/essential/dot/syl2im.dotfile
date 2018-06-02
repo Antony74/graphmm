@@ -1,0 +1,32 @@
+digraph proof_syl2im {
+  rankdir = LR;
+  n330[label="wph" style="invisible"];
+  n330->n343[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n331[label="wps" style="invisible"];
+  n331->n343[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n334[label="wi" style="invisible"];
+  n334->n343[color="lightgray" fontcolor="lightgray" label="wff ( ch -> ta )"];
+  n335[label="syl2im.1" style="filled" fillcolor = "orange"];
+  n335->n343[label="|- ( ph -> ps )"];
+  n336[label="wch" style="invisible"];
+  n336->n342[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n337[label="wth" style="invisible"];
+  n337->n342[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n338[label="wps" style="invisible"];
+  n338->n342[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n339[label="wta" style="invisible"];
+  n339->n342[color="lightgray" fontcolor="lightgray" label="wff ta"];
+  n340[label="syl2im.2" style="filled" fillcolor = "orange"];
+  n340->n342[label="|- ( ch -> th )"];
+  n341[label="syl2im.3" style="filled" fillcolor = "orange"];
+  n341->n342[label="|- ( ps -> ( th -> ta ) )"];
+  n342[label="syl5" style="filled" fillcolor = "cyan"];
+  n342->n343[label="|- ( ps -> ( ch -> ta ) )"];
+  n336->n337->n338->n339->n340->n341[arrowhead="none" style="invisible"];
+  {rank=same;n341;n340;n339;n338;n337;n336;}
+  n343[label="syl" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n343->QED[label="|- ( ph -> ( ch -> ta ) )"];
+  n330->n331->n334->n335->n342[arrowhead="none" style="invisible"];
+  {rank=same;n342;n335;n334;n331;n330;}
+}

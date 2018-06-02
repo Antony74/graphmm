@@ -1,30 +1,30 @@
 digraph proof_intnand {
   rankdir = LR;
-  n16254 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n16254[label="wph" color="lightgray" fontcolor="lightgray"];
   n16254->n16263[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n16255 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n16255[label="wps" color="lightgray" fontcolor="lightgray"];
   n16255->n16263[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n16256 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n16256[label="wch" color="lightgray" fontcolor="lightgray"];
   n16256->n16258[color="lightgray" fontcolor="lightgray" label="wff ch"];
-  n16257 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n16257[label="wps" color="lightgray" fontcolor="lightgray"];
   n16257->n16258[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n16258 [label = "wa"color="lightgray" fontcolor="lightgray"];
-  n16258->n16263[color="lightgray" fontcolor="lightgray" label="wff ( ch /\ ps )"];
+  n16258[label="wa" color="lightgray" fontcolor="lightgray"];
+  n16258->n16263[color="lightgray" fontcolor="lightgray" label="wff ( ch /\\ ps )"];
   n16256->n16257[arrowhead="none" style="invisible"];
   {rank=same;n16257;n16256;}
-  n16259 [label = "intnand.1"style="filled" fillcolor = "orange"];
+  n16259[label="intnand.1" style="filled" fillcolor = "orange"];
   n16259->n16263[label="|- ( ph -> -. ps )"];
-  n16260 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n16260[label="wch" color="lightgray" fontcolor="lightgray"];
   n16260->n16262[color="lightgray" fontcolor="lightgray" label="wff ch"];
-  n16261 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n16261[label="wps" color="lightgray" fontcolor="lightgray"];
   n16261->n16262[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n16262 [label = "simpr"style="filled" fillcolor = "cyan"];
-  n16262->n16263[label="|- ( ( ch /\ ps ) -> ps )"];
+  n16262[label="simpr" style="filled" fillcolor = "cyan"];
+  n16262->n16263[label="|- ( ( ch /\\ ps ) -> ps )"];
   n16260->n16261[arrowhead="none" style="invisible"];
   {rank=same;n16261;n16260;}
-  n16263 [label = "nsyl"style="filled" fillcolor = "cyan"];
-QED[style="invisible"]
-  n16263->QED[label="|- ( ph -> -. ( ch /\ ps ) )"];
+  n16263[label="nsyl" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n16263->QED[label="|- ( ph -> -. ( ch /\\ ps ) )"];
   n16254->n16255->n16258->n16259->n16262[arrowhead="none" style="invisible"];
   {rank=same;n16262;n16259;n16258;n16255;n16254;}
 }

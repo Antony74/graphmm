@@ -1,29 +1,29 @@
 digraph proof_xchbinx {
   rankdir = LR;
-  n5950 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n5950[label="wph" color="lightgray" fontcolor="lightgray"];
   n5950->n5960[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n5951 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n5951[label="wps" color="lightgray" fontcolor="lightgray"];
   n5951->n5952[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n5952 [label = "wn"color="lightgray" fontcolor="lightgray"];
+  n5952[label="wn" color="lightgray" fontcolor="lightgray"];
   n5952->n5960[color="lightgray" fontcolor="lightgray" label="wff -. ps"];
-  n5953 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n5953[label="wch" color="lightgray" fontcolor="lightgray"];
   n5953->n5954[color="lightgray" fontcolor="lightgray" label="wff ch"];
-  n5954 [label = "wn"color="lightgray" fontcolor="lightgray"];
+  n5954[label="wn" color="lightgray" fontcolor="lightgray"];
   n5954->n5960[color="lightgray" fontcolor="lightgray" label="wff -. ch"];
-  n5955 [label = "xchbinx.1"style="filled" fillcolor = "orange"];
+  n5955[label="xchbinx.1" style="filled" fillcolor = "orange"];
   n5955->n5960[label="|- ( ph <-> -. ps )"];
-  n5956 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n5956[label="wps" color="lightgray" fontcolor="lightgray"];
   n5956->n5959[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n5957 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n5957[label="wch" color="lightgray" fontcolor="lightgray"];
   n5957->n5959[color="lightgray" fontcolor="lightgray" label="wff ch"];
-  n5958 [label = "xchbinx.2"style="filled" fillcolor = "orange"];
+  n5958[label="xchbinx.2" style="filled" fillcolor = "orange"];
   n5958->n5959[label="|- ( ps <-> ch )"];
-  n5959 [label = "notbii"style="filled" fillcolor = "cyan"];
+  n5959[label="notbii" style="filled" fillcolor = "cyan"];
   n5959->n5960[label="|- ( -. ps <-> -. ch )"];
   n5956->n5957->n5958[arrowhead="none" style="invisible"];
   {rank=same;n5958;n5957;n5956;}
-  n5960 [label = "bitri"style="filled" fillcolor = "cyan"];
-QED[style="invisible"]
+  n5960[label="bitri" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
   n5960->QED[label="|- ( ph <-> -. ch )"];
   n5950->n5952->n5954->n5955->n5959[arrowhead="none" style="invisible"];
   {rank=same;n5959;n5955;n5954;n5952;n5950;}

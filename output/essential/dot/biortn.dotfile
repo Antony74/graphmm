@@ -1,0 +1,26 @@
+digraph proof_biortn {
+  rankdir = LR;
+  n7490[label="wph" style="invisible"];
+  n7490->n7506[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n7493[label="wn" style="invisible"];
+  n7493->n7506[color="lightgray" fontcolor="lightgray" label="wff -. -. ph"];
+  n7499[label="wb" style="invisible"];
+  n7499->n7506[color="lightgray" fontcolor="lightgray" label="wff ( ps <-> ( -. ph \\/ ps ) )"];
+  n7500[label="wph" style="invisible"];
+  n7500->n7501[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n7501[label="notnot1" style="filled" fillcolor = "cyan"];
+  n7501->n7506[label="|- ( ph -> -. -. ph )"];
+  n7503[label="wn" style="invisible"];
+  n7503->n7505[color="lightgray" fontcolor="lightgray" label="wff -. ph"];
+  n7504[label="wps" style="invisible"];
+  n7504->n7505[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n7505[label="biorf" style="filled" fillcolor = "cyan"];
+  n7505->n7506[label="|- ( -. -. ph -> ( ps <-> ( -. ph \\/ ps ) ) )"];
+  n7503->n7504[arrowhead="none" style="invisible"];
+  {rank=same;n7504;n7503;}
+  n7506[label="syl" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n7506->QED[label="|- ( ph -> ( ps <-> ( -. ph \\/ ps ) ) )"];
+  n7490->n7493->n7499->n7501->n7505[arrowhead="none" style="invisible"];
+  {rank=same;n7505;n7501;n7499;n7493;n7490;}
+}

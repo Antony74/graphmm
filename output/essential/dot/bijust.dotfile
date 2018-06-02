@@ -1,0 +1,20 @@
+digraph proof_bijust {
+  rankdir = LR;
+  n2138[label="wi" style="invisible"];
+  n2138->n2188[color="lightgray" fontcolor="lightgray" label="wff ( ( -. ( ( ph -> ps ) -> -. ( ps -> ph ) ) -> -. ( ( ph -> ps ) -> -. ( ps -> ph ) ) ) -> -. ( -. ( ( ph -> ps ) -> -. ( ps -> ph ) ) -> -. ( ( ph -> ps ) -> -. ( ps -> ph ) ) ) )"];
+  n2157[label="wi" style="invisible"];
+  n2157->n2188[color="lightgray" fontcolor="lightgray" label="wff ( -. ( ( ph -> ps ) -> -. ( ps -> ph ) ) -> -. ( ( ph -> ps ) -> -. ( ps -> ph ) ) )"];
+  n2166[label="wn" style="invisible"];
+  n2166->n2167[color="lightgray" fontcolor="lightgray" label="wff -. ( ( ph -> ps ) -> -. ( ps -> ph ) )"];
+  n2167[label="id" style="filled" fillcolor = "cyan"];
+  n2167->n2188[label="|- ( -. ( ( ph -> ps ) -> -. ( ps -> ph ) ) -> -. ( ( ph -> ps ) -> -. ( ps -> ph ) ) )"];
+  n2186[label="wi" style="invisible"];
+  n2186->n2187[color="lightgray" fontcolor="lightgray" label="wff ( -. ( ( ph -> ps ) -> -. ( ps -> ph ) ) -> -. ( ( ph -> ps ) -> -. ( ps -> ph ) ) )"];
+  n2187[label="pm2.01" style="filled" fillcolor = "cyan"];
+  n2187->n2188[label="|- ( ( ( -. ( ( ph -> ps ) -> -. ( ps -> ph ) ) -> -. ( ( ph -> ps ) -> -. ( ps -> ph ) ) ) -> -. ( -. ( ( ph -> ps ) -> -. ( ps -> ph ) ) -> -. ( ( ph -> ps ) -> -. ( ps -> ph ) ) ) ) -> -. ( -. ( ( ph -> ps ) -> -. ( ps -> ph ) ) -> -. ( ( ph -> ps ) -> -. ( ps -> ph ) ) ) )"];
+  n2188[label="mt2" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n2188->QED[label="|- -. ( ( -. ( ( ph -> ps ) -> -. ( ps -> ph ) ) -> -. ( ( ph -> ps ) -> -. ( ps -> ph ) ) ) -> -. ( -. ( ( ph -> ps ) -> -. ( ps -> ph ) ) -> -. ( ( ph -> ps ) -> -. ( ps -> ph ) ) ) )"];
+  n2138->n2157->n2167->n2187[arrowhead="none" style="invisible"];
+  {rank=same;n2187;n2167;n2157;n2138;}
+}

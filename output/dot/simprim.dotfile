@@ -1,21 +1,21 @@
 digraph proof_simprim {
   rankdir = LR;
-  n1670 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n1670[label="wph" color="lightgray" fontcolor="lightgray"];
   n1670->n1676[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n1671 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n1671[label="wps" color="lightgray" fontcolor="lightgray"];
   n1671->n1676[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n1672 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n1672[label="wps" color="lightgray" fontcolor="lightgray"];
   n1672->n1676[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n1673 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n1673[label="wph" color="lightgray" fontcolor="lightgray"];
   n1673->n1675[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n1674 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n1674[label="wps" color="lightgray" fontcolor="lightgray"];
   n1674->n1675[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n1675 [label = "idd"style="filled" fillcolor = "cyan"];
+  n1675[label="idd" style="filled" fillcolor = "cyan"];
   n1675->n1676[label="|- ( ph -> ( ps -> ps ) )"];
   n1673->n1674[arrowhead="none" style="invisible"];
   {rank=same;n1674;n1673;}
-  n1676 [label = "impi"style="filled" fillcolor = "cyan"];
-QED[style="invisible"]
+  n1676[label="impi" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
   n1676->QED[label="|- ( -. ( ph -> -. ps ) -> ps )"];
   n1670->n1671->n1672->n1675[arrowhead="none" style="invisible"];
   {rank=same;n1675;n1672;n1671;n1670;}

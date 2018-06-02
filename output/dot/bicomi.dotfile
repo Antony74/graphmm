@@ -1,33 +1,33 @@
 digraph proof_bicomi {
   rankdir = LR;
-  n4573 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n4573[label="wph" color="lightgray" fontcolor="lightgray"];
   n4573->n4575[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n4574 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n4574[label="wps" color="lightgray" fontcolor="lightgray"];
   n4574->n4575[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n4575 [label = "wb"color="lightgray" fontcolor="lightgray"];
+  n4575[label="wb" color="lightgray" fontcolor="lightgray"];
   n4575->n4583[color="lightgray" fontcolor="lightgray" label="wff ( ph <-> ps )"];
   n4573->n4574[arrowhead="none" style="invisible"];
   {rank=same;n4574;n4573;}
-  n4576 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n4576[label="wps" color="lightgray" fontcolor="lightgray"];
   n4576->n4578[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n4577 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n4577[label="wph" color="lightgray" fontcolor="lightgray"];
   n4577->n4578[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n4578 [label = "wb"color="lightgray" fontcolor="lightgray"];
+  n4578[label="wb" color="lightgray" fontcolor="lightgray"];
   n4578->n4583[color="lightgray" fontcolor="lightgray" label="wff ( ps <-> ph )"];
   n4576->n4577[arrowhead="none" style="invisible"];
   {rank=same;n4577;n4576;}
-  n4579 [label = "bicomi.1"style="filled" fillcolor = "orange"];
+  n4579[label="bicomi.1" style="filled" fillcolor = "orange"];
   n4579->n4583[label="|- ( ph <-> ps )"];
-  n4580 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n4580[label="wph" color="lightgray" fontcolor="lightgray"];
   n4580->n4582[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n4581 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n4581[label="wps" color="lightgray" fontcolor="lightgray"];
   n4581->n4582[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n4582 [label = "bicom1"style="filled" fillcolor = "cyan"];
+  n4582[label="bicom1" style="filled" fillcolor = "cyan"];
   n4582->n4583[label="|- ( ( ph <-> ps ) -> ( ps <-> ph ) )"];
   n4580->n4581[arrowhead="none" style="invisible"];
   {rank=same;n4581;n4580;}
-  n4583 [label = "ax-mp"style="filled" fillcolor = "lime"];
-QED[style="invisible"]
+  n4583[label="ax-mp" style="filled" fillcolor = "lawngreen"];
+  QED[style="invisible"]
   n4583->QED[label="|- ( ps <-> ph )"];
   n4575->n4578->n4579->n4582[arrowhead="none" style="invisible"];
   {rank=same;n4582;n4579;n4578;n4575;}

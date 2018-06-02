@@ -1,26 +1,26 @@
 digraph proof_adantr {
   rankdir = LR;
-  n8152 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n8152[label="wph" color="lightgray" fontcolor="lightgray"];
   n8152->n8160[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n8153 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n8153[label="wch" color="lightgray" fontcolor="lightgray"];
   n8153->n8160[color="lightgray" fontcolor="lightgray" label="wff ch"];
-  n8154 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n8154[label="wps" color="lightgray" fontcolor="lightgray"];
   n8154->n8160[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n8155 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n8155[label="wph" color="lightgray" fontcolor="lightgray"];
   n8155->n8159[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n8156 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n8156[label="wps" color="lightgray" fontcolor="lightgray"];
   n8156->n8159[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n8157 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n8157[label="wch" color="lightgray" fontcolor="lightgray"];
   n8157->n8159[color="lightgray" fontcolor="lightgray" label="wff ch"];
-  n8158 [label = "adantr.1"style="filled" fillcolor = "orange"];
+  n8158[label="adantr.1" style="filled" fillcolor = "orange"];
   n8158->n8159[label="|- ( ph -> ps )"];
-  n8159 [label = "a1d"style="filled" fillcolor = "cyan"];
+  n8159[label="a1d" style="filled" fillcolor = "cyan"];
   n8159->n8160[label="|- ( ph -> ( ch -> ps ) )"];
   n8155->n8156->n8157->n8158[arrowhead="none" style="invisible"];
   {rank=same;n8158;n8157;n8156;n8155;}
-  n8160 [label = "imp"style="filled" fillcolor = "cyan"];
-QED[style="invisible"]
-  n8160->QED[label="|- ( ( ph /\ ch ) -> ps )"];
+  n8160[label="imp" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n8160->QED[label="|- ( ( ph /\\ ch ) -> ps )"];
   n8152->n8153->n8154->n8159[arrowhead="none" style="invisible"];
   {rank=same;n8159;n8154;n8153;n8152;}
 }

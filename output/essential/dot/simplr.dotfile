@@ -1,0 +1,20 @@
+digraph proof_simplr {
+  rankdir = LR;
+  n12772[label="wps" style="invisible"];
+  n12772->n12778[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n12773[label="wps" style="invisible"];
+  n12773->n12778[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n12774[label="wph" style="invisible"];
+  n12774->n12778[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n12775[label="wch" style="invisible"];
+  n12775->n12778[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n12776[label="wps" style="invisible"];
+  n12776->n12777[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n12777[label="id" style="filled" fillcolor = "cyan"];
+  n12777->n12778[label="|- ( ps -> ps )"];
+  n12778[label="ad2antlr" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n12778->QED[label="|- ( ( ( ph /\\ ps ) /\\ ch ) -> ps )"];
+  n12772->n12773->n12774->n12775->n12777[arrowhead="none" style="invisible"];
+  {rank=same;n12777;n12775;n12774;n12773;n12772;}
+}

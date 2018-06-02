@@ -1,0 +1,22 @@
+digraph proof_pm4_71ri {
+  rankdir = LR;
+  n10886[label="wi" style="invisible"];
+  n10886->n10896[color="lightgray" fontcolor="lightgray" label="wff ( ph -> ps )"];
+  n10891[label="wb" style="invisible"];
+  n10891->n10896[color="lightgray" fontcolor="lightgray" label="wff ( ph <-> ( ps /\\ ph ) )"];
+  n10892[label="pm4.71ri.1" style="filled" fillcolor = "orange"];
+  n10892->n10896[label="|- ( ph -> ps )"];
+  n10893[label="wph" style="invisible"];
+  n10893->n10895[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n10894[label="wps" style="invisible"];
+  n10894->n10895[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n10895[label="pm4.71r" style="filled" fillcolor = "cyan"];
+  n10895->n10896[label="|- ( ( ph -> ps ) <-> ( ph <-> ( ps /\\ ph ) ) )"];
+  n10893->n10894[arrowhead="none" style="invisible"];
+  {rank=same;n10894;n10893;}
+  n10896[label="mpbi" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n10896->QED[label="|- ( ph <-> ( ps /\\ ph ) )"];
+  n10886->n10891->n10892->n10895[arrowhead="none" style="invisible"];
+  {rank=same;n10895;n10892;n10891;n10886;}
+}

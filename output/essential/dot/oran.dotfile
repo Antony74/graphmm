@@ -1,0 +1,20 @@
+digraph proof_oran {
+  rankdir = LR;
+  n8583[label="wa" style="invisible"];
+  n8583->n8590[color="lightgray" fontcolor="lightgray" label="wff ( -. ph /\\ -. ps )"];
+  n8586[label="wo" style="invisible"];
+  n8586->n8590[color="lightgray" fontcolor="lightgray" label="wff ( ph \\/ ps )"];
+  n8587[label="wph" style="invisible"];
+  n8587->n8589[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n8588[label="wps" style="invisible"];
+  n8588->n8589[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n8589[label="pm4.56" style="filled" fillcolor = "cyan"];
+  n8589->n8590[label="|- ( ( -. ph /\\ -. ps ) <-> -. ( ph \\/ ps ) )"];
+  n8587->n8588[arrowhead="none" style="invisible"];
+  {rank=same;n8588;n8587;}
+  n8590[label="con2bii" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n8590->QED[label="|- ( ( ph \\/ ps ) <-> -. ( -. ph /\\ -. ps ) )"];
+  n8583->n8586->n8589[arrowhead="none" style="invisible"];
+  {rank=same;n8589;n8586;n8583;}
+}

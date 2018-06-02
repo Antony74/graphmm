@@ -1,0 +1,26 @@
+digraph proof_mp2b {
+  rankdir = LR;
+  n14[label="wps" style="invisible"];
+  n14->n22[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n15[label="wch" style="invisible"];
+  n15->n22[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n16[label="wph" style="invisible"];
+  n16->n20[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n17[label="wps" style="invisible"];
+  n17->n20[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n18[label="mp2b.1" style="filled" fillcolor = "orange"];
+  n18->n20[label="|- ph"];
+  n19[label="mp2b.2" style="filled" fillcolor = "orange"];
+  n19->n20[label="|- ( ph -> ps )"];
+  n20[label="ax-mp" style="filled" fillcolor = "lawngreen"];
+  n20->n22[label="|- ps"];
+  n16->n17->n18->n19[arrowhead="none" style="invisible"];
+  {rank=same;n19;n18;n17;n16;}
+  n21[label="mp2b.3" style="filled" fillcolor = "orange"];
+  n21->n22[label="|- ( ps -> ch )"];
+  n22[label="ax-mp" style="filled" fillcolor = "lawngreen"];
+  QED[style="invisible"]
+  n22->QED[label="|- ch"];
+  n14->n15->n20->n21[arrowhead="none" style="invisible"];
+  {rank=same;n21;n20;n15;n14;}
+}

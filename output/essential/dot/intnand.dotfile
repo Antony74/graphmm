@@ -1,0 +1,24 @@
+digraph proof_intnand {
+  rankdir = LR;
+  n16254[label="wph" style="invisible"];
+  n16254->n16263[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n16255[label="wps" style="invisible"];
+  n16255->n16263[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n16258[label="wa" style="invisible"];
+  n16258->n16263[color="lightgray" fontcolor="lightgray" label="wff ( ch /\\ ps )"];
+  n16259[label="intnand.1" style="filled" fillcolor = "orange"];
+  n16259->n16263[label="|- ( ph -> -. ps )"];
+  n16260[label="wch" style="invisible"];
+  n16260->n16262[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n16261[label="wps" style="invisible"];
+  n16261->n16262[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n16262[label="simpr" style="filled" fillcolor = "cyan"];
+  n16262->n16263[label="|- ( ( ch /\\ ps ) -> ps )"];
+  n16260->n16261[arrowhead="none" style="invisible"];
+  {rank=same;n16261;n16260;}
+  n16263[label="nsyl" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n16263->QED[label="|- ( ph -> -. ( ch /\\ ps ) )"];
+  n16254->n16255->n16258->n16259->n16262[arrowhead="none" style="invisible"];
+  {rank=same;n16262;n16259;n16258;n16255;n16254;}
+}

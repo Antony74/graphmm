@@ -1,0 +1,24 @@
+digraph proof_orrd {
+  rankdir = LR;
+  n7193[label="wph" style="invisible"];
+  n7193->n7205[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n7197[label="wi" style="invisible"];
+  n7197->n7205[color="lightgray" fontcolor="lightgray" label="wff ( -. ps -> ch )"];
+  n7200[label="wo" style="invisible"];
+  n7200->n7205[color="lightgray" fontcolor="lightgray" label="wff ( ps \\/ ch )"];
+  n7201[label="orrd.1" style="filled" fillcolor = "orange"];
+  n7201->n7205[label="|- ( ph -> ( -. ps -> ch ) )"];
+  n7202[label="wps" style="invisible"];
+  n7202->n7204[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n7203[label="wch" style="invisible"];
+  n7203->n7204[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n7204[label="pm2.54" style="filled" fillcolor = "cyan"];
+  n7204->n7205[label="|- ( ( -. ps -> ch ) -> ( ps \\/ ch ) )"];
+  n7202->n7203[arrowhead="none" style="invisible"];
+  {rank=same;n7203;n7202;}
+  n7205[label="syl" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n7205->QED[label="|- ( ph -> ( ps \\/ ch ) )"];
+  n7193->n7197->n7200->n7201->n7204[arrowhead="none" style="invisible"];
+  {rank=same;n7204;n7201;n7200;n7197;n7193;}
+}

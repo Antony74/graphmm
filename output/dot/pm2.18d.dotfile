@@ -1,27 +1,27 @@
 digraph proof_pm2_18d {
   rankdir = LR;
-  n1264 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n1264[label="wph" color="lightgray" fontcolor="lightgray"];
   n1264->n1273[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n1265 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n1265[label="wps" color="lightgray" fontcolor="lightgray"];
   n1265->n1266[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n1266 [label = "wn"color="lightgray" fontcolor="lightgray"];
+  n1266[label="wn" color="lightgray" fontcolor="lightgray"];
   n1266->n1268[color="lightgray" fontcolor="lightgray" label="wff -. ps"];
-  n1267 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n1267[label="wps" color="lightgray" fontcolor="lightgray"];
   n1267->n1268[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n1268 [label = "wi"color="lightgray" fontcolor="lightgray"];
+  n1268[label="wi" color="lightgray" fontcolor="lightgray"];
   n1268->n1273[color="lightgray" fontcolor="lightgray" label="wff ( -. ps -> ps )"];
   n1266->n1267[arrowhead="none" style="invisible"];
   {rank=same;n1267;n1266;}
-  n1269 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n1269[label="wps" color="lightgray" fontcolor="lightgray"];
   n1269->n1273[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n1270 [label = "pm2.18d.1"style="filled" fillcolor = "orange"];
+  n1270[label="pm2.18d.1" style="filled" fillcolor = "orange"];
   n1270->n1273[label="|- ( ph -> ( -. ps -> ps ) )"];
-  n1271 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n1271[label="wps" color="lightgray" fontcolor="lightgray"];
   n1271->n1272[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n1272 [label = "pm2.18"style="filled" fillcolor = "cyan"];
+  n1272[label="pm2.18" style="filled" fillcolor = "cyan"];
   n1272->n1273[label="|- ( ( -. ps -> ps ) -> ps )"];
-  n1273 [label = "syl"style="filled" fillcolor = "cyan"];
-QED[style="invisible"]
+  n1273[label="syl" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
   n1273->QED[label="|- ( ph -> ps )"];
   n1264->n1268->n1269->n1270->n1272[arrowhead="none" style="invisible"];
   {rank=same;n1272;n1270;n1269;n1268;n1264;}

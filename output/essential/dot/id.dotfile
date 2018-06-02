@@ -1,0 +1,30 @@
+digraph proof_id {
+  rankdir = LR;
+  n122[label="wph" style="invisible"];
+  n122->n135[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n125[label="wi" style="invisible"];
+  n125->n135[color="lightgray" fontcolor="lightgray" label="wff ( ph -> ph )"];
+  n126[label="wph" style="invisible"];
+  n126->n135[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n127[label="wph" style="invisible"];
+  n127->n129[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n128[label="wph" style="invisible"];
+  n128->n129[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n129[label="ax-1" style="filled" fillcolor = "lawngreen"];
+  n129->n135[label="|- ( ph -> ( ph -> ph ) )"];
+  n127->n128[arrowhead="none" style="invisible"];
+  {rank=same;n128;n127;}
+  n130[label="wph" style="invisible"];
+  n130->n134[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n133[label="wi" style="invisible"];
+  n133->n134[color="lightgray" fontcolor="lightgray" label="wff ( ph -> ph )"];
+  n134[label="ax-1" style="filled" fillcolor = "lawngreen"];
+  n134->n135[label="|- ( ph -> ( ( ph -> ph ) -> ph ) )"];
+  n130->n133[arrowhead="none" style="invisible"];
+  {rank=same;n133;n130;}
+  n135[label="mpd" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n135->QED[label="|- ( ph -> ph )"];
+  n122->n125->n126->n129->n134[arrowhead="none" style="invisible"];
+  {rank=same;n134;n129;n126;n125;n122;}
+}

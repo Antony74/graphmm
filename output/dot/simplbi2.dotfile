@@ -1,29 +1,29 @@
 digraph proof_simplbi2 {
   rankdir = LR;
-  n10705 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n10705[label="wps" color="lightgray" fontcolor="lightgray"];
   n10705->n10714[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n10706 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n10706[label="wch" color="lightgray" fontcolor="lightgray"];
   n10706->n10714[color="lightgray" fontcolor="lightgray" label="wff ch"];
-  n10707 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n10707[label="wph" color="lightgray" fontcolor="lightgray"];
   n10707->n10714[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n10708 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n10708[label="wph" color="lightgray" fontcolor="lightgray"];
   n10708->n10713[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n10709 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n10709[label="wps" color="lightgray" fontcolor="lightgray"];
   n10709->n10711[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n10710 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n10710[label="wch" color="lightgray" fontcolor="lightgray"];
   n10710->n10711[color="lightgray" fontcolor="lightgray" label="wff ch"];
-  n10711 [label = "wa"color="lightgray" fontcolor="lightgray"];
-  n10711->n10713[color="lightgray" fontcolor="lightgray" label="wff ( ps /\ ch )"];
+  n10711[label="wa" color="lightgray" fontcolor="lightgray"];
+  n10711->n10713[color="lightgray" fontcolor="lightgray" label="wff ( ps /\\ ch )"];
   n10709->n10710[arrowhead="none" style="invisible"];
   {rank=same;n10710;n10709;}
-  n10712 [label = "pm3.26bi2.1"style="filled" fillcolor = "orange"];
-  n10712->n10713[label="|- ( ph <-> ( ps /\ ch ) )"];
-  n10713 [label = "biimpri"style="filled" fillcolor = "cyan"];
-  n10713->n10714[label="|- ( ( ps /\ ch ) -> ph )"];
+  n10712[label="pm3.26bi2.1" style="filled" fillcolor = "orange"];
+  n10712->n10713[label="|- ( ph <-> ( ps /\\ ch ) )"];
+  n10713[label="biimpri" style="filled" fillcolor = "cyan"];
+  n10713->n10714[label="|- ( ( ps /\\ ch ) -> ph )"];
   n10708->n10711->n10712[arrowhead="none" style="invisible"];
   {rank=same;n10712;n10711;n10708;}
-  n10714 [label = "ex"style="filled" fillcolor = "cyan"];
-QED[style="invisible"]
+  n10714[label="ex" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
   n10714->QED[label="|- ( ps -> ( ch -> ph ) )"];
   n10705->n10706->n10707->n10713[arrowhead="none" style="invisible"];
   {rank=same;n10713;n10707;n10706;n10705;}

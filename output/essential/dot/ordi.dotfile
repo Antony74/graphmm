@@ -1,0 +1,44 @@
+digraph proof_ordi {
+  rankdir = LR;
+  n14823[label="wi" style="invisible"];
+  n14823->n14876[color="lightgray" fontcolor="lightgray" label="wff ( -. ph -> ( ps /\\ ch ) )"];
+  n14832[label="wa" style="invisible"];
+  n14832->n14876[color="lightgray" fontcolor="lightgray" label="wff ( ( -. ph -> ps ) /\\ ( -. ph -> ch ) )"];
+  n14837[label="wo" style="invisible"];
+  n14837->n14876[color="lightgray" fontcolor="lightgray" label="wff ( ph \\/ ( ps /\\ ch ) )"];
+  n14844[label="wa" style="invisible"];
+  n14844->n14876[color="lightgray" fontcolor="lightgray" label="wff ( ( ph \\/ ps ) /\\ ( ph \\/ ch ) )"];
+  n14846[label="wn" style="invisible"];
+  n14846->n14849[color="lightgray" fontcolor="lightgray" label="wff -. ph"];
+  n14847[label="wps" style="invisible"];
+  n14847->n14849[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n14848[label="wch" style="invisible"];
+  n14848->n14849[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n14849[label="jcab" style="filled" fillcolor = "cyan"];
+  n14849->n14876[label="|- ( ( -. ph -> ( ps /\\ ch ) ) <-> ( ( -. ph -> ps ) /\\ ( -. ph -> ch ) ) )"];
+  n14846->n14847->n14848[arrowhead="none" style="invisible"];
+  {rank=same;n14848;n14847;n14846;}
+  n14854[label="df-or" style="invisible"];
+  n14854->n14876[color="lightgray" fontcolor="lightgray" label="|- ( ( ph \\/ ( ps /\\ ch ) ) <-> ( -. ph -> ( ps /\\ ch ) ) )"];
+  n14857[label="wo" style="invisible"];
+  n14857->n14875[color="lightgray" fontcolor="lightgray" label="wff ( ph \\/ ps )"];
+  n14861[label="wi" style="invisible"];
+  n14861->n14875[color="lightgray" fontcolor="lightgray" label="wff ( -. ph -> ps )"];
+  n14864[label="wo" style="invisible"];
+  n14864->n14875[color="lightgray" fontcolor="lightgray" label="wff ( ph \\/ ch )"];
+  n14868[label="wi" style="invisible"];
+  n14868->n14875[color="lightgray" fontcolor="lightgray" label="wff ( -. ph -> ch )"];
+  n14871[label="df-or" style="invisible"];
+  n14871->n14875[color="lightgray" fontcolor="lightgray" label="|- ( ( ph \\/ ps ) <-> ( -. ph -> ps ) )"];
+  n14874[label="df-or" style="invisible"];
+  n14874->n14875[color="lightgray" fontcolor="lightgray" label="|- ( ( ph \\/ ch ) <-> ( -. ph -> ch ) )"];
+  n14875[label="anbi12i" style="filled" fillcolor = "cyan"];
+  n14875->n14876[label="|- ( ( ( ph \\/ ps ) /\\ ( ph \\/ ch ) ) <-> ( ( -. ph -> ps ) /\\ ( -. ph -> ch ) ) )"];
+  n14857->n14861->n14864->n14868->n14871->n14874[arrowhead="none" style="invisible"];
+  {rank=same;n14874;n14871;n14868;n14864;n14861;n14857;}
+  n14876[label="3bitr4i" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n14876->QED[label="|- ( ( ph \\/ ( ps /\\ ch ) ) <-> ( ( ph \\/ ps ) /\\ ( ph \\/ ch ) ) )"];
+  n14823->n14832->n14837->n14844->n14849->n14854->n14875[arrowhead="none" style="invisible"];
+  {rank=same;n14875;n14854;n14849;n14844;n14837;n14832;n14823;}
+}

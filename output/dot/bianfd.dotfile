@@ -1,34 +1,34 @@
 digraph proof_bianfd {
   rankdir = LR;
-  n16395 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n16395[label="wph" color="lightgray" fontcolor="lightgray"];
   n16395->n16406[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n16396 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n16396[label="wps" color="lightgray" fontcolor="lightgray"];
   n16396->n16406[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n16397 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n16397[label="wps" color="lightgray" fontcolor="lightgray"];
   n16397->n16399[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n16398 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n16398[label="wch" color="lightgray" fontcolor="lightgray"];
   n16398->n16399[color="lightgray" fontcolor="lightgray" label="wff ch"];
-  n16399 [label = "wa"color="lightgray" fontcolor="lightgray"];
-  n16399->n16406[color="lightgray" fontcolor="lightgray" label="wff ( ps /\ ch )"];
+  n16399[label="wa" color="lightgray" fontcolor="lightgray"];
+  n16399->n16406[color="lightgray" fontcolor="lightgray" label="wff ( ps /\\ ch )"];
   n16397->n16398[arrowhead="none" style="invisible"];
   {rank=same;n16398;n16397;}
-  n16400 [label = "bianfd.1"style="filled" fillcolor = "orange"];
+  n16400[label="bianfd.1" style="filled" fillcolor = "orange"];
   n16400->n16406[label="|- ( ph -> -. ps )"];
-  n16401 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n16401[label="wph" color="lightgray" fontcolor="lightgray"];
   n16401->n16405[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n16402 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n16402[label="wps" color="lightgray" fontcolor="lightgray"];
   n16402->n16405[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n16403 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n16403[label="wch" color="lightgray" fontcolor="lightgray"];
   n16403->n16405[color="lightgray" fontcolor="lightgray" label="wff ch"];
-  n16404 [label = "bianfd.1"style="filled" fillcolor = "orange"];
+  n16404[label="bianfd.1" style="filled" fillcolor = "orange"];
   n16404->n16405[label="|- ( ph -> -. ps )"];
-  n16405 [label = "intnanrd"style="filled" fillcolor = "cyan"];
-  n16405->n16406[label="|- ( ph -> -. ( ps /\ ch ) )"];
+  n16405[label="intnanrd" style="filled" fillcolor = "cyan"];
+  n16405->n16406[label="|- ( ph -> -. ( ps /\\ ch ) )"];
   n16401->n16402->n16403->n16404[arrowhead="none" style="invisible"];
   {rank=same;n16404;n16403;n16402;n16401;}
-  n16406 [label = "2falsed"style="filled" fillcolor = "cyan"];
-QED[style="invisible"]
-  n16406->QED[label="|- ( ph -> ( ps <-> ( ps /\ ch ) ) )"];
+  n16406[label="2falsed" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n16406->QED[label="|- ( ph -> ( ps <-> ( ps /\\ ch ) ) )"];
   n16395->n16396->n16399->n16400->n16405[arrowhead="none" style="invisible"];
   {rank=same;n16405;n16400;n16399;n16396;n16395;}
 }

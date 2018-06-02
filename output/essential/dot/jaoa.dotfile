@@ -1,0 +1,42 @@
+digraph proof_jaoa {
+  rankdir = LR;
+  n8757[label="wph" style="invisible"];
+  n8757->n8776[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n8762[label="wi" style="invisible"];
+  n8762->n8776[color="lightgray" fontcolor="lightgray" label="wff ( ( ps /\\ ta ) -> ch )"];
+  n8763[label="wth" style="invisible"];
+  n8763->n8776[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n8764[label="wph" style="invisible"];
+  n8764->n8769[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n8765[label="wps" style="invisible"];
+  n8765->n8769[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n8766[label="wch" style="invisible"];
+  n8766->n8769[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n8767[label="wta" style="invisible"];
+  n8767->n8769[color="lightgray" fontcolor="lightgray" label="wff ta"];
+  n8768[label="jaao.1" style="filled" fillcolor = "orange"];
+  n8768->n8769[label="|- ( ph -> ( ps -> ch ) )"];
+  n8769[label="adantrd" style="filled" fillcolor = "cyan"];
+  n8769->n8776[label="|- ( ph -> ( ( ps /\\ ta ) -> ch ) )"];
+  n8764->n8765->n8766->n8767->n8768[arrowhead="none" style="invisible"];
+  {rank=same;n8768;n8767;n8766;n8765;n8764;}
+  n8770[label="wth" style="invisible"];
+  n8770->n8775[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n8771[label="wta" style="invisible"];
+  n8771->n8775[color="lightgray" fontcolor="lightgray" label="wff ta"];
+  n8772[label="wch" style="invisible"];
+  n8772->n8775[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n8773[label="wps" style="invisible"];
+  n8773->n8775[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n8774[label="jaao.2" style="filled" fillcolor = "orange"];
+  n8774->n8775[label="|- ( th -> ( ta -> ch ) )"];
+  n8775[label="adantld" style="filled" fillcolor = "cyan"];
+  n8775->n8776[label="|- ( th -> ( ( ps /\\ ta ) -> ch ) )"];
+  n8770->n8771->n8772->n8773->n8774[arrowhead="none" style="invisible"];
+  {rank=same;n8774;n8773;n8772;n8771;n8770;}
+  n8776[label="jaoi" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n8776->QED[label="|- ( ( ph \\/ th ) -> ( ( ps /\\ ta ) -> ch ) )"];
+  n8757->n8762->n8763->n8769->n8775[arrowhead="none" style="invisible"];
+  {rank=same;n8775;n8769;n8763;n8762;n8757;}
+}

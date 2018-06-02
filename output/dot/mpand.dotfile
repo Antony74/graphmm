@@ -1,31 +1,31 @@
 digraph proof_mpand {
   rankdir = LR;
-  n11565 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n11565[label="wph" color="lightgray" fontcolor="lightgray"];
   n11565->n11576[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n11566 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n11566[label="wch" color="lightgray" fontcolor="lightgray"];
   n11566->n11576[color="lightgray" fontcolor="lightgray" label="wff ch"];
-  n11567 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n11567[label="wps" color="lightgray" fontcolor="lightgray"];
   n11567->n11576[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n11568 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n11568[label="wth" color="lightgray" fontcolor="lightgray"];
   n11568->n11576[color="lightgray" fontcolor="lightgray" label="wff th"];
-  n11569 [label = "mpand.1"style="filled" fillcolor = "orange"];
+  n11569[label="mpand.1" style="filled" fillcolor = "orange"];
   n11569->n11576[label="|- ( ph -> ps )"];
-  n11570 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n11570[label="wph" color="lightgray" fontcolor="lightgray"];
   n11570->n11575[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n11571 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n11571[label="wps" color="lightgray" fontcolor="lightgray"];
   n11571->n11575[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n11572 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n11572[label="wch" color="lightgray" fontcolor="lightgray"];
   n11572->n11575[color="lightgray" fontcolor="lightgray" label="wff ch"];
-  n11573 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n11573[label="wth" color="lightgray" fontcolor="lightgray"];
   n11573->n11575[color="lightgray" fontcolor="lightgray" label="wff th"];
-  n11574 [label = "mpand.2"style="filled" fillcolor = "orange"];
-  n11574->n11575[label="|- ( ph -> ( ( ps /\ ch ) -> th ) )"];
-  n11575 [label = "ancomsd"style="filled" fillcolor = "cyan"];
-  n11575->n11576[label="|- ( ph -> ( ( ch /\ ps ) -> th ) )"];
+  n11574[label="mpand.2" style="filled" fillcolor = "orange"];
+  n11574->n11575[label="|- ( ph -> ( ( ps /\\ ch ) -> th ) )"];
+  n11575[label="ancomsd" style="filled" fillcolor = "cyan"];
+  n11575->n11576[label="|- ( ph -> ( ( ch /\\ ps ) -> th ) )"];
   n11570->n11571->n11572->n11573->n11574[arrowhead="none" style="invisible"];
   {rank=same;n11574;n11573;n11572;n11571;n11570;}
-  n11576 [label = "mpan2d"style="filled" fillcolor = "cyan"];
-QED[style="invisible"]
+  n11576[label="mpan2d" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
   n11576->QED[label="|- ( ph -> ( ch -> th ) )"];
   n11565->n11566->n11567->n11568->n11569->n11575[arrowhead="none" style="invisible"];
   {rank=same;n11575;n11569;n11568;n11567;n11566;n11565;}

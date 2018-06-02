@@ -1,0 +1,24 @@
+digraph proof_anidms {
+  rankdir = LR;
+  n11161[label="wph" style="invisible"];
+  n11161->n11168[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n11162[label="wps" style="invisible"];
+  n11162->n11168[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n11163[label="wph" style="invisible"];
+  n11163->n11167[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n11164[label="wph" style="invisible"];
+  n11164->n11167[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n11165[label="wps" style="invisible"];
+  n11165->n11167[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n11166[label="anidms.1" style="filled" fillcolor = "orange"];
+  n11166->n11167[label="|- ( ( ph /\\ ph ) -> ps )"];
+  n11167[label="ex" style="filled" fillcolor = "cyan"];
+  n11167->n11168[label="|- ( ph -> ( ph -> ps ) )"];
+  n11163->n11164->n11165->n11166[arrowhead="none" style="invisible"];
+  {rank=same;n11166;n11165;n11164;n11163;}
+  n11168[label="pm2.43i" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n11168->QED[label="|- ( ph -> ps )"];
+  n11161->n11162->n11167[arrowhead="none" style="invisible"];
+  {rank=same;n11167;n11162;n11161;}
+}

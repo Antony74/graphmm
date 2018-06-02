@@ -1,52 +1,52 @@
 digraph proof_jaoi {
   rankdir = LR;
-  n7206 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n7206[label="wph" color="lightgray" fontcolor="lightgray"];
   n7206->n7208[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n7207 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n7207[label="wch" color="lightgray" fontcolor="lightgray"];
   n7207->n7208[color="lightgray" fontcolor="lightgray" label="wff ch"];
-  n7208 [label = "wo"color="lightgray" fontcolor="lightgray"];
-  n7208->n7224[color="lightgray" fontcolor="lightgray" label="wff ( ph \/ ch )"];
+  n7208[label="wo" color="lightgray" fontcolor="lightgray"];
+  n7208->n7224[color="lightgray" fontcolor="lightgray" label="wff ( ph \\/ ch )"];
   n7206->n7207[arrowhead="none" style="invisible"];
   {rank=same;n7207;n7206;}
-  n7209 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n7209[label="wph" color="lightgray" fontcolor="lightgray"];
   n7209->n7224[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n7210 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n7210[label="wps" color="lightgray" fontcolor="lightgray"];
   n7210->n7224[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n7211 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n7211[label="wch" color="lightgray" fontcolor="lightgray"];
   n7211->n7213[color="lightgray" fontcolor="lightgray" label="wff ch"];
-  n7212 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n7212[label="wph" color="lightgray" fontcolor="lightgray"];
   n7212->n7213[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n7213 [label = "wo"color="lightgray" fontcolor="lightgray"];
-  n7213->n7222[color="lightgray" fontcolor="lightgray" label="wff ( ph \/ ch )"];
+  n7213[label="wo" color="lightgray" fontcolor="lightgray"];
+  n7213->n7222[color="lightgray" fontcolor="lightgray" label="wff ( ph \\/ ch )"];
   n7211->n7212[arrowhead="none" style="invisible"];
   {rank=same;n7212;n7211;}
-  n7214 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n7214[label="wph" color="lightgray" fontcolor="lightgray"];
   n7214->n7215[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n7215 [label = "wn"color="lightgray" fontcolor="lightgray"];
+  n7215[label="wn" color="lightgray" fontcolor="lightgray"];
   n7215->n7222[color="lightgray" fontcolor="lightgray" label="wff -. ph"];
-  n7216 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n7216[label="wch" color="lightgray" fontcolor="lightgray"];
   n7216->n7222[color="lightgray" fontcolor="lightgray" label="wff ch"];
-  n7217 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n7217[label="wps" color="lightgray" fontcolor="lightgray"];
   n7217->n7222[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n7218 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n7218[label="wph" color="lightgray" fontcolor="lightgray"];
   n7218->n7220[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n7219 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n7219[label="wch" color="lightgray" fontcolor="lightgray"];
   n7219->n7220[color="lightgray" fontcolor="lightgray" label="wff ch"];
-  n7220 [label = "pm2.53"style="filled" fillcolor = "cyan"];
-  n7220->n7222[label="|- ( ( ph \/ ch ) -> ( -. ph -> ch ) )"];
+  n7220[label="pm2.53" style="filled" fillcolor = "cyan"];
+  n7220->n7222[label="|- ( ( ph \\/ ch ) -> ( -. ph -> ch ) )"];
   n7218->n7219[arrowhead="none" style="invisible"];
   {rank=same;n7219;n7218;}
-  n7221 [label = "jaoi.2"style="filled" fillcolor = "orange"];
+  n7221[label="jaoi.2" style="filled" fillcolor = "orange"];
   n7221->n7222[label="|- ( ch -> ps )"];
-  n7222 [label = "syl6"style="filled" fillcolor = "cyan"];
-  n7222->n7224[label="|- ( ( ph \/ ch ) -> ( -. ph -> ps ) )"];
+  n7222[label="syl6" style="filled" fillcolor = "cyan"];
+  n7222->n7224[label="|- ( ( ph \\/ ch ) -> ( -. ph -> ps ) )"];
   n7213->n7215->n7216->n7217->n7220->n7221[arrowhead="none" style="invisible"];
   {rank=same;n7221;n7220;n7217;n7216;n7215;n7213;}
-  n7223 [label = "jaoi.1"style="filled" fillcolor = "orange"];
+  n7223[label="jaoi.1" style="filled" fillcolor = "orange"];
   n7223->n7224[label="|- ( ph -> ps )"];
-  n7224 [label = "pm2.61d2"style="filled" fillcolor = "cyan"];
-QED[style="invisible"]
-  n7224->QED[label="|- ( ( ph \/ ch ) -> ps )"];
+  n7224[label="pm2.61d2" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n7224->QED[label="|- ( ( ph \\/ ch ) -> ps )"];
   n7208->n7209->n7210->n7222->n7223[arrowhead="none" style="invisible"];
   {rank=same;n7223;n7222;n7210;n7209;n7208;}
 }

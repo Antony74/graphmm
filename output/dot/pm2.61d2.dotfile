@@ -1,31 +1,31 @@
 digraph proof_pm2_61d2 {
   rankdir = LR;
-  n1812 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n1812[label="wph" color="lightgray" fontcolor="lightgray"];
   n1812->n1822[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n1813 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n1813[label="wps" color="lightgray" fontcolor="lightgray"];
   n1813->n1822[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n1814 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n1814[label="wch" color="lightgray" fontcolor="lightgray"];
   n1814->n1822[color="lightgray" fontcolor="lightgray" label="wff ch"];
-  n1815 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n1815[label="wps" color="lightgray" fontcolor="lightgray"];
   n1815->n1817[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n1816 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n1816[label="wch" color="lightgray" fontcolor="lightgray"];
   n1816->n1817[color="lightgray" fontcolor="lightgray" label="wff ch"];
-  n1817 [label = "wi"color="lightgray" fontcolor="lightgray"];
+  n1817[label="wi" color="lightgray" fontcolor="lightgray"];
   n1817->n1820[color="lightgray" fontcolor="lightgray" label="wff ( ps -> ch )"];
   n1815->n1816[arrowhead="none" style="invisible"];
   {rank=same;n1816;n1815;}
-  n1818 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n1818[label="wph" color="lightgray" fontcolor="lightgray"];
   n1818->n1820[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n1819 [label = "pm2.61d2.2"style="filled" fillcolor = "orange"];
+  n1819[label="pm2.61d2.2" style="filled" fillcolor = "orange"];
   n1819->n1820[label="|- ( ps -> ch )"];
-  n1820 [label = "a1i"style="filled" fillcolor = "cyan"];
+  n1820[label="a1i" style="filled" fillcolor = "cyan"];
   n1820->n1822[label="|- ( ph -> ( ps -> ch ) )"];
   n1817->n1818->n1819[arrowhead="none" style="invisible"];
   {rank=same;n1819;n1818;n1817;}
-  n1821 [label = "pm2.61d2.1"style="filled" fillcolor = "orange"];
+  n1821[label="pm2.61d2.1" style="filled" fillcolor = "orange"];
   n1821->n1822[label="|- ( ph -> ( -. ps -> ch ) )"];
-  n1822 [label = "pm2.61d"style="filled" fillcolor = "cyan"];
-QED[style="invisible"]
+  n1822[label="pm2.61d" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
   n1822->QED[label="|- ( ph -> ch )"];
   n1812->n1813->n1814->n1820->n1821[arrowhead="none" style="invisible"];
   {rank=same;n1821;n1820;n1814;n1813;n1812;}

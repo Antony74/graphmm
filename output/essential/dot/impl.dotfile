@@ -1,0 +1,30 @@
+digraph proof_impl {
+  rankdir = LR;
+  n10645[label="wph" style="invisible"];
+  n10645->n10655[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n10646[label="wps" style="invisible"];
+  n10646->n10655[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n10647[label="wch" style="invisible"];
+  n10647->n10655[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n10648[label="wth" style="invisible"];
+  n10648->n10655[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n10649[label="wph" style="invisible"];
+  n10649->n10654[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n10650[label="wps" style="invisible"];
+  n10650->n10654[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n10651[label="wch" style="invisible"];
+  n10651->n10654[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n10652[label="wth" style="invisible"];
+  n10652->n10654[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n10653[label="impl.1" style="filled" fillcolor = "orange"];
+  n10653->n10654[label="|- ( ph -> ( ( ps /\\ ch ) -> th ) )"];
+  n10654[label="exp3a" style="filled" fillcolor = "cyan"];
+  n10654->n10655[label="|- ( ph -> ( ps -> ( ch -> th ) ) )"];
+  n10649->n10650->n10651->n10652->n10653[arrowhead="none" style="invisible"];
+  {rank=same;n10653;n10652;n10651;n10650;n10649;}
+  n10655[label="imp31" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n10655->QED[label="|- ( ( ( ph /\\ ps ) /\\ ch ) -> th )"];
+  n10645->n10646->n10647->n10648->n10654[arrowhead="none" style="invisible"];
+  {rank=same;n10654;n10648;n10647;n10646;n10645;}
+}

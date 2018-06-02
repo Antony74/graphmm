@@ -1,28 +1,28 @@
 digraph proof_3ad2ant1 {
   rankdir = LR;
-  n19504 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n19504[label="wph" color="lightgray" fontcolor="lightgray"];
   n19504->n19513[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n19505 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n19505[label="wth" color="lightgray" fontcolor="lightgray"];
   n19505->n19513[color="lightgray" fontcolor="lightgray" label="wff th"];
-  n19506 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n19506[label="wch" color="lightgray" fontcolor="lightgray"];
   n19506->n19513[color="lightgray" fontcolor="lightgray" label="wff ch"];
-  n19507 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n19507[label="wps" color="lightgray" fontcolor="lightgray"];
   n19507->n19513[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n19508 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n19508[label="wph" color="lightgray" fontcolor="lightgray"];
   n19508->n19512[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n19509 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n19509[label="wch" color="lightgray" fontcolor="lightgray"];
   n19509->n19512[color="lightgray" fontcolor="lightgray" label="wff ch"];
-  n19510 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n19510[label="wth" color="lightgray" fontcolor="lightgray"];
   n19510->n19512[color="lightgray" fontcolor="lightgray" label="wff th"];
-  n19511 [label = "3ad2ant.1"style="filled" fillcolor = "orange"];
+  n19511[label="3ad2ant.1" style="filled" fillcolor = "orange"];
   n19511->n19512[label="|- ( ph -> ch )"];
-  n19512 [label = "adantr"style="filled" fillcolor = "cyan"];
-  n19512->n19513[label="|- ( ( ph /\ th ) -> ch )"];
+  n19512[label="adantr" style="filled" fillcolor = "cyan"];
+  n19512->n19513[label="|- ( ( ph /\\ th ) -> ch )"];
   n19508->n19509->n19510->n19511[arrowhead="none" style="invisible"];
   {rank=same;n19511;n19510;n19509;n19508;}
-  n19513 [label = "3adant2"style="filled" fillcolor = "cyan"];
-QED[style="invisible"]
-  n19513->QED[label="|- ( ( ph /\ ps /\ th ) -> ch )"];
+  n19513[label="3adant2" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n19513->QED[label="|- ( ( ph /\\ ps /\\ th ) -> ch )"];
   n19504->n19505->n19506->n19507->n19512[arrowhead="none" style="invisible"];
   {rank=same;n19512;n19507;n19506;n19505;n19504;}
 }

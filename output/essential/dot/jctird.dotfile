@@ -1,0 +1,30 @@
+digraph proof_jctird {
+  rankdir = LR;
+  n9358[label="wph" style="invisible"];
+  n9358->n9368[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n9359[label="wps" style="invisible"];
+  n9359->n9368[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n9360[label="wch" style="invisible"];
+  n9360->n9368[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n9361[label="wth" style="invisible"];
+  n9361->n9368[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n9362[label="jctird.1" style="filled" fillcolor = "orange"];
+  n9362->n9368[label="|- ( ph -> ( ps -> ch ) )"];
+  n9363[label="wph" style="invisible"];
+  n9363->n9367[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n9364[label="wth" style="invisible"];
+  n9364->n9367[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n9365[label="wps" style="invisible"];
+  n9365->n9367[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n9366[label="jctird.2" style="filled" fillcolor = "orange"];
+  n9366->n9367[label="|- ( ph -> th )"];
+  n9367[label="a1d" style="filled" fillcolor = "cyan"];
+  n9367->n9368[label="|- ( ph -> ( ps -> th ) )"];
+  n9363->n9364->n9365->n9366[arrowhead="none" style="invisible"];
+  {rank=same;n9366;n9365;n9364;n9363;}
+  n9368[label="jcad" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n9368->QED[label="|- ( ph -> ( ps -> ( ch /\\ th ) ) )"];
+  n9358->n9359->n9360->n9361->n9362->n9367[arrowhead="none" style="invisible"];
+  {rank=same;n9367;n9362;n9361;n9360;n9359;n9358;}
+}

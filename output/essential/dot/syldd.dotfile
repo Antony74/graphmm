@@ -1,0 +1,32 @@
+digraph proof_syldd {
+  rankdir = LR;
+  n643[label="wph" style="invisible"];
+  n643->n660[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n644[label="wps" style="invisible"];
+  n644->n660[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n647[label="wi" style="invisible"];
+  n647->n660[color="lightgray" fontcolor="lightgray" label="wff ( th -> ta )"];
+  n650[label="wi" style="invisible"];
+  n650->n660[color="lightgray" fontcolor="lightgray" label="wff ( ch -> th )"];
+  n653[label="wi" style="invisible"];
+  n653->n660[color="lightgray" fontcolor="lightgray" label="wff ( ch -> ta )"];
+  n654[label="syldd.2" style="filled" fillcolor = "orange"];
+  n654->n660[label="|- ( ph -> ( ps -> ( th -> ta ) ) )"];
+  n655[label="syldd.1" style="filled" fillcolor = "orange"];
+  n655->n660[label="|- ( ph -> ( ps -> ( ch -> th ) ) )"];
+  n656[label="wth" style="invisible"];
+  n656->n659[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n657[label="wta" style="invisible"];
+  n657->n659[color="lightgray" fontcolor="lightgray" label="wff ta"];
+  n658[label="wch" style="invisible"];
+  n658->n659[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n659[label="imim2" style="filled" fillcolor = "cyan"];
+  n659->n660[label="|- ( ( th -> ta ) -> ( ( ch -> th ) -> ( ch -> ta ) ) )"];
+  n656->n657->n658[arrowhead="none" style="invisible"];
+  {rank=same;n658;n657;n656;}
+  n660[label="syl6c" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n660->QED[label="|- ( ph -> ( ps -> ( ch -> ta ) ) )"];
+  n643->n644->n647->n650->n653->n654->n655->n659[arrowhead="none" style="invisible"];
+  {rank=same;n659;n655;n654;n653;n650;n647;n644;n643;}
+}

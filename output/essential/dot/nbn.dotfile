@@ -1,0 +1,30 @@
+digraph proof_nbn {
+  rankdir = LR;
+  n6588[label="wb" style="invisible"];
+  n6588->n6604[color="lightgray" fontcolor="lightgray" label="wff ( ps <-> ph )"];
+  n6590[label="wn" style="invisible"];
+  n6590->n6604[color="lightgray" fontcolor="lightgray" label="wff -. ps"];
+  n6592[label="wn" style="invisible"];
+  n6592->n6603[color="lightgray" fontcolor="lightgray" label="wff -. ph"];
+  n6598[label="wb" style="invisible"];
+  n6598->n6603[color="lightgray" fontcolor="lightgray" label="wff ( ( ps <-> ph ) <-> -. ps )"];
+  n6599[label="nbn.1" style="filled" fillcolor = "orange"];
+  n6599->n6603[label="|- -. ph"];
+  n6600[label="wps" style="invisible"];
+  n6600->n6602[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n6601[label="wph" style="invisible"];
+  n6601->n6602[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n6602[label="bibif" style="filled" fillcolor = "cyan"];
+  n6602->n6603[label="|- ( -. ph -> ( ( ps <-> ph ) <-> -. ps ) )"];
+  n6600->n6601[arrowhead="none" style="invisible"];
+  {rank=same;n6601;n6600;}
+  n6603[label="ax-mp" style="filled" fillcolor = "lawngreen"];
+  n6603->n6604[label="|- ( ( ps <-> ph ) <-> -. ps )"];
+  n6592->n6598->n6599->n6602[arrowhead="none" style="invisible"];
+  {rank=same;n6602;n6599;n6598;n6592;}
+  n6604[label="bicomi" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n6604->QED[label="|- ( -. ps <-> ( ps <-> ph ) )"];
+  n6588->n6590->n6603[arrowhead="none" style="invisible"];
+  {rank=same;n6603;n6590;n6588;}
+}

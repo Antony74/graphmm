@@ -1,0 +1,32 @@
+digraph proof_con2d {
+  rankdir = LR;
+  n1300[label="wph" style="invisible"];
+  n1300->n1315[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n1302[label="wn" style="invisible"];
+  n1302->n1315[color="lightgray" fontcolor="lightgray" label="wff -. ps"];
+  n1303[label="wch" style="invisible"];
+  n1303->n1315[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n1306[label="wn" style="invisible"];
+  n1306->n1314[color="lightgray" fontcolor="lightgray" label="wff -. -. ps"];
+  n1307[label="wps" style="invisible"];
+  n1307->n1314[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n1308[label="wph" style="invisible"];
+  n1308->n1314[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n1310[label="wn" style="invisible"];
+  n1310->n1314[color="lightgray" fontcolor="lightgray" label="wff -. ch"];
+  n1311[label="wps" style="invisible"];
+  n1311->n1312[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n1312[label="notnot2" style="filled" fillcolor = "cyan"];
+  n1312->n1314[label="|- ( -. -. ps -> ps )"];
+  n1313[label="con2d.1" style="filled" fillcolor = "orange"];
+  n1313->n1314[label="|- ( ph -> ( ps -> -. ch ) )"];
+  n1314[label="syl5" style="filled" fillcolor = "cyan"];
+  n1314->n1315[label="|- ( ph -> ( -. -. ps -> -. ch ) )"];
+  n1306->n1307->n1308->n1310->n1312->n1313[arrowhead="none" style="invisible"];
+  {rank=same;n1313;n1312;n1310;n1308;n1307;n1306;}
+  n1315[label="con4d" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n1315->QED[label="|- ( ph -> ( ch -> -. ps ) )"];
+  n1300->n1302->n1303->n1314[arrowhead="none" style="invisible"];
+  {rank=same;n1314;n1303;n1302;n1300;}
+}

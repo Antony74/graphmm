@@ -1,27 +1,27 @@
 digraph proof_pm2_21dd {
   rankdir = LR;
-  n1206 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n1206[label="wph" color="lightgray" fontcolor="lightgray"];
   n1206->n1215[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n1207 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n1207[label="wps" color="lightgray" fontcolor="lightgray"];
   n1207->n1215[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n1208 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n1208[label="wch" color="lightgray" fontcolor="lightgray"];
   n1208->n1215[color="lightgray" fontcolor="lightgray" label="wff ch"];
-  n1209 [label = "pm2.21dd.1"style="filled" fillcolor = "orange"];
+  n1209[label="pm2.21dd.1" style="filled" fillcolor = "orange"];
   n1209->n1215[label="|- ( ph -> ps )"];
-  n1210 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n1210[label="wph" color="lightgray" fontcolor="lightgray"];
   n1210->n1214[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n1211 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n1211[label="wps" color="lightgray" fontcolor="lightgray"];
   n1211->n1214[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n1212 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n1212[label="wch" color="lightgray" fontcolor="lightgray"];
   n1212->n1214[color="lightgray" fontcolor="lightgray" label="wff ch"];
-  n1213 [label = "pm2.21dd.2"style="filled" fillcolor = "orange"];
+  n1213[label="pm2.21dd.2" style="filled" fillcolor = "orange"];
   n1213->n1214[label="|- ( ph -> -. ps )"];
-  n1214 [label = "pm2.21d"style="filled" fillcolor = "cyan"];
+  n1214[label="pm2.21d" style="filled" fillcolor = "cyan"];
   n1214->n1215[label="|- ( ph -> ( ps -> ch ) )"];
   n1210->n1211->n1212->n1213[arrowhead="none" style="invisible"];
   {rank=same;n1213;n1212;n1211;n1210;}
-  n1215 [label = "mpd"style="filled" fillcolor = "cyan"];
-QED[style="invisible"]
+  n1215[label="mpd" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
   n1215->QED[label="|- ( ph -> ch )"];
   n1206->n1207->n1208->n1209->n1214[arrowhead="none" style="invisible"];
   {rank=same;n1214;n1209;n1208;n1207;n1206;}

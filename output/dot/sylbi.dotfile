@@ -1,25 +1,25 @@
 digraph proof_sylbi {
   rankdir = LR;
-  n4492 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n4492[label="wph" color="lightgray" fontcolor="lightgray"];
   n4492->n4500[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n4493 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n4493[label="wps" color="lightgray" fontcolor="lightgray"];
   n4493->n4500[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n4494 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n4494[label="wch" color="lightgray" fontcolor="lightgray"];
   n4494->n4500[color="lightgray" fontcolor="lightgray" label="wff ch"];
-  n4495 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n4495[label="wph" color="lightgray" fontcolor="lightgray"];
   n4495->n4498[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n4496 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n4496[label="wps" color="lightgray" fontcolor="lightgray"];
   n4496->n4498[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n4497 [label = "sylbi.1"style="filled" fillcolor = "orange"];
+  n4497[label="sylbi.1" style="filled" fillcolor = "orange"];
   n4497->n4498[label="|- ( ph <-> ps )"];
-  n4498 [label = "biimpi"style="filled" fillcolor = "cyan"];
+  n4498[label="biimpi" style="filled" fillcolor = "cyan"];
   n4498->n4500[label="|- ( ph -> ps )"];
   n4495->n4496->n4497[arrowhead="none" style="invisible"];
   {rank=same;n4497;n4496;n4495;}
-  n4499 [label = "sylbi.2"style="filled" fillcolor = "orange"];
+  n4499[label="sylbi.2" style="filled" fillcolor = "orange"];
   n4499->n4500[label="|- ( ps -> ch )"];
-  n4500 [label = "syl"style="filled" fillcolor = "cyan"];
-QED[style="invisible"]
+  n4500[label="syl" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
   n4500->QED[label="|- ( ph -> ch )"];
   n4492->n4493->n4494->n4498->n4499[arrowhead="none" style="invisible"];
   {rank=same;n4499;n4498;n4494;n4493;n4492;}

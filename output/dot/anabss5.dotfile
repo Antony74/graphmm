@@ -1,28 +1,28 @@
 digraph proof_anabss5 {
   rankdir = LR;
-  n13916 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n13916[label="wph" color="lightgray" fontcolor="lightgray"];
   n13916->n13925[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n13917 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n13917[label="wps" color="lightgray" fontcolor="lightgray"];
   n13917->n13925[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n13918 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n13918[label="wch" color="lightgray" fontcolor="lightgray"];
   n13918->n13925[color="lightgray" fontcolor="lightgray" label="wff ch"];
-  n13919 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n13919[label="wph" color="lightgray" fontcolor="lightgray"];
   n13919->n13924[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n13920 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n13920[label="wph" color="lightgray" fontcolor="lightgray"];
   n13920->n13924[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n13921 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n13921[label="wps" color="lightgray" fontcolor="lightgray"];
   n13921->n13924[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n13922 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n13922[label="wch" color="lightgray" fontcolor="lightgray"];
   n13922->n13924[color="lightgray" fontcolor="lightgray" label="wff ch"];
-  n13923 [label = "anabss5.1"style="filled" fillcolor = "orange"];
-  n13923->n13924[label="|- ( ( ph /\ ( ph /\ ps ) ) -> ch )"];
-  n13924 [label = "anassrs"style="filled" fillcolor = "cyan"];
-  n13924->n13925[label="|- ( ( ( ph /\ ph ) /\ ps ) -> ch )"];
+  n13923[label="anabss5.1" style="filled" fillcolor = "orange"];
+  n13923->n13924[label="|- ( ( ph /\\ ( ph /\\ ps ) ) -> ch )"];
+  n13924[label="anassrs" style="filled" fillcolor = "cyan"];
+  n13924->n13925[label="|- ( ( ( ph /\\ ph ) /\\ ps ) -> ch )"];
   n13919->n13920->n13921->n13922->n13923[arrowhead="none" style="invisible"];
   {rank=same;n13923;n13922;n13921;n13920;n13919;}
-  n13925 [label = "anabsan"style="filled" fillcolor = "cyan"];
-QED[style="invisible"]
-  n13925->QED[label="|- ( ( ph /\ ps ) -> ch )"];
+  n13925[label="anabsan" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n13925->QED[label="|- ( ( ph /\\ ps ) -> ch )"];
   n13916->n13917->n13918->n13924[arrowhead="none" style="invisible"];
   {rank=same;n13924;n13918;n13917;n13916;}
 }

@@ -1,29 +1,29 @@
 digraph proof_orcs {
   rankdir = LR;
-  n7382 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n7382[label="wph" color="lightgray" fontcolor="lightgray"];
   n7382->n7391[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n7383 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n7383[label="wph" color="lightgray" fontcolor="lightgray"];
   n7383->n7385[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n7384 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n7384[label="wps" color="lightgray" fontcolor="lightgray"];
   n7384->n7385[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n7385 [label = "wo"color="lightgray" fontcolor="lightgray"];
-  n7385->n7391[color="lightgray" fontcolor="lightgray" label="wff ( ph \/ ps )"];
+  n7385[label="wo" color="lightgray" fontcolor="lightgray"];
+  n7385->n7391[color="lightgray" fontcolor="lightgray" label="wff ( ph \\/ ps )"];
   n7383->n7384[arrowhead="none" style="invisible"];
   {rank=same;n7384;n7383;}
-  n7386 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n7386[label="wch" color="lightgray" fontcolor="lightgray"];
   n7386->n7391[color="lightgray" fontcolor="lightgray" label="wff ch"];
-  n7387 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n7387[label="wph" color="lightgray" fontcolor="lightgray"];
   n7387->n7389[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n7388 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n7388[label="wps" color="lightgray" fontcolor="lightgray"];
   n7388->n7389[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n7389 [label = "orc"style="filled" fillcolor = "cyan"];
-  n7389->n7391[label="|- ( ph -> ( ph \/ ps ) )"];
+  n7389[label="orc" style="filled" fillcolor = "cyan"];
+  n7389->n7391[label="|- ( ph -> ( ph \\/ ps ) )"];
   n7387->n7388[arrowhead="none" style="invisible"];
   {rank=same;n7388;n7387;}
-  n7390 [label = "orcs.1"style="filled" fillcolor = "orange"];
-  n7390->n7391[label="|- ( ( ph \/ ps ) -> ch )"];
-  n7391 [label = "syl"style="filled" fillcolor = "cyan"];
-QED[style="invisible"]
+  n7390[label="orcs.1" style="filled" fillcolor = "orange"];
+  n7390->n7391[label="|- ( ( ph \\/ ps ) -> ch )"];
+  n7391[label="syl" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
   n7391->QED[label="|- ( ph -> ch )"];
   n7382->n7385->n7386->n7389->n7390[arrowhead="none" style="invisible"];
   {rank=same;n7390;n7389;n7386;n7385;n7382;}

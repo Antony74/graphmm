@@ -1,0 +1,28 @@
+digraph proof_jc {
+  rankdir = LR;
+  n1632[label="wph" style="invisible"];
+  n1632->n1645[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n1633[label="wps" style="invisible"];
+  n1633->n1645[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n1634[label="wch" style="invisible"];
+  n1634->n1645[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n1639[label="wn" style="invisible"];
+  n1639->n1645[color="lightgray" fontcolor="lightgray" label="wff -. ( ps -> -. ch )"];
+  n1640[label="jc.1" style="filled" fillcolor = "orange"];
+  n1640->n1645[label="|- ( ph -> ps )"];
+  n1641[label="jc.2" style="filled" fillcolor = "orange"];
+  n1641->n1645[label="|- ( ph -> ch )"];
+  n1642[label="wps" style="invisible"];
+  n1642->n1644[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n1643[label="wch" style="invisible"];
+  n1643->n1644[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n1644[label="pm3.2im" style="filled" fillcolor = "cyan"];
+  n1644->n1645[label="|- ( ps -> ( ch -> -. ( ps -> -. ch ) ) )"];
+  n1642->n1643[arrowhead="none" style="invisible"];
+  {rank=same;n1643;n1642;}
+  n1645[label="sylc" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n1645->QED[label="|- ( ph -> -. ( ps -> -. ch ) )"];
+  n1632->n1633->n1634->n1639->n1640->n1641->n1644[arrowhead="none" style="invisible"];
+  {rank=same;n1644;n1641;n1640;n1639;n1634;n1633;n1632;}
+}

@@ -1,0 +1,32 @@
+digraph proof_tbt {
+  rankdir = LR;
+  n6531[label="wph" style="invisible"];
+  n6531->n6547[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n6536[label="wb" style="invisible"];
+  n6536->n6547[color="lightgray" fontcolor="lightgray" label="wff ( ps <-> ( ps <-> ph ) )"];
+  n6537[label="tbt.1" style="filled" fillcolor = "orange"];
+  n6537->n6547[label="|- ph"];
+  n6538[label="wph" style="invisible"];
+  n6538->n6546[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n6539[label="wps" style="invisible"];
+  n6539->n6546[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n6542[label="wb" style="invisible"];
+  n6542->n6546[color="lightgray" fontcolor="lightgray" label="wff ( ps <-> ph )"];
+  n6543[label="wph" style="invisible"];
+  n6543->n6545[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n6544[label="wps" style="invisible"];
+  n6544->n6545[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n6545[label="ibibr" style="filled" fillcolor = "cyan"];
+  n6545->n6546[label="|- ( ( ph -> ps ) <-> ( ph -> ( ps <-> ph ) ) )"];
+  n6543->n6544[arrowhead="none" style="invisible"];
+  {rank=same;n6544;n6543;}
+  n6546[label="pm5.74ri" style="filled" fillcolor = "cyan"];
+  n6546->n6547[label="|- ( ph -> ( ps <-> ( ps <-> ph ) ) )"];
+  n6538->n6539->n6542->n6545[arrowhead="none" style="invisible"];
+  {rank=same;n6545;n6542;n6539;n6538;}
+  n6547[label="ax-mp" style="filled" fillcolor = "lawngreen"];
+  QED[style="invisible"]
+  n6547->QED[label="|- ( ps <-> ( ps <-> ph ) )"];
+  n6531->n6536->n6537->n6546[arrowhead="none" style="invisible"];
+  {rank=same;n6546;n6537;n6536;n6531;}
+}

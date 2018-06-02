@@ -1,0 +1,38 @@
+digraph proof_orbi12i {
+  rankdir = LR;
+  n8916[label="wo" style="invisible"];
+  n8916->n8933[color="lightgray" fontcolor="lightgray" label="wff ( ph \\/ ch )"];
+  n8919[label="wo" style="invisible"];
+  n8919->n8933[color="lightgray" fontcolor="lightgray" label="wff ( ph \\/ th )"];
+  n8922[label="wo" style="invisible"];
+  n8922->n8933[color="lightgray" fontcolor="lightgray" label="wff ( ps \\/ th )"];
+  n8923[label="wch" style="invisible"];
+  n8923->n8927[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n8924[label="wth" style="invisible"];
+  n8924->n8927[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n8925[label="wph" style="invisible"];
+  n8925->n8927[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n8926[label="orbi12i.2" style="filled" fillcolor = "orange"];
+  n8926->n8927[label="|- ( ch <-> th )"];
+  n8927[label="orbi2i" style="filled" fillcolor = "cyan"];
+  n8927->n8933[label="|- ( ( ph \\/ ch ) <-> ( ph \\/ th ) )"];
+  n8923->n8924->n8925->n8926[arrowhead="none" style="invisible"];
+  {rank=same;n8926;n8925;n8924;n8923;}
+  n8928[label="wph" style="invisible"];
+  n8928->n8932[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n8929[label="wps" style="invisible"];
+  n8929->n8932[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n8930[label="wth" style="invisible"];
+  n8930->n8932[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n8931[label="orbi12i.1" style="filled" fillcolor = "orange"];
+  n8931->n8932[label="|- ( ph <-> ps )"];
+  n8932[label="orbi1i" style="filled" fillcolor = "cyan"];
+  n8932->n8933[label="|- ( ( ph \\/ th ) <-> ( ps \\/ th ) )"];
+  n8928->n8929->n8930->n8931[arrowhead="none" style="invisible"];
+  {rank=same;n8931;n8930;n8929;n8928;}
+  n8933[label="bitri" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n8933->QED[label="|- ( ( ph \\/ ch ) <-> ( ps \\/ th ) )"];
+  n8916->n8919->n8922->n8927->n8932[arrowhead="none" style="invisible"];
+  {rank=same;n8932;n8927;n8922;n8919;n8916;}
+}

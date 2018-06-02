@@ -1,29 +1,29 @@
 digraph proof_syl5ibrcom {
   rankdir = LR;
-  n4773 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n4773[label="wch" color="lightgray" fontcolor="lightgray"];
   n4773->n4783[color="lightgray" fontcolor="lightgray" label="wff ch"];
-  n4774 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n4774[label="wph" color="lightgray" fontcolor="lightgray"];
   n4774->n4783[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n4775 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n4775[label="wps" color="lightgray" fontcolor="lightgray"];
   n4775->n4783[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n4776 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n4776[label="wph" color="lightgray" fontcolor="lightgray"];
   n4776->n4782[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n4777 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n4777[label="wps" color="lightgray" fontcolor="lightgray"];
   n4777->n4782[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n4778 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n4778[label="wch" color="lightgray" fontcolor="lightgray"];
   n4778->n4782[color="lightgray" fontcolor="lightgray" label="wff ch"];
-  n4779 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n4779[label="wth" color="lightgray" fontcolor="lightgray"];
   n4779->n4782[color="lightgray" fontcolor="lightgray" label="wff th"];
-  n4780 [label = "syl5ibr.1"style="filled" fillcolor = "orange"];
+  n4780[label="syl5ibr.1" style="filled" fillcolor = "orange"];
   n4780->n4782[label="|- ( ph -> th )"];
-  n4781 [label = "syl5ibr.2"style="filled" fillcolor = "orange"];
+  n4781[label="syl5ibr.2" style="filled" fillcolor = "orange"];
   n4781->n4782[label="|- ( ch -> ( ps <-> th ) )"];
-  n4782 [label = "syl5ibr"style="filled" fillcolor = "cyan"];
+  n4782[label="syl5ibr" style="filled" fillcolor = "cyan"];
   n4782->n4783[label="|- ( ch -> ( ph -> ps ) )"];
   n4776->n4777->n4778->n4779->n4780->n4781[arrowhead="none" style="invisible"];
   {rank=same;n4781;n4780;n4779;n4778;n4777;n4776;}
-  n4783 [label = "com12"style="filled" fillcolor = "cyan"];
-QED[style="invisible"]
+  n4783[label="com12" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
   n4783->QED[label="|- ( ph -> ( ch -> ps ) )"];
   n4773->n4774->n4775->n4782[arrowhead="none" style="invisible"];
   {rank=same;n4782;n4775;n4774;n4773;}

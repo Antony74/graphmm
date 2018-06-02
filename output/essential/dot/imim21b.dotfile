@@ -1,0 +1,68 @@
+digraph proof_imim21b {
+  rankdir = LR;
+  n7065[label="wi" style="invisible"];
+  n7065->n7122[color="lightgray" fontcolor="lightgray" label="wff ( ( ph -> ch ) -> ( ps -> th ) )"];
+  n7072[label="wi" style="invisible"];
+  n7072->n7122[color="lightgray" fontcolor="lightgray" label="wff ( ps -> ( ( ph -> ch ) -> th ) )"];
+  n7075[label="wi" style="invisible"];
+  n7075->n7122[color="lightgray" fontcolor="lightgray" label="wff ( ps -> ph )"];
+  n7080[label="wi" style="invisible"];
+  n7080->n7122[color="lightgray" fontcolor="lightgray" label="wff ( ps -> ( ch -> th ) )"];
+  n7083[label="wi" style="invisible"];
+  n7083->n7086[color="lightgray" fontcolor="lightgray" label="wff ( ph -> ch )"];
+  n7084[label="wps" style="invisible"];
+  n7084->n7086[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n7085[label="wth" style="invisible"];
+  n7085->n7086[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n7086[label="bi2.04" style="filled" fillcolor = "cyan"];
+  n7086->n7122[label="|- ( ( ( ph -> ch ) -> ( ps -> th ) ) <-> ( ps -> ( ( ph -> ch ) -> th ) ) )"];
+  n7083->n7084->n7085[arrowhead="none" style="invisible"];
+  {rank=same;n7085;n7084;n7083;}
+  n7089[label="wi" style="invisible"];
+  n7089->n7121[color="lightgray" fontcolor="lightgray" label="wff ( ps -> ph )"];
+  n7090[label="wps" style="invisible"];
+  n7090->n7121[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n7095[label="wi" style="invisible"];
+  n7095->n7121[color="lightgray" fontcolor="lightgray" label="wff ( ( ph -> ch ) -> th )"];
+  n7098[label="wi" style="invisible"];
+  n7098->n7121[color="lightgray" fontcolor="lightgray" label="wff ( ch -> th )"];
+  n7099[label="wph" style="invisible"];
+  n7099->n7120[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n7108[label="wb" style="invisible"];
+  n7108->n7120[color="lightgray" fontcolor="lightgray" label="wff ( ( ( ph -> ch ) -> th ) <-> ( ch -> th ) )"];
+  n7109[label="wps" style="invisible"];
+  n7109->n7120[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n7110[label="wph" style="invisible"];
+  n7110->n7119[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n7113[label="wi" style="invisible"];
+  n7113->n7119[color="lightgray" fontcolor="lightgray" label="wff ( ph -> ch )"];
+  n7114[label="wch" style="invisible"];
+  n7114->n7119[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n7115[label="wth" style="invisible"];
+  n7115->n7119[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n7116[label="wph" style="invisible"];
+  n7116->n7118[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n7117[label="wch" style="invisible"];
+  n7117->n7118[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n7118[label="pm5.5" style="filled" fillcolor = "cyan"];
+  n7118->n7119[label="|- ( ph -> ( ( ph -> ch ) <-> ch ) )"];
+  n7116->n7117[arrowhead="none" style="invisible"];
+  {rank=same;n7117;n7116;}
+  n7119[label="imbi1d" style="filled" fillcolor = "cyan"];
+  n7119->n7120[label="|- ( ph -> ( ( ( ph -> ch ) -> th ) <-> ( ch -> th ) ) )"];
+  n7110->n7113->n7114->n7115->n7118[arrowhead="none" style="invisible"];
+  {rank=same;n7118;n7115;n7114;n7113;n7110;}
+  n7120[label="imim2i" style="filled" fillcolor = "cyan"];
+  n7120->n7121[label="|- ( ( ps -> ph ) -> ( ps -> ( ( ( ph -> ch ) -> th ) <-> ( ch -> th ) ) ) )"];
+  n7099->n7108->n7109->n7119[arrowhead="none" style="invisible"];
+  {rank=same;n7119;n7109;n7108;n7099;}
+  n7121[label="pm5.74d" style="filled" fillcolor = "cyan"];
+  n7121->n7122[label="|- ( ( ps -> ph ) -> ( ( ps -> ( ( ph -> ch ) -> th ) ) <-> ( ps -> ( ch -> th ) ) ) )"];
+  n7089->n7090->n7095->n7098->n7120[arrowhead="none" style="invisible"];
+  {rank=same;n7120;n7098;n7095;n7090;n7089;}
+  n7122[label="syl5bb" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n7122->QED[label="|- ( ( ps -> ph ) -> ( ( ( ph -> ch ) -> ( ps -> th ) ) <-> ( ps -> ( ch -> th ) ) ) )"];
+  n7065->n7072->n7075->n7080->n7086->n7121[arrowhead="none" style="invisible"];
+  {rank=same;n7121;n7086;n7080;n7075;n7072;n7065;}
+}

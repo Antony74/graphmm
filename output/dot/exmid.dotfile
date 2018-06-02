@@ -1,20 +1,20 @@
 digraph proof_exmid {
   rankdir = LR;
-  n7632 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n7632[label="wph" color="lightgray" fontcolor="lightgray"];
   n7632->n7638[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n7633 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n7633[label="wph" color="lightgray" fontcolor="lightgray"];
   n7633->n7634[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n7634 [label = "wn"color="lightgray" fontcolor="lightgray"];
+  n7634[label="wn" color="lightgray" fontcolor="lightgray"];
   n7634->n7638[color="lightgray" fontcolor="lightgray" label="wff -. ph"];
-  n7635 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n7635[label="wph" color="lightgray" fontcolor="lightgray"];
   n7635->n7636[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n7636 [label = "wn"color="lightgray" fontcolor="lightgray"];
+  n7636[label="wn" color="lightgray" fontcolor="lightgray"];
   n7636->n7637[color="lightgray" fontcolor="lightgray" label="wff -. ph"];
-  n7637 [label = "id"style="filled" fillcolor = "cyan"];
+  n7637[label="id" style="filled" fillcolor = "cyan"];
   n7637->n7638[label="|- ( -. ph -> -. ph )"];
-  n7638 [label = "orri"style="filled" fillcolor = "cyan"];
-QED[style="invisible"]
-  n7638->QED[label="|- ( ph \/ -. ph )"];
+  n7638[label="orri" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n7638->QED[label="|- ( ph \\/ -. ph )"];
   n7632->n7634->n7637[arrowhead="none" style="invisible"];
   {rank=same;n7637;n7634;n7632;}
 }

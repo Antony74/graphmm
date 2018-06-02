@@ -1,23 +1,23 @@
 digraph proof_notnotrd {
   rankdir = LR;
-  n1283 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n1283[label="wph" color="lightgray" fontcolor="lightgray"];
   n1283->n1291[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n1284 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n1284[label="wps" color="lightgray" fontcolor="lightgray"];
   n1284->n1285[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n1285 [label = "wn"color="lightgray" fontcolor="lightgray"];
+  n1285[label="wn" color="lightgray" fontcolor="lightgray"];
   n1285->n1286[color="lightgray" fontcolor="lightgray" label="wff -. ps"];
-  n1286 [label = "wn"color="lightgray" fontcolor="lightgray"];
+  n1286[label="wn" color="lightgray" fontcolor="lightgray"];
   n1286->n1291[color="lightgray" fontcolor="lightgray" label="wff -. -. ps"];
-  n1287 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n1287[label="wps" color="lightgray" fontcolor="lightgray"];
   n1287->n1291[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n1288 [label = "notnotrd.1"style="filled" fillcolor = "orange"];
+  n1288[label="notnotrd.1" style="filled" fillcolor = "orange"];
   n1288->n1291[label="|- ( ph -> -. -. ps )"];
-  n1289 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n1289[label="wps" color="lightgray" fontcolor="lightgray"];
   n1289->n1290[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n1290 [label = "notnot2"style="filled" fillcolor = "cyan"];
+  n1290[label="notnot2" style="filled" fillcolor = "cyan"];
   n1290->n1291[label="|- ( -. -. ps -> ps )"];
-  n1291 [label = "syl"style="filled" fillcolor = "cyan"];
-QED[style="invisible"]
+  n1291[label="syl" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
   n1291->QED[label="|- ( ph -> ps )"];
   n1283->n1286->n1287->n1288->n1290[arrowhead="none" style="invisible"];
   {rank=same;n1290;n1288;n1287;n1286;n1283;}

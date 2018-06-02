@@ -155,7 +155,7 @@
 </g>
 <!-- n5730 -->
 <g id="node14" class="node"><title>n5730</title>
-<ellipse fill="lime" stroke="black" cx="294.597" cy="-118" rx="27" ry="18"/>
+<ellipse fill="lawngreen" stroke="black" cx="294.597" cy="-118" rx="27" ry="18"/>
 <text text-anchor="middle" x="294.597" y="-114.3" font-family="Times New Roman,serif" font-size="14.00">ax&#45;3</text>
 </g>
 <!-- n5727&#45;&gt;n5730 -->

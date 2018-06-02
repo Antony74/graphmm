@@ -1,0 +1,24 @@
+digraph proof_biantrurd {
+  rankdir = LR;
+  n8724[label="wph" style="invisible"];
+  n8724->n8735[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n8725[label="wps" style="invisible"];
+  n8725->n8735[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n8730[label="wb" style="invisible"];
+  n8730->n8735[color="lightgray" fontcolor="lightgray" label="wff ( ch <-> ( ps /\\ ch ) )"];
+  n8731[label="biantrud.1" style="filled" fillcolor = "orange"];
+  n8731->n8735[label="|- ( ph -> ps )"];
+  n8732[label="wps" style="invisible"];
+  n8732->n8734[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n8733[label="wch" style="invisible"];
+  n8733->n8734[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n8734[label="ibar" style="filled" fillcolor = "cyan"];
+  n8734->n8735[label="|- ( ps -> ( ch <-> ( ps /\\ ch ) ) )"];
+  n8732->n8733[arrowhead="none" style="invisible"];
+  {rank=same;n8733;n8732;}
+  n8735[label="syl" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n8735->QED[label="|- ( ph -> ( ch <-> ( ps /\\ ch ) ) )"];
+  n8724->n8725->n8730->n8731->n8734[arrowhead="none" style="invisible"];
+  {rank=same;n8734;n8731;n8730;n8725;n8724;}
+}

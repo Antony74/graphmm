@@ -1,0 +1,24 @@
+digraph proof_con4d {
+  rankdir = LR;
+  n1181[label="wph" style="invisible"];
+  n1181->n1194[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n1186[label="wi" style="invisible"];
+  n1186->n1194[color="lightgray" fontcolor="lightgray" label="wff ( -. ps -> -. ch )"];
+  n1189[label="wi" style="invisible"];
+  n1189->n1194[color="lightgray" fontcolor="lightgray" label="wff ( ch -> ps )"];
+  n1190[label="con4d.1" style="filled" fillcolor = "orange"];
+  n1190->n1194[label="|- ( ph -> ( -. ps -> -. ch ) )"];
+  n1191[label="wps" style="invisible"];
+  n1191->n1193[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n1192[label="wch" style="invisible"];
+  n1192->n1193[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n1193[label="ax-3" style="filled" fillcolor = "lawngreen"];
+  n1193->n1194[label="|- ( ( -. ps -> -. ch ) -> ( ch -> ps ) )"];
+  n1191->n1192[arrowhead="none" style="invisible"];
+  {rank=same;n1192;n1191;}
+  n1194[label="syl" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n1194->QED[label="|- ( ph -> ( ch -> ps ) )"];
+  n1181->n1186->n1189->n1190->n1193[arrowhead="none" style="invisible"];
+  {rank=same;n1193;n1190;n1189;n1186;n1181;}
+}

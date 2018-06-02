@@ -1,0 +1,38 @@
+digraph proof_pm5_14 {
+  rankdir = LR;
+  n15552[label="wi" style="invisible"];
+  n15552->n15571[color="lightgray" fontcolor="lightgray" label="wff ( ph -> ps )"];
+  n15555[label="wi" style="invisible"];
+  n15555->n15571[color="lightgray" fontcolor="lightgray" label="wff ( ps -> ch )"];
+  n15559[label="wn" style="invisible"];
+  n15559->n15570[color="lightgray" fontcolor="lightgray" label="wff -. ( ph -> ps )"];
+  n15560[label="wps" style="invisible"];
+  n15560->n15570[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n15561[label="wch" style="invisible"];
+  n15561->n15570[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n15562[label="wps" style="invisible"];
+  n15562->n15569[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n15565[label="wi" style="invisible"];
+  n15565->n15569[color="lightgray" fontcolor="lightgray" label="wff ( ph -> ps )"];
+  n15566[label="wps" style="invisible"];
+  n15566->n15568[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n15567[label="wph" style="invisible"];
+  n15567->n15568[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n15568[label="ax-1" style="filled" fillcolor = "lawngreen"];
+  n15568->n15569[label="|- ( ps -> ( ph -> ps ) )"];
+  n15566->n15567[arrowhead="none" style="invisible"];
+  {rank=same;n15567;n15566;}
+  n15569[label="con3i" style="filled" fillcolor = "cyan"];
+  n15569->n15570[label="|- ( -. ( ph -> ps ) -> -. ps )"];
+  n15562->n15565->n15568[arrowhead="none" style="invisible"];
+  {rank=same;n15568;n15565;n15562;}
+  n15570[label="pm2.21d" style="filled" fillcolor = "cyan"];
+  n15570->n15571[label="|- ( -. ( ph -> ps ) -> ( ps -> ch ) )"];
+  n15559->n15560->n15561->n15569[arrowhead="none" style="invisible"];
+  {rank=same;n15569;n15561;n15560;n15559;}
+  n15571[label="orri" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n15571->QED[label="|- ( ( ph -> ps ) \\/ ( ps -> ch ) )"];
+  n15552->n15555->n15570[arrowhead="none" style="invisible"];
+  {rank=same;n15570;n15555;n15552;}
+}

@@ -1,0 +1,24 @@
+digraph proof_pm3_24 {
+  rankdir = LR;
+  n15506[label="wi" style="invisible"];
+  n15506->n15517[color="lightgray" fontcolor="lightgray" label="wff ( ph -> ph )"];
+  n15511[label="wn" style="invisible"];
+  n15511->n15517[color="lightgray" fontcolor="lightgray" label="wff -. ( ph /\\ -. ph )"];
+  n15512[label="wph" style="invisible"];
+  n15512->n15513[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n15513[label="id" style="filled" fillcolor = "cyan"];
+  n15513->n15517[label="|- ( ph -> ph )"];
+  n15514[label="wph" style="invisible"];
+  n15514->n15516[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n15515[label="wph" style="invisible"];
+  n15515->n15516[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n15516[label="iman" style="filled" fillcolor = "cyan"];
+  n15516->n15517[label="|- ( ( ph -> ph ) <-> -. ( ph /\\ -. ph ) )"];
+  n15514->n15515[arrowhead="none" style="invisible"];
+  {rank=same;n15515;n15514;}
+  n15517[label="mpbi" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n15517->QED[label="|- -. ( ph /\\ -. ph )"];
+  n15506->n15511->n15513->n15516[arrowhead="none" style="invisible"];
+  {rank=same;n15516;n15513;n15511;n15506;}
+}

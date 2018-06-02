@@ -1,0 +1,32 @@
+digraph proof_bi3 {
+  rankdir = LR;
+  n2289[label="wi" style="invisible"];
+  n2289->n2369[color="lightgray" fontcolor="lightgray" label="wff ( ph -> ps )"];
+  n2292[label="wi" style="invisible"];
+  n2292->n2369[color="lightgray" fontcolor="lightgray" label="wff ( ps -> ph )"];
+  n2295[label="wb" style="invisible"];
+  n2295->n2369[color="lightgray" fontcolor="lightgray" label="wff ( ph <-> ps )"];
+  n2324[label="wn" style="invisible"];
+  n2324->n2368[color="lightgray" fontcolor="lightgray" label="wff -. ( ( ( ph <-> ps ) -> -. ( ( ph -> ps ) -> -. ( ps -> ph ) ) ) -> -. ( -. ( ( ph -> ps ) -> -. ( ps -> ph ) ) -> ( ph <-> ps ) ) )"];
+  n2337[label="wi" style="invisible"];
+  n2337->n2368[color="lightgray" fontcolor="lightgray" label="wff ( -. ( ( ph -> ps ) -> -. ( ps -> ph ) ) -> ( ph <-> ps ) )"];
+  n2340[label="df-bi" style="invisible"];
+  n2340->n2368[color="lightgray" fontcolor="lightgray" label="|- -. ( ( ( ph <-> ps ) -> -. ( ( ph -> ps ) -> -. ( ps -> ph ) ) ) -> -. ( -. ( ( ph -> ps ) -> -. ( ps -> ph ) ) -> ( ph <-> ps ) ) )"];
+  n2353[label="wi" style="invisible"];
+  n2353->n2367[color="lightgray" fontcolor="lightgray" label="wff ( ( ph <-> ps ) -> -. ( ( ph -> ps ) -> -. ( ps -> ph ) ) )"];
+  n2366[label="wi" style="invisible"];
+  n2366->n2367[color="lightgray" fontcolor="lightgray" label="wff ( -. ( ( ph -> ps ) -> -. ( ps -> ph ) ) -> ( ph <-> ps ) )"];
+  n2367[label="simprim" style="filled" fillcolor = "cyan"];
+  n2367->n2368[label="|- ( -. ( ( ( ph <-> ps ) -> -. ( ( ph -> ps ) -> -. ( ps -> ph ) ) ) -> -. ( -. ( ( ph -> ps ) -> -. ( ps -> ph ) ) -> ( ph <-> ps ) ) ) -> ( -. ( ( ph -> ps ) -> -. ( ps -> ph ) ) -> ( ph <-> ps ) ) )"];
+  n2353->n2366[arrowhead="none" style="invisible"];
+  {rank=same;n2366;n2353;}
+  n2368[label="ax-mp" style="filled" fillcolor = "lawngreen"];
+  n2368->n2369[label="|- ( -. ( ( ph -> ps ) -> -. ( ps -> ph ) ) -> ( ph <-> ps ) )"];
+  n2324->n2337->n2340->n2367[arrowhead="none" style="invisible"];
+  {rank=same;n2367;n2340;n2337;n2324;}
+  n2369[label="expi" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n2369->QED[label="|- ( ( ph -> ps ) -> ( ( ps -> ph ) -> ( ph <-> ps ) ) )"];
+  n2289->n2292->n2295->n2368[arrowhead="none" style="invisible"];
+  {rank=same;n2368;n2295;n2292;n2289;}
+}

@@ -1,0 +1,30 @@
+digraph proof_biantr {
+  rankdir = LR;
+  n16542[label="wb" style="invisible"];
+  n16542->n16560[color="lightgray" fontcolor="lightgray" label="wff ( ch <-> ps )"];
+  n16545[label="wb" style="invisible"];
+  n16545->n16560[color="lightgray" fontcolor="lightgray" label="wff ( ph <-> ch )"];
+  n16548[label="wb" style="invisible"];
+  n16548->n16560[color="lightgray" fontcolor="lightgray" label="wff ( ph <-> ps )"];
+  n16551[label="wb" style="invisible"];
+  n16551->n16559[color="lightgray" fontcolor="lightgray" label="wff ( ch <-> ps )"];
+  n16552[label="wch" style="invisible"];
+  n16552->n16559[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n16553[label="wps" style="invisible"];
+  n16553->n16559[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n16554[label="wph" style="invisible"];
+  n16554->n16559[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n16557[label="wb" style="invisible"];
+  n16557->n16558[color="lightgray" fontcolor="lightgray" label="wff ( ch <-> ps )"];
+  n16558[label="id" style="filled" fillcolor = "cyan"];
+  n16558->n16559[label="|- ( ( ch <-> ps ) -> ( ch <-> ps ) )"];
+  n16559[label="bibi2d" style="filled" fillcolor = "cyan"];
+  n16559->n16560[label="|- ( ( ch <-> ps ) -> ( ( ph <-> ch ) <-> ( ph <-> ps ) ) )"];
+  n16551->n16552->n16553->n16554->n16558[arrowhead="none" style="invisible"];
+  {rank=same;n16558;n16554;n16553;n16552;n16551;}
+  n16560[label="biimparc" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n16560->QED[label="|- ( ( ( ph <-> ps ) /\\ ( ch <-> ps ) ) -> ( ph <-> ch ) )"];
+  n16542->n16545->n16548->n16559[arrowhead="none" style="invisible"];
+  {rank=same;n16559;n16548;n16545;n16542;}
+}

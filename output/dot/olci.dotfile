@@ -1,24 +1,24 @@
 digraph proof_olci {
   rankdir = LR;
-  n7355 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n7355[label="wps" color="lightgray" fontcolor="lightgray"];
   n7355->n7362[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n7356 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n7356[label="wph" color="lightgray" fontcolor="lightgray"];
   n7356->n7362[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n7357 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n7357[label="wph" color="lightgray" fontcolor="lightgray"];
   n7357->n7361[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n7358 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n7358[label="wps" color="lightgray" fontcolor="lightgray"];
   n7358->n7359[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n7359 [label = "wn"color="lightgray" fontcolor="lightgray"];
+  n7359[label="wn" color="lightgray" fontcolor="lightgray"];
   n7359->n7361[color="lightgray" fontcolor="lightgray" label="wff -. ps"];
-  n7360 [label = "orci.1"style="filled" fillcolor = "orange"];
+  n7360[label="orci.1" style="filled" fillcolor = "orange"];
   n7360->n7361[label="|- ph"];
-  n7361 [label = "a1i"style="filled" fillcolor = "cyan"];
+  n7361[label="a1i" style="filled" fillcolor = "cyan"];
   n7361->n7362[label="|- ( -. ps -> ph )"];
   n7357->n7359->n7360[arrowhead="none" style="invisible"];
   {rank=same;n7360;n7359;n7357;}
-  n7362 [label = "orri"style="filled" fillcolor = "cyan"];
-QED[style="invisible"]
-  n7362->QED[label="|- ( ps \/ ph )"];
+  n7362[label="orri" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n7362->QED[label="|- ( ps \\/ ph )"];
   n7355->n7356->n7361[arrowhead="none" style="invisible"];
   {rank=same;n7361;n7356;n7355;}
 }

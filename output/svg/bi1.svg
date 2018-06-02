@@ -205,7 +205,7 @@
 </g>
 <!-- n2277 -->
 <g id="node46" class="node"><title>n2277</title>
-<ellipse fill="lime" stroke="black" cx="3843.99" cy="-517" rx="33.5952" ry="18"/>
+<ellipse fill="lawngreen" stroke="black" cx="3843.99" cy="-517" rx="33.5952" ry="18"/>
 <text text-anchor="middle" x="3843.99" y="-513.3" font-family="Times New Roman,serif" font-size="14.00">ax&#45;mp</text>
 </g>
 <!-- n2203&#45;&gt;n2277 -->

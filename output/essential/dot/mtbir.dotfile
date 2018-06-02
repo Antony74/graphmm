@@ -1,0 +1,24 @@
+digraph proof_mtbir {
+  rankdir = LR;
+  n5842[label="wps" style="invisible"];
+  n5842->n5849[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n5843[label="wph" style="invisible"];
+  n5843->n5849[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n5844[label="mtbir.1" style="filled" fillcolor = "orange"];
+  n5844->n5849[label="|- -. ps"];
+  n5845[label="wph" style="invisible"];
+  n5845->n5848[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n5846[label="wps" style="invisible"];
+  n5846->n5848[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n5847[label="mtbir.2" style="filled" fillcolor = "orange"];
+  n5847->n5848[label="|- ( ph <-> ps )"];
+  n5848[label="bicomi" style="filled" fillcolor = "cyan"];
+  n5848->n5849[label="|- ( ps <-> ph )"];
+  n5845->n5846->n5847[arrowhead="none" style="invisible"];
+  {rank=same;n5847;n5846;n5845;}
+  n5849[label="mtbi" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n5849->QED[label="|- -. ph"];
+  n5842->n5843->n5844->n5848[arrowhead="none" style="invisible"];
+  {rank=same;n5848;n5844;n5843;n5842;}
+}

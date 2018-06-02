@@ -1,0 +1,24 @@
+digraph proof_mp1i {
+  rankdir = LR;
+  n32[label="wps" style="invisible"];
+  n32->n39[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n33[label="wch" style="invisible"];
+  n33->n39[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n34[label="wph" style="invisible"];
+  n34->n38[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n35[label="wps" style="invisible"];
+  n35->n38[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n36[label="mp1i.a" style="filled" fillcolor = "orange"];
+  n36->n38[label="|- ph"];
+  n37[label="mp1i.b" style="filled" fillcolor = "orange"];
+  n37->n38[label="|- ( ph -> ps )"];
+  n38[label="ax-mp" style="filled" fillcolor = "lawngreen"];
+  n38->n39[label="|- ps"];
+  n34->n35->n36->n37[arrowhead="none" style="invisible"];
+  {rank=same;n37;n36;n35;n34;}
+  n39[label="a1i" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n39->QED[label="|- ( ch -> ps )"];
+  n32->n33->n38[arrowhead="none" style="invisible"];
+  {rank=same;n38;n33;n32;}
+}

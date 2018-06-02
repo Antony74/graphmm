@@ -1,27 +1,27 @@
 digraph proof_syl5bbr {
   rankdir = LR;
-  n5282 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n5282[label="wph" color="lightgray" fontcolor="lightgray"];
   n5282->n5291[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n5283 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n5283[label="wps" color="lightgray" fontcolor="lightgray"];
   n5283->n5291[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n5284 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n5284[label="wch" color="lightgray" fontcolor="lightgray"];
   n5284->n5291[color="lightgray" fontcolor="lightgray" label="wff ch"];
-  n5285 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n5285[label="wth" color="lightgray" fontcolor="lightgray"];
   n5285->n5291[color="lightgray" fontcolor="lightgray" label="wff th"];
-  n5286 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n5286[label="wps" color="lightgray" fontcolor="lightgray"];
   n5286->n5289[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n5287 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n5287[label="wph" color="lightgray" fontcolor="lightgray"];
   n5287->n5289[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n5288 [label = "syl5bbr.1"style="filled" fillcolor = "orange"];
+  n5288[label="syl5bbr.1" style="filled" fillcolor = "orange"];
   n5288->n5289[label="|- ( ps <-> ph )"];
-  n5289 [label = "bicomi"style="filled" fillcolor = "cyan"];
+  n5289[label="bicomi" style="filled" fillcolor = "cyan"];
   n5289->n5291[label="|- ( ph <-> ps )"];
   n5286->n5287->n5288[arrowhead="none" style="invisible"];
   {rank=same;n5288;n5287;n5286;}
-  n5290 [label = "syl5bbr.2"style="filled" fillcolor = "orange"];
+  n5290[label="syl5bbr.2" style="filled" fillcolor = "orange"];
   n5290->n5291[label="|- ( ch -> ( ps <-> th ) )"];
-  n5291 [label = "syl5bb"style="filled" fillcolor = "cyan"];
-QED[style="invisible"]
+  n5291[label="syl5bb" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
   n5291->QED[label="|- ( ch -> ( ph <-> th ) )"];
   n5282->n5283->n5284->n5285->n5289->n5290[arrowhead="none" style="invisible"];
   {rank=same;n5290;n5289;n5285;n5284;n5283;n5282;}

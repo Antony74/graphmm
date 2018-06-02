@@ -1,0 +1,26 @@
+digraph proof_simprd {
+  rankdir = LR;
+  n8133[label="wph" style="invisible"];
+  n8133->n8141[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n8134[label="wch" style="invisible"];
+  n8134->n8141[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n8135[label="wps" style="invisible"];
+  n8135->n8141[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n8136[label="wph" style="invisible"];
+  n8136->n8140[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n8137[label="wps" style="invisible"];
+  n8137->n8140[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n8138[label="wch" style="invisible"];
+  n8138->n8140[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n8139[label="simprd.1" style="filled" fillcolor = "orange"];
+  n8139->n8140[label="|- ( ph -> ( ps /\\ ch ) )"];
+  n8140[label="ancomd" style="filled" fillcolor = "cyan"];
+  n8140->n8141[label="|- ( ph -> ( ch /\\ ps ) )"];
+  n8136->n8137->n8138->n8139[arrowhead="none" style="invisible"];
+  {rank=same;n8139;n8138;n8137;n8136;}
+  n8141[label="simpld" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n8141->QED[label="|- ( ph -> ch )"];
+  n8133->n8134->n8135->n8140[arrowhead="none" style="invisible"];
+  {rank=same;n8140;n8135;n8134;n8133;}
+}

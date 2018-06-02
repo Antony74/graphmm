@@ -1,21 +1,21 @@
 digraph proof_biidd {
   rankdir = LR;
-  n4920 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n4920[label="wps" color="lightgray" fontcolor="lightgray"];
   n4920->n4922[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n4921 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n4921[label="wps" color="lightgray" fontcolor="lightgray"];
   n4921->n4922[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n4922 [label = "wb"color="lightgray" fontcolor="lightgray"];
+  n4922[label="wb" color="lightgray" fontcolor="lightgray"];
   n4922->n4926[color="lightgray" fontcolor="lightgray" label="wff ( ps <-> ps )"];
   n4920->n4921[arrowhead="none" style="invisible"];
   {rank=same;n4921;n4920;}
-  n4923 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n4923[label="wph" color="lightgray" fontcolor="lightgray"];
   n4923->n4926[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n4924 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n4924[label="wps" color="lightgray" fontcolor="lightgray"];
   n4924->n4925[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n4925 [label = "biid"style="filled" fillcolor = "cyan"];
+  n4925[label="biid" style="filled" fillcolor = "cyan"];
   n4925->n4926[label="|- ( ps <-> ps )"];
-  n4926 [label = "a1i"style="filled" fillcolor = "cyan"];
-QED[style="invisible"]
+  n4926[label="a1i" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
   n4926->QED[label="|- ( ph -> ( ps <-> ps ) )"];
   n4922->n4923->n4925[arrowhead="none" style="invisible"];
   {rank=same;n4925;n4923;n4922;}

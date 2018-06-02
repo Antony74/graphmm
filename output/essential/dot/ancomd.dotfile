@@ -1,0 +1,24 @@
+digraph proof_ancomd {
+  rankdir = LR;
+  n8026[label="wph" style="invisible"];
+  n8026->n8037[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n8029[label="wa" style="invisible"];
+  n8029->n8037[color="lightgray" fontcolor="lightgray" label="wff ( ps /\\ ch )"];
+  n8032[label="wa" style="invisible"];
+  n8032->n8037[color="lightgray" fontcolor="lightgray" label="wff ( ch /\\ ps )"];
+  n8033[label="ancomd.1" style="filled" fillcolor = "orange"];
+  n8033->n8037[label="|- ( ph -> ( ps /\\ ch ) )"];
+  n8034[label="wps" style="invisible"];
+  n8034->n8036[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n8035[label="wch" style="invisible"];
+  n8035->n8036[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n8036[label="ancom" style="filled" fillcolor = "cyan"];
+  n8036->n8037[label="|- ( ( ps /\\ ch ) <-> ( ch /\\ ps ) )"];
+  n8034->n8035[arrowhead="none" style="invisible"];
+  {rank=same;n8035;n8034;}
+  n8037[label="sylib" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n8037->QED[label="|- ( ph -> ( ch /\\ ps ) )"];
+  n8026->n8029->n8032->n8033->n8036[arrowhead="none" style="invisible"];
+  {rank=same;n8036;n8033;n8032;n8029;n8026;}
+}

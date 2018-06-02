@@ -1,0 +1,38 @@
+digraph proof_simp_10l {
+  rankdir = LR;
+  n13161[label="wa" style="invisible"];
+  n13161->n13175[color="lightgray" fontcolor="lightgray" label="wff ( ( ( ( ( ( ( ( ( ph /\\ ps ) /\\ ch ) /\\ th ) /\\ ta ) /\\ et ) /\\ ze ) /\\ si ) /\\ rh ) /\\ mu )"];
+  n13162[label="wph" style="invisible"];
+  n13162->n13175[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n13163[label="wla" style="invisible"];
+  n13163->n13175[color="lightgray" fontcolor="lightgray" label="wff la"];
+  n13164[label="wph" style="invisible"];
+  n13164->n13174[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n13165[label="wps" style="invisible"];
+  n13165->n13174[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n13166[label="wch" style="invisible"];
+  n13166->n13174[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n13167[label="wth" style="invisible"];
+  n13167->n13174[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n13168[label="wta" style="invisible"];
+  n13168->n13174[color="lightgray" fontcolor="lightgray" label="wff ta"];
+  n13169[label="wet" style="invisible"];
+  n13169->n13174[color="lightgray" fontcolor="lightgray" label="wff et"];
+  n13170[label="wze" style="invisible"];
+  n13170->n13174[color="lightgray" fontcolor="lightgray" label="wff ze"];
+  n13171[label="wsi" style="invisible"];
+  n13171->n13174[color="lightgray" fontcolor="lightgray" label="wff si"];
+  n13172[label="wrh" style="invisible"];
+  n13172->n13174[color="lightgray" fontcolor="lightgray" label="wff rh"];
+  n13173[label="wmu" style="invisible"];
+  n13173->n13174[color="lightgray" fontcolor="lightgray" label="wff mu"];
+  n13174[label="simp-9l" style="filled" fillcolor = "cyan"];
+  n13174->n13175[label="|- ( ( ( ( ( ( ( ( ( ( ph /\\ ps ) /\\ ch ) /\\ th ) /\\ ta ) /\\ et ) /\\ ze ) /\\ si ) /\\ rh ) /\\ mu ) -> ph )"];
+  n13164->n13165->n13166->n13167->n13168->n13169->n13170->n13171->n13172->n13173[arrowhead="none" style="invisible"];
+  {rank=same;n13173;n13172;n13171;n13170;n13169;n13168;n13167;n13166;n13165;n13164;}
+  n13175[label="adantr" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n13175->QED[label="|- ( ( ( ( ( ( ( ( ( ( ( ph /\\ ps ) /\\ ch ) /\\ th ) /\\ ta ) /\\ et ) /\\ ze ) /\\ si ) /\\ rh ) /\\ mu ) /\\ la ) -> ph )"];
+  n13161->n13162->n13163->n13174[arrowhead="none" style="invisible"];
+  {rank=same;n13174;n13163;n13162;n13161;}
+}

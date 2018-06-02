@@ -1,0 +1,24 @@
+digraph proof_dfbi2 {
+  rankdir = LR;
+  n10717[label="wb" style="invisible"];
+  n10717->n10744[color="lightgray" fontcolor="lightgray" label="wff ( ph <-> ps )"];
+  n10726[label="wn" style="invisible"];
+  n10726->n10744[color="lightgray" fontcolor="lightgray" label="wff -. ( ( ph -> ps ) -> -. ( ps -> ph ) )"];
+  n10733[label="wa" style="invisible"];
+  n10733->n10744[color="lightgray" fontcolor="lightgray" label="wff ( ( ph -> ps ) /\\ ( ps -> ph ) )"];
+  n10734[label="wph" style="invisible"];
+  n10734->n10736[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n10735[label="wps" style="invisible"];
+  n10735->n10736[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n10736[label="dfbi1" style="filled" fillcolor = "cyan"];
+  n10736->n10744[label="|- ( ( ph <-> ps ) <-> -. ( ( ph -> ps ) -> -. ( ps -> ph ) ) )"];
+  n10734->n10735[arrowhead="none" style="invisible"];
+  {rank=same;n10735;n10734;}
+  n10743[label="df-an" style="invisible"];
+  n10743->n10744[color="lightgray" fontcolor="lightgray" label="|- ( ( ( ph -> ps ) /\\ ( ps -> ph ) ) <-> -. ( ( ph -> ps ) -> -. ( ps -> ph ) ) )"];
+  n10744[label="bitr4i" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n10744->QED[label="|- ( ( ph <-> ps ) <-> ( ( ph -> ps ) /\\ ( ps -> ph ) ) )"];
+  n10717->n10726->n10733->n10736->n10743[arrowhead="none" style="invisible"];
+  {rank=same;n10743;n10736;n10733;n10726;n10717;}
+}

@@ -1,28 +1,28 @@
 digraph proof_ancl {
   rankdir = LR;
-  n9369 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n9369[label="wph" color="lightgray" fontcolor="lightgray"];
   n9369->n9377[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n9370 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n9370[label="wps" color="lightgray" fontcolor="lightgray"];
   n9370->n9377[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n9371 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n9371[label="wph" color="lightgray" fontcolor="lightgray"];
   n9371->n9373[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n9372 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n9372[label="wps" color="lightgray" fontcolor="lightgray"];
   n9372->n9373[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n9373 [label = "wa"color="lightgray" fontcolor="lightgray"];
-  n9373->n9377[color="lightgray" fontcolor="lightgray" label="wff ( ph /\ ps )"];
+  n9373[label="wa" color="lightgray" fontcolor="lightgray"];
+  n9373->n9377[color="lightgray" fontcolor="lightgray" label="wff ( ph /\\ ps )"];
   n9371->n9372[arrowhead="none" style="invisible"];
   {rank=same;n9372;n9371;}
-  n9374 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n9374[label="wph" color="lightgray" fontcolor="lightgray"];
   n9374->n9376[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n9375 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n9375[label="wps" color="lightgray" fontcolor="lightgray"];
   n9375->n9376[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n9376 [label = "pm3.2"style="filled" fillcolor = "cyan"];
-  n9376->n9377[label="|- ( ph -> ( ps -> ( ph /\ ps ) ) )"];
+  n9376[label="pm3.2" style="filled" fillcolor = "cyan"];
+  n9376->n9377[label="|- ( ph -> ( ps -> ( ph /\\ ps ) ) )"];
   n9374->n9375[arrowhead="none" style="invisible"];
   {rank=same;n9375;n9374;}
-  n9377 [label = "a2i"style="filled" fillcolor = "cyan"];
-QED[style="invisible"]
-  n9377->QED[label="|- ( ( ph -> ps ) -> ( ph -> ( ph /\ ps ) ) )"];
+  n9377[label="a2i" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n9377->QED[label="|- ( ( ph -> ps ) -> ( ph -> ( ph /\\ ps ) ) )"];
   n9369->n9370->n9373->n9376[arrowhead="none" style="invisible"];
   {rank=same;n9376;n9373;n9370;n9369;}
 }

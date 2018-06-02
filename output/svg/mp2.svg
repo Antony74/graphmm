@@ -16,7 +16,7 @@
 </g>
 <!-- n13 -->
 <g id="node2" class="node"><title>n13</title>
-<ellipse fill="lime" stroke="black" cx="568.985" cy="-232" rx="33.5952" ry="18"/>
+<ellipse fill="lawngreen" stroke="black" cx="568.985" cy="-232" rx="33.5952" ry="18"/>
 <text text-anchor="middle" x="568.985" y="-228.3" font-family="Times New Roman,serif" font-size="14.00">ax&#45;mp</text>
 </g>
 <!-- n3&#45;&gt;n13 -->
@@ -64,7 +64,7 @@
 </g>
 <!-- n12 -->
 <g id="node6" class="node"><title>n12</title>
-<ellipse fill="lime" stroke="black" cx="390.391" cy="-125" rx="33.5952" ry="18"/>
+<ellipse fill="lawngreen" stroke="black" cx="390.391" cy="-125" rx="33.5952" ry="18"/>
 <text text-anchor="middle" x="390.391" y="-121.3" font-family="Times New Roman,serif" font-size="14.00">ax&#45;mp</text>
 </g>
 <!-- n5&#45;&gt;n12 -->

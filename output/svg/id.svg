@@ -89,7 +89,7 @@
 </g>
 <!-- n129 -->
 <g id="node8" class="node"><title>n129</title>
-<ellipse fill="lime" stroke="black" cx="332" cy="-191" rx="27" ry="18"/>
+<ellipse fill="lawngreen" stroke="black" cx="332" cy="-191" rx="27" ry="18"/>
 <text text-anchor="middle" x="332" y="-187.3" font-family="Times New Roman,serif" font-size="14.00">ax&#45;1</text>
 </g>
 <!-- n126&#45;&gt;n129 -->
@@ -122,7 +122,7 @@
 </g>
 <!-- n134 -->
 <g id="node11" class="node"><title>n134</title>
-<ellipse fill="lime" stroke="black" cx="332" cy="-119" rx="27" ry="18"/>
+<ellipse fill="lawngreen" stroke="black" cx="332" cy="-119" rx="27" ry="18"/>
 <text text-anchor="middle" x="332" y="-115.3" font-family="Times New Roman,serif" font-size="14.00">ax&#45;1</text>
 </g>
 <!-- n129&#45;&gt;n134 -->

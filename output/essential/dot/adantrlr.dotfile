@@ -1,0 +1,28 @@
+digraph proof_adantrlr {
+  rankdir = LR;
+  n12247[label="wa" style="invisible"];
+  n12247->n12256[color="lightgray" fontcolor="lightgray" label="wff ( ps /\\ ta )"];
+  n12248[label="wph" style="invisible"];
+  n12248->n12256[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n12249[label="wps" style="invisible"];
+  n12249->n12256[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n12250[label="wch" style="invisible"];
+  n12250->n12256[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n12251[label="wth" style="invisible"];
+  n12251->n12256[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n12252[label="wps" style="invisible"];
+  n12252->n12254[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n12253[label="wta" style="invisible"];
+  n12253->n12254[color="lightgray" fontcolor="lightgray" label="wff ta"];
+  n12254[label="simpl" style="filled" fillcolor = "cyan"];
+  n12254->n12256[label="|- ( ( ps /\\ ta ) -> ps )"];
+  n12252->n12253[arrowhead="none" style="invisible"];
+  {rank=same;n12253;n12252;}
+  n12255[label="adantr2.1" style="filled" fillcolor = "orange"];
+  n12255->n12256[label="|- ( ( ph /\\ ( ps /\\ ch ) ) -> th )"];
+  n12256[label="sylanr1" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n12256->QED[label="|- ( ( ph /\\ ( ( ps /\\ ta ) /\\ ch ) ) -> th )"];
+  n12247->n12248->n12249->n12250->n12251->n12254->n12255[arrowhead="none" style="invisible"];
+  {rank=same;n12255;n12254;n12251;n12250;n12249;n12248;n12247;}
+}

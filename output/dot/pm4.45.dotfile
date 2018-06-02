@@ -1,26 +1,26 @@
 digraph proof_pm4_45 {
   rankdir = LR;
-  n11718 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n11718[label="wph" color="lightgray" fontcolor="lightgray"];
   n11718->n11725[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n11719 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n11719[label="wph" color="lightgray" fontcolor="lightgray"];
   n11719->n11721[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n11720 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n11720[label="wps" color="lightgray" fontcolor="lightgray"];
   n11720->n11721[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n11721 [label = "wo"color="lightgray" fontcolor="lightgray"];
-  n11721->n11725[color="lightgray" fontcolor="lightgray" label="wff ( ph \/ ps )"];
+  n11721[label="wo" color="lightgray" fontcolor="lightgray"];
+  n11721->n11725[color="lightgray" fontcolor="lightgray" label="wff ( ph \\/ ps )"];
   n11719->n11720[arrowhead="none" style="invisible"];
   {rank=same;n11720;n11719;}
-  n11722 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n11722[label="wph" color="lightgray" fontcolor="lightgray"];
   n11722->n11724[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n11723 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n11723[label="wps" color="lightgray" fontcolor="lightgray"];
   n11723->n11724[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n11724 [label = "orc"style="filled" fillcolor = "cyan"];
-  n11724->n11725[label="|- ( ph -> ( ph \/ ps ) )"];
+  n11724[label="orc" style="filled" fillcolor = "cyan"];
+  n11724->n11725[label="|- ( ph -> ( ph \\/ ps ) )"];
   n11722->n11723[arrowhead="none" style="invisible"];
   {rank=same;n11723;n11722;}
-  n11725 [label = "pm4.71i"style="filled" fillcolor = "cyan"];
-QED[style="invisible"]
-  n11725->QED[label="|- ( ph <-> ( ph /\ ( ph \/ ps ) ) )"];
+  n11725[label="pm4.71i" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n11725->QED[label="|- ( ph <-> ( ph /\\ ( ph \\/ ps ) ) )"];
   n11718->n11721->n11724[arrowhead="none" style="invisible"];
   {rank=same;n11724;n11721;n11718;}
 }

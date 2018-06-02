@@ -1,0 +1,40 @@
+digraph proof_prlem2 {
+  rankdir = LR;
+  n18069[label="wo" style="invisible"];
+  n18069->n18088[color="lightgray" fontcolor="lightgray" label="wff ( ( ph /\\ ps ) \\/ ( ch /\\ th ) )"];
+  n18072[label="wo" style="invisible"];
+  n18072->n18088[color="lightgray" fontcolor="lightgray" label="wff ( ph \\/ ch )"];
+  n18075[label="wa" style="invisible"];
+  n18075->n18087[color="lightgray" fontcolor="lightgray" label="wff ( ph /\\ ps )"];
+  n18076[label="wph" style="invisible"];
+  n18076->n18087[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n18079[label="wa" style="invisible"];
+  n18079->n18087[color="lightgray" fontcolor="lightgray" label="wff ( ch /\\ th )"];
+  n18080[label="wch" style="invisible"];
+  n18080->n18087[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n18081[label="wph" style="invisible"];
+  n18081->n18083[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n18082[label="wps" style="invisible"];
+  n18082->n18083[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n18083[label="simpl" style="filled" fillcolor = "cyan"];
+  n18083->n18087[label="|- ( ( ph /\\ ps ) -> ph )"];
+  n18081->n18082[arrowhead="none" style="invisible"];
+  {rank=same;n18082;n18081;}
+  n18084[label="wch" style="invisible"];
+  n18084->n18086[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n18085[label="wth" style="invisible"];
+  n18085->n18086[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n18086[label="simpl" style="filled" fillcolor = "cyan"];
+  n18086->n18087[label="|- ( ( ch /\\ th ) -> ch )"];
+  n18084->n18085[arrowhead="none" style="invisible"];
+  {rank=same;n18085;n18084;}
+  n18087[label="orim12i" style="filled" fillcolor = "cyan"];
+  n18087->n18088[label="|- ( ( ( ph /\\ ps ) \\/ ( ch /\\ th ) ) -> ( ph \\/ ch ) )"];
+  n18075->n18076->n18079->n18080->n18083->n18086[arrowhead="none" style="invisible"];
+  {rank=same;n18086;n18083;n18080;n18079;n18076;n18075;}
+  n18088[label="pm4.71ri" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n18088->QED[label="|- ( ( ( ph /\\ ps ) \\/ ( ch /\\ th ) ) <-> ( ( ph \\/ ch ) /\\ ( ( ph /\\ ps ) \\/ ( ch /\\ th ) ) ) )"];
+  n18069->n18072->n18087[arrowhead="none" style="invisible"];
+  {rank=same;n18087;n18072;n18069;}
+}

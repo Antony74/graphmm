@@ -1,0 +1,24 @@
+digraph proof_orcs {
+  rankdir = LR;
+  n7382[label="wph" style="invisible"];
+  n7382->n7391[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n7385[label="wo" style="invisible"];
+  n7385->n7391[color="lightgray" fontcolor="lightgray" label="wff ( ph \\/ ps )"];
+  n7386[label="wch" style="invisible"];
+  n7386->n7391[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n7387[label="wph" style="invisible"];
+  n7387->n7389[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n7388[label="wps" style="invisible"];
+  n7388->n7389[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n7389[label="orc" style="filled" fillcolor = "cyan"];
+  n7389->n7391[label="|- ( ph -> ( ph \\/ ps ) )"];
+  n7387->n7388[arrowhead="none" style="invisible"];
+  {rank=same;n7388;n7387;}
+  n7390[label="orcs.1" style="filled" fillcolor = "orange"];
+  n7390->n7391[label="|- ( ( ph \\/ ps ) -> ch )"];
+  n7391[label="syl" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n7391->QED[label="|- ( ph -> ch )"];
+  n7382->n7385->n7386->n7389->n7390[arrowhead="none" style="invisible"];
+  {rank=same;n7390;n7389;n7386;n7385;n7382;}
+}

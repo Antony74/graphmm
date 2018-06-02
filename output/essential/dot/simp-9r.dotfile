@@ -1,0 +1,36 @@
+digraph proof_simp_9r {
+  rankdir = LR;
+  n13129[label="wa" style="invisible"];
+  n13129->n13142[color="lightgray" fontcolor="lightgray" label="wff ( ( ( ( ( ( ( ( ph /\\ ps ) /\\ ch ) /\\ th ) /\\ ta ) /\\ et ) /\\ ze ) /\\ si ) /\\ rh )"];
+  n13130[label="wps" style="invisible"];
+  n13130->n13142[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n13131[label="wmu" style="invisible"];
+  n13131->n13142[color="lightgray" fontcolor="lightgray" label="wff mu"];
+  n13132[label="wph" style="invisible"];
+  n13132->n13141[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n13133[label="wps" style="invisible"];
+  n13133->n13141[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n13134[label="wch" style="invisible"];
+  n13134->n13141[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n13135[label="wth" style="invisible"];
+  n13135->n13141[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n13136[label="wta" style="invisible"];
+  n13136->n13141[color="lightgray" fontcolor="lightgray" label="wff ta"];
+  n13137[label="wet" style="invisible"];
+  n13137->n13141[color="lightgray" fontcolor="lightgray" label="wff et"];
+  n13138[label="wze" style="invisible"];
+  n13138->n13141[color="lightgray" fontcolor="lightgray" label="wff ze"];
+  n13139[label="wsi" style="invisible"];
+  n13139->n13141[color="lightgray" fontcolor="lightgray" label="wff si"];
+  n13140[label="wrh" style="invisible"];
+  n13140->n13141[color="lightgray" fontcolor="lightgray" label="wff rh"];
+  n13141[label="simp-8r" style="filled" fillcolor = "cyan"];
+  n13141->n13142[label="|- ( ( ( ( ( ( ( ( ( ph /\\ ps ) /\\ ch ) /\\ th ) /\\ ta ) /\\ et ) /\\ ze ) /\\ si ) /\\ rh ) -> ps )"];
+  n13132->n13133->n13134->n13135->n13136->n13137->n13138->n13139->n13140[arrowhead="none" style="invisible"];
+  {rank=same;n13140;n13139;n13138;n13137;n13136;n13135;n13134;n13133;n13132;}
+  n13142[label="adantr" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n13142->QED[label="|- ( ( ( ( ( ( ( ( ( ( ph /\\ ps ) /\\ ch ) /\\ th ) /\\ ta ) /\\ et ) /\\ ze ) /\\ si ) /\\ rh ) /\\ mu ) -> ps )"];
+  n13129->n13130->n13131->n13141[arrowhead="none" style="invisible"];
+  {rank=same;n13141;n13131;n13130;n13129;}
+}

@@ -1,0 +1,16 @@
+digraph proof_ori {
+  rankdir = LR;
+  n7158[label="wo" style="invisible"];
+  n7158->n7167[color="lightgray" fontcolor="lightgray" label="wff ( ph \\/ ps )"];
+  n7162[label="wi" style="invisible"];
+  n7162->n7167[color="lightgray" fontcolor="lightgray" label="wff ( -. ph -> ps )"];
+  n7163[label="ori.1" style="filled" fillcolor = "orange"];
+  n7163->n7167[label="|- ( ph \\/ ps )"];
+  n7166[label="df-or" style="invisible"];
+  n7166->n7167[color="lightgray" fontcolor="lightgray" label="|- ( ( ph \\/ ps ) <-> ( -. ph -> ps ) )"];
+  n7167[label="mpbi" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n7167->QED[label="|- ( -. ph -> ps )"];
+  n7158->n7162->n7163->n7166[arrowhead="none" style="invisible"];
+  {rank=same;n7166;n7163;n7162;n7158;}
+}

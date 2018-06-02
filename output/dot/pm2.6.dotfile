@@ -1,51 +1,51 @@
 digraph proof_pm2_6 {
   rankdir = LR;
-  n1947 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n1947[label="wph" color="lightgray" fontcolor="lightgray"];
   n1947->n1948[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n1948 [label = "wn"color="lightgray" fontcolor="lightgray"];
+  n1948[label="wn" color="lightgray" fontcolor="lightgray"];
   n1948->n1950[color="lightgray" fontcolor="lightgray" label="wff -. ph"];
-  n1949 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n1949[label="wps" color="lightgray" fontcolor="lightgray"];
   n1949->n1950[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n1950 [label = "wi"color="lightgray" fontcolor="lightgray"];
+  n1950[label="wi" color="lightgray" fontcolor="lightgray"];
   n1950->n1965[color="lightgray" fontcolor="lightgray" label="wff ( -. ph -> ps )"];
   n1948->n1949[arrowhead="none" style="invisible"];
   {rank=same;n1949;n1948;}
-  n1951 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n1951[label="wph" color="lightgray" fontcolor="lightgray"];
   n1951->n1965[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n1952 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n1952[label="wps" color="lightgray" fontcolor="lightgray"];
   n1952->n1965[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n1953 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n1953[label="wps" color="lightgray" fontcolor="lightgray"];
   n1953->n1965[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n1954 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n1954[label="wps" color="lightgray" fontcolor="lightgray"];
   n1954->n1957[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n1955 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n1955[label="wph" color="lightgray" fontcolor="lightgray"];
   n1955->n1956[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n1956 [label = "wn"color="lightgray" fontcolor="lightgray"];
+  n1956[label="wn" color="lightgray" fontcolor="lightgray"];
   n1956->n1957[color="lightgray" fontcolor="lightgray" label="wff -. ph"];
-  n1957 [label = "wi"color="lightgray" fontcolor="lightgray"];
+  n1957[label="wi" color="lightgray" fontcolor="lightgray"];
   n1957->n1958[color="lightgray" fontcolor="lightgray" label="wff ( -. ph -> ps )"];
   n1954->n1956[arrowhead="none" style="invisible"];
   {rank=same;n1956;n1954;}
-  n1958 [label = "id"style="filled" fillcolor = "cyan"];
+  n1958[label="id" style="filled" fillcolor = "cyan"];
   n1958->n1965[label="|- ( ( -. ph -> ps ) -> ( -. ph -> ps ) )"];
-  n1959 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n1959[label="wps" color="lightgray" fontcolor="lightgray"];
   n1959->n1962[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n1960 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n1960[label="wph" color="lightgray" fontcolor="lightgray"];
   n1960->n1961[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n1961 [label = "wn"color="lightgray" fontcolor="lightgray"];
+  n1961[label="wn" color="lightgray" fontcolor="lightgray"];
   n1961->n1962[color="lightgray" fontcolor="lightgray" label="wff -. ph"];
-  n1962 [label = "wi"color="lightgray" fontcolor="lightgray"];
+  n1962[label="wi" color="lightgray" fontcolor="lightgray"];
   n1962->n1964[color="lightgray" fontcolor="lightgray" label="wff ( -. ph -> ps )"];
   n1959->n1961[arrowhead="none" style="invisible"];
   {rank=same;n1961;n1959;}
-  n1963 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n1963[label="wps" color="lightgray" fontcolor="lightgray"];
   n1963->n1964[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n1964 [label = "idd"style="filled" fillcolor = "cyan"];
+  n1964[label="idd" style="filled" fillcolor = "cyan"];
   n1964->n1965[label="|- ( ( -. ph -> ps ) -> ( ps -> ps ) )"];
   n1962->n1963[arrowhead="none" style="invisible"];
   {rank=same;n1963;n1962;}
-  n1965 [label = "jad"style="filled" fillcolor = "cyan"];
-QED[style="invisible"]
+  n1965[label="jad" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
   n1965->QED[label="|- ( ( -. ph -> ps ) -> ( ( ph -> ps ) -> ps ) )"];
   n1950->n1951->n1952->n1953->n1958->n1964[arrowhead="none" style="invisible"];
   {rank=same;n1964;n1958;n1953;n1952;n1951;n1950;}

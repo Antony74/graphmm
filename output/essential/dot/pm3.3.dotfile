@@ -1,0 +1,20 @@
+digraph proof_pm3_3 {
+  rankdir = LR;
+  n7940[label="wi" style="invisible"];
+  n7940->n7950[color="lightgray" fontcolor="lightgray" label="wff ( ( ph /\\ ps ) -> ch )"];
+  n7941[label="wph" style="invisible"];
+  n7941->n7950[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n7942[label="wps" style="invisible"];
+  n7942->n7950[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n7943[label="wch" style="invisible"];
+  n7943->n7950[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n7948[label="wi" style="invisible"];
+  n7948->n7949[color="lightgray" fontcolor="lightgray" label="wff ( ( ph /\\ ps ) -> ch )"];
+  n7949[label="id" style="filled" fillcolor = "cyan"];
+  n7949->n7950[label="|- ( ( ( ph /\\ ps ) -> ch ) -> ( ( ph /\\ ps ) -> ch ) )"];
+  n7950[label="exp3a" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n7950->QED[label="|- ( ( ( ph /\\ ps ) -> ch ) -> ( ph -> ( ps -> ch ) ) )"];
+  n7940->n7941->n7942->n7943->n7949[arrowhead="none" style="invisible"];
+  {rank=same;n7949;n7943;n7942;n7941;n7940;}
+}

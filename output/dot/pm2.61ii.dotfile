@@ -1,29 +1,29 @@
 digraph proof_pm2_61ii {
   rankdir = LR;
-  n1881 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n1881[label="wph" color="lightgray" fontcolor="lightgray"];
   n1881->n1891[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n1882 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n1882[label="wch" color="lightgray" fontcolor="lightgray"];
   n1882->n1891[color="lightgray" fontcolor="lightgray" label="wff ch"];
-  n1883 [label = "pm2.61ii.2"style="filled" fillcolor = "orange"];
+  n1883[label="pm2.61ii.2" style="filled" fillcolor = "orange"];
   n1883->n1891[label="|- ( ph -> ch )"];
-  n1884 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n1884[label="wph" color="lightgray" fontcolor="lightgray"];
   n1884->n1885[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n1885 [label = "wn"color="lightgray" fontcolor="lightgray"];
+  n1885[label="wn" color="lightgray" fontcolor="lightgray"];
   n1885->n1890[color="lightgray" fontcolor="lightgray" label="wff -. ph"];
-  n1886 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n1886[label="wps" color="lightgray" fontcolor="lightgray"];
   n1886->n1890[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n1887 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n1887[label="wch" color="lightgray" fontcolor="lightgray"];
   n1887->n1890[color="lightgray" fontcolor="lightgray" label="wff ch"];
-  n1888 [label = "pm2.61ii.1"style="filled" fillcolor = "orange"];
+  n1888[label="pm2.61ii.1" style="filled" fillcolor = "orange"];
   n1888->n1890[label="|- ( -. ph -> ( -. ps -> ch ) )"];
-  n1889 [label = "pm2.61ii.3"style="filled" fillcolor = "orange"];
+  n1889[label="pm2.61ii.3" style="filled" fillcolor = "orange"];
   n1889->n1890[label="|- ( ps -> ch )"];
-  n1890 [label = "pm2.61d2"style="filled" fillcolor = "cyan"];
+  n1890[label="pm2.61d2" style="filled" fillcolor = "cyan"];
   n1890->n1891[label="|- ( -. ph -> ch )"];
   n1885->n1886->n1887->n1888->n1889[arrowhead="none" style="invisible"];
   {rank=same;n1889;n1888;n1887;n1886;n1885;}
-  n1891 [label = "pm2.61i"style="filled" fillcolor = "cyan"];
-QED[style="invisible"]
+  n1891[label="pm2.61i" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
   n1891->QED[label="|- ch"];
   n1881->n1882->n1883->n1890[arrowhead="none" style="invisible"];
   {rank=same;n1890;n1883;n1882;n1881;}

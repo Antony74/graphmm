@@ -1,49 +1,49 @@
 digraph proof_loowoz {
   rankdir = LR;
-  n1164 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n1164[label="wph" color="lightgray" fontcolor="lightgray"];
   n1164->n1166[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n1165 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n1165[label="wps" color="lightgray" fontcolor="lightgray"];
   n1165->n1166[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n1166 [label = "wi"color="lightgray" fontcolor="lightgray"];
+  n1166[label="wi" color="lightgray" fontcolor="lightgray"];
   n1166->n1170[color="lightgray" fontcolor="lightgray" label="wff ( ph -> ps )"];
   n1164->n1165[arrowhead="none" style="invisible"];
   {rank=same;n1165;n1164;}
-  n1167 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n1167[label="wph" color="lightgray" fontcolor="lightgray"];
   n1167->n1169[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n1168 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n1168[label="wch" color="lightgray" fontcolor="lightgray"];
   n1168->n1169[color="lightgray" fontcolor="lightgray" label="wff ch"];
-  n1169 [label = "wi"color="lightgray" fontcolor="lightgray"];
+  n1169[label="wi" color="lightgray" fontcolor="lightgray"];
   n1169->n1170[color="lightgray" fontcolor="lightgray" label="wff ( ph -> ch )"];
   n1167->n1168[arrowhead="none" style="invisible"];
   {rank=same;n1168;n1167;}
-  n1170 [label = "wi"color="lightgray" fontcolor="lightgray"];
+  n1170[label="wi" color="lightgray" fontcolor="lightgray"];
   n1170->n1180[color="lightgray" fontcolor="lightgray" label="wff ( ( ph -> ps ) -> ( ph -> ch ) )"];
   n1166->n1169[arrowhead="none" style="invisible"];
   {rank=same;n1169;n1166;}
-  n1171 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n1171[label="wps" color="lightgray" fontcolor="lightgray"];
   n1171->n1180[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n1172 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n1172[label="wph" color="lightgray" fontcolor="lightgray"];
   n1172->n1180[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n1173 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n1173[label="wch" color="lightgray" fontcolor="lightgray"];
   n1173->n1180[color="lightgray" fontcolor="lightgray" label="wff ch"];
-  n1174 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n1174[label="wph" color="lightgray" fontcolor="lightgray"];
   n1174->n1179[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n1175 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n1175[label="wps" color="lightgray" fontcolor="lightgray"];
   n1175->n1179[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n1176 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n1176[label="wch" color="lightgray" fontcolor="lightgray"];
   n1176->n1178[color="lightgray" fontcolor="lightgray" label="wff ch"];
-  n1177 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n1177[label="wph" color="lightgray" fontcolor="lightgray"];
   n1177->n1178[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n1178 [label = "wi"color="lightgray" fontcolor="lightgray"];
+  n1178[label="wi" color="lightgray" fontcolor="lightgray"];
   n1178->n1179[color="lightgray" fontcolor="lightgray" label="wff ( ph -> ch )"];
   n1176->n1177[arrowhead="none" style="invisible"];
   {rank=same;n1177;n1176;}
-  n1179 [label = "jarr"style="filled" fillcolor = "cyan"];
+  n1179[label="jarr" style="filled" fillcolor = "cyan"];
   n1179->n1180[label="|- ( ( ( ph -> ps ) -> ( ph -> ch ) ) -> ( ps -> ( ph -> ch ) ) )"];
   n1174->n1175->n1178[arrowhead="none" style="invisible"];
   {rank=same;n1178;n1175;n1174;}
-  n1180 [label = "a2d"style="filled" fillcolor = "cyan"];
-QED[style="invisible"]
+  n1180[label="a2d" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
   n1180->QED[label="|- ( ( ( ph -> ps ) -> ( ph -> ch ) ) -> ( ( ps -> ph ) -> ( ps -> ch ) ) )"];
   n1170->n1171->n1172->n1173->n1179[arrowhead="none" style="invisible"];
   {rank=same;n1179;n1173;n1172;n1171;n1170;}

@@ -1,0 +1,28 @@
+digraph proof_mpbid {
+  rankdir = LR;
+  n4650[label="wph" style="invisible"];
+  n4650->n4659[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n4651[label="wps" style="invisible"];
+  n4651->n4659[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n4652[label="wch" style="invisible"];
+  n4652->n4659[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n4653[label="mpbid.min" style="filled" fillcolor = "orange"];
+  n4653->n4659[label="|- ( ph -> ps )"];
+  n4654[label="wph" style="invisible"];
+  n4654->n4658[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n4655[label="wps" style="invisible"];
+  n4655->n4658[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n4656[label="wch" style="invisible"];
+  n4656->n4658[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n4657[label="mpbid.maj" style="filled" fillcolor = "orange"];
+  n4657->n4658[label="|- ( ph -> ( ps <-> ch ) )"];
+  n4658[label="biimpd" style="filled" fillcolor = "cyan"];
+  n4658->n4659[label="|- ( ph -> ( ps -> ch ) )"];
+  n4654->n4655->n4656->n4657[arrowhead="none" style="invisible"];
+  {rank=same;n4657;n4656;n4655;n4654;}
+  n4659[label="mpd" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n4659->QED[label="|- ( ph -> ch )"];
+  n4650->n4651->n4652->n4653->n4658[arrowhead="none" style="invisible"];
+  {rank=same;n4658;n4653;n4652;n4651;n4650;}
+}

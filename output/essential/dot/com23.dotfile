@@ -1,0 +1,28 @@
+digraph proof_com23 {
+  rankdir = LR;
+  n795[label="wph" style="invisible"];
+  n795->n806[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n796[label="wps" style="invisible"];
+  n796->n806[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n799[label="wi" style="invisible"];
+  n799->n806[color="lightgray" fontcolor="lightgray" label="wff ( ch -> th )"];
+  n800[label="wch" style="invisible"];
+  n800->n806[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n801[label="wth" style="invisible"];
+  n801->n806[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n802[label="com3.1" style="filled" fillcolor = "orange"];
+  n802->n806[label="|- ( ph -> ( ps -> ( ch -> th ) ) )"];
+  n803[label="wch" style="invisible"];
+  n803->n805[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n804[label="wth" style="invisible"];
+  n804->n805[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n805[label="pm2.27" style="filled" fillcolor = "cyan"];
+  n805->n806[label="|- ( ch -> ( ( ch -> th ) -> th ) )"];
+  n803->n804[arrowhead="none" style="invisible"];
+  {rank=same;n804;n803;}
+  n806[label="syl9" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n806->QED[label="|- ( ph -> ( ch -> ( ps -> th ) ) )"];
+  n795->n796->n799->n800->n801->n802->n805[arrowhead="none" style="invisible"];
+  {rank=same;n805;n802;n801;n800;n799;n796;n795;}
+}

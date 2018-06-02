@@ -1,0 +1,28 @@
+digraph proof_bicom {
+  rankdir = LR;
+  n4550[label="wb" style="invisible"];
+  n4550->n4560[color="lightgray" fontcolor="lightgray" label="wff ( ph <-> ps )"];
+  n4553[label="wb" style="invisible"];
+  n4553->n4560[color="lightgray" fontcolor="lightgray" label="wff ( ps <-> ph )"];
+  n4554[label="wph" style="invisible"];
+  n4554->n4556[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n4555[label="wps" style="invisible"];
+  n4555->n4556[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n4556[label="bicom1" style="filled" fillcolor = "cyan"];
+  n4556->n4560[label="|- ( ( ph <-> ps ) -> ( ps <-> ph ) )"];
+  n4554->n4555[arrowhead="none" style="invisible"];
+  {rank=same;n4555;n4554;}
+  n4557[label="wps" style="invisible"];
+  n4557->n4559[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n4558[label="wph" style="invisible"];
+  n4558->n4559[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n4559[label="bicom1" style="filled" fillcolor = "cyan"];
+  n4559->n4560[label="|- ( ( ps <-> ph ) -> ( ph <-> ps ) )"];
+  n4557->n4558[arrowhead="none" style="invisible"];
+  {rank=same;n4558;n4557;}
+  n4560[label="impbii" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n4560->QED[label="|- ( ( ph <-> ps ) <-> ( ps <-> ph ) )"];
+  n4550->n4553->n4556->n4559[arrowhead="none" style="invisible"];
+  {rank=same;n4559;n4556;n4553;n4550;}
+}

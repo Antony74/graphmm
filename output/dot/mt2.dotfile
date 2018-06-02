@@ -1,23 +1,23 @@
 digraph proof_mt2 {
   rankdir = LR;
-  n2048 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n2048[label="wph" color="lightgray" fontcolor="lightgray"];
   n2048->n2055[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n2049 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n2049[label="wps" color="lightgray" fontcolor="lightgray"];
   n2049->n2055[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n2050 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n2050[label="wps" color="lightgray" fontcolor="lightgray"];
   n2050->n2053[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n2051 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n2051[label="wph" color="lightgray" fontcolor="lightgray"];
   n2051->n2053[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n2052 [label = "mt2.1"style="filled" fillcolor = "orange"];
+  n2052[label="mt2.1" style="filled" fillcolor = "orange"];
   n2052->n2053[label="|- ps"];
-  n2053 [label = "a1i"style="filled" fillcolor = "cyan"];
+  n2053[label="a1i" style="filled" fillcolor = "cyan"];
   n2053->n2055[label="|- ( ph -> ps )"];
   n2050->n2051->n2052[arrowhead="none" style="invisible"];
   {rank=same;n2052;n2051;n2050;}
-  n2054 [label = "mt2.2"style="filled" fillcolor = "orange"];
+  n2054[label="mt2.2" style="filled" fillcolor = "orange"];
   n2054->n2055[label="|- ( ph -> -. ps )"];
-  n2055 [label = "pm2.65i"style="filled" fillcolor = "cyan"];
-QED[style="invisible"]
+  n2055[label="pm2.65i" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
   n2055->QED[label="|- -. ph"];
   n2048->n2049->n2053->n2054[arrowhead="none" style="invisible"];
   {rank=same;n2054;n2053;n2049;n2048;}

@@ -1,0 +1,24 @@
+digraph proof_bitr {
+  rankdir = LR;
+  n12034[label="wb" style="invisible"];
+  n12034->n12045[color="lightgray" fontcolor="lightgray" label="wff ( ph <-> ps )"];
+  n12037[label="wb" style="invisible"];
+  n12037->n12045[color="lightgray" fontcolor="lightgray" label="wff ( ph <-> ch )"];
+  n12040[label="wb" style="invisible"];
+  n12040->n12045[color="lightgray" fontcolor="lightgray" label="wff ( ps <-> ch )"];
+  n12041[label="wph" style="invisible"];
+  n12041->n12044[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n12042[label="wps" style="invisible"];
+  n12042->n12044[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n12043[label="wch" style="invisible"];
+  n12043->n12044[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n12044[label="bibi1" style="filled" fillcolor = "cyan"];
+  n12044->n12045[label="|- ( ( ph <-> ps ) -> ( ( ph <-> ch ) <-> ( ps <-> ch ) ) )"];
+  n12041->n12042->n12043[arrowhead="none" style="invisible"];
+  {rank=same;n12043;n12042;n12041;}
+  n12045[label="biimpar" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n12045->QED[label="|- ( ( ( ph <-> ps ) /\\ ( ps <-> ch ) ) -> ( ph <-> ch ) )"];
+  n12034->n12037->n12040->n12044[arrowhead="none" style="invisible"];
+  {rank=same;n12044;n12040;n12037;n12034;}
+}

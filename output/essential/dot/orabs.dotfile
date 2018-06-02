@@ -1,0 +1,20 @@
+digraph proof_orabs {
+  rankdir = LR;
+  n14702[label="wph" style="invisible"];
+  n14702->n14709[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n14705[label="wo" style="invisible"];
+  n14705->n14709[color="lightgray" fontcolor="lightgray" label="wff ( ph \\/ ps )"];
+  n14706[label="wph" style="invisible"];
+  n14706->n14708[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n14707[label="wps" style="invisible"];
+  n14707->n14708[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n14708[label="orc" style="filled" fillcolor = "cyan"];
+  n14708->n14709[label="|- ( ph -> ( ph \\/ ps ) )"];
+  n14706->n14707[arrowhead="none" style="invisible"];
+  {rank=same;n14707;n14706;}
+  n14709[label="pm4.71ri" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n14709->QED[label="|- ( ph <-> ( ( ph \\/ ps ) /\\ ph ) )"];
+  n14702->n14705->n14708[arrowhead="none" style="invisible"];
+  {rank=same;n14708;n14705;n14702;}
+}

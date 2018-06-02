@@ -1,0 +1,28 @@
+digraph proof_mtbird {
+  rankdir = LR;
+  n5860[label="wph" style="invisible"];
+  n5860->n5869[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n5861[label="wps" style="invisible"];
+  n5861->n5869[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n5862[label="wch" style="invisible"];
+  n5862->n5869[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n5863[label="mtbird.min" style="filled" fillcolor = "orange"];
+  n5863->n5869[label="|- ( ph -> -. ch )"];
+  n5864[label="wph" style="invisible"];
+  n5864->n5868[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n5865[label="wps" style="invisible"];
+  n5865->n5868[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n5866[label="wch" style="invisible"];
+  n5866->n5868[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n5867[label="mtbird.maj" style="filled" fillcolor = "orange"];
+  n5867->n5868[label="|- ( ph -> ( ps <-> ch ) )"];
+  n5868[label="biimpd" style="filled" fillcolor = "cyan"];
+  n5868->n5869[label="|- ( ph -> ( ps -> ch ) )"];
+  n5864->n5865->n5866->n5867[arrowhead="none" style="invisible"];
+  {rank=same;n5867;n5866;n5865;n5864;}
+  n5869[label="mtod" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n5869->QED[label="|- ( ph -> -. ps )"];
+  n5860->n5861->n5862->n5863->n5868[arrowhead="none" style="invisible"];
+  {rank=same;n5868;n5863;n5862;n5861;n5860;}
+}

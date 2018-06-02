@@ -1,0 +1,32 @@
+digraph proof_sylsyld {
+  rankdir = LR;
+  n529[label="wph" style="invisible"];
+  n529->n542[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n530[label="wch" style="invisible"];
+  n530->n542[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n531[label="wth" style="invisible"];
+  n531->n542[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n532[label="wta" style="invisible"];
+  n532->n542[color="lightgray" fontcolor="lightgray" label="wff ta"];
+  n533[label="sylsyld.2" style="filled" fillcolor = "orange"];
+  n533->n542[label="|- ( ph -> ( ch -> th ) )"];
+  n534[label="wph" style="invisible"];
+  n534->n541[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n535[label="wps" style="invisible"];
+  n535->n541[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n538[label="wi" style="invisible"];
+  n538->n541[color="lightgray" fontcolor="lightgray" label="wff ( th -> ta )"];
+  n539[label="sylsyld.1" style="filled" fillcolor = "orange"];
+  n539->n541[label="|- ( ph -> ps )"];
+  n540[label="sylsyld.3" style="filled" fillcolor = "orange"];
+  n540->n541[label="|- ( ps -> ( th -> ta ) )"];
+  n541[label="syl" style="filled" fillcolor = "cyan"];
+  n541->n542[label="|- ( ph -> ( th -> ta ) )"];
+  n534->n535->n538->n539->n540[arrowhead="none" style="invisible"];
+  {rank=same;n540;n539;n538;n535;n534;}
+  n542[label="syld" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n542->QED[label="|- ( ph -> ( ch -> ta ) )"];
+  n529->n530->n531->n532->n533->n541[arrowhead="none" style="invisible"];
+  {rank=same;n541;n533;n532;n531;n530;n529;}
+}

@@ -1,31 +1,31 @@
 digraph proof_mp2 {
   rankdir = LR;
-  n3 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n3[label="wps" color="lightgray" fontcolor="lightgray"];
   n3->n13[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n4 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n4[label="wch" color="lightgray" fontcolor="lightgray"];
   n4->n13[color="lightgray" fontcolor="lightgray" label="wff ch"];
-  n5 [label = "mp2.2"style="filled" fillcolor = "orange"];
+  n5[label="mp2.2" style="filled" fillcolor = "orange"];
   n5->n13[label="|- ps"];
-  n6 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n6[label="wph" color="lightgray" fontcolor="lightgray"];
   n6->n12[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n7 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n7[label="wps" color="lightgray" fontcolor="lightgray"];
   n7->n9[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n8 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n8[label="wch" color="lightgray" fontcolor="lightgray"];
   n8->n9[color="lightgray" fontcolor="lightgray" label="wff ch"];
-  n9 [label = "wi"color="lightgray" fontcolor="lightgray"];
+  n9[label="wi" color="lightgray" fontcolor="lightgray"];
   n9->n12[color="lightgray" fontcolor="lightgray" label="wff ( ps -> ch )"];
   n7->n8[arrowhead="none" style="invisible"];
   {rank=same;n8;n7;}
-  n10 [label = "mp2.1"style="filled" fillcolor = "orange"];
+  n10[label="mp2.1" style="filled" fillcolor = "orange"];
   n10->n12[label="|- ph"];
-  n11 [label = "mp2.3"style="filled" fillcolor = "orange"];
+  n11[label="mp2.3" style="filled" fillcolor = "orange"];
   n11->n12[label="|- ( ph -> ( ps -> ch ) )"];
-  n12 [label = "ax-mp"style="filled" fillcolor = "lime"];
+  n12[label="ax-mp" style="filled" fillcolor = "lawngreen"];
   n12->n13[label="|- ( ps -> ch )"];
   n6->n9->n10->n11[arrowhead="none" style="invisible"];
   {rank=same;n11;n10;n9;n6;}
-  n13 [label = "ax-mp"style="filled" fillcolor = "lime"];
-QED[style="invisible"]
+  n13[label="ax-mp" style="filled" fillcolor = "lawngreen"];
+  QED[style="invisible"]
   n13->QED[label="|- ch"];
   n3->n4->n5->n12[arrowhead="none" style="invisible"];
   {rank=same;n12;n5;n4;n3;}

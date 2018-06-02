@@ -1,0 +1,26 @@
+digraph proof_orcanai {
+  rankdir = LR;
+  n16226[label="wph" style="invisible"];
+  n16226->n16235[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n16228[label="wn" style="invisible"];
+  n16228->n16235[color="lightgray" fontcolor="lightgray" label="wff -. ps"];
+  n16229[label="wch" style="invisible"];
+  n16229->n16235[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n16230[label="wph" style="invisible"];
+  n16230->n16234[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n16231[label="wps" style="invisible"];
+  n16231->n16234[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n16232[label="wch" style="invisible"];
+  n16232->n16234[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n16233[label="orcanai.1" style="filled" fillcolor = "orange"];
+  n16233->n16234[label="|- ( ph -> ( ps \\/ ch ) )"];
+  n16234[label="ord" style="filled" fillcolor = "cyan"];
+  n16234->n16235[label="|- ( ph -> ( -. ps -> ch ) )"];
+  n16230->n16231->n16232->n16233[arrowhead="none" style="invisible"];
+  {rank=same;n16233;n16232;n16231;n16230;}
+  n16235[label="imp" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n16235->QED[label="|- ( ( ph /\\ -. ps ) -> ch )"];
+  n16226->n16228->n16229->n16234[arrowhead="none" style="invisible"];
+  {rank=same;n16234;n16229;n16228;n16226;}
+}

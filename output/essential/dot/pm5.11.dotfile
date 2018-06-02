@@ -1,0 +1,20 @@
+digraph proof_pm5_11 {
+  rankdir = LR;
+  n15530[label="wi" style="invisible"];
+  n15530->n15538[color="lightgray" fontcolor="lightgray" label="wff ( ph -> ps )"];
+  n15534[label="wi" style="invisible"];
+  n15534->n15538[color="lightgray" fontcolor="lightgray" label="wff ( -. ph -> ps )"];
+  n15535[label="wph" style="invisible"];
+  n15535->n15537[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n15536[label="wps" style="invisible"];
+  n15536->n15537[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n15537[label="pm2.5" style="filled" fillcolor = "cyan"];
+  n15537->n15538[label="|- ( -. ( ph -> ps ) -> ( -. ph -> ps ) )"];
+  n15535->n15536[arrowhead="none" style="invisible"];
+  {rank=same;n15536;n15535;}
+  n15538[label="orri" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n15538->QED[label="|- ( ( ph -> ps ) \\/ ( -. ph -> ps ) )"];
+  n15530->n15534->n15537[arrowhead="none" style="invisible"];
+  {rank=same;n15537;n15534;n15530;}
+}

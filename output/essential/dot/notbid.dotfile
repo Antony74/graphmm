@@ -1,0 +1,38 @@
+digraph proof_notbid {
+  rankdir = LR;
+  n5754[label="wph" style="invisible"];
+  n5754->n5774[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n5756[label="wn" style="invisible"];
+  n5756->n5774[color="lightgray" fontcolor="lightgray" label="wff -. ps"];
+  n5758[label="wn" style="invisible"];
+  n5758->n5774[color="lightgray" fontcolor="lightgray" label="wff -. ch"];
+  n5759[label="wph" style="invisible"];
+  n5759->n5773[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n5760[label="wps" style="invisible"];
+  n5760->n5773[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n5761[label="wch" style="invisible"];
+  n5761->n5773[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n5764[label="wn" style="invisible"];
+  n5764->n5773[color="lightgray" fontcolor="lightgray" label="wff -. -. ps"];
+  n5767[label="wn" style="invisible"];
+  n5767->n5773[color="lightgray" fontcolor="lightgray" label="wff -. -. ch"];
+  n5768[label="notbid.1" style="filled" fillcolor = "orange"];
+  n5768->n5773[label="|- ( ph -> ( ps <-> ch ) )"];
+  n5769[label="wps" style="invisible"];
+  n5769->n5770[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n5770[label="notnot" style="filled" fillcolor = "cyan"];
+  n5770->n5773[label="|- ( ps <-> -. -. ps )"];
+  n5771[label="wch" style="invisible"];
+  n5771->n5772[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n5772[label="notnot" style="filled" fillcolor = "cyan"];
+  n5772->n5773[label="|- ( ch <-> -. -. ch )"];
+  n5773[label="3bitr3g" style="filled" fillcolor = "cyan"];
+  n5773->n5774[label="|- ( ph -> ( -. -. ps <-> -. -. ch ) )"];
+  n5759->n5760->n5761->n5764->n5767->n5768->n5770->n5772[arrowhead="none" style="invisible"];
+  {rank=same;n5772;n5770;n5768;n5767;n5764;n5761;n5760;n5759;}
+  n5774[label="con4bid" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n5774->QED[label="|- ( ph -> ( -. ps <-> -. ch ) )"];
+  n5754->n5756->n5758->n5773[arrowhead="none" style="invisible"];
+  {rank=same;n5773;n5758;n5756;n5754;}
+}

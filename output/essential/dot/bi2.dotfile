@@ -1,0 +1,30 @@
+digraph proof_bi2 {
+  rankdir = LR;
+  n4512[label="wb" style="invisible"];
+  n4512->n4535[color="lightgray" fontcolor="lightgray" label="wff ( ph <-> ps )"];
+  n4521[label="wn" style="invisible"];
+  n4521->n4535[color="lightgray" fontcolor="lightgray" label="wff -. ( ( ph -> ps ) -> -. ( ps -> ph ) )"];
+  n4524[label="wi" style="invisible"];
+  n4524->n4535[color="lightgray" fontcolor="lightgray" label="wff ( ps -> ph )"];
+  n4525[label="wph" style="invisible"];
+  n4525->n4527[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n4526[label="wps" style="invisible"];
+  n4526->n4527[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n4527[label="dfbi1" style="filled" fillcolor = "cyan"];
+  n4527->n4535[label="|- ( ( ph <-> ps ) <-> -. ( ( ph -> ps ) -> -. ( ps -> ph ) ) )"];
+  n4525->n4526[arrowhead="none" style="invisible"];
+  {rank=same;n4526;n4525;}
+  n4530[label="wi" style="invisible"];
+  n4530->n4534[color="lightgray" fontcolor="lightgray" label="wff ( ph -> ps )"];
+  n4533[label="wi" style="invisible"];
+  n4533->n4534[color="lightgray" fontcolor="lightgray" label="wff ( ps -> ph )"];
+  n4534[label="simprim" style="filled" fillcolor = "cyan"];
+  n4534->n4535[label="|- ( -. ( ( ph -> ps ) -> -. ( ps -> ph ) ) -> ( ps -> ph ) )"];
+  n4530->n4533[arrowhead="none" style="invisible"];
+  {rank=same;n4533;n4530;}
+  n4535[label="sylbi" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n4535->QED[label="|- ( ( ph <-> ps ) -> ( ps -> ph ) )"];
+  n4512->n4521->n4524->n4527->n4534[arrowhead="none" style="invisible"];
+  {rank=same;n4534;n4527;n4524;n4521;n4512;}
+}

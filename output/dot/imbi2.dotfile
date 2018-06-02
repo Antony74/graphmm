@@ -1,31 +1,31 @@
 digraph proof_imbi2 {
   rankdir = LR;
-  n6234 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n6234[label="wph" color="lightgray" fontcolor="lightgray"];
   n6234->n6236[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n6235 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n6235[label="wps" color="lightgray" fontcolor="lightgray"];
   n6235->n6236[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n6236 [label = "wb"color="lightgray" fontcolor="lightgray"];
+  n6236[label="wb" color="lightgray" fontcolor="lightgray"];
   n6236->n6244[color="lightgray" fontcolor="lightgray" label="wff ( ph <-> ps )"];
   n6234->n6235[arrowhead="none" style="invisible"];
   {rank=same;n6235;n6234;}
-  n6237 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n6237[label="wph" color="lightgray" fontcolor="lightgray"];
   n6237->n6244[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n6238 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n6238[label="wps" color="lightgray" fontcolor="lightgray"];
   n6238->n6244[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n6239 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n6239[label="wch" color="lightgray" fontcolor="lightgray"];
   n6239->n6244[color="lightgray" fontcolor="lightgray" label="wff ch"];
-  n6240 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n6240[label="wps" color="lightgray" fontcolor="lightgray"];
   n6240->n6242[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n6241 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n6241[label="wph" color="lightgray" fontcolor="lightgray"];
   n6241->n6242[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n6242 [label = "wb"color="lightgray" fontcolor="lightgray"];
+  n6242[label="wb" color="lightgray" fontcolor="lightgray"];
   n6242->n6243[color="lightgray" fontcolor="lightgray" label="wff ( ph <-> ps )"];
   n6240->n6241[arrowhead="none" style="invisible"];
   {rank=same;n6241;n6240;}
-  n6243 [label = "id"style="filled" fillcolor = "cyan"];
+  n6243[label="id" style="filled" fillcolor = "cyan"];
   n6243->n6244[label="|- ( ( ph <-> ps ) -> ( ph <-> ps ) )"];
-  n6244 [label = "imbi2d"style="filled" fillcolor = "cyan"];
-QED[style="invisible"]
+  n6244[label="imbi2d" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
   n6244->QED[label="|- ( ( ph <-> ps ) -> ( ( ch -> ph ) <-> ( ch -> ps ) ) )"];
   n6236->n6237->n6238->n6239->n6243[arrowhead="none" style="invisible"];
   {rank=same;n6243;n6239;n6238;n6237;n6236;}

@@ -1,24 +1,24 @@
 digraph proof_anidmdbi {
   rankdir = LR;
-  n11169 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n11169[label="wps" color="lightgray" fontcolor="lightgray"];
   n11169->n11171[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n11170 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n11170[label="wps" color="lightgray" fontcolor="lightgray"];
   n11170->n11171[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n11171 [label = "wa"color="lightgray" fontcolor="lightgray"];
-  n11171->n11176[color="lightgray" fontcolor="lightgray" label="wff ( ps /\ ps )"];
+  n11171[label="wa" color="lightgray" fontcolor="lightgray"];
+  n11171->n11176[color="lightgray" fontcolor="lightgray" label="wff ( ps /\\ ps )"];
   n11169->n11170[arrowhead="none" style="invisible"];
   {rank=same;n11170;n11169;}
-  n11172 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n11172[label="wps" color="lightgray" fontcolor="lightgray"];
   n11172->n11176[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n11173 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n11173[label="wph" color="lightgray" fontcolor="lightgray"];
   n11173->n11176[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n11174 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n11174[label="wps" color="lightgray" fontcolor="lightgray"];
   n11174->n11175[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n11175 [label = "anidm"style="filled" fillcolor = "cyan"];
-  n11175->n11176[label="|- ( ( ps /\ ps ) <-> ps )"];
-  n11176 [label = "imbi2i"style="filled" fillcolor = "cyan"];
-QED[style="invisible"]
-  n11176->QED[label="|- ( ( ph -> ( ps /\ ps ) ) <-> ( ph -> ps ) )"];
+  n11175[label="anidm" style="filled" fillcolor = "cyan"];
+  n11175->n11176[label="|- ( ( ps /\\ ps ) <-> ps )"];
+  n11176[label="imbi2i" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n11176->QED[label="|- ( ( ph -> ( ps /\\ ps ) ) <-> ( ph -> ps ) )"];
   n11171->n11172->n11173->n11175[arrowhead="none" style="invisible"];
   {rank=same;n11175;n11173;n11172;n11171;}
 }

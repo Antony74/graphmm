@@ -1,0 +1,30 @@
+digraph proof_3oran {
+  rankdir = LR;
+  n19183[label="wn" style="invisible"];
+  n19183->n19204[color="lightgray" fontcolor="lightgray" label="wff -. ( -. ph /\\ -. ps /\\ -. ch )"];
+  n19187[label="w3o" style="invisible"];
+  n19187->n19204[color="lightgray" fontcolor="lightgray" label="wff ( ph \\/ ps \\/ ch )"];
+  n19191[label="w3o" style="invisible"];
+  n19191->n19203[color="lightgray" fontcolor="lightgray" label="wff ( ph \\/ ps \\/ ch )"];
+  n19198[label="w3a" style="invisible"];
+  n19198->n19203[color="lightgray" fontcolor="lightgray" label="wff ( -. ph /\\ -. ps /\\ -. ch )"];
+  n19199[label="wph" style="invisible"];
+  n19199->n19202[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n19200[label="wps" style="invisible"];
+  n19200->n19202[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n19201[label="wch" style="invisible"];
+  n19201->n19202[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n19202[label="3ioran" style="filled" fillcolor = "cyan"];
+  n19202->n19203[label="|- ( -. ( ph \\/ ps \\/ ch ) <-> ( -. ph /\\ -. ps /\\ -. ch ) )"];
+  n19199->n19200->n19201[arrowhead="none" style="invisible"];
+  {rank=same;n19201;n19200;n19199;}
+  n19203[label="con1bii" style="filled" fillcolor = "cyan"];
+  n19203->n19204[label="|- ( -. ( -. ph /\\ -. ps /\\ -. ch ) <-> ( ph \\/ ps \\/ ch ) )"];
+  n19191->n19198->n19202[arrowhead="none" style="invisible"];
+  {rank=same;n19202;n19198;n19191;}
+  n19204[label="bicomi" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n19204->QED[label="|- ( ( ph \\/ ps \\/ ch ) <-> -. ( -. ph /\\ -. ps /\\ -. ch ) )"];
+  n19183->n19187->n19203[arrowhead="none" style="invisible"];
+  {rank=same;n19203;n19187;n19183;}
+}

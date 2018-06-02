@@ -1,0 +1,32 @@
+digraph proof_pm2_65i {
+  rankdir = LR;
+  n1996[label="wps" style="invisible"];
+  n1996->n2007[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n1998[label="wn" style="invisible"];
+  n1998->n2007[color="lightgray" fontcolor="lightgray" label="wff -. ph"];
+  n1999[label="wph" style="invisible"];
+  n1999->n2002[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n2000[label="wps" style="invisible"];
+  n2000->n2002[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n2001[label="pm2.65i.2" style="filled" fillcolor = "orange"];
+  n2001->n2002[label="|- ( ph -> -. ps )"];
+  n2002[label="con2i" style="filled" fillcolor = "cyan"];
+  n2002->n2007[label="|- ( ps -> -. ph )"];
+  n1999->n2000->n2001[arrowhead="none" style="invisible"];
+  {rank=same;n2001;n2000;n1999;}
+  n2003[label="wph" style="invisible"];
+  n2003->n2006[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n2004[label="wps" style="invisible"];
+  n2004->n2006[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n2005[label="pm2.65i.1" style="filled" fillcolor = "orange"];
+  n2005->n2006[label="|- ( ph -> ps )"];
+  n2006[label="con3i" style="filled" fillcolor = "cyan"];
+  n2006->n2007[label="|- ( -. ps -> -. ph )"];
+  n2003->n2004->n2005[arrowhead="none" style="invisible"];
+  {rank=same;n2005;n2004;n2003;}
+  n2007[label="pm2.61i" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n2007->QED[label="|- -. ph"];
+  n1996->n1998->n2002->n2006[arrowhead="none" style="invisible"];
+  {rank=same;n2006;n2002;n1998;n1996;}
+}

@@ -1,0 +1,20 @@
+digraph proof_annim {
+  rankdir = LR;
+  n7733[label="wi" style="invisible"];
+  n7733->n7741[color="lightgray" fontcolor="lightgray" label="wff ( ph -> ps )"];
+  n7737[label="wa" style="invisible"];
+  n7737->n7741[color="lightgray" fontcolor="lightgray" label="wff ( ph /\\ -. ps )"];
+  n7738[label="wph" style="invisible"];
+  n7738->n7740[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n7739[label="wps" style="invisible"];
+  n7739->n7740[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n7740[label="iman" style="filled" fillcolor = "cyan"];
+  n7740->n7741[label="|- ( ( ph -> ps ) <-> -. ( ph /\\ -. ps ) )"];
+  n7738->n7739[arrowhead="none" style="invisible"];
+  {rank=same;n7739;n7738;}
+  n7741[label="con2bii" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n7741->QED[label="|- ( ( ph /\\ -. ps ) <-> -. ( ph -> ps ) )"];
+  n7733->n7737->n7740[arrowhead="none" style="invisible"];
+  {rank=same;n7740;n7737;n7733;}
+}

@@ -1,20 +1,20 @@
 digraph proof_ancri {
   rankdir = LR;
-  n9432 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n9432[label="wph" color="lightgray" fontcolor="lightgray"];
   n9432->n9438[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n9433 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n9433[label="wps" color="lightgray" fontcolor="lightgray"];
   n9433->n9438[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n9434 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n9434[label="wph" color="lightgray" fontcolor="lightgray"];
   n9434->n9438[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n9435 [label = "ancri.1"style="filled" fillcolor = "orange"];
+  n9435[label="ancri.1" style="filled" fillcolor = "orange"];
   n9435->n9438[label="|- ( ph -> ps )"];
-  n9436 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n9436[label="wph" color="lightgray" fontcolor="lightgray"];
   n9436->n9437[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n9437 [label = "id"style="filled" fillcolor = "cyan"];
+  n9437[label="id" style="filled" fillcolor = "cyan"];
   n9437->n9438[label="|- ( ph -> ph )"];
-  n9438 [label = "jca"style="filled" fillcolor = "cyan"];
-QED[style="invisible"]
-  n9438->QED[label="|- ( ph -> ( ps /\ ph ) )"];
+  n9438[label="jca" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n9438->QED[label="|- ( ph -> ( ps /\\ ph ) )"];
   n9432->n9433->n9434->n9435->n9437[arrowhead="none" style="invisible"];
   {rank=same;n9437;n9435;n9434;n9433;n9432;}
 }

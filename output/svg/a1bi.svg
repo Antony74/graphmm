@@ -16,7 +16,7 @@
 </g>
 <!-- n6442 -->
 <g id="node2" class="node"><title>n6442</title>
-<ellipse fill="lime" stroke="black" cx="624.791" cy="-156" rx="33.5952" ry="18"/>
+<ellipse fill="lawngreen" stroke="black" cx="624.791" cy="-156" rx="33.5952" ry="18"/>
 <text text-anchor="middle" x="624.791" y="-152.3" font-family="Times New Roman,serif" font-size="14.00">ax&#45;mp</text>
 </g>
 <!-- n6432&#45;&gt;n6442 -->

@@ -1,22 +1,22 @@
 digraph proof_anim1i {
   rankdir = LR;
-  n9620 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n9620[label="wph" color="lightgray" fontcolor="lightgray"];
   n9620->n9627[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n9621 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n9621[label="wps" color="lightgray" fontcolor="lightgray"];
   n9621->n9627[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n9622 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n9622[label="wch" color="lightgray" fontcolor="lightgray"];
   n9622->n9627[color="lightgray" fontcolor="lightgray" label="wff ch"];
-  n9623 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n9623[label="wch" color="lightgray" fontcolor="lightgray"];
   n9623->n9627[color="lightgray" fontcolor="lightgray" label="wff ch"];
-  n9624 [label = "anim1i.1"style="filled" fillcolor = "orange"];
+  n9624[label="anim1i.1" style="filled" fillcolor = "orange"];
   n9624->n9627[label="|- ( ph -> ps )"];
-  n9625 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n9625[label="wch" color="lightgray" fontcolor="lightgray"];
   n9625->n9626[color="lightgray" fontcolor="lightgray" label="wff ch"];
-  n9626 [label = "id"style="filled" fillcolor = "cyan"];
+  n9626[label="id" style="filled" fillcolor = "cyan"];
   n9626->n9627[label="|- ( ch -> ch )"];
-  n9627 [label = "anim12i"style="filled" fillcolor = "cyan"];
-QED[style="invisible"]
-  n9627->QED[label="|- ( ( ph /\ ch ) -> ( ps /\ ch ) )"];
+  n9627[label="anim12i" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n9627->QED[label="|- ( ( ph /\\ ch ) -> ( ps /\\ ch ) )"];
   n9620->n9621->n9622->n9623->n9624->n9626[arrowhead="none" style="invisible"];
   {rank=same;n9626;n9624;n9623;n9622;n9621;n9620;}
 }

@@ -1,0 +1,26 @@
+digraph proof_sylnbi {
+  rankdir = LR;
+  n5911[label="wn" style="invisible"];
+  n5911->n5920[color="lightgray" fontcolor="lightgray" label="wff -. ph"];
+  n5913[label="wn" style="invisible"];
+  n5913->n5920[color="lightgray" fontcolor="lightgray" label="wff -. ps"];
+  n5914[label="wch" style="invisible"];
+  n5914->n5920[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n5915[label="wph" style="invisible"];
+  n5915->n5918[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n5916[label="wps" style="invisible"];
+  n5916->n5918[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n5917[label="sylnbi.1" style="filled" fillcolor = "orange"];
+  n5917->n5918[label="|- ( ph <-> ps )"];
+  n5918[label="notbii" style="filled" fillcolor = "cyan"];
+  n5918->n5920[label="|- ( -. ph <-> -. ps )"];
+  n5915->n5916->n5917[arrowhead="none" style="invisible"];
+  {rank=same;n5917;n5916;n5915;}
+  n5919[label="sylnbi.2" style="filled" fillcolor = "orange"];
+  n5919->n5920[label="|- ( -. ps -> ch )"];
+  n5920[label="sylbi" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n5920->QED[label="|- ( -. ph -> ch )"];
+  n5911->n5913->n5914->n5918->n5919[arrowhead="none" style="invisible"];
+  {rank=same;n5919;n5918;n5914;n5913;n5911;}
+}

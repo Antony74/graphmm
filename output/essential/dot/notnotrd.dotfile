@@ -1,0 +1,20 @@
+digraph proof_notnotrd {
+  rankdir = LR;
+  n1283[label="wph" style="invisible"];
+  n1283->n1291[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n1286[label="wn" style="invisible"];
+  n1286->n1291[color="lightgray" fontcolor="lightgray" label="wff -. -. ps"];
+  n1287[label="wps" style="invisible"];
+  n1287->n1291[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n1288[label="notnotrd.1" style="filled" fillcolor = "orange"];
+  n1288->n1291[label="|- ( ph -> -. -. ps )"];
+  n1289[label="wps" style="invisible"];
+  n1289->n1290[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n1290[label="notnot2" style="filled" fillcolor = "cyan"];
+  n1290->n1291[label="|- ( -. -. ps -> ps )"];
+  n1291[label="syl" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n1291->QED[label="|- ( ph -> ps )"];
+  n1283->n1286->n1287->n1288->n1290[arrowhead="none" style="invisible"];
+  {rank=same;n1290;n1288;n1287;n1286;n1283;}
+}

@@ -1,0 +1,30 @@
+digraph proof_biorf {
+  rankdir = LR;
+  n7478[label="wn" style="invisible"];
+  n7478->n7489[color="lightgray" fontcolor="lightgray" label="wff -. ph"];
+  n7479[label="wps" style="invisible"];
+  n7479->n7489[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n7482[label="wo" style="invisible"];
+  n7482->n7489[color="lightgray" fontcolor="lightgray" label="wff ( ph \\/ ps )"];
+  n7483[label="wps" style="invisible"];
+  n7483->n7485[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n7484[label="wph" style="invisible"];
+  n7484->n7485[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n7485[label="olc" style="filled" fillcolor = "cyan"];
+  n7485->n7489[label="|- ( ps -> ( ph \\/ ps ) )"];
+  n7483->n7484[arrowhead="none" style="invisible"];
+  {rank=same;n7484;n7483;}
+  n7486[label="wph" style="invisible"];
+  n7486->n7488[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n7487[label="wps" style="invisible"];
+  n7487->n7488[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n7488[label="orel1" style="filled" fillcolor = "cyan"];
+  n7488->n7489[label="|- ( -. ph -> ( ( ph \\/ ps ) -> ps ) )"];
+  n7486->n7487[arrowhead="none" style="invisible"];
+  {rank=same;n7487;n7486;}
+  n7489[label="impbid2" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n7489->QED[label="|- ( -. ph -> ( ps <-> ( ph \\/ ps ) ) )"];
+  n7478->n7479->n7482->n7485->n7488[arrowhead="none" style="invisible"];
+  {rank=same;n7488;n7485;n7482;n7479;n7478;}
+}

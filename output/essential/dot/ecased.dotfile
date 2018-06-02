@@ -1,0 +1,42 @@
+digraph proof_ecased {
+  rankdir = LR;
+  n17111[label="wph" style="invisible"];
+  n17111->n17135[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n17113[label="wn" style="invisible"];
+  n17113->n17135[color="lightgray" fontcolor="lightgray" label="wff -. ps"];
+  n17115[label="wn" style="invisible"];
+  n17115->n17135[color="lightgray" fontcolor="lightgray" label="wff -. ch"];
+  n17116[label="wth" style="invisible"];
+  n17116->n17135[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n17117[label="ecased.1" style="filled" fillcolor = "orange"];
+  n17117->n17135[label="|- ( ph -> ( -. ps -> th ) )"];
+  n17118[label="ecased.2" style="filled" fillcolor = "orange"];
+  n17118->n17135[label="|- ( ph -> ( -. ch -> th ) )"];
+  n17124[label="wn" style="invisible"];
+  n17124->n17134[color="lightgray" fontcolor="lightgray" label="wff -. ( -. ps \\/ -. ch )"];
+  n17127[label="wa" style="invisible"];
+  n17127->n17134[color="lightgray" fontcolor="lightgray" label="wff ( ps /\\ ch )"];
+  n17128[label="wph" style="invisible"];
+  n17128->n17134[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n17129[label="wth" style="invisible"];
+  n17129->n17134[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n17130[label="wps" style="invisible"];
+  n17130->n17132[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n17131[label="wch" style="invisible"];
+  n17131->n17132[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n17132[label="pm3.11" style="filled" fillcolor = "cyan"];
+  n17132->n17134[label="|- ( -. ( -. ps \\/ -. ch ) -> ( ps /\\ ch ) )"];
+  n17130->n17131[arrowhead="none" style="invisible"];
+  {rank=same;n17131;n17130;}
+  n17133[label="ecased.3" style="filled" fillcolor = "orange"];
+  n17133->n17134[label="|- ( ph -> ( ( ps /\\ ch ) -> th ) )"];
+  n17134[label="syl5" style="filled" fillcolor = "cyan"];
+  n17134->n17135[label="|- ( ph -> ( -. ( -. ps \\/ -. ch ) -> th ) )"];
+  n17124->n17127->n17128->n17129->n17132->n17133[arrowhead="none" style="invisible"];
+  {rank=same;n17133;n17132;n17129;n17128;n17127;n17124;}
+  n17135[label="ecase3d" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n17135->QED[label="|- ( ph -> th )"];
+  n17111->n17113->n17115->n17116->n17117->n17118->n17134[arrowhead="none" style="invisible"];
+  {rank=same;n17134;n17118;n17117;n17116;n17115;n17113;n17111;}
+}

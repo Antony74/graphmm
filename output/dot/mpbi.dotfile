@@ -1,23 +1,23 @@
 digraph proof_mpbi {
   rankdir = LR;
-  n4634 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n4634[label="wph" color="lightgray" fontcolor="lightgray"];
   n4634->n4641[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n4635 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n4635[label="wps" color="lightgray" fontcolor="lightgray"];
   n4635->n4641[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n4636 [label = "mpbi.min"style="filled" fillcolor = "orange"];
+  n4636[label="mpbi.min" style="filled" fillcolor = "orange"];
   n4636->n4641[label="|- ph"];
-  n4637 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n4637[label="wph" color="lightgray" fontcolor="lightgray"];
   n4637->n4640[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n4638 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n4638[label="wps" color="lightgray" fontcolor="lightgray"];
   n4638->n4640[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n4639 [label = "mpbi.maj"style="filled" fillcolor = "orange"];
+  n4639[label="mpbi.maj" style="filled" fillcolor = "orange"];
   n4639->n4640[label="|- ( ph <-> ps )"];
-  n4640 [label = "biimpi"style="filled" fillcolor = "cyan"];
+  n4640[label="biimpi" style="filled" fillcolor = "cyan"];
   n4640->n4641[label="|- ( ph -> ps )"];
   n4637->n4638->n4639[arrowhead="none" style="invisible"];
   {rank=same;n4639;n4638;n4637;}
-  n4641 [label = "ax-mp"style="filled" fillcolor = "lime"];
-QED[style="invisible"]
+  n4641[label="ax-mp" style="filled" fillcolor = "lawngreen"];
+  QED[style="invisible"]
   n4641->QED[label="|- ps"];
   n4634->n4635->n4636->n4640[arrowhead="none" style="invisible"];
   {rank=same;n4640;n4636;n4635;n4634;}

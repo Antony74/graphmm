@@ -1,0 +1,18 @@
+digraph proof_notnotri {
+  rankdir = LR;
+  n1294[label="wn" style="invisible"];
+  n1294->n1299[color="lightgray" fontcolor="lightgray" label="wff -. -. ph"];
+  n1295[label="wph" style="invisible"];
+  n1295->n1299[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n1296[label="notnotri.1" style="filled" fillcolor = "orange"];
+  n1296->n1299[label="|- -. -. ph"];
+  n1297[label="wph" style="invisible"];
+  n1297->n1298[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n1298[label="notnot2" style="filled" fillcolor = "cyan"];
+  n1298->n1299[label="|- ( -. -. ph -> ph )"];
+  n1299[label="ax-mp" style="filled" fillcolor = "lawngreen"];
+  QED[style="invisible"]
+  n1299->QED[label="|- ph"];
+  n1294->n1295->n1296->n1298[arrowhead="none" style="invisible"];
+  {rank=same;n1298;n1296;n1295;n1294;}
+}

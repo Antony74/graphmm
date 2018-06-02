@@ -1,0 +1,48 @@
+digraph proof_jad {
+  rankdir = LR;
+  n1837[label="wi" style="invisible"];
+  n1837->n1857[color="lightgray" fontcolor="lightgray" label="wff ( ps -> ch )"];
+  n1838[label="wph" style="invisible"];
+  n1838->n1857[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n1839[label="wth" style="invisible"];
+  n1839->n1857[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n1840[label="wps" style="invisible"];
+  n1840->n1856[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n1841[label="wch" style="invisible"];
+  n1841->n1856[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n1844[label="wi" style="invisible"];
+  n1844->n1856[color="lightgray" fontcolor="lightgray" label="wff ( ph -> th )"];
+  n1845[label="wph" style="invisible"];
+  n1845->n1850[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n1847[label="wn" style="invisible"];
+  n1847->n1850[color="lightgray" fontcolor="lightgray" label="wff -. ps"];
+  n1848[label="wth" style="invisible"];
+  n1848->n1850[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n1849[label="jad.1" style="filled" fillcolor = "orange"];
+  n1849->n1850[label="|- ( ph -> ( -. ps -> th ) )"];
+  n1850[label="com12" style="filled" fillcolor = "cyan"];
+  n1850->n1856[label="|- ( -. ps -> ( ph -> th ) )"];
+  n1845->n1847->n1848->n1849[arrowhead="none" style="invisible"];
+  {rank=same;n1849;n1848;n1847;n1845;}
+  n1851[label="wph" style="invisible"];
+  n1851->n1855[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n1852[label="wch" style="invisible"];
+  n1852->n1855[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n1853[label="wth" style="invisible"];
+  n1853->n1855[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n1854[label="jad.2" style="filled" fillcolor = "orange"];
+  n1854->n1855[label="|- ( ph -> ( ch -> th ) )"];
+  n1855[label="com12" style="filled" fillcolor = "cyan"];
+  n1855->n1856[label="|- ( ch -> ( ph -> th ) )"];
+  n1851->n1852->n1853->n1854[arrowhead="none" style="invisible"];
+  {rank=same;n1854;n1853;n1852;n1851;}
+  n1856[label="ja" style="filled" fillcolor = "cyan"];
+  n1856->n1857[label="|- ( ( ps -> ch ) -> ( ph -> th ) )"];
+  n1840->n1841->n1844->n1850->n1855[arrowhead="none" style="invisible"];
+  {rank=same;n1855;n1850;n1844;n1841;n1840;}
+  n1857[label="com12" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n1857->QED[label="|- ( ph -> ( ( ps -> ch ) -> th ) )"];
+  n1837->n1838->n1839->n1856[arrowhead="none" style="invisible"];
+  {rank=same;n1856;n1839;n1838;n1837;}
+}

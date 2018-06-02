@@ -1,26 +1,26 @@
 digraph proof_ancoms {
   rankdir = LR;
-  n8038 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n8038[label="wps" color="lightgray" fontcolor="lightgray"];
   n8038->n8046[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n8039 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n8039[label="wph" color="lightgray" fontcolor="lightgray"];
   n8039->n8046[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n8040 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n8040[label="wch" color="lightgray" fontcolor="lightgray"];
   n8040->n8046[color="lightgray" fontcolor="lightgray" label="wff ch"];
-  n8041 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n8041[label="wph" color="lightgray" fontcolor="lightgray"];
   n8041->n8045[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n8042 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n8042[label="wps" color="lightgray" fontcolor="lightgray"];
   n8042->n8045[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n8043 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n8043[label="wch" color="lightgray" fontcolor="lightgray"];
   n8043->n8045[color="lightgray" fontcolor="lightgray" label="wff ch"];
-  n8044 [label = "ancoms.1"style="filled" fillcolor = "orange"];
-  n8044->n8045[label="|- ( ( ph /\ ps ) -> ch )"];
-  n8045 [label = "expcom"style="filled" fillcolor = "cyan"];
+  n8044[label="ancoms.1" style="filled" fillcolor = "orange"];
+  n8044->n8045[label="|- ( ( ph /\\ ps ) -> ch )"];
+  n8045[label="expcom" style="filled" fillcolor = "cyan"];
   n8045->n8046[label="|- ( ps -> ( ph -> ch ) )"];
   n8041->n8042->n8043->n8044[arrowhead="none" style="invisible"];
   {rank=same;n8044;n8043;n8042;n8041;}
-  n8046 [label = "imp"style="filled" fillcolor = "cyan"];
-QED[style="invisible"]
-  n8046->QED[label="|- ( ( ps /\ ph ) -> ch )"];
+  n8046[label="imp" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n8046->QED[label="|- ( ( ps /\\ ph ) -> ch )"];
   n8038->n8039->n8040->n8045[arrowhead="none" style="invisible"];
   {rank=same;n8045;n8040;n8039;n8038;}
 }

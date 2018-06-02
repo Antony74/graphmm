@@ -1,0 +1,28 @@
+digraph proof_anabss3 {
+  rankdir = LR;
+  n13985[label="wph" style="invisible"];
+  n13985->n13994[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n13986[label="wps" style="invisible"];
+  n13986->n13994[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n13987[label="wch" style="invisible"];
+  n13987->n13994[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n13988[label="wph" style="invisible"];
+  n13988->n13993[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n13989[label="wps" style="invisible"];
+  n13989->n13993[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n13990[label="wps" style="invisible"];
+  n13990->n13993[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n13991[label="wch" style="invisible"];
+  n13991->n13993[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n13992[label="anabss3.1" style="filled" fillcolor = "orange"];
+  n13992->n13993[label="|- ( ( ( ph /\\ ps ) /\\ ps ) -> ch )"];
+  n13993[label="anasss" style="filled" fillcolor = "cyan"];
+  n13993->n13994[label="|- ( ( ph /\\ ( ps /\\ ps ) ) -> ch )"];
+  n13988->n13989->n13990->n13991->n13992[arrowhead="none" style="invisible"];
+  {rank=same;n13992;n13991;n13990;n13989;n13988;}
+  n13994[label="anabsan2" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n13994->QED[label="|- ( ( ph /\\ ps ) -> ch )"];
+  n13985->n13986->n13987->n13993[arrowhead="none" style="invisible"];
+  {rank=same;n13993;n13987;n13986;n13985;}
+}

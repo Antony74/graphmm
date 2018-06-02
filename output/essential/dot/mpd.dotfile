@@ -1,0 +1,26 @@
+digraph proof_mpd {
+  rankdir = LR;
+  n70[label="wi" style="invisible"];
+  n70->n80[color="lightgray" fontcolor="lightgray" label="wff ( ph -> ps )"];
+  n73[label="wi" style="invisible"];
+  n73->n80[color="lightgray" fontcolor="lightgray" label="wff ( ph -> ch )"];
+  n74[label="mpd.1" style="filled" fillcolor = "orange"];
+  n74->n80[label="|- ( ph -> ps )"];
+  n75[label="wph" style="invisible"];
+  n75->n79[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n76[label="wps" style="invisible"];
+  n76->n79[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n77[label="wch" style="invisible"];
+  n77->n79[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n78[label="mpd.2" style="filled" fillcolor = "orange"];
+  n78->n79[label="|- ( ph -> ( ps -> ch ) )"];
+  n79[label="a2i" style="filled" fillcolor = "cyan"];
+  n79->n80[label="|- ( ( ph -> ps ) -> ( ph -> ch ) )"];
+  n75->n76->n77->n78[arrowhead="none" style="invisible"];
+  {rank=same;n78;n77;n76;n75;}
+  n80[label="ax-mp" style="filled" fillcolor = "lawngreen"];
+  QED[style="invisible"]
+  n80->QED[label="|- ( ph -> ch )"];
+  n70->n73->n74->n79[arrowhead="none" style="invisible"];
+  {rank=same;n79;n74;n73;n70;}
+}

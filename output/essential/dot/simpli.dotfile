@@ -1,0 +1,22 @@
+digraph proof_simpli {
+  rankdir = LR;
+  n8090[label="wa" style="invisible"];
+  n8090->n8096[color="lightgray" fontcolor="lightgray" label="wff ( ph /\\ ps )"];
+  n8091[label="wph" style="invisible"];
+  n8091->n8096[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n8092[label="simpli.1" style="filled" fillcolor = "orange"];
+  n8092->n8096[label="|- ( ph /\\ ps )"];
+  n8093[label="wph" style="invisible"];
+  n8093->n8095[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n8094[label="wps" style="invisible"];
+  n8094->n8095[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n8095[label="simpl" style="filled" fillcolor = "cyan"];
+  n8095->n8096[label="|- ( ( ph /\\ ps ) -> ph )"];
+  n8093->n8094[arrowhead="none" style="invisible"];
+  {rank=same;n8094;n8093;}
+  n8096[label="ax-mp" style="filled" fillcolor = "lawngreen"];
+  QED[style="invisible"]
+  n8096->QED[label="|- ph"];
+  n8090->n8091->n8092->n8095[arrowhead="none" style="invisible"];
+  {rank=same;n8095;n8092;n8091;n8090;}
+}

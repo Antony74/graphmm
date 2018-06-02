@@ -1,0 +1,26 @@
+digraph proof_simpl3r {
+  rankdir = LR;
+  n19945[label="w3a" style="invisible"];
+  n19945->n19953[color="lightgray" fontcolor="lightgray" label="wff ( ch /\\ th /\\ ( ph /\\ ps ) )"];
+  n19946[label="wps" style="invisible"];
+  n19946->n19953[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n19947[label="wta" style="invisible"];
+  n19947->n19953[color="lightgray" fontcolor="lightgray" label="wff ta"];
+  n19948[label="wch" style="invisible"];
+  n19948->n19952[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n19949[label="wth" style="invisible"];
+  n19949->n19952[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n19950[label="wph" style="invisible"];
+  n19950->n19952[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n19951[label="wps" style="invisible"];
+  n19951->n19952[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n19952[label="simp3r" style="filled" fillcolor = "cyan"];
+  n19952->n19953[label="|- ( ( ch /\\ th /\\ ( ph /\\ ps ) ) -> ps )"];
+  n19948->n19949->n19950->n19951[arrowhead="none" style="invisible"];
+  {rank=same;n19951;n19950;n19949;n19948;}
+  n19953[label="adantr" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n19953->QED[label="|- ( ( ( ch /\\ th /\\ ( ph /\\ ps ) ) /\\ ta ) -> ps )"];
+  n19945->n19946->n19947->n19952[arrowhead="none" style="invisible"];
+  {rank=same;n19952;n19947;n19946;n19945;}
+}

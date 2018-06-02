@@ -1,0 +1,28 @@
+digraph proof_mpani {
+  rankdir = LR;
+  n11577[label="wph" style="invisible"];
+  n11577->n11586[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n11578[label="wps" style="invisible"];
+  n11578->n11586[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n11579[label="wch" style="invisible"];
+  n11579->n11586[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n11580[label="wth" style="invisible"];
+  n11580->n11586[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n11581[label="wps" style="invisible"];
+  n11581->n11584[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n11582[label="wph" style="invisible"];
+  n11582->n11584[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n11583[label="mpani.1" style="filled" fillcolor = "orange"];
+  n11583->n11584[label="|- ps"];
+  n11584[label="a1i" style="filled" fillcolor = "cyan"];
+  n11584->n11586[label="|- ( ph -> ps )"];
+  n11581->n11582->n11583[arrowhead="none" style="invisible"];
+  {rank=same;n11583;n11582;n11581;}
+  n11585[label="mpani.2" style="filled" fillcolor = "orange"];
+  n11585->n11586[label="|- ( ph -> ( ( ps /\\ ch ) -> th ) )"];
+  n11586[label="mpand" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n11586->QED[label="|- ( ph -> ( ch -> th ) )"];
+  n11577->n11578->n11579->n11580->n11584->n11585[arrowhead="none" style="invisible"];
+  {rank=same;n11585;n11584;n11580;n11579;n11578;n11577;}
+}

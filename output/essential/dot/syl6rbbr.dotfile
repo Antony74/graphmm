@@ -1,0 +1,28 @@
+digraph proof_syl6rbbr {
+  rankdir = LR;
+  n5335[label="wph" style="invisible"];
+  n5335->n5344[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n5336[label="wps" style="invisible"];
+  n5336->n5344[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n5337[label="wch" style="invisible"];
+  n5337->n5344[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n5338[label="wth" style="invisible"];
+  n5338->n5344[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n5339[label="syl6rbbr.1" style="filled" fillcolor = "orange"];
+  n5339->n5344[label="|- ( ph -> ( ps <-> ch ) )"];
+  n5340[label="wth" style="invisible"];
+  n5340->n5343[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n5341[label="wch" style="invisible"];
+  n5341->n5343[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n5342[label="syl6rbbr.2" style="filled" fillcolor = "orange"];
+  n5342->n5343[label="|- ( th <-> ch )"];
+  n5343[label="bicomi" style="filled" fillcolor = "cyan"];
+  n5343->n5344[label="|- ( ch <-> th )"];
+  n5340->n5341->n5342[arrowhead="none" style="invisible"];
+  {rank=same;n5342;n5341;n5340;}
+  n5344[label="syl6rbb" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n5344->QED[label="|- ( ph -> ( th <-> ps ) )"];
+  n5335->n5336->n5337->n5338->n5339->n5343[arrowhead="none" style="invisible"];
+  {rank=same;n5343;n5339;n5338;n5337;n5336;n5335;}
+}

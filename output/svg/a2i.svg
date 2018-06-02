@@ -35,7 +35,7 @@
 </g>
 <!-- n57 -->
 <g id="node6" class="node"><title>n57</title>
-<ellipse fill="lime" stroke="black" cx="758.692" cy="-251" rx="33.5952" ry="18"/>
+<ellipse fill="lawngreen" stroke="black" cx="758.692" cy="-251" rx="33.5952" ry="18"/>
 <text text-anchor="middle" x="758.692" y="-247.3" font-family="Times New Roman,serif" font-size="14.00">ax&#45;mp</text>
 </g>
 <!-- n44&#45;&gt;n57 -->
@@ -189,7 +189,7 @@
 </g>
 <!-- n56 -->
 <g id="node16" class="node"><title>n56</title>
-<ellipse fill="lime" stroke="black" cx="332.948" cy="-144" rx="27" ry="18"/>
+<ellipse fill="lawngreen" stroke="black" cx="332.948" cy="-144" rx="27" ry="18"/>
 <text text-anchor="middle" x="332.948" y="-140.3" font-family="Times New Roman,serif" font-size="14.00">ax&#45;2</text>
 </g>
 <!-- n52&#45;&gt;n56 -->

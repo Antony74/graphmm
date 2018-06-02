@@ -1,0 +1,24 @@
+digraph proof_loolin {
+  rankdir = LR;
+  n1154[label="wi" style="invisible"];
+  n1154->n1163[color="lightgray" fontcolor="lightgray" label="wff ( ( ph -> ps ) -> ( ps -> ph ) )"];
+  n1155[label="wps" style="invisible"];
+  n1155->n1163[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n1156[label="wph" style="invisible"];
+  n1156->n1163[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n1157[label="wph" style="invisible"];
+  n1157->n1162[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n1158[label="wps" style="invisible"];
+  n1158->n1162[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n1161[label="wi" style="invisible"];
+  n1161->n1162[color="lightgray" fontcolor="lightgray" label="wff ( ps -> ph )"];
+  n1162[label="jarr" style="filled" fillcolor = "cyan"];
+  n1162->n1163[label="|- ( ( ( ph -> ps ) -> ( ps -> ph ) ) -> ( ps -> ( ps -> ph ) ) )"];
+  n1157->n1158->n1161[arrowhead="none" style="invisible"];
+  {rank=same;n1161;n1158;n1157;}
+  n1163[label="pm2.43d" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n1163->QED[label="|- ( ( ( ph -> ps ) -> ( ps -> ph ) ) -> ( ps -> ph ) )"];
+  n1154->n1155->n1156->n1162[arrowhead="none" style="invisible"];
+  {rank=same;n1162;n1156;n1155;n1154;}
+}

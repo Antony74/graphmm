@@ -1,29 +1,29 @@
 digraph proof_3imtr4i {
   rankdir = LR;
-  n5356 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n5356[label="wch" color="lightgray" fontcolor="lightgray"];
   n5356->n5366[color="lightgray" fontcolor="lightgray" label="wff ch"];
-  n5357 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n5357[label="wps" color="lightgray" fontcolor="lightgray"];
   n5357->n5366[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n5358 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n5358[label="wth" color="lightgray" fontcolor="lightgray"];
   n5358->n5366[color="lightgray" fontcolor="lightgray" label="wff th"];
-  n5359 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n5359[label="wch" color="lightgray" fontcolor="lightgray"];
   n5359->n5364[color="lightgray" fontcolor="lightgray" label="wff ch"];
-  n5360 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n5360[label="wph" color="lightgray" fontcolor="lightgray"];
   n5360->n5364[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n5361 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n5361[label="wps" color="lightgray" fontcolor="lightgray"];
   n5361->n5364[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n5362 [label = "3imtr4.2"style="filled" fillcolor = "orange"];
+  n5362[label="3imtr4.2" style="filled" fillcolor = "orange"];
   n5362->n5364[label="|- ( ch <-> ph )"];
-  n5363 [label = "3imtr4.1"style="filled" fillcolor = "orange"];
+  n5363[label="3imtr4.1" style="filled" fillcolor = "orange"];
   n5363->n5364[label="|- ( ph -> ps )"];
-  n5364 [label = "sylbi"style="filled" fillcolor = "cyan"];
+  n5364[label="sylbi" style="filled" fillcolor = "cyan"];
   n5364->n5366[label="|- ( ch -> ps )"];
   n5359->n5360->n5361->n5362->n5363[arrowhead="none" style="invisible"];
   {rank=same;n5363;n5362;n5361;n5360;n5359;}
-  n5365 [label = "3imtr4.3"style="filled" fillcolor = "orange"];
+  n5365[label="3imtr4.3" style="filled" fillcolor = "orange"];
   n5365->n5366[label="|- ( th <-> ps )"];
-  n5366 [label = "sylibr"style="filled" fillcolor = "cyan"];
-QED[style="invisible"]
+  n5366[label="sylibr" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
   n5366->QED[label="|- ( ch -> th )"];
   n5356->n5357->n5358->n5364->n5365[arrowhead="none" style="invisible"];
   {rank=same;n5365;n5364;n5358;n5357;n5356;}

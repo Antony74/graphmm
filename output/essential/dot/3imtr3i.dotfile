@@ -1,0 +1,30 @@
+digraph proof_3imtr3i {
+  rankdir = LR;
+  n5345[label="wch" style="invisible"];
+  n5345->n5355[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n5346[label="wps" style="invisible"];
+  n5346->n5355[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n5347[label="wth" style="invisible"];
+  n5347->n5355[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n5348[label="wch" style="invisible"];
+  n5348->n5353[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n5349[label="wph" style="invisible"];
+  n5349->n5353[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n5350[label="wps" style="invisible"];
+  n5350->n5353[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n5351[label="3imtr3.2" style="filled" fillcolor = "orange"];
+  n5351->n5353[label="|- ( ph <-> ch )"];
+  n5352[label="3imtr3.1" style="filled" fillcolor = "orange"];
+  n5352->n5353[label="|- ( ph -> ps )"];
+  n5353[label="sylbir" style="filled" fillcolor = "cyan"];
+  n5353->n5355[label="|- ( ch -> ps )"];
+  n5348->n5349->n5350->n5351->n5352[arrowhead="none" style="invisible"];
+  {rank=same;n5352;n5351;n5350;n5349;n5348;}
+  n5354[label="3imtr3.3" style="filled" fillcolor = "orange"];
+  n5354->n5355[label="|- ( ps <-> th )"];
+  n5355[label="sylib" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n5355->QED[label="|- ( ch -> th )"];
+  n5345->n5346->n5347->n5353->n5354[arrowhead="none" style="invisible"];
+  {rank=same;n5354;n5353;n5347;n5346;n5345;}
+}

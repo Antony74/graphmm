@@ -1,32 +1,32 @@
 digraph proof_orbi1 {
   rankdir = LR;
-  n11999 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n11999[label="wph" color="lightgray" fontcolor="lightgray"];
   n11999->n12001[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n12000 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n12000[label="wps" color="lightgray" fontcolor="lightgray"];
   n12000->n12001[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n12001 [label = "wb"color="lightgray" fontcolor="lightgray"];
+  n12001[label="wb" color="lightgray" fontcolor="lightgray"];
   n12001->n12009[color="lightgray" fontcolor="lightgray" label="wff ( ph <-> ps )"];
   n11999->n12000[arrowhead="none" style="invisible"];
   {rank=same;n12000;n11999;}
-  n12002 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n12002[label="wph" color="lightgray" fontcolor="lightgray"];
   n12002->n12009[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n12003 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n12003[label="wps" color="lightgray" fontcolor="lightgray"];
   n12003->n12009[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n12004 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n12004[label="wch" color="lightgray" fontcolor="lightgray"];
   n12004->n12009[color="lightgray" fontcolor="lightgray" label="wff ch"];
-  n12005 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n12005[label="wps" color="lightgray" fontcolor="lightgray"];
   n12005->n12007[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n12006 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n12006[label="wph" color="lightgray" fontcolor="lightgray"];
   n12006->n12007[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n12007 [label = "wb"color="lightgray" fontcolor="lightgray"];
+  n12007[label="wb" color="lightgray" fontcolor="lightgray"];
   n12007->n12008[color="lightgray" fontcolor="lightgray" label="wff ( ph <-> ps )"];
   n12005->n12006[arrowhead="none" style="invisible"];
   {rank=same;n12006;n12005;}
-  n12008 [label = "id"style="filled" fillcolor = "cyan"];
+  n12008[label="id" style="filled" fillcolor = "cyan"];
   n12008->n12009[label="|- ( ( ph <-> ps ) -> ( ph <-> ps ) )"];
-  n12009 [label = "orbi1d"style="filled" fillcolor = "cyan"];
-QED[style="invisible"]
-  n12009->QED[label="|- ( ( ph <-> ps ) -> ( ( ph \/ ch ) <-> ( ps \/ ch ) ) )"];
+  n12009[label="orbi1d" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n12009->QED[label="|- ( ( ph <-> ps ) -> ( ( ph \\/ ch ) <-> ( ps \\/ ch ) ) )"];
   n12001->n12002->n12003->n12004->n12008[arrowhead="none" style="invisible"];
   {rank=same;n12008;n12004;n12003;n12002;n12001;}
 }

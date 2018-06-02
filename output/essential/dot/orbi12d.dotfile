@@ -1,0 +1,44 @@
+digraph proof_orbi12d {
+  rankdir = LR;
+  n12046[label="wph" style="invisible"];
+  n12046->n12068[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n12049[label="wo" style="invisible"];
+  n12049->n12068[color="lightgray" fontcolor="lightgray" label="wff ( ps \\/ th )"];
+  n12052[label="wo" style="invisible"];
+  n12052->n12068[color="lightgray" fontcolor="lightgray" label="wff ( ch \\/ th )"];
+  n12055[label="wo" style="invisible"];
+  n12055->n12068[color="lightgray" fontcolor="lightgray" label="wff ( ch \\/ ta )"];
+  n12056[label="wph" style="invisible"];
+  n12056->n12061[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n12057[label="wps" style="invisible"];
+  n12057->n12061[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n12058[label="wch" style="invisible"];
+  n12058->n12061[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n12059[label="wth" style="invisible"];
+  n12059->n12061[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n12060[label="bi12d.1" style="filled" fillcolor = "orange"];
+  n12060->n12061[label="|- ( ph -> ( ps <-> ch ) )"];
+  n12061[label="orbi1d" style="filled" fillcolor = "cyan"];
+  n12061->n12068[label="|- ( ph -> ( ( ps \\/ th ) <-> ( ch \\/ th ) ) )"];
+  n12056->n12057->n12058->n12059->n12060[arrowhead="none" style="invisible"];
+  {rank=same;n12060;n12059;n12058;n12057;n12056;}
+  n12062[label="wph" style="invisible"];
+  n12062->n12067[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n12063[label="wth" style="invisible"];
+  n12063->n12067[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n12064[label="wta" style="invisible"];
+  n12064->n12067[color="lightgray" fontcolor="lightgray" label="wff ta"];
+  n12065[label="wch" style="invisible"];
+  n12065->n12067[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n12066[label="bi12d.2" style="filled" fillcolor = "orange"];
+  n12066->n12067[label="|- ( ph -> ( th <-> ta ) )"];
+  n12067[label="orbi2d" style="filled" fillcolor = "cyan"];
+  n12067->n12068[label="|- ( ph -> ( ( ch \\/ th ) <-> ( ch \\/ ta ) ) )"];
+  n12062->n12063->n12064->n12065->n12066[arrowhead="none" style="invisible"];
+  {rank=same;n12066;n12065;n12064;n12063;n12062;}
+  n12068[label="bitrd" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n12068->QED[label="|- ( ph -> ( ( ps \\/ th ) <-> ( ch \\/ ta ) ) )"];
+  n12046->n12049->n12052->n12055->n12061->n12067[arrowhead="none" style="invisible"];
+  {rank=same;n12067;n12061;n12055;n12052;n12049;n12046;}
+}

@@ -1,0 +1,30 @@
+digraph proof_syl5ib {
+  rankdir = LR;
+  n4740[label="wph" style="invisible"];
+  n4740->n4750[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n4741[label="wps" style="invisible"];
+  n4741->n4750[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n4742[label="wch" style="invisible"];
+  n4742->n4750[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n4743[label="wth" style="invisible"];
+  n4743->n4750[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n4744[label="syl5ib.1" style="filled" fillcolor = "orange"];
+  n4744->n4750[label="|- ( ph -> ps )"];
+  n4745[label="wch" style="invisible"];
+  n4745->n4749[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n4746[label="wps" style="invisible"];
+  n4746->n4749[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n4747[label="wth" style="invisible"];
+  n4747->n4749[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n4748[label="syl5ib.2" style="filled" fillcolor = "orange"];
+  n4748->n4749[label="|- ( ch -> ( ps <-> th ) )"];
+  n4749[label="biimpd" style="filled" fillcolor = "cyan"];
+  n4749->n4750[label="|- ( ch -> ( ps -> th ) )"];
+  n4745->n4746->n4747->n4748[arrowhead="none" style="invisible"];
+  {rank=same;n4748;n4747;n4746;n4745;}
+  n4750[label="syl5" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n4750->QED[label="|- ( ch -> ( ph -> th ) )"];
+  n4740->n4741->n4742->n4743->n4744->n4749[arrowhead="none" style="invisible"];
+  {rank=same;n4749;n4744;n4743;n4742;n4741;n4740;}
+}

@@ -1,0 +1,22 @@
+digraph proof_imnani {
+  rankdir = LR;
+  n7695[label="wi" style="invisible"];
+  n7695->n7704[color="lightgray" fontcolor="lightgray" label="wff ( ph -> -. ps )"];
+  n7699[label="wn" style="invisible"];
+  n7699->n7704[color="lightgray" fontcolor="lightgray" label="wff -. ( ph /\\ ps )"];
+  n7700[label="imnani.1" style="filled" fillcolor = "orange"];
+  n7700->n7704[label="|- -. ( ph /\\ ps )"];
+  n7701[label="wph" style="invisible"];
+  n7701->n7703[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n7702[label="wps" style="invisible"];
+  n7702->n7703[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n7703[label="imnan" style="filled" fillcolor = "cyan"];
+  n7703->n7704[label="|- ( ( ph -> -. ps ) <-> -. ( ph /\\ ps ) )"];
+  n7701->n7702[arrowhead="none" style="invisible"];
+  {rank=same;n7702;n7701;}
+  n7704[label="mpbir" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n7704->QED[label="|- ( ph -> -. ps )"];
+  n7695->n7699->n7700->n7703[arrowhead="none" style="invisible"];
+  {rank=same;n7703;n7700;n7699;n7695;}
+}

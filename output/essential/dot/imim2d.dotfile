@@ -1,0 +1,28 @@
+digraph proof_imim2d {
+  rankdir = LR;
+  n479[label="wph" style="invisible"];
+  n479->n490[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n480[label="wth" style="invisible"];
+  n480->n490[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n481[label="wps" style="invisible"];
+  n481->n490[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n482[label="wch" style="invisible"];
+  n482->n490[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n483[label="wph" style="invisible"];
+  n483->n489[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n486[label="wi" style="invisible"];
+  n486->n489[color="lightgray" fontcolor="lightgray" label="wff ( ps -> ch )"];
+  n487[label="wth" style="invisible"];
+  n487->n489[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n488[label="imim2d.1" style="filled" fillcolor = "orange"];
+  n488->n489[label="|- ( ph -> ( ps -> ch ) )"];
+  n489[label="a1d" style="filled" fillcolor = "cyan"];
+  n489->n490[label="|- ( ph -> ( th -> ( ps -> ch ) ) )"];
+  n483->n486->n487->n488[arrowhead="none" style="invisible"];
+  {rank=same;n488;n487;n486;n483;}
+  n490[label="a2d" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n490->QED[label="|- ( ph -> ( ( th -> ps ) -> ( th -> ch ) ) )"];
+  n479->n480->n481->n482->n489[arrowhead="none" style="invisible"];
+  {rank=same;n489;n482;n481;n480;n479;}
+}

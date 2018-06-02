@@ -1,0 +1,44 @@
+digraph proof_bibi1i {
+  rankdir = LR;
+  n6013[label="wb" style="invisible"];
+  n6013->n6034[color="lightgray" fontcolor="lightgray" label="wff ( ph <-> ch )"];
+  n6016[label="wb" style="invisible"];
+  n6016->n6034[color="lightgray" fontcolor="lightgray" label="wff ( ch <-> ph )"];
+  n6019[label="wb" style="invisible"];
+  n6019->n6034[color="lightgray" fontcolor="lightgray" label="wff ( ch <-> ps )"];
+  n6022[label="wb" style="invisible"];
+  n6022->n6034[color="lightgray" fontcolor="lightgray" label="wff ( ps <-> ch )"];
+  n6023[label="wph" style="invisible"];
+  n6023->n6025[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n6024[label="wch" style="invisible"];
+  n6024->n6025[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n6025[label="bicom" style="filled" fillcolor = "cyan"];
+  n6025->n6034[label="|- ( ( ph <-> ch ) <-> ( ch <-> ph ) )"];
+  n6023->n6024[arrowhead="none" style="invisible"];
+  {rank=same;n6024;n6023;}
+  n6026[label="wph" style="invisible"];
+  n6026->n6030[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n6027[label="wps" style="invisible"];
+  n6027->n6030[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n6028[label="wch" style="invisible"];
+  n6028->n6030[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n6029[label="bibi.a" style="filled" fillcolor = "orange"];
+  n6029->n6030[label="|- ( ph <-> ps )"];
+  n6030[label="bibi2i" style="filled" fillcolor = "cyan"];
+  n6030->n6034[label="|- ( ( ch <-> ph ) <-> ( ch <-> ps ) )"];
+  n6026->n6027->n6028->n6029[arrowhead="none" style="invisible"];
+  {rank=same;n6029;n6028;n6027;n6026;}
+  n6031[label="wch" style="invisible"];
+  n6031->n6033[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n6032[label="wps" style="invisible"];
+  n6032->n6033[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n6033[label="bicom" style="filled" fillcolor = "cyan"];
+  n6033->n6034[label="|- ( ( ch <-> ps ) <-> ( ps <-> ch ) )"];
+  n6031->n6032[arrowhead="none" style="invisible"];
+  {rank=same;n6032;n6031;}
+  n6034[label="3bitri" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n6034->QED[label="|- ( ( ph <-> ch ) <-> ( ps <-> ch ) )"];
+  n6013->n6016->n6019->n6022->n6025->n6030->n6033[arrowhead="none" style="invisible"];
+  {rank=same;n6033;n6030;n6025;n6022;n6019;n6016;n6013;}
+}

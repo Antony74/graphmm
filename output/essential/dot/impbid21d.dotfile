@@ -1,0 +1,38 @@
+digraph proof_impbid21d {
+  rankdir = LR;
+  n2402[label="wph" style="invisible"];
+  n2402->n2421[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n2403[label="wps" style="invisible"];
+  n2403->n2421[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n2404[label="wch" style="invisible"];
+  n2404->n2421[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n2405[label="wth" style="invisible"];
+  n2405->n2421[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n2410[label="wi" style="invisible"];
+  n2410->n2413[color="lightgray" fontcolor="lightgray" label="wff ( ps -> ( ch -> th ) )"];
+  n2411[label="wph" style="invisible"];
+  n2411->n2413[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n2412[label="impbid21d.1" style="filled" fillcolor = "orange"];
+  n2412->n2413[label="|- ( ps -> ( ch -> th ) )"];
+  n2413[label="a1i" style="filled" fillcolor = "cyan"];
+  n2413->n2421[label="|- ( ph -> ( ps -> ( ch -> th ) ) )"];
+  n2410->n2411->n2412[arrowhead="none" style="invisible"];
+  {rank=same;n2412;n2411;n2410;}
+  n2414[label="wph" style="invisible"];
+  n2414->n2420[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n2417[label="wi" style="invisible"];
+  n2417->n2420[color="lightgray" fontcolor="lightgray" label="wff ( th -> ch )"];
+  n2418[label="wps" style="invisible"];
+  n2418->n2420[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n2419[label="impbid21d.2" style="filled" fillcolor = "orange"];
+  n2419->n2420[label="|- ( ph -> ( th -> ch ) )"];
+  n2420[label="a1d" style="filled" fillcolor = "cyan"];
+  n2420->n2421[label="|- ( ph -> ( ps -> ( th -> ch ) ) )"];
+  n2414->n2417->n2418->n2419[arrowhead="none" style="invisible"];
+  {rank=same;n2419;n2418;n2417;n2414;}
+  n2421[label="impbidd" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n2421->QED[label="|- ( ph -> ( ps -> ( ch <-> th ) ) )"];
+  n2402->n2403->n2404->n2405->n2413->n2420[arrowhead="none" style="invisible"];
+  {rank=same;n2420;n2413;n2405;n2404;n2403;n2402;}
+}

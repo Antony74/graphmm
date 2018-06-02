@@ -1,0 +1,24 @@
+digraph proof_simprbi {
+  rankdir = LR;
+  n8142[label="wph" style="invisible"];
+  n8142->n8151[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n8143[label="wps" style="invisible"];
+  n8143->n8151[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n8144[label="wch" style="invisible"];
+  n8144->n8151[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n8145[label="wph" style="invisible"];
+  n8145->n8150[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n8148[label="wa" style="invisible"];
+  n8148->n8150[color="lightgray" fontcolor="lightgray" label="wff ( ps /\\ ch )"];
+  n8149[label="simprbi.1" style="filled" fillcolor = "orange"];
+  n8149->n8150[label="|- ( ph <-> ( ps /\\ ch ) )"];
+  n8150[label="biimpi" style="filled" fillcolor = "cyan"];
+  n8150->n8151[label="|- ( ph -> ( ps /\\ ch ) )"];
+  n8145->n8148->n8149[arrowhead="none" style="invisible"];
+  {rank=same;n8149;n8148;n8145;}
+  n8151[label="simprd" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n8151->QED[label="|- ( ph -> ch )"];
+  n8142->n8143->n8144->n8150[arrowhead="none" style="invisible"];
+  {rank=same;n8150;n8144;n8143;n8142;}
+}

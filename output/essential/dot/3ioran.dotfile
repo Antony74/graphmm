@@ -1,0 +1,56 @@
+digraph proof_3ioran {
+  rankdir = LR;
+  n19106[label="wa" style="invisible"];
+  n19106->n19175[color="lightgray" fontcolor="lightgray" label="wff ( -. ( ph \\/ ps ) /\\ -. ch )"];
+  n19114[label="wa" style="invisible"];
+  n19114->n19175[color="lightgray" fontcolor="lightgray" label="wff ( ( -. ph /\\ -. ps ) /\\ -. ch )"];
+  n19119[label="wn" style="invisible"];
+  n19119->n19175[color="lightgray" fontcolor="lightgray" label="wff -. ( ph \\/ ps \\/ ch )"];
+  n19126[label="w3a" style="invisible"];
+  n19126->n19175[color="lightgray" fontcolor="lightgray" label="wff ( -. ph /\\ -. ps /\\ -. ch )"];
+  n19130[label="wn" style="invisible"];
+  n19130->n19141[color="lightgray" fontcolor="lightgray" label="wff -. ( ph \\/ ps )"];
+  n19135[label="wa" style="invisible"];
+  n19135->n19141[color="lightgray" fontcolor="lightgray" label="wff ( -. ph /\\ -. ps )"];
+  n19137[label="wn" style="invisible"];
+  n19137->n19141[color="lightgray" fontcolor="lightgray" label="wff -. ch"];
+  n19138[label="wph" style="invisible"];
+  n19138->n19140[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n19139[label="wps" style="invisible"];
+  n19139->n19140[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n19140[label="ioran" style="filled" fillcolor = "cyan"];
+  n19140->n19141[label="|- ( -. ( ph \\/ ps ) <-> ( -. ph /\\ -. ps ) )"];
+  n19138->n19139[arrowhead="none" style="invisible"];
+  {rank=same;n19139;n19138;}
+  n19141[label="anbi1i" style="filled" fillcolor = "cyan"];
+  n19141->n19175[label="|- ( ( -. ( ph \\/ ps ) /\\ -. ch ) <-> ( ( -. ph /\\ -. ps ) /\\ -. ch ) )"];
+  n19130->n19135->n19137->n19140[arrowhead="none" style="invisible"];
+  {rank=same;n19140;n19137;n19135;n19130;}
+  n19146[label="wo" style="invisible"];
+  n19146->n19167[color="lightgray" fontcolor="lightgray" label="wff ( ( ph \\/ ps ) \\/ ch )"];
+  n19153[label="wa" style="invisible"];
+  n19153->n19167[color="lightgray" fontcolor="lightgray" label="wff ( -. ( ph \\/ ps ) /\\ -. ch )"];
+  n19157[label="w3o" style="invisible"];
+  n19157->n19167[color="lightgray" fontcolor="lightgray" label="wff ( ph \\/ ps \\/ ch )"];
+  n19160[label="wo" style="invisible"];
+  n19160->n19162[color="lightgray" fontcolor="lightgray" label="wff ( ph \\/ ps )"];
+  n19161[label="wch" style="invisible"];
+  n19161->n19162[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n19162[label="ioran" style="filled" fillcolor = "cyan"];
+  n19162->n19167[label="|- ( -. ( ( ph \\/ ps ) \\/ ch ) <-> ( -. ( ph \\/ ps ) /\\ -. ch ) )"];
+  n19160->n19161[arrowhead="none" style="invisible"];
+  {rank=same;n19161;n19160;}
+  n19166[label="df-3or" style="invisible"];
+  n19166->n19167[color="lightgray" fontcolor="lightgray" label="|- ( ( ph \\/ ps \\/ ch ) <-> ( ( ph \\/ ps ) \\/ ch ) )"];
+  n19167[label="xchnxbir" style="filled" fillcolor = "cyan"];
+  n19167->n19175[label="|- ( -. ( ph \\/ ps \\/ ch ) <-> ( -. ( ph \\/ ps ) /\\ -. ch ) )"];
+  n19146->n19153->n19157->n19162->n19166[arrowhead="none" style="invisible"];
+  {rank=same;n19166;n19162;n19157;n19153;n19146;}
+  n19174[label="df-3an" style="invisible"];
+  n19174->n19175[color="lightgray" fontcolor="lightgray" label="|- ( ( -. ph /\\ -. ps /\\ -. ch ) <-> ( ( -. ph /\\ -. ps ) /\\ -. ch ) )"];
+  n19175[label="3bitr4i" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n19175->QED[label="|- ( -. ( ph \\/ ps \\/ ch ) <-> ( -. ph /\\ -. ps /\\ -. ch ) )"];
+  n19106->n19114->n19119->n19126->n19141->n19167->n19174[arrowhead="none" style="invisible"];
+  {rank=same;n19174;n19167;n19141;n19126;n19119;n19114;n19106;}
+}

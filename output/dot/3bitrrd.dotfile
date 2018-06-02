@@ -1,33 +1,33 @@
 digraph proof_3bitrrd {
   rankdir = LR;
-  n5520 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n5520[label="wph" color="lightgray" fontcolor="lightgray"];
   n5520->n5532[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n5521 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n5521[label="wth" color="lightgray" fontcolor="lightgray"];
   n5521->n5532[color="lightgray" fontcolor="lightgray" label="wff th"];
-  n5522 [label = "wta"color="lightgray" fontcolor="lightgray"];
+  n5522[label="wta" color="lightgray" fontcolor="lightgray"];
   n5522->n5532[color="lightgray" fontcolor="lightgray" label="wff ta"];
-  n5523 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n5523[label="wps" color="lightgray" fontcolor="lightgray"];
   n5523->n5532[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n5524 [label = "3bitrd.3"style="filled" fillcolor = "orange"];
+  n5524[label="3bitrd.3" style="filled" fillcolor = "orange"];
   n5524->n5532[label="|- ( ph -> ( th <-> ta ) )"];
-  n5525 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n5525[label="wph" color="lightgray" fontcolor="lightgray"];
   n5525->n5531[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n5526 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n5526[label="wps" color="lightgray" fontcolor="lightgray"];
   n5526->n5531[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n5527 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n5527[label="wch" color="lightgray" fontcolor="lightgray"];
   n5527->n5531[color="lightgray" fontcolor="lightgray" label="wff ch"];
-  n5528 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n5528[label="wth" color="lightgray" fontcolor="lightgray"];
   n5528->n5531[color="lightgray" fontcolor="lightgray" label="wff th"];
-  n5529 [label = "3bitrd.1"style="filled" fillcolor = "orange"];
+  n5529[label="3bitrd.1" style="filled" fillcolor = "orange"];
   n5529->n5531[label="|- ( ph -> ( ps <-> ch ) )"];
-  n5530 [label = "3bitrd.2"style="filled" fillcolor = "orange"];
+  n5530[label="3bitrd.2" style="filled" fillcolor = "orange"];
   n5530->n5531[label="|- ( ph -> ( ch <-> th ) )"];
-  n5531 [label = "bitr2d"style="filled" fillcolor = "cyan"];
+  n5531[label="bitr2d" style="filled" fillcolor = "cyan"];
   n5531->n5532[label="|- ( ph -> ( th <-> ps ) )"];
   n5525->n5526->n5527->n5528->n5529->n5530[arrowhead="none" style="invisible"];
   {rank=same;n5530;n5529;n5528;n5527;n5526;n5525;}
-  n5532 [label = "bitr3d"style="filled" fillcolor = "cyan"];
-QED[style="invisible"]
+  n5532[label="bitr3d" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
   n5532->QED[label="|- ( ph -> ( ta <-> ps ) )"];
   n5520->n5521->n5522->n5523->n5524->n5531[arrowhead="none" style="invisible"];
   {rank=same;n5531;n5524;n5523;n5522;n5521;n5520;}

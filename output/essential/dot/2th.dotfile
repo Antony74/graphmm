@@ -1,0 +1,32 @@
+digraph proof_2th {
+  rankdir = LR;
+  n4938[label="wph" style="invisible"];
+  n4938->n4948[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n4939[label="wps" style="invisible"];
+  n4939->n4948[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n4940[label="wps" style="invisible"];
+  n4940->n4943[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n4941[label="wph" style="invisible"];
+  n4941->n4943[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n4942[label="2th.2" style="filled" fillcolor = "orange"];
+  n4942->n4943[label="|- ps"];
+  n4943[label="a1i" style="filled" fillcolor = "cyan"];
+  n4943->n4948[label="|- ( ph -> ps )"];
+  n4940->n4941->n4942[arrowhead="none" style="invisible"];
+  {rank=same;n4942;n4941;n4940;}
+  n4944[label="wph" style="invisible"];
+  n4944->n4947[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n4945[label="wps" style="invisible"];
+  n4945->n4947[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n4946[label="2th.1" style="filled" fillcolor = "orange"];
+  n4946->n4947[label="|- ph"];
+  n4947[label="a1i" style="filled" fillcolor = "cyan"];
+  n4947->n4948[label="|- ( ps -> ph )"];
+  n4944->n4945->n4946[arrowhead="none" style="invisible"];
+  {rank=same;n4946;n4945;n4944;}
+  n4948[label="impbii" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n4948->QED[label="|- ( ph <-> ps )"];
+  n4938->n4939->n4943->n4947[arrowhead="none" style="invisible"];
+  {rank=same;n4947;n4943;n4939;n4938;}
+}

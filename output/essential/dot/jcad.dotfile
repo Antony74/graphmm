@@ -1,0 +1,30 @@
+digraph proof_jcad {
+  rankdir = LR;
+  n9265[label="wph" style="invisible"];
+  n9265->n9277[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n9266[label="wps" style="invisible"];
+  n9266->n9277[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n9267[label="wch" style="invisible"];
+  n9267->n9277[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n9268[label="wth" style="invisible"];
+  n9268->n9277[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n9271[label="wa" style="invisible"];
+  n9271->n9277[color="lightgray" fontcolor="lightgray" label="wff ( ch /\\ th )"];
+  n9272[label="jcad.1" style="filled" fillcolor = "orange"];
+  n9272->n9277[label="|- ( ph -> ( ps -> ch ) )"];
+  n9273[label="jcad.2" style="filled" fillcolor = "orange"];
+  n9273->n9277[label="|- ( ph -> ( ps -> th ) )"];
+  n9274[label="wch" style="invisible"];
+  n9274->n9276[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n9275[label="wth" style="invisible"];
+  n9275->n9276[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n9276[label="pm3.2" style="filled" fillcolor = "cyan"];
+  n9276->n9277[label="|- ( ch -> ( th -> ( ch /\\ th ) ) )"];
+  n9274->n9275[arrowhead="none" style="invisible"];
+  {rank=same;n9275;n9274;}
+  n9277[label="syl6c" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n9277->QED[label="|- ( ph -> ( ps -> ( ch /\\ th ) ) )"];
+  n9265->n9266->n9267->n9268->n9271->n9272->n9273->n9276[arrowhead="none" style="invisible"];
+  {rank=same;n9276;n9273;n9272;n9271;n9268;n9267;n9266;n9265;}
+}

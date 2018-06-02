@@ -1,0 +1,26 @@
+digraph proof_nsyl3 {
+  rankdir = LR;
+  n1348[label="wch" style="invisible"];
+  n1348->n1359[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n1349[label="wph" style="invisible"];
+  n1349->n1359[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n1350[label="wps" style="invisible"];
+  n1350->n1359[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n1351[label="nsyl3.2" style="filled" fillcolor = "orange"];
+  n1351->n1359[label="|- ( ch -> ps )"];
+  n1355[label="wi" style="invisible"];
+  n1355->n1358[color="lightgray" fontcolor="lightgray" label="wff ( ph -> -. ps )"];
+  n1356[label="wch" style="invisible"];
+  n1356->n1358[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n1357[label="nsyl3.1" style="filled" fillcolor = "orange"];
+  n1357->n1358[label="|- ( ph -> -. ps )"];
+  n1358[label="a1i" style="filled" fillcolor = "cyan"];
+  n1358->n1359[label="|- ( ch -> ( ph -> -. ps ) )"];
+  n1355->n1356->n1357[arrowhead="none" style="invisible"];
+  {rank=same;n1357;n1356;n1355;}
+  n1359[label="mt2d" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n1359->QED[label="|- ( ch -> -. ph )"];
+  n1348->n1349->n1350->n1351->n1358[arrowhead="none" style="invisible"];
+  {rank=same;n1358;n1351;n1350;n1349;n1348;}
+}

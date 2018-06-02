@@ -1,0 +1,26 @@
+digraph proof_pm3_44 {
+  rankdir = LR;
+  n8779[label="wi" style="invisible"];
+  n8779->n8794[color="lightgray" fontcolor="lightgray" label="wff ( ps -> ph )"];
+  n8780[label="wps" style="invisible"];
+  n8780->n8794[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n8781[label="wph" style="invisible"];
+  n8781->n8794[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n8784[label="wi" style="invisible"];
+  n8784->n8794[color="lightgray" fontcolor="lightgray" label="wff ( ch -> ph )"];
+  n8785[label="wch" style="invisible"];
+  n8785->n8794[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n8788[label="wi" style="invisible"];
+  n8788->n8789[color="lightgray" fontcolor="lightgray" label="wff ( ps -> ph )"];
+  n8789[label="id" style="filled" fillcolor = "cyan"];
+  n8789->n8794[label="|- ( ( ps -> ph ) -> ( ps -> ph ) )"];
+  n8792[label="wi" style="invisible"];
+  n8792->n8793[color="lightgray" fontcolor="lightgray" label="wff ( ch -> ph )"];
+  n8793[label="id" style="filled" fillcolor = "cyan"];
+  n8793->n8794[label="|- ( ( ch -> ph ) -> ( ch -> ph ) )"];
+  n8794[label="jaao" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n8794->QED[label="|- ( ( ( ps -> ph ) /\\ ( ch -> ph ) ) -> ( ( ps \\/ ch ) -> ph ) )"];
+  n8779->n8780->n8781->n8784->n8785->n8789->n8793[arrowhead="none" style="invisible"];
+  {rank=same;n8793;n8789;n8785;n8784;n8781;n8780;n8779;}
+}

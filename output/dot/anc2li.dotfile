@@ -1,22 +1,22 @@
 digraph proof_anc2li {
   rankdir = LR;
-  n9494 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n9494[label="wph" color="lightgray" fontcolor="lightgray"];
   n9494->n9501[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n9495 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n9495[label="wps" color="lightgray" fontcolor="lightgray"];
   n9495->n9501[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n9496 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n9496[label="wch" color="lightgray" fontcolor="lightgray"];
   n9496->n9501[color="lightgray" fontcolor="lightgray" label="wff ch"];
-  n9497 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n9497[label="wph" color="lightgray" fontcolor="lightgray"];
   n9497->n9501[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n9498 [label = "anc2li.1"style="filled" fillcolor = "orange"];
+  n9498[label="anc2li.1" style="filled" fillcolor = "orange"];
   n9498->n9501[label="|- ( ph -> ( ps -> ch ) )"];
-  n9499 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n9499[label="wph" color="lightgray" fontcolor="lightgray"];
   n9499->n9500[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n9500 [label = "id"style="filled" fillcolor = "cyan"];
+  n9500[label="id" style="filled" fillcolor = "cyan"];
   n9500->n9501[label="|- ( ph -> ph )"];
-  n9501 [label = "jctild"style="filled" fillcolor = "cyan"];
-QED[style="invisible"]
-  n9501->QED[label="|- ( ph -> ( ps -> ( ph /\ ch ) ) )"];
+  n9501[label="jctild" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n9501->QED[label="|- ( ph -> ( ps -> ( ph /\\ ch ) ) )"];
   n9494->n9495->n9496->n9497->n9498->n9500[arrowhead="none" style="invisible"];
   {rank=same;n9500;n9498;n9497;n9496;n9495;n9494;}
 }

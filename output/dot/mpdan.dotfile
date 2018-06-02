@@ -1,23 +1,23 @@
 digraph proof_mpdan {
   rankdir = LR;
-  n11488 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n11488[label="wph" color="lightgray" fontcolor="lightgray"];
   n11488->n11496[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n11489 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n11489[label="wph" color="lightgray" fontcolor="lightgray"];
   n11489->n11496[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n11490 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n11490[label="wps" color="lightgray" fontcolor="lightgray"];
   n11490->n11496[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n11491 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n11491[label="wch" color="lightgray" fontcolor="lightgray"];
   n11491->n11496[color="lightgray" fontcolor="lightgray" label="wff ch"];
-  n11492 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n11492[label="wph" color="lightgray" fontcolor="lightgray"];
   n11492->n11493[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n11493 [label = "id"style="filled" fillcolor = "cyan"];
+  n11493[label="id" style="filled" fillcolor = "cyan"];
   n11493->n11496[label="|- ( ph -> ph )"];
-  n11494 [label = "mpdan.1"style="filled" fillcolor = "orange"];
+  n11494[label="mpdan.1" style="filled" fillcolor = "orange"];
   n11494->n11496[label="|- ( ph -> ps )"];
-  n11495 [label = "mpdan.2"style="filled" fillcolor = "orange"];
-  n11495->n11496[label="|- ( ( ph /\ ps ) -> ch )"];
-  n11496 [label = "syl2anc"style="filled" fillcolor = "cyan"];
-QED[style="invisible"]
+  n11495[label="mpdan.2" style="filled" fillcolor = "orange"];
+  n11495->n11496[label="|- ( ( ph /\\ ps ) -> ch )"];
+  n11496[label="syl2anc" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
   n11496->QED[label="|- ( ph -> ch )"];
   n11488->n11489->n11490->n11491->n11493->n11494->n11495[arrowhead="none" style="invisible"];
   {rank=same;n11495;n11494;n11493;n11491;n11490;n11489;n11488;}

@@ -1,25 +1,25 @@
 digraph proof_sylnibr {
   rankdir = LR;
-  n5901 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n5901[label="wph" color="lightgray" fontcolor="lightgray"];
   n5901->n5909[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n5902 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n5902[label="wps" color="lightgray" fontcolor="lightgray"];
   n5902->n5909[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n5903 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n5903[label="wch" color="lightgray" fontcolor="lightgray"];
   n5903->n5909[color="lightgray" fontcolor="lightgray" label="wff ch"];
-  n5904 [label = "sylnibr.1"style="filled" fillcolor = "orange"];
+  n5904[label="sylnibr.1" style="filled" fillcolor = "orange"];
   n5904->n5909[label="|- ( ph -> -. ps )"];
-  n5905 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n5905[label="wch" color="lightgray" fontcolor="lightgray"];
   n5905->n5908[color="lightgray" fontcolor="lightgray" label="wff ch"];
-  n5906 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n5906[label="wps" color="lightgray" fontcolor="lightgray"];
   n5906->n5908[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n5907 [label = "sylnibr.2"style="filled" fillcolor = "orange"];
+  n5907[label="sylnibr.2" style="filled" fillcolor = "orange"];
   n5907->n5908[label="|- ( ch <-> ps )"];
-  n5908 [label = "bicomi"style="filled" fillcolor = "cyan"];
+  n5908[label="bicomi" style="filled" fillcolor = "cyan"];
   n5908->n5909[label="|- ( ps <-> ch )"];
   n5905->n5906->n5907[arrowhead="none" style="invisible"];
   {rank=same;n5907;n5906;n5905;}
-  n5909 [label = "sylnib"style="filled" fillcolor = "cyan"];
-QED[style="invisible"]
+  n5909[label="sylnib" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
   n5909->QED[label="|- ( ph -> -. ch )"];
   n5901->n5902->n5903->n5904->n5908[arrowhead="none" style="invisible"];
   {rank=same;n5908;n5904;n5903;n5902;n5901;}

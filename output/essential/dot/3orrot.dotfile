@@ -1,0 +1,36 @@
+digraph proof_3orrot {
+  rankdir = LR;
+  n18758[label="wo" style="invisible"];
+  n18758->n18785[color="lightgray" fontcolor="lightgray" label="wff ( ph \\/ ( ps \\/ ch ) )"];
+  n18763[label="wo" style="invisible"];
+  n18763->n18785[color="lightgray" fontcolor="lightgray" label="wff ( ( ps \\/ ch ) \\/ ph )"];
+  n18767[label="w3o" style="invisible"];
+  n18767->n18785[color="lightgray" fontcolor="lightgray" label="wff ( ph \\/ ps \\/ ch )"];
+  n18771[label="w3o" style="invisible"];
+  n18771->n18785[color="lightgray" fontcolor="lightgray" label="wff ( ps \\/ ch \\/ ph )"];
+  n18772[label="wph" style="invisible"];
+  n18772->n18776[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n18775[label="wo" style="invisible"];
+  n18775->n18776[color="lightgray" fontcolor="lightgray" label="wff ( ps \\/ ch )"];
+  n18776[label="orcom" style="filled" fillcolor = "cyan"];
+  n18776->n18785[label="|- ( ( ph \\/ ( ps \\/ ch ) ) <-> ( ( ps \\/ ch ) \\/ ph ) )"];
+  n18772->n18775[arrowhead="none" style="invisible"];
+  {rank=same;n18775;n18772;}
+  n18777[label="wph" style="invisible"];
+  n18777->n18780[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n18778[label="wps" style="invisible"];
+  n18778->n18780[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n18779[label="wch" style="invisible"];
+  n18779->n18780[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n18780[label="3orass" style="filled" fillcolor = "cyan"];
+  n18780->n18785[label="|- ( ( ph \\/ ps \\/ ch ) <-> ( ph \\/ ( ps \\/ ch ) ) )"];
+  n18777->n18778->n18779[arrowhead="none" style="invisible"];
+  {rank=same;n18779;n18778;n18777;}
+  n18784[label="df-3or" style="invisible"];
+  n18784->n18785[color="lightgray" fontcolor="lightgray" label="|- ( ( ps \\/ ch \\/ ph ) <-> ( ( ps \\/ ch ) \\/ ph ) )"];
+  n18785[label="3bitr4i" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n18785->QED[label="|- ( ( ph \\/ ps \\/ ch ) <-> ( ps \\/ ch \\/ ph ) )"];
+  n18758->n18763->n18767->n18771->n18776->n18780->n18784[arrowhead="none" style="invisible"];
+  {rank=same;n18784;n18780;n18776;n18771;n18767;n18763;n18758;}
+}

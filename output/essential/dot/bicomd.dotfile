@@ -1,0 +1,24 @@
+digraph proof_bicomd {
+  rankdir = LR;
+  n4561[label="wph" style="invisible"];
+  n4561->n4572[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n4564[label="wb" style="invisible"];
+  n4564->n4572[color="lightgray" fontcolor="lightgray" label="wff ( ps <-> ch )"];
+  n4567[label="wb" style="invisible"];
+  n4567->n4572[color="lightgray" fontcolor="lightgray" label="wff ( ch <-> ps )"];
+  n4568[label="bicomd.1" style="filled" fillcolor = "orange"];
+  n4568->n4572[label="|- ( ph -> ( ps <-> ch ) )"];
+  n4569[label="wps" style="invisible"];
+  n4569->n4571[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n4570[label="wch" style="invisible"];
+  n4570->n4571[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n4571[label="bicom" style="filled" fillcolor = "cyan"];
+  n4571->n4572[label="|- ( ( ps <-> ch ) <-> ( ch <-> ps ) )"];
+  n4569->n4570[arrowhead="none" style="invisible"];
+  {rank=same;n4570;n4569;}
+  n4572[label="sylib" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n4572->QED[label="|- ( ph -> ( ch <-> ps ) )"];
+  n4561->n4564->n4567->n4568->n4571[arrowhead="none" style="invisible"];
+  {rank=same;n4571;n4568;n4567;n4564;n4561;}
+}

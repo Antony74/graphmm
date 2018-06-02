@@ -1,22 +1,22 @@
 digraph proof_orim2i {
   rankdir = LR;
-  n8859 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n8859[label="wch" color="lightgray" fontcolor="lightgray"];
   n8859->n8866[color="lightgray" fontcolor="lightgray" label="wff ch"];
-  n8860 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n8860[label="wch" color="lightgray" fontcolor="lightgray"];
   n8860->n8866[color="lightgray" fontcolor="lightgray" label="wff ch"];
-  n8861 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n8861[label="wph" color="lightgray" fontcolor="lightgray"];
   n8861->n8866[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n8862 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n8862[label="wps" color="lightgray" fontcolor="lightgray"];
   n8862->n8866[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n8863 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n8863[label="wch" color="lightgray" fontcolor="lightgray"];
   n8863->n8864[color="lightgray" fontcolor="lightgray" label="wff ch"];
-  n8864 [label = "id"style="filled" fillcolor = "cyan"];
+  n8864[label="id" style="filled" fillcolor = "cyan"];
   n8864->n8866[label="|- ( ch -> ch )"];
-  n8865 [label = "orim1i.1"style="filled" fillcolor = "orange"];
+  n8865[label="orim1i.1" style="filled" fillcolor = "orange"];
   n8865->n8866[label="|- ( ph -> ps )"];
-  n8866 [label = "orim12i"style="filled" fillcolor = "cyan"];
-QED[style="invisible"]
-  n8866->QED[label="|- ( ( ch \/ ph ) -> ( ch \/ ps ) )"];
+  n8866[label="orim12i" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n8866->QED[label="|- ( ( ch \\/ ph ) -> ( ch \\/ ps ) )"];
   n8859->n8860->n8861->n8862->n8864->n8865[arrowhead="none" style="invisible"];
   {rank=same;n8865;n8864;n8862;n8861;n8860;n8859;}
 }

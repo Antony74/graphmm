@@ -1,0 +1,20 @@
+digraph proof_orbi1 {
+  rankdir = LR;
+  n12001[label="wb" style="invisible"];
+  n12001->n12009[color="lightgray" fontcolor="lightgray" label="wff ( ph <-> ps )"];
+  n12002[label="wph" style="invisible"];
+  n12002->n12009[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n12003[label="wps" style="invisible"];
+  n12003->n12009[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n12004[label="wch" style="invisible"];
+  n12004->n12009[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n12007[label="wb" style="invisible"];
+  n12007->n12008[color="lightgray" fontcolor="lightgray" label="wff ( ph <-> ps )"];
+  n12008[label="id" style="filled" fillcolor = "cyan"];
+  n12008->n12009[label="|- ( ( ph <-> ps ) -> ( ph <-> ps ) )"];
+  n12009[label="orbi1d" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n12009->QED[label="|- ( ( ph <-> ps ) -> ( ( ph \\/ ch ) <-> ( ps \\/ ch ) ) )"];
+  n12001->n12002->n12003->n12004->n12008[arrowhead="none" style="invisible"];
+  {rank=same;n12008;n12004;n12003;n12002;n12001;}
+}

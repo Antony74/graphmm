@@ -1,0 +1,22 @@
+digraph proof_jarr {
+  rankdir = LR;
+  n1086[label="wps" style="invisible"];
+  n1086->n1094[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n1089[label="wi" style="invisible"];
+  n1089->n1094[color="lightgray" fontcolor="lightgray" label="wff ( ph -> ps )"];
+  n1090[label="wch" style="invisible"];
+  n1090->n1094[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n1091[label="wps" style="invisible"];
+  n1091->n1093[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n1092[label="wph" style="invisible"];
+  n1092->n1093[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n1093[label="ax-1" style="filled" fillcolor = "lawngreen"];
+  n1093->n1094[label="|- ( ps -> ( ph -> ps ) )"];
+  n1091->n1092[arrowhead="none" style="invisible"];
+  {rank=same;n1092;n1091;}
+  n1094[label="imim1i" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n1094->QED[label="|- ( ( ( ph -> ps ) -> ch ) -> ( ps -> ch ) )"];
+  n1086->n1089->n1090->n1093[arrowhead="none" style="invisible"];
+  {rank=same;n1093;n1090;n1089;n1086;}
+}

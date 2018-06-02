@@ -1,0 +1,30 @@
+digraph proof_sylbird {
+  rankdir = LR;
+  n4902[label="wph" style="invisible"];
+  n4902->n4912[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n4903[label="wps" style="invisible"];
+  n4903->n4912[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n4904[label="wch" style="invisible"];
+  n4904->n4912[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n4905[label="wth" style="invisible"];
+  n4905->n4912[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n4906[label="wph" style="invisible"];
+  n4906->n4910[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n4907[label="wch" style="invisible"];
+  n4907->n4910[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n4908[label="wps" style="invisible"];
+  n4908->n4910[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n4909[label="sylbird.1" style="filled" fillcolor = "orange"];
+  n4909->n4910[label="|- ( ph -> ( ch <-> ps ) )"];
+  n4910[label="biimprd" style="filled" fillcolor = "cyan"];
+  n4910->n4912[label="|- ( ph -> ( ps -> ch ) )"];
+  n4906->n4907->n4908->n4909[arrowhead="none" style="invisible"];
+  {rank=same;n4909;n4908;n4907;n4906;}
+  n4911[label="sylbird.2" style="filled" fillcolor = "orange"];
+  n4911->n4912[label="|- ( ph -> ( ch -> th ) )"];
+  n4912[label="syld" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n4912->QED[label="|- ( ph -> ( ps -> th ) )"];
+  n4902->n4903->n4904->n4905->n4910->n4911[arrowhead="none" style="invisible"];
+  {rank=same;n4911;n4910;n4905;n4904;n4903;n4902;}
+}

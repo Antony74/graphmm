@@ -1,0 +1,24 @@
+digraph proof_ibir {
+  rankdir = LR;
+  n4969[label="wph" style="invisible"];
+  n4969->n4976[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n4970[label="wps" style="invisible"];
+  n4970->n4976[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n4971[label="wph" style="invisible"];
+  n4971->n4975[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n4972[label="wps" style="invisible"];
+  n4972->n4975[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n4973[label="wph" style="invisible"];
+  n4973->n4975[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n4974[label="ibir.1" style="filled" fillcolor = "orange"];
+  n4974->n4975[label="|- ( ph -> ( ps <-> ph ) )"];
+  n4975[label="bicomd" style="filled" fillcolor = "cyan"];
+  n4975->n4976[label="|- ( ph -> ( ph <-> ps ) )"];
+  n4971->n4972->n4973->n4974[arrowhead="none" style="invisible"];
+  {rank=same;n4974;n4973;n4972;n4971;}
+  n4976[label="ibi" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n4976->QED[label="|- ( ph -> ps )"];
+  n4969->n4970->n4975[arrowhead="none" style="invisible"];
+  {rank=same;n4975;n4970;n4969;}
+}

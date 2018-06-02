@@ -1,27 +1,27 @@
 digraph proof_pm2_43 {
   rankdir = LR;
-  n470 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n470[label="wph" color="lightgray" fontcolor="lightgray"];
   n470->n478[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n471 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n471[label="wph" color="lightgray" fontcolor="lightgray"];
   n471->n473[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n472 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n472[label="wps" color="lightgray" fontcolor="lightgray"];
   n472->n473[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n473 [label = "wi"color="lightgray" fontcolor="lightgray"];
+  n473[label="wi" color="lightgray" fontcolor="lightgray"];
   n473->n478[color="lightgray" fontcolor="lightgray" label="wff ( ph -> ps )"];
   n471->n472[arrowhead="none" style="invisible"];
   {rank=same;n472;n471;}
-  n474 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n474[label="wps" color="lightgray" fontcolor="lightgray"];
   n474->n478[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n475 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n475[label="wph" color="lightgray" fontcolor="lightgray"];
   n475->n477[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n476 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n476[label="wps" color="lightgray" fontcolor="lightgray"];
   n476->n477[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n477 [label = "pm2.27"style="filled" fillcolor = "cyan"];
+  n477[label="pm2.27" style="filled" fillcolor = "cyan"];
   n477->n478[label="|- ( ph -> ( ( ph -> ps ) -> ps ) )"];
   n475->n476[arrowhead="none" style="invisible"];
   {rank=same;n476;n475;}
-  n478 [label = "a2i"style="filled" fillcolor = "cyan"];
-QED[style="invisible"]
+  n478[label="a2i" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
   n478->QED[label="|- ( ( ph -> ( ph -> ps ) ) -> ( ph -> ps ) )"];
   n470->n473->n474->n477[arrowhead="none" style="invisible"];
   {rank=same;n477;n474;n473;n470;}

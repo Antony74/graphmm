@@ -1,27 +1,27 @@
 digraph proof_mpii {
   rankdir = LR;
-  n392 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n392[label="wph" color="lightgray" fontcolor="lightgray"];
   n392->n401[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n393 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n393[label="wps" color="lightgray" fontcolor="lightgray"];
   n393->n401[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n394 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n394[label="wch" color="lightgray" fontcolor="lightgray"];
   n394->n401[color="lightgray" fontcolor="lightgray" label="wff ch"];
-  n395 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n395[label="wth" color="lightgray" fontcolor="lightgray"];
   n395->n401[color="lightgray" fontcolor="lightgray" label="wff th"];
-  n396 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n396[label="wch" color="lightgray" fontcolor="lightgray"];
   n396->n399[color="lightgray" fontcolor="lightgray" label="wff ch"];
-  n397 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n397[label="wps" color="lightgray" fontcolor="lightgray"];
   n397->n399[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n398 [label = "mpii.1"style="filled" fillcolor = "orange"];
+  n398[label="mpii.1" style="filled" fillcolor = "orange"];
   n398->n399[label="|- ch"];
-  n399 [label = "a1i"style="filled" fillcolor = "cyan"];
+  n399[label="a1i" style="filled" fillcolor = "cyan"];
   n399->n401[label="|- ( ps -> ch )"];
   n396->n397->n398[arrowhead="none" style="invisible"];
   {rank=same;n398;n397;n396;}
-  n400 [label = "mpii.2"style="filled" fillcolor = "orange"];
+  n400[label="mpii.2" style="filled" fillcolor = "orange"];
   n400->n401[label="|- ( ph -> ( ps -> ( ch -> th ) ) )"];
-  n401 [label = "mpdi"style="filled" fillcolor = "cyan"];
-QED[style="invisible"]
+  n401[label="mpdi" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
   n401->QED[label="|- ( ph -> ( ps -> th ) )"];
   n392->n393->n394->n395->n399->n400[arrowhead="none" style="invisible"];
   {rank=same;n400;n399;n395;n394;n393;n392;}

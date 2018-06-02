@@ -1,25 +1,25 @@
 digraph proof_pm2_01da {
   rankdir = LR;
-  n7918 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n7918[label="wph" color="lightgray" fontcolor="lightgray"];
   n7918->n7926[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n7919 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n7919[label="wps" color="lightgray" fontcolor="lightgray"];
   n7919->n7926[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n7920 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n7920[label="wph" color="lightgray" fontcolor="lightgray"];
   n7920->n7925[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n7921 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n7921[label="wps" color="lightgray" fontcolor="lightgray"];
   n7921->n7925[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n7922 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n7922[label="wps" color="lightgray" fontcolor="lightgray"];
   n7922->n7923[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n7923 [label = "wn"color="lightgray" fontcolor="lightgray"];
+  n7923[label="wn" color="lightgray" fontcolor="lightgray"];
   n7923->n7925[color="lightgray" fontcolor="lightgray" label="wff -. ps"];
-  n7924 [label = "pm2.01da.1"style="filled" fillcolor = "orange"];
-  n7924->n7925[label="|- ( ( ph /\ ps ) -> -. ps )"];
-  n7925 [label = "ex"style="filled" fillcolor = "cyan"];
+  n7924[label="pm2.01da.1" style="filled" fillcolor = "orange"];
+  n7924->n7925[label="|- ( ( ph /\\ ps ) -> -. ps )"];
+  n7925[label="ex" style="filled" fillcolor = "cyan"];
   n7925->n7926[label="|- ( ph -> ( ps -> -. ps ) )"];
   n7920->n7921->n7923->n7924[arrowhead="none" style="invisible"];
   {rank=same;n7924;n7923;n7921;n7920;}
-  n7926 [label = "pm2.01d"style="filled" fillcolor = "cyan"];
-QED[style="invisible"]
+  n7926[label="pm2.01d" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
   n7926->QED[label="|- ( ph -> -. ps )"];
   n7918->n7919->n7925[arrowhead="none" style="invisible"];
   {rank=same;n7925;n7919;n7918;}

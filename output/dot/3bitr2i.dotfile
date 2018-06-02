@@ -1,29 +1,29 @@
 digraph proof_3bitr2i {
   rankdir = LR;
-  n5441 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n5441[label="wph" color="lightgray" fontcolor="lightgray"];
   n5441->n5451[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n5442 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n5442[label="wch" color="lightgray" fontcolor="lightgray"];
   n5442->n5451[color="lightgray" fontcolor="lightgray" label="wff ch"];
-  n5443 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n5443[label="wth" color="lightgray" fontcolor="lightgray"];
   n5443->n5451[color="lightgray" fontcolor="lightgray" label="wff th"];
-  n5444 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n5444[label="wph" color="lightgray" fontcolor="lightgray"];
   n5444->n5449[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n5445 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n5445[label="wps" color="lightgray" fontcolor="lightgray"];
   n5445->n5449[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n5446 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n5446[label="wch" color="lightgray" fontcolor="lightgray"];
   n5446->n5449[color="lightgray" fontcolor="lightgray" label="wff ch"];
-  n5447 [label = "3bitr2i.1"style="filled" fillcolor = "orange"];
+  n5447[label="3bitr2i.1" style="filled" fillcolor = "orange"];
   n5447->n5449[label="|- ( ph <-> ps )"];
-  n5448 [label = "3bitr2i.2"style="filled" fillcolor = "orange"];
+  n5448[label="3bitr2i.2" style="filled" fillcolor = "orange"];
   n5448->n5449[label="|- ( ch <-> ps )"];
-  n5449 [label = "bitr4i"style="filled" fillcolor = "cyan"];
+  n5449[label="bitr4i" style="filled" fillcolor = "cyan"];
   n5449->n5451[label="|- ( ph <-> ch )"];
   n5444->n5445->n5446->n5447->n5448[arrowhead="none" style="invisible"];
   {rank=same;n5448;n5447;n5446;n5445;n5444;}
-  n5450 [label = "3bitr2i.3"style="filled" fillcolor = "orange"];
+  n5450[label="3bitr2i.3" style="filled" fillcolor = "orange"];
   n5450->n5451[label="|- ( ch <-> th )"];
-  n5451 [label = "bitri"style="filled" fillcolor = "cyan"];
-QED[style="invisible"]
+  n5451[label="bitri" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
   n5451->QED[label="|- ( ph <-> th )"];
   n5441->n5442->n5443->n5449->n5450[arrowhead="none" style="invisible"];
   {rank=same;n5450;n5449;n5443;n5442;n5441;}

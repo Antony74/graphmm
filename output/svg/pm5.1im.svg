@@ -78,7 +78,7 @@
 </g>
 <!-- n4933 -->
 <g id="node7" class="node"><title>n4933</title>
-<ellipse fill="lime" stroke="black" cx="154" cy="-155" rx="27" ry="18"/>
+<ellipse fill="lawngreen" stroke="black" cx="154" cy="-155" rx="27" ry="18"/>
 <text text-anchor="middle" x="154" y="-151.3" font-family="Times New Roman,serif" font-size="14.00">ax&#45;1</text>
 </g>
 <!-- n4930&#45;&gt;n4933 -->
@@ -111,7 +111,7 @@
 </g>
 <!-- n4936 -->
 <g id="node10" class="node"><title>n4936</title>
-<ellipse fill="lime" stroke="black" cx="154" cy="-83" rx="27" ry="18"/>
+<ellipse fill="lawngreen" stroke="black" cx="154" cy="-83" rx="27" ry="18"/>
 <text text-anchor="middle" x="154" y="-79.3" font-family="Times New Roman,serif" font-size="14.00">ax&#45;1</text>
 </g>
 <!-- n4933&#45;&gt;n4936 -->

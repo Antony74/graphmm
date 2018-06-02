@@ -1,0 +1,26 @@
+digraph proof_impbii {
+  rankdir = LR;
+  n2372[label="wi" style="invisible"];
+  n2372->n2384[color="lightgray" fontcolor="lightgray" label="wff ( ph -> ps )"];
+  n2375[label="wi" style="invisible"];
+  n2375->n2384[color="lightgray" fontcolor="lightgray" label="wff ( ps -> ph )"];
+  n2378[label="wb" style="invisible"];
+  n2378->n2384[color="lightgray" fontcolor="lightgray" label="wff ( ph <-> ps )"];
+  n2379[label="impbii.1" style="filled" fillcolor = "orange"];
+  n2379->n2384[label="|- ( ph -> ps )"];
+  n2380[label="impbii.2" style="filled" fillcolor = "orange"];
+  n2380->n2384[label="|- ( ps -> ph )"];
+  n2381[label="wph" style="invisible"];
+  n2381->n2383[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n2382[label="wps" style="invisible"];
+  n2382->n2383[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n2383[label="bi3" style="filled" fillcolor = "cyan"];
+  n2383->n2384[label="|- ( ( ph -> ps ) -> ( ( ps -> ph ) -> ( ph <-> ps ) ) )"];
+  n2381->n2382[arrowhead="none" style="invisible"];
+  {rank=same;n2382;n2381;}
+  n2384[label="mp2" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n2384->QED[label="|- ( ph <-> ps )"];
+  n2372->n2375->n2378->n2379->n2380->n2383[arrowhead="none" style="invisible"];
+  {rank=same;n2383;n2380;n2379;n2378;n2375;n2372;}
+}

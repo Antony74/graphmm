@@ -1,0 +1,38 @@
+digraph proof_dedt {
+  rankdir = LR;
+  n17611[label="wch" style="invisible"];
+  n17611->n17642[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n17621[label="wb" style="invisible"];
+  n17621->n17642[color="lightgray" fontcolor="lightgray" label="wff ( ph <-> ( ( ph /\\ ch ) \\/ ( ps /\\ -. ch ) ) )"];
+  n17622[label="wth" style="invisible"];
+  n17622->n17642[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n17623[label="wch" style="invisible"];
+  n17623->n17626[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n17624[label="wph" style="invisible"];
+  n17624->n17626[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n17625[label="wps" style="invisible"];
+  n17625->n17626[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n17626[label="dedlema" style="filled" fillcolor = "cyan"];
+  n17626->n17642[label="|- ( ch -> ( ph <-> ( ( ph /\\ ch ) \\/ ( ps /\\ -. ch ) ) ) )"];
+  n17623->n17624->n17625[arrowhead="none" style="invisible"];
+  {rank=same;n17625;n17624;n17623;}
+  n17636[label="wb" style="invisible"];
+  n17636->n17641[color="lightgray" fontcolor="lightgray" label="wff ( ph <-> ( ( ph /\\ ch ) \\/ ( ps /\\ -. ch ) ) )"];
+  n17637[label="wth" style="invisible"];
+  n17637->n17641[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n17638[label="wta" style="invisible"];
+  n17638->n17641[color="lightgray" fontcolor="lightgray" label="wff ta"];
+  n17639[label="dedt.2" style="filled" fillcolor = "orange"];
+  n17639->n17641[label="|- ta"];
+  n17640[label="dedt.1" style="filled" fillcolor = "orange"];
+  n17640->n17641[label="|- ( ( ph <-> ( ( ph /\\ ch ) \\/ ( ps /\\ -. ch ) ) ) -> ( th <-> ta ) )"];
+  n17641[label="mpbiri" style="filled" fillcolor = "cyan"];
+  n17641->n17642[label="|- ( ( ph <-> ( ( ph /\\ ch ) \\/ ( ps /\\ -. ch ) ) ) -> th )"];
+  n17636->n17637->n17638->n17639->n17640[arrowhead="none" style="invisible"];
+  {rank=same;n17640;n17639;n17638;n17637;n17636;}
+  n17642[label="syl" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n17642->QED[label="|- ( ch -> th )"];
+  n17611->n17621->n17622->n17626->n17641[arrowhead="none" style="invisible"];
+  {rank=same;n17641;n17626;n17622;n17621;n17611;}
+}

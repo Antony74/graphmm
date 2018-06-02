@@ -1,0 +1,18 @@
+digraph proof_ord {
+  rankdir = LR;
+  n7180[label="wph" style="invisible"];
+  n7180->n7192[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n7183[label="wo" style="invisible"];
+  n7183->n7192[color="lightgray" fontcolor="lightgray" label="wff ( ps \\/ ch )"];
+  n7187[label="wi" style="invisible"];
+  n7187->n7192[color="lightgray" fontcolor="lightgray" label="wff ( -. ps -> ch )"];
+  n7188[label="ord.1" style="filled" fillcolor = "orange"];
+  n7188->n7192[label="|- ( ph -> ( ps \\/ ch ) )"];
+  n7191[label="df-or" style="invisible"];
+  n7191->n7192[color="lightgray" fontcolor="lightgray" label="|- ( ( ps \\/ ch ) <-> ( -. ps -> ch ) )"];
+  n7192[label="sylib" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n7192->QED[label="|- ( ph -> ( -. ps -> ch ) )"];
+  n7180->n7183->n7187->n7188->n7191[arrowhead="none" style="invisible"];
+  {rank=same;n7191;n7188;n7187;n7183;n7180;}
+}

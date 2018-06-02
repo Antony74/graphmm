@@ -1,0 +1,40 @@
+digraph proof_syldan {
+  rankdir = LR;
+  n8203[label="wch" style="invisible"];
+  n8203->n8219[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n8206[label="wa" style="invisible"];
+  n8206->n8219[color="lightgray" fontcolor="lightgray" label="wff ( ph /\\ ps )"];
+  n8207[label="wth" style="invisible"];
+  n8207->n8219[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n8208[label="syldan.1" style="filled" fillcolor = "orange"];
+  n8208->n8219[label="|- ( ( ph /\\ ps ) -> ch )"];
+  n8209[label="wch" style="invisible"];
+  n8209->n8218[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n8210[label="wph" style="invisible"];
+  n8210->n8218[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n8211[label="wth" style="invisible"];
+  n8211->n8218[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n8212[label="wps" style="invisible"];
+  n8212->n8218[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n8213[label="wph" style="invisible"];
+  n8213->n8217[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n8214[label="wch" style="invisible"];
+  n8214->n8217[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n8215[label="wth" style="invisible"];
+  n8215->n8217[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n8216[label="syldan.2" style="filled" fillcolor = "orange"];
+  n8216->n8217[label="|- ( ( ph /\\ ch ) -> th )"];
+  n8217[label="expcom" style="filled" fillcolor = "cyan"];
+  n8217->n8218[label="|- ( ch -> ( ph -> th ) )"];
+  n8213->n8214->n8215->n8216[arrowhead="none" style="invisible"];
+  {rank=same;n8216;n8215;n8214;n8213;}
+  n8218[label="adantrd" style="filled" fillcolor = "cyan"];
+  n8218->n8219[label="|- ( ch -> ( ( ph /\\ ps ) -> th ) )"];
+  n8209->n8210->n8211->n8212->n8217[arrowhead="none" style="invisible"];
+  {rank=same;n8217;n8212;n8211;n8210;n8209;}
+  n8219[label="mpcom" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n8219->QED[label="|- ( ( ph /\\ ps ) -> th )"];
+  n8203->n8206->n8207->n8208->n8218[arrowhead="none" style="invisible"];
+  {rank=same;n8218;n8208;n8207;n8206;n8203;}
+}

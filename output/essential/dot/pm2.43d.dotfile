@@ -1,0 +1,22 @@
+digraph proof_pm2_43d {
+  rankdir = LR;
+  n445[label="wph" style="invisible"];
+  n445->n452[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n446[label="wps" style="invisible"];
+  n446->n452[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n447[label="wps" style="invisible"];
+  n447->n452[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n448[label="wch" style="invisible"];
+  n448->n452[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n449[label="wps" style="invisible"];
+  n449->n450[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n450[label="id" style="filled" fillcolor = "cyan"];
+  n450->n452[label="|- ( ps -> ps )"];
+  n451[label="pm2.43d.1" style="filled" fillcolor = "orange"];
+  n451->n452[label="|- ( ph -> ( ps -> ( ps -> ch ) ) )"];
+  n452[label="mpdi" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n452->QED[label="|- ( ph -> ( ps -> ch ) )"];
+  n445->n446->n447->n448->n450->n451[arrowhead="none" style="invisible"];
+  {rank=same;n451;n450;n448;n447;n446;n445;}
+}

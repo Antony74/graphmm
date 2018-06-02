@@ -1,0 +1,36 @@
+digraph proof_pm5_16 {
+  rankdir = LR;
+  n15674[label="wi" style="invisible"];
+  n15674->n15704[color="lightgray" fontcolor="lightgray" label="wff ( ( ph <-> ps ) -> -. ( ph <-> -. ps ) )"];
+  n15683[label="wn" style="invisible"];
+  n15683->n15704[color="lightgray" fontcolor="lightgray" label="wff -. ( ( ph <-> ps ) /\\ ( ph <-> -. ps ) )"];
+  n15686[label="wb" style="invisible"];
+  n15686->n15695[color="lightgray" fontcolor="lightgray" label="wff ( ph <-> ps )"];
+  n15691[label="wn" style="invisible"];
+  n15691->n15695[color="lightgray" fontcolor="lightgray" label="wff -. ( ph <-> -. ps )"];
+  n15692[label="wph" style="invisible"];
+  n15692->n15694[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n15693[label="wps" style="invisible"];
+  n15693->n15694[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n15694[label="pm5.18" style="filled" fillcolor = "cyan"];
+  n15694->n15695[label="|- ( ( ph <-> ps ) <-> -. ( ph <-> -. ps ) )"];
+  n15692->n15693[arrowhead="none" style="invisible"];
+  {rank=same;n15693;n15692;}
+  n15695[label="biimpi" style="filled" fillcolor = "cyan"];
+  n15695->n15704[label="|- ( ( ph <-> ps ) -> -. ( ph <-> -. ps ) )"];
+  n15686->n15691->n15694[arrowhead="none" style="invisible"];
+  {rank=same;n15694;n15691;n15686;}
+  n15698[label="wb" style="invisible"];
+  n15698->n15703[color="lightgray" fontcolor="lightgray" label="wff ( ph <-> ps )"];
+  n15702[label="wb" style="invisible"];
+  n15702->n15703[color="lightgray" fontcolor="lightgray" label="wff ( ph <-> -. ps )"];
+  n15703[label="imnan" style="filled" fillcolor = "cyan"];
+  n15703->n15704[label="|- ( ( ( ph <-> ps ) -> -. ( ph <-> -. ps ) ) <-> -. ( ( ph <-> ps ) /\\ ( ph <-> -. ps ) ) )"];
+  n15698->n15702[arrowhead="none" style="invisible"];
+  {rank=same;n15702;n15698;}
+  n15704[label="mpbi" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n15704->QED[label="|- -. ( ( ph <-> ps ) /\\ ( ph <-> -. ps ) )"];
+  n15674->n15683->n15695->n15703[arrowhead="none" style="invisible"];
+  {rank=same;n15703;n15695;n15683;n15674;}
+}

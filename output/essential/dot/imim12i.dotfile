@@ -1,0 +1,30 @@
+digraph proof_imim12i {
+  rankdir = LR;
+  n543[label="wph" style="invisible"];
+  n543->n555[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n544[label="wps" style="invisible"];
+  n544->n555[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n547[label="wi" style="invisible"];
+  n547->n555[color="lightgray" fontcolor="lightgray" label="wff ( ps -> ch )"];
+  n548[label="wth" style="invisible"];
+  n548->n555[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n549[label="imim12i.1" style="filled" fillcolor = "orange"];
+  n549->n555[label="|- ( ph -> ps )"];
+  n550[label="wch" style="invisible"];
+  n550->n554[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n551[label="wth" style="invisible"];
+  n551->n554[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n552[label="wps" style="invisible"];
+  n552->n554[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n553[label="imim12i.2" style="filled" fillcolor = "orange"];
+  n553->n554[label="|- ( ch -> th )"];
+  n554[label="imim2i" style="filled" fillcolor = "cyan"];
+  n554->n555[label="|- ( ( ps -> ch ) -> ( ps -> th ) )"];
+  n550->n551->n552->n553[arrowhead="none" style="invisible"];
+  {rank=same;n553;n552;n551;n550;}
+  n555[label="syl5" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n555->QED[label="|- ( ( ps -> ch ) -> ( ph -> th ) )"];
+  n543->n544->n547->n548->n549->n554[arrowhead="none" style="invisible"];
+  {rank=same;n554;n549;n548;n547;n544;n543;}
+}

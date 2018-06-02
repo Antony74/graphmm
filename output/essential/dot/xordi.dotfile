@@ -1,0 +1,32 @@
+digraph proof_xordi {
+  rankdir = LR;
+  n15909[label="wa" style="invisible"];
+  n15909->n15931[color="lightgray" fontcolor="lightgray" label="wff ( ph /\\ -. ( ps <-> ch ) )"];
+  n15914[label="wi" style="invisible"];
+  n15914->n15931[color="lightgray" fontcolor="lightgray" label="wff ( ph -> ( ps <-> ch ) )"];
+  n15921[label="wb" style="invisible"];
+  n15921->n15931[color="lightgray" fontcolor="lightgray" label="wff ( ( ph /\\ ps ) <-> ( ph /\\ ch ) )"];
+  n15922[label="wph" style="invisible"];
+  n15922->n15926[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n15925[label="wb" style="invisible"];
+  n15925->n15926[color="lightgray" fontcolor="lightgray" label="wff ( ps <-> ch )"];
+  n15926[label="annim" style="filled" fillcolor = "cyan"];
+  n15926->n15931[label="|- ( ( ph /\\ -. ( ps <-> ch ) ) <-> -. ( ph -> ( ps <-> ch ) ) )"];
+  n15922->n15925[arrowhead="none" style="invisible"];
+  {rank=same;n15925;n15922;}
+  n15927[label="wph" style="invisible"];
+  n15927->n15930[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n15928[label="wps" style="invisible"];
+  n15928->n15930[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n15929[label="wch" style="invisible"];
+  n15929->n15930[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n15930[label="pm5.32" style="filled" fillcolor = "cyan"];
+  n15930->n15931[label="|- ( ( ph -> ( ps <-> ch ) ) <-> ( ( ph /\\ ps ) <-> ( ph /\\ ch ) ) )"];
+  n15927->n15928->n15929[arrowhead="none" style="invisible"];
+  {rank=same;n15929;n15928;n15927;}
+  n15931[label="xchbinx" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n15931->QED[label="|- ( ( ph /\\ -. ( ps <-> ch ) ) <-> -. ( ( ph /\\ ps ) <-> ( ph /\\ ch ) ) )"];
+  n15909->n15914->n15921->n15926->n15930[arrowhead="none" style="invisible"];
+  {rank=same;n15930;n15926;n15921;n15914;n15909;}
+}

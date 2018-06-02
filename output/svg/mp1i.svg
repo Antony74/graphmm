@@ -50,7 +50,7 @@
 </g>
 <!-- n38 -->
 <g id="node5" class="node"><title>n38</title>
-<ellipse fill="lime" stroke="black" cx="218.591" cy="-125" rx="33.5952" ry="18"/>
+<ellipse fill="lawngreen" stroke="black" cx="218.591" cy="-125" rx="33.5952" ry="18"/>
 <text text-anchor="middle" x="218.591" y="-121.3" font-family="Times New Roman,serif" font-size="14.00">ax&#45;mp</text>
 </g>
 <!-- n33&#45;&gt;n38 -->

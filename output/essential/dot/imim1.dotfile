@@ -1,0 +1,20 @@
+digraph proof_imim1 {
+  rankdir = LR;
+  n771[label="wi" style="invisible"];
+  n771->n779[color="lightgray" fontcolor="lightgray" label="wff ( ph -> ps )"];
+  n772[label="wph" style="invisible"];
+  n772->n779[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n773[label="wps" style="invisible"];
+  n773->n779[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n774[label="wch" style="invisible"];
+  n774->n779[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n777[label="wi" style="invisible"];
+  n777->n778[color="lightgray" fontcolor="lightgray" label="wff ( ph -> ps )"];
+  n778[label="id" style="filled" fillcolor = "cyan"];
+  n778->n779[label="|- ( ( ph -> ps ) -> ( ph -> ps ) )"];
+  n779[label="imim1d" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n779->QED[label="|- ( ( ph -> ps ) -> ( ( ps -> ch ) -> ( ph -> ch ) ) )"];
+  n771->n772->n773->n774->n778[arrowhead="none" style="invisible"];
+  {rank=same;n778;n774;n773;n772;n771;}
+}

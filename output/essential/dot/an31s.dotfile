@@ -1,0 +1,42 @@
+digraph proof_an31s {
+  rankdir = LR;
+  n13811[label="wch" style="invisible"];
+  n13811->n13826[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n13812[label="wps" style="invisible"];
+  n13812->n13826[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n13813[label="wph" style="invisible"];
+  n13813->n13826[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n13814[label="wth" style="invisible"];
+  n13814->n13826[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n13815[label="wph" style="invisible"];
+  n13815->n13825[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n13816[label="wps" style="invisible"];
+  n13816->n13825[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n13817[label="wch" style="invisible"];
+  n13817->n13825[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n13818[label="wth" style="invisible"];
+  n13818->n13825[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n13819[label="wph" style="invisible"];
+  n13819->n13824[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n13820[label="wps" style="invisible"];
+  n13820->n13824[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n13821[label="wch" style="invisible"];
+  n13821->n13824[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n13822[label="wth" style="invisible"];
+  n13822->n13824[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n13823[label="an32s.1" style="filled" fillcolor = "orange"];
+  n13823->n13824[label="|- ( ( ( ph /\\ ps ) /\\ ch ) -> th )"];
+  n13824[label="exp31" style="filled" fillcolor = "cyan"];
+  n13824->n13825[label="|- ( ph -> ( ps -> ( ch -> th ) ) )"];
+  n13819->n13820->n13821->n13822->n13823[arrowhead="none" style="invisible"];
+  {rank=same;n13823;n13822;n13821;n13820;n13819;}
+  n13825[label="com13" style="filled" fillcolor = "cyan"];
+  n13825->n13826[label="|- ( ch -> ( ps -> ( ph -> th ) ) )"];
+  n13815->n13816->n13817->n13818->n13824[arrowhead="none" style="invisible"];
+  {rank=same;n13824;n13818;n13817;n13816;n13815;}
+  n13826[label="imp31" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n13826->QED[label="|- ( ( ( ch /\\ ps ) /\\ ph ) -> th )"];
+  n13811->n13812->n13813->n13814->n13825[arrowhead="none" style="invisible"];
+  {rank=same;n13825;n13814;n13813;n13812;n13811;}
+}

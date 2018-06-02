@@ -1,0 +1,34 @@
+digraph proof_simp_8r {
+  rankdir = LR;
+  n13070[label="wa" style="invisible"];
+  n13070->n13082[color="lightgray" fontcolor="lightgray" label="wff ( ( ( ( ( ( ( ph /\\ ps ) /\\ ch ) /\\ th ) /\\ ta ) /\\ et ) /\\ ze ) /\\ si )"];
+  n13071[label="wps" style="invisible"];
+  n13071->n13082[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n13072[label="wrh" style="invisible"];
+  n13072->n13082[color="lightgray" fontcolor="lightgray" label="wff rh"];
+  n13073[label="wph" style="invisible"];
+  n13073->n13081[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n13074[label="wps" style="invisible"];
+  n13074->n13081[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n13075[label="wch" style="invisible"];
+  n13075->n13081[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n13076[label="wth" style="invisible"];
+  n13076->n13081[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n13077[label="wta" style="invisible"];
+  n13077->n13081[color="lightgray" fontcolor="lightgray" label="wff ta"];
+  n13078[label="wet" style="invisible"];
+  n13078->n13081[color="lightgray" fontcolor="lightgray" label="wff et"];
+  n13079[label="wze" style="invisible"];
+  n13079->n13081[color="lightgray" fontcolor="lightgray" label="wff ze"];
+  n13080[label="wsi" style="invisible"];
+  n13080->n13081[color="lightgray" fontcolor="lightgray" label="wff si"];
+  n13081[label="simp-7r" style="filled" fillcolor = "cyan"];
+  n13081->n13082[label="|- ( ( ( ( ( ( ( ( ph /\\ ps ) /\\ ch ) /\\ th ) /\\ ta ) /\\ et ) /\\ ze ) /\\ si ) -> ps )"];
+  n13073->n13074->n13075->n13076->n13077->n13078->n13079->n13080[arrowhead="none" style="invisible"];
+  {rank=same;n13080;n13079;n13078;n13077;n13076;n13075;n13074;n13073;}
+  n13082[label="adantr" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n13082->QED[label="|- ( ( ( ( ( ( ( ( ( ph /\\ ps ) /\\ ch ) /\\ th ) /\\ ta ) /\\ et ) /\\ ze ) /\\ si ) /\\ rh ) -> ps )"];
+  n13070->n13071->n13072->n13081[arrowhead="none" style="invisible"];
+  {rank=same;n13081;n13072;n13071;n13070;}
+}

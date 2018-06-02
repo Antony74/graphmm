@@ -1,0 +1,40 @@
+digraph proof_orordir {
+  rankdir = LR;
+  n9222[label="wo" style="invisible"];
+  n9222->n9252[color="lightgray" fontcolor="lightgray" label="wff ( ( ph \\/ ps ) \\/ ch )"];
+  n9229[label="wo" style="invisible"];
+  n9229->n9252[color="lightgray" fontcolor="lightgray" label="wff ( ( ph \\/ ps ) \\/ ( ch \\/ ch ) )"];
+  n9236[label="wo" style="invisible"];
+  n9236->n9252[color="lightgray" fontcolor="lightgray" label="wff ( ( ph \\/ ch ) \\/ ( ps \\/ ch ) )"];
+  n9239[label="wo" style="invisible"];
+  n9239->n9246[color="lightgray" fontcolor="lightgray" label="wff ( ch \\/ ch )"];
+  n9240[label="wch" style="invisible"];
+  n9240->n9246[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n9243[label="wo" style="invisible"];
+  n9243->n9246[color="lightgray" fontcolor="lightgray" label="wff ( ph \\/ ps )"];
+  n9244[label="wch" style="invisible"];
+  n9244->n9245[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n9245[label="oridm" style="filled" fillcolor = "cyan"];
+  n9245->n9246[label="|- ( ( ch \\/ ch ) <-> ch )"];
+  n9246[label="orbi2i" style="filled" fillcolor = "cyan"];
+  n9246->n9252[label="|- ( ( ( ph \\/ ps ) \\/ ( ch \\/ ch ) ) <-> ( ( ph \\/ ps ) \\/ ch ) )"];
+  n9239->n9240->n9243->n9245[arrowhead="none" style="invisible"];
+  {rank=same;n9245;n9243;n9240;n9239;}
+  n9247[label="wph" style="invisible"];
+  n9247->n9251[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n9248[label="wps" style="invisible"];
+  n9248->n9251[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n9249[label="wch" style="invisible"];
+  n9249->n9251[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n9250[label="wch" style="invisible"];
+  n9250->n9251[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n9251[label="or4" style="filled" fillcolor = "cyan"];
+  n9251->n9252[label="|- ( ( ( ph \\/ ps ) \\/ ( ch \\/ ch ) ) <-> ( ( ph \\/ ch ) \\/ ( ps \\/ ch ) ) )"];
+  n9247->n9248->n9249->n9250[arrowhead="none" style="invisible"];
+  {rank=same;n9250;n9249;n9248;n9247;}
+  n9252[label="bitr3i" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n9252->QED[label="|- ( ( ( ph \\/ ps ) \\/ ch ) <-> ( ( ph \\/ ch ) \\/ ( ps \\/ ch ) ) )"];
+  n9222->n9229->n9236->n9246->n9251[arrowhead="none" style="invisible"];
+  {rank=same;n9251;n9246;n9236;n9229;n9222;}
+}

@@ -1,0 +1,22 @@
+digraph proof_mt3 {
+  rankdir = LR;
+  n2056[label="wph" style="invisible"];
+  n2056->n2063[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n2058[label="wn" style="invisible"];
+  n2058->n2062[color="lightgray" fontcolor="lightgray" label="wff -. ph"];
+  n2059[label="wps" style="invisible"];
+  n2059->n2062[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n2060[label="mt3.1" style="filled" fillcolor = "orange"];
+  n2060->n2062[label="|- -. ps"];
+  n2061[label="mt3.2" style="filled" fillcolor = "orange"];
+  n2061->n2062[label="|- ( -. ph -> ps )"];
+  n2062[label="mto" style="filled" fillcolor = "cyan"];
+  n2062->n2063[label="|- -. -. ph"];
+  n2058->n2059->n2060->n2061[arrowhead="none" style="invisible"];
+  {rank=same;n2061;n2060;n2059;n2058;}
+  n2063[label="notnotri" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n2063->QED[label="|- ph"];
+  n2056->n2062[arrowhead="none" style="invisible"];
+  {rank=same;n2062;n2056;}
+}

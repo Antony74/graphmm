@@ -1,31 +1,31 @@
 digraph proof_syl6mpi {
   rankdir = LR;
-  n605 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n605[label="wph" color="lightgray" fontcolor="lightgray"];
   n605->n616[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n606 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n606[label="wps" color="lightgray" fontcolor="lightgray"];
   n606->n616[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n607 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n607[label="wch" color="lightgray" fontcolor="lightgray"];
   n607->n616[color="lightgray" fontcolor="lightgray" label="wff ch"];
-  n608 [label = "wta"color="lightgray" fontcolor="lightgray"];
+  n608[label="wta" color="lightgray" fontcolor="lightgray"];
   n608->n616[color="lightgray" fontcolor="lightgray" label="wff ta"];
-  n609 [label = "syl6mpi.1"style="filled" fillcolor = "orange"];
+  n609[label="syl6mpi.1" style="filled" fillcolor = "orange"];
   n609->n616[label="|- ( ph -> ( ps -> ch ) )"];
-  n610 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n610[label="wch" color="lightgray" fontcolor="lightgray"];
   n610->n615[color="lightgray" fontcolor="lightgray" label="wff ch"];
-  n611 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n611[label="wth" color="lightgray" fontcolor="lightgray"];
   n611->n615[color="lightgray" fontcolor="lightgray" label="wff th"];
-  n612 [label = "wta"color="lightgray" fontcolor="lightgray"];
+  n612[label="wta" color="lightgray" fontcolor="lightgray"];
   n612->n615[color="lightgray" fontcolor="lightgray" label="wff ta"];
-  n613 [label = "syl6mpi.2"style="filled" fillcolor = "orange"];
+  n613[label="syl6mpi.2" style="filled" fillcolor = "orange"];
   n613->n615[label="|- th"];
-  n614 [label = "syl6mpi.3"style="filled" fillcolor = "orange"];
+  n614[label="syl6mpi.3" style="filled" fillcolor = "orange"];
   n614->n615[label="|- ( ch -> ( th -> ta ) )"];
-  n615 [label = "mpi"style="filled" fillcolor = "cyan"];
+  n615[label="mpi" style="filled" fillcolor = "cyan"];
   n615->n616[label="|- ( ch -> ta )"];
   n610->n611->n612->n613->n614[arrowhead="none" style="invisible"];
   {rank=same;n614;n613;n612;n611;n610;}
-  n616 [label = "syl6"style="filled" fillcolor = "cyan"];
-QED[style="invisible"]
+  n616[label="syl6" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
   n616->QED[label="|- ( ph -> ( ps -> ta ) )"];
   n605->n606->n607->n608->n609->n615[arrowhead="none" style="invisible"];
   {rank=same;n615;n609;n608;n607;n606;n605;}

@@ -1,0 +1,26 @@
+digraph proof_ancom2s {
+  rankdir = LR;
+  n13754[label="wa" style="invisible"];
+  n13754->n13764[color="lightgray" fontcolor="lightgray" label="wff ( ch /\\ ps )"];
+  n13755[label="wph" style="invisible"];
+  n13755->n13764[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n13758[label="wa" style="invisible"];
+  n13758->n13764[color="lightgray" fontcolor="lightgray" label="wff ( ps /\\ ch )"];
+  n13759[label="wth" style="invisible"];
+  n13759->n13764[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n13760[label="wch" style="invisible"];
+  n13760->n13762[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n13761[label="wps" style="invisible"];
+  n13761->n13762[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n13762[label="pm3.22" style="filled" fillcolor = "cyan"];
+  n13762->n13764[label="|- ( ( ch /\\ ps ) -> ( ps /\\ ch ) )"];
+  n13760->n13761[arrowhead="none" style="invisible"];
+  {rank=same;n13761;n13760;}
+  n13763[label="an12s.1" style="filled" fillcolor = "orange"];
+  n13763->n13764[label="|- ( ( ph /\\ ( ps /\\ ch ) ) -> th )"];
+  n13764[label="sylan2" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n13764->QED[label="|- ( ( ph /\\ ( ch /\\ ps ) ) -> th )"];
+  n13754->n13755->n13758->n13759->n13762->n13763[arrowhead="none" style="invisible"];
+  {rank=same;n13763;n13762;n13759;n13758;n13755;n13754;}
+}

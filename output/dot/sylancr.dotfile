@@ -1,29 +1,29 @@
 digraph proof_sylancr {
   rankdir = LR;
-  n11428 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n11428[label="wph" color="lightgray" fontcolor="lightgray"];
   n11428->n11438[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n11429 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n11429[label="wps" color="lightgray" fontcolor="lightgray"];
   n11429->n11438[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n11430 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n11430[label="wch" color="lightgray" fontcolor="lightgray"];
   n11430->n11438[color="lightgray" fontcolor="lightgray" label="wff ch"];
-  n11431 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n11431[label="wth" color="lightgray" fontcolor="lightgray"];
   n11431->n11438[color="lightgray" fontcolor="lightgray" label="wff th"];
-  n11432 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n11432[label="wps" color="lightgray" fontcolor="lightgray"];
   n11432->n11435[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n11433 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n11433[label="wph" color="lightgray" fontcolor="lightgray"];
   n11433->n11435[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n11434 [label = "sylancr.1"style="filled" fillcolor = "orange"];
+  n11434[label="sylancr.1" style="filled" fillcolor = "orange"];
   n11434->n11435[label="|- ps"];
-  n11435 [label = "a1i"style="filled" fillcolor = "cyan"];
+  n11435[label="a1i" style="filled" fillcolor = "cyan"];
   n11435->n11438[label="|- ( ph -> ps )"];
   n11432->n11433->n11434[arrowhead="none" style="invisible"];
   {rank=same;n11434;n11433;n11432;}
-  n11436 [label = "sylancr.2"style="filled" fillcolor = "orange"];
+  n11436[label="sylancr.2" style="filled" fillcolor = "orange"];
   n11436->n11438[label="|- ( ph -> ch )"];
-  n11437 [label = "sylancr.3"style="filled" fillcolor = "orange"];
-  n11437->n11438[label="|- ( ( ps /\ ch ) -> th )"];
-  n11438 [label = "syl2anc"style="filled" fillcolor = "cyan"];
-QED[style="invisible"]
+  n11437[label="sylancr.3" style="filled" fillcolor = "orange"];
+  n11437->n11438[label="|- ( ( ps /\\ ch ) -> th )"];
+  n11438[label="syl2anc" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
   n11438->QED[label="|- ( ph -> th )"];
   n11428->n11429->n11430->n11431->n11435->n11436->n11437[arrowhead="none" style="invisible"];
   {rank=same;n11437;n11436;n11435;n11431;n11430;n11429;n11428;}

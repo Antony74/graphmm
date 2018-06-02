@@ -1,0 +1,14 @@
+digraph proof_pm4_63 {
+  rankdir = LR;
+  n7671[label="wa" style="invisible"];
+  n7671->n7680[color="lightgray" fontcolor="lightgray" label="wff ( ph /\\ ps )"];
+  n7676[label="wn" style="invisible"];
+  n7676->n7680[color="lightgray" fontcolor="lightgray" label="wff -. ( ph -> -. ps )"];
+  n7679[label="df-an" style="invisible"];
+  n7679->n7680[color="lightgray" fontcolor="lightgray" label="|- ( ( ph /\\ ps ) <-> -. ( ph -> -. ps ) )"];
+  n7680[label="bicomi" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n7680->QED[label="|- ( -. ( ph -> -. ps ) <-> ( ph /\\ ps ) )"];
+  n7671->n7676->n7679[arrowhead="none" style="invisible"];
+  {rank=same;n7679;n7676;n7671;}
+}

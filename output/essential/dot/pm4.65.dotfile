@@ -1,0 +1,12 @@
+digraph proof_pm4_65 {
+  rankdir = LR;
+  n7755[label="wn" style="invisible"];
+  n7755->n7757[color="lightgray" fontcolor="lightgray" label="wff -. ph"];
+  n7756[label="wps" style="invisible"];
+  n7756->n7757[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n7757[label="pm4.61" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n7757->QED[label="|- ( -. ( -. ph -> ps ) <-> ( -. ph /\\ -. ps ) )"];
+  n7755->n7756[arrowhead="none" style="invisible"];
+  {rank=same;n7756;n7755;}
+}

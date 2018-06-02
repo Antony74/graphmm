@@ -1,0 +1,42 @@
+digraph proof_bi2bian9 {
+  rankdir = LR;
+  n15311[label="wa" style="invisible"];
+  n15311->n15330[color="lightgray" fontcolor="lightgray" label="wff ( ph /\\ th )"];
+  n15312[label="wps" style="invisible"];
+  n15312->n15330[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n15313[label="wch" style="invisible"];
+  n15313->n15330[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n15314[label="wta" style="invisible"];
+  n15314->n15330[color="lightgray" fontcolor="lightgray" label="wff ta"];
+  n15315[label="wet" style="invisible"];
+  n15315->n15330[color="lightgray" fontcolor="lightgray" label="wff et"];
+  n15316[label="wph" style="invisible"];
+  n15316->n15322[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n15319[label="wb" style="invisible"];
+  n15319->n15322[color="lightgray" fontcolor="lightgray" label="wff ( ps <-> ch )"];
+  n15320[label="wth" style="invisible"];
+  n15320->n15322[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n15321[label="bi2an9.1" style="filled" fillcolor = "orange"];
+  n15321->n15322[label="|- ( ph -> ( ps <-> ch ) )"];
+  n15322[label="adantr" style="filled" fillcolor = "cyan"];
+  n15322->n15330[label="|- ( ( ph /\\ th ) -> ( ps <-> ch ) )"];
+  n15316->n15319->n15320->n15321[arrowhead="none" style="invisible"];
+  {rank=same;n15321;n15320;n15319;n15316;}
+  n15323[label="wth" style="invisible"];
+  n15323->n15329[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n15326[label="wb" style="invisible"];
+  n15326->n15329[color="lightgray" fontcolor="lightgray" label="wff ( ta <-> et )"];
+  n15327[label="wph" style="invisible"];
+  n15327->n15329[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n15328[label="bi2an9.2" style="filled" fillcolor = "orange"];
+  n15328->n15329[label="|- ( th -> ( ta <-> et ) )"];
+  n15329[label="adantl" style="filled" fillcolor = "cyan"];
+  n15329->n15330[label="|- ( ( ph /\\ th ) -> ( ta <-> et ) )"];
+  n15323->n15326->n15327->n15328[arrowhead="none" style="invisible"];
+  {rank=same;n15328;n15327;n15326;n15323;}
+  n15330[label="bibi12d" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n15330->QED[label="|- ( ( ph /\\ th ) -> ( ( ps <-> ta ) <-> ( ch <-> et ) ) )"];
+  n15311->n15312->n15313->n15314->n15315->n15322->n15329[arrowhead="none" style="invisible"];
+  {rank=same;n15329;n15322;n15315;n15314;n15313;n15312;n15311;}
+}

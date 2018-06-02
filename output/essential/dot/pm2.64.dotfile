@@ -1,0 +1,40 @@
+digraph proof_pm2_64 {
+  rankdir = LR;
+  n13416[label="wo" style="invisible"];
+  n13416->n13438[color="lightgray" fontcolor="lightgray" label="wff ( ph \\/ -. ps )"];
+  n13419[label="wo" style="invisible"];
+  n13419->n13438[color="lightgray" fontcolor="lightgray" label="wff ( ph \\/ ps )"];
+  n13420[label="wph" style="invisible"];
+  n13420->n13438[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n13421[label="wph" style="invisible"];
+  n13421->n13437[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n13426[label="wi" style="invisible"];
+  n13426->n13437[color="lightgray" fontcolor="lightgray" label="wff ( ( ph \\/ ps ) -> ph )"];
+  n13428[label="wn" style="invisible"];
+  n13428->n13437[color="lightgray" fontcolor="lightgray" label="wff -. ps"];
+  n13429[label="wph" style="invisible"];
+  n13429->n13433[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n13432[label="wo" style="invisible"];
+  n13432->n13433[color="lightgray" fontcolor="lightgray" label="wff ( ph \\/ ps )"];
+  n13433[label="ax-1" style="filled" fillcolor = "lawngreen"];
+  n13433->n13437[label="|- ( ph -> ( ( ph \\/ ps ) -> ph ) )"];
+  n13429->n13432[arrowhead="none" style="invisible"];
+  {rank=same;n13432;n13429;}
+  n13434[label="wps" style="invisible"];
+  n13434->n13436[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n13435[label="wph" style="invisible"];
+  n13435->n13436[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n13436[label="orel2" style="filled" fillcolor = "cyan"];
+  n13436->n13437[label="|- ( -. ps -> ( ( ph \\/ ps ) -> ph ) )"];
+  n13434->n13435[arrowhead="none" style="invisible"];
+  {rank=same;n13435;n13434;}
+  n13437[label="jaoi" style="filled" fillcolor = "cyan"];
+  n13437->n13438[label="|- ( ( ph \\/ -. ps ) -> ( ( ph \\/ ps ) -> ph ) )"];
+  n13421->n13426->n13428->n13433->n13436[arrowhead="none" style="invisible"];
+  {rank=same;n13436;n13433;n13428;n13426;n13421;}
+  n13438[label="com12" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n13438->QED[label="|- ( ( ph \\/ ps ) -> ( ( ph \\/ -. ps ) -> ph ) )"];
+  n13416->n13419->n13420->n13437[arrowhead="none" style="invisible"];
+  {rank=same;n13437;n13420;n13419;n13416;}
+}

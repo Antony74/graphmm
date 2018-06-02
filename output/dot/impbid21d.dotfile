@@ -1,55 +1,55 @@
 digraph proof_impbid21d {
   rankdir = LR;
-  n2402 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n2402[label="wph" color="lightgray" fontcolor="lightgray"];
   n2402->n2421[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n2403 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n2403[label="wps" color="lightgray" fontcolor="lightgray"];
   n2403->n2421[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n2404 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n2404[label="wch" color="lightgray" fontcolor="lightgray"];
   n2404->n2421[color="lightgray" fontcolor="lightgray" label="wff ch"];
-  n2405 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n2405[label="wth" color="lightgray" fontcolor="lightgray"];
   n2405->n2421[color="lightgray" fontcolor="lightgray" label="wff th"];
-  n2406 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n2406[label="wps" color="lightgray" fontcolor="lightgray"];
   n2406->n2410[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n2407 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n2407[label="wch" color="lightgray" fontcolor="lightgray"];
   n2407->n2409[color="lightgray" fontcolor="lightgray" label="wff ch"];
-  n2408 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n2408[label="wth" color="lightgray" fontcolor="lightgray"];
   n2408->n2409[color="lightgray" fontcolor="lightgray" label="wff th"];
-  n2409 [label = "wi"color="lightgray" fontcolor="lightgray"];
+  n2409[label="wi" color="lightgray" fontcolor="lightgray"];
   n2409->n2410[color="lightgray" fontcolor="lightgray" label="wff ( ch -> th )"];
   n2407->n2408[arrowhead="none" style="invisible"];
   {rank=same;n2408;n2407;}
-  n2410 [label = "wi"color="lightgray" fontcolor="lightgray"];
+  n2410[label="wi" color="lightgray" fontcolor="lightgray"];
   n2410->n2413[color="lightgray" fontcolor="lightgray" label="wff ( ps -> ( ch -> th ) )"];
   n2406->n2409[arrowhead="none" style="invisible"];
   {rank=same;n2409;n2406;}
-  n2411 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n2411[label="wph" color="lightgray" fontcolor="lightgray"];
   n2411->n2413[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n2412 [label = "impbid21d.1"style="filled" fillcolor = "orange"];
+  n2412[label="impbid21d.1" style="filled" fillcolor = "orange"];
   n2412->n2413[label="|- ( ps -> ( ch -> th ) )"];
-  n2413 [label = "a1i"style="filled" fillcolor = "cyan"];
+  n2413[label="a1i" style="filled" fillcolor = "cyan"];
   n2413->n2421[label="|- ( ph -> ( ps -> ( ch -> th ) ) )"];
   n2410->n2411->n2412[arrowhead="none" style="invisible"];
   {rank=same;n2412;n2411;n2410;}
-  n2414 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n2414[label="wph" color="lightgray" fontcolor="lightgray"];
   n2414->n2420[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n2415 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n2415[label="wth" color="lightgray" fontcolor="lightgray"];
   n2415->n2417[color="lightgray" fontcolor="lightgray" label="wff th"];
-  n2416 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n2416[label="wch" color="lightgray" fontcolor="lightgray"];
   n2416->n2417[color="lightgray" fontcolor="lightgray" label="wff ch"];
-  n2417 [label = "wi"color="lightgray" fontcolor="lightgray"];
+  n2417[label="wi" color="lightgray" fontcolor="lightgray"];
   n2417->n2420[color="lightgray" fontcolor="lightgray" label="wff ( th -> ch )"];
   n2415->n2416[arrowhead="none" style="invisible"];
   {rank=same;n2416;n2415;}
-  n2418 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n2418[label="wps" color="lightgray" fontcolor="lightgray"];
   n2418->n2420[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n2419 [label = "impbid21d.2"style="filled" fillcolor = "orange"];
+  n2419[label="impbid21d.2" style="filled" fillcolor = "orange"];
   n2419->n2420[label="|- ( ph -> ( th -> ch ) )"];
-  n2420 [label = "a1d"style="filled" fillcolor = "cyan"];
+  n2420[label="a1d" style="filled" fillcolor = "cyan"];
   n2420->n2421[label="|- ( ph -> ( ps -> ( th -> ch ) ) )"];
   n2414->n2417->n2418->n2419[arrowhead="none" style="invisible"];
   {rank=same;n2419;n2418;n2417;n2414;}
-  n2421 [label = "impbidd"style="filled" fillcolor = "cyan"];
-QED[style="invisible"]
+  n2421[label="impbidd" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
   n2421->QED[label="|- ( ph -> ( ps -> ( ch <-> th ) ) )"];
   n2402->n2403->n2404->n2405->n2413->n2420[arrowhead="none" style="invisible"];
   {rank=same;n2420;n2413;n2405;n2404;n2403;n2402;}

@@ -1,0 +1,40 @@
+digraph proof_ad9antlr {
+  rankdir = LR;
+  n12627[label="wa" style="invisible"];
+  n12627->n12642[color="lightgray" fontcolor="lightgray" label="wff ( ( ( ( ( ( ( ( ch /\\ ph ) /\\ th ) /\\ ta ) /\\ et ) /\\ ze ) /\\ si ) /\\ rh ) /\\ mu )"];
+  n12628[label="wps" style="invisible"];
+  n12628->n12642[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n12629[label="wla" style="invisible"];
+  n12629->n12642[color="lightgray" fontcolor="lightgray" label="wff la"];
+  n12630[label="wph" style="invisible"];
+  n12630->n12641[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n12631[label="wps" style="invisible"];
+  n12631->n12641[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n12632[label="wch" style="invisible"];
+  n12632->n12641[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n12633[label="wth" style="invisible"];
+  n12633->n12641[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n12634[label="wta" style="invisible"];
+  n12634->n12641[color="lightgray" fontcolor="lightgray" label="wff ta"];
+  n12635[label="wet" style="invisible"];
+  n12635->n12641[color="lightgray" fontcolor="lightgray" label="wff et"];
+  n12636[label="wze" style="invisible"];
+  n12636->n12641[color="lightgray" fontcolor="lightgray" label="wff ze"];
+  n12637[label="wsi" style="invisible"];
+  n12637->n12641[color="lightgray" fontcolor="lightgray" label="wff si"];
+  n12638[label="wrh" style="invisible"];
+  n12638->n12641[color="lightgray" fontcolor="lightgray" label="wff rh"];
+  n12639[label="wmu" style="invisible"];
+  n12639->n12641[color="lightgray" fontcolor="lightgray" label="wff mu"];
+  n12640[label="ad2ant.1" style="filled" fillcolor = "orange"];
+  n12640->n12641[label="|- ( ph -> ps )"];
+  n12641[label="ad8antlr" style="filled" fillcolor = "cyan"];
+  n12641->n12642[label="|- ( ( ( ( ( ( ( ( ( ch /\\ ph ) /\\ th ) /\\ ta ) /\\ et ) /\\ ze ) /\\ si ) /\\ rh ) /\\ mu ) -> ps )"];
+  n12630->n12631->n12632->n12633->n12634->n12635->n12636->n12637->n12638->n12639->n12640[arrowhead="none" style="invisible"];
+  {rank=same;n12640;n12639;n12638;n12637;n12636;n12635;n12634;n12633;n12632;n12631;n12630;}
+  n12642[label="adantr" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n12642->QED[label="|- ( ( ( ( ( ( ( ( ( ( ch /\\ ph ) /\\ th ) /\\ ta ) /\\ et ) /\\ ze ) /\\ si ) /\\ rh ) /\\ mu ) /\\ la ) -> ps )"];
+  n12627->n12628->n12629->n12641[arrowhead="none" style="invisible"];
+  {rank=same;n12641;n12629;n12628;n12627;}
+}

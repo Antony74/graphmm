@@ -1,31 +1,31 @@
 digraph proof_bibi1 {
   rankdir = LR;
-  n6281 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n6281[label="wph" color="lightgray" fontcolor="lightgray"];
   n6281->n6283[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n6282 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n6282[label="wps" color="lightgray" fontcolor="lightgray"];
   n6282->n6283[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n6283 [label = "wb"color="lightgray" fontcolor="lightgray"];
+  n6283[label="wb" color="lightgray" fontcolor="lightgray"];
   n6283->n6291[color="lightgray" fontcolor="lightgray" label="wff ( ph <-> ps )"];
   n6281->n6282[arrowhead="none" style="invisible"];
   {rank=same;n6282;n6281;}
-  n6284 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n6284[label="wph" color="lightgray" fontcolor="lightgray"];
   n6284->n6291[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n6285 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n6285[label="wps" color="lightgray" fontcolor="lightgray"];
   n6285->n6291[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n6286 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n6286[label="wch" color="lightgray" fontcolor="lightgray"];
   n6286->n6291[color="lightgray" fontcolor="lightgray" label="wff ch"];
-  n6287 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n6287[label="wps" color="lightgray" fontcolor="lightgray"];
   n6287->n6289[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n6288 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n6288[label="wph" color="lightgray" fontcolor="lightgray"];
   n6288->n6289[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n6289 [label = "wb"color="lightgray" fontcolor="lightgray"];
+  n6289[label="wb" color="lightgray" fontcolor="lightgray"];
   n6289->n6290[color="lightgray" fontcolor="lightgray" label="wff ( ph <-> ps )"];
   n6287->n6288[arrowhead="none" style="invisible"];
   {rank=same;n6288;n6287;}
-  n6290 [label = "id"style="filled" fillcolor = "cyan"];
+  n6290[label="id" style="filled" fillcolor = "cyan"];
   n6290->n6291[label="|- ( ( ph <-> ps ) -> ( ph <-> ps ) )"];
-  n6291 [label = "bibi1d"style="filled" fillcolor = "cyan"];
-QED[style="invisible"]
+  n6291[label="bibi1d" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
   n6291->QED[label="|- ( ( ph <-> ps ) -> ( ( ph <-> ch ) <-> ( ps <-> ch ) ) )"];
   n6283->n6284->n6285->n6286->n6290[arrowhead="none" style="invisible"];
   {rank=same;n6290;n6286;n6285;n6284;n6283;}

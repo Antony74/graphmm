@@ -169,7 +169,7 @@
 </g>
 <!-- n1708 -->
 <g id="node15" class="node"><title>n1708</title>
-<ellipse fill="lime" stroke="black" cx="154" cy="-80" rx="27" ry="18"/>
+<ellipse fill="lawngreen" stroke="black" cx="154" cy="-80" rx="27" ry="18"/>
 <text text-anchor="middle" x="154" y="-76.3" font-family="Times New Roman,serif" font-size="14.00">ax&#45;1</text>
 </g>
 <!-- n1705&#45;&gt;n1708 -->

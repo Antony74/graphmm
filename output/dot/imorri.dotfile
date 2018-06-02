@@ -1,35 +1,35 @@
 digraph proof_imorri {
   rankdir = LR;
-  n7620 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n7620[label="wph" color="lightgray" fontcolor="lightgray"];
   n7620->n7622[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n7621 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n7621[label="wps" color="lightgray" fontcolor="lightgray"];
   n7621->n7622[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n7622 [label = "wi"color="lightgray" fontcolor="lightgray"];
+  n7622[label="wi" color="lightgray" fontcolor="lightgray"];
   n7622->n7631[color="lightgray" fontcolor="lightgray" label="wff ( ph -> ps )"];
   n7620->n7621[arrowhead="none" style="invisible"];
   {rank=same;n7621;n7620;}
-  n7623 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n7623[label="wph" color="lightgray" fontcolor="lightgray"];
   n7623->n7624[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n7624 [label = "wn"color="lightgray" fontcolor="lightgray"];
+  n7624[label="wn" color="lightgray" fontcolor="lightgray"];
   n7624->n7626[color="lightgray" fontcolor="lightgray" label="wff -. ph"];
-  n7625 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n7625[label="wps" color="lightgray" fontcolor="lightgray"];
   n7625->n7626[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n7626 [label = "wo"color="lightgray" fontcolor="lightgray"];
-  n7626->n7631[color="lightgray" fontcolor="lightgray" label="wff ( -. ph \/ ps )"];
+  n7626[label="wo" color="lightgray" fontcolor="lightgray"];
+  n7626->n7631[color="lightgray" fontcolor="lightgray" label="wff ( -. ph \\/ ps )"];
   n7624->n7625[arrowhead="none" style="invisible"];
   {rank=same;n7625;n7624;}
-  n7627 [label = "imorri.1"style="filled" fillcolor = "orange"];
-  n7627->n7631[label="|- ( -. ph \/ ps )"];
-  n7628 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n7627[label="imorri.1" style="filled" fillcolor = "orange"];
+  n7627->n7631[label="|- ( -. ph \\/ ps )"];
+  n7628[label="wph" color="lightgray" fontcolor="lightgray"];
   n7628->n7630[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n7629 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n7629[label="wps" color="lightgray" fontcolor="lightgray"];
   n7629->n7630[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n7630 [label = "imor"style="filled" fillcolor = "cyan"];
-  n7630->n7631[label="|- ( ( ph -> ps ) <-> ( -. ph \/ ps ) )"];
+  n7630[label="imor" style="filled" fillcolor = "cyan"];
+  n7630->n7631[label="|- ( ( ph -> ps ) <-> ( -. ph \\/ ps ) )"];
   n7628->n7629[arrowhead="none" style="invisible"];
   {rank=same;n7629;n7628;}
-  n7631 [label = "mpbir"style="filled" fillcolor = "cyan"];
-QED[style="invisible"]
+  n7631[label="mpbir" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
   n7631->QED[label="|- ( ph -> ps )"];
   n7622->n7626->n7627->n7630[arrowhead="none" style="invisible"];
   {rank=same;n7630;n7627;n7626;n7622;}

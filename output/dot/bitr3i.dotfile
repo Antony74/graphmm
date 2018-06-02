@@ -1,25 +1,25 @@
 digraph proof_bitr3i {
   rankdir = LR;
-  n5184 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n5184[label="wph" color="lightgray" fontcolor="lightgray"];
   n5184->n5192[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n5185 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n5185[label="wps" color="lightgray" fontcolor="lightgray"];
   n5185->n5192[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n5186 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n5186[label="wch" color="lightgray" fontcolor="lightgray"];
   n5186->n5192[color="lightgray" fontcolor="lightgray" label="wff ch"];
-  n5187 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n5187[label="wps" color="lightgray" fontcolor="lightgray"];
   n5187->n5190[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n5188 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n5188[label="wph" color="lightgray" fontcolor="lightgray"];
   n5188->n5190[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n5189 [label = "bitr3i.1"style="filled" fillcolor = "orange"];
+  n5189[label="bitr3i.1" style="filled" fillcolor = "orange"];
   n5189->n5190[label="|- ( ps <-> ph )"];
-  n5190 [label = "bicomi"style="filled" fillcolor = "cyan"];
+  n5190[label="bicomi" style="filled" fillcolor = "cyan"];
   n5190->n5192[label="|- ( ph <-> ps )"];
   n5187->n5188->n5189[arrowhead="none" style="invisible"];
   {rank=same;n5189;n5188;n5187;}
-  n5191 [label = "bitr3i.2"style="filled" fillcolor = "orange"];
+  n5191[label="bitr3i.2" style="filled" fillcolor = "orange"];
   n5191->n5192[label="|- ( ps <-> ch )"];
-  n5192 [label = "bitri"style="filled" fillcolor = "cyan"];
-QED[style="invisible"]
+  n5192[label="bitri" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
   n5192->QED[label="|- ( ph <-> ch )"];
   n5184->n5185->n5186->n5190->n5191[arrowhead="none" style="invisible"];
   {rank=same;n5191;n5190;n5186;n5185;n5184;}

@@ -1,0 +1,32 @@
+digraph proof_embantd {
+  rankdir = LR;
+  n502[label="wph" style="invisible"];
+  n502->n515[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n505[label="wi" style="invisible"];
+  n505->n515[color="lightgray" fontcolor="lightgray" label="wff ( ps -> ch )"];
+  n506[label="wps" style="invisible"];
+  n506->n515[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n507[label="wth" style="invisible"];
+  n507->n515[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n508[label="embantd.1" style="filled" fillcolor = "orange"];
+  n508->n515[label="|- ( ph -> ps )"];
+  n509[label="wph" style="invisible"];
+  n509->n514[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n510[label="wch" style="invisible"];
+  n510->n514[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n511[label="wth" style="invisible"];
+  n511->n514[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n512[label="wps" style="invisible"];
+  n512->n514[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n513[label="embantd.2" style="filled" fillcolor = "orange"];
+  n513->n514[label="|- ( ph -> ( ch -> th ) )"];
+  n514[label="imim2d" style="filled" fillcolor = "cyan"];
+  n514->n515[label="|- ( ph -> ( ( ps -> ch ) -> ( ps -> th ) ) )"];
+  n509->n510->n511->n512->n513[arrowhead="none" style="invisible"];
+  {rank=same;n513;n512;n511;n510;n509;}
+  n515[label="mpid" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n515->QED[label="|- ( ph -> ( ( ps -> ch ) -> th ) )"];
+  n502->n505->n506->n507->n508->n514[arrowhead="none" style="invisible"];
+  {rank=same;n514;n508;n507;n506;n505;n502;}
+}

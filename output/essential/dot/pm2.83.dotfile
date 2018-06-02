@@ -1,0 +1,26 @@
+digraph proof_pm2_83 {
+  rankdir = LR;
+  n782[label="wi" style="invisible"];
+  n782->n794[color="lightgray" fontcolor="lightgray" label="wff ( ps -> ch )"];
+  n785[label="wi" style="invisible"];
+  n785->n794[color="lightgray" fontcolor="lightgray" label="wff ( ch -> th )"];
+  n788[label="wi" style="invisible"];
+  n788->n794[color="lightgray" fontcolor="lightgray" label="wff ( ps -> th )"];
+  n789[label="wph" style="invisible"];
+  n789->n794[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n790[label="wps" style="invisible"];
+  n790->n793[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n791[label="wch" style="invisible"];
+  n791->n793[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n792[label="wth" style="invisible"];
+  n792->n793[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n793[label="imim1" style="filled" fillcolor = "cyan"];
+  n793->n794[label="|- ( ( ps -> ch ) -> ( ( ch -> th ) -> ( ps -> th ) ) )"];
+  n790->n791->n792[arrowhead="none" style="invisible"];
+  {rank=same;n792;n791;n790;}
+  n794[label="imim3i" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n794->QED[label="|- ( ( ph -> ( ps -> ch ) ) -> ( ( ph -> ( ch -> th ) ) -> ( ph -> ( ps -> th ) ) ) )"];
+  n782->n785->n788->n789->n793[arrowhead="none" style="invisible"];
+  {rank=same;n793;n789;n788;n785;n782;}
+}

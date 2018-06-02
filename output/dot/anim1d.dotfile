@@ -1,28 +1,28 @@
 digraph proof_anim1d {
   rankdir = LR;
-  n9573 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n9573[label="wph" color="lightgray" fontcolor="lightgray"];
   n9573->n9582[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n9574 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n9574[label="wps" color="lightgray" fontcolor="lightgray"];
   n9574->n9582[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n9575 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n9575[label="wch" color="lightgray" fontcolor="lightgray"];
   n9575->n9582[color="lightgray" fontcolor="lightgray" label="wff ch"];
-  n9576 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n9576[label="wth" color="lightgray" fontcolor="lightgray"];
   n9576->n9582[color="lightgray" fontcolor="lightgray" label="wff th"];
-  n9577 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n9577[label="wth" color="lightgray" fontcolor="lightgray"];
   n9577->n9582[color="lightgray" fontcolor="lightgray" label="wff th"];
-  n9578 [label = "anim1d.1"style="filled" fillcolor = "orange"];
+  n9578[label="anim1d.1" style="filled" fillcolor = "orange"];
   n9578->n9582[label="|- ( ph -> ( ps -> ch ) )"];
-  n9579 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n9579[label="wph" color="lightgray" fontcolor="lightgray"];
   n9579->n9581[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n9580 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n9580[label="wth" color="lightgray" fontcolor="lightgray"];
   n9580->n9581[color="lightgray" fontcolor="lightgray" label="wff th"];
-  n9581 [label = "idd"style="filled" fillcolor = "cyan"];
+  n9581[label="idd" style="filled" fillcolor = "cyan"];
   n9581->n9582[label="|- ( ph -> ( th -> th ) )"];
   n9579->n9580[arrowhead="none" style="invisible"];
   {rank=same;n9580;n9579;}
-  n9582 [label = "anim12d"style="filled" fillcolor = "cyan"];
-QED[style="invisible"]
-  n9582->QED[label="|- ( ph -> ( ( ps /\ th ) -> ( ch /\ th ) ) )"];
+  n9582[label="anim12d" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n9582->QED[label="|- ( ph -> ( ( ps /\\ th ) -> ( ch /\\ th ) ) )"];
   n9573->n9574->n9575->n9576->n9577->n9578->n9581[arrowhead="none" style="invisible"];
   {rank=same;n9581;n9578;n9577;n9576;n9575;n9574;n9573;}
 }

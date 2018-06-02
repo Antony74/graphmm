@@ -1,0 +1,26 @@
+digraph proof_peirce {
+  rankdir = LR;
+  n2066[label="wi" style="invisible"];
+  n2066->n2074[color="lightgray" fontcolor="lightgray" label="wff ( ph -> ps )"];
+  n2067[label="wph" style="invisible"];
+  n2067->n2074[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n2068[label="wph" style="invisible"];
+  n2068->n2074[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n2069[label="wph" style="invisible"];
+  n2069->n2071[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n2070[label="wps" style="invisible"];
+  n2070->n2071[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n2071[label="simplim" style="filled" fillcolor = "cyan"];
+  n2071->n2074[label="|- ( -. ( ph -> ps ) -> ph )"];
+  n2069->n2070[arrowhead="none" style="invisible"];
+  {rank=same;n2070;n2069;}
+  n2072[label="wph" style="invisible"];
+  n2072->n2073[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n2073[label="id" style="filled" fillcolor = "cyan"];
+  n2073->n2074[label="|- ( ph -> ph )"];
+  n2074[label="ja" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n2074->QED[label="|- ( ( ( ph -> ps ) -> ph ) -> ph )"];
+  n2066->n2067->n2068->n2071->n2073[arrowhead="none" style="invisible"];
+  {rank=same;n2073;n2071;n2068;n2067;n2066;}
+}

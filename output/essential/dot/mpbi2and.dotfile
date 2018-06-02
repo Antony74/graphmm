@@ -1,0 +1,30 @@
+digraph proof_mpbi2and {
+  rankdir = LR;
+  n16306[label="wph" style="invisible"];
+  n16306->n16318[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n16309[label="wa" style="invisible"];
+  n16309->n16318[color="lightgray" fontcolor="lightgray" label="wff ( ps /\\ ch )"];
+  n16310[label="wth" style="invisible"];
+  n16310->n16318[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n16311[label="wph" style="invisible"];
+  n16311->n16316[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n16312[label="wps" style="invisible"];
+  n16312->n16316[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n16313[label="wch" style="invisible"];
+  n16313->n16316[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n16314[label="mpbi2and.1" style="filled" fillcolor = "orange"];
+  n16314->n16316[label="|- ( ph -> ps )"];
+  n16315[label="mpbi2and.2" style="filled" fillcolor = "orange"];
+  n16315->n16316[label="|- ( ph -> ch )"];
+  n16316[label="jca" style="filled" fillcolor = "cyan"];
+  n16316->n16318[label="|- ( ph -> ( ps /\\ ch ) )"];
+  n16311->n16312->n16313->n16314->n16315[arrowhead="none" style="invisible"];
+  {rank=same;n16315;n16314;n16313;n16312;n16311;}
+  n16317[label="mpbi2and.3" style="filled" fillcolor = "orange"];
+  n16317->n16318[label="|- ( ph -> ( ( ps /\\ ch ) <-> th ) )"];
+  n16318[label="mpbid" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n16318->QED[label="|- ( ph -> th )"];
+  n16306->n16309->n16310->n16316->n16317[arrowhead="none" style="invisible"];
+  {rank=same;n16317;n16316;n16310;n16309;n16306;}
+}

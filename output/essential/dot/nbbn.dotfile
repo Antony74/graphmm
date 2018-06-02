@@ -1,0 +1,40 @@
+digraph proof_nbbn {
+  rankdir = LR;
+  n6827[label="wn" style="invisible"];
+  n6827->n6850[color="lightgray" fontcolor="lightgray" label="wff -. ( ph <-> ps )"];
+  n6831[label="wb" style="invisible"];
+  n6831->n6850[color="lightgray" fontcolor="lightgray" label="wff ( ph <-> -. ps )"];
+  n6835[label="wb" style="invisible"];
+  n6835->n6850[color="lightgray" fontcolor="lightgray" label="wff ( ps <-> -. ph )"];
+  n6839[label="wb" style="invisible"];
+  n6839->n6850[color="lightgray" fontcolor="lightgray" label="wff ( -. ph <-> ps )"];
+  n6840[label="wph" style="invisible"];
+  n6840->n6842[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n6841[label="wps" style="invisible"];
+  n6841->n6842[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n6842[label="xor3" style="filled" fillcolor = "cyan"];
+  n6842->n6850[label="|- ( -. ( ph <-> ps ) <-> ( ph <-> -. ps ) )"];
+  n6840->n6841[arrowhead="none" style="invisible"];
+  {rank=same;n6841;n6840;}
+  n6843[label="wph" style="invisible"];
+  n6843->n6845[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n6844[label="wps" style="invisible"];
+  n6844->n6845[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n6845[label="con2bi" style="filled" fillcolor = "cyan"];
+  n6845->n6850[label="|- ( ( ph <-> -. ps ) <-> ( ps <-> -. ph ) )"];
+  n6843->n6844[arrowhead="none" style="invisible"];
+  {rank=same;n6844;n6843;}
+  n6846[label="wps" style="invisible"];
+  n6846->n6849[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n6848[label="wn" style="invisible"];
+  n6848->n6849[color="lightgray" fontcolor="lightgray" label="wff -. ph"];
+  n6849[label="bicom" style="filled" fillcolor = "cyan"];
+  n6849->n6850[label="|- ( ( ps <-> -. ph ) <-> ( -. ph <-> ps ) )"];
+  n6846->n6848[arrowhead="none" style="invisible"];
+  {rank=same;n6848;n6846;}
+  n6850[label="3bitrri" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n6850->QED[label="|- ( ( -. ph <-> ps ) <-> -. ( ph <-> ps ) )"];
+  n6827->n6831->n6835->n6839->n6842->n6845->n6849[arrowhead="none" style="invisible"];
+  {rank=same;n6849;n6845;n6842;n6839;n6835;n6831;n6827;}
+}

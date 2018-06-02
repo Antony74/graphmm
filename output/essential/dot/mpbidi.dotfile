@@ -1,0 +1,30 @@
+digraph proof_mpbidi {
+  rankdir = LR;
+  n4709[label="wth" style="invisible"];
+  n4709->n4719[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n4710[label="wph" style="invisible"];
+  n4710->n4719[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n4711[label="wps" style="invisible"];
+  n4711->n4719[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n4712[label="wch" style="invisible"];
+  n4712->n4719[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n4713[label="mpbidi.min" style="filled" fillcolor = "orange"];
+  n4713->n4719[label="|- ( th -> ( ph -> ps ) )"];
+  n4714[label="wph" style="invisible"];
+  n4714->n4718[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n4715[label="wps" style="invisible"];
+  n4715->n4718[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n4716[label="wch" style="invisible"];
+  n4716->n4718[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n4717[label="mpbidi.maj" style="filled" fillcolor = "orange"];
+  n4717->n4718[label="|- ( ph -> ( ps <-> ch ) )"];
+  n4718[label="biimpd" style="filled" fillcolor = "cyan"];
+  n4718->n4719[label="|- ( ph -> ( ps -> ch ) )"];
+  n4714->n4715->n4716->n4717[arrowhead="none" style="invisible"];
+  {rank=same;n4717;n4716;n4715;n4714;}
+  n4719[label="sylcom" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n4719->QED[label="|- ( th -> ( ph -> ch ) )"];
+  n4709->n4710->n4711->n4712->n4713->n4718[arrowhead="none" style="invisible"];
+  {rank=same;n4718;n4713;n4712;n4711;n4710;n4709;}
+}

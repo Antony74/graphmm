@@ -1,0 +1,16 @@
+digraph proof_exmidd {
+  rankdir = LR;
+  n7642[label="wo" style="invisible"];
+  n7642->n7646[color="lightgray" fontcolor="lightgray" label="wff ( ps \\/ -. ps )"];
+  n7643[label="wph" style="invisible"];
+  n7643->n7646[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n7644[label="wps" style="invisible"];
+  n7644->n7645[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n7645[label="exmid" style="filled" fillcolor = "cyan"];
+  n7645->n7646[label="|- ( ps \\/ -. ps )"];
+  n7646[label="a1i" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n7646->QED[label="|- ( ph -> ( ps \\/ -. ps ) )"];
+  n7642->n7643->n7645[arrowhead="none" style="invisible"];
+  {rank=same;n7645;n7643;n7642;}
+}

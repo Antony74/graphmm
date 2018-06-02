@@ -1,0 +1,24 @@
+digraph proof_a2i {
+  rankdir = LR;
+  n44[label="wi" style="invisible"];
+  n44->n57[color="lightgray" fontcolor="lightgray" label="wff ( ph -> ( ps -> ch ) )"];
+  n51[label="wi" style="invisible"];
+  n51->n57[color="lightgray" fontcolor="lightgray" label="wff ( ( ph -> ps ) -> ( ph -> ch ) )"];
+  n52[label="a2i.1" style="filled" fillcolor = "orange"];
+  n52->n57[label="|- ( ph -> ( ps -> ch ) )"];
+  n53[label="wph" style="invisible"];
+  n53->n56[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n54[label="wps" style="invisible"];
+  n54->n56[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n55[label="wch" style="invisible"];
+  n55->n56[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n56[label="ax-2" style="filled" fillcolor = "lawngreen"];
+  n56->n57[label="|- ( ( ph -> ( ps -> ch ) ) -> ( ( ph -> ps ) -> ( ph -> ch ) ) )"];
+  n53->n54->n55[arrowhead="none" style="invisible"];
+  {rank=same;n55;n54;n53;}
+  n57[label="ax-mp" style="filled" fillcolor = "lawngreen"];
+  QED[style="invisible"]
+  n57->QED[label="|- ( ( ph -> ps ) -> ( ph -> ch ) )"];
+  n44->n51->n52->n56[arrowhead="none" style="invisible"];
+  {rank=same;n56;n52;n51;n44;}
+}

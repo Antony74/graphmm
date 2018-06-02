@@ -35,7 +35,7 @@
 </g>
 <!-- n80 -->
 <g id="node4" class="node"><title>n80</title>
-<ellipse fill="lime" stroke="black" cx="546.585" cy="-286" rx="33.5952" ry="18"/>
+<ellipse fill="lawngreen" stroke="black" cx="546.585" cy="-286" rx="33.5952" ry="18"/>
 <text text-anchor="middle" x="546.585" y="-282.3" font-family="Times New Roman,serif" font-size="14.00">ax&#45;mp</text>
 </g>
 <!-- n70&#45;&gt;n80 -->

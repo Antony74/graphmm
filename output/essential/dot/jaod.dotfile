@@ -1,0 +1,48 @@
+digraph proof_jaod {
+  rankdir = LR;
+  n7227[label="wo" style="invisible"];
+  n7227->n7246[color="lightgray" fontcolor="lightgray" label="wff ( ps \\/ th )"];
+  n7228[label="wph" style="invisible"];
+  n7228->n7246[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n7229[label="wch" style="invisible"];
+  n7229->n7246[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n7230[label="wps" style="invisible"];
+  n7230->n7245[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n7233[label="wi" style="invisible"];
+  n7233->n7245[color="lightgray" fontcolor="lightgray" label="wff ( ph -> ch )"];
+  n7234[label="wth" style="invisible"];
+  n7234->n7245[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n7235[label="wph" style="invisible"];
+  n7235->n7239[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n7236[label="wps" style="invisible"];
+  n7236->n7239[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n7237[label="wch" style="invisible"];
+  n7237->n7239[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n7238[label="jaod.1" style="filled" fillcolor = "orange"];
+  n7238->n7239[label="|- ( ph -> ( ps -> ch ) )"];
+  n7239[label="com12" style="filled" fillcolor = "cyan"];
+  n7239->n7245[label="|- ( ps -> ( ph -> ch ) )"];
+  n7235->n7236->n7237->n7238[arrowhead="none" style="invisible"];
+  {rank=same;n7238;n7237;n7236;n7235;}
+  n7240[label="wph" style="invisible"];
+  n7240->n7244[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n7241[label="wth" style="invisible"];
+  n7241->n7244[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n7242[label="wch" style="invisible"];
+  n7242->n7244[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n7243[label="jaod.2" style="filled" fillcolor = "orange"];
+  n7243->n7244[label="|- ( ph -> ( th -> ch ) )"];
+  n7244[label="com12" style="filled" fillcolor = "cyan"];
+  n7244->n7245[label="|- ( th -> ( ph -> ch ) )"];
+  n7240->n7241->n7242->n7243[arrowhead="none" style="invisible"];
+  {rank=same;n7243;n7242;n7241;n7240;}
+  n7245[label="jaoi" style="filled" fillcolor = "cyan"];
+  n7245->n7246[label="|- ( ( ps \\/ th ) -> ( ph -> ch ) )"];
+  n7230->n7233->n7234->n7239->n7244[arrowhead="none" style="invisible"];
+  {rank=same;n7244;n7239;n7234;n7233;n7230;}
+  n7246[label="com12" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n7246->QED[label="|- ( ph -> ( ( ps \\/ th ) -> ch ) )"];
+  n7227->n7228->n7229->n7245[arrowhead="none" style="invisible"];
+  {rank=same;n7245;n7229;n7228;n7227;}
+}

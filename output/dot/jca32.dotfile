@@ -1,36 +1,36 @@
 digraph proof_jca32 {
   rankdir = LR;
-  n9291 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n9291[label="wph" color="lightgray" fontcolor="lightgray"];
   n9291->n9303[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n9292 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n9292[label="wps" color="lightgray" fontcolor="lightgray"];
   n9292->n9303[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n9293 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n9293[label="wch" color="lightgray" fontcolor="lightgray"];
   n9293->n9295[color="lightgray" fontcolor="lightgray" label="wff ch"];
-  n9294 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n9294[label="wth" color="lightgray" fontcolor="lightgray"];
   n9294->n9295[color="lightgray" fontcolor="lightgray" label="wff th"];
-  n9295 [label = "wa"color="lightgray" fontcolor="lightgray"];
-  n9295->n9303[color="lightgray" fontcolor="lightgray" label="wff ( ch /\ th )"];
+  n9295[label="wa" color="lightgray" fontcolor="lightgray"];
+  n9295->n9303[color="lightgray" fontcolor="lightgray" label="wff ( ch /\\ th )"];
   n9293->n9294[arrowhead="none" style="invisible"];
   {rank=same;n9294;n9293;}
-  n9296 [label = "jca31.1"style="filled" fillcolor = "orange"];
+  n9296[label="jca31.1" style="filled" fillcolor = "orange"];
   n9296->n9303[label="|- ( ph -> ps )"];
-  n9297 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n9297[label="wph" color="lightgray" fontcolor="lightgray"];
   n9297->n9302[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n9298 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n9298[label="wch" color="lightgray" fontcolor="lightgray"];
   n9298->n9302[color="lightgray" fontcolor="lightgray" label="wff ch"];
-  n9299 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n9299[label="wth" color="lightgray" fontcolor="lightgray"];
   n9299->n9302[color="lightgray" fontcolor="lightgray" label="wff th"];
-  n9300 [label = "jca31.2"style="filled" fillcolor = "orange"];
+  n9300[label="jca31.2" style="filled" fillcolor = "orange"];
   n9300->n9302[label="|- ( ph -> ch )"];
-  n9301 [label = "jca31.3"style="filled" fillcolor = "orange"];
+  n9301[label="jca31.3" style="filled" fillcolor = "orange"];
   n9301->n9302[label="|- ( ph -> th )"];
-  n9302 [label = "jca"style="filled" fillcolor = "cyan"];
-  n9302->n9303[label="|- ( ph -> ( ch /\ th ) )"];
+  n9302[label="jca" style="filled" fillcolor = "cyan"];
+  n9302->n9303[label="|- ( ph -> ( ch /\\ th ) )"];
   n9297->n9298->n9299->n9300->n9301[arrowhead="none" style="invisible"];
   {rank=same;n9301;n9300;n9299;n9298;n9297;}
-  n9303 [label = "jca"style="filled" fillcolor = "cyan"];
-QED[style="invisible"]
-  n9303->QED[label="|- ( ph -> ( ps /\ ( ch /\ th ) ) )"];
+  n9303[label="jca" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n9303->QED[label="|- ( ph -> ( ps /\\ ( ch /\\ th ) ) )"];
   n9291->n9292->n9295->n9296->n9302[arrowhead="none" style="invisible"];
   {rank=same;n9302;n9296;n9295;n9292;n9291;}
 }

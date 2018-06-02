@@ -1,0 +1,16 @@
+digraph proof_biidd {
+  rankdir = LR;
+  n4922[label="wb" style="invisible"];
+  n4922->n4926[color="lightgray" fontcolor="lightgray" label="wff ( ps <-> ps )"];
+  n4923[label="wph" style="invisible"];
+  n4923->n4926[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n4924[label="wps" style="invisible"];
+  n4924->n4925[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n4925[label="biid" style="filled" fillcolor = "cyan"];
+  n4925->n4926[label="|- ( ps <-> ps )"];
+  n4926[label="a1i" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n4926->QED[label="|- ( ph -> ( ps <-> ps ) )"];
+  n4922->n4923->n4925[arrowhead="none" style="invisible"];
+  {rank=same;n4925;n4923;n4922;}
+}

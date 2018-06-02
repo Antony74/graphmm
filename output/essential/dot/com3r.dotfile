@@ -1,0 +1,28 @@
+digraph proof_com3r {
+  rankdir = LR;
+  n807[label="wph" style="invisible"];
+  n807->n818[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n808[label="wch" style="invisible"];
+  n808->n818[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n811[label="wi" style="invisible"];
+  n811->n818[color="lightgray" fontcolor="lightgray" label="wff ( ps -> th )"];
+  n812[label="wph" style="invisible"];
+  n812->n817[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n813[label="wps" style="invisible"];
+  n813->n817[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n814[label="wch" style="invisible"];
+  n814->n817[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n815[label="wth" style="invisible"];
+  n815->n817[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n816[label="com3.1" style="filled" fillcolor = "orange"];
+  n816->n817[label="|- ( ph -> ( ps -> ( ch -> th ) ) )"];
+  n817[label="com23" style="filled" fillcolor = "cyan"];
+  n817->n818[label="|- ( ph -> ( ch -> ( ps -> th ) ) )"];
+  n812->n813->n814->n815->n816[arrowhead="none" style="invisible"];
+  {rank=same;n816;n815;n814;n813;n812;}
+  n818[label="com12" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n818->QED[label="|- ( ch -> ( ph -> ( ps -> th ) ) )"];
+  n807->n808->n811->n817[arrowhead="none" style="invisible"];
+  {rank=same;n817;n811;n808;n807;}
+}

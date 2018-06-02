@@ -1,37 +1,37 @@
 digraph proof_mpjaod {
   rankdir = LR;
-  n7247 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n7247[label="wph" color="lightgray" fontcolor="lightgray"];
   n7247->n7260[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n7248 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n7248[label="wps" color="lightgray" fontcolor="lightgray"];
   n7248->n7250[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n7249 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n7249[label="wth" color="lightgray" fontcolor="lightgray"];
   n7249->n7250[color="lightgray" fontcolor="lightgray" label="wff th"];
-  n7250 [label = "wo"color="lightgray" fontcolor="lightgray"];
-  n7250->n7260[color="lightgray" fontcolor="lightgray" label="wff ( ps \/ th )"];
+  n7250[label="wo" color="lightgray" fontcolor="lightgray"];
+  n7250->n7260[color="lightgray" fontcolor="lightgray" label="wff ( ps \\/ th )"];
   n7248->n7249[arrowhead="none" style="invisible"];
   {rank=same;n7249;n7248;}
-  n7251 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n7251[label="wch" color="lightgray" fontcolor="lightgray"];
   n7251->n7260[color="lightgray" fontcolor="lightgray" label="wff ch"];
-  n7252 [label = "jaod.3"style="filled" fillcolor = "orange"];
-  n7252->n7260[label="|- ( ph -> ( ps \/ th ) )"];
-  n7253 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n7252[label="jaod.3" style="filled" fillcolor = "orange"];
+  n7252->n7260[label="|- ( ph -> ( ps \\/ th ) )"];
+  n7253[label="wph" color="lightgray" fontcolor="lightgray"];
   n7253->n7259[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n7254 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n7254[label="wps" color="lightgray" fontcolor="lightgray"];
   n7254->n7259[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n7255 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n7255[label="wch" color="lightgray" fontcolor="lightgray"];
   n7255->n7259[color="lightgray" fontcolor="lightgray" label="wff ch"];
-  n7256 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n7256[label="wth" color="lightgray" fontcolor="lightgray"];
   n7256->n7259[color="lightgray" fontcolor="lightgray" label="wff th"];
-  n7257 [label = "jaod.1"style="filled" fillcolor = "orange"];
+  n7257[label="jaod.1" style="filled" fillcolor = "orange"];
   n7257->n7259[label="|- ( ph -> ( ps -> ch ) )"];
-  n7258 [label = "jaod.2"style="filled" fillcolor = "orange"];
+  n7258[label="jaod.2" style="filled" fillcolor = "orange"];
   n7258->n7259[label="|- ( ph -> ( th -> ch ) )"];
-  n7259 [label = "jaod"style="filled" fillcolor = "cyan"];
-  n7259->n7260[label="|- ( ph -> ( ( ps \/ th ) -> ch ) )"];
+  n7259[label="jaod" style="filled" fillcolor = "cyan"];
+  n7259->n7260[label="|- ( ph -> ( ( ps \\/ th ) -> ch ) )"];
   n7253->n7254->n7255->n7256->n7257->n7258[arrowhead="none" style="invisible"];
   {rank=same;n7258;n7257;n7256;n7255;n7254;n7253;}
-  n7260 [label = "mpd"style="filled" fillcolor = "cyan"];
-QED[style="invisible"]
+  n7260[label="mpd" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
   n7260->QED[label="|- ( ph -> ch )"];
   n7247->n7250->n7251->n7252->n7259[arrowhead="none" style="invisible"];
   {rank=same;n7259;n7252;n7251;n7250;n7247;}

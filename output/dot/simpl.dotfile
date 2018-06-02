@@ -1,22 +1,22 @@
 digraph proof_simpl {
   rankdir = LR;
-  n8081 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n8081[label="wph" color="lightgray" fontcolor="lightgray"];
   n8081->n8087[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n8082 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n8082[label="wps" color="lightgray" fontcolor="lightgray"];
   n8082->n8087[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n8083 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n8083[label="wph" color="lightgray" fontcolor="lightgray"];
   n8083->n8087[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n8084 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n8084[label="wph" color="lightgray" fontcolor="lightgray"];
   n8084->n8086[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n8085 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n8085[label="wps" color="lightgray" fontcolor="lightgray"];
   n8085->n8086[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n8086 [label = "ax-1"style="filled" fillcolor = "lime"];
+  n8086[label="ax-1" style="filled" fillcolor = "lawngreen"];
   n8086->n8087[label="|- ( ph -> ( ps -> ph ) )"];
   n8084->n8085[arrowhead="none" style="invisible"];
   {rank=same;n8085;n8084;}
-  n8087 [label = "imp"style="filled" fillcolor = "cyan"];
-QED[style="invisible"]
-  n8087->QED[label="|- ( ( ph /\ ps ) -> ph )"];
+  n8087[label="imp" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n8087->QED[label="|- ( ( ph /\\ ps ) -> ph )"];
   n8081->n8082->n8083->n8086[arrowhead="none" style="invisible"];
   {rank=same;n8086;n8083;n8082;n8081;}
 }

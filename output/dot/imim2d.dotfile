@@ -1,33 +1,33 @@
 digraph proof_imim2d {
   rankdir = LR;
-  n479 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n479[label="wph" color="lightgray" fontcolor="lightgray"];
   n479->n490[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n480 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n480[label="wth" color="lightgray" fontcolor="lightgray"];
   n480->n490[color="lightgray" fontcolor="lightgray" label="wff th"];
-  n481 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n481[label="wps" color="lightgray" fontcolor="lightgray"];
   n481->n490[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n482 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n482[label="wch" color="lightgray" fontcolor="lightgray"];
   n482->n490[color="lightgray" fontcolor="lightgray" label="wff ch"];
-  n483 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n483[label="wph" color="lightgray" fontcolor="lightgray"];
   n483->n489[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n484 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n484[label="wps" color="lightgray" fontcolor="lightgray"];
   n484->n486[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n485 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n485[label="wch" color="lightgray" fontcolor="lightgray"];
   n485->n486[color="lightgray" fontcolor="lightgray" label="wff ch"];
-  n486 [label = "wi"color="lightgray" fontcolor="lightgray"];
+  n486[label="wi" color="lightgray" fontcolor="lightgray"];
   n486->n489[color="lightgray" fontcolor="lightgray" label="wff ( ps -> ch )"];
   n484->n485[arrowhead="none" style="invisible"];
   {rank=same;n485;n484;}
-  n487 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n487[label="wth" color="lightgray" fontcolor="lightgray"];
   n487->n489[color="lightgray" fontcolor="lightgray" label="wff th"];
-  n488 [label = "imim2d.1"style="filled" fillcolor = "orange"];
+  n488[label="imim2d.1" style="filled" fillcolor = "orange"];
   n488->n489[label="|- ( ph -> ( ps -> ch ) )"];
-  n489 [label = "a1d"style="filled" fillcolor = "cyan"];
+  n489[label="a1d" style="filled" fillcolor = "cyan"];
   n489->n490[label="|- ( ph -> ( th -> ( ps -> ch ) ) )"];
   n483->n486->n487->n488[arrowhead="none" style="invisible"];
   {rank=same;n488;n487;n486;n483;}
-  n490 [label = "a2d"style="filled" fillcolor = "cyan"];
-QED[style="invisible"]
+  n490[label="a2d" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
   n490->QED[label="|- ( ph -> ( ( th -> ps ) -> ( th -> ch ) ) )"];
   n479->n480->n481->n482->n489[arrowhead="none" style="invisible"];
   {rank=same;n489;n482;n481;n480;n479;}

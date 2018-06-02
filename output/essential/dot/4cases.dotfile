@@ -1,0 +1,40 @@
+digraph proof_4cases {
+  rankdir = LR;
+  n17253[label="wps" style="invisible"];
+  n17253->n17268[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n17254[label="wch" style="invisible"];
+  n17254->n17268[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n17255[label="wph" style="invisible"];
+  n17255->n17260[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n17256[label="wps" style="invisible"];
+  n17256->n17260[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n17257[label="wch" style="invisible"];
+  n17257->n17260[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n17258[label="4cases.1" style="filled" fillcolor = "orange"];
+  n17258->n17260[label="|- ( ( ph /\\ ps ) -> ch )"];
+  n17259[label="4cases.3" style="filled" fillcolor = "orange"];
+  n17259->n17260[label="|- ( ( -. ph /\\ ps ) -> ch )"];
+  n17260[label="pm2.61ian" style="filled" fillcolor = "cyan"];
+  n17260->n17268[label="|- ( ps -> ch )"];
+  n17255->n17256->n17257->n17258->n17259[arrowhead="none" style="invisible"];
+  {rank=same;n17259;n17258;n17257;n17256;n17255;}
+  n17261[label="wph" style="invisible"];
+  n17261->n17267[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n17263[label="wn" style="invisible"];
+  n17263->n17267[color="lightgray" fontcolor="lightgray" label="wff -. ps"];
+  n17264[label="wch" style="invisible"];
+  n17264->n17267[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n17265[label="4cases.2" style="filled" fillcolor = "orange"];
+  n17265->n17267[label="|- ( ( ph /\\ -. ps ) -> ch )"];
+  n17266[label="4cases.4" style="filled" fillcolor = "orange"];
+  n17266->n17267[label="|- ( ( -. ph /\\ -. ps ) -> ch )"];
+  n17267[label="pm2.61ian" style="filled" fillcolor = "cyan"];
+  n17267->n17268[label="|- ( -. ps -> ch )"];
+  n17261->n17263->n17264->n17265->n17266[arrowhead="none" style="invisible"];
+  {rank=same;n17266;n17265;n17264;n17263;n17261;}
+  n17268[label="pm2.61i" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n17268->QED[label="|- ch"];
+  n17253->n17254->n17260->n17267[arrowhead="none" style="invisible"];
+  {rank=same;n17267;n17260;n17254;n17253;}
+}

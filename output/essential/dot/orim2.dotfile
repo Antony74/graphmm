@@ -1,0 +1,20 @@
+digraph proof_orim2 {
+  rankdir = LR;
+  n14388[label="wi" style="invisible"];
+  n14388->n14396[color="lightgray" fontcolor="lightgray" label="wff ( ps -> ch )"];
+  n14389[label="wps" style="invisible"];
+  n14389->n14396[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n14390[label="wch" style="invisible"];
+  n14390->n14396[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n14391[label="wph" style="invisible"];
+  n14391->n14396[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n14394[label="wi" style="invisible"];
+  n14394->n14395[color="lightgray" fontcolor="lightgray" label="wff ( ps -> ch )"];
+  n14395[label="id" style="filled" fillcolor = "cyan"];
+  n14395->n14396[label="|- ( ( ps -> ch ) -> ( ps -> ch ) )"];
+  n14396[label="orim2d" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n14396->QED[label="|- ( ( ps -> ch ) -> ( ( ph \\/ ps ) -> ( ph \\/ ch ) ) )"];
+  n14388->n14389->n14390->n14391->n14395[arrowhead="none" style="invisible"];
+  {rank=same;n14395;n14391;n14390;n14389;n14388;}
+}

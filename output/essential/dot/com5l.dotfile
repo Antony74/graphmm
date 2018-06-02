@@ -1,0 +1,36 @@
+digraph proof_com5l {
+  rankdir = LR;
+  n1009[label="wps" style="invisible"];
+  n1009->n1024[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n1010[label="wch" style="invisible"];
+  n1010->n1024[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n1011[label="wth" style="invisible"];
+  n1011->n1024[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n1012[label="wph" style="invisible"];
+  n1012->n1024[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n1013[label="wta" style="invisible"];
+  n1013->n1024[color="lightgray" fontcolor="lightgray" label="wff ta"];
+  n1014[label="wet" style="invisible"];
+  n1014->n1024[color="lightgray" fontcolor="lightgray" label="wff et"];
+  n1015[label="wph" style="invisible"];
+  n1015->n1023[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n1016[label="wps" style="invisible"];
+  n1016->n1023[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n1017[label="wch" style="invisible"];
+  n1017->n1023[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n1018[label="wth" style="invisible"];
+  n1018->n1023[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n1021[label="wi" style="invisible"];
+  n1021->n1023[color="lightgray" fontcolor="lightgray" label="wff ( ta -> et )"];
+  n1022[label="com5.1" style="filled" fillcolor = "orange"];
+  n1022->n1023[label="|- ( ph -> ( ps -> ( ch -> ( th -> ( ta -> et ) ) ) ) )"];
+  n1023[label="com4l" style="filled" fillcolor = "cyan"];
+  n1023->n1024[label="|- ( ps -> ( ch -> ( th -> ( ph -> ( ta -> et ) ) ) ) )"];
+  n1015->n1016->n1017->n1018->n1021->n1022[arrowhead="none" style="invisible"];
+  {rank=same;n1022;n1021;n1018;n1017;n1016;n1015;}
+  n1024[label="com45" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n1024->QED[label="|- ( ps -> ( ch -> ( th -> ( ta -> ( ph -> et ) ) ) ) )"];
+  n1009->n1010->n1011->n1012->n1013->n1014->n1023[arrowhead="none" style="invisible"];
+  {rank=same;n1023;n1014;n1013;n1012;n1011;n1010;n1009;}
+}

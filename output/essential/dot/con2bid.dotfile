@@ -1,0 +1,24 @@
+digraph proof_con2bid {
+  rankdir = LR;
+  n6328[label="wph" style="invisible"];
+  n6328->n6341[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n6332[label="wb" style="invisible"];
+  n6332->n6341[color="lightgray" fontcolor="lightgray" label="wff ( ps <-> -. ch )"];
+  n6336[label="wb" style="invisible"];
+  n6336->n6341[color="lightgray" fontcolor="lightgray" label="wff ( ch <-> -. ps )"];
+  n6337[label="con2bid.1" style="filled" fillcolor = "orange"];
+  n6337->n6341[label="|- ( ph -> ( ps <-> -. ch ) )"];
+  n6338[label="wch" style="invisible"];
+  n6338->n6340[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n6339[label="wps" style="invisible"];
+  n6339->n6340[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n6340[label="con2bi" style="filled" fillcolor = "cyan"];
+  n6340->n6341[label="|- ( ( ch <-> -. ps ) <-> ( ps <-> -. ch ) )"];
+  n6338->n6339[arrowhead="none" style="invisible"];
+  {rank=same;n6339;n6338;}
+  n6341[label="sylibr" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n6341->QED[label="|- ( ph -> ( ch <-> -. ps ) )"];
+  n6328->n6332->n6336->n6337->n6340[arrowhead="none" style="invisible"];
+  {rank=same;n6340;n6337;n6336;n6332;n6328;}
+}

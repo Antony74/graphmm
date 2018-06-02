@@ -1,0 +1,22 @@
+digraph proof_anc2l {
+  rankdir = LR;
+  n9461[label="wi" style="invisible"];
+  n9461->n9473[color="lightgray" fontcolor="lightgray" label="wff ( ph -> ( ps -> ch ) )"];
+  n9468[label="wi" style="invisible"];
+  n9468->n9473[color="lightgray" fontcolor="lightgray" label="wff ( ph -> ( ps -> ( ph /\\ ch ) ) )"];
+  n9469[label="wph" style="invisible"];
+  n9469->n9472[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n9470[label="wps" style="invisible"];
+  n9470->n9472[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n9471[label="wch" style="invisible"];
+  n9471->n9472[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n9472[label="pm5.42" style="filled" fillcolor = "cyan"];
+  n9472->n9473[label="|- ( ( ph -> ( ps -> ch ) ) <-> ( ph -> ( ps -> ( ph /\\ ch ) ) ) )"];
+  n9469->n9470->n9471[arrowhead="none" style="invisible"];
+  {rank=same;n9471;n9470;n9469;}
+  n9473[label="biimpi" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n9473->QED[label="|- ( ( ph -> ( ps -> ch ) ) -> ( ph -> ( ps -> ( ph /\\ ch ) ) ) )"];
+  n9461->n9468->n9472[arrowhead="none" style="invisible"];
+  {rank=same;n9472;n9468;n9461;}
+}

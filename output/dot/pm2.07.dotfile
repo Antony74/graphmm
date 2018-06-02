@@ -1,12 +1,12 @@
 digraph proof_pm2_07 {
   rankdir = LR;
-  n7401 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n7401[label="wph" color="lightgray" fontcolor="lightgray"];
   n7401->n7403[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n7402 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n7402[label="wph" color="lightgray" fontcolor="lightgray"];
   n7402->n7403[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n7403 [label = "olc"style="filled" fillcolor = "cyan"];
-QED[style="invisible"]
-  n7403->QED[label="|- ( ph -> ( ph \/ ph ) )"];
+  n7403[label="olc" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n7403->QED[label="|- ( ph -> ( ph \\/ ph ) )"];
   n7401->n7402[arrowhead="none" style="invisible"];
   {rank=same;n7402;n7401;}
 }

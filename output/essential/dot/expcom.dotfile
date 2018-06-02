@@ -1,0 +1,26 @@
+digraph proof_expcom {
+  rankdir = LR;
+  n7850[label="wph" style="invisible"];
+  n7850->n7858[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n7851[label="wps" style="invisible"];
+  n7851->n7858[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n7852[label="wch" style="invisible"];
+  n7852->n7858[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n7853[label="wph" style="invisible"];
+  n7853->n7857[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n7854[label="wps" style="invisible"];
+  n7854->n7857[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n7855[label="wch" style="invisible"];
+  n7855->n7857[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n7856[label="exp.1" style="filled" fillcolor = "orange"];
+  n7856->n7857[label="|- ( ( ph /\\ ps ) -> ch )"];
+  n7857[label="ex" style="filled" fillcolor = "cyan"];
+  n7857->n7858[label="|- ( ph -> ( ps -> ch ) )"];
+  n7853->n7854->n7855->n7856[arrowhead="none" style="invisible"];
+  {rank=same;n7856;n7855;n7854;n7853;}
+  n7858[label="com12" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n7858->QED[label="|- ( ps -> ( ph -> ch ) )"];
+  n7850->n7851->n7852->n7857[arrowhead="none" style="invisible"];
+  {rank=same;n7857;n7852;n7851;n7850;}
+}

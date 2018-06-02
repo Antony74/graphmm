@@ -1,0 +1,18 @@
+digraph proof_con2 {
+  rankdir = LR;
+  n1319[label="wi" style="invisible"];
+  n1319->n1327[color="lightgray" fontcolor="lightgray" label="wff ( ph -> -. ps )"];
+  n1320[label="wph" style="invisible"];
+  n1320->n1327[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n1321[label="wps" style="invisible"];
+  n1321->n1327[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n1325[label="wi" style="invisible"];
+  n1325->n1326[color="lightgray" fontcolor="lightgray" label="wff ( ph -> -. ps )"];
+  n1326[label="id" style="filled" fillcolor = "cyan"];
+  n1326->n1327[label="|- ( ( ph -> -. ps ) -> ( ph -> -. ps ) )"];
+  n1327[label="con2d" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n1327->QED[label="|- ( ( ph -> -. ps ) -> ( ps -> -. ph ) )"];
+  n1319->n1320->n1321->n1326[arrowhead="none" style="invisible"];
+  {rank=same;n1326;n1321;n1320;n1319;}
+}

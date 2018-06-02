@@ -1,0 +1,20 @@
+digraph proof_con3i {
+  rankdir = LR;
+  n1512[label="wn" style="invisible"];
+  n1512->n1519[color="lightgray" fontcolor="lightgray" label="wff -. ps"];
+  n1513[label="wps" style="invisible"];
+  n1513->n1519[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n1514[label="wph" style="invisible"];
+  n1514->n1519[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n1516[label="wn" style="invisible"];
+  n1516->n1517[color="lightgray" fontcolor="lightgray" label="wff -. ps"];
+  n1517[label="id" style="filled" fillcolor = "cyan"];
+  n1517->n1519[label="|- ( -. ps -> -. ps )"];
+  n1518[label="con3i.a" style="filled" fillcolor = "orange"];
+  n1518->n1519[label="|- ( ph -> ps )"];
+  n1519[label="nsyl" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n1519->QED[label="|- ( -. ps -> -. ph )"];
+  n1512->n1513->n1514->n1517->n1518[arrowhead="none" style="invisible"];
+  {rank=same;n1518;n1517;n1514;n1513;n1512;}
+}

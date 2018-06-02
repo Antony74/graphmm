@@ -1,0 +1,40 @@
+digraph proof_biorfi {
+  rankdir = LR;
+  n7508[label="wn" style="invisible"];
+  n7508->n7528[color="lightgray" fontcolor="lightgray" label="wff -. ph"];
+  n7513[label="wb" style="invisible"];
+  n7513->n7528[color="lightgray" fontcolor="lightgray" label="wff ( ps <-> ( ps \\/ ph ) )"];
+  n7514[label="biorfi.1" style="filled" fillcolor = "orange"];
+  n7514->n7528[label="|- -. ph"];
+  n7516[label="wn" style="invisible"];
+  n7516->n7527[color="lightgray" fontcolor="lightgray" label="wff -. ph"];
+  n7517[label="wps" style="invisible"];
+  n7517->n7527[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n7520[label="wo" style="invisible"];
+  n7520->n7527[color="lightgray" fontcolor="lightgray" label="wff ( ps \\/ ph )"];
+  n7521[label="wps" style="invisible"];
+  n7521->n7523[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n7522[label="wph" style="invisible"];
+  n7522->n7523[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n7523[label="orc" style="filled" fillcolor = "cyan"];
+  n7523->n7527[label="|- ( ps -> ( ps \\/ ph ) )"];
+  n7521->n7522[arrowhead="none" style="invisible"];
+  {rank=same;n7522;n7521;}
+  n7524[label="wph" style="invisible"];
+  n7524->n7526[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n7525[label="wps" style="invisible"];
+  n7525->n7526[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n7526[label="orel2" style="filled" fillcolor = "cyan"];
+  n7526->n7527[label="|- ( -. ph -> ( ( ps \\/ ph ) -> ps ) )"];
+  n7524->n7525[arrowhead="none" style="invisible"];
+  {rank=same;n7525;n7524;}
+  n7527[label="impbid2" style="filled" fillcolor = "cyan"];
+  n7527->n7528[label="|- ( -. ph -> ( ps <-> ( ps \\/ ph ) ) )"];
+  n7516->n7517->n7520->n7523->n7526[arrowhead="none" style="invisible"];
+  {rank=same;n7526;n7523;n7520;n7517;n7516;}
+  n7528[label="ax-mp" style="filled" fillcolor = "lawngreen"];
+  QED[style="invisible"]
+  n7528->QED[label="|- ( ps <-> ( ps \\/ ph ) )"];
+  n7508->n7513->n7514->n7527[arrowhead="none" style="invisible"];
+  {rank=same;n7527;n7514;n7513;n7508;}
+}

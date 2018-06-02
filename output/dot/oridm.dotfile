@@ -1,26 +1,26 @@
 digraph proof_oridm {
   rankdir = LR;
-  n8819 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n8819[label="wph" color="lightgray" fontcolor="lightgray"];
   n8819->n8821[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n8820 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n8820[label="wph" color="lightgray" fontcolor="lightgray"];
   n8820->n8821[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n8821 [label = "wo"color="lightgray" fontcolor="lightgray"];
-  n8821->n8827[color="lightgray" fontcolor="lightgray" label="wff ( ph \/ ph )"];
+  n8821[label="wo" color="lightgray" fontcolor="lightgray"];
+  n8821->n8827[color="lightgray" fontcolor="lightgray" label="wff ( ph \\/ ph )"];
   n8819->n8820[arrowhead="none" style="invisible"];
   {rank=same;n8820;n8819;}
-  n8822 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n8822[label="wph" color="lightgray" fontcolor="lightgray"];
   n8822->n8827[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n8823 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n8823[label="wph" color="lightgray" fontcolor="lightgray"];
   n8823->n8824[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n8824 [label = "pm1.2"style="filled" fillcolor = "cyan"];
-  n8824->n8827[label="|- ( ( ph \/ ph ) -> ph )"];
-  n8825 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n8824[label="pm1.2" style="filled" fillcolor = "cyan"];
+  n8824->n8827[label="|- ( ( ph \\/ ph ) -> ph )"];
+  n8825[label="wph" color="lightgray" fontcolor="lightgray"];
   n8825->n8826[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n8826 [label = "pm2.07"style="filled" fillcolor = "cyan"];
-  n8826->n8827[label="|- ( ph -> ( ph \/ ph ) )"];
-  n8827 [label = "impbii"style="filled" fillcolor = "cyan"];
-QED[style="invisible"]
-  n8827->QED[label="|- ( ( ph \/ ph ) <-> ph )"];
+  n8826[label="pm2.07" style="filled" fillcolor = "cyan"];
+  n8826->n8827[label="|- ( ph -> ( ph \\/ ph ) )"];
+  n8827[label="impbii" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n8827->QED[label="|- ( ( ph \\/ ph ) <-> ph )"];
   n8821->n8822->n8824->n8826[arrowhead="none" style="invisible"];
   {rank=same;n8826;n8824;n8822;n8821;}
 }

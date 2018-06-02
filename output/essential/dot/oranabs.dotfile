@@ -1,0 +1,42 @@
+digraph proof_oranabs {
+  rankdir = LR;
+  n14710[label="wps" style="invisible"];
+  n14710->n14734[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n14714[label="wo" style="invisible"];
+  n14714->n14734[color="lightgray" fontcolor="lightgray" label="wff ( ph \\/ -. ps )"];
+  n14715[label="wph" style="invisible"];
+  n14715->n14734[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n14716[label="wps" style="invisible"];
+  n14716->n14733[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n14717[label="wph" style="invisible"];
+  n14717->n14733[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n14721[label="wo" style="invisible"];
+  n14721->n14733[color="lightgray" fontcolor="lightgray" label="wff ( -. ps \\/ ph )"];
+  n14725[label="wo" style="invisible"];
+  n14725->n14733[color="lightgray" fontcolor="lightgray" label="wff ( ph \\/ -. ps )"];
+  n14726[label="wps" style="invisible"];
+  n14726->n14728[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n14727[label="wph" style="invisible"];
+  n14727->n14728[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n14728[label="biortn" style="filled" fillcolor = "cyan"];
+  n14728->n14733[label="|- ( ps -> ( ph <-> ( -. ps \\/ ph ) ) )"];
+  n14726->n14727[arrowhead="none" style="invisible"];
+  {rank=same;n14727;n14726;}
+  n14730[label="wn" style="invisible"];
+  n14730->n14732[color="lightgray" fontcolor="lightgray" label="wff -. ps"];
+  n14731[label="wph" style="invisible"];
+  n14731->n14732[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n14732[label="orcom" style="filled" fillcolor = "cyan"];
+  n14732->n14733[label="|- ( ( -. ps \\/ ph ) <-> ( ph \\/ -. ps ) )"];
+  n14730->n14731[arrowhead="none" style="invisible"];
+  {rank=same;n14731;n14730;}
+  n14733[label="syl6rbb" style="filled" fillcolor = "cyan"];
+  n14733->n14734[label="|- ( ps -> ( ( ph \\/ -. ps ) <-> ph ) )"];
+  n14716->n14717->n14721->n14725->n14728->n14732[arrowhead="none" style="invisible"];
+  {rank=same;n14732;n14728;n14725;n14721;n14717;n14716;}
+  n14734[label="pm5.32ri" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n14734->QED[label="|- ( ( ( ph \\/ -. ps ) /\\ ps ) <-> ( ph /\\ ps ) )"];
+  n14710->n14714->n14715->n14733[arrowhead="none" style="invisible"];
+  {rank=same;n14733;n14715;n14714;n14710;}
+}

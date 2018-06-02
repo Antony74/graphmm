@@ -1,0 +1,32 @@
+digraph proof_pm2_65 {
+  rankdir = LR;
+  n1980[label="wi" style="invisible"];
+  n1980->n1995[color="lightgray" fontcolor="lightgray" label="wff ( ph -> ps )"];
+  n1981[label="wph" style="invisible"];
+  n1981->n1995[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n1983[label="wn" style="invisible"];
+  n1983->n1995[color="lightgray" fontcolor="lightgray" label="wff -. ps"];
+  n1985[label="wn" style="invisible"];
+  n1985->n1995[color="lightgray" fontcolor="lightgray" label="wff -. ph"];
+  n1988[label="wi" style="invisible"];
+  n1988->n1991[color="lightgray" fontcolor="lightgray" label="wff ( ph -> ps )"];
+  n1990[label="wn" style="invisible"];
+  n1990->n1991[color="lightgray" fontcolor="lightgray" label="wff -. ph"];
+  n1991[label="idd" style="filled" fillcolor = "cyan"];
+  n1991->n1995[label="|- ( ( ph -> ps ) -> ( -. ph -> -. ph ) )"];
+  n1988->n1990[arrowhead="none" style="invisible"];
+  {rank=same;n1990;n1988;}
+  n1992[label="wph" style="invisible"];
+  n1992->n1994[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n1993[label="wps" style="invisible"];
+  n1993->n1994[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n1994[label="con3" style="filled" fillcolor = "cyan"];
+  n1994->n1995[label="|- ( ( ph -> ps ) -> ( -. ps -> -. ph ) )"];
+  n1992->n1993[arrowhead="none" style="invisible"];
+  {rank=same;n1993;n1992;}
+  n1995[label="jad" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n1995->QED[label="|- ( ( ph -> ps ) -> ( ( ph -> -. ps ) -> -. ph ) )"];
+  n1980->n1981->n1983->n1985->n1991->n1994[arrowhead="none" style="invisible"];
+  {rank=same;n1994;n1991;n1985;n1983;n1981;n1980;}
+}

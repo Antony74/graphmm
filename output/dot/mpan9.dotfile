@@ -1,30 +1,30 @@
 digraph proof_mpan9 {
   rankdir = LR;
-  n8192 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n8192[label="wch" color="lightgray" fontcolor="lightgray"];
   n8192->n8202[color="lightgray" fontcolor="lightgray" label="wff ch"];
-  n8193 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n8193[label="wph" color="lightgray" fontcolor="lightgray"];
   n8193->n8202[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n8194 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n8194[label="wth" color="lightgray" fontcolor="lightgray"];
   n8194->n8202[color="lightgray" fontcolor="lightgray" label="wff th"];
-  n8195 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n8195[label="wph" color="lightgray" fontcolor="lightgray"];
   n8195->n8201[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n8196 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n8196[label="wps" color="lightgray" fontcolor="lightgray"];
   n8196->n8201[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n8197 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n8197[label="wch" color="lightgray" fontcolor="lightgray"];
   n8197->n8201[color="lightgray" fontcolor="lightgray" label="wff ch"];
-  n8198 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n8198[label="wth" color="lightgray" fontcolor="lightgray"];
   n8198->n8201[color="lightgray" fontcolor="lightgray" label="wff th"];
-  n8199 [label = "mpan9.1"style="filled" fillcolor = "orange"];
+  n8199[label="mpan9.1" style="filled" fillcolor = "orange"];
   n8199->n8201[label="|- ( ph -> ps )"];
-  n8200 [label = "mpan9.2"style="filled" fillcolor = "orange"];
+  n8200[label="mpan9.2" style="filled" fillcolor = "orange"];
   n8200->n8201[label="|- ( ch -> ( ps -> th ) )"];
-  n8201 [label = "syl5"style="filled" fillcolor = "cyan"];
+  n8201[label="syl5" style="filled" fillcolor = "cyan"];
   n8201->n8202[label="|- ( ch -> ( ph -> th ) )"];
   n8195->n8196->n8197->n8198->n8199->n8200[arrowhead="none" style="invisible"];
   {rank=same;n8200;n8199;n8198;n8197;n8196;n8195;}
-  n8202 [label = "impcom"style="filled" fillcolor = "cyan"];
-QED[style="invisible"]
-  n8202->QED[label="|- ( ( ph /\ ch ) -> th )"];
+  n8202[label="impcom" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n8202->QED[label="|- ( ( ph /\\ ch ) -> th )"];
   n8192->n8193->n8194->n8201[arrowhead="none" style="invisible"];
   {rank=same;n8201;n8194;n8193;n8192;}
 }

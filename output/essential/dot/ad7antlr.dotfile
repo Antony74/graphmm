@@ -1,0 +1,36 @@
+digraph proof_ad7antlr {
+  rankdir = LR;
+  n12507[label="wa" style="invisible"];
+  n12507->n12520[color="lightgray" fontcolor="lightgray" label="wff ( ( ( ( ( ( ch /\\ ph ) /\\ th ) /\\ ta ) /\\ et ) /\\ ze ) /\\ si )"];
+  n12508[label="wps" style="invisible"];
+  n12508->n12520[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n12509[label="wrh" style="invisible"];
+  n12509->n12520[color="lightgray" fontcolor="lightgray" label="wff rh"];
+  n12510[label="wph" style="invisible"];
+  n12510->n12519[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n12511[label="wps" style="invisible"];
+  n12511->n12519[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n12512[label="wch" style="invisible"];
+  n12512->n12519[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n12513[label="wth" style="invisible"];
+  n12513->n12519[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n12514[label="wta" style="invisible"];
+  n12514->n12519[color="lightgray" fontcolor="lightgray" label="wff ta"];
+  n12515[label="wet" style="invisible"];
+  n12515->n12519[color="lightgray" fontcolor="lightgray" label="wff et"];
+  n12516[label="wze" style="invisible"];
+  n12516->n12519[color="lightgray" fontcolor="lightgray" label="wff ze"];
+  n12517[label="wsi" style="invisible"];
+  n12517->n12519[color="lightgray" fontcolor="lightgray" label="wff si"];
+  n12518[label="ad2ant.1" style="filled" fillcolor = "orange"];
+  n12518->n12519[label="|- ( ph -> ps )"];
+  n12519[label="ad6antlr" style="filled" fillcolor = "cyan"];
+  n12519->n12520[label="|- ( ( ( ( ( ( ( ch /\\ ph ) /\\ th ) /\\ ta ) /\\ et ) /\\ ze ) /\\ si ) -> ps )"];
+  n12510->n12511->n12512->n12513->n12514->n12515->n12516->n12517->n12518[arrowhead="none" style="invisible"];
+  {rank=same;n12518;n12517;n12516;n12515;n12514;n12513;n12512;n12511;n12510;}
+  n12520[label="adantr" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n12520->QED[label="|- ( ( ( ( ( ( ( ( ch /\\ ph ) /\\ th ) /\\ ta ) /\\ et ) /\\ ze ) /\\ si ) /\\ rh ) -> ps )"];
+  n12507->n12508->n12509->n12519[arrowhead="none" style="invisible"];
+  {rank=same;n12519;n12509;n12508;n12507;}
+}

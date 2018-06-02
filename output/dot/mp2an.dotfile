@@ -1,27 +1,27 @@
 digraph proof_mp2an {
   rankdir = LR;
-  n11524 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n11524[label="wps" color="lightgray" fontcolor="lightgray"];
   n11524->n11533[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n11525 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n11525[label="wch" color="lightgray" fontcolor="lightgray"];
   n11525->n11533[color="lightgray" fontcolor="lightgray" label="wff ch"];
-  n11526 [label = "mp2an.2"style="filled" fillcolor = "orange"];
+  n11526[label="mp2an.2" style="filled" fillcolor = "orange"];
   n11526->n11533[label="|- ps"];
-  n11527 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n11527[label="wph" color="lightgray" fontcolor="lightgray"];
   n11527->n11532[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n11528 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n11528[label="wps" color="lightgray" fontcolor="lightgray"];
   n11528->n11532[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n11529 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n11529[label="wch" color="lightgray" fontcolor="lightgray"];
   n11529->n11532[color="lightgray" fontcolor="lightgray" label="wff ch"];
-  n11530 [label = "mp2an.1"style="filled" fillcolor = "orange"];
+  n11530[label="mp2an.1" style="filled" fillcolor = "orange"];
   n11530->n11532[label="|- ph"];
-  n11531 [label = "mp2an.3"style="filled" fillcolor = "orange"];
-  n11531->n11532[label="|- ( ( ph /\ ps ) -> ch )"];
-  n11532 [label = "mpan"style="filled" fillcolor = "cyan"];
+  n11531[label="mp2an.3" style="filled" fillcolor = "orange"];
+  n11531->n11532[label="|- ( ( ph /\\ ps ) -> ch )"];
+  n11532[label="mpan" style="filled" fillcolor = "cyan"];
   n11532->n11533[label="|- ( ps -> ch )"];
   n11527->n11528->n11529->n11530->n11531[arrowhead="none" style="invisible"];
   {rank=same;n11531;n11530;n11529;n11528;n11527;}
-  n11533 [label = "ax-mp"style="filled" fillcolor = "lime"];
-QED[style="invisible"]
+  n11533[label="ax-mp" style="filled" fillcolor = "lawngreen"];
+  QED[style="invisible"]
   n11533->QED[label="|- ch"];
   n11524->n11525->n11526->n11532[arrowhead="none" style="invisible"];
   {rank=same;n11532;n11526;n11525;n11524;}

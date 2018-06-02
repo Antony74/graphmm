@@ -1,0 +1,40 @@
+digraph proof_bigolden {
+  rankdir = LR;
+  n16753[label="wi" style="invisible"];
+  n16753->n16780[color="lightgray" fontcolor="lightgray" label="wff ( ph -> ps )"];
+  n16758[label="wb" style="invisible"];
+  n16758->n16780[color="lightgray" fontcolor="lightgray" label="wff ( ph <-> ( ph /\\ ps ) )"];
+  n16763[label="wb" style="invisible"];
+  n16763->n16780[color="lightgray" fontcolor="lightgray" label="wff ( ps <-> ( ph \\/ ps ) )"];
+  n16768[label="wb" style="invisible"];
+  n16768->n16780[color="lightgray" fontcolor="lightgray" label="wff ( ( ph /\\ ps ) <-> ph )"];
+  n16769[label="wph" style="invisible"];
+  n16769->n16771[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n16770[label="wps" style="invisible"];
+  n16770->n16771[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n16771[label="pm4.71" style="filled" fillcolor = "cyan"];
+  n16771->n16780[label="|- ( ( ph -> ps ) <-> ( ph <-> ( ph /\\ ps ) ) )"];
+  n16769->n16770[arrowhead="none" style="invisible"];
+  {rank=same;n16770;n16769;}
+  n16772[label="wph" style="invisible"];
+  n16772->n16774[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n16773[label="wps" style="invisible"];
+  n16773->n16774[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n16774[label="pm4.72" style="filled" fillcolor = "cyan"];
+  n16774->n16780[label="|- ( ( ph -> ps ) <-> ( ps <-> ( ph \\/ ps ) ) )"];
+  n16772->n16773[arrowhead="none" style="invisible"];
+  {rank=same;n16773;n16772;}
+  n16775[label="wph" style="invisible"];
+  n16775->n16779[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n16778[label="wa" style="invisible"];
+  n16778->n16779[color="lightgray" fontcolor="lightgray" label="wff ( ph /\\ ps )"];
+  n16779[label="bicom" style="filled" fillcolor = "cyan"];
+  n16779->n16780[label="|- ( ( ph <-> ( ph /\\ ps ) ) <-> ( ( ph /\\ ps ) <-> ph ) )"];
+  n16775->n16778[arrowhead="none" style="invisible"];
+  {rank=same;n16778;n16775;}
+  n16780[label="3bitr3ri" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n16780->QED[label="|- ( ( ( ph /\\ ps ) <-> ph ) <-> ( ps <-> ( ph \\/ ps ) ) )"];
+  n16753->n16758->n16763->n16768->n16771->n16774->n16779[arrowhead="none" style="invisible"];
+  {rank=same;n16779;n16774;n16771;n16768;n16763;n16758;n16753;}
+}

@@ -1,37 +1,37 @@
 digraph proof_syl9r {
   rankdir = LR;
-  n730 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n730[label="wph" color="lightgray" fontcolor="lightgray"];
   n730->n743[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n731 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n731[label="wth" color="lightgray" fontcolor="lightgray"];
   n731->n743[color="lightgray" fontcolor="lightgray" label="wff th"];
-  n732 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n732[label="wps" color="lightgray" fontcolor="lightgray"];
   n732->n734[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n733 [label = "wta"color="lightgray" fontcolor="lightgray"];
+  n733[label="wta" color="lightgray" fontcolor="lightgray"];
   n733->n734[color="lightgray" fontcolor="lightgray" label="wff ta"];
-  n734 [label = "wi"color="lightgray" fontcolor="lightgray"];
+  n734[label="wi" color="lightgray" fontcolor="lightgray"];
   n734->n743[color="lightgray" fontcolor="lightgray" label="wff ( ps -> ta )"];
   n732->n733[arrowhead="none" style="invisible"];
   {rank=same;n733;n732;}
-  n735 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n735[label="wph" color="lightgray" fontcolor="lightgray"];
   n735->n742[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n736 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n736[label="wps" color="lightgray" fontcolor="lightgray"];
   n736->n742[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n737 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n737[label="wch" color="lightgray" fontcolor="lightgray"];
   n737->n742[color="lightgray" fontcolor="lightgray" label="wff ch"];
-  n738 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n738[label="wth" color="lightgray" fontcolor="lightgray"];
   n738->n742[color="lightgray" fontcolor="lightgray" label="wff th"];
-  n739 [label = "wta"color="lightgray" fontcolor="lightgray"];
+  n739[label="wta" color="lightgray" fontcolor="lightgray"];
   n739->n742[color="lightgray" fontcolor="lightgray" label="wff ta"];
-  n740 [label = "syl9r.1"style="filled" fillcolor = "orange"];
+  n740[label="syl9r.1" style="filled" fillcolor = "orange"];
   n740->n742[label="|- ( ph -> ( ps -> ch ) )"];
-  n741 [label = "syl9r.2"style="filled" fillcolor = "orange"];
+  n741[label="syl9r.2" style="filled" fillcolor = "orange"];
   n741->n742[label="|- ( th -> ( ch -> ta ) )"];
-  n742 [label = "syl9"style="filled" fillcolor = "cyan"];
+  n742[label="syl9" style="filled" fillcolor = "cyan"];
   n742->n743[label="|- ( ph -> ( th -> ( ps -> ta ) ) )"];
   n735->n736->n737->n738->n739->n740->n741[arrowhead="none" style="invisible"];
   {rank=same;n741;n740;n739;n738;n737;n736;n735;}
-  n743 [label = "com12"style="filled" fillcolor = "cyan"];
-QED[style="invisible"]
+  n743[label="com12" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
   n743->QED[label="|- ( th -> ( ph -> ( ps -> ta ) ) )"];
   n730->n731->n734->n742[arrowhead="none" style="invisible"];
   {rank=same;n742;n734;n731;n730;}

@@ -1,0 +1,38 @@
+digraph proof_com52r {
+  rankdir = LR;
+  n1056[label="wch" style="invisible"];
+  n1056->n1070[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n1057[label="wth" style="invisible"];
+  n1057->n1070[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n1058[label="wta" style="invisible"];
+  n1058->n1070[color="lightgray" fontcolor="lightgray" label="wff ta"];
+  n1059[label="wph" style="invisible"];
+  n1059->n1070[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n1060[label="wps" style="invisible"];
+  n1060->n1070[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n1061[label="wet" style="invisible"];
+  n1061->n1070[color="lightgray" fontcolor="lightgray" label="wff et"];
+  n1062[label="wph" style="invisible"];
+  n1062->n1069[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n1063[label="wps" style="invisible"];
+  n1063->n1069[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n1064[label="wch" style="invisible"];
+  n1064->n1069[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n1065[label="wth" style="invisible"];
+  n1065->n1069[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n1066[label="wta" style="invisible"];
+  n1066->n1069[color="lightgray" fontcolor="lightgray" label="wff ta"];
+  n1067[label="wet" style="invisible"];
+  n1067->n1069[color="lightgray" fontcolor="lightgray" label="wff et"];
+  n1068[label="com5.1" style="filled" fillcolor = "orange"];
+  n1068->n1069[label="|- ( ph -> ( ps -> ( ch -> ( th -> ( ta -> et ) ) ) ) )"];
+  n1069[label="com52l" style="filled" fillcolor = "cyan"];
+  n1069->n1070[label="|- ( ch -> ( th -> ( ta -> ( ph -> ( ps -> et ) ) ) ) )"];
+  n1062->n1063->n1064->n1065->n1066->n1067->n1068[arrowhead="none" style="invisible"];
+  {rank=same;n1068;n1067;n1066;n1065;n1064;n1063;n1062;}
+  n1070[label="com5l" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n1070->QED[label="|- ( th -> ( ta -> ( ph -> ( ps -> ( ch -> et ) ) ) ) )"];
+  n1056->n1057->n1058->n1059->n1060->n1061->n1069[arrowhead="none" style="invisible"];
+  {rank=same;n1069;n1061;n1060;n1059;n1058;n1057;n1056;}
+}

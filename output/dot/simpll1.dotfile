@@ -1,40 +1,40 @@
 digraph proof_simpll1 {
   rankdir = LR;
-  n19702 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n19702[label="wph" color="lightgray" fontcolor="lightgray"];
   n19702->n19705[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n19703 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n19703[label="wps" color="lightgray" fontcolor="lightgray"];
   n19703->n19705[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n19704 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n19704[label="wch" color="lightgray" fontcolor="lightgray"];
   n19704->n19705[color="lightgray" fontcolor="lightgray" label="wff ch"];
-  n19705 [label = "w3a"color="lightgray" fontcolor="lightgray"];
-  n19705->n19707[color="lightgray" fontcolor="lightgray" label="wff ( ph /\ ps /\ ch )"];
+  n19705[label="w3a" color="lightgray" fontcolor="lightgray"];
+  n19705->n19707[color="lightgray" fontcolor="lightgray" label="wff ( ph /\\ ps /\\ ch )"];
   n19702->n19703->n19704[arrowhead="none" style="invisible"];
   {rank=same;n19704;n19703;n19702;}
-  n19706 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n19706[label="wth" color="lightgray" fontcolor="lightgray"];
   n19706->n19707[color="lightgray" fontcolor="lightgray" label="wff th"];
-  n19707 [label = "wa"color="lightgray" fontcolor="lightgray"];
-  n19707->n19715[color="lightgray" fontcolor="lightgray" label="wff ( ( ph /\ ps /\ ch ) /\ th )"];
+  n19707[label="wa" color="lightgray" fontcolor="lightgray"];
+  n19707->n19715[color="lightgray" fontcolor="lightgray" label="wff ( ( ph /\\ ps /\\ ch ) /\\ th )"];
   n19705->n19706[arrowhead="none" style="invisible"];
   {rank=same;n19706;n19705;}
-  n19708 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n19708[label="wph" color="lightgray" fontcolor="lightgray"];
   n19708->n19715[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n19709 [label = "wta"color="lightgray" fontcolor="lightgray"];
+  n19709[label="wta" color="lightgray" fontcolor="lightgray"];
   n19709->n19715[color="lightgray" fontcolor="lightgray" label="wff ta"];
-  n19710 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n19710[label="wph" color="lightgray" fontcolor="lightgray"];
   n19710->n19714[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n19711 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n19711[label="wps" color="lightgray" fontcolor="lightgray"];
   n19711->n19714[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n19712 [label = "wch"color="lightgray" fontcolor="lightgray"];
+  n19712[label="wch" color="lightgray" fontcolor="lightgray"];
   n19712->n19714[color="lightgray" fontcolor="lightgray" label="wff ch"];
-  n19713 [label = "wth"color="lightgray" fontcolor="lightgray"];
+  n19713[label="wth" color="lightgray" fontcolor="lightgray"];
   n19713->n19714[color="lightgray" fontcolor="lightgray" label="wff th"];
-  n19714 [label = "simpl1"style="filled" fillcolor = "cyan"];
-  n19714->n19715[label="|- ( ( ( ph /\ ps /\ ch ) /\ th ) -> ph )"];
+  n19714[label="simpl1" style="filled" fillcolor = "cyan"];
+  n19714->n19715[label="|- ( ( ( ph /\\ ps /\\ ch ) /\\ th ) -> ph )"];
   n19710->n19711->n19712->n19713[arrowhead="none" style="invisible"];
   {rank=same;n19713;n19712;n19711;n19710;}
-  n19715 [label = "adantr"style="filled" fillcolor = "cyan"];
-QED[style="invisible"]
-  n19715->QED[label="|- ( ( ( ( ph /\ ps /\ ch ) /\ th ) /\ ta ) -> ph )"];
+  n19715[label="adantr" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n19715->QED[label="|- ( ( ( ( ph /\\ ps /\\ ch ) /\\ th ) /\\ ta ) -> ph )"];
   n19707->n19708->n19709->n19714[arrowhead="none" style="invisible"];
   {rank=same;n19714;n19709;n19708;n19707;}
 }

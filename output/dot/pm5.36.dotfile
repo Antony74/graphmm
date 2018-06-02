@@ -1,30 +1,30 @@
 digraph proof_pm5_36 {
   rankdir = LR;
-  n15432 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n15432[label="wph" color="lightgray" fontcolor="lightgray"];
   n15432->n15434[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n15433 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n15433[label="wps" color="lightgray" fontcolor="lightgray"];
   n15433->n15434[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n15434 [label = "wb"color="lightgray" fontcolor="lightgray"];
+  n15434[label="wb" color="lightgray" fontcolor="lightgray"];
   n15434->n15441[color="lightgray" fontcolor="lightgray" label="wff ( ph <-> ps )"];
   n15432->n15433[arrowhead="none" style="invisible"];
   {rank=same;n15433;n15432;}
-  n15435 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n15435[label="wph" color="lightgray" fontcolor="lightgray"];
   n15435->n15441[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n15436 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n15436[label="wps" color="lightgray" fontcolor="lightgray"];
   n15436->n15441[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n15437 [label = "wps"color="lightgray" fontcolor="lightgray"];
+  n15437[label="wps" color="lightgray" fontcolor="lightgray"];
   n15437->n15439[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n15438 [label = "wph"color="lightgray" fontcolor="lightgray"];
+  n15438[label="wph" color="lightgray" fontcolor="lightgray"];
   n15438->n15439[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n15439 [label = "wb"color="lightgray" fontcolor="lightgray"];
+  n15439[label="wb" color="lightgray" fontcolor="lightgray"];
   n15439->n15440[color="lightgray" fontcolor="lightgray" label="wff ( ph <-> ps )"];
   n15437->n15438[arrowhead="none" style="invisible"];
   {rank=same;n15438;n15437;}
-  n15440 [label = "id"style="filled" fillcolor = "cyan"];
+  n15440[label="id" style="filled" fillcolor = "cyan"];
   n15440->n15441[label="|- ( ( ph <-> ps ) -> ( ph <-> ps ) )"];
-  n15441 [label = "pm5.32ri"style="filled" fillcolor = "cyan"];
-QED[style="invisible"]
-  n15441->QED[label="|- ( ( ph /\ ( ph <-> ps ) ) <-> ( ps /\ ( ph <-> ps ) ) )"];
+  n15441[label="pm5.32ri" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n15441->QED[label="|- ( ( ph /\\ ( ph <-> ps ) ) <-> ( ps /\\ ( ph <-> ps ) ) )"];
   n15434->n15435->n15436->n15440[arrowhead="none" style="invisible"];
   {rank=same;n15440;n15436;n15435;n15434;}
 }

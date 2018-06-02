@@ -1,0 +1,38 @@
+digraph proof_bibi12i {
+  rankdir = LR;
+  n6037[label="wb" style="invisible"];
+  n6037->n6054[color="lightgray" fontcolor="lightgray" label="wff ( ph <-> ch )"];
+  n6040[label="wb" style="invisible"];
+  n6040->n6054[color="lightgray" fontcolor="lightgray" label="wff ( ph <-> th )"];
+  n6043[label="wb" style="invisible"];
+  n6043->n6054[color="lightgray" fontcolor="lightgray" label="wff ( ps <-> th )"];
+  n6044[label="wch" style="invisible"];
+  n6044->n6048[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n6045[label="wth" style="invisible"];
+  n6045->n6048[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n6046[label="wph" style="invisible"];
+  n6046->n6048[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n6047[label="bibi12.2" style="filled" fillcolor = "orange"];
+  n6047->n6048[label="|- ( ch <-> th )"];
+  n6048[label="bibi2i" style="filled" fillcolor = "cyan"];
+  n6048->n6054[label="|- ( ( ph <-> ch ) <-> ( ph <-> th ) )"];
+  n6044->n6045->n6046->n6047[arrowhead="none" style="invisible"];
+  {rank=same;n6047;n6046;n6045;n6044;}
+  n6049[label="wph" style="invisible"];
+  n6049->n6053[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n6050[label="wps" style="invisible"];
+  n6050->n6053[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n6051[label="wth" style="invisible"];
+  n6051->n6053[color="lightgray" fontcolor="lightgray" label="wff th"];
+  n6052[label="bibi.a" style="filled" fillcolor = "orange"];
+  n6052->n6053[label="|- ( ph <-> ps )"];
+  n6053[label="bibi1i" style="filled" fillcolor = "cyan"];
+  n6053->n6054[label="|- ( ( ph <-> th ) <-> ( ps <-> th ) )"];
+  n6049->n6050->n6051->n6052[arrowhead="none" style="invisible"];
+  {rank=same;n6052;n6051;n6050;n6049;}
+  n6054[label="bitri" style="filled" fillcolor = "cyan"];
+  QED[style="invisible"]
+  n6054->QED[label="|- ( ( ph <-> ch ) <-> ( ps <-> th ) )"];
+  n6037->n6040->n6043->n6048->n6053[arrowhead="none" style="invisible"];
+  {rank=same;n6053;n6048;n6043;n6040;n6037;}
+}
