@@ -1,3 +1,6 @@
+//
+// Metamath database verifier and graph generator
+//
 // Metamath database verifier
 // Eric Schmidt (eric41293@comcast.net)
 //
@@ -6,9 +9,18 @@
 //
 // http://creativecommons.org/publicdomain/zero/1.0/
 //
-// This is a standalone verifier for Metamath database files,
-// written in portable C++. Run it with a single file name as the
-// parameter.
+// Metamath graph generator
+// Antony Bartlett (akb@akb.me.uk)
+//
+// I release this code to the public domain under the
+// Creative Commons "CC0 1.0 Universal" Public Domain Dedication:
+//
+// http://creativecommons.org/publicdomain/zero/1.0/
+//
+// This is a standalone verifier and graph generator for Metamath database files,
+// written in portable C++. 
+//
+// Syntax: graphmm <filename> [<proof-limit>] [/essential]
 //
 // Some notes:
 //
@@ -27,7 +39,9 @@
 // specified by a question mark. In that case, as per the spec, a warning is
 // issued and checking continues.
 //
-// Please let me know of any bugs.
+// Please let Antony know of any bugs.
+// https://github.com/Antony74/graphmm/issues
+//
 
 #include <algorithm>
 #include <cctype>
@@ -88,6 +102,8 @@ std::map<std::string, std::string> mapLabelType;
 
 int nProofCount = 0;
 int nProofLimit = INT_MAX;
+
+bool bEssentialOnly = false;
 
 std::string escapeBackslashes(const std::string& orig)
 {
@@ -263,24 +279,40 @@ public:
 		for (int n = 0; n < m_items.size(); ++n)
 		{
 			std::shared_ptr<TreeItem> item = m_items[n];
-			ss << "  " << item->getId() << " [";
-			ss << "label = \"" << item->getLabel() << "\"";
+
+			if (bEssentialOnly
+			&&	item->getType() == TreeItem::typeNonEssential
+			&&  item->getParent()
+			&&  item->getParent()->getType() == TreeItem::typeNonEssential)
+			{
+				continue; // Skip this node
+			}
+
+			ss << "  " << item->getId() << "[";
+			ss << "label=\"" << item->getLabel() << "\"";
 
 			if (item->getType() == TreeItem::typeAxiom)
 			{
-				ss << "style=\"filled\" fillcolor = \"lawngreen\"";
+				ss << " style=\"filled\" fillcolor = \"lawngreen\"";
 			}
 			else if (item->getType() == TreeItem::typeProof)
 			{
-				ss << "style=\"filled\" fillcolor = \"cyan\"";
+				ss << " style=\"filled\" fillcolor = \"cyan\"";
 			}
 			else if (item->getType() == TreeItem::typePremise)
 			{
-				ss << "style=\"filled\" fillcolor = \"orange\"";
+				ss << " style=\"filled\" fillcolor = \"orange\"";
 			}
 			else if (item->getType() == TreeItem::typeNonEssential)
 			{
-				ss << "color=\"lightgray\" fontcolor=\"lightgray\"";
+				if (bEssentialOnly)
+				{
+					ss << " style=\"invisible\"";
+				}
+				else
+				{
+					ss << " color=\"lightgray\" fontcolor=\"lightgray\"";
+				}
 			}
 
 			ss << "];\n";
@@ -293,7 +325,7 @@ public:
 			}
 			else
 			{
-				ss << "QED[style=\"invisible\"]\n";
+				ss << "  QED[style=\"invisible\"]\n";
 			}
 
 			ss << "  " << item->getId() << "->" << parentId << "[";
@@ -306,7 +338,16 @@ public:
 			ss << "label=\"" << escapeBackslashes(item->getExpressionAsString()) << "\"";
 			ss << "];\n";
 
-			const std::vector<TreeItem *>& children = item->children();
+			std::vector<TreeItem *> children;
+
+			for (unsigned n = 0; n < item->children().size(); ++n)
+			{
+				TreeItem* child = item->children()[n];
+				if (bEssentialOnly == false || item->getType() != TreeItem::typeNonEssential || child->getType() != TreeItem::typeNonEssential)
+				{
+					children.push_back(child);
+				}
+			}
 
 			if (children.size() > 1)
 			{
@@ -316,15 +357,15 @@ public:
 				{
 					if (itr != children.rbegin())
 					{
-						ss << "->";
-					}
+							ss << "->";
+						}
 					ss << (*itr)->getId();
-				}
+					}
 				ss << "[arrowhead=\"none\" style=\"invisible\"];\n";
 
 				// Ensure children share same rank
 				ss << "  {rank=same;";
-				for (unsigned n = 0; n < item->children().size(); ++n)
+				for (unsigned n = 0; n < children.size(); ++n)
 				{
 					ss << children[n]->getId() << ";";
 				}
@@ -1614,6 +1655,18 @@ bool parsev()
 
 int main(int argc, char ** argv)
 {
+	if (argc == 4)
+	{
+		std::string param3 = argv[3];
+		std::transform(param3.begin(), param3.end(), param3.begin(), ::tolower);
+
+		if (param3 == "/essential")
+		{
+			bEssentialOnly = true;
+			argc = 3;
+		}
+	}
+
 	if (argc == 3)
 	{
 		try
@@ -1629,7 +1682,7 @@ int main(int argc, char ** argv)
 
 	if (argc != 2)
     {
-        std::cerr << "Syntax: checkmm <filename> [<proof-limit>]" << std::endl;
+        std::cerr << "Syntax: graphmm <filename> [<proof-limit>] [/essential]" << std::endl;
         return EXIT_FAILURE;
     }
 
@@ -1687,7 +1740,7 @@ int main(int argc, char ** argv)
 		if (nProofCount >= nProofLimit)
 		{
 			printf("Requested proof limit reached\n");
-			printf("Successfully verified %d proofs\n", nProofCount);
+			printf("Successfully verified and graphed %d proofs\n", nProofCount);
 			return 0;
 		}
     }
