@@ -563,8 +563,22 @@ bool readtokens(std::string const filename)
         return false;
     }
 
-    bool incomment(false);
-    bool infileinclusion(false);
+	enum EInCommentStatus
+	{
+		notInComment,
+		commentFirstToken,
+		commentOrdinary,
+		commentDollarsJ,
+		commentSyntax,
+		commentSyntaxThing1,
+		commentAs,
+		commentDollarsJOther,
+	};
+
+	EInCommentStatus incomment = notInComment;
+	std::string typecode = "";
+	
+	bool infileinclusion(false);
     std::string newfilename;
 
     std::string token;
@@ -574,7 +588,7 @@ bool readtokens(std::string const filename)
         {
             if (token == "$)")
             {
-                incomment = false;
+                incomment = notInComment;
                 continue;
             }
             if (token.find("$(") != std::string::npos)
@@ -587,13 +601,60 @@ bool readtokens(std::string const filename)
                 std::cerr << "Characters $) found in a comment" << std::endl;
                 return false;
             }
+
+			switch(incomment)
+			{
+			case commentFirstToken:
+				if (token == "$j")
+				{
+					incomment = commentDollarsJ;
+				}
+				else
+				{
+					incomment = commentOrdinary;
+				}
+				break;
+			case commentDollarsJ:
+				if (token == "syntax")
+				{
+					incomment = commentSyntax;
+				}
+				else
+				{
+					incomment = commentDollarsJOther;
+				}
+				break;
+			case commentSyntax:
+				// If the token is enclosed in single quotes, remove the single quotes
+				if (token[0] == '\'' && token[token.length() - 1] == '\'')
+				{
+					typecode = token.substr(1, token.length() - 2);
+				}
+				else
+				{
+					typecode = token;
+				}
+				incomment = commentAs;
+				break;
+			case commentAs:
+				printf("logical type code is %s\n", typecode.c_str());
+				incomment = commentDollarsJOther;
+				break;
+			}
+
+			if (incomment >= commentDollarsJ && token[token.length() - 1] == ';')
+			{
+				incomment = commentDollarsJ; // End of $j statement
+			}
+
             continue;
         }
 
         // Not in comment
         if (token == "$(")
         {
-            incomment = true;
+            incomment = commentFirstToken;
+
             continue;
         }
 
