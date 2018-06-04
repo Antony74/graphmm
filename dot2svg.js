@@ -3,13 +3,13 @@
 // Configuration
 
 var inDir = __dirname + '/output/dot/';
-var outDir = __dirname + '/output/png/';
+var outDir = __dirname + '/output/svg/';
 var nConcurrent = 8;
-var outType = 'png';
+var outType = 'svg';
 
 // Graph viz doesn't like big files https://gitlab.com/graphviz/graphviz/issues/1127
-//var nMaxDotFileSize = 1024 * 1024; // Safe for svg 
-var nMaxDotFileSize = 300 * 1024; // Safe for png 
+var nMaxDotFileSize = 1024 * 1024; // Safe for svg 
+//var nMaxDotFileSize = 300 * 1024; // Safe for png 
 
 // End of configuration
 
