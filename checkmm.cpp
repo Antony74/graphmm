@@ -105,6 +105,8 @@ int nProofLimit = INT_MAX;
 
 bool bEssentialOnly = false;
 
+std::string logicalTypeCode = "|-";
+
 std::string escapeBackslashes(const std::string& orig)
 {
 	std::stringstream ss;
@@ -136,14 +138,41 @@ public:
 		typeProof
 	};
 
-	TreeItem(const std::string& label, EType eType, const Expression& expression)
+	TreeItem(const std::string& label, const Expression& expression)
 	{
 		m_id = m_nextId;
 		++m_nextId;
 		m_label = label;
 		m_pParent = nullptr;
-		m_eType = eType;
 		m_expression = expression;
+
+		m_eType = typeNonEssential;
+
+		if (expression[0].c_str() == logicalTypeCode)
+		{
+			auto itr = mapLabelType.find(label);
+
+			if (itr == mapLabelType.end())
+			{
+				printf("mapLabelType lookup failed to find %s\n", label.c_str());
+			}
+			else
+			{
+				std::string strType = itr->second;
+				if (strType == "$e")
+				{
+					m_eType = TreeItem::typePremise;
+				}
+				else if (strType == "$a")
+				{
+					m_eType = TreeItem::typeAxiom;
+				}
+				else if (strType == "$p")
+				{
+					m_eType = TreeItem::typeProof;
+				}
+			}
+		}
 	}
 
 	std::string getId() { return "n" + std::to_string(m_id); }
@@ -207,55 +236,14 @@ public:
 
 	void addLeaf(const std::string& label, const Expression& expression)
 	{
-		TreeItem::EType eType = TreeItem::typeNonEssential;
-
-		auto itr = mapLabelType.find(label);
-
-		if (itr == mapLabelType.end())
-		{
-			printf("mapLabelType lookup failed to find %s\n", label.c_str());
-		}
-		else
-		{
-			std::string strType = itr->second;
-			if (strType == "$e")
-			{
-				eType = TreeItem::typePremise;
-			}
-		}
-
-		std::shared_ptr<TreeItem> item = std::make_shared<TreeItem>(label, eType, expression);
+		std::shared_ptr<TreeItem> item = std::make_shared<TreeItem>(label, expression);
 		m_items.push_back(item);
 		m_stack.push_back(item);
 	}
 
 	void addParent(const std::string& label, int nChildren, const Expression& expression)
 	{
-		TreeItem::EType type = TreeItem::typeProof;
-
-		auto itr = mapLabelType.find(label);
-
-		if (itr == mapLabelType.end())
-		{
-			printf("mapLabelType lookup failed\n");
-		}
-		else
-		{
-			std::string strType = itr->second;
-			if (strType == "$a")
-			{
-				if (label.substr(0, 3) == "ax-")
-				{
-					type = TreeItem::typeAxiom;
-				}
-				else
-				{
-					type = TreeItem::typeNonEssential;
-				}
-			}
-		}
-
-		std::shared_ptr<TreeItem> parent = std::make_shared<TreeItem>(label, type, expression);
+		std::shared_ptr<TreeItem> parent = std::make_shared<TreeItem>(label, expression);
 		m_items.push_back(parent);
 		for (int n = 0; n < nChildren; ++n)
 		{
@@ -637,7 +625,7 @@ bool readtokens(std::string const filename)
 				incomment = commentAs;
 				break;
 			case commentAs:
-				printf("logical type code is %s\n", typecode.c_str());
+				logicalTypeCode = typecode;
 				incomment = commentDollarsJOther;
 				break;
 			}
