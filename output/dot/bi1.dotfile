@@ -160,8 +160,8 @@ digraph proof_bi1 {
   n2246->n2248[color="lightgray" fontcolor="lightgray" label="wff ph"];
   n2247[label="wps" color="lightgray" fontcolor="lightgray"];
   n2247->n2248[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n2248[label="df-bi" color="lightgray" fontcolor="lightgray"];
-  n2248->n2277[color="lightgray" fontcolor="lightgray" label="|- -. ( ( ( ph <-> ps ) -> -. ( ( ph -> ps ) -> -. ( ps -> ph ) ) ) -> -. ( -. ( ( ph -> ps ) -> -. ( ps -> ph ) ) -> ( ph <-> ps ) ) )"];
+  n2248[label="df-bi" style="filled" fillcolor = "lawngreen"];
+  n2248->n2277[label="|- -. ( ( ( ph <-> ps ) -> -. ( ( ph -> ps ) -> -. ( ps -> ph ) ) ) -> -. ( -. ( ( ph -> ps ) -> -. ( ps -> ph ) ) -> ( ph <-> ps ) ) )"];
   n2246->n2247[arrowhead="none" style="invisible"];
   {rank=same;n2247;n2246;}
   n2249[label="wph" color="lightgray" fontcolor="lightgray"];

@@ -120,8 +120,8 @@ digraph proof_dfbi1gb {
   n2576->n2578[color="lightgray" fontcolor="lightgray" label="wff ph"];
   n2577[label="wps" color="lightgray" fontcolor="lightgray"];
   n2577->n2578[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n2578[label="df-bi" color="lightgray" fontcolor="lightgray"];
-  n2578->n4480[color="lightgray" fontcolor="lightgray" label="|- -. ( ( ( ph <-> ps ) -> -. ( ( ph -> ps ) -> -. ( ps -> ph ) ) ) -> -. ( -. ( ( ph -> ps ) -> -. ( ps -> ph ) ) -> ( ph <-> ps ) ) )"];
+  n2578[label="df-bi" style="filled" fillcolor = "lawngreen"];
+  n2578->n4480[label="|- -. ( ( ( ph <-> ps ) -> -. ( ( ph -> ps ) -> -. ( ps -> ph ) ) ) -> -. ( -. ( ( ph -> ps ) -> -. ( ps -> ph ) ) -> ( ph <-> ps ) ) )"];
   n2576->n2577[arrowhead="none" style="invisible"];
   {rank=same;n2577;n2576;}
   n2579[label="wch" color="lightgray" fontcolor="lightgray"];
@@ -3960,8 +3960,8 @@ digraph proof_dfbi1gb {
   {rank=same;n3949;n3946;}
   n3951[label="wn" color="lightgray" fontcolor="lightgray"];
   n3951->n3952[color="lightgray" fontcolor="lightgray" label="wff -. ( ( ph -> ps ) -> -. ( ps -> ph ) )"];
-  n3952[label="df-bi" color="lightgray" fontcolor="lightgray"];
-  n3952->n4050[color="lightgray" fontcolor="lightgray" label="|- -. ( ( ( ( ph <-> ps ) <-> -. ( ( ph -> ps ) -> -. ( ps -> ph ) ) ) -> -. ( ( ( ph <-> ps ) -> -. ( ( ph -> ps ) -> -. ( ps -> ph ) ) ) -> -. ( -. ( ( ph -> ps ) -> -. ( ps -> ph ) ) -> ( ph <-> ps ) ) ) ) -> -. ( -. ( ( ( ph <-> ps ) -> -. ( ( ph -> ps ) -> -. ( ps -> ph ) ) ) -> -. ( -. ( ( ph -> ps ) -> -. ( ps -> ph ) ) -> ( ph <-> ps ) ) ) -> ( ( ph <-> ps ) <-> -. ( ( ph -> ps ) -> -. ( ps -> ph ) ) ) ) )"];
+  n3952[label="df-bi" style="filled" fillcolor = "lawngreen"];
+  n3952->n4050[label="|- -. ( ( ( ( ph <-> ps ) <-> -. ( ( ph -> ps ) -> -. ( ps -> ph ) ) ) -> -. ( ( ( ph <-> ps ) -> -. ( ( ph -> ps ) -> -. ( ps -> ph ) ) ) -> -. ( -. ( ( ph -> ps ) -> -. ( ps -> ph ) ) -> ( ph <-> ps ) ) ) ) -> -. ( -. ( ( ( ph <-> ps ) -> -. ( ( ph -> ps ) -> -. ( ps -> ph ) ) ) -> -. ( -. ( ( ph -> ps ) -> -. ( ps -> ph ) ) -> ( ph <-> ps ) ) ) -> ( ( ph <-> ps ) <-> -. ( ( ph -> ps ) -> -. ( ps -> ph ) ) ) ) )"];
   n3942->n3951[arrowhead="none" style="invisible"];
   {rank=same;n3951;n3942;}
   n3953[label="wph" color="lightgray" fontcolor="lightgray"];

@@ -48,8 +48,8 @@ digraph proof_mtord {
   n11399->n11401[color="lightgray" fontcolor="lightgray" label="wff ch"];
   n11400[label="wth" color="lightgray" fontcolor="lightgray"];
   n11400->n11401[color="lightgray" fontcolor="lightgray" label="wff th"];
-  n11401[label="df-or" color="lightgray" fontcolor="lightgray"];
-  n11401->n11402[color="lightgray" fontcolor="lightgray" label="|- ( ( ch \\/ th ) <-> ( -. ch -> th ) )"];
+  n11401[label="df-or" style="filled" fillcolor = "lawngreen"];
+  n11401->n11402[label="|- ( ( ch \\/ th ) <-> ( -. ch -> th ) )"];
   n11399->n11400[arrowhead="none" style="invisible"];
   {rank=same;n11400;n11399;}
   n11402[label="syl6ib" style="filled" fillcolor = "cyan"];

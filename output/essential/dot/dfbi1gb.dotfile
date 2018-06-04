@@ -4,8 +4,14 @@ digraph proof_dfbi1gb {
   n2562->n4480[color="lightgray" fontcolor="lightgray" label="wff -. ( ( ( ph <-> ps ) -> -. ( ( ph -> ps ) -> -. ( ps -> ph ) ) ) -> -. ( -. ( ( ph -> ps ) -> -. ( ps -> ph ) ) -> ( ph <-> ps ) ) )"];
   n2575[label="wb" style="invisible"];
   n2575->n4480[color="lightgray" fontcolor="lightgray" label="wff ( ( ph <-> ps ) <-> -. ( ( ph -> ps ) -> -. ( ps -> ph ) ) )"];
-  n2578[label="df-bi" style="invisible"];
-  n2578->n4480[color="lightgray" fontcolor="lightgray" label="|- -. ( ( ( ph <-> ps ) -> -. ( ( ph -> ps ) -> -. ( ps -> ph ) ) ) -> -. ( -. ( ( ph -> ps ) -> -. ( ps -> ph ) ) -> ( ph <-> ps ) ) )"];
+  n2576[label="wph" style="invisible"];
+  n2576->n2578[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n2577[label="wps" style="invisible"];
+  n2577->n2578[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n2578[label="df-bi" style="filled" fillcolor = "lawngreen"];
+  n2578->n4480[label="|- -. ( ( ( ph <-> ps ) -> -. ( ( ph -> ps ) -> -. ( ps -> ph ) ) ) -> -. ( -. ( ( ph -> ps ) -> -. ( ps -> ph ) ) -> ( ph <-> ps ) ) )"];
+  n2576->n2577[arrowhead="none" style="invisible"];
+  {rank=same;n2577;n2576;}
   n2583[label="wi" style="invisible"];
   n2583->n4479[color="lightgray" fontcolor="lightgray" label="wff ( ch -> ( th -> ch ) )"];
   n2626[label="wi" style="invisible"];
@@ -50,8 +56,14 @@ digraph proof_dfbi1gb {
   n3842->n4050[color="lightgray" fontcolor="lightgray" label="wff -. ( ( ( ( ph <-> ps ) <-> -. ( ( ph -> ps ) -> -. ( ps -> ph ) ) ) -> -. ( ( ( ph <-> ps ) -> -. ( ( ph -> ps ) -> -. ( ps -> ph ) ) ) -> -. ( -. ( ( ph -> ps ) -> -. ( ps -> ph ) ) -> ( ph <-> ps ) ) ) ) -> -. ( -. ( ( ( ph <-> ps ) -> -. ( ( ph -> ps ) -> -. ( ps -> ph ) ) ) -> -. ( -. ( ( ph -> ps ) -> -. ( ps -> ph ) ) -> ( ph <-> ps ) ) ) -> ( ( ph <-> ps ) <-> -. ( ( ph -> ps ) -> -. ( ps -> ph ) ) ) ) )"];
   n3939[label="wi" style="invisible"];
   n3939->n4050[color="lightgray" fontcolor="lightgray" label="wff ( -. -. ( ch -> ( th -> ch ) ) -> -. ( ( ( ( ph <-> ps ) <-> -. ( ( ph -> ps ) -> -. ( ps -> ph ) ) ) -> -. ( ( ( ph <-> ps ) -> -. ( ( ph -> ps ) -> -. ( ps -> ph ) ) ) -> -. ( -. ( ( ph -> ps ) -> -. ( ps -> ph ) ) -> ( ph <-> ps ) ) ) ) -> -. ( -. ( ( ( ph <-> ps ) -> -. ( ( ph -> ps ) -> -. ( ps -> ph ) ) ) -> -. ( -. ( ( ph -> ps ) -> -. ( ps -> ph ) ) -> ( ph <-> ps ) ) ) -> ( ( ph <-> ps ) <-> -. ( ( ph -> ps ) -> -. ( ps -> ph ) ) ) ) ) )"];
-  n3952[label="df-bi" style="invisible"];
-  n3952->n4050[color="lightgray" fontcolor="lightgray" label="|- -. ( ( ( ( ph <-> ps ) <-> -. ( ( ph -> ps ) -> -. ( ps -> ph ) ) ) -> -. ( ( ( ph <-> ps ) -> -. ( ( ph -> ps ) -> -. ( ps -> ph ) ) ) -> -. ( -. ( ( ph -> ps ) -> -. ( ps -> ph ) ) -> ( ph <-> ps ) ) ) ) -> -. ( -. ( ( ( ph <-> ps ) -> -. ( ( ph -> ps ) -> -. ( ps -> ph ) ) ) -> -. ( -. ( ( ph -> ps ) -> -. ( ps -> ph ) ) -> ( ph <-> ps ) ) ) -> ( ( ph <-> ps ) <-> -. ( ( ph -> ps ) -> -. ( ps -> ph ) ) ) ) )"];
+  n3942[label="wb" style="invisible"];
+  n3942->n3952[color="lightgray" fontcolor="lightgray" label="wff ( ph <-> ps )"];
+  n3951[label="wn" style="invisible"];
+  n3951->n3952[color="lightgray" fontcolor="lightgray" label="wff -. ( ( ph -> ps ) -> -. ( ps -> ph ) )"];
+  n3952[label="df-bi" style="filled" fillcolor = "lawngreen"];
+  n3952->n4050[label="|- -. ( ( ( ( ph <-> ps ) <-> -. ( ( ph -> ps ) -> -. ( ps -> ph ) ) ) -> -. ( ( ( ph <-> ps ) -> -. ( ( ph -> ps ) -> -. ( ps -> ph ) ) ) -> -. ( -. ( ( ph -> ps ) -> -. ( ps -> ph ) ) -> ( ph <-> ps ) ) ) ) -> -. ( -. ( ( ( ph <-> ps ) -> -. ( ( ph -> ps ) -> -. ( ps -> ph ) ) ) -> -. ( -. ( ( ph -> ps ) -> -. ( ps -> ph ) ) -> ( ph <-> ps ) ) ) -> ( ( ph <-> ps ) <-> -. ( ( ph -> ps ) -> -. ( ps -> ph ) ) ) ) )"];
+  n3942->n3951[arrowhead="none" style="invisible"];
+  {rank=same;n3951;n3942;}
   n4041[label="wn" style="invisible"];
   n4041->n4049[color="lightgray" fontcolor="lightgray" label="wff -. ( ( ( ( ph <-> ps ) <-> -. ( ( ph -> ps ) -> -. ( ps -> ph ) ) ) -> -. ( ( ( ph <-> ps ) -> -. ( ( ph -> ps ) -> -. ( ps -> ph ) ) ) -> -. ( -. ( ( ph -> ps ) -> -. ( ps -> ph ) ) -> ( ph <-> ps ) ) ) ) -> -. ( -. ( ( ( ph <-> ps ) -> -. ( ( ph -> ps ) -> -. ( ps -> ph ) ) ) -> -. ( -. ( ( ph -> ps ) -> -. ( ps -> ph ) ) -> ( ph <-> ps ) ) ) -> ( ( ph <-> ps ) <-> -. ( ( ph -> ps ) -> -. ( ps -> ph ) ) ) ) )"];
   n4048[label="wn" style="invisible"];

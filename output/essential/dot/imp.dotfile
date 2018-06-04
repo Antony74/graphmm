@@ -6,8 +6,14 @@ digraph proof_imp {
   n7769->n7779[color="lightgray" fontcolor="lightgray" label="wff -. ( ph -> -. ps )"];
   n7770[label="wch" style="invisible"];
   n7770->n7779[color="lightgray" fontcolor="lightgray" label="wff ch"];
-  n7773[label="df-an" style="invisible"];
-  n7773->n7779[color="lightgray" fontcolor="lightgray" label="|- ( ( ph /\\ ps ) <-> -. ( ph -> -. ps ) )"];
+  n7771[label="wph" style="invisible"];
+  n7771->n7773[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n7772[label="wps" style="invisible"];
+  n7772->n7773[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n7773[label="df-an" style="filled" fillcolor = "lawngreen"];
+  n7773->n7779[label="|- ( ( ph /\\ ps ) <-> -. ( ph -> -. ps ) )"];
+  n7771->n7772[arrowhead="none" style="invisible"];
+  {rank=same;n7772;n7771;}
   n7774[label="wph" style="invisible"];
   n7774->n7778[color="lightgray" fontcolor="lightgray" label="wff ph"];
   n7775[label="wps" style="invisible"];

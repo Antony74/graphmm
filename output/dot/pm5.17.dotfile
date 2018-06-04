@@ -162,8 +162,8 @@ digraph proof_pm5_17 {
   n15637->n15639[color="lightgray" fontcolor="lightgray" label="wff ps"];
   n15638[label="wph" color="lightgray" fontcolor="lightgray"];
   n15638->n15639[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n15639[label="df-or" color="lightgray" fontcolor="lightgray"];
-  n15639->n15640[color="lightgray" fontcolor="lightgray" label="|- ( ( ps \\/ ph ) <-> ( -. ps -> ph ) )"];
+  n15639[label="df-or" style="filled" fillcolor = "lawngreen"];
+  n15639->n15640[label="|- ( ( ps \\/ ph ) <-> ( -. ps -> ph ) )"];
   n15637->n15638[arrowhead="none" style="invisible"];
   {rank=same;n15638;n15637;}
   n15640[label="bitr2i" style="filled" fillcolor = "cyan"];

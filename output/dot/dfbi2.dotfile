@@ -76,8 +76,8 @@ digraph proof_dfbi2 {
   n10742->n10743[color="lightgray" fontcolor="lightgray" label="wff ( ps -> ph )"];
   n10740->n10741[arrowhead="none" style="invisible"];
   {rank=same;n10741;n10740;}
-  n10743[label="df-an" color="lightgray" fontcolor="lightgray"];
-  n10743->n10744[color="lightgray" fontcolor="lightgray" label="|- ( ( ( ph -> ps ) /\\ ( ps -> ph ) ) <-> -. ( ( ph -> ps ) -> -. ( ps -> ph ) ) )"];
+  n10743[label="df-an" style="filled" fillcolor = "lawngreen"];
+  n10743->n10744[label="|- ( ( ( ph -> ps ) /\\ ( ps -> ph ) ) <-> -. ( ( ph -> ps ) -> -. ( ps -> ph ) ) )"];
   n10739->n10742[arrowhead="none" style="invisible"];
   {rank=same;n10742;n10739;}
   n10744[label="bitr4i" style="filled" fillcolor = "cyan"];

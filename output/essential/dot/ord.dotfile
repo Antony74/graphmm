@@ -8,8 +8,14 @@ digraph proof_ord {
   n7187->n7192[color="lightgray" fontcolor="lightgray" label="wff ( -. ps -> ch )"];
   n7188[label="ord.1" style="filled" fillcolor = "orange"];
   n7188->n7192[label="|- ( ph -> ( ps \\/ ch ) )"];
-  n7191[label="df-or" style="invisible"];
-  n7191->n7192[color="lightgray" fontcolor="lightgray" label="|- ( ( ps \\/ ch ) <-> ( -. ps -> ch ) )"];
+  n7189[label="wps" style="invisible"];
+  n7189->n7191[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n7190[label="wch" style="invisible"];
+  n7190->n7191[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n7191[label="df-or" style="filled" fillcolor = "lawngreen"];
+  n7191->n7192[label="|- ( ( ps \\/ ch ) <-> ( -. ps -> ch ) )"];
+  n7189->n7190[arrowhead="none" style="invisible"];
+  {rank=same;n7190;n7189;}
   n7192[label="sylib" style="filled" fillcolor = "cyan"];
   QED[style="invisible"]
   n7192->QED[label="|- ( ph -> ( -. ps -> ch ) )"];

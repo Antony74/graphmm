@@ -12,8 +12,14 @@ digraph proof_ex {
   n7842->n7848[color="lightgray" fontcolor="lightgray" label="wff ( ph /\\ ps )"];
   n7843[label="wch" style="invisible"];
   n7843->n7848[color="lightgray" fontcolor="lightgray" label="wff ch"];
-  n7846[label="df-an" style="invisible"];
-  n7846->n7848[color="lightgray" fontcolor="lightgray" label="|- ( ( ph /\\ ps ) <-> -. ( ph -> -. ps ) )"];
+  n7844[label="wph" style="invisible"];
+  n7844->n7846[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n7845[label="wps" style="invisible"];
+  n7845->n7846[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n7846[label="df-an" style="filled" fillcolor = "lawngreen"];
+  n7846->n7848[label="|- ( ( ph /\\ ps ) <-> -. ( ph -> -. ps ) )"];
+  n7844->n7845[arrowhead="none" style="invisible"];
+  {rank=same;n7845;n7844;}
   n7847[label="exp.1" style="filled" fillcolor = "orange"];
   n7847->n7848[label="|- ( ( ph /\\ ps ) -> ch )"];
   n7848[label="sylbir" style="filled" fillcolor = "cyan"];

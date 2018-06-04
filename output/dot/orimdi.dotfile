@@ -96,8 +96,8 @@ digraph proof_orimdi {
   n14520->n14521[color="lightgray" fontcolor="lightgray" label="wff ( ps -> ch )"];
   n14518->n14519[arrowhead="none" style="invisible"];
   {rank=same;n14519;n14518;}
-  n14521[label="df-or" color="lightgray" fontcolor="lightgray"];
-  n14521->n14543[color="lightgray" fontcolor="lightgray" label="|- ( ( ph \\/ ( ps -> ch ) ) <-> ( -. ph -> ( ps -> ch ) ) )"];
+  n14521[label="df-or" style="filled" fillcolor = "lawngreen"];
+  n14521->n14543[label="|- ( ( ph \\/ ( ps -> ch ) ) <-> ( -. ph -> ( ps -> ch ) ) )"];
   n14517->n14520[arrowhead="none" style="invisible"];
   {rank=same;n14520;n14517;}
   n14522[label="wps" color="lightgray" fontcolor="lightgray"];
@@ -140,16 +140,16 @@ digraph proof_orimdi {
   n14536->n14538[color="lightgray" fontcolor="lightgray" label="wff ph"];
   n14537[label="wps" color="lightgray" fontcolor="lightgray"];
   n14537->n14538[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n14538[label="df-or" color="lightgray" fontcolor="lightgray"];
-  n14538->n14542[color="lightgray" fontcolor="lightgray" label="|- ( ( ph \\/ ps ) <-> ( -. ph -> ps ) )"];
+  n14538[label="df-or" style="filled" fillcolor = "lawngreen"];
+  n14538->n14542[label="|- ( ( ph \\/ ps ) <-> ( -. ph -> ps ) )"];
   n14536->n14537[arrowhead="none" style="invisible"];
   {rank=same;n14537;n14536;}
   n14539[label="wph" color="lightgray" fontcolor="lightgray"];
   n14539->n14541[color="lightgray" fontcolor="lightgray" label="wff ph"];
   n14540[label="wch" color="lightgray" fontcolor="lightgray"];
   n14540->n14541[color="lightgray" fontcolor="lightgray" label="wff ch"];
-  n14541[label="df-or" color="lightgray" fontcolor="lightgray"];
-  n14541->n14542[color="lightgray" fontcolor="lightgray" label="|- ( ( ph \\/ ch ) <-> ( -. ph -> ch ) )"];
+  n14541[label="df-or" style="filled" fillcolor = "lawngreen"];
+  n14541->n14542[label="|- ( ( ph \\/ ch ) <-> ( -. ph -> ch ) )"];
   n14539->n14540[arrowhead="none" style="invisible"];
   {rank=same;n14540;n14539;}
   n14542[label="imbi12i" style="filled" fillcolor = "cyan"];

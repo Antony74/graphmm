@@ -144,8 +144,8 @@ digraph proof_bi3 {
   n2338->n2340[color="lightgray" fontcolor="lightgray" label="wff ph"];
   n2339[label="wps" color="lightgray" fontcolor="lightgray"];
   n2339->n2340[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n2340[label="df-bi" color="lightgray" fontcolor="lightgray"];
-  n2340->n2368[color="lightgray" fontcolor="lightgray" label="|- -. ( ( ( ph <-> ps ) -> -. ( ( ph -> ps ) -> -. ( ps -> ph ) ) ) -> -. ( -. ( ( ph -> ps ) -> -. ( ps -> ph ) ) -> ( ph <-> ps ) ) )"];
+  n2340[label="df-bi" style="filled" fillcolor = "lawngreen"];
+  n2340->n2368[label="|- -. ( ( ( ph <-> ps ) -> -. ( ( ph -> ps ) -> -. ( ps -> ph ) ) ) -> -. ( -. ( ( ph -> ps ) -> -. ( ps -> ph ) ) -> ( ph <-> ps ) ) )"];
   n2338->n2339[arrowhead="none" style="invisible"];
   {rank=same;n2339;n2338;}
   n2341[label="wps" color="lightgray" fontcolor="lightgray"];

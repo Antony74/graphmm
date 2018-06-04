@@ -6,8 +6,14 @@ digraph proof_pm4_54 {
   n8531->n8543[color="lightgray" fontcolor="lightgray" label="wff ( -. ph -> -. ps )"];
   n8535[label="wo" style="invisible"];
   n8535->n8543[color="lightgray" fontcolor="lightgray" label="wff ( ph \\/ -. ps )"];
-  n8539[label="df-an" style="invisible"];
-  n8539->n8543[color="lightgray" fontcolor="lightgray" label="|- ( ( -. ph /\\ ps ) <-> -. ( -. ph -> -. ps ) )"];
+  n8537[label="wn" style="invisible"];
+  n8537->n8539[color="lightgray" fontcolor="lightgray" label="wff -. ph"];
+  n8538[label="wps" style="invisible"];
+  n8538->n8539[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n8539[label="df-an" style="filled" fillcolor = "lawngreen"];
+  n8539->n8543[label="|- ( ( -. ph /\\ ps ) <-> -. ( -. ph -> -. ps ) )"];
+  n8537->n8538[arrowhead="none" style="invisible"];
+  {rank=same;n8538;n8537;}
   n8540[label="wph" style="invisible"];
   n8540->n8542[color="lightgray" fontcolor="lightgray" label="wff ph"];
   n8541[label="wps" style="invisible"];

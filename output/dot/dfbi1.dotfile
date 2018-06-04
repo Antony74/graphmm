@@ -152,8 +152,8 @@ digraph proof_dfbi1 {
   n2488->n2490[color="lightgray" fontcolor="lightgray" label="wff ph"];
   n2489[label="wps" color="lightgray" fontcolor="lightgray"];
   n2489->n2490[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n2490[label="df-bi" color="lightgray" fontcolor="lightgray"];
-  n2490->n2519[color="lightgray" fontcolor="lightgray" label="|- -. ( ( ( ph <-> ps ) -> -. ( ( ph -> ps ) -> -. ( ps -> ph ) ) ) -> -. ( -. ( ( ph -> ps ) -> -. ( ps -> ph ) ) -> ( ph <-> ps ) ) )"];
+  n2490[label="df-bi" style="filled" fillcolor = "lawngreen"];
+  n2490->n2519[label="|- -. ( ( ( ph <-> ps ) -> -. ( ( ph -> ps ) -> -. ( ps -> ph ) ) ) -> -. ( -. ( ( ph -> ps ) -> -. ( ps -> ph ) ) -> ( ph <-> ps ) ) )"];
   n2488->n2489[arrowhead="none" style="invisible"];
   {rank=same;n2489;n2488;}
   n2491[label="wph" color="lightgray" fontcolor="lightgray"];

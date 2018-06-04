@@ -6,8 +6,16 @@ digraph proof_3anass {
   n18707->n18721[color="lightgray" fontcolor="lightgray" label="wff ( ( ph /\\ ps ) /\\ ch )"];
   n18712[label="wa" style="invisible"];
   n18712->n18721[color="lightgray" fontcolor="lightgray" label="wff ( ph /\\ ( ps /\\ ch ) )"];
-  n18716[label="df-3an" style="invisible"];
-  n18716->n18721[color="lightgray" fontcolor="lightgray" label="|- ( ( ph /\\ ps /\\ ch ) <-> ( ( ph /\\ ps ) /\\ ch ) )"];
+  n18713[label="wph" style="invisible"];
+  n18713->n18716[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n18714[label="wps" style="invisible"];
+  n18714->n18716[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n18715[label="wch" style="invisible"];
+  n18715->n18716[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n18716[label="df-3an" style="filled" fillcolor = "lawngreen"];
+  n18716->n18721[label="|- ( ( ph /\\ ps /\\ ch ) <-> ( ( ph /\\ ps ) /\\ ch ) )"];
+  n18713->n18714->n18715[arrowhead="none" style="invisible"];
+  {rank=same;n18715;n18714;n18713;}
   n18717[label="wph" style="invisible"];
   n18717->n18720[color="lightgray" fontcolor="lightgray" label="wff ph"];
   n18718[label="wps" style="invisible"];

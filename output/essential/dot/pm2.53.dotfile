@@ -4,8 +4,14 @@ digraph proof_pm2_53 {
   n7136->n7144[color="lightgray" fontcolor="lightgray" label="wff ( ph \\/ ps )"];
   n7140[label="wi" style="invisible"];
   n7140->n7144[color="lightgray" fontcolor="lightgray" label="wff ( -. ph -> ps )"];
-  n7143[label="df-or" style="invisible"];
-  n7143->n7144[color="lightgray" fontcolor="lightgray" label="|- ( ( ph \\/ ps ) <-> ( -. ph -> ps ) )"];
+  n7141[label="wph" style="invisible"];
+  n7141->n7143[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n7142[label="wps" style="invisible"];
+  n7142->n7143[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n7143[label="df-or" style="filled" fillcolor = "lawngreen"];
+  n7143->n7144[label="|- ( ( ph \\/ ps ) <-> ( -. ph -> ps ) )"];
+  n7141->n7142[arrowhead="none" style="invisible"];
+  {rank=same;n7142;n7141;}
   n7144[label="biimpi" style="filled" fillcolor = "cyan"];
   QED[style="invisible"]
   n7144->QED[label="|- ( ( ph \\/ ps ) -> ( -. ph -> ps ) )"];

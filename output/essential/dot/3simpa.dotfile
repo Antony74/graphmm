@@ -6,8 +6,16 @@ digraph proof_3simpa {
   n19211->n19217[color="lightgray" fontcolor="lightgray" label="wff ( ph /\\ ps )"];
   n19212[label="wch" style="invisible"];
   n19212->n19217[color="lightgray" fontcolor="lightgray" label="wff ch"];
-  n19216[label="df-3an" style="invisible"];
-  n19216->n19217[color="lightgray" fontcolor="lightgray" label="|- ( ( ph /\\ ps /\\ ch ) <-> ( ( ph /\\ ps ) /\\ ch ) )"];
+  n19213[label="wph" style="invisible"];
+  n19213->n19216[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n19214[label="wps" style="invisible"];
+  n19214->n19216[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n19215[label="wch" style="invisible"];
+  n19215->n19216[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n19216[label="df-3an" style="filled" fillcolor = "lawngreen"];
+  n19216->n19217[label="|- ( ( ph /\\ ps /\\ ch ) <-> ( ( ph /\\ ps ) /\\ ch ) )"];
+  n19213->n19214->n19215[arrowhead="none" style="invisible"];
+  {rank=same;n19215;n19214;n19213;}
   n19217[label="simplbi" style="filled" fillcolor = "cyan"];
   QED[style="invisible"]
   n19217->QED[label="|- ( ( ph /\\ ps /\\ ch ) -> ( ph /\\ ps ) )"];

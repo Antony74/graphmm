@@ -44,8 +44,8 @@ digraph proof_3orass {
   n18691->n18693[color="lightgray" fontcolor="lightgray" label="wff ps"];
   n18692[label="wch" color="lightgray" fontcolor="lightgray"];
   n18692->n18693[color="lightgray" fontcolor="lightgray" label="wff ch"];
-  n18693[label="df-3or" color="lightgray" fontcolor="lightgray"];
-  n18693->n18698[color="lightgray" fontcolor="lightgray" label="|- ( ( ph \\/ ps \\/ ch ) <-> ( ( ph \\/ ps ) \\/ ch ) )"];
+  n18693[label="df-3or" style="filled" fillcolor = "lawngreen"];
+  n18693->n18698[label="|- ( ( ph \\/ ps \\/ ch ) <-> ( ( ph \\/ ps ) \\/ ch ) )"];
   n18690->n18691->n18692[arrowhead="none" style="invisible"];
   {rank=same;n18692;n18691;n18690;}
   n18694[label="wph" color="lightgray" fontcolor="lightgray"];

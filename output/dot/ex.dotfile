@@ -32,8 +32,8 @@ digraph proof_ex {
   n7844->n7846[color="lightgray" fontcolor="lightgray" label="wff ph"];
   n7845[label="wps" color="lightgray" fontcolor="lightgray"];
   n7845->n7846[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n7846[label="df-an" color="lightgray" fontcolor="lightgray"];
-  n7846->n7848[color="lightgray" fontcolor="lightgray" label="|- ( ( ph /\\ ps ) <-> -. ( ph -> -. ps ) )"];
+  n7846[label="df-an" style="filled" fillcolor = "lawngreen"];
+  n7846->n7848[label="|- ( ( ph /\\ ps ) <-> -. ( ph -> -. ps ) )"];
   n7844->n7845[arrowhead="none" style="invisible"];
   {rank=same;n7845;n7844;}
   n7847[label="exp.1" style="filled" fillcolor = "orange"];

@@ -236,8 +236,8 @@
 </g>
 <!-- n19000 -->
 <g id="node20" class="node"><title>n19000</title>
-<ellipse fill="none" stroke="lightgray" cx="1505.43" cy="-1401" rx="34.394" ry="18"/>
-<text text-anchor="middle" x="1505.43" y="-1397.3" font-family="Times New Roman,serif" font-size="14.00" fill="lightgray">df&#45;3an</text>
+<ellipse fill="lawngreen" stroke="black" cx="1505.43" cy="-1401" rx="34.394" ry="18"/>
+<text text-anchor="middle" x="1505.43" y="-1397.3" font-family="Times New Roman,serif" font-size="14.00">df&#45;3an</text>
 </g>
 <!-- n18996&#45;&gt;n19000 -->
 <g id="edge132" class="edge"><title>n18996&#45;&gt;n19000</title>
@@ -263,9 +263,9 @@
 </g>
 <!-- n19000&#45;&gt;n19070 -->
 <g id="edge27" class="edge"><title>n19000&#45;&gt;n19070</title>
-<path fill="none" stroke="lightgray" d="M1539.35,-1404.25C1602.77,-1411.09 1745.89,-1429.25 1861.67,-1464 1866.01,-1465.3 1870.48,-1466.9 1874.84,-1468.62"/>
-<polygon fill="lightgray" stroke="lightgray" points="1873.54,-1471.87 1884.11,-1472.5 1876.24,-1465.42 1873.54,-1471.87"/>
-<text text-anchor="middle" x="1713.67" y="-1467.8" font-family="Times New Roman,serif" font-size="14.00" fill="lightgray">|&#45; ( ( ph /\ ps /\ ch ) &lt;&#45;&gt; ( ( ph /\ ps ) /\ ch ) )</text>
+<path fill="none" stroke="black" d="M1539.35,-1404.25C1602.77,-1411.09 1745.89,-1429.25 1861.67,-1464 1866.01,-1465.3 1870.48,-1466.9 1874.84,-1468.62"/>
+<polygon fill="black" stroke="black" points="1873.54,-1471.87 1884.11,-1472.5 1876.24,-1465.42 1873.54,-1471.87"/>
+<text text-anchor="middle" x="1713.67" y="-1467.8" font-family="Times New Roman,serif" font-size="14.00">|&#45; ( ( ph /\ ps /\ ch ) &lt;&#45;&gt; ( ( ph /\ ps ) /\ ch ) )</text>
 </g>
 <!-- n19069 -->
 <g id="node28" class="node"><title>n19069</title>
@@ -630,8 +630,8 @@
 </g>
 <!-- n19068 -->
 <g id="node87" class="node"><title>n19068</title>
-<ellipse fill="none" stroke="lightgray" cx="1067.54" cy="-162" rx="33.5952" ry="18"/>
-<text text-anchor="middle" x="1067.54" y="-158.3" font-family="Times New Roman,serif" font-size="14.00" fill="lightgray">df&#45;3or</text>
+<ellipse fill="lawngreen" stroke="black" cx="1067.54" cy="-162" rx="33.5952" ry="18"/>
+<text text-anchor="middle" x="1067.54" y="-158.3" font-family="Times New Roman,serif" font-size="14.00">df&#45;3or</text>
 </g>
 <!-- n19061&#45;&gt;n19068 -->
 <g id="edge128" class="edge"><title>n19061&#45;&gt;n19068</title>
@@ -1093,9 +1093,9 @@
 </g>
 <!-- n19068&#45;&gt;n19069 -->
 <g id="edge121" class="edge"><title>n19068&#45;&gt;n19069</title>
-<path fill="none" stroke="lightgray" d="M1083.31,-178.299C1141.07,-243.054 1352.9,-490.552 1445.18,-736 1498.56,-877.981 1504.51,-1062.96 1504.71,-1132.72"/>
-<polygon fill="lightgray" stroke="lightgray" points="1501.21,-1132.9 1504.7,-1142.91 1508.21,-1132.91 1501.21,-1132.9"/>
-<text text-anchor="middle" x="1285.18" y="-739.8" font-family="Times New Roman,serif" font-size="14.00" fill="lightgray">|&#45; ( ( &#45;. ph \/ &#45;. ps \/ &#45;. ch ) &lt;&#45;&gt; ( ( &#45;. ph \/ &#45;. ps ) \/ &#45;. ch ) )</text>
+<path fill="none" stroke="black" d="M1083.31,-178.299C1141.07,-243.054 1352.9,-490.552 1445.18,-736 1498.56,-877.981 1504.51,-1062.96 1504.71,-1132.72"/>
+<polygon fill="black" stroke="black" points="1501.21,-1132.9 1504.7,-1142.91 1508.21,-1132.91 1501.21,-1132.9"/>
+<text text-anchor="middle" x="1285.18" y="-739.8" font-family="Times New Roman,serif" font-size="14.00">|&#45; ( ( &#45;. ph \/ &#45;. ps \/ &#45;. ch ) &lt;&#45;&gt; ( ( &#45;. ph \/ &#45;. ps ) \/ &#45;. ch ) )</text>
 </g>
 <!-- n19064 -->
 <g id="node88" class="node"><title>n19064</title>

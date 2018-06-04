@@ -58,16 +58,16 @@ digraph proof_orbi2d {
   n11942->n11944[color="lightgray" fontcolor="lightgray" label="wff th"];
   n11943[label="wps" color="lightgray" fontcolor="lightgray"];
   n11943->n11944[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n11944[label="df-or" color="lightgray" fontcolor="lightgray"];
-  n11944->n11948[color="lightgray" fontcolor="lightgray" label="|- ( ( th \\/ ps ) <-> ( -. th -> ps ) )"];
+  n11944[label="df-or" style="filled" fillcolor = "lawngreen"];
+  n11944->n11948[label="|- ( ( th \\/ ps ) <-> ( -. th -> ps ) )"];
   n11942->n11943[arrowhead="none" style="invisible"];
   {rank=same;n11943;n11942;}
   n11945[label="wth" color="lightgray" fontcolor="lightgray"];
   n11945->n11947[color="lightgray" fontcolor="lightgray" label="wff th"];
   n11946[label="wch" color="lightgray" fontcolor="lightgray"];
   n11946->n11947[color="lightgray" fontcolor="lightgray" label="wff ch"];
-  n11947[label="df-or" color="lightgray" fontcolor="lightgray"];
-  n11947->n11948[color="lightgray" fontcolor="lightgray" label="|- ( ( th \\/ ch ) <-> ( -. th -> ch ) )"];
+  n11947[label="df-or" style="filled" fillcolor = "lawngreen"];
+  n11947->n11948[label="|- ( ( th \\/ ch ) <-> ( -. th -> ch ) )"];
   n11945->n11946[arrowhead="none" style="invisible"];
   {rank=same;n11946;n11945;}
   n11948[label="3bitr4g" style="filled" fillcolor = "cyan"];

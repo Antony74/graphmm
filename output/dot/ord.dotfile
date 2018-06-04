@@ -26,8 +26,8 @@ digraph proof_ord {
   n7189->n7191[color="lightgray" fontcolor="lightgray" label="wff ps"];
   n7190[label="wch" color="lightgray" fontcolor="lightgray"];
   n7190->n7191[color="lightgray" fontcolor="lightgray" label="wff ch"];
-  n7191[label="df-or" color="lightgray" fontcolor="lightgray"];
-  n7191->n7192[color="lightgray" fontcolor="lightgray" label="|- ( ( ps \\/ ch ) <-> ( -. ps -> ch ) )"];
+  n7191[label="df-or" style="filled" fillcolor = "lawngreen"];
+  n7191->n7192[label="|- ( ( ps \\/ ch ) <-> ( -. ps -> ch ) )"];
   n7189->n7190[arrowhead="none" style="invisible"];
   {rank=same;n7190;n7189;}
   n7192[label="sylib" style="filled" fillcolor = "cyan"];

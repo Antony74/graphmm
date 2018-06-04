@@ -40,14 +40,30 @@ digraph proof_3ioran {
   n19162->n19167[label="|- ( -. ( ( ph \\/ ps ) \\/ ch ) <-> ( -. ( ph \\/ ps ) /\\ -. ch ) )"];
   n19160->n19161[arrowhead="none" style="invisible"];
   {rank=same;n19161;n19160;}
-  n19166[label="df-3or" style="invisible"];
-  n19166->n19167[color="lightgray" fontcolor="lightgray" label="|- ( ( ph \\/ ps \\/ ch ) <-> ( ( ph \\/ ps ) \\/ ch ) )"];
+  n19163[label="wph" style="invisible"];
+  n19163->n19166[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n19164[label="wps" style="invisible"];
+  n19164->n19166[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n19165[label="wch" style="invisible"];
+  n19165->n19166[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n19166[label="df-3or" style="filled" fillcolor = "lawngreen"];
+  n19166->n19167[label="|- ( ( ph \\/ ps \\/ ch ) <-> ( ( ph \\/ ps ) \\/ ch ) )"];
+  n19163->n19164->n19165[arrowhead="none" style="invisible"];
+  {rank=same;n19165;n19164;n19163;}
   n19167[label="xchnxbir" style="filled" fillcolor = "cyan"];
   n19167->n19175[label="|- ( -. ( ph \\/ ps \\/ ch ) <-> ( -. ( ph \\/ ps ) /\\ -. ch ) )"];
   n19146->n19153->n19157->n19162->n19166[arrowhead="none" style="invisible"];
   {rank=same;n19166;n19162;n19157;n19153;n19146;}
-  n19174[label="df-3an" style="invisible"];
-  n19174->n19175[color="lightgray" fontcolor="lightgray" label="|- ( ( -. ph /\\ -. ps /\\ -. ch ) <-> ( ( -. ph /\\ -. ps ) /\\ -. ch ) )"];
+  n19169[label="wn" style="invisible"];
+  n19169->n19174[color="lightgray" fontcolor="lightgray" label="wff -. ph"];
+  n19171[label="wn" style="invisible"];
+  n19171->n19174[color="lightgray" fontcolor="lightgray" label="wff -. ps"];
+  n19173[label="wn" style="invisible"];
+  n19173->n19174[color="lightgray" fontcolor="lightgray" label="wff -. ch"];
+  n19174[label="df-3an" style="filled" fillcolor = "lawngreen"];
+  n19174->n19175[label="|- ( ( -. ph /\\ -. ps /\\ -. ch ) <-> ( ( -. ph /\\ -. ps ) /\\ -. ch ) )"];
+  n19169->n19171->n19173[arrowhead="none" style="invisible"];
+  {rank=same;n19173;n19171;n19169;}
   n19175[label="3bitr4i" style="filled" fillcolor = "cyan"];
   QED[style="invisible"]
   n19175->QED[label="|- ( -. ( ph \\/ ps \\/ ch ) <-> ( -. ph /\\ -. ps /\\ -. ch ) )"];

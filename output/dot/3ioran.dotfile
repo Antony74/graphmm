@@ -166,8 +166,8 @@ digraph proof_3ioran {
   n19164->n19166[color="lightgray" fontcolor="lightgray" label="wff ps"];
   n19165[label="wch" color="lightgray" fontcolor="lightgray"];
   n19165->n19166[color="lightgray" fontcolor="lightgray" label="wff ch"];
-  n19166[label="df-3or" color="lightgray" fontcolor="lightgray"];
-  n19166->n19167[color="lightgray" fontcolor="lightgray" label="|- ( ( ph \\/ ps \\/ ch ) <-> ( ( ph \\/ ps ) \\/ ch ) )"];
+  n19166[label="df-3or" style="filled" fillcolor = "lawngreen"];
+  n19166->n19167[label="|- ( ( ph \\/ ps \\/ ch ) <-> ( ( ph \\/ ps ) \\/ ch ) )"];
   n19163->n19164->n19165[arrowhead="none" style="invisible"];
   {rank=same;n19165;n19164;n19163;}
   n19167[label="xchnxbir" style="filled" fillcolor = "cyan"];
@@ -186,8 +186,8 @@ digraph proof_3ioran {
   n19172->n19173[color="lightgray" fontcolor="lightgray" label="wff ch"];
   n19173[label="wn" color="lightgray" fontcolor="lightgray"];
   n19173->n19174[color="lightgray" fontcolor="lightgray" label="wff -. ch"];
-  n19174[label="df-3an" color="lightgray" fontcolor="lightgray"];
-  n19174->n19175[color="lightgray" fontcolor="lightgray" label="|- ( ( -. ph /\\ -. ps /\\ -. ch ) <-> ( ( -. ph /\\ -. ps ) /\\ -. ch ) )"];
+  n19174[label="df-3an" style="filled" fillcolor = "lawngreen"];
+  n19174->n19175[label="|- ( ( -. ph /\\ -. ps /\\ -. ch ) <-> ( ( -. ph /\\ -. ps ) /\\ -. ch ) )"];
   n19169->n19171->n19173[arrowhead="none" style="invisible"];
   {rank=same;n19173;n19171;n19169;}
   n19175[label="3bitr4i" style="filled" fillcolor = "cyan"];

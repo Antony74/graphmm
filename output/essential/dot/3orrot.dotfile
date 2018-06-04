@@ -26,8 +26,16 @@ digraph proof_3orrot {
   n18780->n18785[label="|- ( ( ph \\/ ps \\/ ch ) <-> ( ph \\/ ( ps \\/ ch ) ) )"];
   n18777->n18778->n18779[arrowhead="none" style="invisible"];
   {rank=same;n18779;n18778;n18777;}
-  n18784[label="df-3or" style="invisible"];
-  n18784->n18785[color="lightgray" fontcolor="lightgray" label="|- ( ( ps \\/ ch \\/ ph ) <-> ( ( ps \\/ ch ) \\/ ph ) )"];
+  n18781[label="wps" style="invisible"];
+  n18781->n18784[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n18782[label="wch" style="invisible"];
+  n18782->n18784[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n18783[label="wph" style="invisible"];
+  n18783->n18784[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n18784[label="df-3or" style="filled" fillcolor = "lawngreen"];
+  n18784->n18785[label="|- ( ( ps \\/ ch \\/ ph ) <-> ( ( ps \\/ ch ) \\/ ph ) )"];
+  n18781->n18782->n18783[arrowhead="none" style="invisible"];
+  {rank=same;n18783;n18782;n18781;}
   n18785[label="3bitr4i" style="filled" fillcolor = "cyan"];
   QED[style="invisible"]
   n18785->QED[label="|- ( ( ph \\/ ps \\/ ch ) <-> ( ps \\/ ch \\/ ph ) )"];

@@ -4,8 +4,14 @@ digraph proof_imnan {
   n7683->n7691[color="lightgray" fontcolor="lightgray" label="wff ( ph /\\ ps )"];
   n7687[label="wi" style="invisible"];
   n7687->n7691[color="lightgray" fontcolor="lightgray" label="wff ( ph -> -. ps )"];
-  n7690[label="df-an" style="invisible"];
-  n7690->n7691[color="lightgray" fontcolor="lightgray" label="|- ( ( ph /\\ ps ) <-> -. ( ph -> -. ps ) )"];
+  n7688[label="wph" style="invisible"];
+  n7688->n7690[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n7689[label="wps" style="invisible"];
+  n7689->n7690[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n7690[label="df-an" style="filled" fillcolor = "lawngreen"];
+  n7690->n7691[label="|- ( ( ph /\\ ps ) <-> -. ( ph -> -. ps ) )"];
+  n7688->n7689[arrowhead="none" style="invisible"];
+  {rank=same;n7689;n7688;}
   n7691[label="con2bii" style="filled" fillcolor = "cyan"];
   QED[style="invisible"]
   n7691->QED[label="|- ( ( ph -> -. ps ) <-> -. ( ph /\\ ps ) )"];

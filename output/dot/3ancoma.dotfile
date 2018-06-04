@@ -84,8 +84,8 @@ digraph proof_3ancoma {
   n18816->n18818[color="lightgray" fontcolor="lightgray" label="wff ps"];
   n18817[label="wch" color="lightgray" fontcolor="lightgray"];
   n18817->n18818[color="lightgray" fontcolor="lightgray" label="wff ch"];
-  n18818[label="df-3an" color="lightgray" fontcolor="lightgray"];
-  n18818->n18823[color="lightgray" fontcolor="lightgray" label="|- ( ( ph /\\ ps /\\ ch ) <-> ( ( ph /\\ ps ) /\\ ch ) )"];
+  n18818[label="df-3an" style="filled" fillcolor = "lawngreen"];
+  n18818->n18823[label="|- ( ( ph /\\ ps /\\ ch ) <-> ( ( ph /\\ ps ) /\\ ch ) )"];
   n18815->n18816->n18817[arrowhead="none" style="invisible"];
   {rank=same;n18817;n18816;n18815;}
   n18819[label="wps" color="lightgray" fontcolor="lightgray"];
@@ -94,8 +94,8 @@ digraph proof_3ancoma {
   n18820->n18822[color="lightgray" fontcolor="lightgray" label="wff ph"];
   n18821[label="wch" color="lightgray" fontcolor="lightgray"];
   n18821->n18822[color="lightgray" fontcolor="lightgray" label="wff ch"];
-  n18822[label="df-3an" color="lightgray" fontcolor="lightgray"];
-  n18822->n18823[color="lightgray" fontcolor="lightgray" label="|- ( ( ps /\\ ph /\\ ch ) <-> ( ( ps /\\ ph ) /\\ ch ) )"];
+  n18822[label="df-3an" style="filled" fillcolor = "lawngreen"];
+  n18822->n18823[label="|- ( ( ps /\\ ph /\\ ch ) <-> ( ( ps /\\ ph ) /\\ ch ) )"];
   n18819->n18820->n18821[arrowhead="none" style="invisible"];
   {rank=same;n18821;n18820;n18819;}
   n18823[label="3bitr4i" style="filled" fillcolor = "cyan"];

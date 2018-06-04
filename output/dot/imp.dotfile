@@ -26,8 +26,8 @@ digraph proof_imp {
   n7771->n7773[color="lightgray" fontcolor="lightgray" label="wff ph"];
   n7772[label="wps" color="lightgray" fontcolor="lightgray"];
   n7772->n7773[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n7773[label="df-an" color="lightgray" fontcolor="lightgray"];
-  n7773->n7779[color="lightgray" fontcolor="lightgray" label="|- ( ( ph /\\ ps ) <-> -. ( ph -> -. ps ) )"];
+  n7773[label="df-an" style="filled" fillcolor = "lawngreen"];
+  n7773->n7779[label="|- ( ( ph /\\ ps ) <-> -. ( ph -> -. ps ) )"];
   n7771->n7772[arrowhead="none" style="invisible"];
   {rank=same;n7772;n7771;}
   n7774[label="wph" color="lightgray" fontcolor="lightgray"];

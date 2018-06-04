@@ -6,8 +6,16 @@ digraph proof_3orass {
   n18684->n18698[color="lightgray" fontcolor="lightgray" label="wff ( ( ph \\/ ps ) \\/ ch )"];
   n18689[label="wo" style="invisible"];
   n18689->n18698[color="lightgray" fontcolor="lightgray" label="wff ( ph \\/ ( ps \\/ ch ) )"];
-  n18693[label="df-3or" style="invisible"];
-  n18693->n18698[color="lightgray" fontcolor="lightgray" label="|- ( ( ph \\/ ps \\/ ch ) <-> ( ( ph \\/ ps ) \\/ ch ) )"];
+  n18690[label="wph" style="invisible"];
+  n18690->n18693[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n18691[label="wps" style="invisible"];
+  n18691->n18693[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n18692[label="wch" style="invisible"];
+  n18692->n18693[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n18693[label="df-3or" style="filled" fillcolor = "lawngreen"];
+  n18693->n18698[label="|- ( ( ph \\/ ps \\/ ch ) <-> ( ( ph \\/ ps ) \\/ ch ) )"];
+  n18690->n18691->n18692[arrowhead="none" style="invisible"];
+  {rank=same;n18692;n18691;n18690;}
   n18694[label="wph" style="invisible"];
   n18694->n18697[color="lightgray" fontcolor="lightgray" label="wff ph"];
   n18695[label="wps" style="invisible"];

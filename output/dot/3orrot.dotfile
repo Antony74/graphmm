@@ -78,8 +78,8 @@ digraph proof_3orrot {
   n18782->n18784[color="lightgray" fontcolor="lightgray" label="wff ch"];
   n18783[label="wph" color="lightgray" fontcolor="lightgray"];
   n18783->n18784[color="lightgray" fontcolor="lightgray" label="wff ph"];
-  n18784[label="df-3or" color="lightgray" fontcolor="lightgray"];
-  n18784->n18785[color="lightgray" fontcolor="lightgray" label="|- ( ( ps \\/ ch \\/ ph ) <-> ( ( ps \\/ ch ) \\/ ph ) )"];
+  n18784[label="df-3or" style="filled" fillcolor = "lawngreen"];
+  n18784->n18785[label="|- ( ( ps \\/ ch \\/ ph ) <-> ( ( ps \\/ ch ) \\/ ph ) )"];
   n18781->n18782->n18783[arrowhead="none" style="invisible"];
   {rank=same;n18783;n18782;n18781;}
   n18785[label="3bitr4i" style="filled" fillcolor = "cyan"];

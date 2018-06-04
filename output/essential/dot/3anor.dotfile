@@ -6,8 +6,16 @@ digraph proof_3anor {
   n18988->n19070[color="lightgray" fontcolor="lightgray" label="wff ( ( ph /\\ ps ) /\\ ch )"];
   n18996[label="wn" style="invisible"];
   n18996->n19070[color="lightgray" fontcolor="lightgray" label="wff -. ( -. ph \\/ -. ps \\/ -. ch )"];
-  n19000[label="df-3an" style="invisible"];
-  n19000->n19070[color="lightgray" fontcolor="lightgray" label="|- ( ( ph /\\ ps /\\ ch ) <-> ( ( ph /\\ ps ) /\\ ch ) )"];
+  n18997[label="wph" style="invisible"];
+  n18997->n19000[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n18998[label="wps" style="invisible"];
+  n18998->n19000[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n18999[label="wch" style="invisible"];
+  n18999->n19000[color="lightgray" fontcolor="lightgray" label="wff ch"];
+  n19000[label="df-3an" style="filled" fillcolor = "lawngreen"];
+  n19000->n19070[label="|- ( ( ph /\\ ps /\\ ch ) <-> ( ( ph /\\ ps ) /\\ ch ) )"];
+  n18997->n18998->n18999[arrowhead="none" style="invisible"];
+  {rank=same;n18999;n18998;n18997;}
   n19005[label="wa" style="invisible"];
   n19005->n19069[color="lightgray" fontcolor="lightgray" label="wff ( ( ph /\\ ps ) /\\ ch )"];
   n19013[label="wo" style="invisible"];
@@ -50,8 +58,16 @@ digraph proof_3anor {
   n19061->n19069[label="|- ( ( ( ph /\\ ps ) /\\ ch ) <-> -. ( ( -. ph \\/ -. ps ) \\/ -. ch ) )"];
   n19025->n19032->n19040->n19045->n19060[arrowhead="none" style="invisible"];
   {rank=same;n19060;n19045;n19040;n19032;n19025;}
-  n19068[label="df-3or" style="invisible"];
-  n19068->n19069[color="lightgray" fontcolor="lightgray" label="|- ( ( -. ph \\/ -. ps \\/ -. ch ) <-> ( ( -. ph \\/ -. ps ) \\/ -. ch ) )"];
+  n19063[label="wn" style="invisible"];
+  n19063->n19068[color="lightgray" fontcolor="lightgray" label="wff -. ph"];
+  n19065[label="wn" style="invisible"];
+  n19065->n19068[color="lightgray" fontcolor="lightgray" label="wff -. ps"];
+  n19067[label="wn" style="invisible"];
+  n19067->n19068[color="lightgray" fontcolor="lightgray" label="wff -. ch"];
+  n19068[label="df-3or" style="filled" fillcolor = "lawngreen"];
+  n19068->n19069[label="|- ( ( -. ph \\/ -. ps \\/ -. ch ) <-> ( ( -. ph \\/ -. ps ) \\/ -. ch ) )"];
+  n19063->n19065->n19067[arrowhead="none" style="invisible"];
+  {rank=same;n19067;n19065;n19063;}
   n19069[label="xchbinxr" style="filled" fillcolor = "cyan"];
   n19069->n19070[label="|- ( ( ( ph /\\ ps ) /\\ ch ) <-> -. ( -. ph \\/ -. ps \\/ -. ch ) )"];
   n19005->n19013->n19020->n19061->n19068[arrowhead="none" style="invisible"];

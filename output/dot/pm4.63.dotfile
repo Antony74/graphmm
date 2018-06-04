@@ -24,8 +24,8 @@ digraph proof_pm4_63 {
   n7677->n7679[color="lightgray" fontcolor="lightgray" label="wff ph"];
   n7678[label="wps" color="lightgray" fontcolor="lightgray"];
   n7678->n7679[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n7679[label="df-an" color="lightgray" fontcolor="lightgray"];
-  n7679->n7680[color="lightgray" fontcolor="lightgray" label="|- ( ( ph /\\ ps ) <-> -. ( ph -> -. ps ) )"];
+  n7679[label="df-an" style="filled" fillcolor = "lawngreen"];
+  n7679->n7680[label="|- ( ( ph /\\ ps ) <-> -. ( ph -> -. ps ) )"];
   n7677->n7678[arrowhead="none" style="invisible"];
   {rank=same;n7678;n7677;}
   n7680[label="bicomi" style="filled" fillcolor = "cyan"];

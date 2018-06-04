@@ -266,16 +266,16 @@ digraph proof_pm5_32 {
   n11025->n11027[color="lightgray" fontcolor="lightgray" label="wff ph"];
   n11026[label="wps" color="lightgray" fontcolor="lightgray"];
   n11026->n11027[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n11027[label="df-an" color="lightgray" fontcolor="lightgray"];
-  n11027->n11031[color="lightgray" fontcolor="lightgray" label="|- ( ( ph /\\ ps ) <-> -. ( ph -> -. ps ) )"];
+  n11027[label="df-an" style="filled" fillcolor = "lawngreen"];
+  n11027->n11031[label="|- ( ( ph /\\ ps ) <-> -. ( ph -> -. ps ) )"];
   n11025->n11026[arrowhead="none" style="invisible"];
   {rank=same;n11026;n11025;}
   n11028[label="wph" color="lightgray" fontcolor="lightgray"];
   n11028->n11030[color="lightgray" fontcolor="lightgray" label="wff ph"];
   n11029[label="wch" color="lightgray" fontcolor="lightgray"];
   n11029->n11030[color="lightgray" fontcolor="lightgray" label="wff ch"];
-  n11030[label="df-an" color="lightgray" fontcolor="lightgray"];
-  n11030->n11031[color="lightgray" fontcolor="lightgray" label="|- ( ( ph /\\ ch ) <-> -. ( ph -> -. ch ) )"];
+  n11030[label="df-an" style="filled" fillcolor = "lawngreen"];
+  n11030->n11031[label="|- ( ( ph /\\ ch ) <-> -. ( ph -> -. ch ) )"];
   n11028->n11029[arrowhead="none" style="invisible"];
   {rank=same;n11029;n11028;}
   n11031[label="bibi12i" style="filled" fillcolor = "cyan"];

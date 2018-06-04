@@ -82,8 +82,8 @@ digraph proof_pm5_6 {
   n16221->n16223[color="lightgray" fontcolor="lightgray" label="wff ps"];
   n16222[label="wch" color="lightgray" fontcolor="lightgray"];
   n16222->n16223[color="lightgray" fontcolor="lightgray" label="wff ch"];
-  n16223[label="df-or" color="lightgray" fontcolor="lightgray"];
-  n16223->n16224[color="lightgray" fontcolor="lightgray" label="|- ( ( ps \\/ ch ) <-> ( -. ps -> ch ) )"];
+  n16223[label="df-or" style="filled" fillcolor = "lawngreen"];
+  n16223->n16224[label="|- ( ( ps \\/ ch ) <-> ( -. ps -> ch ) )"];
   n16221->n16222[arrowhead="none" style="invisible"];
   {rank=same;n16222;n16221;}
   n16224[label="imbi2i" style="filled" fillcolor = "cyan"];

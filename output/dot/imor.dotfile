@@ -54,8 +54,8 @@ digraph proof_imor {
   n7604->n7606[color="lightgray" fontcolor="lightgray" label="wff -. ph"];
   n7605[label="wps" color="lightgray" fontcolor="lightgray"];
   n7605->n7606[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n7606[label="df-or" color="lightgray" fontcolor="lightgray"];
-  n7606->n7607[color="lightgray" fontcolor="lightgray" label="|- ( ( -. ph \\/ ps ) <-> ( -. -. ph -> ps ) )"];
+  n7606[label="df-or" style="filled" fillcolor = "lawngreen"];
+  n7606->n7607[label="|- ( ( -. ph \\/ ps ) <-> ( -. -. ph -> ps ) )"];
   n7604->n7605[arrowhead="none" style="invisible"];
   {rank=same;n7605;n7604;}
   n7607[label="bitr4i" style="filled" fillcolor = "cyan"];

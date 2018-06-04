@@ -44,8 +44,8 @@ digraph proof_3anan32 {
   n18950->n18952[color="lightgray" fontcolor="lightgray" label="wff ps"];
   n18951[label="wch" color="lightgray" fontcolor="lightgray"];
   n18951->n18952[color="lightgray" fontcolor="lightgray" label="wff ch"];
-  n18952[label="df-3an" color="lightgray" fontcolor="lightgray"];
-  n18952->n18957[color="lightgray" fontcolor="lightgray" label="|- ( ( ph /\\ ps /\\ ch ) <-> ( ( ph /\\ ps ) /\\ ch ) )"];
+  n18952[label="df-3an" style="filled" fillcolor = "lawngreen"];
+  n18952->n18957[label="|- ( ( ph /\\ ps /\\ ch ) <-> ( ( ph /\\ ps ) /\\ ch ) )"];
   n18949->n18950->n18951[arrowhead="none" style="invisible"];
   {rank=same;n18951;n18950;n18949;}
   n18953[label="wph" color="lightgray" fontcolor="lightgray"];

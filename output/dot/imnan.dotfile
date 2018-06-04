@@ -22,8 +22,8 @@ digraph proof_imnan {
   n7688->n7690[color="lightgray" fontcolor="lightgray" label="wff ph"];
   n7689[label="wps" color="lightgray" fontcolor="lightgray"];
   n7689->n7690[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n7690[label="df-an" color="lightgray" fontcolor="lightgray"];
-  n7690->n7691[color="lightgray" fontcolor="lightgray" label="|- ( ( ph /\\ ps ) <-> -. ( ph -> -. ps ) )"];
+  n7690[label="df-an" style="filled" fillcolor = "lawngreen"];
+  n7690->n7691[label="|- ( ( ph /\\ ps ) <-> -. ( ph -> -. ps ) )"];
   n7688->n7689[arrowhead="none" style="invisible"];
   {rank=same;n7689;n7688;}
   n7691[label="con2bii" style="filled" fillcolor = "cyan"];

@@ -20,8 +20,14 @@ digraph proof_imor {
   n7602->n7607[label="|- ( ( ph -> ps ) <-> ( -. -. ph -> ps ) )"];
   n7595->n7598->n7599->n7601[arrowhead="none" style="invisible"];
   {rank=same;n7601;n7599;n7598;n7595;}
-  n7606[label="df-or" style="invisible"];
-  n7606->n7607[color="lightgray" fontcolor="lightgray" label="|- ( ( -. ph \\/ ps ) <-> ( -. -. ph -> ps ) )"];
+  n7604[label="wn" style="invisible"];
+  n7604->n7606[color="lightgray" fontcolor="lightgray" label="wff -. ph"];
+  n7605[label="wps" style="invisible"];
+  n7605->n7606[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n7606[label="df-or" style="filled" fillcolor = "lawngreen"];
+  n7606->n7607[label="|- ( ( -. ph \\/ ps ) <-> ( -. -. ph -> ps ) )"];
+  n7604->n7605[arrowhead="none" style="invisible"];
+  {rank=same;n7605;n7604;}
   n7607[label="bitr4i" style="filled" fillcolor = "cyan"];
   QED[style="invisible"]
   n7607->QED[label="|- ( ( ph -> ps ) <-> ( -. ph \\/ ps ) )"];

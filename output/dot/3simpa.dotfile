@@ -26,8 +26,8 @@ digraph proof_3simpa {
   n19214->n19216[color="lightgray" fontcolor="lightgray" label="wff ps"];
   n19215[label="wch" color="lightgray" fontcolor="lightgray"];
   n19215->n19216[color="lightgray" fontcolor="lightgray" label="wff ch"];
-  n19216[label="df-3an" color="lightgray" fontcolor="lightgray"];
-  n19216->n19217[color="lightgray" fontcolor="lightgray" label="|- ( ( ph /\\ ps /\\ ch ) <-> ( ( ph /\\ ps ) /\\ ch ) )"];
+  n19216[label="df-3an" style="filled" fillcolor = "lawngreen"];
+  n19216->n19217[label="|- ( ( ph /\\ ps /\\ ch ) <-> ( ( ph /\\ ps ) /\\ ch ) )"];
   n19213->n19214->n19215[arrowhead="none" style="invisible"];
   {rank=same;n19215;n19214;n19213;}
   n19217[label="simplbi" style="filled" fillcolor = "cyan"];

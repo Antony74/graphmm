@@ -96,8 +96,8 @@ digraph proof_orbidi {
   n16596->n16597[color="lightgray" fontcolor="lightgray" label="wff ( ps <-> ch )"];
   n16594->n16595[arrowhead="none" style="invisible"];
   {rank=same;n16595;n16594;}
-  n16597[label="df-or" color="lightgray" fontcolor="lightgray"];
-  n16597->n16619[color="lightgray" fontcolor="lightgray" label="|- ( ( ph \\/ ( ps <-> ch ) ) <-> ( -. ph -> ( ps <-> ch ) ) )"];
+  n16597[label="df-or" style="filled" fillcolor = "lawngreen"];
+  n16597->n16619[label="|- ( ( ph \\/ ( ps <-> ch ) ) <-> ( -. ph -> ( ps <-> ch ) ) )"];
   n16593->n16596[arrowhead="none" style="invisible"];
   {rank=same;n16596;n16593;}
   n16598[label="wps" color="lightgray" fontcolor="lightgray"];
@@ -140,16 +140,16 @@ digraph proof_orbidi {
   n16612->n16614[color="lightgray" fontcolor="lightgray" label="wff ph"];
   n16613[label="wps" color="lightgray" fontcolor="lightgray"];
   n16613->n16614[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n16614[label="df-or" color="lightgray" fontcolor="lightgray"];
-  n16614->n16618[color="lightgray" fontcolor="lightgray" label="|- ( ( ph \\/ ps ) <-> ( -. ph -> ps ) )"];
+  n16614[label="df-or" style="filled" fillcolor = "lawngreen"];
+  n16614->n16618[label="|- ( ( ph \\/ ps ) <-> ( -. ph -> ps ) )"];
   n16612->n16613[arrowhead="none" style="invisible"];
   {rank=same;n16613;n16612;}
   n16615[label="wph" color="lightgray" fontcolor="lightgray"];
   n16615->n16617[color="lightgray" fontcolor="lightgray" label="wff ph"];
   n16616[label="wch" color="lightgray" fontcolor="lightgray"];
   n16616->n16617[color="lightgray" fontcolor="lightgray" label="wff ch"];
-  n16617[label="df-or" color="lightgray" fontcolor="lightgray"];
-  n16617->n16618[color="lightgray" fontcolor="lightgray" label="|- ( ( ph \\/ ch ) <-> ( -. ph -> ch ) )"];
+  n16617[label="df-or" style="filled" fillcolor = "lawngreen"];
+  n16617->n16618[label="|- ( ( ph \\/ ch ) <-> ( -. ph -> ch ) )"];
   n16615->n16616[arrowhead="none" style="invisible"];
   {rank=same;n16616;n16615;}
   n16618[label="bibi12i" style="filled" fillcolor = "cyan"];

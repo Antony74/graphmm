@@ -22,8 +22,8 @@ digraph proof_pm4_64 {
   n7130->n7132[color="lightgray" fontcolor="lightgray" label="wff ph"];
   n7131[label="wps" color="lightgray" fontcolor="lightgray"];
   n7131->n7132[color="lightgray" fontcolor="lightgray" label="wff ps"];
-  n7132[label="df-or" color="lightgray" fontcolor="lightgray"];
-  n7132->n7133[color="lightgray" fontcolor="lightgray" label="|- ( ( ph \\/ ps ) <-> ( -. ph -> ps ) )"];
+  n7132[label="df-or" style="filled" fillcolor = "lawngreen"];
+  n7132->n7133[label="|- ( ( ph \\/ ps ) <-> ( -. ph -> ps ) )"];
   n7130->n7131[arrowhead="none" style="invisible"];
   {rank=same;n7131;n7130;}
   n7133[label="bicomi" style="filled" fillcolor = "cyan"];

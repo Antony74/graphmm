@@ -8,8 +8,14 @@ digraph proof_dfbi1 {
   n2474->n2519[color="lightgray" fontcolor="lightgray" label="wff -. ( ( ( ph <-> ps ) -> -. ( ( ph -> ps ) -> -. ( ps -> ph ) ) ) -> -. ( -. ( ( ph -> ps ) -> -. ( ps -> ph ) ) -> ( ph <-> ps ) ) )"];
   n2487[label="wi" style="invisible"];
   n2487->n2519[color="lightgray" fontcolor="lightgray" label="wff ( ( ph <-> ps ) -> -. ( ( ph -> ps ) -> -. ( ps -> ph ) ) )"];
-  n2490[label="df-bi" style="invisible"];
-  n2490->n2519[color="lightgray" fontcolor="lightgray" label="|- -. ( ( ( ph <-> ps ) -> -. ( ( ph -> ps ) -> -. ( ps -> ph ) ) ) -> -. ( -. ( ( ph -> ps ) -> -. ( ps -> ph ) ) -> ( ph <-> ps ) ) )"];
+  n2488[label="wph" style="invisible"];
+  n2488->n2490[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n2489[label="wps" style="invisible"];
+  n2489->n2490[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n2490[label="df-bi" style="filled" fillcolor = "lawngreen"];
+  n2490->n2519[label="|- -. ( ( ( ph <-> ps ) -> -. ( ( ph -> ps ) -> -. ( ps -> ph ) ) ) -> -. ( -. ( ( ph -> ps ) -> -. ( ps -> ph ) ) -> ( ph <-> ps ) ) )"];
+  n2488->n2489[arrowhead="none" style="invisible"];
+  {rank=same;n2489;n2488;}
   n2503[label="wi" style="invisible"];
   n2503->n2518[color="lightgray" fontcolor="lightgray" label="wff ( ( ph <-> ps ) -> -. ( ( ph -> ps ) -> -. ( ps -> ph ) ) )"];
   n2517[label="wn" style="invisible"];

@@ -48,8 +48,8 @@ digraph proof_3anor {
   n18998->n19000[color="lightgray" fontcolor="lightgray" label="wff ps"];
   n18999[label="wch" color="lightgray" fontcolor="lightgray"];
   n18999->n19000[color="lightgray" fontcolor="lightgray" label="wff ch"];
-  n19000[label="df-3an" color="lightgray" fontcolor="lightgray"];
-  n19000->n19070[color="lightgray" fontcolor="lightgray" label="|- ( ( ph /\\ ps /\\ ch ) <-> ( ( ph /\\ ps ) /\\ ch ) )"];
+  n19000[label="df-3an" style="filled" fillcolor = "lawngreen"];
+  n19000->n19070[label="|- ( ( ph /\\ ps /\\ ch ) <-> ( ( ph /\\ ps ) /\\ ch ) )"];
   n18997->n18998->n18999[arrowhead="none" style="invisible"];
   {rank=same;n18999;n18998;n18997;}
   n19001[label="wch" color="lightgray" fontcolor="lightgray"];
@@ -222,8 +222,8 @@ digraph proof_3anor {
   n19066->n19067[color="lightgray" fontcolor="lightgray" label="wff ch"];
   n19067[label="wn" color="lightgray" fontcolor="lightgray"];
   n19067->n19068[color="lightgray" fontcolor="lightgray" label="wff -. ch"];
-  n19068[label="df-3or" color="lightgray" fontcolor="lightgray"];
-  n19068->n19069[color="lightgray" fontcolor="lightgray" label="|- ( ( -. ph \\/ -. ps \\/ -. ch ) <-> ( ( -. ph \\/ -. ps ) \\/ -. ch ) )"];
+  n19068[label="df-3or" style="filled" fillcolor = "lawngreen"];
+  n19068->n19069[label="|- ( ( -. ph \\/ -. ps \\/ -. ch ) <-> ( ( -. ph \\/ -. ps ) \\/ -. ch ) )"];
   n19063->n19065->n19067[arrowhead="none" style="invisible"];
   {rank=same;n19067;n19065;n19063;}
   n19069[label="xchbinxr" style="filled" fillcolor = "cyan"];

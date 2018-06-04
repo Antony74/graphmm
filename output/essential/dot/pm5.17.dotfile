@@ -46,8 +46,14 @@ digraph proof_pm5_17 {
   n15636->n15640[label="|- ( ( ph \\/ ps ) <-> ( ps \\/ ph ) )"];
   n15634->n15635[arrowhead="none" style="invisible"];
   {rank=same;n15635;n15634;}
-  n15639[label="df-or" style="invisible"];
-  n15639->n15640[color="lightgray" fontcolor="lightgray" label="|- ( ( ps \\/ ph ) <-> ( -. ps -> ph ) )"];
+  n15637[label="wps" style="invisible"];
+  n15637->n15639[color="lightgray" fontcolor="lightgray" label="wff ps"];
+  n15638[label="wph" style="invisible"];
+  n15638->n15639[color="lightgray" fontcolor="lightgray" label="wff ph"];
+  n15639[label="df-or" style="filled" fillcolor = "lawngreen"];
+  n15639->n15640[label="|- ( ( ps \\/ ph ) <-> ( -. ps -> ph ) )"];
+  n15637->n15638[arrowhead="none" style="invisible"];
+  {rank=same;n15638;n15637;}
   n15640[label="bitr2i" style="filled" fillcolor = "cyan"];
   n15640->n15644[label="|- ( ( -. ps -> ph ) <-> ( ph \\/ ps ) )"];
   n15626->n15629->n15633->n15636->n15639[arrowhead="none" style="invisible"];
